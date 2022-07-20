@@ -1,117 +1,97 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * Generated with the TypeScript template
- * https://github.com/react-native-community/react-native-template-typescript
- *
- * @format
- */
-
-import React, {type PropsWithChildren} from 'react';
+import React from 'react';
 import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
   StyleSheet,
-  Text,
-  useColorScheme,
+  ScrollView,
+  Image,
   View,
+  SafeAreaView,
+  StatusBar,
+  Text,
+  TextInput,
+  Button,
 } from 'react-native';
+import LinearGradient from 'react-native-linear-gradient';
+import Rectangle from './src/components/nft-container';
 
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
-
-const Section: React.FC<
-  PropsWithChildren<{
-    title: string;
-  }>
-> = ({children, title}) => {
-  const isDarkMode = useColorScheme() === 'dark';
+const YourApp = () => {
   return (
-    <View style={styles.sectionContainer}>
-      <Text
-        style={[
-          styles.sectionTitle,
-          {
-            color: isDarkMode ? Colors.white : Colors.black,
-          },
-        ]}>
-        {title}
-      </Text>
-      <Text
-        style={[
-          styles.sectionDescription,
-          {
-            color: isDarkMode ? Colors.light : Colors.dark,
-          },
-        ]}>
-        {children}
-      </Text>
-    </View>
-  );
-};
-
-const App = () => {
-  const isDarkMode = useColorScheme() === 'dark';
-
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
-
-  return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
-        <Header />
+    <SafeAreaView
+      // eslint-disable-next-line react-native/no-inline-styles
+      style={{
+        backgroundColor: '#222222',
+        flex: 1,
+      }}>
+      <StatusBar barStyle="light-content" translucent={true} />
+      <ScrollView>
         <View
+          // eslint-disable-next-line react-native/no-inline-styles
           style={{
-            backgroundColor: isDarkMode ? Colors.black : Colors.white,
+            flex: 1,
+            flexDirection: 'row',
+            justifyContent: 'space-between',
+            padding: 16,
           }}>
-          <Section title="Step One">
-            Edit <Text style={styles.highlight}>App.tsx</Text> to change this
-            screen and then come back to see your edits.
-          </Section>
-          <Section title="See Your Changes">
-            <ReloadInstructions />
-          </Section>
-          <Section title="Debug">
-            <DebugInstructions />
-          </Section>
-          <Section title="Learn More">
-            Read the docs to discover what to do next:
-          </Section>
-          <LearnMoreLinks />
+          <Image source={require('./src/assets/images/Logo.png')} />
+          <Image source={require('./src/assets/images/Menu.png')} />
         </View>
+        <View>
+          <Text style={styles.titleText}>
+            {'Discover, collect, and sell'}
+            {'\n'}
+          </Text>
+          <Text style={styles.boldTitleText}>{'Your Digital Art'}</Text>
+          <TextInput
+            style={styles.inputBox}
+            placeholderTextColor="#FCFCFC"
+            // value={text}
+            placeholder="Search items, collections, and accounts"
+          />
+        </View>
+        <Rectangle />
+        <LinearGradient
+          colors={['#0038F5', '#9F03FF']}
+          useAngle={true}
+          angle={114.44}>
+          <View
+            style={{
+              width: 343,
+              height: 56,
+            }}>
+            <Button title="Learn More" color="#841584" />
+          </View>
+        </LinearGradient>
       </ScrollView>
     </SafeAreaView>
   );
 };
 
 const styles = StyleSheet.create({
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-  },
-  sectionDescription: {
-    marginTop: 8,
+  titleText: {
     fontSize: 18,
-    fontWeight: '400',
-  },
-  highlight: {
     fontWeight: '700',
+    textAlign: 'center',
+    color: '#FCFCFC',
+    fontFamily: 'Epilogue',
+  },
+  boldTitleText: {
+    fontSize: 32,
+    fontWeight: '900',
+    textAlign: 'center',
+    color: '#FCFCFC',
+    fontFamily: 'Epilogue-VariableFont_wght',
+  },
+  inputBox: {
+    height: 40,
+    margin: 12,
+    borderWidth: 1,
+    padding: 10,
+    borderRadius: 8,
+    width: 327,
+    alignSelf: 'center',
+    backgroundColor: '#333333',
+    color: 'white',
+    borderColor: '#333333',
   },
 });
 
-export default App;
+export default YourApp;
