@@ -1,3 +1,4 @@
+/* eslint-disable react-native/no-inline-styles */
 import React from 'react';
 import {
   StyleSheet,
@@ -8,10 +9,10 @@ import {
   StatusBar,
   Text,
   TextInput,
-  Button,
+  TouchableOpacity,
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
-import Rectangle from './src/components/nft-container';
+import Product from './src/components/nft-container';
 
 const YourApp = () => {
   return (
@@ -22,18 +23,19 @@ const YourApp = () => {
         flex: 1,
       }}>
       <StatusBar barStyle="light-content" translucent={true} />
+      <View
+        style={{
+          // flex: 1,
+          flexDirection: 'row',
+          justifyContent: 'space-between',
+          paddingHorizontal: 16,
+          paddingBottom: 17,
+          paddingTop: 3,
+        }}>
+        <Image source={require('./src/assets/images/Logo.png')} />
+        <Image source={require('./src/assets/images/Menu.png')} />
+      </View>
       <ScrollView>
-        <View
-          // eslint-disable-next-line react-native/no-inline-styles
-          style={{
-            flex: 1,
-            flexDirection: 'row',
-            justifyContent: 'space-between',
-            padding: 16,
-          }}>
-          <Image source={require('./src/assets/images/Logo.png')} />
-          <Image source={require('./src/assets/images/Menu.png')} />
-        </View>
         <View>
           <Text style={styles.titleText}>
             {'Discover, collect, and sell'}
@@ -47,19 +49,74 @@ const YourApp = () => {
             placeholder="Search items, collections, and accounts"
           />
         </View>
-        <Rectangle />
-        <LinearGradient
-          colors={['#0038F5', '#9F03FF']}
-          useAngle={true}
-          angle={114.44}>
-          <View
+        <Product />
+        <View
+          style={{
+            // flex: 1,
+            // flexDirection: 'column',
+            margin: 11,
+          }}>
+          <TouchableOpacity>
+            <LinearGradient
+              colors={['#0038F5', '#9F03FF']}
+              useAngle={true}
+              angle={114.44}
+              style={{
+                // flex: 1,
+                // paddingLeft: 5,
+                borderRadius: 8,
+                marginBottom: 12,
+                backgroundColor: '#2A2A2E',
+              }}>
+              <Text
+                style={{
+                  fontSize: 20,
+                  fontFamily: 'Epilogue',
+                  textAlign: 'center',
+                  padding: 15,
+                  color: '#FCFCFC',
+                  fontWeight: '700',
+                }}>
+                Place a bid
+              </Text>
+            </LinearGradient>
+          </TouchableOpacity>
+          {/* <LinearGradient
+            colors={['#0038F5', '#9F03FF']}
+            useAngle={true}
+            angle={114.44}
             style={{
-              width: 343,
-              height: 56,
+              // flex: 1,
+              // paddingLeft: 5,
+              borderRadius: 8,
+              backgroundColor: 'transparent',
+            }}> */}
+          <TouchableOpacity
+            // colors={['#0038F5', '#9F03FF']}
+            // useAngle={true}
+            // angle={114.44}
+            style={{
+              // flex: 1,
+              // paddingLeft: 5,
+              borderRadius: 8,
+              // backgroundColor: 'transparent',
+              borderColor: '#0038F5',
+              borderWidth: 1,
             }}>
-            <Button title="Learn More" color="#841584" />
-          </View>
-        </LinearGradient>
+            <Text
+              style={{
+                fontSize: 20,
+                fontFamily: 'Epilogue',
+                textAlign: 'center',
+                padding: 15,
+                color: '#FCFCFC',
+                fontWeight: '700',
+              }}>
+              View Artwork
+            </Text>
+          </TouchableOpacity>
+          {/* </LinearGradient> */}
+        </View>
       </ScrollView>
     </SafeAreaView>
   );
@@ -78,7 +135,7 @@ const styles = StyleSheet.create({
     fontWeight: '900',
     textAlign: 'center',
     color: '#FCFCFC',
-    fontFamily: 'Epilogue-VariableFont_wght',
+    fontFamily: 'Epilogue',
   },
   inputBox: {
     height: 40,
