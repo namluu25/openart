@@ -3,7 +3,6 @@ import React from 'react';
 import {
   StyleSheet,
   ScrollView,
-  Image,
   View,
   SafeAreaView,
   StatusBar,
@@ -12,29 +11,22 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
-import Product from './src/components/nft-container';
+import Header from './src/components/header';
+import FrontProduct from './src/components/nft-container';
+import LiveContainer from './src/components/nft-live-auction-container';
+import HotBid from './src/components/nft-hotbid';
 
 const YourApp = () => {
   return (
     <SafeAreaView
-      // eslint-disable-next-line react-native/no-inline-styles
       style={{
         backgroundColor: '#222222',
         flex: 1,
       }}>
       <StatusBar barStyle="light-content" translucent={true} />
-      <View
-        style={{
-          // flex: 1,
-          flexDirection: 'row',
-          justifyContent: 'space-between',
-          paddingHorizontal: 16,
-          paddingBottom: 17,
-          paddingTop: 3,
-        }}>
-        <Image source={require('./src/assets/images/Logo.png')} />
-        <Image source={require('./src/assets/images/Menu.png')} />
-      </View>
+
+      <Header />
+
       <ScrollView>
         <View>
           <Text style={styles.titleText}>
@@ -49,11 +41,11 @@ const YourApp = () => {
             placeholder="Search items, collections, and accounts"
           />
         </View>
-        <Product />
+
+        <FrontProduct />
+
         <View
           style={{
-            // flex: 1,
-            // flexDirection: 'column',
             margin: 11,
           }}>
           <TouchableOpacity>
@@ -81,25 +73,9 @@ const YourApp = () => {
               </Text>
             </LinearGradient>
           </TouchableOpacity>
-          {/* <LinearGradient
-            colors={['#0038F5', '#9F03FF']}
-            useAngle={true}
-            angle={114.44}
-            style={{
-              // flex: 1,
-              // paddingLeft: 5,
-              borderRadius: 8,
-              backgroundColor: 'transparent',
-            }}> */}
           <TouchableOpacity
-            // colors={['#0038F5', '#9F03FF']}
-            // useAngle={true}
-            // angle={114.44}
             style={{
-              // flex: 1,
-              // paddingLeft: 5,
               borderRadius: 8,
-              // backgroundColor: 'transparent',
               borderColor: '#0038F5',
               borderWidth: 1,
             }}>
@@ -115,8 +91,11 @@ const YourApp = () => {
               View Artwork
             </Text>
           </TouchableOpacity>
-          {/* </LinearGradient> */}
         </View>
+
+        <LiveContainer />
+
+        <HotBid />
       </ScrollView>
     </SafeAreaView>
   );

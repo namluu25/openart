@@ -2,38 +2,8 @@
 import React from 'react';
 import {View, StyleSheet, Image, Text} from 'react-native';
 
-interface Items {
-  id: number;
-  url: string;
-  imgName: string;
-  author: string;
-  role: string;
-  active: boolean;
-  liked: boolean;
-}
-
-const Product = () => {
-  const data = [
-    {
-      url: 'openart/src/asset/images/nft/1.png',
-      imgName: 'Silent Color',
-      author: 'Pawel Czerwinski',
-      role: 'Creator',
-      active: true,
-      liked: true,
-    },
-    {
-      url: 'openart/src/asset/images/nft/2.png',
-      imgName: 'Silent Color',
-      author: 'Pawel Czerwinski',
-      role: 'Creator',
-      active: true,
-      liked: true,
-    },
-  ];
-
+const FrontProduct = () => {
   return (
-    // <FlatList>
     <View style={styles.product}>
       <View style={styles.nftInfo}>
         <Image
@@ -72,7 +42,6 @@ const Product = () => {
         </View>
       </View>
     </View>
-    // </FlatList>
   );
 };
 
@@ -106,4 +75,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Product;
+export default FrontProduct;
