@@ -1,6 +1,6 @@
 /* eslint-disable react-native/no-inline-styles */
 import React from 'react';
-import {View, Text, Image, ScrollView} from 'react-native';
+import {View, Text, Image, ScrollView, TouchableOpacity} from 'react-native';
 
 const HotBid = () => {
   return (
@@ -50,57 +50,183 @@ const HotBid = () => {
           />
         </View>
       </View>
-      <ScrollView>
-        <Image
-          source={require('openart/src/assets/images/hotbid/hotbid-1.png')}
-          style={{
-            marginTop: 24,
-            borderRadius: 28,
-            marginLeft: 13,
-          }}
-        />
-        <View
-          style={{
-            flex: 1,
-            flexDirection: 'column',
-            marginLeft: 13,
-            marginTop: 12,
-          }}>
-          <Text
-            style={{
-              fontFamily: 'Epilogue',
-              fontSize: 16,
-              fontWeight: '700',
-              color: '#FCFCFC',
-            }}>
-            Inside Kings Cross
-          </Text>
 
+      <ScrollView horizontal>
+        <View>
+          {/* 1 item view */}
+          <Image
+            // image
+            source={require('openart/src/assets/images/hotbid/hotbid-1.png')}
+            style={{
+              marginTop: 24,
+              borderRadius: 28,
+              marginLeft: 13,
+            }}
+          />
           <View
             style={{
               flex: 1,
               flexDirection: 'row',
-              marginTop: 5,
+              justifyContent: 'space-around',
             }}>
-            <Text
+            <View
+              //   tittle + 2nd row
               style={{
-                fontFamily: 'Epilogue',
-                fontSize: 13,
-                fontWeight: '500',
-                color: '#FCFCFC',
+                // flex: 1,
+                flexDirection: 'column',
+                marginLeft: 13,
+                marginTop: 12,
               }}>
-              Highest bid
-            </Text>
-            <Text
+              <Text
+                // title
+                style={{
+                  fontFamily: 'Epilogue',
+                  fontSize: 16,
+                  fontWeight: '700',
+                  color: '#FCFCFC',
+                }}>
+                Inside Kings Cross
+              </Text>
+
+              <View
+                // second row
+                style={{
+                  flexDirection: 'row',
+                  // justifyContent: 'space-between',
+                  marginTop: 5,
+                }}>
+                <Text
+                  style={{
+                    fontFamily: 'Epilogue',
+                    fontSize: 13,
+                    fontWeight: '500',
+                    color: '#FCFCFC',
+                  }}>
+                  Highest bid
+                </Text>
+                <Text
+                  style={{
+                    fontFamily: 'Epilogue',
+                    fontSize: 14,
+                    fontWeight: '500',
+                    color: '#FCFCFC',
+                  }}>
+                  {' '}
+                  1.00ETH
+                </Text>
+              </View>
+            </View>
+
+            <TouchableOpacity
+              // 2.3eth
               style={{
-                fontFamily: 'Epilogue',
-                fontSize: 14,
-                fontWeight: '500',
-                color: '#FCFCFC',
+                borderRadius: 34,
+                borderColor: '#DCDCDC',
+                borderWidth: 1,
+                alignSelf: 'center',
+                // marginRight: 18,
               }}>
-              {' '}
-              1.00ETH
-            </Text>
+              <Text
+                style={{
+                  fontSize: 16,
+                  fontFamily: 'Epilogue',
+                  textAlign: 'center',
+                  padding: 10,
+                  color: '#F8F8F8',
+                  fontWeight: '700',
+                }}>
+                2.3 ETH
+              </Text>
+            </TouchableOpacity>
+          </View>
+        </View>
+
+        <View>
+          {/* 1 item view */}
+          <Image
+            // image
+            source={require('openart/src/assets/images/hotbid/hotbid-1.png')}
+            style={{
+              marginTop: 24,
+              borderRadius: 28,
+              marginLeft: 13,
+            }}
+          />
+          <View
+            style={{
+              flex: 1,
+              flexDirection: 'row',
+              justifyContent: 'space-around',
+            }}>
+            <View
+              //   tittle + 2nd row
+              style={{
+                // flex: 1,
+                flexDirection: 'column',
+                marginLeft: 13,
+                marginTop: 12,
+              }}>
+              <Text
+                // title
+                style={{
+                  fontFamily: 'Epilogue',
+                  fontSize: 16,
+                  fontWeight: '700',
+                  color: '#FCFCFC',
+                }}>
+                Inside Kings Cross 2
+              </Text>
+
+              <View
+                // second row
+                style={{
+                  flexDirection: 'row',
+                  // justifyContent: 'space-between',
+                  marginTop: 5,
+                }}>
+                <Text
+                  style={{
+                    fontFamily: 'Epilogue',
+                    fontSize: 13,
+                    fontWeight: '500',
+                    color: '#FCFCFC',
+                  }}>
+                  Highest bid
+                </Text>
+                <Text
+                  style={{
+                    fontFamily: 'Epilogue',
+                    fontSize: 14,
+                    fontWeight: '500',
+                    color: '#FCFCFC',
+                  }}>
+                  {' '}
+                  1.00ETH
+                </Text>
+              </View>
+            </View>
+
+            <TouchableOpacity
+              // 2.3eth
+              style={{
+                borderRadius: 34,
+                borderColor: '#DCDCDC',
+                borderWidth: 1,
+                alignSelf: 'center',
+                // marginRight: 18,
+              }}>
+              <Text
+                style={{
+                  fontSize: 16,
+                  fontFamily: 'Epilogue',
+                  textAlign: 'center',
+                  padding: 10,
+                  color: '#F8F8F8',
+                  fontWeight: '700',
+                }}>
+                2.3 ETH
+              </Text>
+            </TouchableOpacity>
           </View>
         </View>
       </ScrollView>
