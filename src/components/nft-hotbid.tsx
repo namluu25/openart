@@ -4,7 +4,10 @@ import {View, Text, Image, ScrollView, TouchableOpacity} from 'react-native';
 
 const HotBid = () => {
   return (
-    <View>
+    <View
+      style={{
+        marginBottom: 24.5,
+      }}>
       <View
         style={{
           flex: 1,

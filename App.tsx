@@ -15,6 +15,8 @@ import Header from './src/components/header';
 import FrontProduct from './src/components/nft-container';
 import LiveContainer from './src/components/nft-live-auction-container';
 import HotBid from './src/components/nft-hotbid';
+import HotCollection from './src/components/nft-hotcollection';
+import Footer from './src/components/footer';
 
 const YourApp = () => {
   return (
@@ -96,6 +98,19 @@ const YourApp = () => {
         <LiveContainer />
 
         <HotBid />
+
+        <HotCollection />
+        <View
+          // separator line
+          style={{
+            borderBottomColor: 'white',
+            borderBottomWidth: 0.5,
+            width: 327,
+            alignSelf: 'center',
+          }}
+        />
+
+        <Footer />
       </ScrollView>
     </SafeAreaView>
   );
