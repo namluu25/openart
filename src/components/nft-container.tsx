@@ -1,11 +1,21 @@
 /* eslint-disable react-native/no-inline-styles */
 import React from 'react';
-import {View, StyleSheet, Image, Text} from 'react-native';
+import {View, StyleSheet, Image, Text, Button} from 'react-native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import {useNavigation} from '@react-navigation/native';
+import DetailsScreen from '../screens/detail';
 
-const FrontProduct = () => {
+function FrontProduct({navigation}: any) {
+  // const navigation = useNavigation();
   return (
     <View style={styles.product}>
       <View style={styles.nftInfo}>
+        {/* <Button
+          onPress={() => {
+            navigation.navigate('DetailsScreen');
+          }}
+          title="abc"
+        /> */}
         <Image
           style={styles.image}
           source={require('openart/src/assets/images/nft/1.png')}
@@ -39,11 +49,12 @@ const FrontProduct = () => {
               Creator
             </Text>
           </View>
+          <Image source={require('openart/src/assets/images/heart-icon.png')} />
         </View>
       </View>
     </View>
   );
-};
+}
 
 const styles = StyleSheet.create({
   product: {

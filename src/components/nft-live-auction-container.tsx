@@ -15,6 +15,7 @@ import {View, StyleSheet, Image, Text, TouchableOpacity} from 'react-native';
 const LiveContainer = () => {
   // const data = [
   //   {
+  //     id: '1',
   //     url: 'openart/src/asset/images/nft/1.png',
   //     imgName: 'Silent Color',
   //     author: 'Pawel Czerwinski',
@@ -23,6 +24,7 @@ const LiveContainer = () => {
   //     liked: true,
   //   },
   //   {
+  //     id: '2',
   //     url: 'openart/src/asset/images/nft/2.png',
   //     imgName: 'Silent Color',
   //     author: 'Pawel Czerwinski',
@@ -32,6 +34,13 @@ const LiveContainer = () => {
   //   },
   // ];
   return (
+    // <ScrollView>
+    //   {data.map((item: Items) => {
+    //     <View key={item.id}>
+
+    //     </View>
+    //   })}
+    // </ScrollView>
     <View>
       <View
         style={{
@@ -106,6 +115,9 @@ const LiveContainer = () => {
                   Creator
                 </Text>
               </View>
+              <Image
+                source={require('openart/src/assets/images/heart-icon.png')}
+              />
             </View>
           </View>
         </View>
@@ -123,7 +135,7 @@ const LiveContainer = () => {
               fontSize: 20,
               fontFamily: 'Epilogue',
               textAlign: 'center',
-              padding: 15,
+              padding: 3,
               color: '#FCFCFC',
               fontWeight: '700',
             }}>
@@ -133,7 +145,7 @@ const LiveContainer = () => {
                 fontSize: 24,
                 fontFamily: 'Epilogue',
                 textAlign: 'center',
-                padding: 15,
+                padding: 3,
                 color: '#FCFCFC',
                 fontWeight: '700',
               }}>
@@ -180,6 +192,9 @@ const LiveContainer = () => {
                   Creator
                 </Text>
               </View>
+              <Image
+                source={require('openart/src/assets/images/heart-icon.png')}
+              />
             </View>
           </View>
         </View>
@@ -197,7 +212,7 @@ const LiveContainer = () => {
               fontSize: 20,
               fontFamily: 'Epilogue',
               textAlign: 'center',
-              padding: 15,
+              padding: 3,
               color: '#FCFCFC',
               fontWeight: '700',
             }}>
@@ -207,7 +222,7 @@ const LiveContainer = () => {
                 fontSize: 24,
                 fontFamily: 'Epilogue',
                 textAlign: 'center',
-                padding: 15,
+                padding: 3,
                 color: '#FCFCFC',
                 fontWeight: '700',
               }}>
@@ -217,6 +232,7 @@ const LiveContainer = () => {
           </Text>
         </TouchableOpacity>
       </View>
+
       <View>
         <View style={styles.product}>
           <View style={styles.nftInfo}>
@@ -253,6 +269,9 @@ const LiveContainer = () => {
                   Creator
                 </Text>
               </View>
+              <Image
+                source={require('openart/src/assets/images/heart-icon.png')}
+              />
             </View>
           </View>
         </View>
@@ -263,15 +282,15 @@ const LiveContainer = () => {
             // borderWidth: 1,
             margin: 11,
             backgroundColor: '#333333',
-            paddingVertical: 15,
+            // paddingVertical: 15,
           }}>
           <View
             style={{
               flexDirection: 'row',
-              justifyContent: 'space-between',
+              justifyContent: 'space-evenly',
               paddingHorizontal: 16,
-              paddingBottom: 17,
-              paddingTop: 3,
+              paddingBottom: 11,
+              // marginTop: 3,
             }}>
             <View>
               <Text
@@ -360,6 +379,9 @@ const LiveContainer = () => {
                   Creator
                 </Text>
               </View>
+              <Image
+                source={require('openart/src/assets/images/heart-icon.png')}
+              />
             </View>
           </View>
         </View>
@@ -370,15 +392,15 @@ const LiveContainer = () => {
             // borderWidth: 1,
             margin: 11,
             backgroundColor: '#333333',
-            paddingVertical: 15,
+            // paddingVertical: 15,
           }}>
           <View
             style={{
               flexDirection: 'row',
-              justifyContent: 'space-between',
+              justifyContent: 'space-evenly',
               paddingHorizontal: 16,
-              paddingBottom: 17,
-              paddingTop: 3,
+              paddingBottom: 11,
+              // marginTop: 3,
             }}>
             <View>
               <Text
@@ -467,6 +489,9 @@ const LiveContainer = () => {
                   Creator
                 </Text>
               </View>
+              <Image
+                source={require('openart/src/assets/images/heart-icon.png')}
+              />
             </View>
           </View>
         </View>
@@ -477,15 +502,15 @@ const LiveContainer = () => {
             // borderWidth: 1,
             margin: 11,
             backgroundColor: '#333333',
-            paddingVertical: 15,
+            // paddingVertical: 15,
           }}>
           <View
             style={{
               flexDirection: 'row',
-              justifyContent: 'space-between',
+              justifyContent: 'space-evenly',
               paddingHorizontal: 16,
-              paddingBottom: 17,
-              paddingTop: 3,
+              paddingBottom: 11,
+              // marginTop: 3,
             }}>
             <View>
               <Text
