@@ -10,7 +10,7 @@ const Footer = () => {
         paddingTop: 82,
       }}>
       <Image
-        source={require('openart/src/assets/images/Logo.png')}
+        source={require('openart/src/assets/images/icon/Logo.png')}
         style={{
           alignSelf: 'center',
           width: 177.32,

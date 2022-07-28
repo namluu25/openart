@@ -18,7 +18,9 @@ const HotCollection = () => {
           flexDirection: 'row',
           paddingHorizontal: 16,
         }}>
-        <Image source={require('openart/src/assets/images/sparkle-icon.png')} />
+        <Image
+          source={require('openart/src/assets/images/icon/sparkle-icon.png')}
+        />
         <Text
           style={{
             fontFamily: 'Epilogue',
@@ -143,7 +145,9 @@ const HotCollection = () => {
             paddingHorizontal: 20,
             paddingVertical: 10,
           }}>
-          <Image source={require('openart/src/assets/images/heart-icon.png')} />
+          <Image
+            source={require('openart/src/assets/images/icon/heart-icon.png')}
+          />
           <Text
             style={{
               fontSize: 16,
@@ -151,6 +155,7 @@ const HotCollection = () => {
               textAlign: 'center',
               color: '#F8F8F8',
               fontWeight: '400',
+              alignSelf: 'center',
             }}>
             Follow
           </Text>

@@ -116,7 +116,7 @@ const LiveContainer = () => {
                 </Text>
               </View>
               <Image
-                source={require('openart/src/assets/images/heart-icon.png')}
+                source={require('openart/src/assets/images/icon/heart-icon.png')}
               />
             </View>
           </View>
@@ -193,7 +193,7 @@ const LiveContainer = () => {
                 </Text>
               </View>
               <Image
-                source={require('openart/src/assets/images/heart-icon.png')}
+                source={require('openart/src/assets/images/icon/heart-icon.png')}
               />
             </View>
           </View>
@@ -270,7 +270,7 @@ const LiveContainer = () => {
                 </Text>
               </View>
               <Image
-                source={require('openart/src/assets/images/heart-icon.png')}
+                source={require('openart/src/assets/images/icon/heart-icon.png')}
               />
             </View>
           </View>
@@ -380,7 +380,7 @@ const LiveContainer = () => {
                 </Text>
               </View>
               <Image
-                source={require('openart/src/assets/images/heart-icon.png')}
+                source={require('openart/src/assets/images/icon/heart-icon.png')}
               />
             </View>
           </View>
@@ -490,7 +490,7 @@ const LiveContainer = () => {
                 </Text>
               </View>
               <Image
-                source={require('openart/src/assets/images/heart-icon.png')}
+                source={require('openart/src/assets/images/icon/heart-icon.png')}
               />
             </View>
           </View>

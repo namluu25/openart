@@ -2,7 +2,7 @@ import React from 'react';
 import {NavigationContainer, DefaultTheme} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
-import DetailsScreen from './src/screens/detail';
+import Details from './src/screens/detail';
 import Home from './src/screens/home';
 
 const MyTheme = {
@@ -24,7 +24,7 @@ export default function YourApp() {
           // initialRouteName="DetailsScreen"
           screenOptions={{headerShown: false}}>
           <Stack.Screen name="Home" component={Home} />
-          <Stack.Screen name="Details" component={DetailsScreen} />
+          <Stack.Screen name="Details" component={Details} />
         </Stack.Navigator>
       </NavigationContainer>
     </SafeAreaProvider>

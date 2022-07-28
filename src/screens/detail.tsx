@@ -13,9 +13,8 @@ import {
 } from 'react-native';
 import Header from '../components/header';
 import Footer from '../components/footer';
-// import LinearGradient from 'react-native-linear-gradient';
 
-function DetailsScreen() {
+function Details() {
   return (
     <View
       style={[
@@ -63,7 +62,7 @@ function DetailsScreen() {
                     }}>
                     <Image
                       style={{margin: 11}}
-                      source={require('openart/src/assets/images/heart-icon.png')}
+                      source={require('openart/src/assets/images/icon/heart-icon.png')}
                     />
                   </TouchableOpacity>
                   <TouchableOpacity
@@ -76,7 +75,7 @@ function DetailsScreen() {
                     }}>
                     <Image
                       style={{margin: 11}}
-                      source={require('openart/src/assets/images/export-icon.png')}
+                      source={require('openart/src/assets/images/icon/export-icon.png')}
                     />
                   </TouchableOpacity>
                 </View>
@@ -226,7 +225,7 @@ function DetailsScreen() {
                 justifyContent: 'space-between',
               }}>
               <Image
-                source={require('openart/src/assets/images/etherscan-logo.png')}
+                source={require('openart/src/assets/images/icon/etherscan-logo.png')}
               />
               <Text
                 style={{
@@ -241,7 +240,7 @@ function DetailsScreen() {
                 View on Etherscan
               </Text>
               <Image
-                source={require('openart/src/assets/images/external-icon.png')}
+                source={require('openart/src/assets/images/icon/external-icon.png')}
               />
             </TouchableOpacity>
 
@@ -258,7 +257,7 @@ function DetailsScreen() {
                 justifyContent: 'space-between',
               }}>
               <Image
-                source={require('openart/src/assets/images/star-icon.png')}
+                source={require('openart/src/assets/images/icon/star-icon.png')}
               />
               <Text
                 style={{
@@ -273,7 +272,7 @@ function DetailsScreen() {
                 View on IPFS
               </Text>
               <Image
-                source={require('openart/src/assets/images/external-icon.png')}
+                source={require('openart/src/assets/images/icon/external-icon.png')}
               />
             </TouchableOpacity>
 
@@ -290,7 +289,7 @@ function DetailsScreen() {
                 justifyContent: 'space-between',
               }}>
               <Image
-                source={require('openart/src/assets/images/chartPie-icon.png')}
+                source={require('openart/src/assets/images/icon/chartPie-icon.png')}
               />
               <Text
                 style={{
@@ -305,7 +304,7 @@ function DetailsScreen() {
                 View IPFS Metadata
               </Text>
               <Image
-                source={require('openart/src/assets/images/external-icon.png')}
+                source={require('openart/src/assets/images/icon/external-icon.png')}
               />
             </TouchableOpacity>
 
@@ -346,7 +345,7 @@ function DetailsScreen() {
                   $2,683.73
                 </Text>
                 <Image
-                  source={require('openart/src/assets/images/sparkle-icon.png')}
+                  source={require('openart/src/assets/images/icon/sparkle-icon.png')}
                 />
               </View>
               <View style={{flexDirection: 'row', alignItems: 'center'}}>
@@ -451,7 +450,7 @@ function DetailsScreen() {
                 </Text>
               </View>
               <Image
-                source={require('openart/src/assets/images/external-icon.png')}
+                source={require('openart/src/assets/images/icon/external-icon.png')}
               />
             </TouchableOpacity>
 
@@ -516,7 +515,7 @@ function DetailsScreen() {
                 </View>
               </View>
               <Image
-                source={require('openart/src/assets/images/external-icon.png')}
+                source={require('openart/src/assets/images/icon/external-icon.png')}
               />
             </TouchableOpacity>
 
@@ -581,7 +580,7 @@ function DetailsScreen() {
                 </View>
               </View>
               <Image
-                source={require('openart/src/assets/images/external-icon.png')}
+                source={require('openart/src/assets/images/icon/external-icon.png')}
               />
             </TouchableOpacity>
           </View>
@@ -605,4 +604,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default DetailsScreen;
+export default Details;

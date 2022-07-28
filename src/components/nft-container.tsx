@@ -1,25 +1,22 @@
 /* eslint-disable react-native/no-inline-styles */
 import React from 'react';
-import {View, StyleSheet, Image, Text, Button} from 'react-native';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import {View, StyleSheet, Image, Text, TouchableOpacity} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
-import DetailsScreen from '../screens/detail';
 
-function FrontProduct({navigation}: any) {
-  // const navigation = useNavigation();
+function FrontProduct() {
+  const navigation = useNavigation();
   return (
     <View style={styles.product}>
       <View style={styles.nftInfo}>
-        {/* <Button
+        <TouchableOpacity
           onPress={() => {
-            navigation.navigate('DetailsScreen');
-          }}
-          title="abc"
-        /> */}
-        <Image
-          style={styles.image}
-          source={require('openart/src/assets/images/nft/1.png')}
-        />
+            navigation.navigate('Details' as never, {} as never);
+          }}>
+          <Image
+            style={styles.image}
+            source={require('openart/src/assets/images/nft/1.png')}
+          />
+        </TouchableOpacity>
         <Text style={[styles.nftText, {padding: 12}]}>Silent Wave</Text>
         <View
           style={{
@@ -49,7 +46,9 @@ function FrontProduct({navigation}: any) {
               Creator
             </Text>
           </View>
-          <Image source={require('openart/src/assets/images/heart-icon.png')} />
+          <Image
+            source={require('openart/src/assets/images/icon/heart-icon.png')}
+          />
         </View>
       </View>
     </View>

@@ -20,7 +20,9 @@ const HotBid = () => {
             paddingHorizontal: 16,
             marginTop: 80,
           }}>
-          <Image source={require('openart/src/assets/images/fire-icon.png')} />
+          <Image
+            source={require('openart/src/assets/images/icon/fire-icon.png')}
+          />
           <Text
             style={{
               fontSize: 24,
@@ -40,13 +42,13 @@ const HotBid = () => {
             marginTop: 80,
           }}>
           <Image
-            source={require('openart/src/assets/images/back-arrow.png')}
+            source={require('openart/src/assets/images/icon/back-arrow.png')}
             style={{
               marginRight: 16.5,
             }}
           />
           <Image
-            source={require('openart/src/assets/images/forward-arrow.png')}
+            source={require('openart/src/assets/images/icon/forward-arrow.png')}
             style={{
               marginLeft: 16.5,
             }}
