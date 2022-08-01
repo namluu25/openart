@@ -14,7 +14,7 @@ import {
 import Header from '../components/header';
 import Footer from '../components/footer';
 
-function Details() {
+export default function Details_sold() {
   return (
     <View
       style={[
@@ -603,5 +603,3 @@ const styles = StyleSheet.create({
     paddingTop: Platform.OS === 'android' ? 50 : 0,
   },
 });
-
-export default Details;

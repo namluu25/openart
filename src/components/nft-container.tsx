@@ -10,7 +10,7 @@ function FrontProduct() {
       <View style={styles.nftInfo}>
         <TouchableOpacity
           onPress={() => {
-            navigation.navigate('Details' as never, {} as never);
+            navigation.navigate('Details_auction' as never, {} as never);
           }}>
           <Image
             style={styles.image}

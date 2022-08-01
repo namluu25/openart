@@ -1,6 +1,7 @@
 /* eslint-disable react-native/no-inline-styles */
 import React from 'react';
 import {View, StyleSheet, Image, Text, TouchableOpacity} from 'react-native';
+import {useNavigation} from '@react-navigation/native';
 
 // interface Items {
 //   id: number;
@@ -12,7 +13,8 @@ import {View, StyleSheet, Image, Text, TouchableOpacity} from 'react-native';
 //   liked: boolean;
 // }
 
-const LiveContainer = () => {
+export default function LiveContainer() {
+  const navigation = useNavigation();
   // const data = [
   //   {
   //     id: '1',
@@ -93,10 +95,16 @@ const LiveContainer = () => {
       <View>
         <View style={styles.product}>
           <View style={styles.nftInfo}>
-            <Image
-              style={styles.image}
-              source={require('openart/src/assets/images/nft/2.png')}
-            />
+            <TouchableOpacity
+              onPress={() => {
+                navigation.navigate('Details_sold' as never, {} as never);
+              }}>
+              <Image
+                style={styles.image}
+                source={require('openart/src/assets/images/nft/2.png')}
+              />
+            </TouchableOpacity>
+
             <Text style={[styles.nftText, {padding: 12}]}>Silent Color</Text>
             <View
               style={{
@@ -247,10 +255,19 @@ const LiveContainer = () => {
       <View>
         <View style={styles.product}>
           <View style={styles.nftInfo}>
-            <Image
-              style={styles.image}
-              source={require('openart/src/assets/images/nft/4.png')}
-            />
+            <TouchableOpacity
+              onPress={() => {
+                navigation.navigate(
+                  'Details_current_bid' as never,
+                  {} as never,
+                );
+              }}>
+              <Image
+                style={styles.image}
+                source={require('openart/src/assets/images/nft/4.png')}
+              />
+            </TouchableOpacity>
+
             <Text style={[styles.nftText, {padding: 12}]}>Mirror</Text>
             <View
               style={{
@@ -575,7 +592,7 @@ const LiveContainer = () => {
       </View>
     </View>
   );
-};
+}
 
 const styles = StyleSheet.create({
   product: {
@@ -606,5 +623,3 @@ const styles = StyleSheet.create({
     height: 48,
   },
 });
-
-export default LiveContainer;

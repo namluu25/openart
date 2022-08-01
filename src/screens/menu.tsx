@@ -12,8 +12,10 @@ import {
 } from 'react-native';
 import Header from '../components/header';
 import LinearGradient from 'react-native-linear-gradient';
+import {useNavigation} from '@react-navigation/native';
 
 export default function Menu() {
+  const navigation = useNavigation();
   return (
     <View
       style={[
@@ -30,7 +32,10 @@ export default function Menu() {
 
         <ScrollView>
           <View style={{marginTop: 107.17, alignItems: 'center'}}>
-            <TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => {
+                navigation.navigate('About' as never, {} as never);
+              }}>
               <Text
                 style={{
                   fontFamily: 'Epilogue',
