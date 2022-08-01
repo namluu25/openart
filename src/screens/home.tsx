@@ -35,6 +35,8 @@ function Home() {
         <Header />
 
         <ScrollView>
+          {/* nestedScrollEnabled={true} */}
+          {/* use for nesting flatlist inside scrollview */}
           <View>
             <Text style={styles.titleText}>
               {'Discover, collect, and sell'}

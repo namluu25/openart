@@ -1,8 +1,17 @@
 /* eslint-disable react-native/no-inline-styles */
-import React from 'react';
-import {View, Text, Image, ScrollView, TouchableOpacity} from 'react-native';
+import React, {useRef} from 'react';
+import {
+  View,
+  Text,
+  Image,
+  ScrollView,
+  TouchableOpacity,
+  Dimensions,
+} from 'react-native';
 
-const HotBid = () => {
+export default function HotBid() {
+  const naviRef = useRef(null);
+  const screenWidth = Dimensions.get('window').width;
   return (
     <View
       style={{
@@ -41,22 +50,35 @@ const HotBid = () => {
             paddingHorizontal: 16,
             marginTop: 80,
           }}>
-          <Image
-            source={require('openart/src/assets/images/icon/back-arrow.png')}
-            style={{
-              marginRight: 16.5,
-            }}
-          />
-          <Image
-            source={require('openart/src/assets/images/icon/forward-arrow.png')}
-            style={{
-              marginLeft: 16.5,
-            }}
-          />
+          <TouchableOpacity
+            onPress={() => {
+              naviRef.current?.scrollTo({x: 0, animated: true});
+            }}>
+            <Image
+              source={require('openart/src/assets/images/icon/back-arrow.png')}
+              style={{
+                marginRight: 16.5,
+              }}
+            />
+          </TouchableOpacity>
+
+          <TouchableOpacity
+            onPress={() => {
+              naviRef.current?.scrollTo({x: screenWidth, animated: true});
+            }}>
+            <Image
+              source={require('openart/src/assets/images/icon/forward-arrow.png')}
+              style={{
+                marginLeft: 16.5,
+              }}
+            />
+          </TouchableOpacity>
         </View>
       </View>
-
-      <ScrollView horizontal>
+      <ScrollView
+        horizontal
+        showsHorizontalScrollIndicator={false}
+        ref={naviRef}>
         <View>
           {/* 1 item view */}
           <Image
@@ -237,6 +259,4 @@ const HotBid = () => {
       </ScrollView>
     </View>
   );
-};
-
-export default HotBid;
+}
