@@ -20,7 +20,12 @@ function Header() {
         }}>
         <Image source={require('openart/src/assets/images/icon/Logo.png')} />
       </TouchableOpacity>
-      <Image source={require('openart/src/assets/images/icon/Menu.png')} />
+      <TouchableOpacity
+        onPress={() => {
+          navigation.navigate('Menu' as never, {} as never);
+        }}>
+        <Image source={require('openart/src/assets/images/icon/Menu.png')} />
+      </TouchableOpacity>
     </View>
   );
 }

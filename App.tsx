@@ -4,6 +4,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
 import Details from './src/screens/detail';
 import Home from './src/screens/home';
+import Menu from './src/screens/menu';
 
 const MyTheme = {
   ...DefaultTheme,
@@ -20,11 +21,12 @@ export default function YourApp() {
     <SafeAreaProvider>
       <NavigationContainer theme={MyTheme}>
         <Stack.Navigator
-          initialRouteName="Home"
+          initialRouteName="Menu"
           // initialRouteName="DetailsScreen"
           screenOptions={{headerShown: false}}>
           <Stack.Screen name="Home" component={Home} />
           <Stack.Screen name="Details" component={Details} />
+          <Stack.Screen name="Menu" component={Menu} />
         </Stack.Navigator>
       </NavigationContainer>
     </SafeAreaProvider>
