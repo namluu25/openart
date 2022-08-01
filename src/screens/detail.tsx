@@ -24,7 +24,7 @@ function Details() {
           flex: 1,
         },
       ]}>
-      <SafeAreaView>
+      <SafeAreaView style={{flex: 1}}>
         <StatusBar barStyle="light-content" translucent={true} />
 
         <Header />

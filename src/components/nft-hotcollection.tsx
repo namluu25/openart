@@ -129,7 +129,7 @@ const HotCollection = () => {
             style={styles.avatar}
             source={require('openart/src/assets/images/avatar/ava2.png')}
           />
-          <Text style={[styles.nftText, {fontSize: 18, paddingLeft: 12}]}>
+          <Text style={[styles.nftText, {fontSize: 13, paddingLeft: 12}]}>
             By Rodion Kutsaev
           </Text>
         </View>
@@ -142,10 +142,13 @@ const HotCollection = () => {
             borderWidth: 1,
             alignSelf: 'center',
             flexDirection: 'row',
-            paddingHorizontal: 20,
+            paddingHorizontal: 33,
             paddingVertical: 10,
           }}>
           <Image
+            style={{
+              marginRight: 9,
+            }}
             source={require('openart/src/assets/images/icon/heart-icon.png')}
           />
           <Text

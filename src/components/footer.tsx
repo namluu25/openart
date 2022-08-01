@@ -81,7 +81,6 @@ const Footer = () => {
       </View>
       <View
         style={{
-          marginHorizontal: 11,
           backgroundColor: '#333333',
           marginTop: 88,
         }}>
@@ -91,8 +90,8 @@ const Footer = () => {
             flex: 1,
             flexDirection: 'row',
             justifyContent: 'space-between',
-            paddingTop: 25,
-            paddingLeft: 18,
+            paddingTop: 25.41,
+            paddingLeft: 17.7,
           }}>
           <View>
             {/* insta */}
@@ -101,7 +100,7 @@ const Footer = () => {
             <Text style={styles.aboutText}>Discord</Text>
             <Text style={styles.aboutText}>Blog</Text>
           </View>
-          <View>
+          <View style={{paddingRight: 10}}>
             {/* about */}
             <Text style={styles.aboutText}>About</Text>
             <Text style={styles.aboutText}>Community Guidelines</Text>
@@ -116,7 +115,7 @@ const Footer = () => {
           // separator line
           style={{
             borderBottomColor: 'white',
-            borderBottomWidth: 0.5,
+            borderBottomWidth: 1,
             width: 368,
             alignSelf: 'center',
             marginTop: 11,

@@ -47,17 +47,28 @@ const LiveContainer = () => {
           flex: 1,
           flexDirection: 'row',
         }}>
-        <Text
+        <View
           style={{
-            fontSize: 24,
-            fontFamily: 'Epilogue',
+            flexDirection: 'row',
             padding: 15,
-            color: '#F8F8F8',
-            fontWeight: '700',
-            paddingRight: 64,
+            justifyContent: 'center',
+            alignItems: 'baseline',
           }}>
-          🔴 Live auctions
-        </Text>
+          <Image
+            style={{marginRight: 7.31}}
+            source={require('openart/src/assets/images/icon/live-icon.png')}
+          />
+          <Text
+            style={{
+              fontSize: 24,
+              fontFamily: 'Epilogue',
+              color: '#F8F8F8',
+              fontWeight: '700',
+              paddingRight: 64,
+            }}>
+            Live auctions
+          </Text>
+        </View>
         <TouchableOpacity
           style={{
             borderRadius: 8,

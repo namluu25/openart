@@ -55,6 +55,48 @@ function Home() {
 
           <View
             style={{
+              flexDirection: 'row',
+              alignItems: 'baseline',
+              marginLeft: 11,
+              marginTop: 12.85,
+              marginBottom: 15.29,
+            }}>
+            <Text
+              style={{
+                fontFamily: 'Epilogue',
+                fontSize: 16,
+                fontWeight: '400',
+                lineHeight: 22,
+                color: '#FCFCFC',
+                marginRight: 5.98,
+              }}>
+              Reserve Price
+            </Text>
+            <Text
+              style={{
+                fontFamily: 'Epilogue',
+                fontSize: 32,
+                fontWeight: '700',
+                lineHeight: 36,
+                color: '#FCFCFC',
+                marginRight: 7.51,
+              }}>
+              1.50 ETH
+            </Text>
+            <Text
+              style={{
+                fontFamily: 'Epilogue',
+                fontSize: 16,
+                fontWeight: '700',
+                lineHeight: 24,
+                color: '#888888',
+              }}>
+              $2,683.73
+            </Text>
+          </View>
+
+          <View
+            style={{
               margin: 11,
             }}>
             <TouchableOpacity>
@@ -134,14 +176,15 @@ const styles = StyleSheet.create({
   },
   boldTitleText: {
     fontSize: 32,
-    fontWeight: '900',
+    fontWeight: '700',
     textAlign: 'center',
     color: '#FCFCFC',
     fontFamily: 'Epilogue',
   },
   inputBox: {
     height: 40,
-    margin: 12,
+    marginHorizontal: 12,
+    marginTop: 12,
     borderWidth: 1,
     padding: 10,
     borderRadius: 8,
