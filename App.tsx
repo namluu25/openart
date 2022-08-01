@@ -21,7 +21,7 @@ export default function YourApp() {
     <SafeAreaProvider>
       <NavigationContainer theme={MyTheme}>
         <Stack.Navigator
-          initialRouteName="Menu"
+          initialRouteName="Home"
           // initialRouteName="DetailsScreen"
           screenOptions={{headerShown: false}}>
           <Stack.Screen name="Home" component={Home} />
