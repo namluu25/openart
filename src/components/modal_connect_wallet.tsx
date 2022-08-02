@@ -15,7 +15,7 @@ interface Props {
   handleClose?: () => void;
 }
 
-export default function Place_bid(props: Props) {
+export default function Connect_wallet(props: Props) {
   return (
     <>
       <Modal
