@@ -1,5 +1,5 @@
 /* eslint-disable react-native/no-inline-styles */
-import React from 'react';
+import React, {useState} from 'react';
 import {
   View,
   Text,
@@ -14,10 +14,12 @@ import {
 import LinearGradient from 'react-native-linear-gradient';
 import Header from '../components/header';
 import Footer from '../components/footer';
-import {useNavigation} from '@react-navigation/native';
+// import {useNavigation} from '@react-navigation/native';
+import Place_bid from '../components/modal_place_bid';
 
 export default function Details_auction() {
-  const navigation = useNavigation();
+  // const navigation = useNavigation();
+  const [visible, setVisible] = useState(false);
   return (
     <View
       style={[
@@ -57,8 +59,6 @@ export default function Details_auction() {
                   <TouchableOpacity
                     style={{
                       borderRadius: 40,
-                      // borderColor: '#DCDCDC',
-                      // borderWidth: 2,
                       backgroundColor: '#333333',
                       alignSelf: 'center',
                       marginHorizontal: 12,
@@ -71,8 +71,6 @@ export default function Details_auction() {
                   <TouchableOpacity
                     style={{
                       borderRadius: 40,
-                      // borderColor: '#DCDCDC',
-                      // borderWidth: 2,
                       backgroundColor: '#333333',
                       alignSelf: 'center',
                     }}>
@@ -218,8 +216,6 @@ export default function Details_auction() {
             <TouchableOpacity
               style={{
                 borderRadius: 16,
-                // borderColor: '#0038F5',
-                // borderWidth: 1,
                 marginTop: 11,
                 backgroundColor: '#333333',
                 paddingVertical: 15,
@@ -234,8 +230,6 @@ export default function Details_auction() {
                 style={{
                   fontSize: 16,
                   fontFamily: 'Epilogue',
-                  // textAlign: 'center',
-                  // padding: 3,
                   color: '#FCFCFC',
                   fontWeight: '700',
                   lineHeight: 24,
@@ -372,10 +366,7 @@ export default function Details_auction() {
                   Once a bid has been placed and the reserve price has been met,
                   a 24 hour auction for this artwork will begin.
                 </Text>
-                <TouchableOpacity
-                  onPress={() => {
-                    navigation.navigate('Place_bid' as never, {} as never);
-                  }}>
+                <TouchableOpacity onPress={() => setVisible(true)}>
                   <LinearGradient
                     colors={['#0038F5', '#9F03FF']}
                     useAngle={true}
@@ -544,6 +535,7 @@ export default function Details_auction() {
             </TouchableOpacity>
           </View>
           <View style={{marginBottom: 47.25}} />
+          <Place_bid visbile={visible} handleClose={() => setVisible(false)} />
           <Footer />
         </ScrollView>
       </SafeAreaView>

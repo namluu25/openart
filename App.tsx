@@ -10,8 +10,6 @@ import Details_current_bid from './src/screens/detail_current_bid';
 import About from './src/screens/about';
 import FAQ from './src/screens/faq';
 import Join_community from './src/screens/join_community';
-import Place_bid from './src/screens/modal_place_bid';
-import Connect_wallet from './src/screens/modal_connect_wallet';
 
 const MyTheme = {
   ...DefaultTheme,
@@ -35,8 +33,6 @@ export default function YourApp() {
           <Stack.Screen name="Menu" component={Menu} />
           <Stack.Screen name="About" component={About} />
           <Stack.Screen name="FAQ" component={FAQ} />
-          <Stack.Screen name="Place_bid" component={Place_bid} />
-          <Stack.Screen name="Connect_wallet" component={Connect_wallet} />
           <Stack.Screen name="Join_community" component={Join_community} />
           <Stack.Screen name="Details_sold" component={Details_sold} />
           <Stack.Screen name="Details_auction" component={Details_auction} />
