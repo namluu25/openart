@@ -653,6 +653,7 @@ export default function Details_current_bid() {
               />
             </TouchableOpacity>
           </View>
+          <View style={{marginBottom: 67.38}} />
           <Footer />
         </ScrollView>
       </SafeAreaView>

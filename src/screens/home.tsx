@@ -158,7 +158,7 @@ function Home() {
               alignSelf: 'center',
             }}
           />
-
+          <View style={{marginBottom: 82}} />
           <Footer />
         </ScrollView>
       </SafeAreaView>

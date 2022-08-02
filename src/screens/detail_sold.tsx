@@ -584,6 +584,7 @@ export default function Details_sold() {
               />
             </TouchableOpacity>
           </View>
+          <View style={{marginBottom: 58.38}} />
           <Footer />
         </ScrollView>
       </SafeAreaView>

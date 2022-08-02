@@ -5,16 +5,14 @@ import LinearGradient from 'react-native-linear-gradient';
 
 const Footer = () => {
   return (
-    <View
-      style={{
-        paddingTop: 82,
-      }}>
+    <View>
       <Image
         source={require('openart/src/assets/images/icon/Logo.png')}
         style={{
           alignSelf: 'center',
           width: 177.32,
           height: 46.86,
+          marginTop: 23,
         }}
       />
       <Text

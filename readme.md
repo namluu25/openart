@@ -22,5 +22,5 @@
 - [] My_profile_empty   
 - [] My_profile_edit   
 - [] Join community   
-- [o] About   
-- [] FAQ   
+- [x] About   
+- [x] FAQ   

@@ -538,6 +538,7 @@ export default function Details_auction() {
               />
             </TouchableOpacity>
           </View>
+          <View style={{marginBottom: 47.25}} />
           <Footer />
         </ScrollView>
       </SafeAreaView>

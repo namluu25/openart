@@ -42,7 +42,7 @@
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = openart/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		844C0B777162D28D7B509775 /* Pods-openart.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-openart.debug.xcconfig"; path = "Target Support Files/Pods-openart/Pods-openart.debug.xcconfig"; sourceTree = "<group>"; };
 		87B46E00CD6098A9657788C7 /* libPods-openart.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-openart.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		8B7A94C007A2450AAEE8C219 /* Epilogue-VariableFont_wght.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Epilogue-VariableFont_wght.ttf"; path = "../src/assets/fonts/Epilogue-VariableFont_wght.ttf"; sourceTree = "<group>"; };
+		8B7A94C007A2450AAEE8C219 /* Epilogue-VariableFont_wght.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Epilogue-VariableFont_wght.ttf"; path = "../src/assets/fonts/Epilogue-VariableFont_wght.ttf"; sourceTree = "<group>"; };
 		BD0BCCBF5C7E2CBF9B46398D /* Pods-openart-openartTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-openart-openartTests.release.xcconfig"; path = "Target Support Files/Pods-openart-openartTests/Pods-openart-openartTests.release.xcconfig"; sourceTree = "<group>"; };
 		CC9DA0DAD5272ACEE61E78E3 /* Pods-openart.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-openart.release.xcconfig"; path = "Target Support Files/Pods-openart/Pods-openart.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
@@ -114,7 +114,6 @@
 				8B7A94C007A2450AAEE8C219 /* Epilogue-VariableFont_wght.ttf */,
 			);
 			name = Resources;
-			path = "";
 			sourceTree = "<group>";
 		};
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
@@ -446,6 +445,7 @@
 			baseConfigurationReference = 3977C7B753FD86C92EE96C97 /* Pods-openart-openartTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = V3N6XL3DH3;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -474,6 +474,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
+				DEVELOPMENT_TEAM = V3N6XL3DH3;
 				INFOPLIST_FILE = openartTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -499,6 +500,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = V3N6XL3DH3;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = openart/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -525,6 +527,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = V3N6XL3DH3;
 				INFOPLIST_FILE = openart/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
