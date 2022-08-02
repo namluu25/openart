@@ -15,8 +15,7 @@ interface Props {
   handleClose?: () => void;
 }
 
-export default function BidPopup(props: Props) {
-  // const [modalVisible, setModalVisible] = useState(true);
+export default function Place_bid(props: Props) {
   return (
     <>
       <Modal
@@ -27,7 +26,7 @@ export default function BidPopup(props: Props) {
         <TouchableOpacity
           style={[
             styles.centeredView,
-            {padding: 18, backgroundColor: 'rgba(0,0,0,0.5)'},
+            {padding: 16, backgroundColor: 'rgba(0,0,0,0.5)'},
           ]}
           onPress={props.handleClose}
           activeOpacity={1}>
@@ -222,24 +221,13 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    // marginTop: 199,
   },
   modalView: {
     backgroundColor: '#333333',
     borderRadius: 24,
     paddingHorizontal: 18,
-    // margin: 18,
     width: '100%',
     paddingTop: 18.44,
     paddingBottom: 32.4,
-  },
-  textStyle: {
-    color: 'white',
-    fontWeight: 'bold',
-    textAlign: 'center',
-  },
-  modalText: {
-    marginBottom: 15,
-    textAlign: 'center',
   },
 });
