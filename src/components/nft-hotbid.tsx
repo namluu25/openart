@@ -15,7 +15,8 @@ export default function HotBid() {
   return (
     <View
       style={{
-        marginBottom: 24.5,
+        marginBottom: 58.28,
+        marginTop: 80,
       }}>
       <View
         style={{
@@ -27,7 +28,6 @@ export default function HotBid() {
           style={{
             flexDirection: 'row',
             paddingHorizontal: 16,
-            marginTop: 80,
           }}>
           <Image
             source={require('openart/src/assets/images/icon/fire-icon.png')}
@@ -48,7 +48,6 @@ export default function HotBid() {
           style={{
             flexDirection: 'row',
             paddingHorizontal: 16,
-            marginTop: 80,
           }}>
           <TouchableOpacity
             onPress={() => {
@@ -78,31 +77,30 @@ export default function HotBid() {
       <ScrollView
         horizontal
         showsHorizontalScrollIndicator={false}
-        ref={naviRef}>
-        <View>
+        ref={naviRef}
+        style={{marginLeft: 16, marginTop: 24}}>
+        <View style={{marginRight: 12}}>
           {/* 1 item view */}
           <Image
             // image
             source={require('openart/src/assets/images/hotbid/hotbid-1.png')}
             style={{
-              marginTop: 24,
               borderRadius: 28,
-              marginLeft: 13,
             }}
           />
           <View
             style={{
               flex: 1,
-              flexDirection: 'row',
-              justifyContent: 'space-around',
+              marginTop: 6.49,
+              flexDirection: 'column',
+              alignItems: 'flex-start',
+              marginLeft: 9.12,
             }}>
             <View
               //   tittle + 2nd row
               style={{
-                // flex: 1,
-                flexDirection: 'column',
-                marginLeft: 13,
-                marginTop: 12,
+                flexDirection: 'row',
+                alignItems: 'baseline',
               }}>
               <Text
                 // title
@@ -111,60 +109,54 @@ export default function HotBid() {
                   fontSize: 16,
                   fontWeight: '700',
                   color: '#FCFCFC',
+                  marginRight: 8.29,
                 }}>
                 Inside Kings Cross
               </Text>
 
-              <View
-                // second row
+              <TouchableOpacity
+                // 2.3eth
                 style={{
-                  flexDirection: 'row',
-                  // justifyContent: 'space-between',
-                  marginTop: 5,
+                  borderRadius: 34,
+                  borderColor: '#DCDCDC',
+                  borderWidth: 1,
                 }}>
                 <Text
                   style={{
+                    fontSize: 16,
                     fontFamily: 'Epilogue',
-                    fontSize: 13,
-                    fontWeight: '500',
-                    color: '#FCFCFC',
+                    textAlign: 'center',
+                    paddingHorizontal: 10,
+                    paddingTop: 5.51,
+                    paddingBottom: 2.1,
+                    color: '#F8F8F8',
+                    fontWeight: '700',
                   }}>
-                  Highest bid
+                  2.3 ETH
                 </Text>
-                <Text
-                  style={{
-                    fontFamily: 'Epilogue',
-                    fontSize: 14,
-                    fontWeight: '500',
-                    color: '#FCFCFC',
-                  }}>
-                  {' '}
-                  1.00ETH
-                </Text>
-              </View>
+              </TouchableOpacity>
             </View>
 
-            <TouchableOpacity
-              // 2.3eth
+            <Text
               style={{
-                borderRadius: 34,
-                borderColor: '#DCDCDC',
-                borderWidth: 1,
-                alignSelf: 'center',
-                // marginRight: 18,
+                fontFamily: 'Epilogue',
+                fontSize: 13,
+                fontWeight: '500',
+                color: '#FCFCFC',
+                marginTop: 4.46,
               }}>
+              Highest bid
               <Text
                 style={{
-                  fontSize: 16,
                   fontFamily: 'Epilogue',
-                  textAlign: 'center',
-                  padding: 10,
-                  color: '#F8F8F8',
+                  fontSize: 14,
                   fontWeight: '700',
+                  color: '#FCFCFC',
                 }}>
-                2.3 ETH
+                {' '}
+                1.00ETH
               </Text>
-            </TouchableOpacity>
+            </Text>
           </View>
         </View>
 
@@ -174,24 +166,22 @@ export default function HotBid() {
             // image
             source={require('openart/src/assets/images/hotbid/hotbid-1.png')}
             style={{
-              marginTop: 24,
               borderRadius: 28,
-              marginLeft: 13,
             }}
           />
           <View
             style={{
               flex: 1,
-              flexDirection: 'row',
-              justifyContent: 'space-around',
+              marginTop: 6.49,
+              flexDirection: 'column',
+              alignItems: 'flex-start',
+              marginLeft: 9.12,
             }}>
             <View
               //   tittle + 2nd row
               style={{
-                // flex: 1,
-                flexDirection: 'column',
-                marginLeft: 13,
-                marginTop: 12,
+                flexDirection: 'row',
+                alignItems: 'baseline',
               }}>
               <Text
                 // title
@@ -200,60 +190,54 @@ export default function HotBid() {
                   fontSize: 16,
                   fontWeight: '700',
                   color: '#FCFCFC',
+                  marginRight: 8.29,
                 }}>
-                Inside Kings Cross 2
+                Inside Kings Cross
               </Text>
 
-              <View
-                // second row
+              <TouchableOpacity
+                // 2.3eth
                 style={{
-                  flexDirection: 'row',
-                  // justifyContent: 'space-between',
-                  marginTop: 5,
+                  borderRadius: 34,
+                  borderColor: '#DCDCDC',
+                  borderWidth: 1,
                 }}>
                 <Text
                   style={{
+                    fontSize: 16,
                     fontFamily: 'Epilogue',
-                    fontSize: 13,
-                    fontWeight: '500',
-                    color: '#FCFCFC',
+                    textAlign: 'center',
+                    paddingHorizontal: 10,
+                    paddingTop: 5.51,
+                    paddingBottom: 2.1,
+                    color: '#F8F8F8',
+                    fontWeight: '700',
                   }}>
-                  Highest bid
+                  2.3 ETH
                 </Text>
-                <Text
-                  style={{
-                    fontFamily: 'Epilogue',
-                    fontSize: 14,
-                    fontWeight: '500',
-                    color: '#FCFCFC',
-                  }}>
-                  {' '}
-                  1.00ETH
-                </Text>
-              </View>
+              </TouchableOpacity>
             </View>
 
-            <TouchableOpacity
-              // 2.3eth
+            <Text
               style={{
-                borderRadius: 34,
-                borderColor: '#DCDCDC',
-                borderWidth: 1,
-                alignSelf: 'center',
-                // marginRight: 18,
+                fontFamily: 'Epilogue',
+                fontSize: 13,
+                fontWeight: '500',
+                color: '#FCFCFC',
+                marginTop: 4.46,
               }}>
+              Highest bid
               <Text
                 style={{
-                  fontSize: 16,
                   fontFamily: 'Epilogue',
-                  textAlign: 'center',
-                  padding: 10,
-                  color: '#F8F8F8',
+                  fontSize: 14,
                   fontWeight: '700',
+                  color: '#FCFCFC',
                 }}>
-                2.3 ETH
+                {' '}
+                1.00ETH
               </Text>
-            </TouchableOpacity>
+            </Text>
           </View>
         </View>
       </ScrollView>

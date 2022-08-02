@@ -143,7 +143,7 @@ const HotCollection = () => {
             alignSelf: 'center',
             flexDirection: 'row',
             paddingHorizontal: 33,
-            paddingVertical: 10,
+            paddingVertical: 8,
           }}>
           <Image
             style={{

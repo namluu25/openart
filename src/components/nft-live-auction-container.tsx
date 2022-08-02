@@ -48,11 +48,14 @@ export default function LiveContainer() {
         style={{
           flex: 1,
           flexDirection: 'row',
+          marginTop: 86.27,
+          marginHorizontal: 16.57,
+          justifyContent: 'space-between',
         }}>
         <View
           style={{
             flexDirection: 'row',
-            padding: 15,
+            paddingVertical: 15,
             justifyContent: 'center',
             alignItems: 'baseline',
           }}>
@@ -77,24 +80,27 @@ export default function LiveContainer() {
             borderColor: '#888888',
             borderWidth: 1,
             alignSelf: 'center',
-            marginRight: 18,
+            // marginRight: 18,
           }}>
           <Text
             style={{
-              fontSize: 20,
+              fontSize: 16,
               fontFamily: 'Epilogue',
               textAlign: 'center',
-              padding: 15,
+              paddingVertical: 9,
+              paddingHorizontal: 30,
               color: '#F8F8F8',
-              fontWeight: '700',
+              fontWeight: '400',
+              lineHeight: 22,
             }}>
             View all
           </Text>
         </TouchableOpacity>
       </View>
+
       <View>
-        <View style={styles.product}>
-          <View style={styles.nftInfo}>
+        <View style={[styles.product, {marginTop: 21.5}]}>
+          <View>
             <TouchableOpacity
               onPress={() => {
                 navigation.navigate('Details_sold' as never, {} as never);
@@ -105,12 +111,16 @@ export default function LiveContainer() {
               />
             </TouchableOpacity>
 
-            <Text style={[styles.nftText, {padding: 12}]}>Silent Color</Text>
+            <Text style={[styles.nftText, {marginTop: 12.41}]}>
+              Silent Color
+            </Text>
             <View
               style={{
                 flexDirection: 'row',
                 justifyContent: 'space-between',
-                padding: 12,
+                // paddingVertical: 12.53,
+                marginTop: 2.68,
+                marginBottom: 16.86,
                 alignItems: 'center',
               }}>
               <Image
@@ -120,8 +130,6 @@ export default function LiveContainer() {
               <View
                 style={{
                   flex: 1,
-                  // flexWrap: 'wrap',
-                  flexShrink: 1,
                 }}>
                 <Text style={[styles.nftText, {fontSize: 18, paddingLeft: 12}]}>
                   Pawel Czerwinski
@@ -143,20 +151,18 @@ export default function LiveContainer() {
         <TouchableOpacity
           style={{
             borderRadius: 51,
-            // borderColor: '#0038F5',
-            // borderWidth: 1,
-            margin: 11,
+            marginTop: 12.14,
+            marginHorizontal: 16.57,
             backgroundColor: '#333333',
-            paddingVertical: 15,
+            paddingVertical: 18,
           }}>
           <Text
             style={{
               fontSize: 20,
               fontFamily: 'Epilogue',
               textAlign: 'center',
-              padding: 3,
               color: '#FCFCFC',
-              fontWeight: '700',
+              fontWeight: '400',
             }}>
             Sold For
             <Text
@@ -164,7 +170,6 @@ export default function LiveContainer() {
                 fontSize: 24,
                 fontFamily: 'Epilogue',
                 textAlign: 'center',
-                padding: 3,
                 color: '#FCFCFC',
                 fontWeight: '700',
               }}>
@@ -176,18 +181,26 @@ export default function LiveContainer() {
       </View>
 
       <View>
-        <View style={styles.product}>
-          <View style={styles.nftInfo}>
-            <Image
-              style={styles.image}
-              source={require('openart/src/assets/images/nft/3.png')}
-            />
-            <Text style={[styles.nftText, {padding: 12}]}>George</Text>
+        <View style={[styles.product]}>
+          <View>
+            <TouchableOpacity
+              onPress={() => {
+                navigation.navigate('Details_sold' as never, {} as never);
+              }}>
+              <Image
+                style={styles.image}
+                source={require('openart/src/assets/images/nft/3.png')}
+              />
+            </TouchableOpacity>
+
+            <Text style={[styles.nftText, {marginTop: 12.41}]}>George</Text>
             <View
               style={{
                 flexDirection: 'row',
                 justifyContent: 'space-between',
-                padding: 12,
+                // paddingVertical: 12.53,
+                marginTop: 2.68,
+                marginBottom: 16.86,
                 alignItems: 'center',
               }}>
               <Image
@@ -197,8 +210,6 @@ export default function LiveContainer() {
               <View
                 style={{
                   flex: 1,
-                  // flexWrap: 'wrap',
-                  flexShrink: 1,
                 }}>
                 <Text style={[styles.nftText, {fontSize: 18, paddingLeft: 12}]}>
                   Pawel Czerwinski
@@ -220,20 +231,18 @@ export default function LiveContainer() {
         <TouchableOpacity
           style={{
             borderRadius: 51,
-            // borderColor: '#0038F5',
-            // borderWidth: 1,
-            margin: 11,
+            marginTop: 12.14,
+            marginHorizontal: 16.57,
             backgroundColor: '#333333',
-            paddingVertical: 15,
+            paddingVertical: 18,
           }}>
           <Text
             style={{
               fontSize: 20,
               fontFamily: 'Epilogue',
               textAlign: 'center',
-              padding: 3,
               color: '#FCFCFC',
-              fontWeight: '700',
+              fontWeight: '400',
             }}>
             Sold For
             <Text
@@ -241,7 +250,6 @@ export default function LiveContainer() {
                 fontSize: 24,
                 fontFamily: 'Epilogue',
                 textAlign: 'center',
-                padding: 3,
                 color: '#FCFCFC',
                 fontWeight: '700',
               }}>
@@ -254,7 +262,7 @@ export default function LiveContainer() {
 
       <View>
         <View style={styles.product}>
-          <View style={styles.nftInfo}>
+          <View>
             <TouchableOpacity
               onPress={() => {
                 navigation.navigate(
@@ -268,12 +276,13 @@ export default function LiveContainer() {
               />
             </TouchableOpacity>
 
-            <Text style={[styles.nftText, {padding: 12}]}>Mirror</Text>
+            <Text style={[styles.nftText, {marginTop: 12}]}>Mirror</Text>
             <View
               style={{
                 flexDirection: 'row',
                 justifyContent: 'space-between',
-                padding: 12,
+                marginTop: 2.68,
+                marginBottom: 16.86,
                 alignItems: 'center',
               }}>
               <Image
@@ -283,8 +292,6 @@ export default function LiveContainer() {
               <View
                 style={{
                   flex: 1,
-                  // flexWrap: 'wrap',
-                  flexShrink: 1,
                 }}>
                 <Text style={[styles.nftText, {fontSize: 18, paddingLeft: 12}]}>
                   Pawel Czerwinski
@@ -306,26 +313,21 @@ export default function LiveContainer() {
         <TouchableOpacity
           style={{
             borderRadius: 51,
-            // borderColor: '#0038F5',
-            // borderWidth: 1,
-            margin: 11,
+            marginTop: 12.14,
+            marginHorizontal: 16.57,
             backgroundColor: '#333333',
-            // paddingVertical: 15,
+            paddingVertical: 13,
           }}>
           <View
             style={{
               flexDirection: 'row',
-              justifyContent: 'space-evenly',
-              paddingHorizontal: 16,
-              paddingBottom: 11,
-              // marginTop: 3,
+              justifyContent: 'space-around',
             }}>
-            <View>
+            <View style={{alignItems: 'flex-start'}}>
               <Text
                 style={{
                   fontSize: 16,
                   fontFamily: 'Epilogue',
-                  padding: 15,
                   color: '#FCFCFC',
                   fontWeight: '400',
                 }}>
@@ -336,20 +338,18 @@ export default function LiveContainer() {
                   fontSize: 20,
                   fontFamily: 'Epilogue',
                   textAlign: 'center',
-                  paddingHorizontal: 15,
                   color: '#FCFCFC',
                   fontWeight: '700',
                 }}>
                 2.00 ETH
               </Text>
             </View>
-            <View>
+            <View style={{alignItems: 'flex-start'}}>
               <Text
                 style={{
                   fontSize: 16,
                   fontFamily: 'Epilogue',
                   textAlign: 'center',
-                  padding: 15,
                   color: '#FCFCFC',
                   fontWeight: '400',
                 }}>
@@ -360,7 +360,6 @@ export default function LiveContainer() {
                   fontSize: 20,
                   fontFamily: 'Epilogue',
                   textAlign: 'center',
-                  paddingHorizontal: 15,
                   color: '#FCFCFC',
                   fontWeight: '700',
                 }}>
@@ -373,17 +372,27 @@ export default function LiveContainer() {
 
       <View>
         <View style={styles.product}>
-          <View style={styles.nftInfo}>
-            <Image
-              style={styles.image}
-              source={require('openart/src/assets/images/nft/5.png')}
-            />
-            <Text style={[styles.nftText, {padding: 12}]}>Magic Mar</Text>
+          <View>
+            <TouchableOpacity
+              onPress={() => {
+                navigation.navigate(
+                  'Details_current_bid' as never,
+                  {} as never,
+                );
+              }}>
+              <Image
+                style={styles.image}
+                source={require('openart/src/assets/images/nft/5.png')}
+              />
+            </TouchableOpacity>
+
+            <Text style={[styles.nftText, {marginTop: 12}]}>Magic Mar</Text>
             <View
               style={{
                 flexDirection: 'row',
                 justifyContent: 'space-between',
-                padding: 12,
+                marginTop: 2.68,
+                marginBottom: 16.86,
                 alignItems: 'center',
               }}>
               <Image
@@ -393,8 +402,6 @@ export default function LiveContainer() {
               <View
                 style={{
                   flex: 1,
-                  // flexWrap: 'wrap',
-                  flexShrink: 1,
                 }}>
                 <Text style={[styles.nftText, {fontSize: 18, paddingLeft: 12}]}>
                   Pawel Czerwinski
@@ -416,26 +423,21 @@ export default function LiveContainer() {
         <TouchableOpacity
           style={{
             borderRadius: 51,
-            // borderColor: '#0038F5',
-            // borderWidth: 1,
-            margin: 11,
+            marginTop: 12.14,
+            marginHorizontal: 16.57,
             backgroundColor: '#333333',
-            // paddingVertical: 15,
+            paddingVertical: 13,
           }}>
           <View
             style={{
               flexDirection: 'row',
-              justifyContent: 'space-evenly',
-              paddingHorizontal: 16,
-              paddingBottom: 11,
-              // marginTop: 3,
+              justifyContent: 'space-around',
             }}>
-            <View>
+            <View style={{alignItems: 'flex-start'}}>
               <Text
                 style={{
                   fontSize: 16,
                   fontFamily: 'Epilogue',
-                  padding: 15,
                   color: '#FCFCFC',
                   fontWeight: '400',
                 }}>
@@ -446,20 +448,18 @@ export default function LiveContainer() {
                   fontSize: 20,
                   fontFamily: 'Epilogue',
                   textAlign: 'center',
-                  paddingHorizontal: 15,
                   color: '#FCFCFC',
                   fontWeight: '700',
                 }}>
                 2.00 ETH
               </Text>
             </View>
-            <View>
+            <View style={{alignItems: 'flex-start'}}>
               <Text
                 style={{
                   fontSize: 16,
                   fontFamily: 'Epilogue',
                   textAlign: 'center',
-                  padding: 15,
                   color: '#FCFCFC',
                   fontWeight: '400',
                 }}>
@@ -470,7 +470,6 @@ export default function LiveContainer() {
                   fontSize: 20,
                   fontFamily: 'Epilogue',
                   textAlign: 'center',
-                  paddingHorizontal: 15,
                   color: '#FCFCFC',
                   fontWeight: '700',
                 }}>
@@ -483,17 +482,29 @@ export default function LiveContainer() {
 
       <View>
         <View style={styles.product}>
-          <View style={styles.nftInfo}>
-            <Image
-              style={styles.image}
-              source={require('openart/src/assets/images/nft/6.png')}
-            />
-            <Text style={[styles.nftText, {padding: 12}]}>Shedd Aquarium</Text>
+          <View>
+            <TouchableOpacity
+              onPress={() => {
+                navigation.navigate(
+                  'Details_current_bid' as never,
+                  {} as never,
+                );
+              }}>
+              <Image
+                style={styles.image}
+                source={require('openart/src/assets/images/nft/6.png')}
+              />
+            </TouchableOpacity>
+
+            <Text style={[styles.nftText, {marginTop: 12}]}>
+              Shedd Aquarium
+            </Text>
             <View
               style={{
                 flexDirection: 'row',
                 justifyContent: 'space-between',
-                padding: 12,
+                marginTop: 2.68,
+                marginBottom: 16.86,
                 alignItems: 'center',
               }}>
               <Image
@@ -503,8 +514,6 @@ export default function LiveContainer() {
               <View
                 style={{
                   flex: 1,
-                  // flexWrap: 'wrap',
-                  flexShrink: 1,
                 }}>
                 <Text style={[styles.nftText, {fontSize: 18, paddingLeft: 12}]}>
                   Pawel Czerwinski
@@ -526,26 +535,21 @@ export default function LiveContainer() {
         <TouchableOpacity
           style={{
             borderRadius: 51,
-            // borderColor: '#0038F5',
-            // borderWidth: 1,
-            margin: 11,
+            marginTop: 12.14,
+            marginHorizontal: 16.57,
             backgroundColor: '#333333',
-            // paddingVertical: 15,
+            paddingVertical: 13,
           }}>
           <View
             style={{
               flexDirection: 'row',
-              justifyContent: 'space-evenly',
-              paddingHorizontal: 16,
-              paddingBottom: 11,
-              // marginTop: 3,
+              justifyContent: 'space-around',
             }}>
-            <View>
+            <View style={{alignItems: 'flex-start'}}>
               <Text
                 style={{
                   fontSize: 16,
                   fontFamily: 'Epilogue',
-                  padding: 15,
                   color: '#FCFCFC',
                   fontWeight: '400',
                 }}>
@@ -556,20 +560,18 @@ export default function LiveContainer() {
                   fontSize: 20,
                   fontFamily: 'Epilogue',
                   textAlign: 'center',
-                  paddingHorizontal: 15,
                   color: '#FCFCFC',
                   fontWeight: '700',
                 }}>
                 2.00 ETH
               </Text>
             </View>
-            <View>
+            <View style={{alignItems: 'flex-start'}}>
               <Text
                 style={{
                   fontSize: 16,
                   fontFamily: 'Epilogue',
                   textAlign: 'center',
-                  padding: 15,
                   color: '#FCFCFC',
                   fontWeight: '400',
                 }}>
@@ -580,7 +582,6 @@ export default function LiveContainer() {
                   fontSize: 20,
                   fontFamily: 'Epilogue',
                   textAlign: 'center',
-                  paddingHorizontal: 15,
                   color: '#FCFCFC',
                   fontWeight: '700',
                 }}>
@@ -599,22 +600,19 @@ const styles = StyleSheet.create({
     backgroundColor: '#333333',
     alignItems: 'center',
     borderRadius: 32,
-    margin: 11,
+    marginTop: 40,
+    marginHorizontal: 16.57,
   },
   image: {
-    width: 320,
-    height: 399.21,
     borderRadius: 24,
-    marginVertical: 11,
+    // marginBottom: 11,
+    marginTop: 18,
   },
   nftText: {
     fontSize: 24,
     fontWeight: '700',
     color: '#FCFCFC',
     fontFamily: 'Epilogue',
-  },
-  nftInfo: {
-    paddingTop: 11,
   },
   avatar: {
     borderRadius: 24,

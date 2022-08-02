@@ -8,10 +8,10 @@ import {
   StatusBar,
   Text,
   TextInput,
-  TouchableOpacity,
+  // TouchableOpacity,
   Platform,
 } from 'react-native';
-import LinearGradient from 'react-native-linear-gradient';
+// import LinearGradient from 'react-native-linear-gradient';
 import Header from '../components/header';
 import FrontProduct from '../components/nft-container';
 import LiveContainer from '../components/nft-live-auction-container';
@@ -52,97 +52,6 @@ function Home() {
           </View>
 
           <FrontProduct />
-
-          <View
-            style={{
-              flexDirection: 'row',
-              alignItems: 'baseline',
-              marginLeft: 11,
-              marginTop: 12.85,
-              marginBottom: 15.29,
-            }}>
-            <Text
-              style={{
-                fontFamily: 'Epilogue',
-                fontSize: 16,
-                fontWeight: '400',
-                lineHeight: 22,
-                color: '#FCFCFC',
-                marginRight: 5.98,
-              }}>
-              Reserve Price
-            </Text>
-            <Text
-              style={{
-                fontFamily: 'Epilogue',
-                fontSize: 32,
-                fontWeight: '700',
-                lineHeight: 36,
-                color: '#FCFCFC',
-                marginRight: 7.51,
-              }}>
-              1.50 ETH
-            </Text>
-            <Text
-              style={{
-                fontFamily: 'Epilogue',
-                fontSize: 16,
-                fontWeight: '700',
-                lineHeight: 24,
-                color: '#888888',
-              }}>
-              $2,683.73
-            </Text>
-          </View>
-
-          <View
-            style={{
-              margin: 11,
-            }}>
-            <TouchableOpacity>
-              <LinearGradient
-                colors={['#0038F5', '#9F03FF']}
-                useAngle={true}
-                angle={114.44}
-                style={{
-                  // flex: 1,
-                  // paddingLeft: 5,
-                  borderRadius: 8,
-                  marginBottom: 12,
-                  backgroundColor: '#2A2A2E',
-                }}>
-                <Text
-                  style={{
-                    fontSize: 20,
-                    fontFamily: 'Epilogue',
-                    textAlign: 'center',
-                    padding: 15,
-                    color: '#FCFCFC',
-                    fontWeight: '700',
-                  }}>
-                  Place a bid
-                </Text>
-              </LinearGradient>
-            </TouchableOpacity>
-            <TouchableOpacity
-              style={{
-                borderRadius: 8,
-                borderColor: '#0038F5',
-                borderWidth: 1,
-              }}>
-              <Text
-                style={{
-                  fontSize: 20,
-                  fontFamily: 'Epilogue',
-                  textAlign: 'center',
-                  padding: 15,
-                  color: '#FCFCFC',
-                  fontWeight: '700',
-                }}>
-                View Artwork
-              </Text>
-            </TouchableOpacity>
-          </View>
 
           <LiveContainer />
 
