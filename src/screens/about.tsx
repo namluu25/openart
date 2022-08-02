@@ -29,7 +29,7 @@ export default function About() {
         <Header />
 
         <ScrollView>
-          <View style={{marginBottom: 1.21}}>
+          <View>
             <View style={{flex: 1, alignItems: 'center'}}>
               <Text
                 style={{
@@ -205,7 +205,7 @@ export default function About() {
               </Text>
             </View>
           </View>
-
+          <View style={{marginBottom: 1.21}} />
           <Footer />
         </ScrollView>
       </SafeAreaView>

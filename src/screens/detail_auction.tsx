@@ -14,8 +14,10 @@ import {
 import LinearGradient from 'react-native-linear-gradient';
 import Header from '../components/header';
 import Footer from '../components/footer';
+import {useNavigation} from '@react-navigation/native';
 
 export default function Details_auction() {
+  const navigation = useNavigation();
   return (
     <View
       style={[
@@ -309,7 +311,7 @@ export default function Details_auction() {
               />
             </TouchableOpacity>
 
-            <TouchableOpacity
+            <View
               style={{
                 flexDirection: 'column',
                 borderRadius: 24,
@@ -370,7 +372,10 @@ export default function Details_auction() {
                   Once a bid has been placed and the reserve price has been met,
                   a 24 hour auction for this artwork will begin.
                 </Text>
-                <TouchableOpacity>
+                <TouchableOpacity
+                  onPress={() => {
+                    navigation.navigate('Place_bid' as never, {} as never);
+                  }}>
                   <LinearGradient
                     colors={['#0038F5', '#9F03FF']}
                     useAngle={true}
@@ -394,7 +399,7 @@ export default function Details_auction() {
                   </LinearGradient>
                 </TouchableOpacity>
               </View>
-            </TouchableOpacity>
+            </View>
 
             <Text
               style={{

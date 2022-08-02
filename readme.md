@@ -11,7 +11,8 @@
 - [x] Detail_solid   
 - [x] Detail_auction   
 - [x] Detail_current_bid   
-- [] Place a bid   
+- [x] Place a bid   
+- [x] Connect wallet
 - [] Discover creator   
 - [] User profile   
 - [] User profile   
@@ -21,6 +22,6 @@
 - [] Search   
 - [] My_profile_empty   
 - [] My_profile_edit   
-- [] Join community   
+- [x] Join community   
 - [x] About   
 - [x] FAQ   

@@ -93,19 +93,39 @@ const Footer = () => {
           }}>
           <View>
             {/* insta */}
-            <Text style={styles.aboutText}>Instagram</Text>
-            <Text style={styles.aboutText}>Twitter</Text>
-            <Text style={styles.aboutText}>Discord</Text>
-            <Text style={styles.aboutText}>Blog</Text>
+            <TouchableOpacity>
+              <Text style={styles.aboutText}>Instagram</Text>
+            </TouchableOpacity>
+            <TouchableOpacity>
+              <Text style={styles.aboutText}>Twitter</Text>
+            </TouchableOpacity>
+            <TouchableOpacity>
+              <Text style={styles.aboutText}>Discord</Text>
+            </TouchableOpacity>
+            <TouchableOpacity>
+              <Text style={styles.aboutText}>Blog</Text>
+            </TouchableOpacity>
           </View>
           <View style={{paddingRight: 10}}>
             {/* about */}
-            <Text style={styles.aboutText}>About</Text>
-            <Text style={styles.aboutText}>Community Guidelines</Text>
-            <Text style={styles.aboutText}>Terms of Services</Text>
-            <Text style={styles.aboutText}>Privacy</Text>
-            <Text style={styles.aboutText}>Careers</Text>
-            <Text style={styles.aboutText}>Help</Text>
+            <TouchableOpacity>
+              <Text style={styles.aboutText}>About</Text>
+            </TouchableOpacity>
+            <TouchableOpacity>
+              <Text style={styles.aboutText}>Community Guidelines</Text>
+            </TouchableOpacity>
+            <TouchableOpacity>
+              <Text style={styles.aboutText}>Terms of Services</Text>
+            </TouchableOpacity>
+            <TouchableOpacity>
+              <Text style={styles.aboutText}>Privacy</Text>
+            </TouchableOpacity>
+            <TouchableOpacity>
+              <Text style={styles.aboutText}>Careers</Text>
+            </TouchableOpacity>
+            <TouchableOpacity>
+              <Text style={styles.aboutText}>Help</Text>
+            </TouchableOpacity>
           </View>
         </View>
 

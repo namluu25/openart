@@ -14,6 +14,7 @@
 		6A61C8206FAAFBE4EBA9713F /* libPods-openart.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 87B46E00CD6098A9657788C7 /* libPods-openart.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		B246AF1E223AEBDF603AEE21 /* libPods-openart-openartTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F486E3579796B513A4B6405 /* libPods-openart-openartTests.a */; };
+		D1FED8492898DABD00E61EFB /* RedHatDisplay-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D163EE362898D0800045DDEA /* RedHatDisplay-VariableFont_wght.ttf */; };
 		D54E56D3F7A94605B0A6D76A /* Epilogue-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8B7A94C007A2450AAEE8C219 /* Epilogue-VariableFont_wght.ttf */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +46,7 @@
 		8B7A94C007A2450AAEE8C219 /* Epilogue-VariableFont_wght.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Epilogue-VariableFont_wght.ttf"; path = "../src/assets/fonts/Epilogue-VariableFont_wght.ttf"; sourceTree = "<group>"; };
 		BD0BCCBF5C7E2CBF9B46398D /* Pods-openart-openartTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-openart-openartTests.release.xcconfig"; path = "Target Support Files/Pods-openart-openartTests/Pods-openart-openartTests.release.xcconfig"; sourceTree = "<group>"; };
 		CC9DA0DAD5272ACEE61E78E3 /* Pods-openart.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-openart.release.xcconfig"; path = "Target Support Files/Pods-openart/Pods-openart.release.xcconfig"; sourceTree = "<group>"; };
+		D163EE362898D0800045DDEA /* RedHatDisplay-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "RedHatDisplay-VariableFont_wght.ttf"; path = "../src/assets/fonts/RedHatDisplay-VariableFont_wght.ttf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -111,6 +113,7 @@
 		74951A262BAA4CACA65BBDB8 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				D163EE362898D0800045DDEA /* RedHatDisplay-VariableFont_wght.ttf */,
 				8B7A94C007A2450AAEE8C219 /* Epilogue-VariableFont_wght.ttf */,
 			);
 			name = Resources;
@@ -253,6 +256,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D1FED8492898DABD00E61EFB /* RedHatDisplay-VariableFont_wght.ttf in Resources */,
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				D54E56D3F7A94605B0A6D76A /* Epilogue-VariableFont_wght.ttf in Resources */,

@@ -60,7 +60,10 @@ export default function Menu() {
                 Blog
               </Text>
             </TouchableOpacity>
-            <TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => {
+                navigation.navigate('FAQ' as never, {} as never);
+              }}>
               <Text
                 style={{
                   fontFamily: 'Epilogue',

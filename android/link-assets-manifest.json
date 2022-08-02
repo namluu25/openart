@@ -4,6 +4,10 @@
     {
       "path": "src/assets/fonts/Epilogue-VariableFont_wght.ttf",
       "sha1": "7613564b7cb346f1349948f6acb69fc9b092b2a9"
+    },
+    {
+      "path": "src/assets/fonts/RedHatDisplay-VariableFont_wght.ttf",
+      "sha1": "e2cc84d739002decce1585b358935cf40f4cbca5"
     }
   ]
 }
