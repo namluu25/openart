@@ -10,6 +10,7 @@ import Details_current_bid from './src/screens/detail_current_bid';
 import About from './src/screens/about';
 import FAQ from './src/screens/faq';
 import Join_community from './src/screens/join_community';
+import Discover_creator from './src/screens/discover_creator';
 
 const MyTheme = {
   ...DefaultTheme,
@@ -26,7 +27,7 @@ export default function YourApp() {
     <SafeAreaProvider>
       <NavigationContainer theme={MyTheme}>
         <Stack.Navigator
-          initialRouteName="Home"
+          initialRouteName="Discover_creator"
           // initialRouteName="DetailsScreen"
           screenOptions={{headerShown: false}}>
           <Stack.Screen name="Home" component={Home} />
@@ -34,6 +35,7 @@ export default function YourApp() {
           <Stack.Screen name="About" component={About} />
           <Stack.Screen name="FAQ" component={FAQ} />
           <Stack.Screen name="Join_community" component={Join_community} />
+          <Stack.Screen name="Discover_creator" component={Discover_creator} />
           <Stack.Screen name="Details_sold" component={Details_sold} />
           <Stack.Screen name="Details_auction" component={Details_auction} />
           <Stack.Screen

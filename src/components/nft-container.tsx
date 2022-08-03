@@ -108,8 +108,6 @@ function FrontProduct() {
             useAngle={true}
             angle={114.44}
             style={{
-              // flex: 1,
-              // paddingLeft: 5,
               borderRadius: 8,
               marginBottom: 12,
               backgroundColor: '#2A2A2E',
