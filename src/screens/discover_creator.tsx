@@ -111,7 +111,7 @@ export default function Discover_creator() {
               </TouchableOpacity>
             </View>
 
-            <View style={{paddingBottom: 40}}>
+            <View style={{marginBottom: 40}}>
               <View
                 style={{
                   borderRadius: 24,
@@ -209,7 +209,7 @@ export default function Discover_creator() {
               />
             </View>
 
-            <View style={{paddingBottom: 40}}>
+            <View style={{marginBottom: 40}}>
               <View
                 style={{
                   borderRadius: 24,
@@ -308,7 +308,7 @@ export default function Discover_creator() {
               />
             </View>
 
-            <View style={{paddingBottom: 40}}>
+            <View style={{marginBottom: 40}}>
               <View
                 style={{
                   borderRadius: 24,
@@ -406,7 +406,7 @@ export default function Discover_creator() {
               />
             </View>
 
-            <View style={{paddingBottom: 40}}>
+            <View style={{marginBottom: 40}}>
               <View
                 style={{
                   borderRadius: 24,
@@ -505,7 +505,7 @@ export default function Discover_creator() {
               />
             </View>
 
-            <View style={{paddingBottom: 40}}>
+            <View style={{marginBottom: 43.81}}>
               <View
                 style={{
                   borderRadius: 24,
@@ -602,30 +602,30 @@ export default function Discover_creator() {
                 source={require('../assets/images/avatar/ava-9.png')}
               />
             </View>
-
-            <TouchableOpacity
-              style={{
-                borderRadius: 8,
-                borderColor: '#0038F5',
-                borderWidth: 1,
-                flexDirection: 'row',
-                alignItems: 'center',
-                justifyContent: 'center',
-              }}>
-              <Image source={require('../assets/images/icon/plus_icon.png')} />
-              <Text
-                style={{
-                  fontSize: 20,
-                  fontFamily: 'Epilogue',
-                  textAlign: 'center',
-                  paddingVertical: 15,
-                  color: '#FCFCFC',
-                  fontWeight: '700',
-                }}>
-                Load more
-              </Text>
-            </TouchableOpacity>
           </View>
+          <TouchableOpacity
+            style={{
+              borderRadius: 8,
+              borderColor: '#0038F5',
+              borderWidth: 1,
+              flexDirection: 'row',
+              alignItems: 'center',
+              justifyContent: 'center',
+              marginHorizontal: 35,
+            }}>
+            <Image source={require('../assets/images/icon/plus_icon.png')} />
+            <Text
+              style={{
+                fontSize: 20,
+                fontFamily: 'Epilogue',
+                textAlign: 'center',
+                paddingVertical: 15,
+                color: '#FCFCFC',
+                fontWeight: '700',
+              }}>
+              Load more
+            </Text>
+          </TouchableOpacity>
           <View style={{marginBottom: 107.99}} />
           <Footer />
         </ScrollView>

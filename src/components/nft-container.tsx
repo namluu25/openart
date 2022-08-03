@@ -29,11 +29,19 @@ function FrontProduct() {
               marginBottom: 16.86,
               alignItems: 'center',
             }}>
-            <Image
-              style={styles.avatar}
-              source={require('openart/src/assets/images/avatar/ava1.png')}
-            />
-            <View
+            <TouchableOpacity
+              onPress={() => {
+                navigation.navigate('User_profile' as never, {} as never);
+              }}>
+              <Image
+                style={styles.avatar}
+                source={require('openart/src/assets/images/avatar/ava1.png')}
+              />
+            </TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => {
+                navigation.navigate('User_profile' as never, {} as never);
+              }}
               style={{
                 flex: 1,
               }}>
@@ -47,7 +55,7 @@ function FrontProduct() {
                 ]}>
                 Creator
               </Text>
-            </View>
+            </TouchableOpacity>
             <Image
               source={require('openart/src/assets/images/icon/heart-icon.png')}
             />

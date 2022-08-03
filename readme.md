@@ -13,9 +13,8 @@
 - [x] Detail_current_bid   
 - [x] Place a bid   
 - [x] Connect wallet
-- [] Discover creator   
-- [] User profile   
-- [] User profile   
+- [x] Discover creator   
+- [x] User profile   
 - [] Account   
 - [] Notification   
 - [] Search popup   
