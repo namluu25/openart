@@ -37,6 +37,39 @@ export default function User_profile() {
               style={{width: '100%'}}
               source={require('../assets/images/user-profile/cover.png')}
             />
+            <View
+              style={{
+                flexDirection: 'row',
+                position: 'absolute',
+                alignSelf: 'flex-end',
+                marginTop: 9.71,
+              }}>
+              {/* button */}
+              <TouchableOpacity
+                style={{
+                  borderRadius: 40,
+                  backgroundColor: '#333333',
+                  // alignSelf: 'center',
+                  marginHorizontal: 8,
+                }}>
+                <Image
+                  style={{margin: 10}}
+                  source={require('openart/src/assets/images/icon/more-icon.png')}
+                />
+              </TouchableOpacity>
+              <TouchableOpacity
+                style={{
+                  borderRadius: 40,
+                  backgroundColor: '#333333',
+                  // alignSelf: 'center',
+                  marginRight: 16,
+                }}>
+                <Image
+                  style={{margin: 10}}
+                  source={require('openart/src/assets/images/icon/export-icon.png')}
+                />
+              </TouchableOpacity>
+            </View>
             <Image
               style={{
                 position: 'absolute',
