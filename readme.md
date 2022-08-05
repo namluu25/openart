@@ -15,7 +15,7 @@
 - [x] Connect wallet
 - [x] Discover creator   
 - [x] User profile   
-- [] Account   
+- [x] Account   
 - [] Notification   
 - [] Search popup   
 - [x] Search   

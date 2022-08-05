@@ -1,0 +1,287 @@
+/* eslint-disable react-native/no-inline-styles */
+import React from 'react';
+import {
+  Modal,
+  StyleSheet,
+  Text,
+  Image,
+  TouchableOpacity,
+  View,
+} from 'react-native';
+// import LinearGradient from 'react-native-linear-gradient';
+import {Switch} from 'react-native-paper';
+
+interface Props {
+  visbile?: boolean;
+  handleClose?: () => void;
+}
+
+export default function Account(props: Props) {
+  const [isSwitchOn, setIsSwitchOn] = React.useState(false);
+  const onToggleSwitch = () => setIsSwitchOn(!isSwitchOn);
+  return (
+    <>
+      <Modal
+        animationType="fade"
+        transparent={true}
+        visible={props.visbile}
+        onRequestClose={props.handleClose}>
+        <TouchableOpacity
+          style={[
+            styles.centeredView,
+            {padding: 16, backgroundColor: 'rgba(0,0,0,0.5)'},
+          ]}
+          onPress={props.handleClose}
+          activeOpacity={1}>
+          <View style={[styles.triangle, {}]} />
+          <View style={[styles.modalView]}>
+            <View
+              style={{
+                flexDirection: 'row',
+                marginTop: 36,
+                marginBottom: 27,
+                marginHorizontal: 26,
+              }}>
+              <Image
+                style={{marginRight: 17}}
+                source={require('../assets/images/avatar/ava12.png')}
+              />
+              <View style={{alignSelf: 'center'}}>
+                <Text
+                  style={{
+                    fontFamily: 'Epilogue',
+                    fontWeight: '700',
+                    fontSize: 18,
+                    lineHeight: 28,
+                    color: '#FCFCFC',
+                  }}>
+                  Gift Habeshaw
+                </Text>
+                <View style={{flexDirection: 'row'}}>
+                  <Text
+                    style={{
+                      fontFamily: 'Epilogue',
+                      fontWeight: '500',
+                      fontSize: 13,
+                      lineHeight: 20,
+                      color: '#F8F8F8',
+                    }}>
+                    52fs5ge5g45sov45a
+                  </Text>
+                  <TouchableOpacity>
+                    <Image
+                      style={{marginHorizontal: 5}}
+                      source={require('../assets/images/icon/copy-icon.png')}
+                    />
+                  </TouchableOpacity>
+                </View>
+              </View>
+            </View>
+            <View
+              style={{
+                backgroundColor: '#222222',
+                borderRadius: 32,
+                flexDirection: 'row',
+                alignItems: 'center',
+                paddingLeft: 16,
+                paddingVertical: 15,
+                marginBottom: 30,
+                marginHorizontal: 16,
+              }}>
+              <TouchableOpacity
+                style={{
+                  borderRadius: 40,
+                  backgroundColor: '#333333',
+                  marginRight: 17,
+                }}>
+                <Image
+                  style={{margin: 8}}
+                  source={require('openart/src/assets/images/icon/wallet-icon.png')}
+                />
+              </TouchableOpacity>
+              <View style={{flexDirection: 'column'}}>
+                <Text
+                  style={{
+                    fontFamily: 'Epilogue',
+                    fontWeight: '400',
+                    fontSize: 16,
+                    lineHeight: 22,
+                    color: '#F8F8F8',
+                  }}>
+                  Balance
+                </Text>
+                <View style={{flexDirection: 'row', alignItems: 'baseline'}}>
+                  <Text
+                    style={{
+                      fontFamily: 'Epilogue',
+                      fontWeight: '700',
+                      fontSize: 24,
+                      lineHeight: 32,
+                      color: '#FCFCFC',
+                      marginRight: 23,
+                    }}>
+                    5.000 ETH
+                  </Text>
+                  <TouchableOpacity>
+                    <Image
+                      source={require('../assets/images/icon/hide-icon.png')}
+                    />
+                  </TouchableOpacity>
+                </View>
+              </View>
+            </View>
+            <View style={{marginHorizontal: 26}}>
+              <TouchableOpacity
+                style={{
+                  flexDirection: 'row',
+                  alignItems: 'center',
+                  marginBottom: 23,
+                }}>
+                <Image
+                  source={require('../assets/images/icon/people-icon.png')}
+                />
+                <Text
+                  style={{
+                    marginLeft: 13,
+                    fontFamily: 'Epilogue',
+                    fontWeight: '400',
+                    fontSize: 16,
+                    lineHeight: 22,
+                    color: '#F8F8F8',
+                  }}>
+                  My account
+                </Text>
+              </TouchableOpacity>
+              <TouchableOpacity
+                style={{
+                  flexDirection: 'row',
+                  alignItems: 'center',
+                  marginBottom: 23,
+                }}>
+                <Image
+                  source={require('../assets/images/icon/picture-icon.png')}
+                />
+                <Text
+                  style={{
+                    marginLeft: 13,
+                    fontFamily: 'Epilogue',
+                    fontWeight: '400',
+                    fontSize: 16,
+                    lineHeight: 22,
+                    color: '#F8F8F8',
+                  }}>
+                  My items
+                </Text>
+              </TouchableOpacity>
+              <TouchableOpacity
+                style={{
+                  flexDirection: 'row',
+                  alignItems: 'center',
+                  marginBottom: 23,
+                }}>
+                <Image
+                  source={require('../assets/images/icon/invoice-icon.png')}
+                />
+                <Text
+                  style={{
+                    marginLeft: 13,
+                    fontFamily: 'Epilogue',
+                    fontWeight: '400',
+                    fontSize: 16,
+                    lineHeight: 22,
+                    color: '#F8F8F8',
+                  }}>
+                  My invoice
+                </Text>
+              </TouchableOpacity>
+              <TouchableOpacity
+                style={{
+                  flexDirection: 'row',
+                  alignItems: 'center',
+                  marginBottom: 26,
+                }}>
+                <Image
+                  source={require('../assets/images/icon/back-arrow.png')}
+                />
+                <Text
+                  style={{
+                    marginLeft: 13,
+                    fontFamily: 'Epilogue',
+                    fontWeight: '400',
+                    fontSize: 16,
+                    lineHeight: 22,
+                    color: '#F8F8F8',
+                  }}>
+                  Sign out
+                </Text>
+              </TouchableOpacity>
+            </View>
+            <View
+              // separator line
+              style={{
+                borderBottomColor: 'white',
+                borderBottomWidth: 1,
+                width: '98%',
+                alignSelf: 'center',
+                marginBottom: 17,
+              }}
+            />
+            <View
+              style={{
+                flexDirection: 'row',
+                justifyContent: 'space-between',
+                alignItems: 'center',
+              }}>
+              <Text
+                style={{
+                  marginLeft: 31,
+                  fontFamily: 'Epilogue',
+                  fontWeight: '700',
+                  fontSize: 16,
+                  lineHeight: 24,
+                  color: '#F8F8F8',
+                }}>
+                Dark mode
+              </Text>
+              <Switch
+                style={{marginRight: 23}}
+                color="#004BFB"
+                value={isSwitchOn}
+                onValueChange={onToggleSwitch}
+              />
+            </View>
+          </View>
+        </TouchableOpacity>
+      </Modal>
+    </>
+  );
+}
+
+const styles = StyleSheet.create({
+  centeredView: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  modalView: {
+    backgroundColor: '#333333',
+    borderRadius: 24,
+    width: '100%',
+    // paddingTop: 18.44,
+    paddingBottom: 22,
+  },
+  triangle: {
+    width: 0,
+    height: 0,
+    backgroundColor: 'transparent',
+    borderStyle: 'solid',
+    borderTopWidth: 0,
+    borderRightWidth: 13,
+    borderBottomWidth: 15,
+    borderLeftWidth: 13,
+    borderTopColor: 'transparent',
+    borderRightColor: 'transparent',
+    borderBottomColor: '#333333',
+    borderLeftColor: 'transparent',
+  },
+});

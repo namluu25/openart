@@ -100,7 +100,7 @@ function Home() {
             style={{
               borderBottomColor: 'white',
               borderBottomWidth: 0.5,
-              width: 327,
+              width: '85%',
               alignSelf: 'center',
             }}
           />

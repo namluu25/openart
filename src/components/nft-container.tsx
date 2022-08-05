@@ -1,17 +1,19 @@
 /* eslint-disable react-native/no-inline-styles */
-import React from 'react';
+import React, {useState} from 'react';
 import {
   View,
   StyleSheet,
   Image,
   Text,
   TouchableOpacity,
-  ImageBackground,
+  // ImageBackground,
 } from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 import LinearGradient from 'react-native-linear-gradient';
+import Account from './modal-account';
 
 function FrontProduct() {
+  const [visible, setVisible] = useState(false);
   const navigation = useNavigation();
   return (
     <View>
@@ -129,7 +131,7 @@ function FrontProduct() {
           marginVertical: 11,
           marginHorizontal: 16.57,
         }}>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => setVisible(true)}>
           <LinearGradient
             colors={['#0038F5', '#9F03FF']}
             useAngle={true}
@@ -170,6 +172,7 @@ function FrontProduct() {
             View Artwork
           </Text>
         </TouchableOpacity>
+        <Account visbile={visible} handleClose={() => setVisible(false)} />
       </View>
     </View>
   );
