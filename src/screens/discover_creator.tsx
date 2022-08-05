@@ -205,7 +205,7 @@ export default function Discover_creator() {
                   position: 'absolute',
                   marginTop: 93.23,
                 }}
-                source={require('../assets/images/avatar/ava-5.png')}
+                source={require('../assets/images/avatar/ava5.png')}
               />
             </View>
 
@@ -304,7 +304,7 @@ export default function Discover_creator() {
                   position: 'absolute',
                   marginTop: 93.23,
                 }}
-                source={require('../assets/images/avatar/ava-6.png')}
+                source={require('../assets/images/avatar/ava6.png')}
               />
             </View>
 
@@ -402,7 +402,7 @@ export default function Discover_creator() {
                   position: 'absolute',
                   marginTop: 93.23,
                 }}
-                source={require('../assets/images/avatar/ava-7.png')}
+                source={require('../assets/images/avatar/ava7.png')}
               />
             </View>
 
@@ -501,7 +501,7 @@ export default function Discover_creator() {
                   position: 'absolute',
                   marginTop: 93.23,
                 }}
-                source={require('../assets/images/avatar/ava-8.png')}
+                source={require('../assets/images/avatar/ava8.png')}
               />
             </View>
 
@@ -599,7 +599,7 @@ export default function Discover_creator() {
                   position: 'absolute',
                   marginTop: 93.23,
                 }}
-                source={require('../assets/images/avatar/ava-9.png')}
+                source={require('../assets/images/avatar/ava9.png')}
               />
             </View>
           </View>

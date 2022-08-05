@@ -123,10 +123,27 @@ export default function LiveContainer() {
                 marginBottom: 16.86,
                 alignItems: 'center',
               }}>
-              <Image
-                style={styles.avatar}
-                source={require('openart/src/assets/images/avatar/ava1.png')}
-              />
+              <View>
+                <TouchableOpacity
+                  onPress={() => {
+                    navigation.navigate('User_profile' as never, {} as never);
+                  }}>
+                  <Image
+                    style={styles.avatar}
+                    source={require('openart/src/assets/images/avatar/ava1.png')}
+                  />
+                </TouchableOpacity>
+                <Image
+                  style={{
+                    position: 'absolute',
+                    right: 0,
+                    borderWidth: 2,
+                    borderColor: '#333333',
+                    borderRadius: 12,
+                  }}
+                  source={require('../assets/images/icon/active-icon.png')}
+                />
+              </View>
               <View
                 style={{
                   flex: 1,
@@ -203,10 +220,27 @@ export default function LiveContainer() {
                 marginBottom: 16.86,
                 alignItems: 'center',
               }}>
-              <Image
-                style={styles.avatar}
-                source={require('openart/src/assets/images/avatar/ava1.png')}
-              />
+              <View>
+                <TouchableOpacity
+                  onPress={() => {
+                    navigation.navigate('User_profile' as never, {} as never);
+                  }}>
+                  <Image
+                    style={styles.avatar}
+                    source={require('openart/src/assets/images/avatar/ava1.png')}
+                  />
+                </TouchableOpacity>
+                <Image
+                  style={{
+                    position: 'absolute',
+                    right: 0,
+                    borderWidth: 2,
+                    borderColor: '#333333',
+                    borderRadius: 12,
+                  }}
+                  source={require('../assets/images/icon/active-icon.png')}
+                />
+              </View>
               <View
                 style={{
                   flex: 1,
@@ -285,10 +319,27 @@ export default function LiveContainer() {
                 marginBottom: 16.86,
                 alignItems: 'center',
               }}>
-              <Image
-                style={styles.avatar}
-                source={require('openart/src/assets/images/avatar/ava1.png')}
-              />
+              <View>
+                <TouchableOpacity
+                  onPress={() => {
+                    navigation.navigate('User_profile' as never, {} as never);
+                  }}>
+                  <Image
+                    style={styles.avatar}
+                    source={require('openart/src/assets/images/avatar/ava1.png')}
+                  />
+                </TouchableOpacity>
+                <Image
+                  style={{
+                    position: 'absolute',
+                    right: 0,
+                    borderWidth: 2,
+                    borderColor: '#333333',
+                    borderRadius: 12,
+                  }}
+                  source={require('../assets/images/icon/active-icon.png')}
+                />
+              </View>
               <View
                 style={{
                   flex: 1,
@@ -323,26 +374,33 @@ export default function LiveContainer() {
               flexDirection: 'row',
               justifyContent: 'space-around',
             }}>
-            <View style={{alignItems: 'flex-start'}}>
-              <Text
-                style={{
-                  fontSize: 16,
-                  fontFamily: 'Epilogue',
-                  color: '#FCFCFC',
-                  fontWeight: '400',
-                }}>
-                Current bid
-              </Text>
-              <Text
-                style={{
-                  fontSize: 20,
-                  fontFamily: 'Epilogue',
-                  textAlign: 'center',
-                  color: '#FCFCFC',
-                  fontWeight: '700',
-                }}>
-                2.00 ETH
-              </Text>
+            <View style={{flexDirection: 'row'}}>
+              <Image
+                resizeMode="contain"
+                style={{width: '8%', marginRight: 4}}
+                source={require('../assets/images/icon/active-icon.png')}
+              />
+              <View style={{alignItems: 'flex-start'}}>
+                <Text
+                  style={{
+                    fontSize: 16,
+                    fontFamily: 'Epilogue',
+                    color: '#FCFCFC',
+                    fontWeight: '400',
+                  }}>
+                  Current bid
+                </Text>
+                <Text
+                  style={{
+                    fontSize: 20,
+                    fontFamily: 'Epilogue',
+                    textAlign: 'center',
+                    color: '#FCFCFC',
+                    fontWeight: '700',
+                  }}>
+                  2.00 ETH
+                </Text>
+              </View>
             </View>
             <View style={{alignItems: 'flex-start'}}>
               <Text
@@ -395,10 +453,27 @@ export default function LiveContainer() {
                 marginBottom: 16.86,
                 alignItems: 'center',
               }}>
-              <Image
-                style={styles.avatar}
-                source={require('openart/src/assets/images/avatar/ava1.png')}
-              />
+              <View>
+                <TouchableOpacity
+                  onPress={() => {
+                    navigation.navigate('User_profile' as never, {} as never);
+                  }}>
+                  <Image
+                    style={styles.avatar}
+                    source={require('openart/src/assets/images/avatar/ava1.png')}
+                  />
+                </TouchableOpacity>
+                <Image
+                  style={{
+                    position: 'absolute',
+                    right: 0,
+                    borderWidth: 2,
+                    borderColor: '#333333',
+                    borderRadius: 12,
+                  }}
+                  source={require('../assets/images/icon/active-icon.png')}
+                />
+              </View>
               <View
                 style={{
                   flex: 1,
@@ -433,26 +508,33 @@ export default function LiveContainer() {
               flexDirection: 'row',
               justifyContent: 'space-around',
             }}>
-            <View style={{alignItems: 'flex-start'}}>
-              <Text
-                style={{
-                  fontSize: 16,
-                  fontFamily: 'Epilogue',
-                  color: '#FCFCFC',
-                  fontWeight: '400',
-                }}>
-                Current bid
-              </Text>
-              <Text
-                style={{
-                  fontSize: 20,
-                  fontFamily: 'Epilogue',
-                  textAlign: 'center',
-                  color: '#FCFCFC',
-                  fontWeight: '700',
-                }}>
-                2.00 ETH
-              </Text>
+            <View style={{flexDirection: 'row'}}>
+              <Image
+                resizeMode="contain"
+                style={{width: '8%', marginRight: 4}}
+                source={require('../assets/images/icon/active-icon.png')}
+              />
+              <View style={{alignItems: 'flex-start'}}>
+                <Text
+                  style={{
+                    fontSize: 16,
+                    fontFamily: 'Epilogue',
+                    color: '#FCFCFC',
+                    fontWeight: '400',
+                  }}>
+                  Current bid
+                </Text>
+                <Text
+                  style={{
+                    fontSize: 20,
+                    fontFamily: 'Epilogue',
+                    textAlign: 'center',
+                    color: '#FCFCFC',
+                    fontWeight: '700',
+                  }}>
+                  2.00 ETH
+                </Text>
+              </View>
             </View>
             <View style={{alignItems: 'flex-start'}}>
               <Text
@@ -507,10 +589,27 @@ export default function LiveContainer() {
                 marginBottom: 16.86,
                 alignItems: 'center',
               }}>
-              <Image
-                style={styles.avatar}
-                source={require('openart/src/assets/images/avatar/ava1.png')}
-              />
+              <View>
+                <TouchableOpacity
+                  onPress={() => {
+                    navigation.navigate('User_profile' as never, {} as never);
+                  }}>
+                  <Image
+                    style={styles.avatar}
+                    source={require('openart/src/assets/images/avatar/ava1.png')}
+                  />
+                </TouchableOpacity>
+                <Image
+                  style={{
+                    position: 'absolute',
+                    right: 0,
+                    borderWidth: 2,
+                    borderColor: '#333333',
+                    borderRadius: 12,
+                  }}
+                  source={require('../assets/images/icon/active-icon.png')}
+                />
+              </View>
               <View
                 style={{
                   flex: 1,

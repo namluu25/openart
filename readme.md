@@ -18,9 +18,9 @@
 - [] Account   
 - [] Notification   
 - [] Search popup   
-- [] Search   
-- [] My_profile_empty   
-- [] My_profile_edit   
+- [x] Search   
+- [x] My_profile_empty   
+- [x] My_profile_edit   
 - [x] Join community   
 - [x] About   
 - [x] FAQ   

@@ -125,10 +125,27 @@ const HotCollection = () => {
             justifyContent: 'space-between',
             alignItems: 'center',
           }}>
-          <Image
-            style={styles.avatar}
-            source={require('openart/src/assets/images/avatar/ava2.png')}
-          />
+          <View>
+            <TouchableOpacity
+              onPress={() => {
+                navigation.navigate('User_profile' as never, {} as never);
+              }}>
+              <Image
+                style={styles.avatar}
+                source={require('openart/src/assets/images/avatar/ava2.png')}
+              />
+            </TouchableOpacity>
+            <Image
+              style={{
+                position: 'absolute',
+                right: 0,
+                borderWidth: 2,
+                borderColor: '#C4C4C4',
+                borderRadius: 12,
+              }}
+              source={require('../assets/images/icon/active-icon.png')}
+            />
+          </View>
           <Text style={[styles.nftText, {fontSize: 13, paddingLeft: 12}]}>
             By Rodion Kutsaev
           </Text>
@@ -200,6 +217,8 @@ const styles = StyleSheet.create({
     paddingLeft: 12,
     width: 48,
     height: 48,
+    borderWidth: 2,
+    borderColor: '#C4C4C4',
   },
   nftText: {
     fontSize: 24,

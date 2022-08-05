@@ -81,13 +81,51 @@ export default function HotBid() {
         style={{marginLeft: 16, marginTop: 24}}>
         <View style={{marginRight: 12}}>
           {/* 1 item view */}
-          <Image
-            // image
-            source={require('openart/src/assets/images/hotbid/hotbid-1.png')}
-            style={{
-              borderRadius: 28,
-            }}
-          />
+          <View>
+            <Image
+              // image
+              source={require('openart/src/assets/images/hotbid/hotbid-1.png')}
+              style={{
+                borderRadius: 28,
+              }}
+            />
+            <View
+              style={{
+                position: 'absolute',
+                bottom: 0,
+                marginLeft: 9,
+                marginBottom: 11,
+              }}>
+              <Image
+                style={{
+                  borderWidth: 0.95,
+                  borderRadius: 100,
+                  borderColor: '#FFFFFF',
+                }}
+                source={require('../assets/images/avatar/ava2.png')}
+              />
+              <Image
+                style={{
+                  borderWidth: 0.95,
+                  borderRadius: 100,
+                  borderColor: '#FFFFFF',
+                  position: 'absolute',
+                  marginLeft: 25,
+                }}
+                source={require('../assets/images/avatar/ava10.png')}
+              />
+              <Image
+                style={{
+                  borderWidth: 0.95,
+                  borderRadius: 100,
+                  borderColor: '#FFFFFF',
+                  position: 'absolute',
+                  marginLeft: 45,
+                }}
+                source={require('../assets/images/avatar/ava11.png')}
+              />
+            </View>
+          </View>
           <View
             style={{
               flex: 1,
@@ -162,13 +200,51 @@ export default function HotBid() {
 
         <View>
           {/* 1 item view */}
-          <Image
-            // image
-            source={require('openart/src/assets/images/hotbid/hotbid-1.png')}
-            style={{
-              borderRadius: 28,
-            }}
-          />
+          <View>
+            <Image
+              // image
+              source={require('openart/src/assets/images/hotbid/hotbid-1.png')}
+              style={{
+                borderRadius: 28,
+              }}
+            />
+            <View
+              style={{
+                position: 'absolute',
+                bottom: 0,
+                marginLeft: 9,
+                marginBottom: 11,
+              }}>
+              <Image
+                style={{
+                  borderWidth: 0.95,
+                  borderRadius: 100,
+                  borderColor: '#FFFFFF',
+                }}
+                source={require('../assets/images/avatar/ava2.png')}
+              />
+              <Image
+                style={{
+                  borderWidth: 0.95,
+                  borderRadius: 100,
+                  borderColor: '#FFFFFF',
+                  position: 'absolute',
+                  marginLeft: 25,
+                }}
+                source={require('../assets/images/avatar/ava10.png')}
+              />
+              <Image
+                style={{
+                  borderWidth: 0.95,
+                  borderRadius: 100,
+                  borderColor: '#FFFFFF',
+                  position: 'absolute',
+                  marginLeft: 45,
+                }}
+                source={require('../assets/images/avatar/ava11.png')}
+              />
+            </View>
+          </View>
           <View
             style={{
               flex: 1,

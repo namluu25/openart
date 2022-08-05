@@ -17,15 +17,21 @@ const Footer = () => {
       />
       <Text
         style={{
-          fontSize: 25.7249,
+          fontSize: 25.72,
           fontFamily: 'Epilogue',
-          fontWeight: '700',
+          fontWeight: '300',
           lineHeight: 34,
           color: '#FCFCFC',
           alignSelf: 'center',
           marginTop: 4,
         }}>
-        The New Creative Economy
+        The{' '}
+        <Text style={{fontWeight: '400'}}>
+          New{' '}
+          <Text style={{fontWeight: '600'}}>
+            Creative <Text style={{fontWeight: '700'}}>Economy</Text>
+          </Text>
+        </Text>
       </Text>
       <View
         //   button

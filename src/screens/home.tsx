@@ -8,10 +8,13 @@ import {
   StatusBar,
   Text,
   TextInput,
-  // TouchableOpacity,
+  TouchableOpacity,
   Platform,
 } from 'react-native';
 // import LinearGradient from 'react-native-linear-gradient';
+import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
+import {faMagnifyingGlass} from '@fortawesome/free-solid-svg-icons';
+import {faMicrophone} from '@fortawesome/free-solid-svg-icons';
 import Header from '../components/header';
 import FrontProduct from '../components/nft-container';
 import LiveContainer from '../components/nft-live-auction-container';
@@ -43,12 +46,46 @@ function Home() {
               {'\n'}
             </Text>
             <Text style={styles.boldTitleText}>{'Your Digital Art'}</Text>
-            <TextInput
-              style={styles.inputBox}
-              placeholderTextColor="#FCFCFC"
-              // value={text}
-              placeholder="Search items, collections, and accounts"
-            />
+            <View
+              style={{
+                marginHorizontal: 24,
+                marginTop: 22,
+              }}>
+              <TextInput
+                style={styles.inputBox}
+                placeholderTextColor="#FCFCFC"
+                // value={text}
+                placeholder="Search items, collections, and accounts"
+              />
+              <TouchableOpacity
+                style={{
+                  position: 'absolute',
+                  marginLeft: 8,
+                  marginRight: 12,
+                  marginVertical: 12,
+                }}>
+                <FontAwesomeIcon
+                  icon={faMagnifyingGlass}
+                  style={{
+                    color: '#F8F8F8',
+                  }}
+                />
+              </TouchableOpacity>
+              <TouchableOpacity
+                style={{
+                  position: 'absolute',
+                  marginRight: 8,
+                  marginVertical: 12,
+                  right: 0,
+                }}>
+                <FontAwesomeIcon
+                  icon={faMicrophone}
+                  style={{
+                    color: '#F8F8F8',
+                  }}
+                />
+              </TouchableOpacity>
+            </View>
           </View>
 
           <FrontProduct />
@@ -91,17 +128,11 @@ const styles = StyleSheet.create({
     fontFamily: 'Epilogue',
   },
   inputBox: {
-    height: 40,
-    marginHorizontal: 12,
-    marginTop: 12,
-    borderWidth: 1,
-    padding: 10,
+    paddingTop: 13,
+    paddingBottom: 11,
+    paddingLeft: 36,
     borderRadius: 8,
-    width: 327,
-    alignSelf: 'center',
     backgroundColor: '#333333',
-    color: 'white',
-    borderColor: '#333333',
   },
   AndroidSafeArea: {
     flex: 1,

@@ -1,6 +1,13 @@
 /* eslint-disable react-native/no-inline-styles */
 import React from 'react';
-import {View, StyleSheet, Image, Text, TouchableOpacity} from 'react-native';
+import {
+  View,
+  StyleSheet,
+  Image,
+  Text,
+  TouchableOpacity,
+  ImageBackground,
+} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 import LinearGradient from 'react-native-linear-gradient';
 
@@ -29,15 +36,27 @@ function FrontProduct() {
               marginBottom: 16.86,
               alignItems: 'center',
             }}>
-            <TouchableOpacity
-              onPress={() => {
-                navigation.navigate('User_profile' as never, {} as never);
-              }}>
+            <View>
+              <TouchableOpacity
+                onPress={() => {
+                  navigation.navigate('User_profile' as never, {} as never);
+                }}>
+                <Image
+                  style={styles.avatar}
+                  source={require('openart/src/assets/images/avatar/ava1.png')}
+                />
+              </TouchableOpacity>
               <Image
-                style={styles.avatar}
-                source={require('openart/src/assets/images/avatar/ava1.png')}
+                style={{
+                  position: 'absolute',
+                  right: 0,
+                  borderWidth: 2,
+                  borderColor: '#333333',
+                  borderRadius: 12,
+                }}
+                source={require('../assets/images/icon/active-icon.png')}
               />
-            </TouchableOpacity>
+            </View>
             <TouchableOpacity
               onPress={() => {
                 navigation.navigate('User_profile' as never, {} as never);

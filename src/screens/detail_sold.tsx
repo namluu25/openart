@@ -313,42 +313,54 @@ export default function Details_sold() {
                 borderRadius: 24,
                 marginTop: 36.24,
                 backgroundColor: '#333333',
-                paddingVertical: 15,
-                paddingHorizontal: 18,
+                paddingLeft: 17,
                 flexDirection: 'column',
-                // justifyContent: 'space-between',
               }}>
-              <View
-                style={{
-                  flexDirection: 'row',
-                  justifyContent: 'space-between',
-                  marginBottom: 24,
-                }}>
-                <Text
+              <View style={{marginBottom: 24, paddingTop: 25}}>
+                <View
                   style={{
-                    fontSize: 20,
-                    fontFamily: 'Epilogue',
-                    color: '#F8F8F8',
-                    fontWeight: '400',
-                    lineHeight: 28,
+                    flexDirection: 'row',
+                    justifyContent: 'space-between',
+                    marginRight: 51,
                   }}>
-                  Sold for
-                </Text>
-                <Text
-                  style={{
-                    fontSize: 16,
-                    fontFamily: 'Epilogue',
-                    color: '#F8F8F8',
-                    fontWeight: '700',
-                    lineHeight: 24,
-                  }}>
-                  $2,683.73
-                </Text>
+                  <Text
+                    style={{
+                      fontSize: 20,
+                      fontFamily: 'Epilogue',
+                      color: '#F8F8F8',
+                      fontWeight: '400',
+                      lineHeight: 28,
+                    }}>
+                    Sold for
+                  </Text>
+                  <Text
+                    style={{
+                      fontSize: 16,
+                      fontFamily: 'Epilogue',
+                      color: '#F8F8F8',
+                      fontWeight: '700',
+                      lineHeight: 24,
+                    }}>
+                    $2,683.73
+                  </Text>
+                </View>
                 <Image
+                  style={{
+                    position: 'absolute',
+                    right: 0,
+                    top: 0,
+                    marginRight: 12,
+                    marginTop: 11,
+                  }}
                   source={require('openart/src/assets/images/icon/sparkle-icon.png')}
                 />
               </View>
-              <View style={{flexDirection: 'row', alignItems: 'center'}}>
+              <View
+                style={{
+                  flexDirection: 'row',
+                  alignItems: 'center',
+                  marginBottom: 35,
+                }}>
                 <Text
                   style={{
                     fontSize: 20,
