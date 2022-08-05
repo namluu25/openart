@@ -126,10 +126,7 @@ const HotCollection = () => {
             alignItems: 'center',
           }}>
           <View>
-            <TouchableOpacity
-              onPress={() => {
-                navigation.navigate('User_profile' as never, {} as never);
-              }}>
+            <TouchableOpacity>
               <Image
                 style={styles.avatar}
                 source={require('openart/src/assets/images/avatar/ava2.png')}

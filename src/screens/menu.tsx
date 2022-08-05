@@ -13,7 +13,7 @@ import {
 import Header from '../components/header';
 import LinearGradient from 'react-native-linear-gradient';
 import {useNavigation} from '@react-navigation/native';
-import Connect_wallet from '../components/modal_connect_wallet';
+import Connect_wallet from '../components/modal-connect-wallet';
 // import Place_bid from '../components/modal_place_bid';
 
 export default function Menu() {

@@ -15,7 +15,7 @@ import LinearGradient from 'react-native-linear-gradient';
 import Header from '../components/header';
 import Footer from '../components/footer';
 // import {useNavigation} from '@react-navigation/native';
-import Place_bid from '../components/modal_place_bid';
+import Place_bid from '../components/modal-place-bid';
 
 export default function Details_auction() {
   // const navigation = useNavigation();
