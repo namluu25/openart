@@ -15,10 +15,7 @@ import User_profile from './src/screens/user_profile';
 import Profile_empty from './src/screens/profile_empty';
 import Profile_edit from './src/screens/profile_edit';
 import Search from './src/screens/search';
-// import {library} from '@fortawesome/fontawesome-svg-core';
-// import {faMagnifyingGlass} from '@fortawesome/free-solid-svg-icons';
 
-// library.add(faMagnifyingGlass);
 const MyTheme = {
   ...DefaultTheme,
   colors: {
@@ -35,7 +32,6 @@ export default function YourApp() {
       <NavigationContainer theme={MyTheme}>
         <Stack.Navigator
           initialRouteName="Home"
-          // initialRouteName="DetailsScreen"
           screenOptions={{headerShown: false}}>
           <Stack.Screen name="Home" component={Home} />
           <Stack.Screen name="Menu" component={Menu} />

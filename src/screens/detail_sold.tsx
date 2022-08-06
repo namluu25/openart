@@ -54,8 +54,6 @@ export default function Details_sold() {
                   <TouchableOpacity
                     style={{
                       borderRadius: 40,
-                      // borderColor: '#DCDCDC',
-                      // borderWidth: 2,
                       backgroundColor: '#333333',
                       alignSelf: 'center',
                       marginHorizontal: 12,
@@ -68,8 +66,6 @@ export default function Details_sold() {
                   <TouchableOpacity
                     style={{
                       borderRadius: 40,
-                      // borderColor: '#DCDCDC',
-                      // borderWidth: 2,
                       backgroundColor: '#333333',
                       alignSelf: 'center',
                     }}>
@@ -215,8 +211,6 @@ export default function Details_sold() {
             <TouchableOpacity
               style={{
                 borderRadius: 16,
-                // borderColor: '#0038F5',
-                // borderWidth: 1,
                 marginTop: 11,
                 backgroundColor: '#333333',
                 paddingVertical: 15,
@@ -231,8 +225,6 @@ export default function Details_sold() {
                 style={{
                   fontSize: 16,
                   fontFamily: 'Epilogue',
-                  // textAlign: 'center',
-                  // padding: 3,
                   color: '#FCFCFC',
                   fontWeight: '700',
                   lineHeight: 24,
@@ -247,8 +239,6 @@ export default function Details_sold() {
             <TouchableOpacity
               style={{
                 borderRadius: 16,
-                // borderColor: '#0038F5',
-                // borderWidth: 1,
                 marginTop: 16,
                 backgroundColor: '#333333',
                 paddingVertical: 15,
@@ -263,8 +253,6 @@ export default function Details_sold() {
                 style={{
                   fontSize: 16,
                   fontFamily: 'Epilogue',
-                  // textAlign: 'center',
-                  // padding: 3,
                   color: '#FCFCFC',
                   fontWeight: '700',
                   lineHeight: 24,
@@ -279,8 +267,6 @@ export default function Details_sold() {
             <TouchableOpacity
               style={{
                 borderRadius: 16,
-                // borderColor: '#0038F5',
-                // borderWidth: 1,
                 marginTop: 16,
                 backgroundColor: '#333333',
                 paddingVertical: 15,
@@ -295,8 +281,6 @@ export default function Details_sold() {
                 style={{
                   fontSize: 16,
                   fontFamily: 'Epilogue',
-                  // textAlign: 'center',
-                  // padding: 3,
                   color: '#FCFCFC',
                   fontWeight: '700',
                   lineHeight: 24,
@@ -423,7 +407,6 @@ export default function Details_sold() {
                 paddingVertical: 15,
                 paddingHorizontal: 13.53,
                 flexDirection: 'row',
-                // justifyContent: 'flex-start',
               }}>
               <Image
                 style={{marginRight: 12.98}}
@@ -474,7 +457,6 @@ export default function Details_sold() {
                 paddingVertical: 15,
                 paddingHorizontal: 13.53,
                 flexDirection: 'row',
-                // justifyContent: 'flex-start',
               }}>
               <Image
                 style={{marginRight: 12.98, borderRadius: 24}}
@@ -539,7 +521,6 @@ export default function Details_sold() {
                 paddingVertical: 15,
                 paddingHorizontal: 13.53,
                 flexDirection: 'row',
-                // justifyContent: 'flex-start',
               }}>
               <Image
                 style={{marginRight: 12.98, borderRadius: 24}}

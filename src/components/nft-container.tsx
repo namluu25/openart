@@ -1,13 +1,6 @@
 /* eslint-disable react-native/no-inline-styles */
 import React, {useState} from 'react';
-import {
-  View,
-  StyleSheet,
-  Image,
-  Text,
-  TouchableOpacity,
-  // ImageBackground,
-} from 'react-native';
+import {View, StyleSheet, Image, Text, TouchableOpacity} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 import LinearGradient from 'react-native-linear-gradient';
 import Account from './modal-account';
@@ -33,7 +26,6 @@ function FrontProduct() {
             style={{
               flexDirection: 'row',
               justifyContent: 'space-between',
-              // paddingVertical: 12.53,
               marginTop: 2.68,
               marginBottom: 16.86,
               alignItems: 'center',
@@ -188,7 +180,6 @@ const styles = StyleSheet.create({
   },
   image: {
     borderRadius: 24,
-    // marginBottom: 11,
     marginTop: 18,
   },
   nftText: {

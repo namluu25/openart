@@ -76,7 +76,6 @@ export default function Search() {
               style={{
                 fontSize: 20,
                 fontFamily: 'Epilogue',
-                // textAlign: 'center',
                 lineHeight: 28,
                 fontWeight: '400',
                 color: '#FCFCFC',
@@ -201,7 +200,6 @@ export default function Search() {
               style={{
                 fontSize: 20,
                 fontFamily: 'Epilogue',
-                // textAlign: 'center',
                 lineHeight: 28,
                 fontWeight: '400',
                 color: '#FCFCFC',
@@ -213,7 +211,6 @@ export default function Search() {
               style={{
                 fontSize: 20,
                 fontFamily: 'Epilogue',
-                // textAlign: 'center',
                 lineHeight: 28,
                 fontWeight: '400',
                 color: '#FCFCFC',
@@ -294,7 +291,6 @@ export default function Search() {
               style={{
                 fontSize: 20,
                 fontFamily: 'Epilogue',
-                // textAlign: 'center',
                 lineHeight: 28,
                 fontWeight: '400',
                 color: '#FCFCFC',
@@ -416,7 +412,6 @@ export default function Search() {
               style={{
                 fontSize: 20,
                 fontFamily: 'Epilogue',
-                // textAlign: 'center',
                 lineHeight: 28,
                 fontWeight: '400',
                 color: '#FCFCFC',
@@ -483,8 +478,6 @@ export default function Search() {
                 style={{
                   fontSize: 16,
                   fontFamily: 'Epilogue',
-                  // textAlign: 'center',
-                  // padding: 15,
                   paddingTop: 10,
                   paddingBottom: 8,
                   paddingHorizontal: 8,
@@ -514,7 +507,6 @@ export default function Search() {
                     style={{
                       flexDirection: 'row',
                       justifyContent: 'space-between',
-                      // paddingVertical: 12.53,
                       marginTop: 2.68,
                       marginBottom: 16.86,
                       alignItems: 'center',
@@ -601,7 +593,6 @@ export default function Search() {
                       style={{
                         flexDirection: 'row',
                         justifyContent: 'space-between',
-                        // paddingVertical: 12.53,
                         marginTop: 2.68,
                         marginBottom: 16.86,
                         alignItems: 'center',
@@ -689,7 +680,6 @@ export default function Search() {
                       style={{
                         flexDirection: 'row',
                         justifyContent: 'space-between',
-                        // paddingVertical: 12.53,
                         marginTop: 2.68,
                         marginBottom: 16.86,
                         alignItems: 'center',
@@ -791,7 +781,6 @@ const styles = StyleSheet.create({
   AndroidSafeArea: {
     flex: 1,
     backgroundColor: 'white',
-    // paddingTop: Platform.OS === 'android' ? StatusBar.currentHeight : 50,
     paddingTop: Platform.OS === 'android' ? 50 : 0,
   },
   product: {
@@ -799,11 +788,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     borderRadius: 32,
     marginTop: 40,
-    // marginHorizontal: 16.57,
   },
   image: {
     borderRadius: 24,
-    // marginBottom: 11,
     marginTop: 18,
   },
   nftText: {

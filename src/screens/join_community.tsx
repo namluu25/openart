@@ -22,7 +22,7 @@ export default function Join_community() {
         styles.AndroidSafeArea,
         {
           backgroundColor: '#222222',
-          flex: 1, //???? ko hieu
+          flex: 1,
         },
       ]}>
       <SafeAreaView style={{flex: 1}}>
@@ -76,7 +76,6 @@ export default function Join_community() {
                       fontSize: 20,
                       fontFamily: 'Epilogue',
                       textAlign: 'center',
-                      // padding: 15,
                       lineHeight: 28,
                       paddingHorizontal: 50.5,
                       paddingVertical: 15,
@@ -131,7 +130,6 @@ const styles = StyleSheet.create({
   AndroidSafeArea: {
     flex: 1,
     backgroundColor: 'white',
-    // paddingTop: Platform.OS === 'android' ? StatusBar.currentHeight : 50,
     paddingTop: Platform.OS === 'android' ? 50 : 0,
   },
 });

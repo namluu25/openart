@@ -11,7 +11,6 @@ import {
   TouchableOpacity,
   Image,
 } from 'react-native';
-// import LinearGradient from 'react-native-linear-gradient';
 import {useNavigation} from '@react-navigation/native';
 import Header from '../components/header';
 import Footer from '../components/footer';
@@ -49,7 +48,6 @@ export default function User_profile() {
                 style={{
                   borderRadius: 40,
                   backgroundColor: '#333333',
-                  // alignSelf: 'center',
                   marginHorizontal: 8,
                 }}>
                 <Image
@@ -61,7 +59,6 @@ export default function User_profile() {
                 style={{
                   borderRadius: 40,
                   backgroundColor: '#333333',
-                  // alignSelf: 'center',
                   marginRight: 16,
                 }}>
                 <Image
@@ -194,9 +191,6 @@ export default function User_profile() {
                 }}>
                 Followed by
               </Text>
-              {/* //   alignSelf: 'center',
-              //   position: 'absolute',
-              //   marginTop: 93.23, */}
               <View>
                 <Image
                   style={{
@@ -405,7 +399,6 @@ export default function User_profile() {
                     style={{
                       flexDirection: 'row',
                       justifyContent: 'space-between',
-                      // paddingVertical: 12.53,
                       marginTop: 2.68,
                       marginBottom: 16.86,
                       alignItems: 'center',
@@ -493,7 +486,6 @@ export default function User_profile() {
                       style={{
                         flexDirection: 'row',
                         justifyContent: 'space-between',
-                        // paddingVertical: 12.53,
                         marginTop: 2.68,
                         marginBottom: 16.86,
                         alignItems: 'center',
@@ -582,7 +574,6 @@ export default function User_profile() {
                       style={{
                         flexDirection: 'row',
                         justifyContent: 'space-between',
-                        // paddingVertical: 12.53,
                         marginTop: 2.68,
                         marginBottom: 16.86,
                         alignItems: 'center',
@@ -685,7 +676,6 @@ const styles = StyleSheet.create({
   AndroidSafeArea: {
     flex: 1,
     backgroundColor: 'white',
-    // paddingTop: Platform.OS === 'android' ? StatusBar.currentHeight : 50,
     paddingTop: Platform.OS === 'android' ? 50 : 0,
   },
   product: {
@@ -697,7 +687,6 @@ const styles = StyleSheet.create({
   },
   image: {
     borderRadius: 24,
-    // marginBottom: 11,
     marginTop: 18,
   },
   nftText: {

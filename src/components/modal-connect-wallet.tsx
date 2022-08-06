@@ -35,7 +35,6 @@ export default function Connect_wallet(props: Props) {
               style={{
                 flexDirection: 'row',
                 justifyContent: 'space-between',
-                // paddingHorizontal: 24.12,
                 marginBottom: 11.92,
               }}>
               <Text
@@ -142,13 +141,11 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    // marginTop: 199,
   },
   modalView: {
     backgroundColor: '#333333',
     borderRadius: 24,
     paddingHorizontal: 17,
-    // margin: 18,
     width: '100%',
     paddingTop: 15.11,
     paddingBottom: 19.32,

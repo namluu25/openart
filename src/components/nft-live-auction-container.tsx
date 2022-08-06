@@ -80,7 +80,6 @@ export default function LiveContainer() {
             borderColor: '#888888',
             borderWidth: 1,
             alignSelf: 'center',
-            // marginRight: 18,
           }}>
           <Text
             style={{
@@ -118,7 +117,6 @@ export default function LiveContainer() {
               style={{
                 flexDirection: 'row',
                 justifyContent: 'space-between',
-                // paddingVertical: 12.53,
                 marginTop: 2.68,
                 marginBottom: 16.86,
                 alignItems: 'center',
@@ -215,7 +213,6 @@ export default function LiveContainer() {
               style={{
                 flexDirection: 'row',
                 justifyContent: 'space-between',
-                // paddingVertical: 12.53,
                 marginTop: 2.68,
                 marginBottom: 16.86,
                 alignItems: 'center',
@@ -704,7 +701,6 @@ const styles = StyleSheet.create({
   },
   image: {
     borderRadius: 24,
-    // marginBottom: 11,
     marginTop: 18,
   },
   nftText: {

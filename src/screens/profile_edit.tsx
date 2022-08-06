@@ -13,12 +13,10 @@ import {
   TextInput,
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
-// import {useNavigation} from '@react-navigation/native';
 import Header from '../components/header';
 import Footer from '../components/footer';
 
 export default function Profile_edit() {
-  // const navigation = useNavigation();
   return (
     <View
       style={[
@@ -50,7 +48,6 @@ export default function Profile_edit() {
                 style={{
                   borderRadius: 40,
                   backgroundColor: '#333333',
-                  // alignSelf: 'center',
                   marginHorizontal: 8,
                 }}>
                 <Image
@@ -62,7 +59,6 @@ export default function Profile_edit() {
                 style={{
                   borderRadius: 40,
                   backgroundColor: '#333333',
-                  // alignSelf: 'center',
                   marginRight: 16,
                 }}>
                 <Image
@@ -132,13 +128,11 @@ export default function Profile_edit() {
               <TextInput
                 style={[styles.inputBox, {marginBottom: 12.62}]}
                 placeholderTextColor="#FCFCFC"
-                // value={text}
                 placeholder="Name"
               />
               <TextInput
                 style={[styles.inputBox, {marginBottom: 41.04}]}
                 placeholderTextColor="#FCFCFC"
-                // value={text}
                 placeholder="User Name"
               />
               <Text
@@ -155,7 +149,6 @@ export default function Profile_edit() {
               <TextInput
                 style={[styles.inputBox, {marginBottom: 1.79}]}
                 placeholderTextColor="#FCFCFC"
-                // value={text}
                 placeholder="Email"
               />
               <Text
@@ -186,13 +179,11 @@ export default function Profile_edit() {
                 <TextInput
                   style={[styles.inputBox, {paddingBottom: 100}]}
                   placeholderTextColor="#FCFCFC"
-                  // value={text}
                   placeholder="Enter your bio here"
                 />
                 <Image
                   style={{
                     position: 'absolute',
-                    // alignSelf: 'flex-end',
                     bottom: 0,
                     right: 0,
                     marginRight: 4.26,
@@ -350,8 +341,6 @@ export default function Profile_edit() {
                   style={{
                     fontSize: 16,
                     fontFamily: 'Epilogue',
-                    // textAlign: 'center',
-                    // padding: 3,
                     color: '#FCFCFC',
                     fontWeight: '500',
                     lineHeight: 24,
@@ -377,8 +366,6 @@ export default function Profile_edit() {
                   style={{
                     fontSize: 16,
                     fontFamily: 'Epilogue',
-                    // textAlign: 'center',
-                    // padding: 3,
                     color: '#FCFCFC',
                     fontWeight: '500',
                     lineHeight: 24,
@@ -404,8 +391,6 @@ export default function Profile_edit() {
                   style={{
                     fontSize: 16,
                     fontFamily: 'Epilogue',
-                    // textAlign: 'center',
-                    // padding: 3,
                     color: '#FCFCFC',
                     fontWeight: '500',
                     lineHeight: 24,
@@ -431,8 +416,6 @@ export default function Profile_edit() {
                   style={{
                     fontSize: 16,
                     fontFamily: 'Epilogue',
-                    // textAlign: 'center',
-                    // padding: 3,
                     color: '#FCFCFC',
                     fontWeight: '500',
                     lineHeight: 24,
@@ -458,8 +441,6 @@ export default function Profile_edit() {
                   style={{
                     fontSize: 16,
                     fontFamily: 'Epilogue',
-                    // textAlign: 'center',
-                    // padding: 3,
                     color: '#FCFCFC',
                     fontWeight: '500',
                     lineHeight: 24,
@@ -485,8 +466,6 @@ export default function Profile_edit() {
                   style={{
                     fontSize: 16,
                     fontFamily: 'Epilogue',
-                    // textAlign: 'center',
-                    // padding: 3,
                     color: '#FCFCFC',
                     fontWeight: '500',
                     lineHeight: 24,
@@ -501,7 +480,6 @@ export default function Profile_edit() {
                   angle={114.44}
                   style={{
                     borderRadius: 8,
-                    // marginBottom: 12,
                     backgroundColor: '#2A2A2E',
                   }}>
                   <Text
@@ -541,7 +519,6 @@ const styles = StyleSheet.create({
   AndroidSafeArea: {
     flex: 1,
     backgroundColor: 'white',
-    // paddingTop: Platform.OS === 'android' ? StatusBar.currentHeight : 50,
     paddingTop: Platform.OS === 'android' ? 50 : 0,
   },
   product: {
@@ -553,7 +530,6 @@ const styles = StyleSheet.create({
   },
   image: {
     borderRadius: 24,
-    // marginBottom: 11,
     marginTop: 18,
   },
   nftText: {

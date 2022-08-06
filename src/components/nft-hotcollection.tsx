@@ -76,7 +76,6 @@ const HotCollection = () => {
         style={{
           flexDirection: 'row',
           justifyContent: 'space-around',
-          //   paddingTop: 20,
         }}>
         <Text
           // title

@@ -14,7 +14,6 @@ import Header from '../components/header';
 import LinearGradient from 'react-native-linear-gradient';
 import {useNavigation} from '@react-navigation/native';
 import Connect_wallet from '../components/modal-connect-wallet';
-// import Place_bid from '../components/modal_place_bid';
 
 export default function Menu() {
   const [visible, setVisible] = useState(false);
@@ -25,7 +24,7 @@ export default function Menu() {
         styles.AndroidSafeArea,
         {
           backgroundColor: '#222222',
-          flex: 1, //???? ko hieu
+          flex: 1,
         },
       ]}>
       <SafeAreaView style={{flex: 1}}>
@@ -102,8 +101,6 @@ export default function Menu() {
               useAngle={true}
               angle={114.44}
               style={{
-                // flex: 1,
-                // paddingLeft: 5,
                 borderRadius: 8,
                 marginBottom: 12,
                 backgroundColor: '#2A2A2E',
@@ -135,7 +132,6 @@ const styles = StyleSheet.create({
   AndroidSafeArea: {
     flex: 1,
     backgroundColor: 'white',
-    // paddingTop: Platform.OS === 'android' ? StatusBar.currentHeight : 50,
     paddingTop: Platform.OS === 'android' ? 50 : 0,
   },
 });

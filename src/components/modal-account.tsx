@@ -8,7 +8,6 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-// import LinearGradient from 'react-native-linear-gradient';
 import {Switch} from 'react-native-paper';
 
 interface Props {
@@ -267,7 +266,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#333333',
     borderRadius: 24,
     width: '100%',
-    // paddingTop: 18.44,
     paddingBottom: 22,
   },
   triangle: {

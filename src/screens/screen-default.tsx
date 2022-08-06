@@ -11,11 +11,10 @@ import {
   TouchableOpacity,
   Image,
 } from 'react-native';
-import LinearGradient from 'react-native-linear-gradient';
 import Header from '../components/header';
 import Footer from '../components/footer';
 
-export default function User_profile() {
+export default function ChangeIt() {
   return (
     <View
       style={[
@@ -30,7 +29,12 @@ export default function User_profile() {
 
         <Header />
         <ScrollView>
-          <View></View>
+          <View>
+            <TouchableOpacity>
+              <Image source={require('')} />
+              <Text>default</Text>
+            </TouchableOpacity>
+          </View>
           <Footer />
         </ScrollView>
       </SafeAreaView>
@@ -42,7 +46,6 @@ const styles = StyleSheet.create({
   AndroidSafeArea: {
     flex: 1,
     backgroundColor: 'white',
-    // paddingTop: Platform.OS === 'android' ? StatusBar.currentHeight : 50,
     paddingTop: Platform.OS === 'android' ? 50 : 0,
   },
 });

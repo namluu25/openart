@@ -14,11 +14,9 @@ import {
 import LinearGradient from 'react-native-linear-gradient';
 import Header from '../components/header';
 import Footer from '../components/footer';
-// import {useNavigation} from '@react-navigation/native';
 import Place_bid from '../components/modal-place-bid';
 
 export default function Details_auction() {
-  // const navigation = useNavigation();
   const [visible, setVisible] = useState(false);
   return (
     <View
@@ -244,8 +242,6 @@ export default function Details_auction() {
             <TouchableOpacity
               style={{
                 borderRadius: 16,
-                // borderColor: '#0038F5',
-                // borderWidth: 1,
                 marginTop: 16,
                 backgroundColor: '#333333',
                 paddingVertical: 15,
@@ -260,8 +256,6 @@ export default function Details_auction() {
                 style={{
                   fontSize: 16,
                   fontFamily: 'Epilogue',
-                  // textAlign: 'center',
-                  // padding: 3,
                   color: '#FCFCFC',
                   fontWeight: '700',
                   lineHeight: 24,
@@ -276,8 +270,6 @@ export default function Details_auction() {
             <TouchableOpacity
               style={{
                 borderRadius: 16,
-                // borderColor: '#0038F5',
-                // borderWidth: 1,
                 marginTop: 16,
                 backgroundColor: '#333333',
                 paddingVertical: 15,
@@ -292,8 +284,6 @@ export default function Details_auction() {
                 style={{
                   fontSize: 16,
                   fontFamily: 'Epilogue',
-                  // textAlign: 'center',
-                  // padding: 3,
                   color: '#FCFCFC',
                   fontWeight: '700',
                   lineHeight: 24,
@@ -412,7 +402,6 @@ export default function Details_auction() {
                 paddingVertical: 15,
                 paddingHorizontal: 13.53,
                 flexDirection: 'row',
-                // justifyContent: 'flex-start',
               }}>
               <Image
                 style={{marginRight: 12.98, borderRadius: 24}}
@@ -477,7 +466,6 @@ export default function Details_auction() {
                 paddingVertical: 15,
                 paddingHorizontal: 13.53,
                 flexDirection: 'row',
-                // justifyContent: 'flex-start',
               }}>
               <Image
                 style={{marginRight: 12.98, borderRadius: 24}}

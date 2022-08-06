@@ -21,7 +21,7 @@ export default function FAQ() {
         styles.AndroidSafeArea,
         {
           backgroundColor: '#222222',
-          flex: 1, //???? ko hieu
+          flex: 1,
         },
       ]}>
       <SafeAreaView style={{flex: 1}}>
@@ -225,7 +225,6 @@ const styles = StyleSheet.create({
   AndroidSafeArea: {
     flex: 1,
     backgroundColor: 'white',
-    // paddingTop: Platform.OS === 'android' ? StatusBar.currentHeight : 50,
     paddingTop: Platform.OS === 'android' ? 50 : 0,
   },
 });

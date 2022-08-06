@@ -11,7 +11,6 @@ import {
   TouchableOpacity,
   Platform,
 } from 'react-native';
-// import LinearGradient from 'react-native-linear-gradient';
 import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
 import {faMagnifyingGlass} from '@fortawesome/free-solid-svg-icons';
 import {faMicrophone} from '@fortawesome/free-solid-svg-icons';
@@ -29,7 +28,7 @@ function Home() {
         styles.AndroidSafeArea,
         {
           backgroundColor: '#222222',
-          flex: 1, //???? ko hieu
+          flex: 1,
         },
       ]}>
       <SafeAreaView style={{flex: 1}}>
@@ -54,7 +53,6 @@ function Home() {
               <TextInput
                 style={styles.inputBox}
                 placeholderTextColor="#FCFCFC"
-                // value={text}
                 placeholder="Search items, collections, and accounts"
               />
               <TouchableOpacity
@@ -137,7 +135,6 @@ const styles = StyleSheet.create({
   AndroidSafeArea: {
     flex: 1,
     backgroundColor: 'white',
-    // paddingTop: Platform.OS === 'android' ? StatusBar.currentHeight : 50,
     paddingTop: Platform.OS === 'android' ? 50 : 0,
   },
 });

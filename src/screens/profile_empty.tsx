@@ -11,13 +11,10 @@ import {
   TouchableOpacity,
   Image,
 } from 'react-native';
-// import LinearGradient from 'react-native-linear-gradient';
-// import {useNavigation} from '@react-navigation/native';
 import Header from '../components/header';
 import Footer from '../components/footer';
 
 export default function Profile_empty() {
-  // const navigation = useNavigation();
   return (
     <View
       style={[
@@ -49,7 +46,6 @@ export default function Profile_empty() {
                 style={{
                   borderRadius: 40,
                   backgroundColor: '#333333',
-                  // alignSelf: 'center',
                   marginHorizontal: 8,
                 }}>
                 <Image
@@ -61,7 +57,6 @@ export default function Profile_empty() {
                 style={{
                   borderRadius: 40,
                   backgroundColor: '#333333',
-                  // alignSelf: 'center',
                   marginRight: 16,
                 }}>
                 <Image
@@ -251,7 +246,6 @@ const styles = StyleSheet.create({
   AndroidSafeArea: {
     flex: 1,
     backgroundColor: 'white',
-    // paddingTop: Platform.OS === 'android' ? StatusBar.currentHeight : 50,
     paddingTop: Platform.OS === 'android' ? 50 : 0,
   },
   product: {
@@ -263,7 +257,6 @@ const styles = StyleSheet.create({
   },
   image: {
     borderRadius: 24,
-    // marginBottom: 11,
     marginTop: 18,
   },
   nftText: {

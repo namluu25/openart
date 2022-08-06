@@ -22,7 +22,6 @@ function Header() {
       </TouchableOpacity>
       <View
         style={{
-          // flex: 1,
           flexDirection: 'row',
         }}>
         <TouchableOpacity

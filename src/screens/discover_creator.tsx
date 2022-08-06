@@ -22,7 +22,7 @@ export default function Discover_creator() {
         styles.AndroidSafeArea,
         {
           backgroundColor: '#222222',
-          flex: 1, //???? ko hieu
+          flex: 1,
         },
       ]}>
       <SafeAreaView style={{flex: 1}}>
@@ -92,7 +92,6 @@ export default function Discover_creator() {
                 style={{
                   borderRadius: 30,
                   backgroundColor: '#333333',
-                  //   borderWidth: 1,
                 }}>
                 <Text
                   style={{
@@ -638,7 +637,6 @@ const styles = StyleSheet.create({
   AndroidSafeArea: {
     flex: 1,
     backgroundColor: 'white',
-    // paddingTop: Platform.OS === 'android' ? StatusBar.currentHeight : 50,
     paddingTop: Platform.OS === 'android' ? 50 : 0,
   },
 });
