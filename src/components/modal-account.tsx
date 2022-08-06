@@ -32,7 +32,7 @@ export default function Account(props: Props) {
           ]}
           onPress={props.handleClose}
           activeOpacity={1}>
-          <View style={[styles.triangle, {}]} />
+          <View style={[styles.triangle]} />
           <View style={[styles.modalView]}>
             <View
               style={{
@@ -259,8 +259,8 @@ export default function Account(props: Props) {
 const styles = StyleSheet.create({
   centeredView: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+    alignItems: 'flex-end',
+    paddingTop: 82,
   },
   modalView: {
     backgroundColor: '#333333',
@@ -281,5 +281,6 @@ const styles = StyleSheet.create({
     borderRightColor: 'transparent',
     borderBottomColor: '#333333',
     borderLeftColor: 'transparent',
+    marginRight: 54,
   },
 });

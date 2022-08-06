@@ -16,7 +16,7 @@
 - [x] Discover creator   
 - [x] User profile   
 - [x] Account   
-- [] Notification   
+- [x] Notification   
 - [] Search popup   
 - [x] Search   
 - [x] My_profile_empty   
