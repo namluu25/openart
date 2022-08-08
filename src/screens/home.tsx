@@ -11,6 +11,7 @@ import {
   TouchableOpacity,
   Platform,
 } from 'react-native';
+import {useNavigation} from '@react-navigation/native';
 import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
 import {faMagnifyingGlass} from '@fortawesome/free-solid-svg-icons';
 import {faMicrophone} from '@fortawesome/free-solid-svg-icons';
@@ -22,6 +23,7 @@ import HotCollection from '../components/nft-hotcollection';
 import Footer from '../components/footer';
 
 function Home() {
+  const navigation = useNavigation();
   return (
     <View
       style={[
@@ -51,9 +53,12 @@ function Home() {
                 marginTop: 22,
               }}>
               <TextInput
-                style={styles.inputBox}
+                style={[styles.inputBox, {color: '#F8F8F8'}]}
                 placeholderTextColor="#FCFCFC"
                 placeholder="Search items, collections, and accounts"
+                onPressIn={() => {
+                  navigation.navigate('SearchPopup' as never, {} as never);
+                }}
               />
               <TouchableOpacity
                 style={{

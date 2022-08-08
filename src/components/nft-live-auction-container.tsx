@@ -102,7 +102,7 @@ export default function LiveContainer() {
           <View>
             <TouchableOpacity
               onPress={() => {
-                navigation.navigate('Details_sold' as never, {} as never);
+                navigation.navigate('DetailsSold' as never, {} as never);
               }}>
               <Image
                 style={styles.image}
@@ -124,7 +124,7 @@ export default function LiveContainer() {
               <View>
                 <TouchableOpacity
                   onPress={() => {
-                    navigation.navigate('User_profile' as never, {} as never);
+                    navigation.navigate('UserProfile' as never, {} as never);
                   }}>
                   <Image
                     style={styles.avatar}
@@ -200,7 +200,7 @@ export default function LiveContainer() {
           <View>
             <TouchableOpacity
               onPress={() => {
-                navigation.navigate('Details_sold' as never, {} as never);
+                navigation.navigate('DetailsSold' as never, {} as never);
               }}>
               <Image
                 style={styles.image}
@@ -220,7 +220,7 @@ export default function LiveContainer() {
               <View>
                 <TouchableOpacity
                   onPress={() => {
-                    navigation.navigate('User_profile' as never, {} as never);
+                    navigation.navigate('UserProfile' as never, {} as never);
                   }}>
                   <Image
                     style={styles.avatar}
@@ -296,10 +296,7 @@ export default function LiveContainer() {
           <View>
             <TouchableOpacity
               onPress={() => {
-                navigation.navigate(
-                  'Details_current_bid' as never,
-                  {} as never,
-                );
+                navigation.navigate('DetailsCurrentBid' as never, {} as never);
               }}>
               <Image
                 style={styles.image}
@@ -319,7 +316,7 @@ export default function LiveContainer() {
               <View>
                 <TouchableOpacity
                   onPress={() => {
-                    navigation.navigate('User_profile' as never, {} as never);
+                    navigation.navigate('UserProfile' as never, {} as never);
                   }}>
                   <Image
                     style={styles.avatar}
@@ -430,10 +427,7 @@ export default function LiveContainer() {
           <View>
             <TouchableOpacity
               onPress={() => {
-                navigation.navigate(
-                  'Details_current_bid' as never,
-                  {} as never,
-                );
+                navigation.navigate('DetailsCurrentBid' as never, {} as never);
               }}>
               <Image
                 style={styles.image}
@@ -453,7 +447,7 @@ export default function LiveContainer() {
               <View>
                 <TouchableOpacity
                   onPress={() => {
-                    navigation.navigate('User_profile' as never, {} as never);
+                    navigation.navigate('UserProfile' as never, {} as never);
                   }}>
                   <Image
                     style={styles.avatar}
@@ -564,10 +558,7 @@ export default function LiveContainer() {
           <View>
             <TouchableOpacity
               onPress={() => {
-                navigation.navigate(
-                  'Details_current_bid' as never,
-                  {} as never,
-                );
+                navigation.navigate('DetailsCurrentBid' as never, {} as never);
               }}>
               <Image
                 style={styles.image}
@@ -589,7 +580,7 @@ export default function LiveContainer() {
               <View>
                 <TouchableOpacity
                   onPress={() => {
-                    navigation.navigate('User_profile' as never, {} as never);
+                    navigation.navigate('UserProfile' as never, {} as never);
                   }}>
                   <Image
                     style={styles.avatar}

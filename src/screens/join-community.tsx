@@ -15,7 +15,7 @@ import LinearGradient from 'react-native-linear-gradient';
 import Footer from '../components/footer';
 import Header from '../components/header';
 
-export default function Join_community() {
+export default function JoinCommunity() {
   return (
     <View
       style={[
@@ -88,7 +88,7 @@ export default function Join_community() {
               </TouchableOpacity>
               <Image
                 style={{alignSelf: 'center'}}
-                source={require('../assets/images/icon/join_community_icon.png')}
+                source={require('../assets/images/icon/join-community-icon.png')}
               />
               <Text
                 style={{

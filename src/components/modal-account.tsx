@@ -1,5 +1,5 @@
 /* eslint-disable react-native/no-inline-styles */
-import React from 'react';
+import React, {useState} from 'react';
 import {
   Modal,
   StyleSheet,
@@ -8,6 +8,7 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
+import {useNavigation} from '@react-navigation/native';
 import {Switch} from 'react-native-paper';
 
 interface Props {
@@ -18,6 +19,8 @@ interface Props {
 export default function Account(props: Props) {
   const [isSwitchOn, setIsSwitchOn] = React.useState(false);
   const onToggleSwitch = () => setIsSwitchOn(!isSwitchOn);
+  const navigation = useNavigation();
+  const [visibleAccount, setVisibleAccount] = useState(false);
   return (
     <>
       <Modal
@@ -41,32 +44,46 @@ export default function Account(props: Props) {
                 marginBottom: 27,
                 marginHorizontal: 26,
               }}>
-              <Image
-                style={{marginRight: 17}}
-                source={require('../assets/images/avatar/ava12.png')}
-              />
+              <TouchableOpacity
+                onPress={() => {
+                  navigation.navigate('UserProfile' as never, {} as never);
+                  setVisibleAccount(false);
+                }}>
+                <Image
+                  style={{marginRight: 17}}
+                  source={require('../assets/images/avatar/ava12.png')}
+                />
+              </TouchableOpacity>
               <View style={{alignSelf: 'center'}}>
-                <Text
-                  style={{
-                    fontFamily: 'Epilogue',
-                    fontWeight: '700',
-                    fontSize: 18,
-                    lineHeight: 28,
-                    color: '#FCFCFC',
+                <TouchableOpacity
+                  onPress={() => {
+                    navigation.navigate('UserProfile' as never, {} as never);
+                    setVisibleAccount(false);
                   }}>
-                  Gift Habeshaw
-                </Text>
-                <View style={{flexDirection: 'row'}}>
                   <Text
                     style={{
                       fontFamily: 'Epilogue',
-                      fontWeight: '500',
-                      fontSize: 13,
-                      lineHeight: 20,
-                      color: '#F8F8F8',
+                      fontWeight: '700',
+                      fontSize: 18,
+                      lineHeight: 28,
+                      color: '#FCFCFC',
                     }}>
-                    52fs5ge5g45sov45a
+                    Gift Habeshaw
                   </Text>
+                </TouchableOpacity>
+                <View style={{flexDirection: 'row'}}>
+                  <TouchableOpacity>
+                    <Text
+                      style={{
+                        fontFamily: 'Epilogue',
+                        fontWeight: '500',
+                        fontSize: 13,
+                        lineHeight: 20,
+                        color: '#F8F8F8',
+                      }}>
+                      52fs5ge5g45sov45a
+                    </Text>
+                  </TouchableOpacity>
                   <TouchableOpacity>
                     <Image
                       style={{marginHorizontal: 5}}
@@ -131,6 +148,10 @@ export default function Account(props: Props) {
             </View>
             <View style={{marginHorizontal: 26}}>
               <TouchableOpacity
+                onPress={() => {
+                  navigation.navigate('UserProfile' as never);
+                  setVisibleAccount(false);
+                }}
                 style={{
                   flexDirection: 'row',
                   alignItems: 'center',
@@ -249,6 +270,10 @@ export default function Account(props: Props) {
                 onValueChange={onToggleSwitch}
               />
             </View>
+            <Account
+              visbile={visibleAccount}
+              handleClose={() => setVisibleAccount(false)}
+            />
           </View>
         </TouchableOpacity>
       </Modal>

@@ -11,10 +11,11 @@ import {
   Platform,
   StatusBar,
 } from 'react-native';
+import LinearGradient from 'react-native-linear-gradient';
 import Header from '../components/header';
 import Footer from '../components/footer';
 
-export default function Details_sold() {
+export default function DetailsCurrentBid() {
   return (
     <View
       style={[
@@ -297,94 +298,150 @@ export default function Details_sold() {
                 borderRadius: 24,
                 marginTop: 36.24,
                 backgroundColor: '#333333',
-                paddingLeft: 17,
+                paddingHorizontal: 20,
                 flexDirection: 'column',
               }}>
-              <View style={{marginBottom: 24, paddingTop: 25}}>
-                <View
-                  style={{
-                    flexDirection: 'row',
-                    justifyContent: 'space-between',
-                    marginRight: 51,
-                  }}>
-                  <Text
-                    style={{
-                      fontSize: 20,
-                      fontFamily: 'Epilogue',
-                      color: '#F8F8F8',
-                      fontWeight: '400',
-                      lineHeight: 28,
-                    }}>
-                    Sold for
-                  </Text>
-                  <Text
-                    style={{
-                      fontSize: 16,
-                      fontFamily: 'Epilogue',
-                      color: '#F8F8F8',
-                      fontWeight: '700',
-                      lineHeight: 24,
-                    }}>
-                    $2,683.73
-                  </Text>
-                </View>
-                <Image
-                  style={{
-                    position: 'absolute',
-                    right: 0,
-                    top: 0,
-                    marginRight: 12,
-                    marginTop: 11,
-                  }}
-                  source={require('openart/src/assets/images/icon/sparkle-icon.png')}
-                />
-              </View>
+              <Text
+                style={{
+                  fontFamily: 'Epilogue',
+                  fontSize: 20,
+                  fontWeight: '400',
+                  lineHeight: 28,
+                  color: '#F8F8F8',
+                  marginTop: 18.71,
+                }}>
+                Current Bid
+              </Text>
               <View
                 style={{
                   flexDirection: 'row',
-                  alignItems: 'center',
-                  marginBottom: 35,
+                  alignItems: 'baseline',
                 }}>
                 <Text
                   style={{
-                    fontSize: 20,
                     fontFamily: 'Epilogue',
-                    color: '#F8F8F8',
-                    fontWeight: '400',
-                    lineHeight: 28,
-                    paddingRight: 6.69,
+                    fontSize: 24,
+                    fontWeight: '700',
+                    lineHeight: 32,
+                    color: '#FCFCFC',
+                    marginRight: 13.51,
                   }}>
-                  Owner by
+                  0.50 ETH
                 </Text>
-                <TouchableOpacity
+                <Text
                   style={{
-                    backgroundColor: '#555555',
-                    borderRadius: 52,
-                    alignItems: 'center',
-                    flexDirection: 'row',
+                    fontFamily: 'Epilogue',
+                    fontSize: 16,
+                    fontWeight: '700',
+                    lineHeight: 24,
+                    color: '#F8F8F8',
                   }}>
-                  <Image
-                    style={{
-                      marginRight: 8,
-                      marginVertical: 4,
-                      marginLeft: 5,
-                    }}
-                    source={require('openart/src/assets/images/avatar/ava4.png')}
-                  />
+                  $2,683.73
+                </Text>
+              </View>
+              <Text
+                style={{
+                  fontFamily: 'Epilogue',
+                  fontSize: 20,
+                  fontWeight: '400',
+                  lineHeight: 28,
+                  color: '#F8F8F8',
+                  marginTop: 18.81,
+                  marginBottom: 3.19,
+                }}>
+                Auction ending in
+              </Text>
+              <View style={{flexDirection: 'row'}}>
+                <View style={{marginRight: 40}}>
                   <Text
                     style={{
                       fontFamily: 'Epilogue',
-                      fontSize: 16,
+                      fontSize: 24,
                       fontWeight: '700',
-                      color: '#F8F8F8',
-                      alignSelf: 'center',
-                      paddingRight: 16,
-                      paddingVertical: 8,
+                      lineHeight: 32,
+                      color: '#FCFCFC',
                     }}>
-                    @david
+                    12
                   </Text>
-                </TouchableOpacity>
+                  <Text
+                    style={{
+                      fontFamily: 'Epilogue',
+                      fontSize: 13,
+                      fontWeight: '500',
+                      lineHeight: 20,
+                      color: '#F8F8F8',
+                    }}>
+                    hours
+                  </Text>
+                </View>
+                <View>
+                  <Text
+                    style={{
+                      fontFamily: 'Epilogue',
+                      fontSize: 24,
+                      fontWeight: '700',
+                      lineHeight: 32,
+                      color: '#FCFCFC',
+                    }}>
+                    30
+                  </Text>
+                  <Text
+                    style={{
+                      fontFamily: 'Epilogue',
+                      fontSize: 13,
+                      fontWeight: '500',
+                      lineHeight: 20,
+                      color: '#F8F8F8',
+                    }}>
+                    minutes
+                  </Text>
+                </View>
+                <View style={{marginLeft: 36}}>
+                  <Text
+                    style={{
+                      fontFamily: 'Epilogue',
+                      fontSize: 24,
+                      fontWeight: '700',
+                      lineHeight: 32,
+                      color: '#FCFCFC',
+                    }}>
+                    25
+                  </Text>
+                  <Text
+                    style={{
+                      fontFamily: 'Epilogue',
+                      fontSize: 13,
+                      fontWeight: '500',
+                      lineHeight: 20,
+                      color: '#F8F8F8',
+                    }}>
+                    seconds
+                  </Text>
+                </View>
               </View>
+              <TouchableOpacity>
+                <LinearGradient
+                  colors={['#0038F5', '#9F03FF']}
+                  useAngle={true}
+                  angle={114.44}
+                  style={{
+                    borderRadius: 8,
+                    marginTop: 34.21,
+                    marginBottom: 37.97,
+                  }}>
+                  <Text
+                    style={{
+                      fontSize: 16,
+                      fontFamily: 'Epilogue',
+                      textAlign: 'center',
+                      padding: 15,
+                      color: '#FCFCFC',
+                      fontWeight: '700',
+                    }}>
+                    Place a bid
+                  </Text>
+                </LinearGradient>
+              </TouchableOpacity>
             </TouchableOpacity>
 
             <Text
@@ -577,7 +634,7 @@ export default function Details_sold() {
               />
             </TouchableOpacity>
           </View>
-          <View style={{marginBottom: 58.38}} />
+          <View style={{marginBottom: 67.38}} />
           <Footer />
         </ScrollView>
       </SafeAreaView>

@@ -15,7 +15,7 @@ import {useNavigation} from '@react-navigation/native';
 import Header from '../components/header';
 import Footer from '../components/footer';
 
-export default function User_profile() {
+export default function UserProfile() {
   const navigation = useNavigation();
   return (
     <View
@@ -384,7 +384,7 @@ export default function User_profile() {
                 <View>
                   <TouchableOpacity
                     onPress={() => {
-                      navigation.navigate('Details_sold' as never, {} as never);
+                      navigation.navigate('DetailsSold' as never, {} as never);
                     }}>
                     <Image
                       style={styles.image}
@@ -469,7 +469,7 @@ export default function User_profile() {
                     <TouchableOpacity
                       onPress={() => {
                         navigation.navigate(
-                          'Details_sold' as never,
+                          'DetailsSold' as never,
                           {} as never,
                         );
                       }}>
@@ -557,7 +557,7 @@ export default function User_profile() {
                     <TouchableOpacity
                       onPress={() => {
                         navigation.navigate(
-                          'Details_sold' as never,
+                          'DetailsSold' as never,
                           {} as never,
                         );
                       }}>
@@ -652,7 +652,7 @@ export default function User_profile() {
               marginTop: 38.33,
               marginBottom: 93.99,
             }}>
-            <Image source={require('../assets/images/icon/plus_icon.png')} />
+            <Image source={require('../assets/images/icon/plus-icon.png')} />
             <Text
               style={{
                 fontSize: 20,

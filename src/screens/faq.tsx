@@ -59,8 +59,7 @@ export default function FAQ() {
                 freebies are waiting for you or{' '}
                 <Text
                   style={{
-                    // fontFamily: 'Red Hat Display', ???
-                    fontFamily: 'Epilogue',
+                    fontFamily: 'RedHatDisplay-Regular',
                     textDecorationLine: 'underline',
                     lineHeight: 22,
                   }}>

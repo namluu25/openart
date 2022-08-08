@@ -14,7 +14,7 @@ import {
 import Header from '../components/header';
 import Footer from '../components/footer';
 
-export default function Profile_empty() {
+export default function ProfileEmpty() {
   return (
     <View
       style={[

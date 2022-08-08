@@ -49,7 +49,10 @@ export default function Menu() {
                 About OpenArt
               </Text>
             </TouchableOpacity>
-            <TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => {
+                navigation.navigate('JoinCommunity' as never, {} as never);
+              }}>
               <Text
                 style={{
                   fontFamily: 'Epilogue',

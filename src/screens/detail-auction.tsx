@@ -1,5 +1,5 @@
 /* eslint-disable react-native/no-inline-styles */
-import React from 'react';
+import React, {useState} from 'react';
 import {
   View,
   Text,
@@ -14,8 +14,10 @@ import {
 import LinearGradient from 'react-native-linear-gradient';
 import Header from '../components/header';
 import Footer from '../components/footer';
+import Place_bid from '../components/modal-place-bid';
 
-export default function Details_current_bid() {
+export default function DetailsAuction() {
+  const [visible, setVisible] = useState(false);
   return (
     <View
       style={[
@@ -293,156 +295,92 @@ export default function Details_current_bid() {
               />
             </TouchableOpacity>
 
-            <TouchableOpacity
+            <View
               style={{
-                borderRadius: 24,
-                marginTop: 36.24,
-                backgroundColor: '#333333',
-                paddingHorizontal: 20,
                 flexDirection: 'column',
+                borderRadius: 24,
+                backgroundColor: '#333333',
+                marginTop: 41.35,
+                marginBottom: 16,
+                paddingHorizontal: 20,
               }}>
-              <Text
-                style={{
-                  fontFamily: 'Epilogue',
-                  fontSize: 20,
-                  fontWeight: '400',
-                  lineHeight: 28,
-                  color: '#F8F8F8',
-                  marginTop: 18.71,
-                }}>
-                Current Bid
-              </Text>
-              <View
-                style={{
-                  flexDirection: 'row',
-                  alignItems: 'baseline',
-                }}>
+              <View style={{marginTop: 18.71}}>
                 <Text
                   style={{
                     fontFamily: 'Epilogue',
-                    fontSize: 24,
-                    fontWeight: '700',
-                    lineHeight: 32,
+                    fontSize: 20,
+                    fontWeight: '400',
+                    lineHeight: 28,
                     color: '#FCFCFC',
-                    marginRight: 13.51,
                   }}>
-                  0.50 ETH
+                  Reserve Price
                 </Text>
+                <View
+                  style={{
+                    flex: 1,
+                    flexDirection: 'row',
+                    alignItems: 'baseline',
+                    marginTop: 4,
+                    marginBottom: 16,
+                  }}>
+                  <Text
+                    style={{
+                      fontFamily: 'Epilogue',
+                      fontSize: 24,
+                      fontWeight: '700',
+                      lineHeight: 32,
+                      color: '#FCFCFC',
+                      marginRight: 8.51,
+                    }}>
+                    1.50 ETH
+                  </Text>
+                  <Text
+                    style={{
+                      fontFamily: 'Epilogue',
+                      fontSize: 16,
+                      fontWeight: '700',
+                      lineHeight: 24,
+                      color: '#F8F8F8',
+                    }}>
+                    $2,683.73
+                  </Text>
+                </View>
                 <Text
                   style={{
                     fontFamily: 'Epilogue',
                     fontSize: 16,
-                    fontWeight: '700',
-                    lineHeight: 24,
+                    fontWeight: '400',
+                    lineHeight: 22,
                     color: '#F8F8F8',
                   }}>
-                  $2,683.73
+                  Once a bid has been placed and the reserve price has been met,
+                  a 24 hour auction for this artwork will begin.
                 </Text>
+                <TouchableOpacity onPress={() => setVisible(true)}>
+                  <LinearGradient
+                    colors={['#0038F5', '#9F03FF']}
+                    useAngle={true}
+                    angle={114.44}
+                    style={{
+                      borderRadius: 8,
+                      marginTop: 28.01,
+                      marginBottom: 37.97,
+                    }}>
+                    <Text
+                      style={{
+                        fontSize: 20,
+                        fontFamily: 'Epilogue',
+                        textAlign: 'center',
+                        padding: 15,
+                        color: '#FCFCFC',
+                        fontWeight: '700',
+                      }}>
+                      Place a bid
+                    </Text>
+                  </LinearGradient>
+                </TouchableOpacity>
               </View>
-              <Text
-                style={{
-                  fontFamily: 'Epilogue',
-                  fontSize: 20,
-                  fontWeight: '400',
-                  lineHeight: 28,
-                  color: '#F8F8F8',
-                  marginTop: 18.81,
-                  marginBottom: 3.19,
-                }}>
-                Auction ending in
-              </Text>
-              <View style={{flexDirection: 'row'}}>
-                <View style={{marginRight: 40}}>
-                  <Text
-                    style={{
-                      fontFamily: 'Epilogue',
-                      fontSize: 24,
-                      fontWeight: '700',
-                      lineHeight: 32,
-                      color: '#FCFCFC',
-                    }}>
-                    12
-                  </Text>
-                  <Text
-                    style={{
-                      fontFamily: 'Epilogue',
-                      fontSize: 13,
-                      fontWeight: '500',
-                      lineHeight: 20,
-                      color: '#F8F8F8',
-                    }}>
-                    hours
-                  </Text>
-                </View>
-                <View>
-                  <Text
-                    style={{
-                      fontFamily: 'Epilogue',
-                      fontSize: 24,
-                      fontWeight: '700',
-                      lineHeight: 32,
-                      color: '#FCFCFC',
-                    }}>
-                    30
-                  </Text>
-                  <Text
-                    style={{
-                      fontFamily: 'Epilogue',
-                      fontSize: 13,
-                      fontWeight: '500',
-                      lineHeight: 20,
-                      color: '#F8F8F8',
-                    }}>
-                    minutes
-                  </Text>
-                </View>
-                <View style={{marginLeft: 36}}>
-                  <Text
-                    style={{
-                      fontFamily: 'Epilogue',
-                      fontSize: 24,
-                      fontWeight: '700',
-                      lineHeight: 32,
-                      color: '#FCFCFC',
-                    }}>
-                    25
-                  </Text>
-                  <Text
-                    style={{
-                      fontFamily: 'Epilogue',
-                      fontSize: 13,
-                      fontWeight: '500',
-                      lineHeight: 20,
-                      color: '#F8F8F8',
-                    }}>
-                    seconds
-                  </Text>
-                </View>
-              </View>
-              <TouchableOpacity>
-                <LinearGradient
-                  colors={['#0038F5', '#9F03FF']}
-                  useAngle={true}
-                  angle={114.44}
-                  style={{
-                    borderRadius: 8,
-                    marginTop: 34.21,
-                    marginBottom: 37.97,
-                  }}>
-                  <Text
-                    style={{
-                      fontSize: 16,
-                      fontFamily: 'Epilogue',
-                      textAlign: 'center',
-                      padding: 15,
-                      color: '#FCFCFC',
-                      fontWeight: '700',
-                    }}>
-                    Place a bid
-                  </Text>
-                </LinearGradient>
-              </TouchableOpacity>
-            </TouchableOpacity>
+            </View>
 
             <Text
               style={{
@@ -455,56 +393,6 @@ export default function Details_current_bid() {
               }}>
               Activity
             </Text>
-
-            <TouchableOpacity
-              style={{
-                borderRadius: 24,
-                marginTop: 23,
-                backgroundColor: '#333333',
-                paddingVertical: 15,
-                paddingHorizontal: 13.53,
-                flexDirection: 'row',
-              }}>
-              <Image
-                style={{marginRight: 12.98}}
-                source={require('openart/src/assets/images/avatar/ava4.png')}
-              />
-              <View style={{marginRight: 100}}>
-                <Text
-                  style={{
-                    fontSize: 14,
-                    fontFamily: 'Epilogue',
-                    color: '#FCFCFC',
-                    fontWeight: '700',
-                    lineHeight: 20,
-                  }}>
-                  Auction won by David
-                </Text>
-                <Text
-                  style={{
-                    fontSize: 13,
-                    fontFamily: 'Epilogue',
-                    color: '#DCDCDC',
-                    fontWeight: '500',
-                    lineHeight: 20,
-                  }}>
-                  June 04, 2021 at 12:00am
-                </Text>
-                <Text
-                  style={{
-                    fontSize: 16,
-                    fontFamily: 'Epilogue',
-                    color: '#DCDCDC',
-                    fontWeight: '700',
-                    lineHeight: 24,
-                  }}>
-                  Sold for 1.50 ETH
-                </Text>
-              </View>
-              <Image
-                source={require('openart/src/assets/images/icon/external-icon.png')}
-              />
-            </TouchableOpacity>
 
             <TouchableOpacity
               style={{
@@ -634,7 +522,8 @@ export default function Details_current_bid() {
               />
             </TouchableOpacity>
           </View>
-          <View style={{marginBottom: 67.38}} />
+          <View style={{marginBottom: 47.25}} />
+          <Place_bid visbile={visible} handleClose={() => setVisible(false)} />
           <Footer />
         </ScrollView>
       </SafeAreaView>

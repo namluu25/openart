@@ -49,13 +49,13 @@ export default function Connect_wallet(props: Props) {
               </Text>
               <TouchableOpacity onPress={props.handleClose}>
                 <Image
-                  source={require('../assets/images/icon/close_icon.png')}
+                  source={require('../assets/images/icon/close-icon.png')}
                 />
               </TouchableOpacity>
             </View>
             <Image
               style={{alignSelf: 'center'}}
-              source={require('../assets/images/icon/connect_wallet_icon.png')}
+              source={require('../assets/images/icon/connect-wallet-icon.png')}
             />
             <Text
               style={{

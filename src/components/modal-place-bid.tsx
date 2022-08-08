@@ -49,7 +49,7 @@ export default function Place_bid(props: Props) {
               </Text>
               <TouchableOpacity onPress={props.handleClose}>
                 <Image
-                  source={require('../assets/images/icon/close_icon.png')}
+                  source={require('../assets/images/icon/close-icon.png')}
                 />
               </TouchableOpacity>
             </View>

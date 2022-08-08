@@ -15,7 +15,7 @@ import LinearGradient from 'react-native-linear-gradient';
 import Header from '../components/header';
 import Footer from '../components/footer';
 
-export default function Discover_creator() {
+export default function DiscoverCreator() {
   return (
     <View
       style={[
@@ -612,7 +612,7 @@ export default function Discover_creator() {
               justifyContent: 'center',
               marginHorizontal: 35,
             }}>
-            <Image source={require('../assets/images/icon/plus_icon.png')} />
+            <Image source={require('../assets/images/icon/plus-icon.png')} />
             <Text
               style={{
                 fontSize: 20,

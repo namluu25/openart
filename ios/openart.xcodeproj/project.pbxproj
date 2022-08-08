@@ -11,10 +11,10 @@
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		288BCE3D15D74051914EC6D5 /* RedHatDisplay-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3B5995EFB1DD4351A5D15505 /* RedHatDisplay-Regular.ttf */; };
 		6A61C8206FAAFBE4EBA9713F /* libPods-openart.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 87B46E00CD6098A9657788C7 /* libPods-openart.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		B246AF1E223AEBDF603AEE21 /* libPods-openart-openartTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F486E3579796B513A4B6405 /* libPods-openart-openartTests.a */; };
-		D1FED8492898DABD00E61EFB /* RedHatDisplay-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D163EE362898D0800045DDEA /* RedHatDisplay-VariableFont_wght.ttf */; };
 		D54E56D3F7A94605B0A6D76A /* Epilogue-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8B7A94C007A2450AAEE8C219 /* Epilogue-VariableFont_wght.ttf */; };
 /* End PBXBuildFile section */
 
@@ -40,13 +40,13 @@
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = openart/main.m; sourceTree = "<group>"; };
 		2F486E3579796B513A4B6405 /* libPods-openart-openartTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-openart-openartTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3977C7B753FD86C92EE96C97 /* Pods-openart-openartTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-openart-openartTests.debug.xcconfig"; path = "Target Support Files/Pods-openart-openartTests/Pods-openart-openartTests.debug.xcconfig"; sourceTree = "<group>"; };
+		3B5995EFB1DD4351A5D15505 /* RedHatDisplay-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "RedHatDisplay-Regular.ttf"; path = "../src/assets/fonts/RedHatDisplay-Regular.ttf"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = openart/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		844C0B777162D28D7B509775 /* Pods-openart.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-openart.debug.xcconfig"; path = "Target Support Files/Pods-openart/Pods-openart.debug.xcconfig"; sourceTree = "<group>"; };
 		87B46E00CD6098A9657788C7 /* libPods-openart.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-openart.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B7A94C007A2450AAEE8C219 /* Epilogue-VariableFont_wght.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Epilogue-VariableFont_wght.ttf"; path = "../src/assets/fonts/Epilogue-VariableFont_wght.ttf"; sourceTree = "<group>"; };
 		BD0BCCBF5C7E2CBF9B46398D /* Pods-openart-openartTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-openart-openartTests.release.xcconfig"; path = "Target Support Files/Pods-openart-openartTests/Pods-openart-openartTests.release.xcconfig"; sourceTree = "<group>"; };
 		CC9DA0DAD5272ACEE61E78E3 /* Pods-openart.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-openart.release.xcconfig"; path = "Target Support Files/Pods-openart/Pods-openart.release.xcconfig"; sourceTree = "<group>"; };
-		D163EE362898D0800045DDEA /* RedHatDisplay-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "RedHatDisplay-VariableFont_wght.ttf"; path = "../src/assets/fonts/RedHatDisplay-VariableFont_wght.ttf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -113,8 +113,8 @@
 		74951A262BAA4CACA65BBDB8 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				D163EE362898D0800045DDEA /* RedHatDisplay-VariableFont_wght.ttf */,
 				8B7A94C007A2450AAEE8C219 /* Epilogue-VariableFont_wght.ttf */,
+				3B5995EFB1DD4351A5D15505 /* RedHatDisplay-Regular.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -256,10 +256,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D1FED8492898DABD00E61EFB /* RedHatDisplay-VariableFont_wght.ttf in Resources */,
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				D54E56D3F7A94605B0A6D76A /* Epilogue-VariableFont_wght.ttf in Resources */,
+				288BCE3D15D74051914EC6D5 /* RedHatDisplay-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -16,7 +16,7 @@ import LinearGradient from 'react-native-linear-gradient';
 import Header from '../components/header';
 import Footer from '../components/footer';
 
-export default function Profile_edit() {
+export default function ProfileEdit() {
   return (
     <View
       style={[

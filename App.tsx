@@ -2,19 +2,20 @@ import React from 'react';
 import {NavigationContainer, DefaultTheme} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
-import Details_sold from './src/screens/detail_sold';
+import DetailsSold from './src/screens/detail-sold';
 import Home from './src/screens/home';
 import Menu from './src/screens/menu';
-import Details_auction from './src/screens/detail_auction';
-import Details_current_bid from './src/screens/detail_current_bid';
+import DetailsAuction from './src/screens/detail-auction';
+import DetailsCurrentBid from './src/screens/detail-current-bid';
 import About from './src/screens/about';
 import FAQ from './src/screens/faq';
-import Join_community from './src/screens/join_community';
-import Discover_creator from './src/screens/discover_creator';
-import User_profile from './src/screens/user_profile';
-import Profile_empty from './src/screens/profile_empty';
-import Profile_edit from './src/screens/profile_edit';
-import Search from './src/screens/search';
+import JoinCommunity from './src/screens/join-community';
+import DiscoverCreator from './src/screens/discover-creator';
+import UserProfile from './src/screens/user-profile';
+import ProfileEmpty from './src/screens/profile-empty';
+import ProfileEdit from './src/screens/profile-edit';
+import SearchFilter from './src/screens/search-filter';
+import SearchPopup from './src/screens/search';
 
 const MyTheme = {
   ...DefaultTheme,
@@ -37,17 +38,18 @@ export default function YourApp() {
           <Stack.Screen name="Menu" component={Menu} />
           <Stack.Screen name="About" component={About} />
           <Stack.Screen name="FAQ" component={FAQ} />
-          <Stack.Screen name="Join_community" component={Join_community} />
-          <Stack.Screen name="Discover_creator" component={Discover_creator} />
-          <Stack.Screen name="Details_sold" component={Details_sold} />
-          <Stack.Screen name="Details_auction" component={Details_auction} />
-          <Stack.Screen name="User_profile" component={User_profile} />
-          <Stack.Screen name="Profile_empty" component={Profile_empty} />
-          <Stack.Screen name="Profile_edit" component={Profile_edit} />
-          <Stack.Screen name="Search" component={Search} />
+          <Stack.Screen name="JoinCommunity" component={JoinCommunity} />
+          <Stack.Screen name="DiscoverCreator" component={DiscoverCreator} />
+          <Stack.Screen name="DetailsSold" component={DetailsSold} />
+          <Stack.Screen name="DetailsAuction" component={DetailsAuction} />
+          <Stack.Screen name="UserProfile" component={UserProfile} />
+          <Stack.Screen name="ProfileEmpty" component={ProfileEmpty} />
+          <Stack.Screen name="ProfileEdit" component={ProfileEdit} />
+          <Stack.Screen name="Search" component={SearchFilter} />
+          <Stack.Screen name="SearchPopup" component={SearchPopup} />
           <Stack.Screen
-            name="Details_current_bid"
-            component={Details_current_bid}
+            name="DetailsCurrentBid"
+            component={DetailsCurrentBid}
           />
         </Stack.Navigator>
       </NavigationContainer>

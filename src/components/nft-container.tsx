@@ -14,7 +14,7 @@ function FrontProduct() {
         <View>
           <TouchableOpacity
             onPress={() => {
-              navigation.navigate('Details_auction' as never, {} as never);
+              navigation.navigate('DetailsAuction' as never, {} as never);
             }}>
             <Image
               style={styles.image}
@@ -33,7 +33,7 @@ function FrontProduct() {
             <View>
               <TouchableOpacity
                 onPress={() => {
-                  navigation.navigate('User_profile' as never, {} as never);
+                  navigation.navigate('UserProfile' as never, {} as never);
                 }}>
                 <Image
                   style={styles.avatar}
@@ -53,7 +53,7 @@ function FrontProduct() {
             </View>
             <TouchableOpacity
               onPress={() => {
-                navigation.navigate('User_profile' as never, {} as never);
+                navigation.navigate('UserProfile' as never, {} as never);
               }}
               style={{
                 flex: 1,
