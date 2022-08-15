@@ -16,6 +16,7 @@ import ProfileEmpty from './src/screens/profile-empty';
 import ProfileEdit from './src/screens/profile-edit';
 import SearchFilter from './src/screens/search-filter';
 import SearchPopup from './src/screens/search';
+import TestAPI from './src/screens/screen-default';
 
 const MyTheme = {
   ...DefaultTheme,
@@ -47,6 +48,8 @@ export default function YourApp() {
           <Stack.Screen name="ProfileEdit" component={ProfileEdit} />
           <Stack.Screen name="Search" component={SearchFilter} />
           <Stack.Screen name="SearchPopup" component={SearchPopup} />
+          <Stack.Screen name="TestAPI" component={TestAPI} />
+
           <Stack.Screen
             name="DetailsCurrentBid"
             component={DetailsCurrentBid}

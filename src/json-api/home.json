@@ -1,0 +1,47 @@
+// 20220815141317
+// https://62f0be8a57311485d135dee1.mockapi.io/homepage
+
+[
+    {
+      "image": "https://i.imgur.com/eVuxxzl.png",
+      "name": "Silent Wave",
+      "avatar": "https://i.imgur.com/0aTs3RS.png",
+      "creator_name": "Pawel Czerwinski",
+      "id": "1"
+    },
+    {
+      "image": "https://i.imgur.com/d3ewC9P.png",
+      "name": "Silent Color",
+      "avatar": "https://i.imgur.com/a/8A8MrEY.png",
+      "creator_name": "Pawel Czerwinski",
+      "id": "2"
+    },
+    {
+      "image": "https://i.imgur.com/KLZSIFV.png",
+      "name": "George",
+      "avatar": "https://i.imgur.com/a/8A8MrEY.png",
+      "creator_name": "Pawel Czerwinski",
+      "id": "3"
+    },
+    {
+      "image": "https://i.imgur.com/xk0dhqj.png",
+      "name": "Mirror",
+      "avatar": "https://i.imgur.com/a/8A8MrEY.png",
+      "creator_name": "Pawel Czerwinski",
+      "id": "4"
+    },
+    {
+      "image": "https://i.imgur.com/IUEGkgZ.png",
+      "name": "Magic Mar",
+      "avatar": "https://i.imgur.com/a/8A8MrEY.png",
+      "creator_name": "Pawel Czerwinski",
+      "id": "5"
+    },
+    {
+      "image": "https://i.imgur.com/S4Y5uof.png",
+      "name": "Shedd Aquarium",
+      "avatar": "https://i.imgur.com/a/8A8MrEY.png",
+      "creator_name": "Pawel Czerwinski",
+      "id": "6"
+    }
+  ]

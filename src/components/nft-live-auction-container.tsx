@@ -1,48 +1,37 @@
 /* eslint-disable react-native/no-inline-styles */
-import React from 'react';
-import {View, StyleSheet, Image, Text, TouchableOpacity} from 'react-native';
+import React, {useState, useEffect} from 'react';
+import {
+  View,
+  StyleSheet,
+  Image,
+  Text,
+  TouchableOpacity,
+  FlatList,
+} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
+import axios from 'axios';
 
-// interface Items {
-//   id: number;
-//   url: string;
-//   imgName: string;
-//   author: string;
-//   role: string;
-//   active: boolean;
-//   liked: boolean;
-// }
+interface Items {
+  id: number;
+  name: string;
+  avatar: string;
+  creator_name: string;
+  image: string;
+}
 
 export default function LiveContainer() {
-  const navigation = useNavigation();
-  // const data = [
-  //   {
-  //     id: '1',
-  //     url: 'openart/src/asset/images/nft/1.png',
-  //     imgName: 'Silent Color',
-  //     author: 'Pawel Czerwinski',
-  //     role: 'Creator',
-  //     active: true,
-  //     liked: true,
-  //   },
-  //   {
-  //     id: '2',
-  //     url: 'openart/src/asset/images/nft/2.png',
-  //     imgName: 'Silent Color',
-  //     author: 'Pawel Czerwinski',
-  //     role: 'Creator',
-  //     active: true,
-  //     liked: true,
-  //   },
-  // ];
-  return (
-    // <ScrollView>
-    //   {data.map((item: Items) => {
-    //     <View key={item.id}>
+  const [apiData, setApiData] = useState<any[]>([]);
+  const [detail, setDetail] = useState<boolean>(false);
 
-    //     </View>
-    //   })}
-    // </ScrollView>
+  useEffect(() => {
+    axios
+      .get('https://62f0be8a57311485d135dee1.mockapi.io/homepage')
+      .then(res => {
+        setApiData(res.data);
+      });
+  }, []);
+  const navigation = useNavigation();
+  return (
     <View>
       <View
         style={{
@@ -97,7 +86,131 @@ export default function LiveContainer() {
         </TouchableOpacity>
       </View>
 
+      {/* navigation.navigate('sadsadasd', { params: item }) */}
+
       <View>
+        <Text style={{color: 'white'}}>{apiData[0]?.name}</Text>
+      </View>
+
+      <FlatList
+        data={apiData.slice(1)}
+        // scroll
+        renderItem={({item}: {item: Items}) => {
+          return (
+            <View key={item.id}>
+              <View style={[styles.product, {marginTop: 21.5}]}>
+                {/* <Text style={{flex: 1, backgroundColor: 'red'}}>{item.name}</Text> */}
+                <View>
+                  <TouchableOpacity
+                    onPress={() => {
+                      navigation.navigate('DetailsSold' as never, {} as never);
+                    }}>
+                    <Image
+                      source={{uri: `${item.image}`}}
+                      style={styles.image}
+                    />
+                  </TouchableOpacity>
+                  <Text style={[styles.nftText, {marginTop: 12.41}]}>
+                    {item.name}
+                  </Text>
+                  <View
+                    style={{
+                      flexDirection: 'row',
+                      justifyContent: 'space-between',
+                      marginTop: 2.68,
+                      marginBottom: 16.86,
+                      alignItems: 'center',
+                    }}>
+                    <View>
+                      <TouchableOpacity
+                        onPress={() => {
+                          navigation.navigate(
+                            'UserProfile' as never,
+                            {} as never,
+                          );
+                        }}>
+                        <Image
+                          style={styles.avatar}
+                          source={{uri: `${item.avatar}`}}
+                        />
+                      </TouchableOpacity>
+                      <Image
+                        style={{
+                          position: 'absolute',
+                          right: 0,
+                          borderWidth: 2,
+                          borderColor: '#333333',
+                          borderRadius: 12,
+                        }}
+                        source={require('../assets/images/icon/active-icon.png')}
+                      />
+                    </View>
+                    <View
+                      style={{
+                        flex: 1,
+                      }}>
+                      <Text
+                        style={[
+                          styles.nftText,
+                          {fontSize: 18, paddingLeft: 12},
+                        ]}>
+                        {item.creator_name}
+                      </Text>
+                      <Text
+                        style={[
+                          styles.nftText,
+                          {fontSize: 14, fontWeight: '500', paddingLeft: 12},
+                        ]}>
+                        Creator
+                      </Text>
+                    </View>
+                    <Image
+                      source={require('openart/src/assets/images/icon/heart-icon.png')}
+                    />
+                  </View>
+                </View>
+              </View>
+              <TouchableOpacity
+                style={{
+                  borderRadius: 51,
+                  marginTop: 12.14,
+                  marginHorizontal: 16.57,
+                  backgroundColor: '#333333',
+                  paddingVertical: 18,
+                }}
+                onPress={() => setDetail(!detail)}>
+                {detail ? (
+                  <Text
+                    style={{
+                      fontSize: 20,
+                      fontFamily: 'Epilogue',
+                      textAlign: 'center',
+                      color: '#FCFCFC',
+                      fontWeight: '400',
+                    }}>
+                    Sold For
+                    <Text
+                      style={{
+                        fontSize: 24,
+                        fontFamily: 'Epilogue',
+                        textAlign: 'center',
+                        color: '#FCFCFC',
+                        fontWeight: '700',
+                      }}>
+                      {' '}
+                      2.00 ETH
+                    </Text>
+                  </Text>
+                ) : (
+                  <Text>ABC</Text>
+                )}
+              </TouchableOpacity>
+            </View>
+          );
+        }}
+      />
+
+      {/* <View>
         <View style={[styles.product, {marginTop: 21.5}]}>
           <View>
             <TouchableOpacity
@@ -677,7 +790,7 @@ export default function LiveContainer() {
             </View>
           </View>
         </TouchableOpacity>
-      </View>
+      </View> */}
     </View>
   );
 }
@@ -693,6 +806,8 @@ const styles = StyleSheet.create({
   image: {
     borderRadius: 24,
     marginTop: 18,
+    width: 321,
+    height: 400,
   },
   nftText: {
     fontSize: 24,

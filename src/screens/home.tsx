@@ -93,7 +93,9 @@ function Home() {
 
           <FrontProduct />
 
-          <LiveContainer />
+          <View>
+            <LiveContainer />
+          </View>
 
           <HotBid />
 

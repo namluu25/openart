@@ -9,7 +9,7 @@ function FrontProduct() {
   const [visible, setVisible] = useState(false);
   const navigation = useNavigation();
   return (
-    <View>
+    <>
       <View style={styles.product}>
         <View>
           <TouchableOpacity
@@ -166,7 +166,7 @@ function FrontProduct() {
         </TouchableOpacity>
         <Account visbile={visible} handleClose={() => setVisible(false)} />
       </View>
-    </View>
+    </>
   );
 }
 
