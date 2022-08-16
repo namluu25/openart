@@ -2,7 +2,7 @@ import React from 'react';
 import {NavigationContainer, DefaultTheme} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
-import DetailsSold from './src/screens/detail-sold';
+import DetailSold from './src/screens/detail-sold';
 import Home from './src/screens/home';
 import Menu from './src/screens/menu';
 import DetailsAuction from './src/screens/detail-auction';
@@ -41,7 +41,7 @@ export default function YourApp() {
           <Stack.Screen name="FAQ" component={FAQ} />
           <Stack.Screen name="JoinCommunity" component={JoinCommunity} />
           <Stack.Screen name="DiscoverCreator" component={DiscoverCreator} />
-          <Stack.Screen name="DetailsSold" component={DetailsSold} />
+          <Stack.Screen name="DetailSold" component={DetailSold} />
           <Stack.Screen name="DetailsAuction" component={DetailsAuction} />
           <Stack.Screen name="UserProfile" component={UserProfile} />
           <Stack.Screen name="ProfileEmpty" component={ProfileEmpty} />

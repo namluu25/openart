@@ -16,7 +16,7 @@ export default function HotBid() {
     <View
       style={{
         marginBottom: 58.28,
-        marginTop: 80,
+        marginTop: 61,
       }}>
       <View
         style={{
@@ -27,7 +27,6 @@ export default function HotBid() {
         <View
           style={{
             flexDirection: 'row',
-            paddingHorizontal: 16,
           }}>
           <Image
             source={require('openart/src/assets/images/icon/fire-icon.png')}
@@ -47,7 +46,6 @@ export default function HotBid() {
         <View
           style={{
             flexDirection: 'row',
-            paddingHorizontal: 16,
           }}>
           <TouchableOpacity
             onPress={() => {
@@ -78,7 +76,7 @@ export default function HotBid() {
         horizontal
         showsHorizontalScrollIndicator={false}
         ref={naviRef}
-        style={{marginLeft: 16, marginTop: 24}}>
+        style={{marginTop: 24}}>
         <View style={{marginRight: 12}}>
           {/* 1 item view */}
           <View>

@@ -39,77 +39,68 @@ function Home() {
         <Header />
 
         <ScrollView>
-          {/* nestedScrollEnabled={true} */}
-          {/* use for nesting flatlist inside scrollview */}
-          <View>
-            <Text style={styles.titleText}>
-              {'Discover, collect, and sell'}
-              {'\n'}
-            </Text>
-            <Text style={styles.boldTitleText}>{'Your Digital Art'}</Text>
-            <View
-              style={{
-                marginHorizontal: 24,
-                marginTop: 22,
-              }}>
-              <TextInput
-                style={[styles.inputBox, {color: '#F8F8F8'}]}
-                placeholderTextColor="#FCFCFC"
-                placeholder="Search items, collections, and accounts"
-                onPressIn={() => {
-                  navigation.navigate('SearchPopup' as never, {} as never);
-                }}
-              />
-              <TouchableOpacity
+          <View style={{marginHorizontal: 16}}>
+            <View>
+              <Text style={styles.titleText}>
+                {'Discover, collect, and sell'}
+                {'\n'}
+              </Text>
+              <Text style={styles.boldTitleText}>{'Your Digital Art'}</Text>
+              <View
                 style={{
-                  position: 'absolute',
-                  marginLeft: 8,
-                  marginRight: 12,
-                  marginVertical: 12,
+                  marginHorizontal: 8,
+                  marginTop: 22,
                 }}>
-                <FontAwesomeIcon
-                  icon={faMagnifyingGlass}
-                  style={{
-                    color: '#F8F8F8',
+                <TextInput
+                  style={[styles.inputBox, {color: '#F8F8F8'}]}
+                  placeholderTextColor="#FCFCFC"
+                  placeholder="Search items, collections, and accounts"
+                  onPressIn={() => {
+                    navigation.navigate('SearchPopup' as never, {} as never);
                   }}
                 />
-              </TouchableOpacity>
-              <TouchableOpacity
-                style={{
-                  position: 'absolute',
-                  marginRight: 8,
-                  marginVertical: 12,
-                  right: 0,
-                }}>
-                <FontAwesomeIcon
-                  icon={faMicrophone}
+                <TouchableOpacity
                   style={{
-                    color: '#F8F8F8',
-                  }}
-                />
-              </TouchableOpacity>
+                    position: 'absolute',
+                    marginLeft: 8,
+                    marginRight: 12,
+                    marginVertical: 12,
+                  }}>
+                  <FontAwesomeIcon
+                    icon={faMagnifyingGlass}
+                    style={{
+                      color: '#F8F8F8',
+                    }}
+                  />
+                </TouchableOpacity>
+                <TouchableOpacity
+                  style={{
+                    position: 'absolute',
+                    marginRight: 8,
+                    marginVertical: 12,
+                    right: 0,
+                  }}>
+                  <FontAwesomeIcon
+                    icon={faMicrophone}
+                    style={{
+                      color: '#F8F8F8',
+                    }}
+                  />
+                </TouchableOpacity>
+              </View>
             </View>
-          </View>
 
-          <FrontProduct />
+            <FrontProduct />
 
-          <View>
             <LiveContainer />
+
+            <HotBid />
+
+            <HotCollection />
+
+            <View style={{marginBottom: 82}} />
           </View>
 
-          <HotBid />
-
-          <HotCollection />
-          <View
-            // separator line
-            style={{
-              borderBottomColor: 'white',
-              borderBottomWidth: 0.5,
-              width: '85%',
-              alignSelf: 'center',
-            }}
-          />
-          <View style={{marginBottom: 82}} />
           <Footer />
         </ScrollView>
       </SafeAreaView>

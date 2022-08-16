@@ -96,7 +96,7 @@ export default function About() {
               <View
                 style={{
                   flexDirection: 'row',
-                  justifyContent: 'space-evenly',
+                  justifyContent: 'space-between',
                 }}>
                 <View
                   style={{

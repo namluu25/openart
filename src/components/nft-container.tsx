@@ -1,27 +1,55 @@
 /* eslint-disable react-native/no-inline-styles */
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {View, StyleSheet, Image, Text, TouchableOpacity} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 import LinearGradient from 'react-native-linear-gradient';
 import Account from './modal-account';
+import axios from 'axios';
+import globalStyle from '../theme/globalStyle';
 
-function FrontProduct() {
+interface Items {
+  id: number;
+  name: string;
+  avatar: string;
+  creator_name: string;
+  image: string;
+}
+
+export default function FrontProduct() {
+  const [apiData, setApiData] = useState<Array<Items>>([
+    {
+      id: 0,
+      name: '',
+      avatar: '',
+      creator_name: '',
+      image: '',
+    },
+  ]);
+  useEffect(() => {
+    axios
+      .get('https://62fa6791ffd7197707ebe3f2.mockapi.io/homepage')
+      .then(res => {
+        setApiData(res.data);
+      });
+  }, []);
   const [visible, setVisible] = useState(false);
   const navigation = useNavigation();
   return (
     <>
-      <View style={styles.product}>
+      <View style={[globalStyle.container, {marginTop: 23.29}]}>
         <View>
           <TouchableOpacity
             onPress={() => {
               navigation.navigate('DetailsAuction' as never, {} as never);
             }}>
             <Image
-              style={styles.image}
-              source={require('openart/src/assets/images/nft/1.png')}
+              style={globalStyle.imageContainer}
+              source={{uri: apiData[0]?.image}}
             />
           </TouchableOpacity>
-          <Text style={[styles.nftText, {marginTop: 12.41}]}>Silent Wave</Text>
+          <Text style={[globalStyle.containerTitle, {marginTop: 12.41}]}>
+            Silent Wave
+          </Text>
           <View
             style={{
               flexDirection: 'row',
@@ -36,8 +64,8 @@ function FrontProduct() {
                   navigation.navigate('UserProfile' as never, {} as never);
                 }}>
                 <Image
-                  style={styles.avatar}
-                  source={require('openart/src/assets/images/avatar/ava1.png')}
+                  style={globalStyle.avatar}
+                  source={{uri: `${apiData[0]?.avatar}`}}
                 />
               </TouchableOpacity>
               <Image
@@ -57,17 +85,12 @@ function FrontProduct() {
               }}
               style={{
                 flex: 1,
+                marginLeft: 12,
               }}>
-              <Text style={[styles.nftText, {fontSize: 18, paddingLeft: 12}]}>
-                Pawel Czerwinski
+              <Text style={globalStyle.containerCreatorName}>
+                {apiData[0]?.creator_name}
               </Text>
-              <Text
-                style={[
-                  styles.nftText,
-                  {fontSize: 14, fontWeight: '500', paddingLeft: 12},
-                ]}>
-                Creator
-              </Text>
+              <Text style={globalStyle.containerCreatorInfo}>Creator</Text>
             </TouchableOpacity>
             <Image
               source={require('openart/src/assets/images/icon/heart-icon.png')}
@@ -80,7 +103,6 @@ function FrontProduct() {
         style={{
           flexDirection: 'row',
           alignItems: 'baseline',
-          marginLeft: 16.57,
           marginTop: 12.85,
           marginBottom: 15.29,
         }}>
@@ -121,7 +143,6 @@ function FrontProduct() {
       <View
         style={{
           marginVertical: 11,
-          marginHorizontal: 16.57,
         }}>
         <TouchableOpacity onPress={() => setVisible(true)}>
           <LinearGradient
@@ -170,30 +191,4 @@ function FrontProduct() {
   );
 }
 
-const styles = StyleSheet.create({
-  product: {
-    backgroundColor: '#333333',
-    alignItems: 'center',
-    borderRadius: 32,
-    marginTop: 23.29,
-    marginHorizontal: 16.57,
-  },
-  image: {
-    borderRadius: 24,
-    marginTop: 18,
-  },
-  nftText: {
-    fontSize: 24,
-    fontWeight: '700',
-    color: '#FCFCFC',
-    fontFamily: 'Epilogue',
-  },
-  avatar: {
-    borderRadius: 24,
-    paddingLeft: 12,
-    width: 48,
-    height: 48,
-  },
-});
-
-export default FrontProduct;
+const styles = StyleSheet.create({});

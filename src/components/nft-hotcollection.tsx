@@ -4,19 +4,13 @@ import {View, Text, Image, TouchableOpacity, StyleSheet} from 'react-native';
 
 const HotCollection = () => {
   return (
-    <View
-      // big view
-      style={{
-        flex: 1,
-        flexDirection: 'column',
-        paddingBottom: 24,
-      }}>
+    <>
       <View
         // title view
         style={{
-          marginTop: 33,
+          marginTop: 34,
           flexDirection: 'row',
-          paddingHorizontal: 16,
+          marginBottom: 40,
         }}>
         <Image
           source={require('openart/src/assets/images/icon/sparkle-icon.png')}
@@ -34,48 +28,40 @@ const HotCollection = () => {
       </View>
 
       <View
-        // image
+        //image row 1
         style={{
-          flexDirection: 'column',
-          marginTop: 40.5,
+          flexDirection: 'row',
+          justifyContent: 'space-between',
         }}>
-        <View
-          //image row 1
-          style={{
-            flexDirection: 'row',
-            justifyContent: 'space-between',
-            paddingHorizontal: 17,
-          }}>
-          <Image
-            source={require('openart/src/assets/images/hotcollection/hot-collection-1.png')}
-          />
-          <Image
-            source={require('openart/src/assets/images/hotcollection/hot-collection-2.png')}
-          />
-        </View>
+        <Image
+          source={require('openart/src/assets/images/hotcollection/hot-collection-1.png')}
+        />
+        <Image
+          source={require('openart/src/assets/images/hotcollection/hot-collection-2.png')}
+        />
+      </View>
 
-        <View
-          //image row 2
-          style={{
-            flexDirection: 'row',
-            justifyContent: 'space-between',
-            paddingHorizontal: 16,
-            paddingVertical: 19,
-          }}>
-          <Image
-            source={require('openart/src/assets/images/hotcollection/hot-collection-3.png')}
-          />
-          <Image
-            source={require('openart/src/assets/images/hotcollection/hot-collection-4.png')}
-          />
-        </View>
+      <View
+        //image row 2
+        style={{
+          flexDirection: 'row',
+          justifyContent: 'space-between',
+          marginTop: 28,
+          marginBottom: 19,
+        }}>
+        <Image
+          source={require('openart/src/assets/images/hotcollection/hot-collection-3.png')}
+        />
+        <Image
+          source={require('openart/src/assets/images/hotcollection/hot-collection-4.png')}
+        />
       </View>
 
       <View
         //   image title and button
         style={{
           flexDirection: 'row',
-          justifyContent: 'space-around',
+          justifyContent: 'space-between',
         }}>
         <Text
           // title
@@ -115,7 +101,7 @@ const HotCollection = () => {
         //   author and follow button
         style={{
           flexDirection: 'row',
-          justifyContent: 'space-around',
+          justifyContent: 'space-between',
           paddingTop: 20,
         }}>
         <View
@@ -180,8 +166,10 @@ const HotCollection = () => {
 
       <View
         style={{
-          paddingTop: 30,
-          margin: 11,
+          // paddingTop: 30,
+          // marginVertical: 11,
+          marginTop: 60,
+          marginBottom: 24,
         }}>
         {/* view more button */}
         <TouchableOpacity
@@ -203,7 +191,17 @@ const HotCollection = () => {
           </Text>
         </TouchableOpacity>
       </View>
-    </View>
+
+      <View
+        // separator line
+        style={{
+          borderBottomColor: 'white',
+          borderBottomWidth: 1,
+          width: '92%',
+          alignSelf: 'center',
+        }}
+      />
+    </>
   );
 };
 

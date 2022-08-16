@@ -531,7 +531,7 @@ export default function SearchFilter() {
                 <View>
                   <TouchableOpacity
                     onPress={() => {
-                      navigation.navigate('DetailsSold' as never, {} as never);
+                      navigation.navigate('DetailSold' as never, {} as never);
                     }}>
                     <Image
                       style={styles.image}
@@ -614,10 +614,7 @@ export default function SearchFilter() {
                   <View>
                     <TouchableOpacity
                       onPress={() => {
-                        navigation.navigate(
-                          'DetailsSold' as never,
-                          {} as never,
-                        );
+                        navigation.navigate('DetailSold' as never, {} as never);
                       }}>
                       <Image
                         style={styles.image}
@@ -701,10 +698,7 @@ export default function SearchFilter() {
                   <View>
                     <TouchableOpacity
                       onPress={() => {
-                        navigation.navigate(
-                          'DetailsSold' as never,
-                          {} as never,
-                        );
+                        navigation.navigate('DetailSold' as never, {} as never);
                       }}>
                       <Image
                         style={styles.image}
