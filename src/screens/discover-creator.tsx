@@ -29,11 +29,11 @@ export default function DiscoverCreator() {
   const [apiData, setApiData] = useState<Array<Items>>([
     {
       id: 0,
-      name: '',
-      avatar: '',
-      coverImage: '',
-      description: '',
-      followers: '',
+      name: ' ',
+      avatar: ' ',
+      coverImage: ' ',
+      description: ' ',
+      followers: ' ',
     },
   ]);
   useEffect(() => {

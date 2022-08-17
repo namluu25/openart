@@ -1,7 +1,7 @@
-import {StyleSheet} from 'react-native';
+import { StyleSheet } from 'react-native';
 
 export default StyleSheet.create({
-  imageContainer: {
+  containerImage: {
     borderRadius: 24,
     marginTop: 18,
     width: 321,

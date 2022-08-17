@@ -1,6 +1,6 @@
 /* eslint-disable react-native/no-inline-styles */
 import React, { useState, useEffect } from 'react';
-import { View, StyleSheet, Image, Text, TouchableOpacity } from 'react-native';
+import { View, Image, Text, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import LinearGradient from 'react-native-linear-gradient';
 import Account from './modal-account';
@@ -19,10 +19,10 @@ export default function FrontProduct() {
   const [apiData, setApiData] = useState<Array<Items>>([
     {
       id: 0,
-      name: '',
-      avatar: '',
-      creator_name: '',
-      image: '',
+      name: ' ',
+      avatar: ' ',
+      creator_name: ' ',
+      image: ' ',
     },
   ]);
   useEffect(() => {
@@ -43,7 +43,7 @@ export default function FrontProduct() {
               navigation.navigate('DetailsAuction' as never, {} as never);
             }}>
             <Image
-              style={globalStyle.imageContainer}
+              style={globalStyle.containerImage}
               source={{ uri: apiData[0]?.image }}
             />
           </TouchableOpacity>
@@ -191,4 +191,4 @@ export default function FrontProduct() {
   );
 }
 
-const styles = StyleSheet.create({});
+// const styles = StyleSheet.create({});

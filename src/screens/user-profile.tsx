@@ -1,5 +1,5 @@
 /* eslint-disable react-native/no-inline-styles */
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   View,
   Text,
@@ -11,12 +11,62 @@ import {
   TouchableOpacity,
   Image,
 } from 'react-native';
-import {useNavigation} from '@react-navigation/native';
+import { useNavigation } from '@react-navigation/native';
 import Header from '../components/header';
 import Footer from '../components/footer';
+import axios from 'axios';
+import globalStyle from '../theme/globalStyle';
+
+interface Items {
+  id: number;
+  name: string;
+  following: string;
+  followers: string;
+  description: string;
+  avatar: string;
+  coverImage: string;
+  hash: string;
+}
+
+interface CreatedArt {
+  id: number;
+  image: string;
+  name: string;
+  avatar: string;
+  creatorName: string;
+}
 
 export default function UserProfile() {
   const navigation = useNavigation();
+  const [apiData, setApiData] = useState<Array<Items>>([
+    {
+      id: 0,
+      following: ' ',
+      followers: ' ',
+      name: ' ',
+      description: ' ',
+      avatar: ' ',
+      coverImage: ' ',
+      hash: ' ',
+    },
+  ]);
+  const [artData, setArtData] = useState<Array<CreatedArt>>([
+    {
+      id: 0,
+      image: ' ',
+      name: ' ',
+      avatar: ' ',
+      creatorName: ' ',
+    },
+  ]);
+  useEffect(() => {
+    axios
+      .get('https://62fa6791ffd7197707ebe3f2.mockapi.io/profile')
+      .then(res => {
+        setApiData(res.data);
+        setArtData(res.data[0].createdArt);
+      });
+  }, []);
   return (
     <View
       style={[
@@ -26,15 +76,15 @@ export default function UserProfile() {
           flex: 1,
         },
       ]}>
-      <SafeAreaView style={{flex: 1}}>
+      <SafeAreaView style={{ flex: 1 }}>
         <StatusBar barStyle="light-content" translucent={true} />
 
         <Header />
         <ScrollView>
-          <View>
+          <View style={{ marginHorizontal: 16 }}>
             <Image
-              style={{width: '100%'}}
-              source={require('../assets/images/user-profile/cover.png')}
+              style={{ width: '100%', height: 160 }}
+              source={{ uri: `${apiData[0]?.coverImage}` }}
             />
             <View
               style={{
@@ -51,7 +101,7 @@ export default function UserProfile() {
                   marginHorizontal: 8,
                 }}>
                 <Image
-                  style={{margin: 10}}
+                  style={{ margin: 10 }}
                   source={require('openart/src/assets/images/icon/more-icon.png')}
                 />
               </TouchableOpacity>
@@ -62,7 +112,7 @@ export default function UserProfile() {
                   marginRight: 16,
                 }}>
                 <Image
-                  style={{margin: 10}}
+                  style={{ margin: 10 }}
                   source={require('openart/src/assets/images/icon/export-icon.png')}
                 />
               </TouchableOpacity>
@@ -72,8 +122,10 @@ export default function UserProfile() {
                 position: 'absolute',
                 alignSelf: 'center',
                 marginTop: 96.7,
+                height: 130,
+                width: 130,
               }}
-              source={require('../assets/images/user-profile/ava-1.png')}
+              source={{ uri: apiData[0]?.avatar }}
             />
 
             <Text
@@ -86,9 +138,9 @@ export default function UserProfile() {
                 marginTop: 74.33,
                 color: '#FCFCFC',
               }}>
-              Gift Habeshaw
+              {apiData[0].name}
             </Text>
-            <View style={{flexDirection: 'row', alignSelf: 'center'}}>
+            <View style={{ flexDirection: 'row', alignSelf: 'center' }}>
               <Text
                 style={{
                   textAlign: 'center',
@@ -99,7 +151,7 @@ export default function UserProfile() {
                   marginRight: 4,
                   color: '#F8F8F8',
                 }}>
-                52fs5ge5g45sov45a
+                {apiData[0].hash}
               </Text>
               <TouchableOpacity>
                 <Image
@@ -108,7 +160,7 @@ export default function UserProfile() {
               </TouchableOpacity>
             </View>
 
-            <View style={{marginHorizontal: 16.57, marginTop: 26.66}}>
+            <View style={{ marginTop: 26.66 }}>
               <View
                 style={{
                   flex: 1,
@@ -125,7 +177,7 @@ export default function UserProfile() {
                       lineHeight: 36,
                       color: '#FCFCFC',
                     }}>
-                    150
+                    {apiData[0].following}
                   </Text>
                   <Text
                     style={{
@@ -138,6 +190,7 @@ export default function UserProfile() {
                     Following
                   </Text>
                 </View>
+
                 <View style={{}}>
                   <Text
                     style={{
@@ -147,7 +200,7 @@ export default function UserProfile() {
                       lineHeight: 36,
                       color: '#FCFCFC',
                     }}>
-                    2024
+                    {apiData[0].followers}
                   </Text>
                   <Text
                     style={{
@@ -160,6 +213,7 @@ export default function UserProfile() {
                     Followers
                   </Text>
                 </View>
+
                 <TouchableOpacity
                   style={{
                     backgroundColor: '#333333',
@@ -250,9 +304,7 @@ export default function UserProfile() {
                   color: '#F8F8F8',
                   marginTop: 28.11,
                 }}>
-                Trevor Jackson is a multi-disciplinary artist exploring analog +
-                digital realms since 1988. Collaborators inc Apple, BMW, Comme
-                Des Garçons, ICA, NTS, Sonos, Stone Island, Tate Modern + Warp.
+                {apiData[0].description}
               </Text>
               <Text
                 style={{
@@ -266,7 +318,10 @@ export default function UserProfile() {
                 Member since 2021
               </Text>
               <View
-                style={{flexDirection: 'row', justifyContent: 'flex-start'}}>
+                style={{
+                  flexDirection: 'row',
+                  justifyContent: 'flex-start',
+                }}>
                 <TouchableOpacity
                   style={{
                     backgroundColor: '#333333',
@@ -276,7 +331,7 @@ export default function UserProfile() {
                     alignItems: 'center',
                   }}>
                   <Image
-                    style={{marginLeft: 11.82}}
+                    style={{ marginLeft: 11.82 }}
                     source={require('../assets/images/icon/twitter-icon.png')}
                   />
                   <Text
@@ -304,7 +359,7 @@ export default function UserProfile() {
                     marginLeft: 10.71,
                   }}>
                   <Image
-                    style={{marginLeft: 14.95}}
+                    style={{ marginLeft: 14.95 }}
                     source={require('../assets/images/icon/instagram-icon.png')}
                   />
                   <Text
@@ -333,7 +388,7 @@ export default function UserProfile() {
                   alignItems: 'center',
                 }}>
                 <Image
-                  style={{marginLeft: 17}}
+                  style={{ marginLeft: 17 }}
                   source={require('../assets/images/icon/link-icon.png')}
                 />
                 <Text
@@ -351,7 +406,7 @@ export default function UserProfile() {
                   Openart.design
                 </Text>
               </TouchableOpacity>
-              <View style={{flexDirection: 'row', marginTop: 39.84}}>
+              <View style={{ flexDirection: 'row', marginTop: 39.84 }}>
                 <TouchableOpacity>
                   <Text
                     style={{
@@ -364,7 +419,7 @@ export default function UserProfile() {
                     Created
                   </Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={{marginLeft: 35}}>
+                <TouchableOpacity style={{ marginLeft: 35 }}>
                   <Text
                     style={{
                       fontFamily: 'Epilogue',
@@ -379,286 +434,121 @@ export default function UserProfile() {
               </View>
             </View>
 
-            <View>
-              <View style={[styles.product, {marginTop: 25.2}]}>
-                <View>
-                  <TouchableOpacity
-                    onPress={() => {
-                      navigation.navigate('DetailSold' as never, {} as never);
-                    }}>
-                    <Image
-                      style={styles.image}
-                      source={require('../assets/images/user-profile/art-1.png')}
-                    />
-                  </TouchableOpacity>
+            <>
+              {artData.map((art: CreatedArt) => {
+                return (
+                  <View key={art.id} style={{ marginBottom: 40 }}>
+                    <View style={[globalStyle.container, { marginTop: 25 }]}>
+                      <View>
+                        <TouchableOpacity
+                          onPress={() => {
+                            navigation.navigate(
+                              'DetailSold' as never,
+                              {} as never,
+                            );
+                          }}>
+                          <Image
+                            style={globalStyle.containerImage}
+                            source={{ uri: art.image }}
+                          />
+                        </TouchableOpacity>
 
-                  <Text style={[styles.nftText, {marginTop: 12.41}]}>
-                    Silent Color
-                  </Text>
-                  <View
-                    style={{
-                      flexDirection: 'row',
-                      justifyContent: 'space-between',
-                      marginTop: 2.68,
-                      marginBottom: 16.86,
-                      alignItems: 'center',
-                    }}>
-                    <Image
-                      style={styles.avatar}
-                      source={require('openart/src/assets/images/avatar/ava1.png')}
-                    />
-                    <View
+                        <Text
+                          style={[
+                            globalStyle.containerTitle,
+                            { marginTop: 12.41 },
+                          ]}>
+                          {art.name}
+                        </Text>
+                        <View
+                          style={{
+                            flexDirection: 'row',
+                            justifyContent: 'space-between',
+                            marginTop: 2.68,
+                            marginBottom: 16.86,
+                            alignItems: 'center',
+                          }}>
+                          <Image
+                            style={globalStyle.avatar}
+                            source={{ uri: art.avatar }}
+                          />
+                          <View
+                            style={{
+                              flex: 1,
+                              marginLeft: 12,
+                            }}>
+                            <Text style={globalStyle.containerCreatorName}>
+                              {art.creatorName}
+                            </Text>
+                            <Text style={globalStyle.containerCreatorInfo}>
+                              Creator
+                            </Text>
+                          </View>
+                          <Image
+                            source={require('openart/src/assets/images/icon/heart-icon.png')}
+                          />
+                        </View>
+                      </View>
+                    </View>
+                    <TouchableOpacity
                       style={{
-                        flex: 1,
+                        borderRadius: 51,
+                        marginTop: 12.14,
+                        backgroundColor: '#333333',
+                        paddingVertical: 18,
                       }}>
                       <Text
-                        style={[
-                          styles.nftText,
-                          {fontSize: 18, paddingLeft: 12},
-                        ]}>
-                        Pawel Czerwinski
-                      </Text>
-                      <Text
-                        style={[
-                          styles.nftText,
-                          {fontSize: 14, fontWeight: '500', paddingLeft: 12},
-                        ]}>
-                        Creator
-                      </Text>
-                    </View>
-                    <Image
-                      source={require('openart/src/assets/images/icon/heart-icon.png')}
-                    />
-                  </View>
-                </View>
-              </View>
-              <TouchableOpacity
-                style={{
-                  borderRadius: 51,
-                  marginTop: 12.14,
-                  marginHorizontal: 16.57,
-                  backgroundColor: '#333333',
-                  paddingVertical: 18,
-                }}>
-                <Text
-                  style={{
-                    fontSize: 20,
-                    fontFamily: 'Epilogue',
-                    textAlign: 'center',
-                    color: '#FCFCFC',
-                    fontWeight: '400',
-                  }}>
-                  Sold For
-                  <Text
-                    style={{
-                      fontSize: 24,
-                      fontFamily: 'Epilogue',
-                      textAlign: 'center',
-                      color: '#FCFCFC',
-                      fontWeight: '700',
-                    }}>
-                    {' '}
-                    2.00 ETH
-                  </Text>
-                </Text>
-              </TouchableOpacity>
-
-              <View>
-                <View style={[styles.product, {marginTop: 40}]}>
-                  <View>
-                    <TouchableOpacity
-                      onPress={() => {
-                        navigation.navigate('DetailSold' as never, {} as never);
-                      }}>
-                      <Image
-                        style={styles.image}
-                        source={require('../assets/images/user-profile/art-2.png')}
-                      />
-                    </TouchableOpacity>
-
-                    <Text style={[styles.nftText, {marginTop: 12.41}]}>
-                      George
-                    </Text>
-                    <View
-                      style={{
-                        flexDirection: 'row',
-                        justifyContent: 'space-between',
-                        marginTop: 2.68,
-                        marginBottom: 16.86,
-                        alignItems: 'center',
-                      }}>
-                      <Image
-                        style={styles.avatar}
-                        source={require('openart/src/assets/images/avatar/ava1.png')}
-                      />
-                      <View
                         style={{
-                          flex: 1,
+                          fontSize: 20,
+                          fontFamily: 'Epilogue',
+                          textAlign: 'center',
+                          color: '#FCFCFC',
+                          fontWeight: '400',
                         }}>
+                        Sold For
                         <Text
-                          style={[
-                            styles.nftText,
-                            {fontSize: 18, paddingLeft: 12},
-                          ]}>
-                          Pawel Czerwinski
+                          style={{
+                            fontSize: 24,
+                            fontFamily: 'Epilogue',
+                            textAlign: 'center',
+                            color: '#FCFCFC',
+                            fontWeight: '700',
+                          }}>
+                          {' '}
+                          2.00 ETH
                         </Text>
-                        <Text
-                          style={[
-                            styles.nftText,
-                            {fontSize: 14, fontWeight: '500', paddingLeft: 12},
-                          ]}>
-                          Creator
-                        </Text>
-                      </View>
-                      <Image
-                        source={require('openart/src/assets/images/icon/heart-icon.png')}
-                      />
-                    </View>
-                  </View>
-                </View>
-                <TouchableOpacity
-                  style={{
-                    borderRadius: 51,
-                    marginTop: 12.14,
-                    marginHorizontal: 16.57,
-                    backgroundColor: '#333333',
-                    paddingVertical: 18,
-                  }}>
-                  <Text
-                    style={{
-                      fontSize: 20,
-                      fontFamily: 'Epilogue',
-                      textAlign: 'center',
-                      color: '#FCFCFC',
-                      fontWeight: '400',
-                    }}>
-                    Sold For
-                    <Text
-                      style={{
-                        fontSize: 24,
-                        fontFamily: 'Epilogue',
-                        textAlign: 'center',
-                        color: '#FCFCFC',
-                        fontWeight: '700',
-                      }}>
-                      {' '}
-                      2.00 ETH
-                    </Text>
-                  </Text>
-                </TouchableOpacity>
-              </View>
-
-              <View>
-                <View style={[styles.product, {marginTop: 40}]}>
-                  <View>
-                    <TouchableOpacity
-                      onPress={() => {
-                        navigation.navigate('DetailSold' as never, {} as never);
-                      }}>
-                      <Image
-                        style={styles.image}
-                        source={require('../assets/images/user-profile/art-3.png')}
-                      />
+                      </Text>
                     </TouchableOpacity>
-
-                    <Text style={[styles.nftText, {marginTop: 12.41}]}>
-                      Ocean
-                    </Text>
-                    <View
-                      style={{
-                        flexDirection: 'row',
-                        justifyContent: 'space-between',
-                        marginTop: 2.68,
-                        marginBottom: 16.86,
-                        alignItems: 'center',
-                      }}>
-                      <Image
-                        style={styles.avatar}
-                        source={require('openart/src/assets/images/avatar/ava1.png')}
-                      />
-                      <View
-                        style={{
-                          flex: 1,
-                        }}>
-                        <Text
-                          style={[
-                            styles.nftText,
-                            {fontSize: 18, paddingLeft: 12},
-                          ]}>
-                          Pawel Czerwinski
-                        </Text>
-                        <Text
-                          style={[
-                            styles.nftText,
-                            {fontSize: 14, fontWeight: '500', paddingLeft: 12},
-                          ]}>
-                          Creator
-                        </Text>
-                      </View>
-                      <Image
-                        source={require('openart/src/assets/images/icon/heart-icon.png')}
-                      />
-                    </View>
                   </View>
-                </View>
-                <TouchableOpacity
-                  style={{
-                    borderRadius: 51,
-                    marginTop: 12.14,
-                    marginHorizontal: 16.57,
-                    backgroundColor: '#333333',
-                    paddingVertical: 18,
-                  }}>
-                  <Text
-                    style={{
-                      fontSize: 20,
-                      fontFamily: 'Epilogue',
-                      textAlign: 'center',
-                      color: '#FCFCFC',
-                      fontWeight: '400',
-                    }}>
-                    Sold For
-                    <Text
-                      style={{
-                        fontSize: 24,
-                        fontFamily: 'Epilogue',
-                        textAlign: 'center',
-                        color: '#FCFCFC',
-                        fontWeight: '700',
-                      }}>
-                      {' '}
-                      2.00 ETH
-                    </Text>
-                  </Text>
-                </TouchableOpacity>
-              </View>
-            </View>
-          </View>
-          <TouchableOpacity
-            style={{
-              borderRadius: 8,
-              borderColor: '#0038F5',
-              borderWidth: 1,
-              flexDirection: 'row',
-              alignItems: 'center',
-              justifyContent: 'center',
-              marginHorizontal: 35,
-              marginTop: 38.33,
-              marginBottom: 93.99,
-            }}>
-            <Image source={require('../assets/images/icon/plus-icon.png')} />
-            <Text
+                );
+              })}
+            </>
+
+            <TouchableOpacity
               style={{
-                fontSize: 20,
-                fontFamily: 'Epilogue',
-                textAlign: 'center',
-                paddingVertical: 15,
-                color: '#FCFCFC',
-                fontWeight: '700',
+                borderRadius: 8,
+                borderColor: '#0038F5',
+                borderWidth: 1,
+                flexDirection: 'row',
+                alignItems: 'center',
+                justifyContent: 'center',
+                marginHorizontal: 35,
               }}>
-              Load more
-            </Text>
-          </TouchableOpacity>
+              <Image source={require('../assets/images/icon/plus-icon.png')} />
+              <Text
+                style={{
+                  fontSize: 20,
+                  fontFamily: 'Epilogue',
+                  textAlign: 'center',
+                  paddingVertical: 15,
+                  color: '#FCFCFC',
+                  fontWeight: '700',
+                }}>
+                Load more
+              </Text>
+            </TouchableOpacity>
+          </View>
+          <View style={{ marginBottom: 93.99 }} />
           <Footer />
         </ScrollView>
       </SafeAreaView>
@@ -671,28 +561,5 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: 'white',
     paddingTop: Platform.OS === 'android' ? 50 : 0,
-  },
-  product: {
-    backgroundColor: '#333333',
-    alignItems: 'center',
-    borderRadius: 32,
-    marginTop: 40,
-    marginHorizontal: 16.57,
-  },
-  image: {
-    borderRadius: 24,
-    marginTop: 18,
-  },
-  nftText: {
-    fontSize: 24,
-    fontWeight: '700',
-    color: '#FCFCFC',
-    fontFamily: 'Epilogue',
-  },
-  avatar: {
-    borderRadius: 24,
-    paddingLeft: 12,
-    width: 48,
-    height: 48,
   },
 });

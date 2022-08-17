@@ -1,7 +1,7 @@
 import React from 'react';
-import {NavigationContainer, DefaultTheme} from '@react-navigation/native';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import {SafeAreaProvider} from 'react-native-safe-area-context';
+import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 import DetailSold from './src/screens/detail-sold';
 import Home from './src/screens/home';
 import Menu from './src/screens/menu';
@@ -34,7 +34,7 @@ export default function YourApp() {
       <NavigationContainer theme={MyTheme}>
         <Stack.Navigator
           initialRouteName="Home"
-          screenOptions={{headerShown: false}}>
+          screenOptions={{ headerShown: false }}>
           <Stack.Screen name="Home" component={Home} />
           <Stack.Screen name="Menu" component={Menu} />
           <Stack.Screen name="About" component={About} />

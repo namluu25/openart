@@ -24,10 +24,10 @@ export default function LiveContainer() {
   const [apiData, setApiData] = useState<Array<Items>>([
     {
       id: 0,
-      name: '',
-      avatar: '',
-      creator_name: '',
-      image: '',
+      name: ' ',
+      avatar: ' ',
+      creator_name: ' ',
+      image: ' ',
     },
   ]);
   // const [detail, setDetail] = useState<boolean>(false);
@@ -98,7 +98,7 @@ export default function LiveContainer() {
         {apiData.slice(1).map((item: Items) => {
           return (
             <View key={item.id}>
-              <View style={[globalStyle.container, { marginTop: 21 }]}>
+              <View style={[globalStyle.container, { marginTop: 24 }]}>
                 <View>
                   <TouchableOpacity
                     onPress={() => {
@@ -106,7 +106,7 @@ export default function LiveContainer() {
                     }}>
                     <Image
                       source={{ uri: `${item.image}` }}
-                      style={globalStyle.imageContainer}
+                      style={globalStyle.containerImage}
                     />
                   </TouchableOpacity>
                   <Text

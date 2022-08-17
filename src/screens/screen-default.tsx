@@ -29,10 +29,10 @@ export default function TestAPI() {
   const [apiData, setApiData] = useState<Array<Items>>([
     {
       id: 0,
-      name: '',
-      avatar: '',
-      creator_name: '',
-      image: '',
+      name: ' ',
+      avatar: ' ',
+      creator_name: ' ',
+      image: ' ',
     },
   ]);
 
