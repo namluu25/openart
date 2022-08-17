@@ -1,5 +1,5 @@
 /* eslint-disable react-native/no-inline-styles */
-import React, {useRef} from 'react';
+import React, { useRef } from 'react';
 import {
   View,
   Text,
@@ -49,7 +49,7 @@ export default function HotBid() {
           }}>
           <TouchableOpacity
             onPress={() => {
-              naviRef.current?.scrollTo({x: 0, animated: true});
+              naviRef.current?.scrollTo({ x: 0, animated: true });
             }}>
             <Image
               source={require('openart/src/assets/images/icon/back-arrow.png')}
@@ -61,7 +61,7 @@ export default function HotBid() {
 
           <TouchableOpacity
             onPress={() => {
-              naviRef.current?.scrollTo({x: screenWidth, animated: true});
+              naviRef.current?.scrollTo({ x: screenWidth, animated: true });
             }}>
             <Image
               source={require('openart/src/assets/images/icon/forward-arrow.png')}
@@ -76,8 +76,8 @@ export default function HotBid() {
         horizontal
         showsHorizontalScrollIndicator={false}
         ref={naviRef}
-        style={{marginTop: 24}}>
-        <View style={{marginRight: 12}}>
+        style={{ marginTop: 24 }}>
+        <View style={{ marginRight: 12 }}>
           {/* 1 item view */}
           <View>
             <Image

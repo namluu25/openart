@@ -1,5 +1,5 @@
 /* eslint-disable react-native/no-inline-styles */
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -27,15 +27,15 @@ export default function DetailsAuction() {
           flex: 1,
         },
       ]}>
-      <SafeAreaView style={{flex: 1}}>
+      <SafeAreaView style={{ flex: 1 }}>
         <StatusBar barStyle="light-content" translucent={true} />
 
         <Header />
 
         <ScrollView>
-          <View style={{marginTop: 53, marginHorizontal: 16}}>
+          <View style={{ marginTop: 53, marginHorizontal: 16 }}>
             <Image
-              style={{alignSelf: 'center'}}
+              style={{ alignSelf: 'center' }}
               source={require('openart/src/assets/images/nft/7.png')}
             />
             <View
@@ -49,10 +49,10 @@ export default function DetailsAuction() {
                   flexDirection: 'row',
                   justifyContent: 'space-between',
                 }}>
-                <Text style={[styles.nftText, {paddingVertical: 20}]}>
+                <Text style={[styles.nftText, { paddingVertical: 20 }]}>
                   Silent Color
                 </Text>
-                <View style={{flexDirection: 'row'}}>
+                <View style={{ flexDirection: 'row' }}>
                   {/* button */}
                   <TouchableOpacity
                     style={{
@@ -62,7 +62,7 @@ export default function DetailsAuction() {
                       marginHorizontal: 12,
                     }}>
                     <Image
-                      style={{margin: 11}}
+                      style={{ margin: 11 }}
                       source={require('openart/src/assets/images/icon/heart-icon.png')}
                     />
                   </TouchableOpacity>
@@ -73,7 +73,7 @@ export default function DetailsAuction() {
                       alignSelf: 'center',
                     }}>
                     <Image
-                      style={{margin: 11}}
+                      style={{ margin: 11 }}
                       source={require('openart/src/assets/images/icon/export-icon.png')}
                     />
                   </TouchableOpacity>
@@ -124,7 +124,7 @@ export default function DetailsAuction() {
                 we imagine the Cyberyacht could look like in the future.
               </Text>
 
-              <View style={{flexDirection: 'row'}}>
+              <View style={{ flexDirection: 'row' }}>
                 <TouchableOpacity
                   style={{
                     borderRadius: 27,
@@ -304,7 +304,7 @@ export default function DetailsAuction() {
                 marginBottom: 16,
                 paddingHorizontal: 20,
               }}>
-              <View style={{marginTop: 18.71}}>
+              <View style={{ marginTop: 18.71 }}>
                 <Text
                   style={{
                     fontFamily: 'Epilogue',
@@ -404,10 +404,10 @@ export default function DetailsAuction() {
                 flexDirection: 'row',
               }}>
               <Image
-                style={{marginRight: 12.98, borderRadius: 24}}
+                style={{ marginRight: 12.98, borderRadius: 24 }}
                 source={require('openart/src/assets/images/avatar/ava2.png')}
               />
-              <View style={{marginRight: 98}}>
+              <View style={{ marginRight: 98 }}>
                 <Text
                   style={{
                     fontSize: 14,
@@ -428,7 +428,7 @@ export default function DetailsAuction() {
                   }}>
                   June 06, 2021 at 12:00am
                 </Text>
-                <View style={{flexDirection: 'row'}}>
+                <View style={{ flexDirection: 'row' }}>
                   <Text
                     style={{
                       fontSize: 16,
@@ -468,10 +468,10 @@ export default function DetailsAuction() {
                 flexDirection: 'row',
               }}>
               <Image
-                style={{marginRight: 12.98, borderRadius: 24}}
+                style={{ marginRight: 12.98, borderRadius: 24 }}
                 source={require('openart/src/assets/images/avatar/ava2.png')}
               />
-              <View style={{marginRight: 104}}>
+              <View style={{ marginRight: 104 }}>
                 <Text
                   style={{
                     fontSize: 14,
@@ -492,7 +492,7 @@ export default function DetailsAuction() {
                   }}>
                   June 04, 2021 at 12:00am
                 </Text>
-                <View style={{flexDirection: 'row'}}>
+                <View style={{ flexDirection: 'row' }}>
                   <Text
                     style={{
                       fontSize: 16,
@@ -522,7 +522,7 @@ export default function DetailsAuction() {
               />
             </TouchableOpacity>
           </View>
-          <View style={{marginBottom: 47.25}} />
+          <View style={{ marginBottom: 47.25 }} />
           <Place_bid visbile={visible} handleClose={() => setVisible(false)} />
           <Footer />
         </ScrollView>

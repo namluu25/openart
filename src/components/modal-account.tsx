@@ -1,5 +1,5 @@
 /* eslint-disable react-native/no-inline-styles */
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import {
   Modal,
   StyleSheet,
@@ -8,8 +8,8 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import {useNavigation} from '@react-navigation/native';
-import {Switch} from 'react-native-paper';
+import { useNavigation } from '@react-navigation/native';
+import { Switch } from 'react-native-paper';
 
 interface Props {
   visbile?: boolean;
@@ -31,7 +31,7 @@ export default function Account(props: Props) {
         <TouchableOpacity
           style={[
             styles.centeredView,
-            {padding: 16, backgroundColor: 'rgba(0,0,0,0.5)'},
+            { padding: 16, backgroundColor: 'rgba(0,0,0,0.5)' },
           ]}
           onPress={props.handleClose}
           activeOpacity={1}>
@@ -50,11 +50,11 @@ export default function Account(props: Props) {
                   setVisibleAccount(false);
                 }}>
                 <Image
-                  style={{marginRight: 17}}
+                  style={{ marginRight: 17 }}
                   source={require('../assets/images/avatar/ava12.png')}
                 />
               </TouchableOpacity>
-              <View style={{alignSelf: 'center'}}>
+              <View style={{ alignSelf: 'center' }}>
                 <TouchableOpacity
                   onPress={() => {
                     navigation.navigate('UserProfile' as never, {} as never);
@@ -71,7 +71,7 @@ export default function Account(props: Props) {
                     Gift Habeshaw
                   </Text>
                 </TouchableOpacity>
-                <View style={{flexDirection: 'row'}}>
+                <View style={{ flexDirection: 'row' }}>
                   <TouchableOpacity>
                     <Text
                       style={{
@@ -86,7 +86,7 @@ export default function Account(props: Props) {
                   </TouchableOpacity>
                   <TouchableOpacity>
                     <Image
-                      style={{marginHorizontal: 5}}
+                      style={{ marginHorizontal: 5 }}
                       source={require('../assets/images/icon/copy-icon.png')}
                     />
                   </TouchableOpacity>
@@ -111,11 +111,11 @@ export default function Account(props: Props) {
                   marginRight: 17,
                 }}>
                 <Image
-                  style={{margin: 8}}
+                  style={{ margin: 8 }}
                   source={require('openart/src/assets/images/icon/wallet-icon.png')}
                 />
               </TouchableOpacity>
-              <View style={{flexDirection: 'column'}}>
+              <View style={{ flexDirection: 'column' }}>
                 <Text
                   style={{
                     fontFamily: 'Epilogue',
@@ -126,7 +126,7 @@ export default function Account(props: Props) {
                   }}>
                   Balance
                 </Text>
-                <View style={{flexDirection: 'row', alignItems: 'baseline'}}>
+                <View style={{ flexDirection: 'row', alignItems: 'baseline' }}>
                   <Text
                     style={{
                       fontFamily: 'Epilogue',
@@ -146,7 +146,7 @@ export default function Account(props: Props) {
                 </View>
               </View>
             </View>
-            <View style={{marginHorizontal: 26}}>
+            <View style={{ marginHorizontal: 26 }}>
               <TouchableOpacity
                 onPress={() => {
                   navigation.navigate('UserProfile' as never);
@@ -264,7 +264,7 @@ export default function Account(props: Props) {
                 Dark mode
               </Text>
               <Switch
-                style={{marginRight: 23}}
+                style={{ marginRight: 23 }}
                 color="#004BFB"
                 value={isSwitchOn}
                 onValueChange={onToggleSwitch}

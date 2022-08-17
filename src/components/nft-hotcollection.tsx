@@ -1,6 +1,6 @@
 /* eslint-disable react-native/no-inline-styles */
 import React from 'react';
-import {View, Text, Image, TouchableOpacity, StyleSheet} from 'react-native';
+import { View, Text, Image, TouchableOpacity, StyleSheet } from 'react-native';
 
 const HotCollection = () => {
   return (
@@ -128,7 +128,7 @@ const HotCollection = () => {
               source={require('../assets/images/icon/active-icon.png')}
             />
           </View>
-          <Text style={[styles.nftText, {fontSize: 13, paddingLeft: 12}]}>
+          <Text style={[styles.nftText, { fontSize: 13, paddingLeft: 12 }]}>
             By Rodion Kutsaev
           </Text>
         </View>

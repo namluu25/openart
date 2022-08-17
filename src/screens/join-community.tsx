@@ -25,12 +25,12 @@ export default function JoinCommunity() {
           flex: 1,
         },
       ]}>
-      <SafeAreaView style={{flex: 1}}>
+      <SafeAreaView style={{ flex: 1 }}>
         <StatusBar barStyle="light-content" translucent={true} />
 
         <Header />
 
-        <ScrollView style={{marginTop: 31.68}}>
+        <ScrollView style={{ marginTop: 31.68 }}>
           <View>
             <View>
               <Text
@@ -62,7 +62,7 @@ export default function JoinCommunity() {
                 curation that puts power in the hands of creators.
               </Text>
 
-              <TouchableOpacity style={{paddingHorizontal: 16}}>
+              <TouchableOpacity style={{ paddingHorizontal: 16 }}>
                 <LinearGradient
                   colors={['#0038F5', '#9F03FF']}
                   useAngle={true}
@@ -87,7 +87,7 @@ export default function JoinCommunity() {
                 </LinearGradient>
               </TouchableOpacity>
               <Image
-                style={{alignSelf: 'center'}}
+                style={{ alignSelf: 'center' }}
                 source={require('../assets/images/icon/join-community-icon.png')}
               />
               <Text

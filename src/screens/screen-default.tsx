@@ -1,5 +1,5 @@
 /* eslint-disable react-native/no-inline-styles */
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   View,
   Text,
@@ -52,7 +52,7 @@ export default function TestAPI() {
           flex: 1,
         },
       ]}>
-      <SafeAreaView style={{flex: 1}}>
+      <SafeAreaView style={{ flex: 1 }}>
         <StatusBar barStyle="light-content" translucent={true} />
 
         <Header />
@@ -60,15 +60,15 @@ export default function TestAPI() {
           data={apiData}
           keyExtractor={item => item.id.toString()}
           ListFooterComponent={Footer}
-          renderItem={({item}: {item: Items}) => {
+          renderItem={({ item }: { item: Items }) => {
             return (
               <View key={item.id}>
-                <Text style={{flex: 1, backgroundColor: 'red'}}>
+                <Text style={{ flex: 1, backgroundColor: 'red' }}>
                   {item.name}
                 </Text>
                 <Image
-                  source={{uri: `${item.image}`}}
-                  style={{width: 100, height: 100, flexDirection: 'row'}}
+                  source={{ uri: `${item.image}` }}
+                  style={{ width: 100, height: 100, flexDirection: 'row' }}
                 />
               </View>
             );

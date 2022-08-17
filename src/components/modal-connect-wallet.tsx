@@ -26,7 +26,7 @@ export default function Connect_wallet(props: Props) {
         <TouchableOpacity
           style={[
             styles.centeredView,
-            {paddingHorizontal: 16, backgroundColor: 'rgba(0,0,0,0.5)'},
+            { paddingHorizontal: 16, backgroundColor: 'rgba(0,0,0,0.5)' },
           ]}
           onPress={props.handleClose}
           activeOpacity={1}>
@@ -54,7 +54,7 @@ export default function Connect_wallet(props: Props) {
               </TouchableOpacity>
             </View>
             <Image
-              style={{alignSelf: 'center'}}
+              style={{ alignSelf: 'center' }}
               source={require('../assets/images/icon/connect-wallet-icon.png')}
             />
             <Text
@@ -94,7 +94,7 @@ export default function Connect_wallet(props: Props) {
             </Text>
 
             <TouchableOpacity
-              style={{marginBottom: 18.35, marginHorizontal: 45}}>
+              style={{ marginBottom: 18.35, marginHorizontal: 45 }}>
               <LinearGradient
                 colors={['#0038F5', '#9F03FF']}
                 useAngle={true}

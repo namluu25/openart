@@ -1,5 +1,5 @@
 /* eslint-disable react-native/no-inline-styles */
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -12,7 +12,7 @@ import {
 } from 'react-native';
 import Header from '../components/header';
 import LinearGradient from 'react-native-linear-gradient';
-import {useNavigation} from '@react-navigation/native';
+import { useNavigation } from '@react-navigation/native';
 import Connect_wallet from '../components/modal-connect-wallet';
 
 export default function Menu() {
@@ -27,13 +27,13 @@ export default function Menu() {
           flex: 1,
         },
       ]}>
-      <SafeAreaView style={{flex: 1}}>
+      <SafeAreaView style={{ flex: 1 }}>
         <StatusBar barStyle="light-content" translucent={true} />
 
         <Header />
 
         <ScrollView>
-          <View style={{marginTop: 107.17, alignItems: 'center'}}>
+          <View style={{ marginTop: 107.17, alignItems: 'center' }}>
             <TouchableOpacity
               onPress={() => {
                 navigation.navigate('About' as never, {} as never);
@@ -98,7 +98,7 @@ export default function Menu() {
 
           <TouchableOpacity
             onPress={() => setVisible(true)}
-            style={{marginTop: 181, paddingHorizontal: 33}}>
+            style={{ marginTop: 181, paddingHorizontal: 33 }}>
             <LinearGradient
               colors={['#0038F5', '#9F03FF']}
               useAngle={true}

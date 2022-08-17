@@ -26,7 +26,7 @@ export default function Place_bid(props: Props) {
         <TouchableOpacity
           style={[
             styles.centeredView,
-            {padding: 16, backgroundColor: 'rgba(0,0,0,0.5)'},
+            { padding: 16, backgroundColor: 'rgba(0,0,0,0.5)' },
           ]}
           onPress={props.handleClose}
           activeOpacity={1}>
@@ -76,8 +76,8 @@ export default function Place_bid(props: Props) {
               Your bid
             </Text>
             <View
-              style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-              <View style={{marginBottom: 30}}>
+              style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+              <View style={{ marginBottom: 30 }}>
                 <Text
                   style={{
                     fontFamily: 'Epilogue',
@@ -122,7 +122,7 @@ export default function Place_bid(props: Props) {
                   Total
                 </Text>
               </View>
-              <View style={{alignItems: 'flex-end'}}>
+              <View style={{ alignItems: 'flex-end' }}>
                 <Text
                   style={{
                     fontFamily: 'Epilogue',
@@ -168,7 +168,7 @@ export default function Place_bid(props: Props) {
                 </Text>
               </View>
             </View>
-            <TouchableOpacity style={{marginBottom: 16}}>
+            <TouchableOpacity style={{ marginBottom: 16 }}>
               <LinearGradient
                 colors={['#0038F5', '#9F03FF']}
                 useAngle={true}

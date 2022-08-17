@@ -24,12 +24,12 @@ export default function FAQ() {
           flex: 1,
         },
       ]}>
-      <SafeAreaView style={{flex: 1}}>
+      <SafeAreaView style={{ flex: 1 }}>
         <StatusBar barStyle="light-content" translucent={true} />
 
         <Header />
 
-        <ScrollView style={{marginTop: 32.17}}>
+        <ScrollView style={{ marginTop: 32.17 }}>
           <View>
             <View>
               <Text

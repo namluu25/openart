@@ -1,5 +1,5 @@
 /* eslint-disable react-native/no-inline-styles */
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   View,
   Text,
@@ -14,8 +14,35 @@ import {
 import LinearGradient from 'react-native-linear-gradient';
 import Header from '../components/header';
 import Footer from '../components/footer';
+import axios from 'axios';
+
+interface Items {
+  id: number;
+  name: string;
+  avatar: string;
+  coverImage: string;
+  description: string;
+  followers: string;
+}
 
 export default function DiscoverCreator() {
+  const [apiData, setApiData] = useState<Array<Items>>([
+    {
+      id: 0,
+      name: '',
+      avatar: '',
+      coverImage: '',
+      description: '',
+      followers: '',
+    },
+  ]);
+  useEffect(() => {
+    axios
+      .get('https://62fa6791ffd7197707ebe3f2.mockapi.io/creator')
+      .then(res => {
+        setApiData(res.data);
+      });
+  }, []);
   return (
     <View
       style={[
@@ -25,12 +52,12 @@ export default function DiscoverCreator() {
           flex: 1,
         },
       ]}>
-      <SafeAreaView style={{flex: 1}}>
+      <SafeAreaView style={{ flex: 1 }}>
         <StatusBar barStyle="light-content" translucent={true} />
 
         <Header />
         <ScrollView>
-          <View style={{marginHorizontal: 16.57, marginTop: 33.17}}>
+          <View style={{ marginHorizontal: 16, marginTop: 33.17 }}>
             <Text
               style={{
                 fontSize: 20,
@@ -109,498 +136,116 @@ export default function DiscoverCreator() {
                 </Text>
               </TouchableOpacity>
             </View>
-
-            <View style={{marginBottom: 40}}>
-              <View
-                style={{
-                  borderRadius: 24,
-                  backgroundColor: '#333333',
-                }}>
-                <Image
-                  style={{marginBottom: 65.17, width: '100%'}}
-                  source={require('../assets/images/discover-creator/cover-1.png')}
-                />
-                <Text
-                  style={{
-                    fontFamily: 'Epilogue',
-                    fontWeight: '700',
-                    fontSize: 24,
-                    lineHeight: 32,
-                    color: '#FCFCFC',
-                    textAlign: 'center',
-                  }}>
-                  Kennedy Yanko
-                </Text>
-                <Text
-                  style={{
-                    fontFamily: 'Epilogue',
-                    fontWeight: '400',
-                    fontSize: 16,
-                    lineHeight: 22,
-                    color: '#F8F8F8',
-                    textAlign: 'center',
-                    marginHorizontal: 15.3,
-                    marginTop: 8,
-                    marginBottom: 15.78,
-                  }}>
-                  Kennedy Yanko is an artist working in found metal and paint
-                  skin. Her methods reflect a dual abstract expressionist-surr…
-                </Text>
-                <View
-                  style={{
-                    flexDirection: 'row',
-                    justifyContent: 'space-between',
-                    marginBottom: 16.25,
-                  }}>
-                  <Text
-                    style={{
-                      fontFamily: 'Epilogue',
-                      fontWeight: '700',
-                      fontSize: 32,
-                      lineHeight: 36,
-                      color: '#FCFCFC',
-                      marginLeft: 20.4,
-                    }}>
-                    2024{' '}
-                    <Text
-                      style={{
-                        fontFamily: 'Epilogue',
-                        fontWeight: '500',
-                        fontSize: 16,
-                        lineHeight: 24,
-                        color: '#F8F8F8',
-                      }}>
-                      Followers
-                    </Text>
-                  </Text>
-                  <TouchableOpacity
-                    style={{
-                      backgroundColor: '#222222',
-                      borderRadius: 8,
-                      marginRight: 17,
-                    }}>
-                    <Text
-                      style={{
-                        fontFamily: 'Epilogue',
-                        fontWeight: '700',
-                        fontSize: 16,
-                        lineHeight: 24,
-                        color: '#FCFCFC',
-                        paddingHorizontal: 30,
-                        paddingTop: 9,
-                        paddingBottom: 7,
-                      }}>
-                      Follow
-                    </Text>
-                  </TouchableOpacity>
-                </View>
-              </View>
-              <Image
-                style={{
-                  alignSelf: 'center',
-                  borderWidth: 3.81,
-                  borderRadius: 100,
-                  borderColor: '#FFFFFF',
-                  position: 'absolute',
-                  marginTop: 93.23,
-                }}
-                source={require('../assets/images/avatar/ava5.png')}
-              />
-            </View>
-
-            <View style={{marginBottom: 40}}>
-              <View
-                style={{
-                  borderRadius: 24,
-                  backgroundColor: '#333333',
-                }}>
-                <Image
-                  style={{marginBottom: 65.17, width: '100%'}}
-                  source={require('../assets/images/discover-creator/cover-2.png')}
-                />
-                <Text
-                  style={{
-                    fontFamily: 'Epilogue',
-                    fontWeight: '700',
-                    fontSize: 24,
-                    lineHeight: 32,
-                    color: '#FCFCFC',
-                    textAlign: 'center',
-                  }}>
-                  Holly Herndon
-                </Text>
-                <Text
-                  style={{
-                    fontFamily: 'Epilogue',
-                    fontWeight: '400',
-                    fontSize: 16,
-                    lineHeight: 22,
-                    color: '#F8F8F8',
-                    textAlign: 'center',
-                    marginHorizontal: 15.3,
-                    marginTop: 8,
-                    marginBottom: 15.78,
-                  }}>
-                  A family of artists in Ethiopia making art in the style of
-                  tizita- nostalgia and longing for the past. {'\n'} 📍 Addis
-                  Ababa …
-                </Text>
-                <View
-                  style={{
-                    flexDirection: 'row',
-                    justifyContent: 'space-between',
-                    marginBottom: 16.25,
-                  }}>
-                  <Text
-                    style={{
-                      fontFamily: 'Epilogue',
-                      fontWeight: '700',
-                      fontSize: 32,
-                      lineHeight: 36,
-                      color: '#FCFCFC',
-                      marginLeft: 20.4,
-                    }}>
-                    1024{' '}
-                    <Text
-                      style={{
-                        fontFamily: 'Epilogue',
-                        fontWeight: '500',
-                        fontSize: 16,
-                        lineHeight: 24,
-                        color: '#F8F8F8',
-                      }}>
-                      Followers
-                    </Text>
-                  </Text>
-                  <TouchableOpacity
-                    style={{
-                      backgroundColor: '#222222',
-                      borderRadius: 8,
-                      marginRight: 17,
-                    }}>
-                    <Text
-                      style={{
-                        fontFamily: 'Epilogue',
-                        fontWeight: '700',
-                        fontSize: 16,
-                        lineHeight: 24,
-                        color: '#FCFCFC',
-                        paddingHorizontal: 30,
-                        paddingTop: 9,
-                        paddingBottom: 7,
-                      }}>
-                      Follow
-                    </Text>
-                  </TouchableOpacity>
-                </View>
-              </View>
-              <Image
-                style={{
-                  alignSelf: 'center',
-                  borderWidth: 3.81,
-                  borderRadius: 100,
-                  borderColor: '#FFFFFF',
-                  position: 'absolute',
-                  marginTop: 93.23,
-                }}
-                source={require('../assets/images/avatar/ava6.png')}
-              />
-            </View>
-
-            <View style={{marginBottom: 40}}>
-              <View
-                style={{
-                  borderRadius: 24,
-                  backgroundColor: '#333333',
-                }}>
-                <Image
-                  style={{marginBottom: 65.17, width: '100%'}}
-                  source={require('../assets/images/discover-creator/cover-3.png')}
-                />
-                <Text
-                  style={{
-                    fontFamily: 'Epilogue',
-                    fontWeight: '700',
-                    fontSize: 24,
-                    lineHeight: 32,
-                    color: '#FCFCFC',
-                    textAlign: 'center',
-                  }}>
-                  Addie Wagenknecht
-                </Text>
-                <Text
-                  style={{
-                    fontFamily: 'Epilogue',
-                    fontWeight: '400',
-                    fontSize: 16,
-                    lineHeight: 22,
-                    color: '#F8F8F8',
-                    textAlign: 'center',
-                    marginHorizontal: 15.3,
-                    marginTop: 8,
-                    marginBottom: 15.78,
-                  }}>
-                  Addie Wagenknecht and Aiala Hernando. Documentation of the End
-                  of the Worlds.
-                </Text>
-                <View
-                  style={{
-                    flexDirection: 'row',
-                    justifyContent: 'space-between',
-                    marginBottom: 16.25,
-                  }}>
-                  <Text
-                    style={{
-                      fontFamily: 'Epilogue',
-                      fontWeight: '700',
-                      fontSize: 32,
-                      lineHeight: 36,
-                      color: '#FCFCFC',
-                      marginLeft: 20.4,
-                    }}>
-                    1099{' '}
-                    <Text
-                      style={{
-                        fontFamily: 'Epilogue',
-                        fontWeight: '500',
-                        fontSize: 16,
-                        lineHeight: 24,
-                        color: '#F8F8F8',
-                      }}>
-                      Followers
-                    </Text>
-                  </Text>
-                  <TouchableOpacity
-                    style={{
-                      backgroundColor: '#222222',
-                      borderRadius: 8,
-                      marginRight: 17,
-                    }}>
-                    <Text
-                      style={{
-                        fontFamily: 'Epilogue',
-                        fontWeight: '700',
-                        fontSize: 16,
-                        lineHeight: 24,
-                        color: '#FCFCFC',
-                        paddingHorizontal: 30,
-                        paddingTop: 9,
-                        paddingBottom: 7,
-                      }}>
-                      Follow
-                    </Text>
-                  </TouchableOpacity>
-                </View>
-              </View>
-              <Image
-                style={{
-                  alignSelf: 'center',
-                  borderWidth: 3.81,
-                  borderRadius: 100,
-                  borderColor: '#FFFFFF',
-                  position: 'absolute',
-                  marginTop: 93.23,
-                }}
-                source={require('../assets/images/avatar/ava7.png')}
-              />
-            </View>
-
-            <View style={{marginBottom: 40}}>
-              <View
-                style={{
-                  borderRadius: 24,
-                  backgroundColor: '#333333',
-                }}>
-                <Image
-                  style={{marginBottom: 65.17, width: '100%'}}
-                  source={require('../assets/images/discover-creator/cover-4.png')}
-                />
-                <Text
-                  style={{
-                    fontFamily: 'Epilogue',
-                    fontWeight: '700',
-                    fontSize: 24,
-                    lineHeight: 32,
-                    color: '#FCFCFC',
-                    textAlign: 'center',
-                  }}>
-                  Kinlaw
-                </Text>
-                <Text
-                  style={{
-                    fontFamily: 'Epilogue',
-                    fontWeight: '400',
-                    fontSize: 16,
-                    lineHeight: 22,
-                    color: '#F8F8F8',
-                    textAlign: 'center',
-                    marginHorizontal: 15.3,
-                    marginTop: 8,
-                    marginBottom: 15.78,
-                  }}>
-                  Audio Composer, {'\n'}Choreographer,Vocalist + Scientist{' '}
-                  {'\n'}~Sigh of My Hand (1/3) is listed now ~ made in
-                  partnersh…
-                </Text>
-                <View
-                  style={{
-                    flexDirection: 'row',
-                    justifyContent: 'space-between',
-                    marginBottom: 16.25,
-                  }}>
-                  <Text
-                    style={{
-                      fontFamily: 'Epilogue',
-                      fontWeight: '700',
-                      fontSize: 32,
-                      lineHeight: 36,
-                      color: '#FCFCFC',
-                      marginLeft: 20.4,
-                    }}>
-                    1099{' '}
-                    <Text
-                      style={{
-                        fontFamily: 'Epilogue',
-                        fontWeight: '500',
-                        fontSize: 16,
-                        lineHeight: 24,
-                        color: '#F8F8F8',
-                      }}>
-                      Followers
-                    </Text>
-                  </Text>
-                  <TouchableOpacity
-                    style={{
-                      backgroundColor: '#222222',
-                      borderRadius: 8,
-                      marginRight: 17,
-                    }}>
-                    <Text
-                      style={{
-                        fontFamily: 'Epilogue',
-                        fontWeight: '700',
-                        fontSize: 16,
-                        lineHeight: 24,
-                        color: '#FCFCFC',
-                        paddingHorizontal: 30,
-                        paddingTop: 9,
-                        paddingBottom: 7,
-                      }}>
-                      Follow
-                    </Text>
-                  </TouchableOpacity>
-                </View>
-              </View>
-              <Image
-                style={{
-                  alignSelf: 'center',
-                  borderWidth: 3.81,
-                  borderRadius: 100,
-                  borderColor: '#FFFFFF',
-                  position: 'absolute',
-                  marginTop: 93.23,
-                }}
-                source={require('../assets/images/avatar/ava8.png')}
-              />
-            </View>
-
-            <View style={{marginBottom: 43.81}}>
-              <View
-                style={{
-                  borderRadius: 24,
-                  backgroundColor: '#333333',
-                }}>
-                <Image
-                  style={{marginBottom: 65.17, width: '100%'}}
-                  source={require('../assets/images/discover-creator/cover-5.png')}
-                />
-                <Text
-                  style={{
-                    fontFamily: 'Epilogue',
-                    fontWeight: '700',
-                    fontSize: 24,
-                    lineHeight: 32,
-                    color: '#FCFCFC',
-                    textAlign: 'center',
-                  }}>
-                  Jennifer Mehigan
-                </Text>
-                <Text
-                  style={{
-                    fontFamily: 'Epilogue',
-                    fontWeight: '400',
-                    fontSize: 16,
-                    lineHeight: 22,
-                    color: '#F8F8F8',
-                    textAlign: 'center',
-                    marginHorizontal: 15.3,
-                    marginTop: 8,
-                    marginBottom: 15.78,
-                  }}>
-                  LOW POLY GODDESS / Jennifer Mehigan is an interdisciplinary
-                  artist whose work engages with abstract manifestations of de…
-                </Text>
-                <View
-                  style={{
-                    flexDirection: 'row',
-                    justifyContent: 'space-between',
-                    marginBottom: 16.25,
-                  }}>
-                  <Text
-                    style={{
-                      fontFamily: 'Epilogue',
-                      fontWeight: '700',
-                      fontSize: 32,
-                      lineHeight: 36,
-                      color: '#FCFCFC',
-                      marginLeft: 20.4,
-                    }}>
-                    1099{' '}
-                    <Text
-                      style={{
-                        fontFamily: 'Epilogue',
-                        fontWeight: '500',
-                        fontSize: 16,
-                        lineHeight: 24,
-                        color: '#F8F8F8',
-                      }}>
-                      Followers
-                    </Text>
-                  </Text>
-                  <TouchableOpacity
-                    style={{
-                      backgroundColor: '#222222',
-                      borderRadius: 8,
-                      marginRight: 17,
-                    }}>
-                    <Text
-                      style={{
-                        fontFamily: 'Epilogue',
-                        fontWeight: '700',
-                        fontSize: 16,
-                        lineHeight: 24,
-                        color: '#FCFCFC',
-                        paddingHorizontal: 30,
-                        paddingTop: 9,
-                        paddingBottom: 7,
-                      }}>
-                      Follow
-                    </Text>
-                  </TouchableOpacity>
-                </View>
-              </View>
-              <Image
-                style={{
-                  alignSelf: 'center',
-                  borderWidth: 3.81,
-                  borderRadius: 100,
-                  borderColor: '#FFFFFF',
-                  position: 'absolute',
-                  marginTop: 93.23,
-                }}
-                source={require('../assets/images/avatar/ava9.png')}
-              />
-            </View>
+            <>
+              {apiData.map((item: Items) => {
+                return (
+                  <View key={item.id}>
+                    <View style={{ marginBottom: 40 }}>
+                      <View
+                        style={{
+                          borderRadius: 24,
+                          backgroundColor: '#333333',
+                        }}>
+                        <Image
+                          style={{
+                            marginBottom: 65.17,
+                            width: '100%',
+                            height: 135,
+                          }}
+                          source={{ uri: item.coverImage }}
+                        />
+                        <Text
+                          style={{
+                            fontFamily: 'Epilogue',
+                            fontWeight: '700',
+                            fontSize: 24,
+                            lineHeight: 32,
+                            color: '#FCFCFC',
+                            textAlign: 'center',
+                          }}>
+                          {item.name}
+                        </Text>
+                        <Text
+                          style={{
+                            fontFamily: 'Epilogue',
+                            fontWeight: '400',
+                            fontSize: 16,
+                            lineHeight: 22,
+                            color: '#F8F8F8',
+                            textAlign: 'center',
+                            marginHorizontal: 15.3,
+                            marginTop: 8,
+                            marginBottom: 15.78,
+                          }}>
+                          {item.description}
+                        </Text>
+                        <View
+                          style={{
+                            flexDirection: 'row',
+                            justifyContent: 'space-between',
+                            marginBottom: 16.25,
+                          }}>
+                          <Text
+                            style={{
+                              fontFamily: 'Epilogue',
+                              fontWeight: '700',
+                              fontSize: 32,
+                              lineHeight: 36,
+                              color: '#FCFCFC',
+                              marginLeft: 20.4,
+                            }}>
+                            {item.followers}{' '}
+                            <Text
+                              style={{
+                                fontFamily: 'Epilogue',
+                                fontWeight: '500',
+                                fontSize: 16,
+                                lineHeight: 24,
+                                color: '#F8F8F8',
+                              }}>
+                              Followers
+                            </Text>
+                          </Text>
+                          <TouchableOpacity
+                            style={{
+                              backgroundColor: '#222222',
+                              borderRadius: 8,
+                              marginRight: 17,
+                            }}>
+                            <Text
+                              style={{
+                                fontFamily: 'Epilogue',
+                                fontWeight: '700',
+                                fontSize: 16,
+                                lineHeight: 24,
+                                color: '#FCFCFC',
+                                paddingHorizontal: 30,
+                                paddingTop: 9,
+                                paddingBottom: 7,
+                              }}>
+                              Follow
+                            </Text>
+                          </TouchableOpacity>
+                        </View>
+                      </View>
+                      <Image
+                        style={{
+                          alignSelf: 'center',
+                          borderWidth: 3.81,
+                          borderRadius: 100,
+                          borderColor: '#FFFFFF',
+                          position: 'absolute',
+                          marginTop: 93.23,
+                          width: 93,
+                          height: 93,
+                        }}
+                        source={{ uri: item.avatar }}
+                      />
+                    </View>
+                  </View>
+                );
+              })}
+            </>
           </View>
           <TouchableOpacity
             style={{
@@ -625,7 +270,7 @@ export default function DiscoverCreator() {
               Load more
             </Text>
           </TouchableOpacity>
-          <View style={{marginBottom: 107.99}} />
+          <View style={{ marginBottom: 107.99 }} />
           <Footer />
         </ScrollView>
       </SafeAreaView>

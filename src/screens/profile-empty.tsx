@@ -24,14 +24,14 @@ export default function ProfileEmpty() {
           flex: 1,
         },
       ]}>
-      <SafeAreaView style={{flex: 1}}>
+      <SafeAreaView style={{ flex: 1 }}>
         <StatusBar barStyle="light-content" translucent={true} />
 
         <Header />
         <ScrollView>
           <View>
             <Image
-              style={{width: '100%'}}
+              style={{ width: '100%' }}
               source={require('../assets/images/profile/cover.png')}
             />
             <View
@@ -49,7 +49,7 @@ export default function ProfileEmpty() {
                   marginHorizontal: 8,
                 }}>
                 <Image
-                  style={{margin: 10}}
+                  style={{ margin: 10 }}
                   source={require('openart/src/assets/images/icon/more-icon.png')}
                 />
               </TouchableOpacity>
@@ -60,7 +60,7 @@ export default function ProfileEmpty() {
                   marginRight: 16,
                 }}>
                 <Image
-                  style={{margin: 10}}
+                  style={{ margin: 10 }}
                   source={require('openart/src/assets/images/icon/export-icon.png')}
                 />
               </TouchableOpacity>
@@ -86,7 +86,7 @@ export default function ProfileEmpty() {
               }}>
               Gift Habeshaw
             </Text>
-            <View style={{flexDirection: 'row', alignSelf: 'center'}}>
+            <View style={{ flexDirection: 'row', alignSelf: 'center' }}>
               <Text
                 style={{
                   textAlign: 'center',

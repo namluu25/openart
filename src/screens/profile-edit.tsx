@@ -26,14 +26,14 @@ export default function ProfileEdit() {
           flex: 1,
         },
       ]}>
-      <SafeAreaView style={{flex: 1}}>
+      <SafeAreaView style={{ flex: 1 }}>
         <StatusBar barStyle="light-content" translucent={true} />
 
         <Header />
         <ScrollView>
           <View>
             <Image
-              style={{width: '100%'}}
+              style={{ width: '100%' }}
               source={require('../assets/images/profile/cover.png')}
             />
             <View
@@ -51,7 +51,7 @@ export default function ProfileEdit() {
                   marginHorizontal: 8,
                 }}>
                 <Image
-                  style={{margin: 10}}
+                  style={{ margin: 10 }}
                   source={require('openart/src/assets/images/icon/more-icon.png')}
                 />
               </TouchableOpacity>
@@ -62,7 +62,7 @@ export default function ProfileEdit() {
                   marginRight: 16,
                 }}>
                 <Image
-                  style={{margin: 10}}
+                  style={{ margin: 10 }}
                   source={require('openart/src/assets/images/icon/export-icon.png')}
                 />
               </TouchableOpacity>
@@ -88,7 +88,7 @@ export default function ProfileEdit() {
               }}>
               Gift Habeshaw
             </Text>
-            <View style={{flexDirection: 'row', alignSelf: 'center'}}>
+            <View style={{ flexDirection: 'row', alignSelf: 'center' }}>
               <Text
                 style={{
                   textAlign: 'center',
@@ -126,12 +126,12 @@ export default function ProfileEdit() {
                 Enter your details
               </Text>
               <TextInput
-                style={[styles.inputBox, {marginBottom: 12.62}]}
+                style={[styles.inputBox, { marginBottom: 12.62 }]}
                 placeholderTextColor="#FCFCFC"
                 placeholder="Name"
               />
               <TextInput
-                style={[styles.inputBox, {marginBottom: 41.04}]}
+                style={[styles.inputBox, { marginBottom: 41.04 }]}
                 placeholderTextColor="#FCFCFC"
                 placeholder="User Name"
               />
@@ -147,7 +147,7 @@ export default function ProfileEdit() {
                 Enter your details
               </Text>
               <TextInput
-                style={[styles.inputBox, {marginBottom: 1.79}]}
+                style={[styles.inputBox, { marginBottom: 1.79 }]}
                 placeholderTextColor="#FCFCFC"
                 placeholder="Email"
               />
@@ -175,9 +175,9 @@ export default function ProfileEdit() {
                 }}>
                 Enter your bio
               </Text>
-              <View style={{marginBottom: 40}}>
+              <View style={{ marginBottom: 40 }}>
                 <TextInput
-                  style={[styles.inputBox, {paddingBottom: 100}]}
+                  style={[styles.inputBox, { paddingBottom: 100 }]}
                   placeholderTextColor="#FCFCFC"
                   placeholder="Enter your bio here"
                 />
@@ -213,7 +213,7 @@ export default function ProfileEdit() {
                   marginBottom: 40,
                 }}>
                 <Image
-                  style={{marginTop: 43}}
+                  style={{ marginTop: 43 }}
                   source={require('../assets/images/icon/picture-icon.png')}
                 />
                 <Text
@@ -334,7 +334,7 @@ export default function ProfileEdit() {
                   marginBottom: 12.62,
                 }}>
                 <Image
-                  style={{marginRight: 12}}
+                  style={{ marginRight: 12 }}
                   source={require('../assets/images/icon/link-icon.png')}
                 />
                 <Text
@@ -359,7 +359,7 @@ export default function ProfileEdit() {
                   marginBottom: 12.62,
                 }}>
                 <Image
-                  style={{marginRight: 12}}
+                  style={{ marginRight: 12 }}
                   source={require('../assets/images/icon/discord-icon.png')}
                 />
                 <Text
@@ -384,7 +384,7 @@ export default function ProfileEdit() {
                   marginBottom: 12.62,
                 }}>
                 <Image
-                  style={{marginRight: 12}}
+                  style={{ marginRight: 12 }}
                   source={require('../assets/images/icon/instagram-icon.png')}
                 />
                 <Text
@@ -409,7 +409,7 @@ export default function ProfileEdit() {
                   marginBottom: 12.62,
                 }}>
                 <Image
-                  style={{marginRight: 12}}
+                  style={{ marginRight: 12 }}
                   source={require('../assets/images/icon/youtube-icon.png')}
                 />
                 <Text
@@ -434,7 +434,7 @@ export default function ProfileEdit() {
                   marginBottom: 12.62,
                 }}>
                 <Image
-                  style={{marginRight: 12}}
+                  style={{ marginRight: 12 }}
                   source={require('../assets/images/icon/facebook-icon.png')}
                 />
                 <Text
@@ -459,7 +459,7 @@ export default function ProfileEdit() {
                   marginBottom: 44.62,
                 }}>
                 <Image
-                  style={{marginRight: 12}}
+                  style={{ marginRight: 12 }}
                   source={require('../assets/images/icon/tiktok-icon.png')}
                 />
                 <Text
@@ -507,7 +507,7 @@ export default function ProfileEdit() {
             />
           </View>
 
-          <View style={{marginBottom: 90.26}} />
+          <View style={{ marginBottom: 90.26 }} />
           <Footer />
         </ScrollView>
       </SafeAreaView>

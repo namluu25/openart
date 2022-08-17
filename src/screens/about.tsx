@@ -23,14 +23,14 @@ export default function About() {
           flex: 1,
         },
       ]}>
-      <SafeAreaView style={{flex: 1}}>
+      <SafeAreaView style={{ flex: 1 }}>
         <StatusBar barStyle="light-content" translucent={true} />
 
         <Header />
 
         <ScrollView>
           <View>
-            <View style={{flex: 1, alignItems: 'center'}}>
+            <View style={{ flex: 1, alignItems: 'center' }}>
               <Text
                 style={{
                   fontSize: 20,
@@ -43,7 +43,7 @@ export default function About() {
                 About OpenArt
               </Text>
               <Image
-                style={{marginTop: 10.91}}
+                style={{ marginTop: 10.91 }}
                 source={require('../assets/images/icon/about-icon-1.png')}
               />
               <Text
@@ -107,7 +107,7 @@ export default function About() {
                     width: 166,
                   }}>
                   <Image
-                    style={{marginTop: 9.89, marginBottom: 12.98}}
+                    style={{ marginTop: 9.89, marginBottom: 12.98 }}
                     source={require('../assets/images/icon/about-icon-2.png')}
                   />
                   <Text
@@ -130,7 +130,7 @@ export default function About() {
                     alignItems: 'center',
                   }}>
                   <Image
-                    style={{marginTop: 25.35, marginBottom: 18.13}}
+                    style={{ marginTop: 25.35, marginBottom: 18.13 }}
                     source={require('../assets/images/icon/about-icon-3.png')}
                   />
                   <Text
@@ -146,7 +146,7 @@ export default function About() {
                 </View>
               </View>
             </View>
-            <View style={{marginHorizontal: 30.69}}>
+            <View style={{ marginHorizontal: 30.69 }}>
               <Text
                 style={{
                   fontSize: 16,
@@ -202,7 +202,7 @@ export default function About() {
               </Text>
             </View>
           </View>
-          <View style={{marginBottom: 1.21}} />
+          <View style={{ marginBottom: 1.21 }} />
           <Footer />
         </ScrollView>
       </SafeAreaView>

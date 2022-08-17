@@ -13,12 +13,12 @@ import {
   TextInput,
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
-import {useNavigation} from '@react-navigation/native';
+import { useNavigation } from '@react-navigation/native';
 import Header from '../components/header';
 import Footer from '../components/footer';
-import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
-import {faMagnifyingGlass} from '@fortawesome/free-solid-svg-icons';
-import {faMicrophone} from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
+import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
+import { faMicrophone } from '@fortawesome/free-solid-svg-icons';
 import Slider from '@react-native-community/slider';
 
 export default function SearchFilter() {
@@ -32,15 +32,15 @@ export default function SearchFilter() {
           flex: 1,
         },
       ]}>
-      <SafeAreaView style={{flex: 1}}>
+      <SafeAreaView style={{ flex: 1 }}>
         <StatusBar barStyle="light-content" translucent={true} />
 
         <Header />
         <ScrollView>
-          <View style={{marginTop: 37.17, marginHorizontal: 16.57}}>
-            <View style={{marginHorizontal: 24, marginBottom: 25.32}}>
+          <View style={{ marginTop: 37.17, marginHorizontal: 16.57 }}>
+            <View style={{ marginHorizontal: 24, marginBottom: 25.32 }}>
               <TextInput
-                style={[styles.inputBox, {color: '#F8F8F8'}]}
+                style={[styles.inputBox, { color: '#F8F8F8' }]}
                 placeholderTextColor="#888888"
                 placeholder="Search item"
               />
@@ -90,7 +90,7 @@ export default function SearchFilter() {
                 justifyContent: 'flex-start',
                 marginBottom: 11,
               }}>
-              <TouchableOpacity style={{marginRight: 10}}>
+              <TouchableOpacity style={{ marginRight: 10 }}>
                 <LinearGradient
                   colors={['#0038F5', '#9F03FF']}
                   useAngle={true}
@@ -136,7 +136,7 @@ export default function SearchFilter() {
                 </Text>
               </TouchableOpacity>
               <TouchableOpacity
-                style={{backgroundColor: '#333333', borderRadius: 30}}>
+                style={{ backgroundColor: '#333333', borderRadius: 30 }}>
                 <Text
                   style={{
                     fontSize: 16,
@@ -153,7 +153,7 @@ export default function SearchFilter() {
                 </Text>
               </TouchableOpacity>
             </View>
-            <View style={{flexDirection: 'row', marginBottom: 37.53}}>
+            <View style={{ flexDirection: 'row', marginBottom: 37.53 }}>
               <TouchableOpacity
                 style={{
                   backgroundColor: '#333333',
@@ -210,7 +210,7 @@ export default function SearchFilter() {
             </Text>
 
             <Slider
-              style={{width: 250, height: 40, alignSelf: 'center'}}
+              style={{ width: 250, height: 40, alignSelf: 'center' }}
               minimumValue={0.01}
               maximumValue={100}
               minimumTrackTintColor="#0038F5"
@@ -263,7 +263,7 @@ export default function SearchFilter() {
                 justifyContent: 'flex-start',
                 marginBottom: 32.2,
               }}>
-              <TouchableOpacity style={{marginRight: 10}}>
+              <TouchableOpacity style={{ marginRight: 10 }}>
                 <LinearGradient
                   colors={['#0038F5', '#9F03FF']}
                   useAngle={true}
@@ -309,7 +309,7 @@ export default function SearchFilter() {
                 </Text>
               </TouchableOpacity>
               <TouchableOpacity
-                style={{backgroundColor: '#333333', borderRadius: 30}}>
+                style={{ backgroundColor: '#333333', borderRadius: 30 }}>
                 <Text
                   style={{
                     fontSize: 16,
@@ -386,7 +386,7 @@ export default function SearchFilter() {
                 </Text>
               </TouchableOpacity>
               <TouchableOpacity
-                style={{backgroundColor: '#333333', borderRadius: 30}}>
+                style={{ backgroundColor: '#333333', borderRadius: 30 }}>
                 <Text
                   style={{
                     fontSize: 16,
@@ -403,7 +403,7 @@ export default function SearchFilter() {
                 </Text>
               </TouchableOpacity>
             </View>
-            <View style={{flexDirection: 'row', marginBottom: 37.53}}>
+            <View style={{ flexDirection: 'row', marginBottom: 37.53 }}>
               <TouchableOpacity
                 style={{
                   backgroundColor: '#333333',
@@ -527,7 +527,7 @@ export default function SearchFilter() {
               </Text>
             </TouchableOpacity>
             <View>
-              <View style={[styles.product, {marginTop: 25.2}]}>
+              <View style={[styles.product, { marginTop: 25.2 }]}>
                 <View>
                   <TouchableOpacity
                     onPress={() => {
@@ -539,7 +539,7 @@ export default function SearchFilter() {
                     />
                   </TouchableOpacity>
 
-                  <Text style={[styles.nftText, {marginTop: 12.41}]}>
+                  <Text style={[styles.nftText, { marginTop: 12.41 }]}>
                     Silent Color
                   </Text>
                   <View
@@ -561,14 +561,14 @@ export default function SearchFilter() {
                       <Text
                         style={[
                           styles.nftText,
-                          {fontSize: 18, paddingLeft: 12},
+                          { fontSize: 18, paddingLeft: 12 },
                         ]}>
                         Pawel Czerwinski
                       </Text>
                       <Text
                         style={[
                           styles.nftText,
-                          {fontSize: 14, fontWeight: '500', paddingLeft: 12},
+                          { fontSize: 14, fontWeight: '500', paddingLeft: 12 },
                         ]}>
                         Creator
                       </Text>
@@ -610,7 +610,7 @@ export default function SearchFilter() {
               </TouchableOpacity>
 
               <View>
-                <View style={[styles.product, {marginTop: 40}]}>
+                <View style={[styles.product, { marginTop: 40 }]}>
                   <View>
                     <TouchableOpacity
                       onPress={() => {
@@ -622,7 +622,7 @@ export default function SearchFilter() {
                       />
                     </TouchableOpacity>
 
-                    <Text style={[styles.nftText, {marginTop: 12.41}]}>
+                    <Text style={[styles.nftText, { marginTop: 12.41 }]}>
                       George
                     </Text>
                     <View
@@ -644,14 +644,18 @@ export default function SearchFilter() {
                         <Text
                           style={[
                             styles.nftText,
-                            {fontSize: 18, paddingLeft: 12},
+                            { fontSize: 18, paddingLeft: 12 },
                           ]}>
                           Pawel Czerwinski
                         </Text>
                         <Text
                           style={[
                             styles.nftText,
-                            {fontSize: 14, fontWeight: '500', paddingLeft: 12},
+                            {
+                              fontSize: 14,
+                              fontWeight: '500',
+                              paddingLeft: 12,
+                            },
                           ]}>
                           Creator
                         </Text>
@@ -694,7 +698,7 @@ export default function SearchFilter() {
               </View>
 
               <View>
-                <View style={[styles.product, {marginTop: 40}]}>
+                <View style={[styles.product, { marginTop: 40 }]}>
                   <View>
                     <TouchableOpacity
                       onPress={() => {
@@ -706,7 +710,7 @@ export default function SearchFilter() {
                       />
                     </TouchableOpacity>
 
-                    <Text style={[styles.nftText, {marginTop: 12.41}]}>
+                    <Text style={[styles.nftText, { marginTop: 12.41 }]}>
                       Ocean
                     </Text>
                     <View
@@ -728,14 +732,18 @@ export default function SearchFilter() {
                         <Text
                           style={[
                             styles.nftText,
-                            {fontSize: 18, paddingLeft: 12},
+                            { fontSize: 18, paddingLeft: 12 },
                           ]}>
                           Pawel Czerwinski
                         </Text>
                         <Text
                           style={[
                             styles.nftText,
-                            {fontSize: 14, fontWeight: '500', paddingLeft: 12},
+                            {
+                              fontSize: 14,
+                              fontWeight: '500',
+                              paddingLeft: 12,
+                            },
                           ]}>
                           Creator
                         </Text>

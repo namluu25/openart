@@ -1,9 +1,11 @@
 /* eslint-disable react-native/no-inline-styles */
 import React from 'react';
-import {View, Image, TouchableOpacity, Text, StyleSheet} from 'react-native';
+import { View, Image, TouchableOpacity, Text, StyleSheet } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
+import { useNavigation } from '@react-navigation/native';
 
 const Footer = () => {
+  const navigation = useNavigation();
   return (
     <View>
       <Image
@@ -26,10 +28,10 @@ const Footer = () => {
           marginTop: 4,
         }}>
         The{' '}
-        <Text style={{fontWeight: '400'}}>
+        <Text style={{ fontWeight: '400' }}>
           New{' '}
-          <Text style={{fontWeight: '600'}}>
-            Creative <Text style={{fontWeight: '700'}}>Economy</Text>
+          <Text style={{ fontWeight: '600' }}>
+            Creative <Text style={{ fontWeight: '700' }}>Economy</Text>
           </Text>
         </Text>
       </Text>
@@ -67,6 +69,9 @@ const Footer = () => {
             borderRadius: 8,
             borderColor: '#0038F5',
             borderWidth: 1,
+          }}
+          onPress={() => {
+            navigation.navigate('DiscoverCreator' as never, {} as never);
           }}>
           <Text
             style={{
@@ -110,7 +115,7 @@ const Footer = () => {
               <Text style={styles.aboutText}>Blog</Text>
             </TouchableOpacity>
           </View>
-          <View style={{paddingRight: 10}}>
+          <View style={{ paddingRight: 10 }}>
             {/* about */}
             <TouchableOpacity>
               <Text style={styles.aboutText}>About</Text>

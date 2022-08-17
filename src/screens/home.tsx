@@ -11,10 +11,10 @@ import {
   TouchableOpacity,
   Platform,
 } from 'react-native';
-import {useNavigation} from '@react-navigation/native';
-import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
-import {faMagnifyingGlass} from '@fortawesome/free-solid-svg-icons';
-import {faMicrophone} from '@fortawesome/free-solid-svg-icons';
+import { useNavigation } from '@react-navigation/native';
+import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
+import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
+import { faMicrophone } from '@fortawesome/free-solid-svg-icons';
 import Header from '../components/header';
 import FrontProduct from '../components/nft-container';
 import LiveContainer from '../components/nft-live-auction-container';
@@ -33,13 +33,13 @@ function Home() {
           flex: 1,
         },
       ]}>
-      <SafeAreaView style={{flex: 1}}>
+      <SafeAreaView style={{ flex: 1 }}>
         <StatusBar barStyle="light-content" translucent={true} />
 
         <Header />
 
         <ScrollView>
-          <View style={{marginHorizontal: 16}}>
+          <View style={{ marginHorizontal: 16 }}>
             <View>
               <Text style={styles.titleText}>
                 {'Discover, collect, and sell'}
@@ -52,7 +52,7 @@ function Home() {
                   marginTop: 22,
                 }}>
                 <TextInput
-                  style={[styles.inputBox, {color: '#F8F8F8'}]}
+                  style={[styles.inputBox, { color: '#F8F8F8' }]}
                   placeholderTextColor="#FCFCFC"
                   placeholder="Search items, collections, and accounts"
                   onPressIn={() => {
@@ -98,7 +98,7 @@ function Home() {
 
             <HotCollection />
 
-            <View style={{marginBottom: 82}} />
+            <View style={{ marginBottom: 82 }} />
           </View>
 
           <Footer />

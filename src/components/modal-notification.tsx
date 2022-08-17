@@ -26,7 +26,7 @@ export default function Notification(props: Props) {
         <TouchableOpacity
           style={[
             styles.centeredView,
-            {padding: 16, backgroundColor: 'rgba(0,0,0,0.5)'},
+            { padding: 16, backgroundColor: 'rgba(0,0,0,0.5)' },
           ]}
           onPress={props.handleClose}
           activeOpacity={1}>
@@ -58,7 +58,7 @@ export default function Notification(props: Props) {
                 <Image
                   source={require('../assets/images/notification/noti-1.png')}
                 />
-                <View style={{marginLeft: 16}}>
+                <View style={{ marginLeft: 16 }}>
                   <Text
                     style={{
                       fontFamily: 'Epilogue',
@@ -116,7 +116,7 @@ export default function Notification(props: Props) {
                 <Image
                   source={require('../assets/images/notification/noti-2.png')}
                 />
-                <View style={{marginLeft: 16}}>
+                <View style={{ marginLeft: 16 }}>
                   <Text
                     style={{
                       fontFamily: 'Epilogue',
@@ -174,7 +174,7 @@ export default function Notification(props: Props) {
                 <Image
                   source={require('../assets/images/notification/noti-3.png')}
                 />
-                <View style={{marginLeft: 16}}>
+                <View style={{ marginLeft: 16 }}>
                   <Text
                     style={{
                       fontFamily: 'Epilogue',
@@ -232,7 +232,7 @@ export default function Notification(props: Props) {
                 <Image
                   source={require('../assets/images/notification/noti-4.png')}
                 />
-                <View style={{marginLeft: 16}}>
+                <View style={{ marginLeft: 16 }}>
                   <Text
                     style={{
                       fontFamily: 'Epilogue',
@@ -268,7 +268,7 @@ export default function Notification(props: Props) {
               </TouchableOpacity>
             </View>
 
-            <View style={{marginHorizontal: 20}}>
+            <View style={{ marginHorizontal: 20 }}>
               <TouchableOpacity>
                 <LinearGradient
                   colors={['#0038F5', '#9F03FF']}

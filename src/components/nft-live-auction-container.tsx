@@ -1,5 +1,5 @@
 /* eslint-disable react-native/no-inline-styles */
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   View,
   StyleSheet,
@@ -8,7 +8,7 @@ import {
   TouchableOpacity,
   ScrollView,
 } from 'react-native';
-import {useNavigation} from '@react-navigation/native';
+import { useNavigation } from '@react-navigation/native';
 import axios from 'axios';
 import globalStyle from '../theme/globalStyle';
 
@@ -41,7 +41,7 @@ export default function LiveContainer() {
   }, []);
   const navigation = useNavigation();
   return (
-    <View>
+    <>
       <View
         style={{
           flex: 1,
@@ -58,7 +58,7 @@ export default function LiveContainer() {
             alignItems: 'baseline',
           }}>
           <Image
-            style={{marginRight: 7.31}}
+            style={{ marginRight: 7.31 }}
             source={require('openart/src/assets/images/icon/live-icon.png')}
           />
           <Text
@@ -98,19 +98,19 @@ export default function LiveContainer() {
         {apiData.slice(1).map((item: Items) => {
           return (
             <View key={item.id}>
-              <View style={[globalStyle.container, {marginTop: 21}]}>
+              <View style={[globalStyle.container, { marginTop: 21 }]}>
                 <View>
                   <TouchableOpacity
                     onPress={() => {
                       navigation.navigate('DetailSold' as never, {} as never);
                     }}>
                     <Image
-                      source={{uri: `${item.image}`}}
+                      source={{ uri: `${item.image}` }}
                       style={globalStyle.imageContainer}
                     />
                   </TouchableOpacity>
                   <Text
-                    style={[globalStyle.containerTitle, {marginTop: 12.41}]}>
+                    style={[globalStyle.containerTitle, { marginTop: 12.41 }]}>
                     {item.name}
                   </Text>
                   <View
@@ -131,7 +131,7 @@ export default function LiveContainer() {
                         }}>
                         <Image
                           style={globalStyle.avatar}
-                          source={{uri: `${item.avatar}`}}
+                          source={{ uri: `${item.avatar}` }}
                         />
                       </TouchableOpacity>
                       <Image
@@ -195,7 +195,7 @@ export default function LiveContainer() {
           );
         })}
       </ScrollView>
-    </View>
+    </>
   );
 }
 

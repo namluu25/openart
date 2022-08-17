@@ -1,7 +1,7 @@
 /* eslint-disable react-native/no-inline-styles */
-import React, {useState, useEffect} from 'react';
-import {View, StyleSheet, Image, Text, TouchableOpacity} from 'react-native';
-import {useNavigation} from '@react-navigation/native';
+import React, { useState, useEffect } from 'react';
+import { View, StyleSheet, Image, Text, TouchableOpacity } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 import LinearGradient from 'react-native-linear-gradient';
 import Account from './modal-account';
 import axios from 'axios';
@@ -36,7 +36,7 @@ export default function FrontProduct() {
   const navigation = useNavigation();
   return (
     <>
-      <View style={[globalStyle.container, {marginTop: 23.29}]}>
+      <View style={[globalStyle.container, { marginTop: 23.29 }]}>
         <View>
           <TouchableOpacity
             onPress={() => {
@@ -44,11 +44,11 @@ export default function FrontProduct() {
             }}>
             <Image
               style={globalStyle.imageContainer}
-              source={{uri: apiData[0]?.image}}
+              source={{ uri: apiData[0]?.image }}
             />
           </TouchableOpacity>
-          <Text style={[globalStyle.containerTitle, {marginTop: 12.41}]}>
-            Silent Wave
+          <Text style={[globalStyle.containerTitle, { marginTop: 12.41 }]}>
+            {apiData[0].name}
           </Text>
           <View
             style={{
@@ -65,7 +65,7 @@ export default function FrontProduct() {
                 }}>
                 <Image
                   style={globalStyle.avatar}
-                  source={{uri: `${apiData[0]?.avatar}`}}
+                  source={{ uri: `${apiData[0]?.avatar}` }}
                 />
               </TouchableOpacity>
               <Image

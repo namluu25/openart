@@ -13,9 +13,9 @@ import {
   TextInput,
 } from 'react-native';
 import Header from '../components/header';
-import {useNavigation} from '@react-navigation/native';
-import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
-import {faMagnifyingGlass, faXmark} from '@fortawesome/free-solid-svg-icons';
+import { useNavigation } from '@react-navigation/native';
+import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
+import { faMagnifyingGlass, faXmark } from '@fortawesome/free-solid-svg-icons';
 
 export default function SearchPopup() {
   const navigation = useNavigation();
@@ -28,7 +28,7 @@ export default function SearchPopup() {
           flex: 1,
         },
       ]}>
-      <SafeAreaView style={{flex: 1}}>
+      <SafeAreaView style={{ flex: 1 }}>
         <StatusBar barStyle="light-content" translucent={true} />
 
         <Header />
@@ -46,7 +46,7 @@ export default function SearchPopup() {
               }}>
               <View>
                 <TextInput
-                  style={[styles.inputBox, {color: '#F8F8F8'}]}
+                  style={[styles.inputBox, { color: '#F8F8F8' }]}
                   placeholderTextColor="#FCFCFC"
                   placeholder=" "
                   autoFocus={true}
@@ -98,7 +98,7 @@ export default function SearchPopup() {
               </TouchableOpacity>
             </View>
 
-            <View style={{marginTop: 20}}>
+            <View style={{ marginTop: 20 }}>
               <Text
                 style={{
                   fontFamily: 'Epilogue',
@@ -110,9 +110,9 @@ export default function SearchPopup() {
                 People
               </Text>
 
-              <TouchableOpacity style={{flexDirection: 'row', marginTop: 12}}>
+              <TouchableOpacity style={{ flexDirection: 'row', marginTop: 12 }}>
                 <Image source={require('../assets/images/search/ava1.png')} />
-                <View style={{flexDirection: 'column', marginLeft: 20}}>
+                <View style={{ flexDirection: 'column', marginLeft: 20 }}>
                   <Text
                     style={{
                       fontFamily: 'Epilogue',
@@ -136,9 +136,9 @@ export default function SearchPopup() {
                 </View>
               </TouchableOpacity>
 
-              <TouchableOpacity style={{flexDirection: 'row', marginTop: 21}}>
+              <TouchableOpacity style={{ flexDirection: 'row', marginTop: 21 }}>
                 <Image source={require('../assets/images/search/ava2.png')} />
-                <View style={{flexDirection: 'column', marginLeft: 20}}>
+                <View style={{ flexDirection: 'column', marginLeft: 20 }}>
                   <Text
                     style={{
                       fontFamily: 'Epilogue',
@@ -162,9 +162,9 @@ export default function SearchPopup() {
                 </View>
               </TouchableOpacity>
 
-              <TouchableOpacity style={{flexDirection: 'row', marginTop: 21}}>
+              <TouchableOpacity style={{ flexDirection: 'row', marginTop: 21 }}>
                 <Image source={require('../assets/images/search/ava3.png')} />
-                <View style={{flexDirection: 'column', marginLeft: 20}}>
+                <View style={{ flexDirection: 'column', marginLeft: 20 }}>
                   <Text
                     style={{
                       fontFamily: 'Epilogue',
@@ -189,7 +189,7 @@ export default function SearchPopup() {
               </TouchableOpacity>
             </View>
 
-            <View style={{marginTop: 23}}>
+            <View style={{ marginTop: 23 }}>
               <Text
                 style={{
                   fontFamily: 'Epilogue',
@@ -201,9 +201,9 @@ export default function SearchPopup() {
                 Items
               </Text>
 
-              <TouchableOpacity style={{flexDirection: 'row', marginTop: 15}}>
+              <TouchableOpacity style={{ flexDirection: 'row', marginTop: 15 }}>
                 <Image source={require('../assets/images/search/image1.png')} />
-                <View style={{flexDirection: 'column', marginLeft: 12}}>
+                <View style={{ flexDirection: 'column', marginLeft: 12 }}>
                   <Text
                     style={{
                       fontFamily: 'Epilogue',
@@ -227,9 +227,9 @@ export default function SearchPopup() {
                 </View>
               </TouchableOpacity>
 
-              <TouchableOpacity style={{flexDirection: 'row', marginTop: 12}}>
+              <TouchableOpacity style={{ flexDirection: 'row', marginTop: 12 }}>
                 <Image source={require('../assets/images/search/image2.png')} />
-                <View style={{flexDirection: 'column', marginLeft: 12}}>
+                <View style={{ flexDirection: 'column', marginLeft: 12 }}>
                   <Text
                     style={{
                       fontFamily: 'Epilogue',
@@ -253,9 +253,9 @@ export default function SearchPopup() {
                 </View>
               </TouchableOpacity>
 
-              <TouchableOpacity style={{flexDirection: 'row', marginTop: 12}}>
+              <TouchableOpacity style={{ flexDirection: 'row', marginTop: 12 }}>
                 <Image source={require('../assets/images/search/image3.png')} />
-                <View style={{flexDirection: 'column', marginLeft: 12}}>
+                <View style={{ flexDirection: 'column', marginLeft: 12 }}>
                   <Text
                     style={{
                       fontFamily: 'Epilogue',

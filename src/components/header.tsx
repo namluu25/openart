@@ -1,7 +1,7 @@
 /* eslint-disable react-native/no-inline-styles */
-import React, {useState} from 'react';
-import {View, Image, TouchableOpacity} from 'react-native';
-import {useNavigation} from '@react-navigation/native';
+import React, { useState } from 'react';
+import { View, Image, TouchableOpacity } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 import Account from './modal-account';
 import Notification from './modal-notification';
 
