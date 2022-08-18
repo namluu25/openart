@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "14813577460",
+    "project_id": "openart-signin",
+    "storage_bucket": "openart-signin.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:14813577460:android:6e9e53cdba126805105ea1",
+        "android_client_info": {
+          "package_name": "com.openart"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "14813577460-13scopc39iblveehhb2o9qf209aak712.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.openart",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "14813577460-bkjpc8pp44uk7saapmg5ku9m7b39ei8u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAjkcG2-FIm6IXrHZzr09yFfsQsjq_0RIc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "14813577460-bkjpc8pp44uk7saapmg5ku9m7b39ei8u.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
