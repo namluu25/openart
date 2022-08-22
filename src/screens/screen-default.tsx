@@ -41,7 +41,8 @@ export default function TestAPI() {
       .get('https://62f0be8a57311485d135dee1.mockapi.io/homepage')
       .then(res => {
         setApiData(res.data);
-      });
+      })
+      .catch(error => console.log(error));
   }, []);
   return (
     <View

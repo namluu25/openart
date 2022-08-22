@@ -65,7 +65,8 @@ export default function UserProfile() {
       .then(res => {
         setApiData(res.data);
         setArtData(res.data[0].createdArt);
-      });
+      })
+      .catch(error => console.log(error));
   }, []);
   return (
     <View

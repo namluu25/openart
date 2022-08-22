@@ -1,5 +1,5 @@
 /* eslint-disable react-native/no-inline-styles */
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import {
   View,
   Text,
@@ -14,7 +14,33 @@ import Header from '../components/header';
 import LinearGradient from 'react-native-linear-gradient';
 import { useNavigation } from '@react-navigation/native';
 import Connect_wallet from '../components/modal-connect-wallet';
+import {
+  GoogleSignin,
+  GoogleSigninButton,
+} from '@react-native-google-signin/google-signin';
+import auth from '@react-native-firebase/auth';
 
+GoogleSignin.configure({
+  webClientId:
+    '14813577460-bkjpc8pp44uk7saapmg5ku9m7b39ei8u.apps.googleusercontent.com',
+});
+
+async function onGoogleButtonPress() {
+  try {
+    // Get the users ID token
+    const { idToken } = await GoogleSignin.signIn();
+
+    // Create a Google credential with the token
+    const googleCredential = auth.GoogleAuthProvider.credential(idToken);
+
+    // Sign-in the user with the credential
+    await auth().signInWithCredential(googleCredential);
+  } catch (error) {
+    console.log({ error });
+  }
+}
+
+// const [login, onGoogleButtonPress] = useContext();
 export default function Menu() {
   const [visible, setVisible] = useState(false);
   const navigation = useNavigation();
@@ -96,9 +122,25 @@ export default function Menu() {
             </TouchableOpacity>
           </View>
 
+          <GoogleSigninButton
+            // onPress={() =>
+            //   onGoogleButtonPress().then(() =>
+            //     console.log('Signed in with Google!'),
+            //   )
+            // }
+            onPress={() => onGoogleButtonPress()}
+            style={{
+              marginTop: 181,
+              borderRadius: 24,
+              alignSelf: 'center',
+              marginBottom: 10,
+            }}
+            color={GoogleSigninButton.Color.Dark}
+            size={GoogleSigninButton.Size.Wide}
+          />
           <TouchableOpacity
             onPress={() => setVisible(true)}
-            style={{ marginTop: 181, paddingHorizontal: 33 }}>
+            style={{ paddingHorizontal: 33 }}>
             <LinearGradient
               colors={['#0038F5', '#9F03FF']}
               useAngle={true}

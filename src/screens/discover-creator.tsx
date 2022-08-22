@@ -41,7 +41,8 @@ export default function DiscoverCreator() {
       .get('https://62fa6791ffd7197707ebe3f2.mockapi.io/creator')
       .then(res => {
         setApiData(res.data);
-      });
+      })
+      .catch(error => console.log(error));
   }, []);
   return (
     <View

@@ -37,7 +37,8 @@ export default function LiveContainer() {
       .get('https://62fa6791ffd7197707ebe3f2.mockapi.io/homepage')
       .then(res => {
         setApiData(res.data);
-      });
+      })
+      .catch(error => console.log(error));
   }, []);
   const navigation = useNavigation();
   return (

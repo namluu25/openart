@@ -14,7 +14,7 @@
       },
       "oauth_client": [
         {
-          "client_id": "14813577460-13scopc39iblveehhb2o9qf209aak712.apps.googleusercontent.com",
+          "client_id": "14813577460-a10rqleb2cg3nt985f21r1o4gnjdkmun.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.openart",
@@ -37,6 +37,13 @@
             {
               "client_id": "14813577460-bkjpc8pp44uk7saapmg5ku9m7b39ei8u.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "14813577460-sjbck78k9oqb607fruo1rl15ecot4and.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "org.reactjs.native.example.openart"
+              }
             }
           ]
         }
