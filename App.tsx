@@ -17,6 +17,7 @@ import ProfileEdit from './src/screens/profile-edit';
 import SearchFilter from './src/screens/search-filter';
 import SearchPopup from './src/screens/search';
 import TestAPI from './src/screens/screen-default';
+import RNBootSplash from 'react-native-bootsplash';
 
 const MyTheme = {
   ...DefaultTheme,
@@ -27,11 +28,14 @@ const MyTheme = {
 };
 
 const Stack = createNativeStackNavigator();
+// RNBootSplash.hide({ fade: true }); // fade
 
 export default function YourApp() {
   return (
     <SafeAreaProvider>
-      <NavigationContainer theme={MyTheme}>
+      <NavigationContainer
+        theme={MyTheme}
+        onReady={() => RNBootSplash.hide({ fade: true })}>
         <Stack.Navigator
           initialRouteName="Home"
           screenOptions={{ headerShown: false }}>
