@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { View, Image, Text, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import LinearGradient from 'react-native-linear-gradient';
-import Account from './modal-account';
+import Place_bid from './modal-place-bid';
 import axios from 'axios';
 import globalStyle from '../theme/globalStyle';
 
@@ -186,7 +186,7 @@ export default function FrontProduct() {
             View Artwork
           </Text>
         </TouchableOpacity>
-        <Account visbile={visible} handleClose={() => setVisible(false)} />
+        <Place_bid visbile={visible} handleClose={() => setVisible(false)} />
       </View>
     </>
   );

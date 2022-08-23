@@ -4,7 +4,7 @@
 
 [Figma design](https://www.figma.com/file/Me5R3z1mgN5fufjPXQihjr/Open-Art---Free-NFTs-UI-Kit-(Community)?node-id=201%3A614)
 
-## Work checklist
+## UI checklist
 
 - [x] Menu   
 - [x] Home   
@@ -17,10 +17,19 @@
 - [x] User profile   
 - [x] Account   
 - [x] Notification   
-- [] Search popup   
+- [x] Search popup   
 - [x] Search   
 - [x] My_profile_empty   
 - [x] My_profile_edit   
 - [x] Join community   
 - [x] About   
 - [x] FAQ   
+
+## Work checklist
+
+- [x] Login with Google
+- [x] Get data from API
+- [] Responsive
+- [] Dark mode/ Light mode switch
+- [] Seperate style files
+- [x] Icon, splash screen

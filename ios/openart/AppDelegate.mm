@@ -1,4 +1,5 @@
 #import "AppDelegate.h"
+#import "RNBootSplash.h" // <- add the header import
 
 #import <React/RCTBridge.h>
 #import <React/RCTBundleURLProvider.h>

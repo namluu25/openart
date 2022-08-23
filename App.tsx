@@ -17,6 +17,7 @@ import ProfileEdit from './src/screens/profile-edit';
 import SearchFilter from './src/screens/search-filter';
 import SearchPopup from './src/screens/search';
 import TestAPI from './src/screens/screen-default';
+import Login from './src/screens/login';
 import RNBootSplash from 'react-native-bootsplash';
 
 const MyTheme = {
@@ -28,7 +29,6 @@ const MyTheme = {
 };
 
 const Stack = createNativeStackNavigator();
-// RNBootSplash.hide({ fade: true }); // fade
 
 export default function YourApp() {
   return (
@@ -53,6 +53,7 @@ export default function YourApp() {
           <Stack.Screen name="Search" component={SearchFilter} />
           <Stack.Screen name="SearchPopup" component={SearchPopup} />
           <Stack.Screen name="TestAPI" component={TestAPI} />
+          <Stack.Screen name="Login" component={Login} />
 
           <Stack.Screen
             name="DetailsCurrentBid"
