@@ -3,7 +3,7 @@ import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import DetailSold from './src/screens/detail-sold';
-import Home from './src/screens/home';
+import Home from './src/screens/homepage';
 import Menu from './src/screens/menu';
 import DetailsAuction from './src/screens/detail-auction';
 import DetailsCurrentBid from './src/screens/detail-current-bid';
@@ -16,7 +16,7 @@ import ProfileEmpty from './src/screens/profile-empty';
 import ProfileEdit from './src/screens/profile-edit';
 import SearchFilter from './src/screens/search-filter';
 import SearchPopup from './src/screens/search';
-import TestAPI from './src/screens/screen-default';
+import TestAPI from './src/screens/screen-template';
 import Login from './src/screens/login';
 import RNBootSplash from 'react-native-bootsplash';
 
