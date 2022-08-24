@@ -6,450 +6,159 @@ import {
   ScrollView,
   Image,
   TouchableOpacity,
-  StyleSheet,
-  Platform,
   StatusBar,
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import Header from '../../components/header';
 import Footer from '../../components/footer';
 import Place_bid from '../../components/modal-place-bid';
+import globalStyle from '../../theme/globalStyle';
+import styles from './styles';
 
 export default function DetailsAuction() {
   const [visible, setVisible] = useState(false);
   return (
-    <View
-      style={[
-        styles.AndroidSafeArea,
-        {
-          backgroundColor: '#222222',
-          flex: 1,
-        },
-      ]}>
-      <SafeAreaView style={{ flex: 1 }}>
+    <View style={globalStyle.AndroidSafeArea}>
+      <SafeAreaView style={globalStyle.flex}>
         <StatusBar barStyle="light-content" translucent={true} />
 
         <Header />
 
         <ScrollView>
-          <View style={{ marginTop: 53, marginHorizontal: 16 }}>
+          <View style={styles.auction}>
             <Image
-              style={{ alignSelf: 'center' }}
+              style={globalStyle.selfCenter}
               source={require('openart/src/assets/images/nft/7.png')}
             />
-            <View
-              style={{
-                flexDirection: 'column',
-                marginHorizontal: 18,
-                marginTop: 16,
-              }}>
+            <View style={styles.infoView}>
               <View
-                style={{
-                  flexDirection: 'row',
-                  justifyContent: 'space-between',
-                }}>
-                <Text style={[styles.nftText, { paddingVertical: 20 }]}>
-                  Silent Color
-                </Text>
-                <View style={{ flexDirection: 'row' }}>
+                style={[
+                  globalStyle.flexRow,
+                  globalStyle.justifyBetween,
+                  globalStyle.itemCenter,
+                ]}>
+                <Text style={globalStyle.containerTitle}>Silent Color</Text>
+                <View style={globalStyle.flexRow}>
                   {/* button */}
-                  <TouchableOpacity
-                    style={{
-                      borderRadius: 40,
-                      backgroundColor: '#333333',
-                      alignSelf: 'center',
-                      marginHorizontal: 12,
-                    }}>
+                  <TouchableOpacity style={styles.buttonBorder}>
                     <Image
-                      style={{ margin: 11 }}
+                      style={styles.buttonImage}
                       source={require('openart/src/assets/images/icon/heart-icon.png')}
                     />
                   </TouchableOpacity>
-                  <TouchableOpacity
-                    style={{
-                      borderRadius: 40,
-                      backgroundColor: '#333333',
-                      alignSelf: 'center',
-                    }}>
+                  <TouchableOpacity style={styles.buttonBorder}>
                     <Image
-                      style={{ margin: 11 }}
+                      style={styles.buttonImage}
                       source={require('openart/src/assets/images/icon/export-icon.png')}
                     />
                   </TouchableOpacity>
                 </View>
               </View>
 
-              <TouchableOpacity
-                style={{
-                  backgroundColor: '#333333',
-                  borderRadius: 52,
-                  alignSelf: 'baseline',
-                  flexDirection: 'row',
-                }}>
+              <TouchableOpacity style={styles.userButton}>
                 <Image
-                  style={{
-                    marginRight: 8,
-                    marginVertical: 4,
-                    marginLeft: 5,
-                  }}
+                  style={styles.userAvatar}
                   source={require('openart/src/assets/images/avatar/ava3.png')}
                 />
-                <Text
-                  style={{
-                    fontFamily: 'Epilogue',
-                    fontSize: 16,
-                    fontWeight: '700',
-                    color: '#F8F8F8',
-                    alignSelf: 'center',
-                    paddingRight: 16,
-                    paddingVertical: 8,
-                  }}>
-                  @openart
-                </Text>
+                <Text style={styles.userName}>@openart</Text>
               </TouchableOpacity>
 
-              <Text
-                style={{
-                  marginVertical: 11,
-                  fontFamily: 'Epilogue',
-                  fontSize: 13,
-                  fontWeight: '500',
-                  color: '#F8F8F8',
-                  lineHeight: 20,
-                }}>
+              <Text style={styles.infoDescription}>
                 Together with my design team, we designed this futuristic
                 Cyberyacht concept artwork. We wanted to create something that
                 has not been created yet, so we started to collect ideas of how
                 we imagine the Cyberyacht could look like in the future.
               </Text>
 
-              <View style={{ flexDirection: 'row' }}>
-                <TouchableOpacity
-                  style={{
-                    borderRadius: 27,
-                    borderColor: '#888888',
-                    borderWidth: 1,
-                    alignSelf: 'center',
-                    marginRight: 2,
-                  }}>
-                  <Text
-                    style={{
-                      fontFamily: 'Epilogue',
-                      fontSize: 13,
-                      fontWeight: '500',
-                      color: '#F8F8F8',
-                      paddingHorizontal: 10,
-                      paddingVertical: 4,
-                    }}>
-                    #color
-                  </Text>
+              <View style={globalStyle.flexRow}>
+                <TouchableOpacity style={styles.hashtagButton}>
+                  <Text style={styles.hashtagButtonText}>#color</Text>
                 </TouchableOpacity>
 
-                <TouchableOpacity
-                  style={{
-                    borderRadius: 27,
-                    borderColor: '#888888',
-                    borderWidth: 1,
-                    alignSelf: 'center',
-                    marginRight: 2,
-                  }}>
-                  <Text
-                    style={{
-                      fontFamily: 'Epilogue',
-                      fontSize: 13,
-                      fontWeight: '500',
-                      color: '#F8F8F8',
-                      paddingHorizontal: 10,
-                      paddingVertical: 4,
-                    }}>
-                    #circle
-                  </Text>
+                <TouchableOpacity style={styles.hashtagButton}>
+                  <Text style={styles.hashtagButtonText}>#circle</Text>
                 </TouchableOpacity>
 
-                <TouchableOpacity
-                  style={{
-                    borderRadius: 27,
-                    borderColor: '#888888',
-                    borderWidth: 1,
-                    alignSelf: 'center',
-                    marginRight: 2,
-                  }}>
-                  <Text
-                    style={{
-                      fontFamily: 'Epilogue',
-                      fontSize: 13,
-                      fontWeight: '500',
-                      color: '#F8F8F8',
-                      paddingHorizontal: 10,
-                      paddingVertical: 4,
-                    }}>
-                    #black
-                  </Text>
+                <TouchableOpacity style={styles.hashtagButton}>
+                  <Text style={styles.hashtagButtonText}>#black</Text>
                 </TouchableOpacity>
 
-                <TouchableOpacity
-                  style={{
-                    borderRadius: 27,
-                    borderColor: '#888888',
-                    borderWidth: 1,
-                    alignSelf: 'center',
-                    marginRight: 2,
-                  }}>
-                  <Text
-                    style={{
-                      fontFamily: 'Epilogue',
-                      fontSize: 13,
-                      fontWeight: '500',
-                      color: '#F8F8F8',
-                      paddingHorizontal: 10,
-                      paddingVertical: 4,
-                    }}>
-                    #art
-                  </Text>
+                <TouchableOpacity style={styles.hashtagButton}>
+                  <Text style={styles.hashtagButtonText}>#art</Text>
                 </TouchableOpacity>
               </View>
             </View>
 
-            <TouchableOpacity
-              style={{
-                borderRadius: 16,
-                marginTop: 11,
-                backgroundColor: '#333333',
-                paddingVertical: 15,
-                paddingHorizontal: 18,
-                flexDirection: 'row',
-                justifyContent: 'space-between',
-              }}>
+            <TouchableOpacity style={styles.shareButton}>
               <Image
                 source={require('openart/src/assets/images/icon/etherscan-logo.png')}
               />
-              <Text
-                style={{
-                  fontSize: 16,
-                  fontFamily: 'Epilogue',
-                  color: '#FCFCFC',
-                  fontWeight: '700',
-                  lineHeight: 24,
-                }}>
-                View on Etherscan
-              </Text>
+              <Text style={styles.shareButtonText}>View on Etherscan</Text>
               <Image
                 source={require('openart/src/assets/images/icon/external-icon.png')}
               />
             </TouchableOpacity>
 
-            <TouchableOpacity
-              style={{
-                borderRadius: 16,
-                marginTop: 16,
-                backgroundColor: '#333333',
-                paddingVertical: 15,
-                paddingHorizontal: 18,
-                flexDirection: 'row',
-                justifyContent: 'space-between',
-              }}>
+            <TouchableOpacity style={styles.shareButton}>
               <Image
                 source={require('openart/src/assets/images/icon/star-icon.png')}
               />
-              <Text
-                style={{
-                  fontSize: 16,
-                  fontFamily: 'Epilogue',
-                  color: '#FCFCFC',
-                  fontWeight: '700',
-                  lineHeight: 24,
-                }}>
-                View on IPFS
-              </Text>
+              <Text style={styles.shareButtonText}>View on IPFS</Text>
               <Image
                 source={require('openart/src/assets/images/icon/external-icon.png')}
               />
             </TouchableOpacity>
 
-            <TouchableOpacity
-              style={{
-                borderRadius: 16,
-                marginTop: 16,
-                backgroundColor: '#333333',
-                paddingVertical: 15,
-                paddingHorizontal: 18,
-                flexDirection: 'row',
-                justifyContent: 'space-between',
-              }}>
+            <TouchableOpacity style={styles.shareButton}>
               <Image
                 source={require('openart/src/assets/images/icon/chartPie-icon.png')}
               />
-              <Text
-                style={{
-                  fontSize: 16,
-                  fontFamily: 'Epilogue',
-                  color: '#FCFCFC',
-                  fontWeight: '700',
-                  lineHeight: 24,
-                }}>
-                View IPFS Metadata
-              </Text>
+              <Text style={styles.shareButtonText}>View IPFS Metadata</Text>
               <Image
                 source={require('openart/src/assets/images/icon/external-icon.png')}
               />
             </TouchableOpacity>
 
-            <View
-              style={{
-                flexDirection: 'column',
-                borderRadius: 24,
-                backgroundColor: '#333333',
-                marginTop: 41.35,
-                marginBottom: 16,
-                paddingHorizontal: 20,
-              }}>
-              <View style={{ marginTop: 18.71 }}>
-                <Text
-                  style={{
-                    fontFamily: 'Epilogue',
-                    fontSize: 20,
-                    fontWeight: '400',
-                    lineHeight: 28,
-                    color: '#FCFCFC',
-                  }}>
-                  Reserve Price
-                </Text>
-                <View
-                  style={{
-                    flex: 1,
-                    flexDirection: 'row',
-                    alignItems: 'baseline',
-                    marginTop: 4,
-                    marginBottom: 16,
-                  }}>
-                  <Text
-                    style={{
-                      fontFamily: 'Epilogue',
-                      fontSize: 24,
-                      fontWeight: '700',
-                      lineHeight: 32,
-                      color: '#FCFCFC',
-                      marginRight: 8.51,
-                    }}>
-                    1.50 ETH
-                  </Text>
-                  <Text
-                    style={{
-                      fontFamily: 'Epilogue',
-                      fontSize: 16,
-                      fontWeight: '700',
-                      lineHeight: 24,
-                      color: '#F8F8F8',
-                    }}>
-                    $2,683.73
-                  </Text>
-                </View>
-                <Text
-                  style={{
-                    fontFamily: 'Epilogue',
-                    fontSize: 16,
-                    fontWeight: '400',
-                    lineHeight: 22,
-                    color: '#F8F8F8',
-                  }}>
-                  Once a bid has been placed and the reserve price has been met,
-                  a 24 hour auction for this artwork will begin.
-                </Text>
-                <TouchableOpacity onPress={() => setVisible(true)}>
-                  <LinearGradient
-                    colors={['#0038F5', '#9F03FF']}
-                    useAngle={true}
-                    angle={114.44}
-                    style={{
-                      borderRadius: 8,
-                      marginTop: 28.01,
-                      marginBottom: 37.97,
-                    }}>
-                    <Text
-                      style={{
-                        fontSize: 20,
-                        fontFamily: 'Epilogue',
-                        textAlign: 'center',
-                        padding: 15,
-                        color: '#FCFCFC',
-                        fontWeight: '700',
-                      }}>
-                      Place a bid
-                    </Text>
-                  </LinearGradient>
-                </TouchableOpacity>
+            <View style={styles.placeBidView}>
+              <Text style={styles.placeBidTitle}>Reserve Price</Text>
+              <View style={styles.placeBidPriceView}>
+                <Text style={styles.placeBidPriceLarge}>1.50 ETH</Text>
+                <Text style={styles.placeBidPriceSmall}>$2,683.73</Text>
               </View>
+              <Text style={styles.placeBidParagraph}>
+                Once a bid has been placed and the reserve price has been met, a
+                24 hour auction for this artwork will begin.
+              </Text>
+              <TouchableOpacity onPress={() => setVisible(true)}>
+                <LinearGradient
+                  colors={['#0038F5', '#9F03FF']}
+                  useAngle={true}
+                  angle={114.44}
+                  style={styles.placeBidButton}>
+                  <Text style={styles.placeBidButtonText}>Place a bid</Text>
+                </LinearGradient>
+              </TouchableOpacity>
             </View>
 
-            <Text
-              style={{
-                fontSize: 20,
-                fontFamily: 'Epilogue',
-                color: '#F8F8F8',
-                fontWeight: '400',
-                lineHeight: 28,
-                paddingTop: 25.68,
-              }}>
-              Activity
-            </Text>
+            <Text style={styles.activityTitle}>Activity</Text>
 
-            <TouchableOpacity
-              style={{
-                borderRadius: 24,
-                marginTop: 12,
-                backgroundColor: '#333333',
-                paddingVertical: 15,
-                paddingHorizontal: 13.53,
-                flexDirection: 'row',
-              }}>
-              <Image
-                style={{ marginRight: 12.98, borderRadius: 24 }}
-                source={require('openart/src/assets/images/avatar/ava2.png')}
-              />
-              <View style={{ marginRight: 98 }}>
-                <Text
-                  style={{
-                    fontSize: 14,
-                    fontFamily: 'Epilogue',
-                    color: '#FCFCFC',
-                    fontWeight: '700',
-                    lineHeight: 20,
-                  }}>
-                  Bid place by @pawel09
-                </Text>
-                <Text
-                  style={{
-                    fontSize: 13,
-                    fontFamily: 'Epilogue',
-                    color: '#DCDCDC',
-                    fontWeight: '500',
-                    lineHeight: 20,
-                  }}>
-                  June 06, 2021 at 12:00am
-                </Text>
-                <View style={{ flexDirection: 'row' }}>
-                  <Text
-                    style={{
-                      fontSize: 16,
-                      fontFamily: 'Epilogue',
-                      color: '#DCDCDC',
-                      fontWeight: '700',
-                      lineHeight: 24,
-                      paddingRight: 2.9,
-                    }}>
-                    1.50 ETH
+            <TouchableOpacity style={styles.activityButton}>
+              <View style={globalStyle.flexRow}>
+                <Image
+                  style={styles.activityButtonAvatar}
+                  source={require('openart/src/assets/images/avatar/ava2.png')}
+                />
+                <View>
+                  <Text style={styles.activityButtonTitle}>
+                    Bid place by @pawel09
                   </Text>
-                  <Text
-                    style={{
-                      fontSize: 13,
-                      fontFamily: 'Epilogue',
-                      color: '#F0F0F0',
-                      fontWeight: '500',
-                      lineHeight: 20,
-                      alignSelf: 'center',
-                    }}>
-                    $2,683.73
+                  <Text style={styles.activityButtonDate}>
+                    June 06, 2021 at 12:00am
                   </Text>
+                  <View style={globalStyle.flexRow}>
+                    <Text style={styles.buttonPriceBold}>1.50 ETH</Text>
+                    <Text style={styles.buttonPriceLight}>$2,683.73</Text>
+                  </View>
                 </View>
               </View>
               <Image
@@ -457,63 +166,23 @@ export default function DetailsAuction() {
               />
             </TouchableOpacity>
 
-            <TouchableOpacity
-              style={{
-                borderRadius: 24,
-                marginTop: 12,
-                backgroundColor: '#333333',
-                paddingVertical: 15,
-                paddingHorizontal: 13.53,
-                flexDirection: 'row',
-              }}>
-              <Image
-                style={{ marginRight: 12.98, borderRadius: 24 }}
-                source={require('openart/src/assets/images/avatar/ava2.png')}
-              />
-              <View style={{ marginRight: 104 }}>
-                <Text
-                  style={{
-                    fontSize: 14,
-                    fontFamily: 'Epilogue',
-                    color: '#FCFCFC',
-                    fontWeight: '700',
-                    lineHeight: 20,
-                  }}>
-                  Listing by @han152
-                </Text>
-                <Text
-                  style={{
-                    fontSize: 13,
-                    fontFamily: 'Epilogue',
-                    color: '#DCDCDC',
-                    fontWeight: '500',
-                    lineHeight: 20,
-                  }}>
-                  June 04, 2021 at 12:00am
-                </Text>
-                <View style={{ flexDirection: 'row' }}>
-                  <Text
-                    style={{
-                      fontSize: 16,
-                      fontFamily: 'Epilogue',
-                      color: '#DCDCDC',
-                      fontWeight: '700',
-                      lineHeight: 24,
-                      paddingRight: 2.9,
-                    }}>
-                    1.00 ETH
+            <TouchableOpacity style={styles.activityButton}>
+              <View style={globalStyle.flexRow}>
+                <Image
+                  style={styles.activityButtonAvatar}
+                  source={require('openart/src/assets/images/avatar/ava2.png')}
+                />
+                <View>
+                  <Text style={styles.activityButtonTitle}>
+                    Listing by @han152
                   </Text>
-                  <Text
-                    style={{
-                      fontSize: 13,
-                      fontFamily: 'Epilogue',
-                      color: '#F0F0F0',
-                      fontWeight: '500',
-                      lineHeight: 20,
-                      alignSelf: 'center',
-                    }}>
-                    $2,683.73
+                  <Text style={styles.activityButtonDate}>
+                    June 04, 2021 at 12:00am
                   </Text>
+                  <View style={globalStyle.flexRow}>
+                    <Text style={styles.buttonPriceBold}>1.00 ETH</Text>
+                    <Text style={styles.buttonPriceLight}>$2,683.73</Text>
+                  </View>
                 </View>
               </View>
               <Image
@@ -521,7 +190,6 @@ export default function DetailsAuction() {
               />
             </TouchableOpacity>
           </View>
-          <View style={{ marginBottom: 47.25 }} />
           <Place_bid visbile={visible} handleClose={() => setVisible(false)} />
           <Footer />
         </ScrollView>
@@ -529,16 +197,3 @@ export default function DetailsAuction() {
     </View>
   );
 }
-const styles = StyleSheet.create({
-  nftText: {
-    fontSize: 24,
-    fontWeight: '700',
-    color: '#FCFCFC',
-    fontFamily: 'Epilogue',
-  },
-  AndroidSafeArea: {
-    flex: 1,
-    backgroundColor: 'white',
-    paddingTop: Platform.OS === 'android' ? 50 : 0,
-  },
-});

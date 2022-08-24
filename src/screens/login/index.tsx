@@ -3,8 +3,6 @@ import {
   View,
   Text,
   SafeAreaView,
-  StyleSheet,
-  Platform,
   StatusBar,
   TouchableOpacity,
   Image,
@@ -16,6 +14,8 @@ import auth from '@react-native-firebase/auth';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { faGoogle } from '@fortawesome/free-brands-svg-icons';
 import { useNavigation } from '@react-navigation/native';
+import styles from './styles';
+import globalStyle from '../../theme/globalStyle';
 
 GoogleSignin.configure({
   webClientId:
@@ -40,15 +40,8 @@ async function onGoogleButtonPress() {
 export default function Login() {
   const navigation = useNavigation();
   return (
-    <View
-      style={[
-        styles.AndroidSafeArea,
-        {
-          backgroundColor: '#222222',
-          flex: 1,
-        },
-      ]}>
-      <SafeAreaView style={{ flex: 1 }}>
+    <View style={globalStyle.AndroidSafeArea}>
+      <SafeAreaView style={globalStyle.flex}>
         <StatusBar barStyle="light-content" translucent={true} />
         <TouchableOpacity
           onPress={() => {
@@ -56,88 +49,41 @@ export default function Login() {
           }}>
           <Image
             source={require('../../assets/images/icon/Logo.png')}
-            style={{ alignSelf: 'center', marginVertical: 20 }}
+            style={styles.logoImage}
           />
         </TouchableOpacity>
-        <View style={{ marginHorizontal: 16 }}>
+        <View style={styles.inputView}>
           <TextInput
-            style={[styles.inputBox, { marginBottom: 10 }]}
-            placeholderTextColor="#888888"
+            style={styles.inputBox}
+            placeholderTextColor="#FCFCFC"
             placeholder="Email address or phone number"
           />
           <TextInput
-            style={[styles.inputBox, { color: '#F8F8F8' }]}
-            placeholderTextColor="#888888"
+            style={styles.inputBox}
+            placeholderTextColor="#FCFCFC"
             placeholder="Password"
           />
         </View>
 
-        <View style={{ marginHorizontal: 30, flex: 1 }}>
-          <TouchableOpacity style={{ marginTop: 20 }}>
+        <View style={styles.buttonView}>
+          <TouchableOpacity>
             <LinearGradient
               colors={['#0038F5', '#9F03FF']}
               useAngle={true}
               angle={114.44}
-              style={{
-                borderRadius: 8,
-                backgroundColor: '#2A2A2E',
-              }}>
-              <Text
-                style={{
-                  fontSize: 20,
-                  fontFamily: 'Epilogue',
-                  textAlign: 'center',
-                  padding: 10,
-                  color: '#FCFCFC',
-                  fontWeight: '700',
-                }}>
-                Login
-              </Text>
+              style={globalStyle.buttonRadius}>
+              <Text style={styles.buttonText}>Login</Text>
             </LinearGradient>
           </TouchableOpacity>
 
           <TouchableOpacity
-            style={{
-              marginTop: 20,
-              backgroundColor: '#2196f3',
-              borderRadius: 8,
-              flexDirection: 'row',
-              alignItems: 'center',
-              justifyContent: 'center',
-              padding: 10,
-            }}
+            style={styles.googleButton}
             onPress={() => onGoogleButtonPress()}>
-            <FontAwesomeIcon
-              icon={faGoogle}
-              style={{
-                color: '#FCFCFC',
-                marginRight: 10,
-              }}
-            />
-            <Text
-              style={{
-                fontSize: 20,
-                fontFamily: 'Epilogue',
-                color: '#FCFCFC',
-                fontWeight: '700',
-              }}>
-              Sign in with Google
-            </Text>
+            <FontAwesomeIcon icon={faGoogle} style={styles.googleButtonLogo} />
+            <Text style={styles.googleButtonText}>Sign in with Google</Text>
           </TouchableOpacity>
         </View>
       </SafeAreaView>
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  AndroidSafeArea: {
-    flex: 1,
-    backgroundColor: 'white',
-    paddingTop: Platform.OS === 'android' ? 50 : 0,
-  },
-  inputBox: {
-    borderRadius: 8,
-    backgroundColor: '#333333',
-  },
-});

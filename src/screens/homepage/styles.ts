@@ -1,5 +1,107 @@
 import { StyleSheet } from 'react-native';
 import { color } from '../../theme/color';
-import globalStyle from '../../theme/globalStyle';
 
-export default StyleSheet.create({});
+export default StyleSheet.create({
+  home: { marginHorizontal: 16 },
+  titleText: {
+    fontSize: 18,
+    fontWeight: '700',
+    textAlign: 'center',
+    color: color.grayOffWhite,
+    fontFamily: 'Epilogue',
+  },
+  boldTitleText: {
+    fontSize: 32,
+    fontWeight: '700',
+    textAlign: 'center',
+    color: color.grayOffWhite,
+    fontFamily: 'Epilogue',
+  },
+  searchBar: {
+    marginHorizontal: 8,
+    marginTop: 22,
+    marginBottom: 23,
+    paddingTop: 13,
+    paddingBottom: 11,
+    borderRadius: 8,
+    backgroundColor: color.grayBody,
+    alignItems: 'center',
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+  },
+  searchBarText: {
+    color: color.grayOffWhite,
+  },
+  searchBarIcon: {
+    color: color.grayBG,
+  },
+  priceView: {
+    flexDirection: 'row',
+    alignItems: 'baseline',
+    marginTop: 12.85,
+    marginBottom: 15.29,
+  },
+  priceViewFirst: {
+    fontFamily: 'Epilogue',
+    fontSize: 16,
+    fontWeight: '400',
+    lineHeight: 22,
+    color: color.grayOffWhite,
+    marginRight: 5.98,
+  },
+  priceViewSecond: {
+    fontFamily: 'Epilogue',
+    fontSize: 32,
+    fontWeight: '700',
+    lineHeight: 36,
+    color: color.grayOffWhite,
+    marginRight: 7.51,
+  },
+  priceViewThird: {
+    fontFamily: 'Epilogue',
+    fontSize: 16,
+    fontWeight: '700',
+    lineHeight: 24,
+    color: color.grayPlaceholder,
+  },
+  gradientButton: {
+    borderRadius: 8,
+    marginBottom: 12,
+    backgroundColor: '#2A2A2E',
+  },
+  normalButton: {
+    borderRadius: 8,
+    borderColor: '#0038F5',
+    borderWidth: 1,
+  },
+  buttonText: {
+    fontSize: 20,
+    fontFamily: 'Epilogue',
+    textAlign: 'center',
+    padding: 15,
+    color: color.grayOffWhite,
+    fontWeight: '700',
+  },
+  viewMoreButton: {
+    borderRadius: 8,
+    borderColor: '#0038F5',
+    borderWidth: 1,
+    marginTop: 60,
+    marginBottom: 24,
+  },
+  viewMoreButtonText: {
+    fontSize: 20,
+    fontFamily: 'Epilogue',
+    textAlign: 'center',
+    padding: 15,
+    color: color.grayOffWhite,
+    fontWeight: '700',
+  },
+  separatorLine: {
+    borderBottomColor: 'white',
+    borderBottomWidth: 1,
+    width: '92%',
+    alignSelf: 'center',
+    marginBottom: 82,
+  },
+});

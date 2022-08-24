@@ -1,15 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import {
-  View,
-  StyleSheet,
-  Image,
-  Text,
-  TouchableOpacity,
-  ScrollView,
-} from 'react-native';
+import { View, Image, Text, TouchableOpacity, ScrollView } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import axios from 'axios';
 import globalStyle from '../../theme/globalStyle';
+import styles from './styles';
 
 interface Items {
   id: number;
@@ -42,56 +36,15 @@ export default function LiveContainer() {
   const navigation = useNavigation();
   return (
     <>
-      <View
-        style={{
-          flex: 1,
-          flexDirection: 'row',
-          marginTop: 86.27,
-          justifyContent: 'space-between',
-          alignItems: 'center',
-          marginBottom: 22,
-        }}>
-        <View
-          style={{
-            flexDirection: 'row',
-            paddingVertical: 15,
-            justifyContent: 'center',
-            alignItems: 'baseline',
-          }}>
+      <View style={styles.titleView}>
+        <View style={styles.titleTextView}>
           <Image
-            style={{ marginRight: 7.31 }}
             source={require('openart/src/assets/images/icon/live-icon.png')}
           />
-          <Text
-            style={{
-              fontSize: 24,
-              fontFamily: 'Epilogue',
-              color: '#F8F8F8',
-              fontWeight: '700',
-            }}>
-            Live auctions
-          </Text>
+          <Text style={styles.titleText}>Live auctions</Text>
         </View>
-        <TouchableOpacity
-          style={{
-            borderRadius: 8,
-            borderColor: '#888888',
-            borderWidth: 1,
-            alignSelf: 'center',
-          }}>
-          <Text
-            style={{
-              fontSize: 16,
-              fontFamily: 'Epilogue',
-              textAlign: 'center',
-              paddingVertical: 9,
-              paddingHorizontal: 30,
-              color: '#F8F8F8',
-              fontWeight: '400',
-              lineHeight: 22,
-            }}>
-            View all
-          </Text>
+        <TouchableOpacity style={styles.titleButton}>
+          <Text style={styles.titleButtonText}>View all</Text>
         </TouchableOpacity>
       </View>
 
@@ -111,14 +64,7 @@ export default function LiveContainer() {
                     />
                   </TouchableOpacity>
                   <Text style={globalStyle.containerTitle}>{item.name}</Text>
-                  <View
-                    style={{
-                      flexDirection: 'row',
-                      justifyContent: 'space-between',
-                      marginTop: 2.68,
-                      marginBottom: 16.86,
-                      alignItems: 'center',
-                    }}>
+                  <View style={styles.creatorAvatarView}>
                     <View>
                       <TouchableOpacity
                         onPress={() => {
@@ -133,21 +79,11 @@ export default function LiveContainer() {
                         />
                       </TouchableOpacity>
                       <Image
-                        style={{
-                          position: 'absolute',
-                          right: 0,
-                          borderWidth: 2,
-                          borderColor: '#333333',
-                          borderRadius: 12,
-                        }}
+                        style={styles.activeIcon}
                         source={require('../../assets/images/icon/active-icon.png')}
                       />
                     </View>
-                    <View
-                      style={{
-                        flex: 1,
-                        marginLeft: 12,
-                      }}>
+                    <View style={styles.creatorInfoView}>
                       <Text style={globalStyle.containerCreatorName}>
                         {item.creator_name}
                       </Text>
@@ -164,26 +100,9 @@ export default function LiveContainer() {
               <TouchableOpacity style={styles.button}>
                 {/* onPress={() => setDetail(!detail)} */}
                 {/* {detail ? ( */}
-                <Text
-                  style={{
-                    fontSize: 20,
-                    fontFamily: 'Epilogue',
-                    textAlign: 'center',
-                    color: '#FCFCFC',
-                    fontWeight: '400',
-                  }}>
+                <Text style={styles.buttonText}>
                   Sold For
-                  <Text
-                    style={{
-                      fontSize: 24,
-                      fontFamily: 'Epilogue',
-                      textAlign: 'center',
-                      color: '#FCFCFC',
-                      fontWeight: '700',
-                    }}>
-                    {' '}
-                    2.00 ETH
-                  </Text>
+                  <Text style={styles.buttonTextBold}> 2.00 ETH</Text>
                 </Text>
                 {/* ) : ( */}
                 {/* <Text>ABC</Text> */}
@@ -196,13 +115,3 @@ export default function LiveContainer() {
     </>
   );
 }
-
-const styles = StyleSheet.create({
-  button: {
-    borderRadius: 51,
-    marginTop: 12.14,
-    backgroundColor: '#333333',
-    paddingVertical: 18,
-    marginBottom: 40,
-  },
-});

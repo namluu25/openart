@@ -46,7 +46,7 @@ export default function FrontProduct() {
             />
           </TouchableOpacity>
           <Text style={globalStyle.containerTitle}>{apiData[0].name}</Text>
-          <View style={styles.creatorInfoView}>
+          <View style={globalStyle.containerCreatorInfoView}>
             <View>
               <TouchableOpacity
                 onPress={() => {
@@ -66,7 +66,7 @@ export default function FrontProduct() {
               onPress={() => {
                 navigation.navigate('UserProfile' as never, {} as never);
               }}
-              style={styles.nameView}>
+              style={globalStyle.containerCreatorNameView}>
               <Text style={globalStyle.containerCreatorName}>
                 {apiData[0]?.creator_name}
               </Text>

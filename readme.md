@@ -31,5 +31,5 @@
 - [x] Get data from API
 - [] Responsive
 - [] Dark mode/ Light mode switch
-- [] Seperate style files
+- [x] Seperate style files
 - [x] Icon, splash screen

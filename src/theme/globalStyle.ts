@@ -1,14 +1,21 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Platform } from 'react-native';
+import { color } from './color';
 
 export default StyleSheet.create({
+  AndroidSafeArea: {
+    flex: 1,
+    paddingTop: Platform.OS === 'android' ? 50 : 0,
+    backgroundColor: color.grayTitle,
+  },
   containerImage: {
     borderRadius: 24,
     marginTop: 18,
     width: 321,
     height: 400,
+    marginBottom: 13,
   },
   container: {
-    backgroundColor: '#333333',
+    backgroundColor: color.grayBody,
     alignItems: 'center',
     borderRadius: 32,
   },
@@ -21,62 +28,72 @@ export default StyleSheet.create({
   containerTitle: {
     fontSize: 24,
     fontWeight: '700',
-    color: '#FCFCFC',
+    color: color.grayOffWhite,
     fontFamily: 'Epilogue',
-    marginTop: 12.41,
   },
   containerCreatorName: {
     fontSize: 18,
     fontWeight: '700',
-    color: '#FCFCFC',
+    color: color.grayOffWhite,
     fontFamily: 'Epilogue',
   },
   containerCreatorInfo: {
     fontSize: 14,
     fontWeight: '500',
-    color: '#FCFCFC',
+    color: color.grayOffWhite,
     fontFamily: 'Epilogue',
+  },
+  containerCreatorInfoView: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginTop: 3,
+    marginBottom: 17,
+    alignItems: 'center',
+  },
+  containerCreatorNameView: {
+    flex: 1,
+    marginLeft: 12,
   },
   displayRegularLarge: {
     fontSize: 40,
     lineHeight: 48,
     fontWeight: '400',
-    color: '#FCFCFC',
+    color: color.grayOffWhite,
     fontFamily: 'Epilogue',
   },
   displayRegularMedium: {
     fontSize: 32,
     lineHeight: 36,
     fontWeight: '400',
-    color: '#FCFCFC',
+    color: color.grayOffWhite,
     fontFamily: 'Epilogue',
   },
   displayRegularSmall: {
     fontSize: 24,
     lineHeight: 32,
     fontWeight: '400',
-    color: '#FCFCFC',
+    color: color.grayOffWhite,
     fontFamily: 'Epilogue',
   },
   displayBoldLarge: {
     fontSize: 40,
     lineHeight: 48,
     fontWeight: '700',
-    color: '#FCFCFC',
+    color: color.grayOffWhite,
     fontFamily: 'Epilogue',
   },
   displayBoldMedium: {
     fontSize: 32,
     lineHeight: 36,
     fontWeight: '400',
-    color: '#FCFCFC',
+    color: color.grayOffWhite,
     fontFamily: 'Epilogue',
   },
   displayBoldSmall: {
     fontSize: 24,
     lineHeight: 32,
     fontWeight: '400',
-    color: '#FCFCFC',
+    color: color.grayOffWhite,
     fontFamily: 'Epilogue',
   },
   flexRow: {
@@ -108,5 +125,11 @@ export default StyleSheet.create({
   },
   justifyBetween: {
     justifyContent: 'space-between',
+  },
+  justifyStart: {
+    justifyContent: 'flex-start',
+  },
+  flex: {
+    flex: 1,
   },
 });

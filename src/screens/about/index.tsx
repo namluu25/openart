@@ -2,169 +2,64 @@ import React from 'react';
 import {
   View,
   Text,
-  StyleSheet,
   SafeAreaView,
   StatusBar,
-  Platform,
   Image,
   ScrollView,
 } from 'react-native';
 import Footer from '../../components/footer';
 import Header from '../../components/header';
+import globalStyle from '../../theme/globalStyle';
+import styles from './styles';
 
 export default function About() {
   return (
-    <View
-      style={[
-        styles.AndroidSafeArea,
-        {
-          backgroundColor: '#222222',
-          flex: 1,
-        },
-      ]}>
-      <SafeAreaView style={{ flex: 1 }}>
+    <View style={globalStyle.AndroidSafeArea}>
+      <SafeAreaView style={globalStyle.flex}>
         <StatusBar barStyle="light-content" translucent={true} />
 
         <Header />
 
         <ScrollView>
           <View>
-            <View style={{ flex: 1, alignItems: 'center' }}>
-              <Text
-                style={{
-                  fontSize: 20,
-                  fontFamily: 'Epilogue',
-                  color: '#F8F8F8',
-                  fontWeight: '700',
-                  lineHeight: 28,
-                  alignSelf: 'center',
-                }}>
-                About OpenArt
-              </Text>
+            <View style={[globalStyle.flex, globalStyle.itemCenter]}>
+              <Text style={styles.titleText}>About OpenArt</Text>
               <Image
-                style={{ marginTop: 10.91 }}
                 source={require('../../assets/images/icon/about-icon-1.png')}
               />
-              <Text
-                style={{
-                  fontSize: 16,
-                  fontFamily: 'Epilogue',
-                  color: '#F8F8F8',
-                  fontWeight: '400',
-                  lineHeight: 22,
-                  textAlign: 'center',
-                  marginTop: 15.92,
-                  marginHorizontal: 43.21,
-                  marginBottom: 73.66,
-                }}>
+              <Text style={styles.firstParagraph}>
                 OpenArt help anyone create a beautiful website, landing page,
                 app to collect NFTs digital art
               </Text>
             </View>
-            <Text
-              style={{
-                fontSize: 16,
-                fontFamily: 'Epilogue',
-                color: '#F8F8F8',
-                fontWeight: '400',
-                lineHeight: 22,
-                marginHorizontal: 30.69,
-                marginBottom: 28.21,
-              }}>
+            <Text style={styles.secondParagraph}>
               NFTs—non-fungible tokens—are empowering artists, musicians, and
               all kinds of genre-defying digital creators to invent a new
               cultural paradigm. How this emerging culture of digital art
               ownership looks is up to all of us.
             </Text>
-            <View
-              style={{
-                marginBottom: 52.97,
-                marginHorizontal: 16,
-              }}>
-              <Text
-                style={{
-                  fontSize: 20,
-                  fontFamily: 'Epilogue',
-                  color: '#F8F8F8',
-                  fontWeight: '700',
-                  lineHeight: 28,
-                  marginBottom: 40.2,
-                }}>
-                How it work
-              </Text>
-              <View
-                style={{
-                  flexDirection: 'row',
-                  justifyContent: 'space-between',
-                }}>
-                <View
-                  style={{
-                    backgroundColor: '#333333',
-                    alignItems: 'center',
-                    borderRadius: 24,
-                    height: 187.87,
-                    width: 166,
-                  }}>
+            <View style={styles.secondView}>
+              <Text style={styles.secondTitle}>How it work</Text>
+              <View style={[globalStyle.flexRow, globalStyle.justifyBetween]}>
+                <View style={styles.boxView}>
                   <Image
-                    style={{ marginTop: 9.89, marginBottom: 12.98 }}
+                    style={styles.boxImage}
                     source={require('../../assets/images/icon/about-icon-2.png')}
                   />
-                  <Text
-                    style={{
-                      fontSize: 16,
-                      fontFamily: 'Epilogue',
-                      color: '#FCFCFC',
-                      fontWeight: '700',
-                      lineHeight: 24,
-                    }}>
-                    Build together
-                  </Text>
+                  <Text style={styles.boxText}>Build together</Text>
                 </View>
-                <View
-                  style={{
-                    backgroundColor: '#333333',
-                    borderRadius: 24,
-                    height: 187.87,
-                    width: 166,
-                    alignItems: 'center',
-                  }}>
+                <View style={styles.boxView}>
                   <Image
-                    style={{ marginTop: 25.35, marginBottom: 18.13 }}
+                    style={styles.boxImage}
                     source={require('../../assets/images/icon/about-icon-3.png')}
                   />
-                  <Text
-                    style={{
-                      fontSize: 16,
-                      fontFamily: 'Epilogue',
-                      color: '#FCFCFC',
-                      fontWeight: '700',
-                      lineHeight: 24,
-                    }}>
-                    Trust
-                  </Text>
+                  <Text style={styles.boxText}>Trust</Text>
                 </View>
               </View>
             </View>
-            <View style={{ marginHorizontal: 30.69 }}>
-              <Text
-                style={{
-                  fontSize: 16,
-                  fontFamily: 'Epilogue',
-                  color: '#F8F8F8',
-                  fontWeight: '700',
-                  lineHeight: 24,
-                }}>
-                For Creators
-              </Text>
-              <Text
-                style={{
-                  fontSize: 16,
-                  fontFamily: 'Epilogue',
-                  color: '#F8F8F8',
-                  fontWeight: '400',
-                  lineHeight: 22,
-                  marginBottom: 37.65,
-                }}>
+            <View style={styles.thirdView}>
+              <Text style={styles.thirdTitleText}>For Creators</Text>
+              <Text style={styles.thirdParagraph}>
                 Creators are invited to join Foundation by members of the
                 community. Once you’ve received an invite, you’ll need to set up
                 a MetaMask wallet with ETH before you can create an artist
@@ -173,24 +68,8 @@ export default function About() {
                 network. It will then be an NFT you can price in ETH and put up
                 for auction on Foundation.
               </Text>
-              <Text
-                style={{
-                  fontSize: 16,
-                  fontFamily: 'Epilogue',
-                  color: '#F8F8F8',
-                  fontWeight: '700',
-                  lineHeight: 24,
-                }}>
-                For Collectors
-              </Text>
-              <Text
-                style={{
-                  fontSize: 16,
-                  fontFamily: 'Epilogue',
-                  color: '#F8F8F8',
-                  fontWeight: '400',
-                  lineHeight: 22,
-                }}>
+              <Text style={styles.thirdTitleText}>For Collectors</Text>
+              <Text style={styles.thirdParagraph}>
                 On Foundation, anyone can create a profile to start collecting
                 NFTs. All you’ll need is a MetaMask wallet and ETH, the
                 cryptocurrency used to pay for all transactions on Ethereum.
@@ -201,18 +80,9 @@ export default function About() {
               </Text>
             </View>
           </View>
-          <View style={{ marginBottom: 1.21 }} />
           <Footer />
         </ScrollView>
       </SafeAreaView>
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  AndroidSafeArea: {
-    flex: 1,
-    backgroundColor: 'white',
-    paddingTop: Platform.OS === 'android' ? 50 : 0,
-  },
-});

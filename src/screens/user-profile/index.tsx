@@ -3,8 +3,6 @@ import {
   View,
   Text,
   SafeAreaView,
-  StyleSheet,
-  Platform,
   StatusBar,
   ScrollView,
   TouchableOpacity,
@@ -15,6 +13,7 @@ import Header from '../../components/header';
 import Footer from '../../components/footer';
 import axios from 'axios';
 import globalStyle from '../../theme/globalStyle';
+import styles from './styles';
 
 interface Items {
   id: number;
@@ -68,368 +67,123 @@ export default function UserProfile() {
       .catch(error => console.log(error));
   }, []);
   return (
-    <View
-      style={[
-        styles.AndroidSafeArea,
-        {
-          backgroundColor: '#222222',
-          flex: 1,
-        },
-      ]}>
-      <SafeAreaView style={{ flex: 1 }}>
+    <View style={globalStyle.AndroidSafeArea}>
+      <SafeAreaView style={globalStyle.flex}>
         <StatusBar barStyle="light-content" translucent={true} />
 
         <Header />
         <ScrollView>
-          <View style={{ marginHorizontal: 16 }}>
+          <View>
             <Image
-              style={{ width: '100%', height: 160 }}
+              style={styles.coverImage}
               source={{ uri: `${apiData[0]?.coverImage}` }}
             />
-            <View
-              style={{
-                flexDirection: 'row',
-                position: 'absolute',
-                alignSelf: 'flex-end',
-                marginTop: 9.71,
-              }}>
+            <View style={styles.buttonView}>
               {/* button */}
-              <TouchableOpacity
-                style={{
-                  borderRadius: 40,
-                  backgroundColor: '#333333',
-                  marginHorizontal: 8,
-                }}>
+              <TouchableOpacity style={styles.buttonMenuBorder}>
                 <Image
-                  style={{ margin: 10 }}
+                  style={styles.icon}
                   source={require('openart/src/assets/images/icon/more-icon.png')}
                 />
               </TouchableOpacity>
-              <TouchableOpacity
-                style={{
-                  borderRadius: 40,
-                  backgroundColor: '#333333',
-                  marginRight: 16,
-                }}>
+              <TouchableOpacity style={styles.buttonShareBorder}>
                 <Image
-                  style={{ margin: 10 }}
+                  style={styles.icon}
                   source={require('openart/src/assets/images/icon/export-icon.png')}
                 />
               </TouchableOpacity>
             </View>
-            <Image
-              style={{
-                position: 'absolute',
-                alignSelf: 'center',
-                marginTop: 96.7,
-                height: 130,
-                width: 130,
-              }}
-              source={{ uri: apiData[0]?.avatar }}
-            />
+            <Image style={styles.avatar} source={{ uri: apiData[0]?.avatar }} />
 
-            <Text
-              style={{
-                textAlign: 'center',
-                fontFamily: 'Epilogue',
-                fontWeight: '700',
-                fontSize: 18,
-                lineHeight: 28,
-                marginTop: 74.33,
-                color: '#FCFCFC',
-              }}>
-              {apiData[0].name}
-            </Text>
-            <View style={{ flexDirection: 'row', alignSelf: 'center' }}>
-              <Text
-                style={{
-                  textAlign: 'center',
-                  fontFamily: 'Epilogue',
-                  fontWeight: '500',
-                  fontSize: 13,
-                  lineHeight: 20,
-                  marginRight: 4,
-                  color: '#F8F8F8',
-                }}>
-                {apiData[0].hash}
-              </Text>
+            <Text style={styles.userName}>{apiData[0].name}</Text>
+            <View style={[globalStyle.flexRow, globalStyle.selfCenter]}>
+              <Text style={styles.userHash}>{apiData[0].hash}</Text>
               <TouchableOpacity>
                 <Image
                   source={require('../../assets/images/icon/copy-icon.png')}
                 />
               </TouchableOpacity>
             </View>
+          </View>
 
-            <View style={{ marginTop: 26.66 }}>
-              <View
-                style={{
-                  flex: 1,
-                  flexDirection: 'row',
-                  justifyContent: 'space-between',
-                  marginBottom: 28.95,
-                }}>
-                <View style={{}}>
-                  <Text
-                    style={{
-                      fontFamily: 'Epilogue',
-                      fontWeight: '700',
-                      fontSize: 32,
-                      lineHeight: 36,
-                      color: '#FCFCFC',
-                    }}>
+          <View style={styles.secondView}>
+            <View>
+              <View style={styles.followView}>
+                <View>
+                  <Text style={styles.followNumber}>
                     {apiData[0].following}
                   </Text>
-                  <Text
-                    style={{
-                      fontFamily: 'Epilogue',
-                      fontWeight: '700',
-                      fontSize: 16,
-                      lineHeight: 24,
-                      color: '#F8F8F8',
-                    }}>
-                    Following
-                  </Text>
+                  <Text style={styles.followText}>Following</Text>
                 </View>
 
-                <View style={{}}>
-                  <Text
-                    style={{
-                      fontFamily: 'Epilogue',
-                      fontWeight: '700',
-                      fontSize: 32,
-                      lineHeight: 36,
-                      color: '#FCFCFC',
-                    }}>
+                <View>
+                  <Text style={styles.followNumber}>
                     {apiData[0].followers}
                   </Text>
-                  <Text
-                    style={{
-                      fontFamily: 'Epilogue',
-                      fontWeight: '700',
-                      fontSize: 16,
-                      lineHeight: 24,
-                      color: '#F8F8F8',
-                    }}>
-                    Followers
-                  </Text>
+                  <Text style={styles.followText}>Followers</Text>
                 </View>
 
-                <TouchableOpacity
-                  style={{
-                    backgroundColor: '#333333',
-                    borderRadius: 8,
-                    alignSelf: 'center',
-                  }}>
-                  <Text
-                    style={{
-                      fontFamily: 'Epilogue',
-                      fontWeight: '700',
-                      fontSize: 16,
-                      lineHeight: 24,
-                      color: '#FCFCFC',
-                      paddingHorizontal: 30,
-                      paddingVertical: 9,
-                    }}>
-                    Follow
-                  </Text>
+                <TouchableOpacity style={styles.followButton}>
+                  <Text style={styles.followButtonText}>Follow</Text>
                 </TouchableOpacity>
               </View>
-              <Text
-                style={{
-                  fontFamily: 'Epilogue',
-                  fontWeight: '400',
-                  fontSize: 20,
-                  lineHeight: 28,
-                  color: '#F8F8F8',
-                  marginBottom: 9.73,
-                }}>
-                Followed by
-              </Text>
+              <Text style={styles.listFollowTitle}>Followed by</Text>
               <View>
                 <Image
-                  style={{
-                    borderWidth: 0.95,
-                    borderRadius: 100,
-                    borderColor: '#FFFFFF',
-                  }}
+                  style={styles.listFollow1}
                   source={require('../../assets/images/user-profile/ava-2.png')}
                 />
                 <Image
-                  style={{
-                    borderWidth: 0.95,
-                    borderRadius: 100,
-                    borderColor: '#FFFFFF',
-                    position: 'absolute',
-                    marginLeft: 25,
-                  }}
+                  style={styles.listFollow2}
                   source={require('../../assets/images/user-profile/ava-3.png')}
                 />
                 <Image
-                  style={{
-                    borderWidth: 0.95,
-                    borderRadius: 100,
-                    borderColor: '#FFFFFF',
-                    position: 'absolute',
-                    marginLeft: 45,
-                  }}
+                  style={styles.listFollow3}
                   source={require('../../assets/images/user-profile/ava-4.png')}
                 />
                 <Image
-                  style={{
-                    borderWidth: 0.95,
-                    borderRadius: 100,
-                    borderColor: '#FFFFFF',
-                    position: 'absolute',
-                    marginLeft: 65,
-                  }}
+                  style={styles.listFollow4}
                   source={require('../../assets/images/user-profile/ava-5.png')}
                 />
                 <Image
-                  style={{
-                    borderWidth: 0.95,
-                    borderRadius: 100,
-                    borderColor: '#FFFFFF',
-                    position: 'absolute',
-                    marginLeft: 85,
-                  }}
+                  style={styles.listFollow5}
                   source={require('../../assets/images/user-profile/ava-3.png')}
                 />
               </View>
-              <Text
-                style={{
-                  fontFamily: 'Epilogue',
-                  fontWeight: '500',
-                  fontSize: 13,
-                  lineHeight: 20,
-                  color: '#F8F8F8',
-                  marginTop: 28.11,
-                }}>
+
+              <Text style={styles.userDescription}>
                 {apiData[0].description}
               </Text>
-              <Text
-                style={{
-                  fontFamily: 'Epilogue',
-                  fontWeight: '500',
-                  fontSize: 13,
-                  lineHeight: 20,
-                  color: '#F8F8F8',
-                  marginVertical: 15.8,
-                }}>
-                Member since 2021
-              </Text>
-              <View
-                style={{
-                  flexDirection: 'row',
-                  justifyContent: 'flex-start',
-                }}>
-                <TouchableOpacity
-                  style={{
-                    backgroundColor: '#333333',
-                    flexDirection: 'row',
-                    borderRadius: 33,
-                    alignSelf: 'center',
-                    alignItems: 'center',
-                  }}>
+              <Text style={styles.memberSinceText}>Member since 2021</Text>
+              <View style={[globalStyle.flexRow, globalStyle.justifyStart]}>
+                <TouchableOpacity style={styles.socialButton}>
                   <Image
-                    style={{ marginLeft: 11.82 }}
+                    style={styles.socialButtonIcon}
                     source={require('../../assets/images/icon/twitter-icon.png')}
                   />
-                  <Text
-                    style={{
-                      fontFamily: 'Epilogue',
-                      fontWeight: '700',
-                      fontSize: 13,
-                      lineHeight: 20,
-                      paddingRight: 13,
-                      paddingTop: 9.93,
-                      paddingBottom: 6.07,
-                      marginLeft: 3.98,
-                      color: '#F8F8F8',
-                    }}>
-                    @openart
-                  </Text>
+                  <Text style={styles.socialButtonText}>@openart</Text>
                 </TouchableOpacity>
-                <TouchableOpacity
-                  style={{
-                    backgroundColor: '#333333',
-                    flexDirection: 'row',
-                    borderRadius: 33,
-                    alignSelf: 'center',
-                    alignItems: 'center',
-                    marginLeft: 10.71,
-                  }}>
+                <TouchableOpacity style={styles.socialButton}>
                   <Image
-                    style={{ marginLeft: 14.95 }}
+                    style={styles.socialButtonIcon}
                     source={require('../../assets/images/icon/instagram-icon.png')}
                   />
-                  <Text
-                    style={{
-                      fontFamily: 'Epilogue',
-                      fontWeight: '700',
-                      fontSize: 13,
-                      lineHeight: 20,
-                      paddingRight: 17.94,
-                      paddingTop: 9.93,
-                      paddingBottom: 6.07,
-                      marginLeft: 4.97,
-                      color: '#F8F8F8',
-                    }}>
-                    @openart.design
-                  </Text>
+                  <Text style={styles.socialButtonText}>@openart.design</Text>
                 </TouchableOpacity>
               </View>
-              <TouchableOpacity
-                style={{
-                  marginTop: 9.24,
-                  backgroundColor: '#333333',
-                  flexDirection: 'row',
-                  borderRadius: 33,
-                  alignSelf: 'flex-start',
-                  alignItems: 'center',
-                }}>
+              <TouchableOpacity style={styles.socialButtonSecondRow}>
                 <Image
-                  style={{ marginLeft: 17 }}
+                  style={styles.socialButtonIcon}
                   source={require('../../assets/images/icon/link-icon.png')}
                 />
-                <Text
-                  style={{
-                    fontFamily: 'Epilogue',
-                    fontWeight: '700',
-                    fontSize: 13,
-                    lineHeight: 20,
-                    paddingRight: 20.91,
-                    paddingTop: 8.74,
-                    paddingBottom: 7.26,
-                    marginLeft: 9,
-                    color: '#F8F8F8',
-                  }}>
-                  Openart.design
-                </Text>
+                <Text style={styles.socialButtonText}>Openart.design</Text>
               </TouchableOpacity>
-              <View style={{ flexDirection: 'row', marginTop: 39.84 }}>
+              <View style={styles.productTitleView}>
                 <TouchableOpacity>
-                  <Text
-                    style={{
-                      fontFamily: 'Epilogue',
-                      fontWeight: '700',
-                      fontSize: 24,
-                      lineHeight: 32,
-                      color: '#FCFCFC',
-                    }}>
-                    Created
-                  </Text>
+                  <Text style={styles.productTitleHighlighted}>Created</Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={{ marginLeft: 35 }}>
-                  <Text
-                    style={{
-                      fontFamily: 'Epilogue',
-                      fontWeight: '700',
-                      fontSize: 24,
-                      lineHeight: 32,
-                      color: '#555555',
-                    }}>
-                    Collected
-                  </Text>
+                <TouchableOpacity>
+                  <Text style={styles.productTitleNormal}>Collected</Text>
                 </TouchableOpacity>
               </View>
             </View>
@@ -437,8 +191,8 @@ export default function UserProfile() {
             <>
               {artData.map((art: CreatedArt) => {
                 return (
-                  <View key={art.id} style={{ marginBottom: 40 }}>
-                    <View style={[globalStyle.container, { marginTop: 25 }]}>
+                  <View key={art.id}>
+                    <View style={globalStyle.container}>
                       <View>
                         <TouchableOpacity
                           onPress={() => {
@@ -453,30 +207,15 @@ export default function UserProfile() {
                           />
                         </TouchableOpacity>
 
-                        <Text
-                          style={[
-                            globalStyle.containerTitle,
-                            { marginTop: 12.41 },
-                          ]}>
+                        <Text style={globalStyle.containerTitle}>
                           {art.name}
                         </Text>
-                        <View
-                          style={{
-                            flexDirection: 'row',
-                            justifyContent: 'space-between',
-                            marginTop: 2.68,
-                            marginBottom: 16.86,
-                            alignItems: 'center',
-                          }}>
+                        <View style={globalStyle.containerCreatorInfoView}>
                           <Image
                             style={globalStyle.containerAvatar}
                             source={{ uri: art.avatar }}
                           />
-                          <View
-                            style={{
-                              flex: 1,
-                              marginLeft: 12,
-                            }}>
+                          <View style={globalStyle.containerCreatorNameView}>
                             <Text style={globalStyle.containerCreatorName}>
                               {art.creatorName}
                             </Text>
@@ -490,30 +229,10 @@ export default function UserProfile() {
                         </View>
                       </View>
                     </View>
-                    <TouchableOpacity
-                      style={{
-                        borderRadius: 51,
-                        marginTop: 12.14,
-                        backgroundColor: '#333333',
-                        paddingVertical: 18,
-                      }}>
-                      <Text
-                        style={{
-                          fontSize: 20,
-                          fontFamily: 'Epilogue',
-                          textAlign: 'center',
-                          color: '#FCFCFC',
-                          fontWeight: '400',
-                        }}>
+                    <TouchableOpacity style={styles.productButton}>
+                      <Text style={styles.productButtonTextSmall}>
                         Sold For
-                        <Text
-                          style={{
-                            fontSize: 24,
-                            fontFamily: 'Epilogue',
-                            textAlign: 'center',
-                            color: '#FCFCFC',
-                            fontWeight: '700',
-                          }}>
+                        <Text style={styles.productButtonTextLarge}>
                           {' '}
                           2.00 ETH
                         </Text>
@@ -524,44 +243,16 @@ export default function UserProfile() {
               })}
             </>
 
-            <TouchableOpacity
-              style={{
-                borderRadius: 8,
-                borderColor: '#0038F5',
-                borderWidth: 1,
-                flexDirection: 'row',
-                alignItems: 'center',
-                justifyContent: 'center',
-                marginHorizontal: 35,
-              }}>
+            <TouchableOpacity style={styles.loadMoreButton}>
               <Image
                 source={require('../../assets/images/icon/plus-icon.png')}
               />
-              <Text
-                style={{
-                  fontSize: 20,
-                  fontFamily: 'Epilogue',
-                  textAlign: 'center',
-                  paddingVertical: 15,
-                  color: '#FCFCFC',
-                  fontWeight: '700',
-                }}>
-                Load more
-              </Text>
+              <Text style={styles.loadMoreButtonText}>Load more</Text>
             </TouchableOpacity>
           </View>
-          <View style={{ marginBottom: 93.99 }} />
           <Footer />
         </ScrollView>
       </SafeAreaView>
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  AndroidSafeArea: {
-    flex: 1,
-    backgroundColor: 'white',
-    paddingTop: Platform.OS === 'android' ? 50 : 0,
-  },
-});

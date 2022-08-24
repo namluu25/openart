@@ -3,8 +3,6 @@ import {
   View,
   Text,
   SafeAreaView,
-  StyleSheet,
-  Platform,
   StatusBar,
   ScrollView,
   TouchableOpacity,
@@ -14,538 +12,197 @@ import {
 import LinearGradient from 'react-native-linear-gradient';
 import Header from '../../components/header';
 import Footer from '../../components/footer';
+import styles from './styles';
+import globalStyle from '../../theme/globalStyle';
 
 export default function ProfileEdit() {
   return (
-    <View
-      style={[
-        styles.AndroidSafeArea,
-        {
-          backgroundColor: '#222222',
-          flex: 1,
-        },
-      ]}>
-      <SafeAreaView style={{ flex: 1 }}>
+    <View style={globalStyle.AndroidSafeArea}>
+      <SafeAreaView style={globalStyle.flex}>
         <StatusBar barStyle="light-content" translucent={true} />
 
         <Header />
         <ScrollView>
           <View>
             <Image
-              style={{ width: '100%' }}
+              style={styles.coverImage}
               source={require('../../assets/images/profile/cover.png')}
             />
-            <View
-              style={{
-                flexDirection: 'row',
-                position: 'absolute',
-                alignSelf: 'flex-end',
-                marginTop: 9.71,
-              }}>
+            <View style={styles.coverButtonView}>
               {/* button */}
-              <TouchableOpacity
-                style={{
-                  borderRadius: 40,
-                  backgroundColor: '#333333',
-                  marginHorizontal: 8,
-                }}>
+              <TouchableOpacity style={styles.coverButtonMenu}>
                 <Image
-                  style={{ margin: 10 }}
+                  style={styles.coverButtonIcon}
                   source={require('openart/src/assets/images/icon/more-icon.png')}
                 />
               </TouchableOpacity>
-              <TouchableOpacity
-                style={{
-                  borderRadius: 40,
-                  backgroundColor: '#333333',
-                  marginRight: 16,
-                }}>
+              <TouchableOpacity style={styles.coverButtonShare}>
                 <Image
-                  style={{ margin: 10 }}
+                  style={styles.coverButtonIcon}
                   source={require('openart/src/assets/images/icon/export-icon.png')}
                 />
               </TouchableOpacity>
             </View>
             <Image
-              style={{
-                position: 'absolute',
-                alignSelf: 'center',
-                marginTop: 96.7,
-              }}
+              style={styles.avatar}
               source={require('../../assets/images/profile/ava.png')}
             />
 
-            <Text
-              style={{
-                textAlign: 'center',
-                fontFamily: 'Epilogue',
-                fontWeight: '700',
-                fontSize: 18,
-                lineHeight: 28,
-                marginTop: 74.33,
-                color: '#FCFCFC',
-              }}>
-              Gift Habeshaw
-            </Text>
-            <View style={{ flexDirection: 'row', alignSelf: 'center' }}>
-              <Text
-                style={{
-                  textAlign: 'center',
-                  fontFamily: 'Epilogue',
-                  fontWeight: '500',
-                  fontSize: 13,
-                  lineHeight: 20,
-                  marginRight: 4,
-                  color: '#F8F8F8',
-                }}>
-                52fs5ge5g45sov45a
-              </Text>
+            <Text style={styles.userName}>Gift Habeshaw</Text>
+            <View style={[globalStyle.flexRow, globalStyle.selfCenter]}>
+              <Text style={styles.userHash}>52fs5ge5g45sov45a</Text>
               <TouchableOpacity>
                 <Image
                   source={require('../../assets/images/icon/copy-icon.png')}
                 />
               </TouchableOpacity>
             </View>
+          </View>
 
-            <View
-              style={{
-                marginHorizontal: 16.57,
-                marginTop: 38.97,
-                marginBottom: 28,
-              }}>
-              <Text
-                style={{
-                  fontFamily: 'Epilogue',
-                  fontWeight: '400',
-                  fontSize: 20,
-                  lineHeight: 28,
-                  color: '#F8F8F8',
-                  marginBottom: 16,
-                }}>
-                Enter your details
-              </Text>
+          <View style={styles.inputView}>
+            <View style={styles.inputCategory}>
+              <Text style={styles.inputTitle}>Enter your details</Text>
               <TextInput
-                style={[styles.inputBox, { marginBottom: 12.62 }]}
+                style={styles.firstCategoryInputBox}
                 placeholderTextColor="#FCFCFC"
                 placeholder="Name"
               />
               <TextInput
-                style={[styles.inputBox, { marginBottom: 41.04 }]}
+                style={styles.inputBox}
                 placeholderTextColor="#FCFCFC"
                 placeholder="User Name"
               />
-              <Text
-                style={{
-                  fontFamily: 'Epilogue',
-                  fontWeight: '400',
-                  fontSize: 20,
-                  lineHeight: 28,
-                  color: '#F8F8F8',
-                  marginBottom: 16,
-                }}>
-                Enter your details
-              </Text>
+            </View>
+
+            <View style={styles.inputCategory}>
+              <Text style={styles.inputTitle}>Enter your details</Text>
               <TextInput
-                style={[styles.inputBox, { marginBottom: 1.79 }]}
+                style={[styles.inputBox]}
                 placeholderTextColor="#FCFCFC"
                 placeholder="Email"
               />
-              <Text
-                style={{
-                  fontFamily: 'Epilogue',
-                  fontWeight: '500',
-                  fontSize: 13,
-                  lineHeight: 20,
-                  color: '#888888',
-                  marginLeft: 41.43,
-                  marginBottom: 40,
-                }}>
+              <Text style={styles.secondCategoryText}>
                 Add your email address to receive notifications about your
                 activity on Foundation. This will not be shown on your profile.
               </Text>
-              <Text
-                style={{
-                  fontFamily: 'Epilogue',
-                  fontWeight: '400',
-                  fontSize: 20,
-                  lineHeight: 28,
-                  color: '#F8F8F8',
-                  marginBottom: 16,
-                }}>
-                Enter your bio
-              </Text>
-              <View style={{ marginBottom: 40 }}>
+            </View>
+
+            <View style={styles.inputCategory}>
+              <Text style={styles.inputTitle}>Enter your bio</Text>
+              <View>
                 <TextInput
-                  style={[styles.inputBox, { paddingBottom: 100 }]}
+                  style={styles.thirdCategoryInputBox}
                   placeholderTextColor="#FCFCFC"
                   placeholder="Enter your bio here"
                 />
                 <Image
-                  style={{
-                    position: 'absolute',
-                    bottom: 0,
-                    right: 0,
-                    marginRight: 4.26,
-                    marginBottom: 2.67,
-                  }}
+                  style={styles.thirdCategoryIcon}
                   source={require('../../assets/images/icon/form-icon.png')}
                 />
               </View>
-              <Text
-                style={{
-                  fontFamily: 'Epilogue',
-                  fontWeight: '400',
-                  fontSize: 20,
-                  lineHeight: 28,
-                  color: '#F8F8F8',
-                  marginBottom: 16,
-                }}>
-                Upload a profile image
-              </Text>
-              <TouchableOpacity
-                style={{
-                  backgroundColor: '#333333',
-                  borderRadius: 32,
-                  flexDirection: 'column',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  marginBottom: 40,
-                }}>
+            </View>
+
+            <View style={styles.inputCategory}>
+              <Text style={styles.inputTitle}>Upload a profile image</Text>
+              <TouchableOpacity style={styles.forthCategoryButton}>
                 <Image
-                  style={{ marginTop: 43 }}
                   source={require('../../assets/images/icon/picture-icon.png')}
                 />
-                <Text
-                  style={{
-                    fontSize: 20,
-                    fontFamily: 'Epilogue',
-                    color: '#F8F8F8',
-                    fontWeight: '700',
-                    lineHeight: 28,
-                  }}>
+                <Text style={styles.forthButtonTextLarge}>
                   Drag and drop or browce a file
                 </Text>
-                <Text
-                  style={{
-                    fontSize: 13,
-                    fontFamily: 'Epilogue',
-                    color: '#F0F0F0',
-                    fontWeight: '500',
-                    lineHeight: 20,
-                    textAlign: 'center',
-                    marginHorizontal: 30,
-                    marginBottom: 23.72,
-                  }}>
+                <Text style={styles.forthButtonTextSmall}>
                   Recommended size: JPG, PNG, GIF (1500x1500px, Max 10mb)
                 </Text>
               </TouchableOpacity>
-              <Text
-                style={{
-                  fontFamily: 'Epilogue',
-                  fontWeight: '400',
-                  fontSize: 20,
-                  lineHeight: 28,
-                  color: '#F8F8F8',
-                  marginBottom: 12,
-                }}>
-                Verify your profile
-              </Text>
-              <Text
-                style={{
-                  fontFamily: 'Epilogue',
-                  fontWeight: '400',
-                  fontSize: 16,
-                  lineHeight: 22,
-                  color: '#F0F0F0',
-                  marginBottom: 16.88,
-                }}>
+            </View>
+
+            <View style={styles.inputCategory}>
+              <Text style={styles.inputTitle}>Verify your profile</Text>
+              <Text style={styles.fifthDescription}>
                 Show the Foundation community that your profile is authentic.
               </Text>
-              <TouchableOpacity
-                style={{
-                  borderRadius: 8,
-                  borderColor: '#888888',
-                  borderWidth: 1,
-                  alignItems: 'center',
-                  flexDirection: 'row',
-                  justifyContent: 'center',
-                  marginBottom: 12,
-                }}>
+              <TouchableOpacity style={styles.fifthButtonTwitter}>
                 <Image
                   source={require('../../assets/images/icon/twitter-icon-gradient.png')}
                 />
-                <Text
-                  style={{
-                    fontSize: 20,
-                    fontFamily: 'Epilogue',
-                    textAlign: 'center',
-                    padding: 15,
-                    color: '#FCFCFC',
-                    fontWeight: '700',
-                  }}>
-                  Verify via Twitter
-                </Text>
+                <Text style={styles.fifthButtonText}>Verify via Twitter</Text>
               </TouchableOpacity>
-              <TouchableOpacity
-                style={{
-                  borderRadius: 8,
-                  borderColor: '#888888',
-                  borderWidth: 1,
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  flexDirection: 'row',
-                  marginBottom: 40,
-                }}>
+              <TouchableOpacity style={styles.fifthButtonInstagram}>
                 <Image
                   source={require('../../assets/images/icon/instagram-icon-gradient.png')}
                 />
-                <Text
-                  style={{
-                    fontSize: 20,
-                    fontFamily: 'Epilogue',
-                    textAlign: 'center',
-                    padding: 15,
-                    color: '#FCFCFC',
-                    fontWeight: '700',
-                  }}>
-                  Verify via Instagram
-                </Text>
-              </TouchableOpacity>
-              <Text
-                style={{
-                  fontFamily: 'Epilogue',
-                  fontWeight: '400',
-                  fontSize: 20,
-                  lineHeight: 28,
-                  color: '#F8F8F8',
-                  marginBottom: 16,
-                }}>
-                Add links to your social media profiles.
-              </Text>
-              <TouchableOpacity
-                style={{
-                  borderRadius: 8,
-                  backgroundColor: '#333333',
-                  paddingVertical: 16.31,
-                  paddingHorizontal: 24,
-                  flexDirection: 'row',
-                  justifyContent: 'flex-start',
-                  marginBottom: 12.62,
-                }}>
-                <Image
-                  style={{ marginRight: 12 }}
-                  source={require('../../assets/images/icon/link-icon.png')}
-                />
-                <Text
-                  style={{
-                    fontSize: 16,
-                    fontFamily: 'Epilogue',
-                    color: '#FCFCFC',
-                    fontWeight: '500',
-                    lineHeight: 24,
-                  }}>
-                  Website
-                </Text>
-              </TouchableOpacity>
-              <TouchableOpacity
-                style={{
-                  borderRadius: 8,
-                  backgroundColor: '#333333',
-                  paddingVertical: 16.31,
-                  paddingHorizontal: 24,
-                  flexDirection: 'row',
-                  justifyContent: 'flex-start',
-                  marginBottom: 12.62,
-                }}>
-                <Image
-                  style={{ marginRight: 12 }}
-                  source={require('../../assets/images/icon/discord-icon.png')}
-                />
-                <Text
-                  style={{
-                    fontSize: 16,
-                    fontFamily: 'Epilogue',
-                    color: '#FCFCFC',
-                    fontWeight: '500',
-                    lineHeight: 24,
-                  }}>
-                  Discord
-                </Text>
-              </TouchableOpacity>
-              <TouchableOpacity
-                style={{
-                  borderRadius: 8,
-                  backgroundColor: '#333333',
-                  paddingVertical: 16.31,
-                  paddingHorizontal: 24,
-                  flexDirection: 'row',
-                  justifyContent: 'flex-start',
-                  marginBottom: 12.62,
-                }}>
-                <Image
-                  style={{ marginRight: 12 }}
-                  source={require('../../assets/images/icon/instagram-icon.png')}
-                />
-                <Text
-                  style={{
-                    fontSize: 16,
-                    fontFamily: 'Epilogue',
-                    color: '#FCFCFC',
-                    fontWeight: '500',
-                    lineHeight: 24,
-                  }}>
-                  Instagram
-                </Text>
-              </TouchableOpacity>
-              <TouchableOpacity
-                style={{
-                  borderRadius: 8,
-                  backgroundColor: '#333333',
-                  paddingVertical: 16.31,
-                  paddingHorizontal: 24,
-                  flexDirection: 'row',
-                  justifyContent: 'flex-start',
-                  marginBottom: 12.62,
-                }}>
-                <Image
-                  style={{ marginRight: 12 }}
-                  source={require('../../assets/images/icon/youtube-icon.png')}
-                />
-                <Text
-                  style={{
-                    fontSize: 16,
-                    fontFamily: 'Epilogue',
-                    color: '#FCFCFC',
-                    fontWeight: '500',
-                    lineHeight: 24,
-                  }}>
-                  Youtube channel
-                </Text>
-              </TouchableOpacity>
-              <TouchableOpacity
-                style={{
-                  borderRadius: 8,
-                  backgroundColor: '#333333',
-                  paddingVertical: 16.31,
-                  paddingHorizontal: 24,
-                  flexDirection: 'row',
-                  justifyContent: 'flex-start',
-                  marginBottom: 12.62,
-                }}>
-                <Image
-                  style={{ marginRight: 12 }}
-                  source={require('../../assets/images/icon/facebook-icon.png')}
-                />
-                <Text
-                  style={{
-                    fontSize: 16,
-                    fontFamily: 'Epilogue',
-                    color: '#FCFCFC',
-                    fontWeight: '500',
-                    lineHeight: 24,
-                  }}>
-                  Facebook
-                </Text>
-              </TouchableOpacity>
-              <TouchableOpacity
-                style={{
-                  borderRadius: 8,
-                  backgroundColor: '#333333',
-                  paddingVertical: 16.31,
-                  paddingHorizontal: 24,
-                  flexDirection: 'row',
-                  justifyContent: 'flex-start',
-                  marginBottom: 44.62,
-                }}>
-                <Image
-                  style={{ marginRight: 12 }}
-                  source={require('../../assets/images/icon/tiktok-icon.png')}
-                />
-                <Text
-                  style={{
-                    fontSize: 16,
-                    fontFamily: 'Epilogue',
-                    color: '#FCFCFC',
-                    fontWeight: '500',
-                    lineHeight: 24,
-                  }}>
-                  Tiktok
-                </Text>
-              </TouchableOpacity>
-              <TouchableOpacity>
-                <LinearGradient
-                  colors={['#0038F5', '#9F03FF']}
-                  useAngle={true}
-                  angle={114.44}
-                  style={{
-                    borderRadius: 8,
-                  }}>
-                  <Text
-                    style={{
-                      fontSize: 20,
-                      fontFamily: 'Epilogue',
-                      textAlign: 'center',
-                      padding: 15,
-                      color: '#FCFCFC',
-                      fontWeight: '700',
-                    }}>
-                    Save
-                  </Text>
-                </LinearGradient>
+                <Text style={styles.fifthButtonText}>Verify via Instagram</Text>
               </TouchableOpacity>
             </View>
-            <View
-              // separator line
-              style={{
-                borderBottomColor: '#DCDCDC',
-                borderBottomWidth: 0.5,
-                width: 327,
-                alignSelf: 'center',
-              }}
-            />
+
+            <View style={styles.inputCategory}>
+              <Text style={styles.inputTitle}>
+                Add links to your social media profiles.
+              </Text>
+              <TouchableOpacity style={styles.sixthButton}>
+                <Image
+                  style={styles.sixthButtonIcon}
+                  source={require('../../assets/images/icon/link-icon.png')}
+                />
+                <Text style={styles.sixthButtonText}>Website</Text>
+              </TouchableOpacity>
+              <TouchableOpacity style={styles.sixthButton}>
+                <Image
+                  style={styles.sixthButtonIcon}
+                  source={require('../../assets/images/icon/discord-icon.png')}
+                />
+                <Text style={styles.sixthButtonText}>Discord</Text>
+              </TouchableOpacity>
+              <TouchableOpacity style={styles.sixthButton}>
+                <Image
+                  style={styles.sixthButtonIcon}
+                  source={require('../../assets/images/icon/instagram-icon.png')}
+                />
+                <Text style={styles.sixthButtonText}>Instagram</Text>
+              </TouchableOpacity>
+              <TouchableOpacity style={styles.sixthButton}>
+                <Image
+                  style={styles.sixthButtonIcon}
+                  source={require('../../assets/images/icon/youtube-icon.png')}
+                />
+                <Text style={styles.sixthButtonText}>Youtube channel</Text>
+              </TouchableOpacity>
+              <TouchableOpacity style={styles.sixthButton}>
+                <Image
+                  style={styles.sixthButtonIcon}
+                  source={require('../../assets/images/icon/facebook-icon.png')}
+                />
+                <Text style={styles.sixthButtonText}>Facebook</Text>
+              </TouchableOpacity>
+              <TouchableOpacity style={styles.sixthButtonTiktok}>
+                <Image
+                  style={styles.sixthButtonIcon}
+                  source={require('../../assets/images/icon/tiktok-icon.png')}
+                />
+                <Text style={styles.sixthButtonText}>Tiktok</Text>
+              </TouchableOpacity>
+            </View>
+
+            <TouchableOpacity>
+              <LinearGradient
+                colors={['#0038F5', '#9F03FF']}
+                useAngle={true}
+                angle={114.44}
+                style={globalStyle.buttonRadius}>
+                <Text style={styles.saveButtonText}>Save</Text>
+              </LinearGradient>
+            </TouchableOpacity>
           </View>
 
-          <View style={{ marginBottom: 90.26 }} />
+          <View
+            // separator line
+            style={styles.separatorLine}
+          />
+
           <Footer />
         </ScrollView>
       </SafeAreaView>
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  AndroidSafeArea: {
-    flex: 1,
-    backgroundColor: 'white',
-    paddingTop: Platform.OS === 'android' ? 50 : 0,
-  },
-  product: {
-    backgroundColor: '#333333',
-    alignItems: 'center',
-    borderRadius: 32,
-    marginTop: 40,
-    marginHorizontal: 16.57,
-  },
-  image: {
-    borderRadius: 24,
-    marginTop: 18,
-  },
-  nftText: {
-    fontSize: 24,
-    fontWeight: '700',
-    color: '#FCFCFC',
-    fontFamily: 'Epilogue',
-  },
-  avatar: {
-    borderRadius: 24,
-    paddingLeft: 12,
-    width: 48,
-    height: 48,
-  },
-  inputBox: {
-    paddingVertical: 16.81,
-    paddingLeft: 24,
-    borderRadius: 8,
-    backgroundColor: '#333333',
-  },
-});
