@@ -8,10 +8,10 @@ import {
   TextInput,
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
-import { Header } from '../../components';
-import { Footer } from '../../components';
+import { Header } from 'components';
+import { Footer } from 'components';
 import styles from './styles';
-import globalStyle from '../../theme/globalStyle';
+import { globalStyle } from 'theme/globalStyle';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 export const ProfileEdit = () => {
@@ -22,35 +22,33 @@ export const ProfileEdit = () => {
         <View>
           <Image
             style={styles.coverImage}
-            source={require('../../assets/images/profile/cover.png')}
+            source={require('@images/profile/cover.png')}
           />
           <View style={styles.coverButtonView}>
             {/* button */}
             <TouchableOpacity style={styles.coverButtonMenu}>
               <Image
                 style={styles.coverButtonIcon}
-                source={require('openart/src/assets/images/icon/more-icon.png')}
+                source={require('@images/icon/more-icon.png')}
               />
             </TouchableOpacity>
             <TouchableOpacity style={styles.coverButtonShare}>
               <Image
                 style={styles.coverButtonIcon}
-                source={require('openart/src/assets/images/icon/export-icon.png')}
+                source={require('@images/icon/export-icon.png')}
               />
             </TouchableOpacity>
           </View>
           <Image
             style={styles.avatar}
-            source={require('../../assets/images/profile/ava.png')}
+            source={require('@images/profile/ava.png')}
           />
 
           <Text style={styles.userName}>Gift Habeshaw</Text>
           <View style={[globalStyle.flexRow, globalStyle.selfCenter]}>
             <Text style={styles.userHash}>52fs5ge5g45sov45a</Text>
             <TouchableOpacity>
-              <Image
-                source={require('../../assets/images/icon/copy-icon.png')}
-              />
+              <Image source={require('@images/icon/copy-icon.png')} />
             </TouchableOpacity>
           </View>
         </View>
@@ -93,7 +91,7 @@ export const ProfileEdit = () => {
               />
               <Image
                 style={styles.thirdCategoryIcon}
-                source={require('../../assets/images/icon/form-icon.png')}
+                source={require('@images/icon/form-icon.png')}
               />
             </View>
           </View>
@@ -101,9 +99,7 @@ export const ProfileEdit = () => {
           <View style={styles.inputCategory}>
             <Text style={styles.inputTitle}>Upload a profile image</Text>
             <TouchableOpacity style={styles.forthCategoryButton}>
-              <Image
-                source={require('../../assets/images/icon/picture-icon.png')}
-              />
+              <Image source={require('@images/icon/picture-icon.png')} />
               <Text style={styles.forthButtonTextLarge}>
                 Drag and drop or browce a file
               </Text>
@@ -120,13 +116,13 @@ export const ProfileEdit = () => {
             </Text>
             <TouchableOpacity style={styles.fifthButtonTwitter}>
               <Image
-                source={require('../../assets/images/icon/twitter-icon-gradient.png')}
+                source={require('@images/icon/twitter-icon-gradient.png')}
               />
               <Text style={styles.fifthButtonText}>Verify via Twitter</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.fifthButtonInstagram}>
               <Image
-                source={require('../../assets/images/icon/instagram-icon-gradient.png')}
+                source={require('@images/icon/instagram-icon-gradient.png')}
               />
               <Text style={styles.fifthButtonText}>Verify via Instagram</Text>
             </TouchableOpacity>
@@ -139,42 +135,42 @@ export const ProfileEdit = () => {
             <TouchableOpacity style={styles.sixthButton}>
               <Image
                 style={styles.sixthButtonIcon}
-                source={require('../../assets/images/icon/link-icon.png')}
+                source={require('@images/icon/link-icon.png')}
               />
               <Text style={styles.sixthButtonText}>Website</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.sixthButton}>
               <Image
                 style={styles.sixthButtonIcon}
-                source={require('../../assets/images/icon/discord-icon.png')}
+                source={require('@images/icon/discord-icon.png')}
               />
               <Text style={styles.sixthButtonText}>Discord</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.sixthButton}>
               <Image
                 style={styles.sixthButtonIcon}
-                source={require('../../assets/images/icon/instagram-icon.png')}
+                source={require('@images/icon/instagram-icon.png')}
               />
               <Text style={styles.sixthButtonText}>Instagram</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.sixthButton}>
               <Image
                 style={styles.sixthButtonIcon}
-                source={require('../../assets/images/icon/youtube-icon.png')}
+                source={require('@images/icon/youtube-icon.png')}
               />
               <Text style={styles.sixthButtonText}>Youtube channel</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.sixthButton}>
               <Image
                 style={styles.sixthButtonIcon}
-                source={require('../../assets/images/icon/facebook-icon.png')}
+                source={require('@images/icon/facebook-icon.png')}
               />
               <Text style={styles.sixthButtonText}>Facebook</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.sixthButtonTiktok}>
               <Image
                 style={styles.sixthButtonIcon}
-                source={require('../../assets/images/icon/tiktok-icon.png')}
+                source={require('@images/icon/tiktok-icon.png')}
               />
               <Text style={styles.sixthButtonText}>Tiktok</Text>
             </TouchableOpacity>

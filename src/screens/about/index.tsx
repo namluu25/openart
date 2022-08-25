@@ -1,16 +1,9 @@
 import React from 'react';
-import {
-  View,
-  Text,
-  // SafeAreaView,
-  // StatusBar,
-  Image,
-  ScrollView,
-} from 'react-native';
+import { View, Text, Image, ScrollView } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { Footer } from '../../components';
-import { Header } from '../../components';
-import globalStyle from '../../theme/globalStyle';
+import { Footer } from 'components';
+import { Header } from 'components';
+import { globalStyle } from 'theme/globalStyle';
 import styles from './styles';
 
 export const About = () => {
@@ -22,9 +15,7 @@ export const About = () => {
         <View>
           <View style={[globalStyle.flex, globalStyle.itemCenter]}>
             <Text style={styles.titleText}>About OpenArt</Text>
-            <Image
-              source={require('../../assets/images/icon/about-icon-1.png')}
-            />
+            <Image source={require('@images/icon/about-icon-1.png')} />
             <Text style={styles.firstParagraph}>
               OpenArt help anyone create a beautiful website, landing page, app
               to collect NFTs digital art
@@ -42,14 +33,14 @@ export const About = () => {
               <View style={styles.boxView}>
                 <Image
                   style={styles.boxImage}
-                  source={require('../../assets/images/icon/about-icon-2.png')}
+                  source={require('@images/icon/about-icon-2.png')}
                 />
                 <Text style={styles.boxText}>Build together</Text>
               </View>
               <View style={styles.boxView}>
                 <Image
                   style={styles.boxImage}
-                  source={require('../../assets/images/icon/about-icon-3.png')}
+                  source={require('@images/icon/about-icon-3.png')}
                 />
                 <Text style={styles.boxText}>Trust</Text>
               </View>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, Image, TouchableOpacity } from 'react-native';
-import globalStyle from '../../theme/globalStyle';
+import { globalStyle } from 'theme/globalStyle';
 import styles from './hotCollection-styles';
 
 export const HotCollection = () => {
@@ -9,9 +9,7 @@ export const HotCollection = () => {
       <View
         // title view
         style={styles.titleView}>
-        <Image
-          source={require('openart/src/assets/images/icon/sparkle-icon.png')}
-        />
+        <Image source={require('@images/icon/sparkle-icon.png')} />
         <Text style={styles.titleText}> Hot Collection</Text>
       </View>
 
@@ -20,10 +18,10 @@ export const HotCollection = () => {
           //image row 1
           style={[globalStyle.flexColumn, globalStyle.justifyBetween]}>
           <Image
-            source={require('openart/src/assets/images/hotcollection/hot-collection-1.png')}
+            source={require('@images/hotcollection/hot-collection-1.png')}
           />
           <Image
-            source={require('openart/src/assets/images/hotcollection/hot-collection-2.png')}
+            source={require('@images/hotcollection/hot-collection-2.png')}
           />
         </View>
 
@@ -33,10 +31,10 @@ export const HotCollection = () => {
           // marginBottom: 19,
           style={[globalStyle.flexColumn, globalStyle.justifyBetween]}>
           <Image
-            source={require('openart/src/assets/images/hotcollection/hot-collection-3.png')}
+            source={require('@images/hotcollection/hot-collection-3.png')}
           />
           <Image
-            source={require('openart/src/assets/images/hotcollection/hot-collection-4.png')}
+            source={require('@images/hotcollection/hot-collection-4.png')}
           />
         </View>
       </View>
@@ -70,12 +68,12 @@ export const HotCollection = () => {
             <TouchableOpacity>
               <Image
                 style={styles.avatar}
-                source={require('openart/src/assets/images/avatar/ava2.png')}
+                source={require('@images/avatar/ava2.png')}
               />
             </TouchableOpacity>
             <Image
               style={styles.activeIcon}
-              source={require('../../assets/images/icon/active-icon.png')}
+              source={require('@images/icon/active-icon.png')}
             />
           </View>
           <Text style={styles.nftText}>By Rodion Kutsaev</Text>
@@ -84,9 +82,7 @@ export const HotCollection = () => {
         <TouchableOpacity
           // button 30 items
           style={styles.followButton}>
-          <Image
-            source={require('openart/src/assets/images/icon/heart-icon.png')}
-          />
+          <Image source={require('@images/icon/heart-icon.png')} />
           <Text style={styles.followButtonText}>Follow</Text>
         </TouchableOpacity>
       </View>

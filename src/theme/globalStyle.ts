@@ -1,7 +1,7 @@
 import { StyleSheet, Platform } from 'react-native';
 import { color } from './color';
 
-export default StyleSheet.create({
+export const globalStyle = StyleSheet.create({
   AndroidSafeArea: {
     flex: 1,
     paddingTop: Platform.OS === 'android' ? 17 : 0,

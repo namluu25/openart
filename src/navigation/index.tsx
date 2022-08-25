@@ -19,8 +19,8 @@ import {
   SearchFilter,
   SearchPopup,
   Login,
-} from '../screens';
-import { ItemContainer } from '../components';
+} from 'screens';
+import { ItemContainer } from 'components';
 
 const MyTheme = {
   ...DefaultTheme,

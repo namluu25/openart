@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { View, Text, ScrollView, Image, TouchableOpacity } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
-import { Header } from '../../components/header';
-import { Footer } from '../../components/footer';
-import { PlaceBid } from '../../components/modal';
-import globalStyle from '../../theme/globalStyle';
-import styles from './styles';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { Header } from 'components';
+import { Footer } from 'components';
+import { PlaceBid } from '@modal/placeBid';
+import { globalStyle } from 'theme/globalStyle';
+import styles from './styles';
 
 export const DetailsAuction = () => {
   const [visible, setVisible] = useState(false);
@@ -18,7 +18,7 @@ export const DetailsAuction = () => {
         <View style={styles.auction}>
           <Image
             style={globalStyle.selfCenter}
-            source={require('openart/src/assets/images/nft/7.png')}
+            source={require('@images/nft/7.png')}
           />
           <View style={styles.infoView}>
             <View
@@ -33,13 +33,13 @@ export const DetailsAuction = () => {
                 <TouchableOpacity style={styles.buttonBorder}>
                   <Image
                     style={styles.buttonImage}
-                    source={require('openart/src/assets/images/icon/heart-icon.png')}
+                    source={require('@images/icon/heart-icon.png')}
                   />
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.buttonBorder}>
                   <Image
                     style={styles.buttonImage}
-                    source={require('openart/src/assets/images/icon/export-icon.png')}
+                    source={require('@images/icon/export-icon.png')}
                   />
                 </TouchableOpacity>
               </View>
@@ -48,7 +48,7 @@ export const DetailsAuction = () => {
             <TouchableOpacity style={styles.userButton}>
               <Image
                 style={styles.userAvatar}
-                source={require('openart/src/assets/images/avatar/ava3.png')}
+                source={require('@images/avatar/ava3.png')}
               />
               <Text style={styles.userName}>@openart</Text>
             </TouchableOpacity>
@@ -80,33 +80,21 @@ export const DetailsAuction = () => {
           </View>
 
           <TouchableOpacity style={styles.shareButton}>
-            <Image
-              source={require('openart/src/assets/images/icon/etherscan-logo.png')}
-            />
+            <Image source={require('@images/icon/etherscan-logo.png')} />
             <Text style={styles.shareButtonText}>View on Etherscan</Text>
-            <Image
-              source={require('openart/src/assets/images/icon/external-icon.png')}
-            />
+            <Image source={require('@images/icon/external-icon.png')} />
           </TouchableOpacity>
 
           <TouchableOpacity style={styles.shareButton}>
-            <Image
-              source={require('openart/src/assets/images/icon/star-icon.png')}
-            />
+            <Image source={require('@images/icon/star-icon.png')} />
             <Text style={styles.shareButtonText}>View on IPFS</Text>
-            <Image
-              source={require('openart/src/assets/images/icon/external-icon.png')}
-            />
+            <Image source={require('@images/icon/external-icon.png')} />
           </TouchableOpacity>
 
           <TouchableOpacity style={styles.shareButton}>
-            <Image
-              source={require('openart/src/assets/images/icon/chartPie-icon.png')}
-            />
+            <Image source={require('@images/icon/chartPie-icon.png')} />
             <Text style={styles.shareButtonText}>View IPFS Metadata</Text>
-            <Image
-              source={require('openart/src/assets/images/icon/external-icon.png')}
-            />
+            <Image source={require('@images/icon/external-icon.png')} />
           </TouchableOpacity>
 
           <View style={styles.placeBidView}>
@@ -136,7 +124,7 @@ export const DetailsAuction = () => {
             <View style={globalStyle.flexRow}>
               <Image
                 style={styles.activityButtonAvatar}
-                source={require('openart/src/assets/images/avatar/ava2.png')}
+                source={require('@images/avatar/ava2.png')}
               />
               <View>
                 <Text style={styles.activityButtonTitle}>
@@ -151,16 +139,14 @@ export const DetailsAuction = () => {
                 </View>
               </View>
             </View>
-            <Image
-              source={require('openart/src/assets/images/icon/external-icon.png')}
-            />
+            <Image source={require('@images/icon/external-icon.png')} />
           </TouchableOpacity>
 
           <TouchableOpacity style={styles.activityButton}>
             <View style={globalStyle.flexRow}>
               <Image
                 style={styles.activityButtonAvatar}
-                source={require('openart/src/assets/images/avatar/ava2.png')}
+                source={require('@images/avatar/ava2.png')}
               />
               <View>
                 <Text style={styles.activityButtonTitle}>
@@ -175,9 +161,7 @@ export const DetailsAuction = () => {
                 </View>
               </View>
             </View>
-            <Image
-              source={require('openart/src/assets/images/icon/external-icon.png')}
-            />
+            <Image source={require('@images/icon/external-icon.png')} />
           </TouchableOpacity>
         </View>
         <PlaceBid visbile={visible} handleClose={() => setVisible(false)} />

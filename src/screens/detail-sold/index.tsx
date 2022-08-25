@@ -1,9 +1,9 @@
 import React from 'react';
 import { View, Text, ScrollView, Image, TouchableOpacity } from 'react-native';
-import { Header } from '../../components';
-import { Footer } from '../../components';
+import { Header } from 'components';
+import { Footer } from 'components';
 import styles from './styles';
-import globalStyle from '../../theme/globalStyle';
+import { globalStyle } from 'theme/globalStyle';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 export const DetailSold = () => {
@@ -15,7 +15,7 @@ export const DetailSold = () => {
         <View style={styles.sold}>
           <Image
             style={globalStyle.selfCenter}
-            source={require('openart/src/assets/images/nft/7.png')}
+            source={require('@images/nft/7.png')}
           />
           <View style={styles.infoView}>
             <View
@@ -30,13 +30,13 @@ export const DetailSold = () => {
                 <TouchableOpacity style={styles.buttonBorder}>
                   <Image
                     style={styles.buttonImage}
-                    source={require('openart/src/assets/images/icon/heart-icon.png')}
+                    source={require('@images/icon/heart-icon.png')}
                   />
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.buttonBorder}>
                   <Image
                     style={styles.buttonImage}
-                    source={require('openart/src/assets/images/icon/export-icon.png')}
+                    source={require('@images/icon/export-icon.png')}
                   />
                 </TouchableOpacity>
               </View>
@@ -45,7 +45,7 @@ export const DetailSold = () => {
             <TouchableOpacity style={styles.userButton}>
               <Image
                 style={styles.userAvatar}
-                source={require('openart/src/assets/images/avatar/ava3.png')}
+                source={require('@images/avatar/ava3.png')}
               />
               <Text style={styles.userName}>@openart</Text>
             </TouchableOpacity>
@@ -77,33 +77,21 @@ export const DetailSold = () => {
           </View>
 
           <TouchableOpacity style={styles.shareButton}>
-            <Image
-              source={require('openart/src/assets/images/icon/etherscan-logo.png')}
-            />
+            <Image source={require('@images/icon/etherscan-logo.png')} />
             <Text style={styles.shareButtonText}>View on Etherscan</Text>
-            <Image
-              source={require('openart/src/assets/images/icon/external-icon.png')}
-            />
+            <Image source={require('@images/icon/external-icon.png')} />
           </TouchableOpacity>
 
           <TouchableOpacity style={styles.shareButton}>
-            <Image
-              source={require('openart/src/assets/images/icon/star-icon.png')}
-            />
+            <Image source={require('@images/icon/star-icon.png')} />
             <Text style={styles.shareButtonText}>View on IPFS</Text>
-            <Image
-              source={require('openart/src/assets/images/icon/external-icon.png')}
-            />
+            <Image source={require('@images/icon/external-icon.png')} />
           </TouchableOpacity>
 
           <TouchableOpacity style={styles.shareButton}>
-            <Image
-              source={require('openart/src/assets/images/icon/chartPie-icon.png')}
-            />
+            <Image source={require('@images/icon/chartPie-icon.png')} />
             <Text style={styles.shareButtonText}>View IPFS Metadata</Text>
-            <Image
-              source={require('openart/src/assets/images/icon/external-icon.png')}
-            />
+            <Image source={require('@images/icon/external-icon.png')} />
           </TouchableOpacity>
 
           <View style={styles.soldView}>
@@ -113,14 +101,14 @@ export const DetailSold = () => {
             </View>
             <Image
               style={styles.soldFirstRowImage}
-              source={require('openart/src/assets/images/icon/sparkle-icon.png')}
+              source={require('@images/icon/sparkle-icon.png')}
             />
             <View style={styles.soldSecondRowView}>
               <Text style={styles.soldSecondRowTitle}>Owner by</Text>
               <TouchableOpacity style={styles.soldSecondRowButton}>
                 <Image
                   style={styles.buttonAvatar}
-                  source={require('openart/src/assets/images/avatar/ava4.png')}
+                  source={require('@images/avatar/ava4.png')}
                 />
                 <Text style={styles.buttonText}>@david</Text>
               </TouchableOpacity>
@@ -133,7 +121,7 @@ export const DetailSold = () => {
             <View style={globalStyle.flexRow}>
               <Image
                 style={styles.activityButtonAvatar}
-                source={require('openart/src/assets/images/avatar/ava4.png')}
+                source={require('@images/avatar/ava4.png')}
               />
               <View>
                 <Text style={styles.activityButtonTitle}>
@@ -145,16 +133,14 @@ export const DetailSold = () => {
                 <Text style={styles.buttonPriceSold}>Sold for 1.50 ETH</Text>
               </View>
             </View>
-            <Image
-              source={require('openart/src/assets/images/icon/external-icon.png')}
-            />
+            <Image source={require('@images/icon/external-icon.png')} />
           </TouchableOpacity>
 
           <TouchableOpacity style={styles.activityButton}>
             <View style={globalStyle.flexRow}>
               <Image
                 style={styles.activityButtonAvatar}
-                source={require('openart/src/assets/images/avatar/ava2.png')}
+                source={require('@images/avatar/ava2.png')}
               />
               <View>
                 <Text style={styles.activityButtonTitle}>
@@ -169,16 +155,14 @@ export const DetailSold = () => {
                 </View>
               </View>
             </View>
-            <Image
-              source={require('openart/src/assets/images/icon/external-icon.png')}
-            />
+            <Image source={require('@images/icon/external-icon.png')} />
           </TouchableOpacity>
 
           <TouchableOpacity style={styles.activityButton}>
             <View style={globalStyle.flexRow}>
               <Image
                 style={styles.activityButtonAvatar}
-                source={require('openart/src/assets/images/avatar/ava2.png')}
+                source={require('@images/avatar/ava2.png')}
               />
               <View>
                 <Text style={styles.activityButtonTitle}>
@@ -193,9 +177,7 @@ export const DetailSold = () => {
                 </View>
               </View>
             </View>
-            <Image
-              source={require('openart/src/assets/images/icon/external-icon.png')}
-            />
+            <Image source={require('@images/icon/external-icon.png')} />
           </TouchableOpacity>
         </View>
         <Footer />

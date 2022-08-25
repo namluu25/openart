@@ -1,8 +1,8 @@
 import React from 'react';
 import { View, Text, ScrollView, Image, TouchableOpacity } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { Footer } from '../../components';
-import { Header } from '../../components';
+import { Footer } from 'components';
+import { Header } from 'components';
 import styles from './styles';
 
 export const FAQ = () => {
@@ -20,37 +20,27 @@ export const FAQ = () => {
           </Text>
           <TouchableOpacity style={styles.button}>
             <Text style={styles.buttonText}>General</Text>
-            <Image
-              source={require('../../assets/images/icon/arrow-down-icon.png')}
-            />
+            <Image source={require('@images/icon/arrow-down-icon.png')} />
           </TouchableOpacity>
 
           <TouchableOpacity style={styles.button}>
             <Text style={styles.buttonText}>How does it work</Text>
-            <Image
-              source={require('../../assets/images/icon/arrow-down-icon.png')}
-            />
+            <Image source={require('@images/icon/arrow-down-icon.png')} />
           </TouchableOpacity>
 
           <TouchableOpacity style={styles.button}>
             <Text style={styles.buttonText}>How to start</Text>
-            <Image
-              source={require('../../assets/images/icon/arrow-down-icon.png')}
-            />
+            <Image source={require('@images/icon/arrow-down-icon.png')} />
           </TouchableOpacity>
 
           <TouchableOpacity style={styles.button}>
             <Text style={styles.buttonText}>How to payment</Text>
-            <Image
-              source={require('../../assets/images/icon/arrow-down-icon.png')}
-            />
+            <Image source={require('@images/icon/arrow-down-icon.png')} />
           </TouchableOpacity>
 
           <TouchableOpacity style={styles.button}>
             <Text style={styles.buttonText}>How to bid</Text>
-            <Image
-              source={require('../../assets/images/icon/arrow-down-icon.png')}
-            />
+            <Image source={require('@images/icon/arrow-down-icon.png')} />
           </TouchableOpacity>
         </View>
 

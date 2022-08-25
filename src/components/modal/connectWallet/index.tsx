@@ -1,7 +1,7 @@
 import React from 'react';
 import { Modal, Text, Image, TouchableOpacity, View } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
-import globalStyle from '../../../theme/globalStyle';
+import { globalStyle } from 'theme/globalStyle';
 import styles from './styles';
 
 interface Props {
@@ -25,14 +25,12 @@ export const ConnectWallet = (props: Props) => {
             <View style={styles.firstRow}>
               <Text style={styles.textFirstRow}>Connect wallet</Text>
               <TouchableOpacity onPress={props.handleClose}>
-                <Image
-                  source={require('../../../assets/images/icon/close-icon.png')}
-                />
+                <Image source={require('@images/icon/close-icon.png')} />
               </TouchableOpacity>
             </View>
             <Image
               style={globalStyle.selfCenter}
-              source={require('../../../assets/images/icon/connect-wallet-icon.png')}
+              source={require('@images/icon/connect-wallet-icon.png')}
             />
             <Text style={styles.textSecondRow}>
               By connecting your wallet, you agree to our{' '}

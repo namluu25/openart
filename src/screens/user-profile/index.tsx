@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, ScrollView, TouchableOpacity, Image } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import { Header } from '../../components';
-import { Footer } from '../../components';
+import { Header } from 'components';
+import { Footer } from 'components';
 import axios from 'axios';
-import globalStyle from '../../theme/globalStyle';
+import { globalStyle } from 'theme/globalStyle';
 import styles from './styles';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
@@ -73,13 +73,13 @@ export const UserProfile = () => {
             <TouchableOpacity style={styles.buttonMenuBorder}>
               <Image
                 style={styles.icon}
-                source={require('openart/src/assets/images/icon/more-icon.png')}
+                source={require('@images/icon/more-icon.png')}
               />
             </TouchableOpacity>
             <TouchableOpacity style={styles.buttonShareBorder}>
               <Image
                 style={styles.icon}
-                source={require('openart/src/assets/images/icon/export-icon.png')}
+                source={require('@images/icon/export-icon.png')}
               />
             </TouchableOpacity>
           </View>
@@ -89,9 +89,7 @@ export const UserProfile = () => {
           <View style={[globalStyle.flexRow, globalStyle.selfCenter]}>
             <Text style={styles.userHash}>{apiData[0].hash}</Text>
             <TouchableOpacity>
-              <Image
-                source={require('../../assets/images/icon/copy-icon.png')}
-              />
+              <Image source={require('@images/icon/copy-icon.png')} />
             </TouchableOpacity>
           </View>
         </View>
@@ -117,23 +115,23 @@ export const UserProfile = () => {
             <View>
               <Image
                 style={styles.listFollow1}
-                source={require('../../assets/images/user-profile/ava-2.png')}
+                source={require('@images/user-profile/ava-2.png')}
               />
               <Image
                 style={styles.listFollow2}
-                source={require('../../assets/images/user-profile/ava-3.png')}
+                source={require('@images/user-profile/ava-3.png')}
               />
               <Image
                 style={styles.listFollow3}
-                source={require('../../assets/images/user-profile/ava-4.png')}
+                source={require('@images/user-profile/ava-4.png')}
               />
               <Image
                 style={styles.listFollow4}
-                source={require('../../assets/images/user-profile/ava-5.png')}
+                source={require('@images/user-profile/ava-5.png')}
               />
               <Image
                 style={styles.listFollow5}
-                source={require('../../assets/images/user-profile/ava-3.png')}
+                source={require('@images/user-profile/ava-3.png')}
               />
             </View>
 
@@ -143,14 +141,14 @@ export const UserProfile = () => {
               <TouchableOpacity style={styles.socialButton}>
                 <Image
                   style={styles.socialButtonIcon}
-                  source={require('../../assets/images/icon/twitter-icon.png')}
+                  source={require('@images/icon/twitter-icon.png')}
                 />
                 <Text style={styles.socialButtonText}>@openart</Text>
               </TouchableOpacity>
               <TouchableOpacity style={styles.socialButton}>
                 <Image
                   style={styles.socialButtonIcon}
-                  source={require('../../assets/images/icon/instagram-icon.png')}
+                  source={require('@images/icon/instagram-icon.png')}
                 />
                 <Text style={styles.socialButtonText}>@openart.design</Text>
               </TouchableOpacity>
@@ -158,7 +156,7 @@ export const UserProfile = () => {
             <TouchableOpacity style={styles.socialButtonSecondRow}>
               <Image
                 style={styles.socialButtonIcon}
-                source={require('../../assets/images/icon/link-icon.png')}
+                source={require('@images/icon/link-icon.png')}
               />
               <Text style={styles.socialButtonText}>Openart.design</Text>
             </TouchableOpacity>
@@ -206,7 +204,7 @@ export const UserProfile = () => {
                           </Text>
                         </View>
                         <Image
-                          source={require('openart/src/assets/images/icon/heart-icon.png')}
+                          source={require('@images/icon/heart-icon.png')}
                         />
                       </View>
                     </View>
@@ -226,7 +224,7 @@ export const UserProfile = () => {
           </>
 
           <TouchableOpacity style={styles.loadMoreButton}>
-            <Image source={require('../../assets/images/icon/plus-icon.png')} />
+            <Image source={require('@images/icon/plus-icon.png')} />
             <Text style={styles.loadMoreButtonText}>Load more</Text>
           </TouchableOpacity>
         </View>

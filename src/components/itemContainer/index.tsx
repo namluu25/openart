@@ -1,6 +1,6 @@
 import React from 'react';
 import { Text, Image, TouchableOpacity, View } from 'react-native';
-import globalStyle from '../../theme/globalStyle';
+import { globalStyle } from 'theme/globalStyle';
 import { useNavigation } from '@react-navigation/native';
 import styles from './styles';
 
@@ -41,7 +41,7 @@ export const ItemContainer = (props: Props) => {
             </TouchableOpacity>
             <Image
               style={styles.activeIcon}
-              source={require('../../assets/images/icon/active-icon.png')}
+              source={require('@images/icon/active-icon.png')}
             />
           </View>
           <TouchableOpacity
@@ -54,9 +54,7 @@ export const ItemContainer = (props: Props) => {
             </Text>
             <Text style={globalStyle.containerCreatorInfo}>Creator</Text>
           </TouchableOpacity>
-          <Image
-            source={require('openart/src/assets/images/icon/heart-icon.png')}
-          />
+          <Image source={require('@images/icon/heart-icon.png')} />
         </View>
       </View>
     </View>

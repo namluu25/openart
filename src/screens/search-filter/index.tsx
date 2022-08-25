@@ -9,14 +9,14 @@ import {
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import { useNavigation } from '@react-navigation/native';
-import { Header } from '../../components';
-import { Footer } from '../../components';
+import { Header } from 'components';
+import { Footer } from 'components';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import { faMicrophone } from '@fortawesome/free-solid-svg-icons';
 import Slider from '@react-native-community/slider';
 import styles from './styles';
-import globalStyle from '../../theme/globalStyle';
+import { globalStyle } from 'theme/globalStyle';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 export const SearchFilter = () => {
@@ -134,9 +134,7 @@ export const SearchFilter = () => {
             <Text style={styles.titleItem}>Creator</Text>
             <TouchableOpacity style={styles.sixthRowDropdown}>
               <Text style={styles.sixthRowDropdownText}>Verified only</Text>
-              <Image
-                source={require('../../assets/images/icon/arrow-down-icon.png')}
-              />
+              <Image source={require('@images/icon/arrow-down-icon.png')} />
             </TouchableOpacity>
           </View>
           <View
@@ -144,9 +142,7 @@ export const SearchFilter = () => {
             style={styles.separatorLine}
           />
           <TouchableOpacity style={styles.resetButton}>
-            <Image
-              source={require('../../assets/images/icon/close-icon.png')}
-            />
+            <Image source={require('@images/icon/close-icon.png')} />
             <Text style={styles.resetButtonText}>Reset all filter</Text>
           </TouchableOpacity>
           <View style={styles.productView}>
@@ -159,7 +155,7 @@ export const SearchFilter = () => {
                     }}>
                     <Image
                       style={globalStyle.containerImage}
-                      source={require('../../assets/images/user-profile/art-1.png')}
+                      source={require('@images/user-profile/art-1.png')}
                     />
                   </TouchableOpacity>
 
@@ -167,7 +163,7 @@ export const SearchFilter = () => {
                   <View style={globalStyle.containerCreatorInfoView}>
                     <Image
                       style={globalStyle.containerAvatar}
-                      source={require('openart/src/assets/images/avatar/ava1.png')}
+                      source={require('@images/avatar/ava1.png')}
                     />
                     <View style={globalStyle.containerCreatorNameView}>
                       <Text style={globalStyle.containerCreatorName}>
@@ -177,9 +173,7 @@ export const SearchFilter = () => {
                         Creator
                       </Text>
                     </View>
-                    <Image
-                      source={require('openart/src/assets/images/icon/heart-icon.png')}
-                    />
+                    <Image source={require('@images/icon/heart-icon.png')} />
                   </View>
                 </View>
               </View>
@@ -200,7 +194,7 @@ export const SearchFilter = () => {
                     }}>
                     <Image
                       style={globalStyle.containerImage}
-                      source={require('../../assets/images/user-profile/art-2.png')}
+                      source={require('@images/user-profile/art-2.png')}
                     />
                   </TouchableOpacity>
 
@@ -208,7 +202,7 @@ export const SearchFilter = () => {
                   <View style={globalStyle.containerCreatorInfoView}>
                     <Image
                       style={globalStyle.containerAvatar}
-                      source={require('openart/src/assets/images/avatar/ava1.png')}
+                      source={require('@images/avatar/ava1.png')}
                     />
                     <View style={globalStyle.containerCreatorNameView}>
                       <Text style={globalStyle.containerCreatorName}>
@@ -218,9 +212,7 @@ export const SearchFilter = () => {
                         Creator
                       </Text>
                     </View>
-                    <Image
-                      source={require('openart/src/assets/images/icon/heart-icon.png')}
-                    />
+                    <Image source={require('@images/icon/heart-icon.png')} />
                   </View>
                 </View>
               </View>
@@ -241,7 +233,7 @@ export const SearchFilter = () => {
                     }}>
                     <Image
                       style={globalStyle.containerImage}
-                      source={require('../../assets/images/user-profile/art-3.png')}
+                      source={require('@images/user-profile/art-3.png')}
                     />
                   </TouchableOpacity>
 
@@ -249,7 +241,7 @@ export const SearchFilter = () => {
                   <View style={globalStyle.containerCreatorInfoView}>
                     <Image
                       style={globalStyle.containerAvatar}
-                      source={require('openart/src/assets/images/avatar/ava1.png')}
+                      source={require('@images/avatar/ava1.png')}
                     />
                     <View style={globalStyle.containerCreatorNameView}>
                       <Text style={globalStyle.containerCreatorName}>
@@ -259,9 +251,7 @@ export const SearchFilter = () => {
                         Creator
                       </Text>
                     </View>
-                    <Image
-                      source={require('openart/src/assets/images/icon/heart-icon.png')}
-                    />
+                    <Image source={require('@images/icon/heart-icon.png')} />
                   </View>
                 </View>
               </View>
@@ -275,7 +265,7 @@ export const SearchFilter = () => {
           </View>
         </View>
         <TouchableOpacity style={styles.loadMoreButton}>
-          <Image source={require('../../assets/images/icon/plus-icon.png')} />
+          <Image source={require('@images/icon/plus-icon.png')} />
           <Text style={styles.loadMoreButtonText}>Load more</Text>
         </TouchableOpacity>
         <Footer />

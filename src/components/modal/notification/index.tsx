@@ -1,7 +1,7 @@
 import React from 'react';
 import { Modal, Text, Image, TouchableOpacity, View } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
-import globalStyle from '../../../theme/globalStyle';
+import { globalStyle } from 'theme/globalStyle';
 import styles from './styles';
 
 interface Props {
@@ -27,9 +27,7 @@ export const Notification = (props: Props) => {
 
             <View style={styles.secondRow}>
               <TouchableOpacity style={globalStyle.flexRow}>
-                <Image
-                  source={require('../../../assets/images/notification/noti-1.png')}
-                />
+                <Image source={require('@images/notification/noti-1.png')} />
                 <View style={styles.item}>
                   <Text style={styles.itemText}>ETH received</Text>
                   <Text style={styles.itemPrice}>1.05 ETH recived</Text>
@@ -44,9 +42,7 @@ export const Notification = (props: Props) => {
 
             <View style={styles.secondRow}>
               <TouchableOpacity style={globalStyle.flexRow}>
-                <Image
-                  source={require('../../../assets/images/notification/noti-2.png')}
-                />
+                <Image source={require('@images/notification/noti-2.png')} />
                 <View style={styles.item}>
                   <Text style={styles.itemText}>Upload success</Text>
                   <Text style={styles.itemPrice}>ready to sell</Text>
@@ -61,9 +57,7 @@ export const Notification = (props: Props) => {
 
             <View style={styles.secondRow}>
               <TouchableOpacity style={globalStyle.flexRow}>
-                <Image
-                  source={require('../../../assets/images/notification/noti-3.png')}
-                />
+                <Image source={require('@images/notification/noti-3.png')} />
                 <View style={styles.item}>
                   <Text style={styles.itemText}>
                     Eric follow your collection
@@ -80,9 +74,7 @@ export const Notification = (props: Props) => {
 
             <View style={styles.secondRow}>
               <TouchableOpacity style={globalStyle.flexRow}>
-                <Image
-                  source={require('../../../assets/images/notification/noti-4.png')}
-                />
+                <Image source={require('@images/notification/noti-4.png')} />
                 <View style={styles.item}>
                   <Text style={styles.itemText}>ETH received</Text>
                   <Text style={styles.itemPrice}>1.05 ETH recived</Text>

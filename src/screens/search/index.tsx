@@ -7,12 +7,12 @@ import {
   Image,
   TextInput,
 } from 'react-native';
-import { Header } from '../../components';
+import { Header } from 'components';
 import { useNavigation } from '@react-navigation/native';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { faMagnifyingGlass, faXmark } from '@fortawesome/free-solid-svg-icons';
 import styles from './styles';
-import globalStyle from '../../theme/globalStyle';
+import { globalStyle } from 'theme/globalStyle';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 export const SearchPopup = () => {
@@ -54,7 +54,7 @@ export const SearchPopup = () => {
           <Text style={styles.itemTitle}>People</Text>
 
           <TouchableOpacity style={styles.item}>
-            <Image source={require('../../assets/images/search/ava1.png')} />
+            <Image source={require('@images/search/ava1.png')} />
             <View style={styles.secondRowItemTextView}>
               <Text style={styles.itemTextLarge}>Microsoft</Text>
               <Text style={styles.itemTextSmall}>@art</Text>
@@ -62,7 +62,7 @@ export const SearchPopup = () => {
           </TouchableOpacity>
 
           <TouchableOpacity style={styles.item}>
-            <Image source={require('../../assets/images/search/ava2.png')} />
+            <Image source={require('@images/search/ava2.png')} />
             <View style={styles.secondRowItemTextView}>
               <Text style={styles.itemTextLarge}>Marbella the Frenchie</Text>
               <Text style={styles.itemTextSmall}>@frenchies</Text>
@@ -70,7 +70,7 @@ export const SearchPopup = () => {
           </TouchableOpacity>
 
           <TouchableOpacity style={styles.item}>
-            <Image source={require('../../assets/images/search/ava3.png')} />
+            <Image source={require('@images/search/ava3.png')} />
             <View style={styles.secondRowItemTextView}>
               <Text style={styles.itemTextLarge}>Oliver</Text>
               <Text style={styles.itemTextSmall}>@oliver</Text>
@@ -82,7 +82,7 @@ export const SearchPopup = () => {
           <Text style={styles.itemTitle}>Items</Text>
 
           <TouchableOpacity style={styles.item}>
-            <Image source={require('../../assets/images/search/image1.png')} />
+            <Image source={require('@images/search/image1.png')} />
             <View style={styles.thirdRowItemTextView}>
               <Text style={styles.itemTextLarge}>Epic: Fight (1/4) (2009)</Text>
               <Text style={styles.itemTextSmall}>@lovetherobot</Text>
@@ -90,7 +90,7 @@ export const SearchPopup = () => {
           </TouchableOpacity>
 
           <TouchableOpacity style={styles.item}>
-            <Image source={require('../../assets/images/search/image2.png')} />
+            <Image source={require('@images/search/image2.png')} />
             <View style={styles.thirdRowItemTextView}>
               <Text style={styles.itemTextLarge}>Chamomile LTR (2021)</Text>
               <Text style={styles.itemTextSmall}>@lovetherobot</Text>
@@ -98,7 +98,7 @@ export const SearchPopup = () => {
           </TouchableOpacity>
 
           <TouchableOpacity style={styles.item}>
-            <Image source={require('../../assets/images/search/image3.png')} />
+            <Image source={require('@images/search/image3.png')} />
             <View style={styles.thirdRowItemTextView}>
               <Text style={styles.itemTextLarge}>Bliss (2021)</Text>
               <Text style={styles.itemTextSmall}>@lovetherobot</Text>

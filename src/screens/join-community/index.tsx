@@ -2,9 +2,9 @@ import React from 'react';
 import { View, Text, ScrollView, Image, TouchableOpacity } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { Footer } from '../../components';
-import { Header } from '../../components';
-import globalStyle from '../../theme/globalStyle';
+import { Footer } from 'components';
+import { Header } from 'components';
+import { globalStyle } from 'theme/globalStyle';
 import styles from './styles';
 
 export const JoinCommunity = () => {
@@ -34,7 +34,7 @@ export const JoinCommunity = () => {
           </TouchableOpacity>
           <Image
             style={globalStyle.selfCenter}
-            source={require('../../assets/images/icon/join-community-icon.png')}
+            source={require('@images/icon/join-community-icon.png')}
           />
           <Text style={styles.lastRowText}>
             Current number of profiles on the Community Upvote:

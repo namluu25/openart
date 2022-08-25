@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, ScrollView, TouchableOpacity, Image } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
-import { Header } from '../../components';
-import { Footer } from '../../components';
+import { Header } from 'components';
+import { Footer } from 'components';
 import axios from 'axios';
 import styles from './styles';
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -92,7 +92,7 @@ export const DiscoverCreator = () => {
             })}
           </>
           <TouchableOpacity style={styles.loadMoreButton}>
-            <Image source={require('../../assets/images/icon/plus-icon.png')} />
+            <Image source={require('@images/icon/plus-icon.png')} />
             <Text style={styles.loadMoreButtonText}>Load more</Text>
           </TouchableOpacity>
         </View>

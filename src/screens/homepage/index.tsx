@@ -1,20 +1,20 @@
 import React, { useState, useEffect } from 'react';
-import { ScrollView, View, Text, TouchableOpacity, Image } from 'react-native';
-import styles from './styles';
-import { SafeAreaView } from 'react-native-safe-area-context';
-import LinearGradient from 'react-native-linear-gradient';
 import axios from 'axios';
+import LinearGradient from 'react-native-linear-gradient';
+import { ScrollView, View, Text, TouchableOpacity, Image } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation } from '@react-navigation/native';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import { faMicrophone } from '@fortawesome/free-solid-svg-icons';
-import { Header } from '../../components/header';
-import { HotBid } from './hotBid';
+import styles from './styles';
 import { HotCollection } from './hotCollection';
-import { Footer } from '../../components/footer';
-import { PlaceBid } from '../../components/modal';
-import { ItemContainer } from '../../components/itemContainer/';
-import globalStyle from '@theme/globalStyle';
+import { HotBid } from './hotBid';
+import { Header } from 'components';
+import { Footer } from 'components';
+import { PlaceBid } from '@modal/placeBid';
+import { ItemContainer } from 'components';
+import { globalStyle } from 'theme/globalStyle';
 
 interface Items {
   id: number;
@@ -112,9 +112,7 @@ export const Home = () => {
           <View>
             <View style={styles.liveAuctionView}>
               <View style={styles.liveAuctionTextView}>
-                <Image
-                  source={require('openart/src/assets/images/icon/live-icon.png')}
-                />
+                <Image source={require('@images/icon/live-icon.png')} />
                 <Text style={styles.liveAuctionText}>Live auctions</Text>
               </View>
               <TouchableOpacity style={globalStyle.containerPriceButton}>

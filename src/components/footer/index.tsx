@@ -3,16 +3,13 @@ import { View, Image, TouchableOpacity, Text } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import { useNavigation } from '@react-navigation/native';
 import styles from './styles';
-import globalStyle from '../../theme/globalStyle';
+import { globalStyle } from 'theme/globalStyle';
 
 export const Footer = () => {
   const navigation = useNavigation();
   return (
     <View>
-      <Image
-        source={require('openart/src/assets/images/icon/Logo.png')}
-        style={styles.logo}
-      />
+      <Image source={require('@images/icon/Logo.png')} style={styles.logo} />
       <Text style={styles.slogan300}>
         The{' '}
         <Text style={styles.sloganSemiBold}>

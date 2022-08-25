@@ -7,7 +7,7 @@ import {
   TouchableOpacity,
   Dimensions,
 } from 'react-native';
-import globalStyle from '../../theme/globalStyle';
+import { globalStyle } from 'theme/globalStyle';
 import styles from './hotBid-styles';
 
 export const HotBid = () => {
@@ -17,9 +17,7 @@ export const HotBid = () => {
     <View style={styles.hotBid}>
       <View style={styles.titleView}>
         <View style={[globalStyle.flexRow, globalStyle.itemBaseline]}>
-          <Image
-            source={require('openart/src/assets/images/icon/fire-icon.png')}
-          />
+          <Image source={require('@images/icon/fire-icon.png')} />
           <Text style={styles.titleText}> Hot bid</Text>
         </View>
 
@@ -29,7 +27,7 @@ export const HotBid = () => {
               naviRef.current?.scrollTo({ x: 0, animated: true });
             }}>
             <Image
-              source={require('openart/src/assets/images/icon/back-arrow.png')}
+              source={require('@images/icon/back-arrow.png')}
               style={styles.leftArrow}
             />
           </TouchableOpacity>
@@ -38,9 +36,7 @@ export const HotBid = () => {
             onPress={() => {
               naviRef.current?.scrollTo({ x: screenWidth, animated: true });
             }}>
-            <Image
-              source={require('openart/src/assets/images/icon/forward-arrow.png')}
-            />
+            <Image source={require('@images/icon/forward-arrow.png')} />
           </TouchableOpacity>
         </View>
       </View>
@@ -53,20 +49,20 @@ export const HotBid = () => {
           <View>
             <Image
               // image
-              source={require('../../assets/images/hotbid/hotbid-1.png')}
+              source={require('@images/hotbid/hotbid-1.png')}
             />
             <View style={styles.followerAvatarView}>
               <Image
                 style={styles.firstFollower}
-                source={require('../../assets/images/avatar/ava2.png')}
+                source={require('@images/avatar/ava2.png')}
               />
               <Image
                 style={styles.secondFollower}
-                source={require('../../assets/images/avatar/ava10.png')}
+                source={require('@images/avatar/ava10.png')}
               />
               <Image
                 style={styles.thirdFollower}
-                source={require('../../assets/images/avatar/ava11.png')}
+                source={require('@images/avatar/ava11.png')}
               />
             </View>
           </View>
@@ -99,20 +95,20 @@ export const HotBid = () => {
           <View>
             <Image
               // image
-              source={require('../../assets/images/hotbid/hotbid-1.png')}
+              source={require('@images/hotbid/hotbid-1.png')}
             />
             <View style={styles.followerAvatarView}>
               <Image
                 style={styles.firstFollower}
-                source={require('../../assets/images/avatar/ava2.png')}
+                source={require('@images/avatar/ava2.png')}
               />
               <Image
                 style={styles.secondFollower}
-                source={require('../../assets/images/avatar/ava10.png')}
+                source={require('@images/avatar/ava10.png')}
               />
               <Image
                 style={styles.thirdFollower}
-                source={require('../../assets/images/avatar/ava11.png')}
+                source={require('@images/avatar/ava11.png')}
               />
             </View>
           </View>

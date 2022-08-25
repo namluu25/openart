@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { View, Image, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import { Account } from '../modal';
-import { Notification } from '../modal';
-import styles from '../header/styles';
-import globalStyle from '../../theme/globalStyle';
+import { Account } from '@modal/account';
+import { Notification } from '@modal/notification';
+import styles from './styles';
+import { globalStyle } from 'theme/globalStyle';
 
 export const Header = () => {
   const navigation = useNavigation();
@@ -16,7 +16,7 @@ export const Header = () => {
         onPress={() => {
           navigation.navigate('Home' as never, {} as never);
         }}>
-        <Image source={require('openart/src/assets/images/icon/Logo.png')} />
+        <Image source={require('@images/icon/Logo.png')} />
       </TouchableOpacity>
       <View style={globalStyle.flexRow}>
         <TouchableOpacity
@@ -24,23 +24,19 @@ export const Header = () => {
           style={
             visibleNotification ? styles.buttonBefore : styles.buttonAfter
           }>
-          <Image
-            source={require('openart/src/assets/images/icon/notification-icon.png')}
-          />
+          <Image source={require('@images/icon/notification-icon.png')} />
         </TouchableOpacity>
         <TouchableOpacity
           onPress={() => setVisibleAccount(true)}
           style={visibleAccount ? styles.buttonBefore : styles.buttonAfter}>
-          <Image
-            source={require('openart/src/assets/images/icon/people-icon.png')}
-          />
+          <Image source={require('@images/icon/people-icon.png')} />
         </TouchableOpacity>
 
         <TouchableOpacity
           onPress={() => {
             navigation.navigate('Menu' as never, {} as never);
           }}>
-          <Image source={require('openart/src/assets/images/icon/Menu.png')} />
+          <Image source={require('@images/icon/Menu.png')} />
         </TouchableOpacity>
       </View>
       <Account

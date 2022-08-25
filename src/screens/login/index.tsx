@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { faGoogle } from '@fortawesome/free-brands-svg-icons';
 import { useNavigation } from '@react-navigation/native';
 import styles from './styles';
-import globalStyle from '../../theme/globalStyle';
+import { globalStyle } from 'theme/globalStyle';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 GoogleSignin.configure({
@@ -39,7 +39,7 @@ export const Login = () => {
           navigation.navigate('Home' as never, {} as never);
         }}>
         <Image
-          source={require('../../assets/images/icon/Logo.png')}
+          source={require('@images/icon/Logo.png')}
           style={styles.logoImage}
         />
       </TouchableOpacity>

@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
-import { Header } from '../../components/header';
+import { Header } from 'components/header';
 import LinearGradient from 'react-native-linear-gradient';
 import { useNavigation } from '@react-navigation/native';
-import { ConnectWallet } from '../../components/modal';
+import { ConnectWallet } from '@modal/connectWallet';
 import styles from './styles';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
