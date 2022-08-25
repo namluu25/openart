@@ -9,7 +9,7 @@ interface Props {
   handleClose?: () => void;
 }
 
-export default function Place_bid(props: Props) {
+export const Place_bid = (props: Props) => {
   return (
     <>
       <Modal
@@ -72,4 +72,4 @@ export default function Place_bid(props: Props) {
       </Modal>
     </>
   );
-}
+};

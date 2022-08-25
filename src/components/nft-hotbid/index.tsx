@@ -10,7 +10,7 @@ import {
 import globalStyle from '../../theme/globalStyle';
 import styles from './styles';
 
-export default function HotBid() {
+export const HotBid = () => {
   const naviRef = useRef<ScrollView>(null);
   const screenWidth = Dimensions.get('window').width;
   return (
@@ -142,4 +142,4 @@ export default function HotBid() {
       </ScrollView>
     </View>
   );
-}
+};

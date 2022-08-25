@@ -4,6 +4,7 @@ import { useNavigation } from '@react-navigation/native';
 import axios from 'axios';
 import globalStyle from '../../theme/globalStyle';
 import styles from './styles';
+import { ItemContainer } from '../itemContainer';
 
 interface Items {
   id: number;
@@ -13,7 +14,7 @@ interface Items {
   image: string;
 }
 
-export default function LiveContainer() {
+export const LiveContainer = () => {
   const [apiData, setApiData] = useState<Array<Items>>([
     {
       id: 0,
@@ -52,7 +53,7 @@ export default function LiveContainer() {
         {apiData.slice(1).map((item: Items) => {
           return (
             <View key={item.id}>
-              <View style={[globalStyle.container]}>
+              {/* <View style={[globalStyle.container]}>
                 <View>
                   <TouchableOpacity
                     onPress={() => {
@@ -96,7 +97,15 @@ export default function LiveContainer() {
                     />
                   </View>
                 </View>
-              </View>
+              </View> */}
+              <ItemContainer
+                image={item.image}
+                name={item.name}
+                creator_name={item.creator_name}
+                avatar={item.avatar}
+                navi={'DetailSold'}
+              />
+
               <TouchableOpacity style={styles.button}>
                 {/* onPress={() => setDetail(!detail)} */}
                 {/* {detail ? ( */}
@@ -114,4 +123,4 @@ export default function LiveContainer() {
       </ScrollView>
     </>
   );
-}
+};

@@ -6,8 +6,8 @@ import {
   StatusBar,
   TouchableOpacity,
   Image,
+  TextInput,
 } from 'react-native';
-import { TextInput } from 'react-native-paper';
 import LinearGradient from 'react-native-linear-gradient';
 import { GoogleSignin } from '@react-native-google-signin/google-signin';
 import auth from '@react-native-firebase/auth';
@@ -37,53 +37,50 @@ async function onGoogleButtonPress() {
   }
 }
 
-export default function Login() {
+export const Login = () => {
   const navigation = useNavigation();
   return (
-    <View style={globalStyle.AndroidSafeArea}>
-      <SafeAreaView style={globalStyle.flex}>
-        <StatusBar barStyle="light-content" translucent={true} />
-        <TouchableOpacity
-          onPress={() => {
-            navigation.navigate('Home' as never, {} as never);
-          }}>
-          <Image
-            source={require('../../assets/images/icon/Logo.png')}
-            style={styles.logoImage}
-          />
+    <View>
+      <TouchableOpacity
+        onPress={() => {
+          navigation.navigate('Home' as never, {} as never);
+        }}>
+        <Image
+          source={require('../../assets/images/icon/Logo.png')}
+          style={styles.logoImage}
+        />
+      </TouchableOpacity>
+      <View style={styles.inputView}>
+        <TextInput
+          style={styles.inputBox}
+          placeholderTextColor="#FCFCFC"
+          placeholder="Email address or phone number"
+        />
+        <TextInput
+          style={styles.inputBox}
+          placeholderTextColor="#FCFCFC"
+          placeholder="Password"
+        />
+      </View>
+
+      <View style={styles.buttonView}>
+        <TouchableOpacity>
+          <LinearGradient
+            colors={['#0038F5', '#9F03FF']}
+            useAngle={true}
+            angle={114.44}
+            style={globalStyle.buttonRadius}>
+            <Text style={styles.buttonText}>Login</Text>
+          </LinearGradient>
         </TouchableOpacity>
-        <View style={styles.inputView}>
-          <TextInput
-            style={styles.inputBox}
-            placeholderTextColor="#FCFCFC"
-            placeholder="Email address or phone number"
-          />
-          <TextInput
-            style={styles.inputBox}
-            placeholderTextColor="#FCFCFC"
-            placeholder="Password"
-          />
-        </View>
 
-        <View style={styles.buttonView}>
-          <TouchableOpacity>
-            <LinearGradient
-              colors={['#0038F5', '#9F03FF']}
-              useAngle={true}
-              angle={114.44}
-              style={globalStyle.buttonRadius}>
-              <Text style={styles.buttonText}>Login</Text>
-            </LinearGradient>
-          </TouchableOpacity>
-
-          <TouchableOpacity
-            style={styles.googleButton}
-            onPress={() => onGoogleButtonPress()}>
-            <FontAwesomeIcon icon={faGoogle} style={styles.googleButtonLogo} />
-            <Text style={styles.googleButtonText}>Sign in with Google</Text>
-          </TouchableOpacity>
-        </View>
-      </SafeAreaView>
+        <TouchableOpacity
+          style={styles.googleButton}
+          onPress={() => onGoogleButtonPress()}>
+          <FontAwesomeIcon icon={faGoogle} style={styles.googleButtonLogo} />
+          <Text style={styles.googleButtonText}>Sign in with Google</Text>
+        </TouchableOpacity>
+      </View>
     </View>
   );
-}
+};

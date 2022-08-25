@@ -9,7 +9,7 @@ interface Props {
   handleClose?: () => void;
 }
 
-export default function Notification(props: Props) {
+export const Notification = (props: Props) => {
   return (
     <>
       <Modal
@@ -111,4 +111,4 @@ export default function Notification(props: Props) {
       </Modal>
     </>
   );
-}
+};

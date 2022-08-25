@@ -10,7 +10,7 @@ interface Props {
   handleClose?: () => void;
 }
 
-export default function Account(props: Props) {
+export const Account = (props: Props) => {
   const [isSwitchOn, setIsSwitchOn] = React.useState(false);
   const onToggleSwitch = () => setIsSwitchOn(!isSwitchOn);
   const navigation = useNavigation();
@@ -132,4 +132,4 @@ export default function Account(props: Props) {
       </Modal>
     </>
   );
-}
+};

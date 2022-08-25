@@ -9,7 +9,7 @@ interface Props {
   handleClose?: () => void;
 }
 
-export default function Connect_wallet(props: Props) {
+export const Connect_wallet = (props: Props) => {
   return (
     <>
       <Modal
@@ -57,4 +57,4 @@ export default function Connect_wallet(props: Props) {
       </Modal>
     </>
   );
-}
+};

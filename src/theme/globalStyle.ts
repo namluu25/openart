@@ -4,7 +4,7 @@ import { color } from './color';
 export default StyleSheet.create({
   AndroidSafeArea: {
     flex: 1,
-    paddingTop: Platform.OS === 'android' ? 50 : 0,
+    paddingTop: Platform.OS === 'android' ? 35 : 0,
     backgroundColor: color.grayTitle,
   },
   containerImage: {

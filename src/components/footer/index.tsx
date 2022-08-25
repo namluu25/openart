@@ -5,7 +5,7 @@ import { useNavigation } from '@react-navigation/native';
 import styles from './styles';
 import globalStyle from '../../theme/globalStyle';
 
-export default function Footer() {
+export const Footer = () => {
   const navigation = useNavigation();
   return (
     <View>
@@ -92,4 +92,4 @@ export default function Footer() {
       </View>
     </View>
   );
-}
+};

@@ -3,7 +3,7 @@ import { View, Text, Image, TouchableOpacity } from 'react-native';
 import globalStyle from '../../theme/globalStyle';
 import styles from './styles';
 
-export default function HotCollection() {
+export const HotCollection = () => {
   return (
     <>
       <View
@@ -92,4 +92,4 @@ export default function HotCollection() {
       </View>
     </>
   );
-}
+};

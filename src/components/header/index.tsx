@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { View, Image, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import Account from '../modal-account';
-import Notification from '../modal-notification';
+import { Account } from '../modal-account';
+import { Notification } from '../modal-notification';
 import styles from '../header/styles';
 import globalStyle from '../../theme/globalStyle';
 
-export default function Header() {
+export const Header = () => {
   const navigation = useNavigation();
   const [visibleAccount, setVisibleAccount] = useState(false);
   const [visibleNotification, setVisibleNotification] = useState(false);
@@ -53,4 +53,4 @@ export default function Header() {
       />
     </View>
   );
-}
+};

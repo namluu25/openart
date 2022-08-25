@@ -13,7 +13,7 @@ interface Items {
   image: string;
 }
 
-export default function FrontProduct() {
+export const FrontProduct = () => {
   const [apiData, setApiData] = useState<Array<Items>>([
     {
       id: 0,
@@ -80,4 +80,4 @@ export default function FrontProduct() {
       </View>
     </>
   );
-}
+};

@@ -25,7 +25,7 @@ interface Items {
   image: string;
 }
 
-export default function TestAPI() {
+export const TestAPI = () => {
   const [apiData, setApiData] = useState<Array<Items>>([
     {
       id: 0,
@@ -96,7 +96,7 @@ export default function TestAPI() {
       </SafeAreaView>
     </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
   AndroidSafeArea: {
