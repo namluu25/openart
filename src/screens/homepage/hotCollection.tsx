@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, Image, TouchableOpacity } from 'react-native';
 import globalStyle from '../../theme/globalStyle';
-import styles from './styles';
+import styles from './hotCollection-styles';
 
 export const HotCollection = () => {
   return (

@@ -1,19 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import {
-  View,
-  Text,
-  SafeAreaView,
-  StatusBar,
-  ScrollView,
-  TouchableOpacity,
-  Image,
-} from 'react-native';
+import { View, Text, ScrollView, TouchableOpacity, Image } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
-import Header from '../../components/header';
-import Footer from '../../components/footer';
+import { Header } from '../../components';
+import { Footer } from '../../components';
 import axios from 'axios';
-import globalStyle from '../../theme/globalStyle';
 import styles from './styles';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 interface Items {
   id: number;
@@ -44,7 +36,7 @@ export const DiscoverCreator = () => {
       .catch(error => console.log(error));
   }, []);
   return (
-    <View>
+    <SafeAreaView>
       <Header />
       <ScrollView>
         <View style={styles.discover}>
@@ -107,6 +99,6 @@ export const DiscoverCreator = () => {
 
         <Footer />
       </ScrollView>
-    </View>
+    </SafeAreaView>
   );
 };

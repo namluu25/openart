@@ -104,4 +104,38 @@ export default StyleSheet.create({
     alignSelf: 'center',
     marginBottom: 82,
   },
+  button: {
+    borderRadius: 51,
+    marginTop: 12,
+    backgroundColor: color.grayBody,
+    marginBottom: 40,
+  },
+  buttonTextBold: {
+    fontSize: 24,
+    fontFamily: 'Epilogue',
+    textAlign: 'center',
+    color: color.grayOffWhite,
+    fontWeight: '700',
+  },
+  liveAuctionView: {
+    flex: 1,
+    flexDirection: 'row',
+    marginTop: 86,
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginBottom: 22,
+  },
+  liveAuctionTextView: {
+    flexDirection: 'row',
+    paddingVertical: 15,
+    justifyContent: 'center',
+    alignItems: 'baseline',
+  },
+  liveAuctionText: {
+    fontSize: 24,
+    fontFamily: 'Epilogue',
+    color: color.grayBG,
+    fontWeight: '700',
+    marginLeft: 7,
+  },
 });

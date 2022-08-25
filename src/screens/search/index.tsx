@@ -2,24 +2,23 @@ import React from 'react';
 import {
   View,
   Text,
-  SafeAreaView,
-  StatusBar,
   ScrollView,
   TouchableOpacity,
   Image,
   TextInput,
 } from 'react-native';
-import Header from '../../components/header';
+import { Header } from '../../components';
 import { useNavigation } from '@react-navigation/native';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { faMagnifyingGlass, faXmark } from '@fortawesome/free-solid-svg-icons';
 import styles from './styles';
 import globalStyle from '../../theme/globalStyle';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 export const SearchPopup = () => {
   const navigation = useNavigation();
   return (
-    <View>
+    <SafeAreaView>
       <Header />
       <ScrollView style={styles.searchPopup}>
         <View
@@ -107,6 +106,6 @@ export const SearchPopup = () => {
           </TouchableOpacity>
         </View>
       </ScrollView>
-    </View>
+    </SafeAreaView>
   );
 };

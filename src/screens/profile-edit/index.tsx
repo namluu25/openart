@@ -2,22 +2,21 @@ import React from 'react';
 import {
   View,
   Text,
-  SafeAreaView,
-  StatusBar,
   ScrollView,
   TouchableOpacity,
   Image,
   TextInput,
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
-import Header from '../../components/header';
-import Footer from '../../components/footer';
+import { Header } from '../../components';
+import { Footer } from '../../components';
 import styles from './styles';
 import globalStyle from '../../theme/globalStyle';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 export const ProfileEdit = () => {
   return (
-    <View>
+    <SafeAreaView>
       <Header />
       <ScrollView>
         <View>
@@ -199,6 +198,6 @@ export const ProfileEdit = () => {
 
         <Footer />
       </ScrollView>
-    </View>
+    </SafeAreaView>
   );
 };

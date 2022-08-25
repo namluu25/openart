@@ -2,8 +2,6 @@ import React from 'react';
 import {
   View,
   Text,
-  SafeAreaView,
-  StatusBar,
   ScrollView,
   TouchableOpacity,
   Image,
@@ -11,19 +9,20 @@ import {
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import { useNavigation } from '@react-navigation/native';
-import Header from '../../components/header';
-import Footer from '../../components/footer';
+import { Header } from '../../components';
+import { Footer } from '../../components';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import { faMicrophone } from '@fortawesome/free-solid-svg-icons';
 import Slider from '@react-native-community/slider';
 import styles from './styles';
 import globalStyle from '../../theme/globalStyle';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 export const SearchFilter = () => {
   const navigation = useNavigation();
   return (
-    <View>
+    <SafeAreaView>
       <Header />
       <ScrollView>
         <View style={styles.searchFilter}>
@@ -281,6 +280,6 @@ export const SearchFilter = () => {
         </TouchableOpacity>
         <Footer />
       </ScrollView>
-    </View>
+    </SafeAreaView>
   );
 };

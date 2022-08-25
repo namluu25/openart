@@ -1,24 +1,49 @@
-import React, { useState } from 'react';
-import { ScrollView, View, Text, TouchableOpacity } from 'react-native';
+import React, { useState, useEffect } from 'react';
+import { ScrollView, View, Text, TouchableOpacity, Image } from 'react-native';
+import styles from './styles';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import LinearGradient from 'react-native-linear-gradient';
+import axios from 'axios';
 import { useNavigation } from '@react-navigation/native';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import { faMicrophone } from '@fortawesome/free-solid-svg-icons';
 import { Header } from '../../components/header';
-import { FrontProduct } from '../../components/nft-container';
-import { LiveContainer } from '../../components/nft-live-auction-container';
-import { HotBid } from '../../components/nft-hotbid';
-import { HotCollection } from '../../components/nft-hotcollection';
+import { HotBid } from './hotBid';
+import { HotCollection } from './hotCollection';
 import { Footer } from '../../components/footer';
-import LinearGradient from 'react-native-linear-gradient';
-import { Place_bid } from '../../components/modal-place-bid/index';
-import styles from './styles';
-import globalStyle from '../../theme/globalStyle';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import { PlaceBid } from '../../components/modal';
+import { ItemContainer } from '../../components/itemContainer/';
+import globalStyle from '@theme/globalStyle';
+
+interface Items {
+  id: number;
+  name: string;
+  avatar: string;
+  creator_name: string;
+  image: string;
+}
 
 export const Home = () => {
   const [visible, setVisible] = useState(false);
   const navigation = useNavigation();
+  const [apiData, setApiData] = useState<Array<Items>>([
+    {
+      id: 0,
+      name: ' ',
+      avatar: ' ',
+      creator_name: ' ',
+      image: ' ',
+    },
+  ]);
+  useEffect(() => {
+    axios
+      .get('https://62fa6791ffd7197707ebe3f2.mockapi.io/homepage')
+      .then(res => {
+        setApiData(res.data);
+      })
+      .catch(error => console.log(error));
+  }, []);
   return (
     <SafeAreaView>
       <Header />
@@ -54,7 +79,13 @@ export const Home = () => {
             </TouchableOpacity>
           </View>
 
-          <FrontProduct />
+          <ItemContainer
+            image={apiData[0]?.image}
+            name={apiData[0]?.name}
+            avatar={apiData[0]?.avatar}
+            creator_name={apiData[0]?.creator_name}
+            navi={'DetailsAuction'}
+          />
 
           <View style={styles.priceView}>
             <Text style={styles.priceViewFirst}>Reserve Price</Text>
@@ -75,13 +106,45 @@ export const Home = () => {
             <TouchableOpacity style={styles.normalButton}>
               <Text style={styles.buttonText}>View Artwork</Text>
             </TouchableOpacity>
-            <Place_bid
-              visbile={visible}
-              handleClose={() => setVisible(false)}
-            />
+            <PlaceBid visbile={visible} handleClose={() => setVisible(false)} />
           </View>
 
-          <LiveContainer />
+          <View>
+            <View style={styles.liveAuctionView}>
+              <View style={styles.liveAuctionTextView}>
+                <Image
+                  source={require('openart/src/assets/images/icon/live-icon.png')}
+                />
+                <Text style={styles.liveAuctionText}>Live auctions</Text>
+              </View>
+              <TouchableOpacity style={globalStyle.containerPriceButton}>
+                <Text style={globalStyle.containerPriceButtonText}>
+                  View all
+                </Text>
+              </TouchableOpacity>
+            </View>
+            <ScrollView>
+              {apiData.slice(1).map((item: Items) => {
+                return (
+                  <View key={item.id}>
+                    <ItemContainer
+                      image={item.image}
+                      name={item.name}
+                      creator_name={item.creator_name}
+                      avatar={item.avatar}
+                      navi={'DetailSold'}
+                    />
+                    <TouchableOpacity style={styles.button}>
+                      <Text style={styles.buttonText}>
+                        Sold For
+                        <Text style={styles.buttonTextBold}> 2.00 ETH</Text>
+                      </Text>
+                    </TouchableOpacity>
+                  </View>
+                );
+              })}
+            </ScrollView>
+          </View>
 
           <HotBid />
 

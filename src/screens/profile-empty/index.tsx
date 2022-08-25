@@ -1,21 +1,14 @@
 import React from 'react';
-import {
-  View,
-  Text,
-  SafeAreaView,
-  StatusBar,
-  ScrollView,
-  TouchableOpacity,
-  Image,
-} from 'react-native';
-import Header from '../../components/header';
-import Footer from '../../components/footer';
+import { View, Text, ScrollView, TouchableOpacity, Image } from 'react-native';
+import { Header } from '../../components';
+import { Footer } from '../../components';
 import styles from './styles';
 import globalStyle from '../../theme/globalStyle';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 export const ProfileEmpty = () => {
   return (
-    <View>
+    <SafeAreaView>
       <Header />
       <ScrollView>
         <View>
@@ -82,6 +75,6 @@ export const ProfileEmpty = () => {
         </TouchableOpacity>
         <Footer />
       </ScrollView>
-    </View>
+    </SafeAreaView>
   );
 };

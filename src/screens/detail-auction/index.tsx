@@ -1,19 +1,12 @@
 import React, { useState } from 'react';
-import {
-  View,
-  Text,
-  SafeAreaView,
-  ScrollView,
-  Image,
-  TouchableOpacity,
-  StatusBar,
-} from 'react-native';
+import { View, Text, ScrollView, Image, TouchableOpacity } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import { Header } from '../../components/header';
 import { Footer } from '../../components/footer';
-import { Place_bid } from '../../components/modal-place-bid';
+import { PlaceBid } from '../../components/modal';
 import globalStyle from '../../theme/globalStyle';
 import styles from './styles';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 export const DetailsAuction = () => {
   const [visible, setVisible] = useState(false);
@@ -187,7 +180,7 @@ export const DetailsAuction = () => {
             />
           </TouchableOpacity>
         </View>
-        <Place_bid visbile={visible} handleClose={() => setVisible(false)} />
+        <PlaceBid visbile={visible} handleClose={() => setVisible(false)} />
         <Footer />
       </ScrollView>
     </SafeAreaView>

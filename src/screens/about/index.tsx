@@ -7,14 +7,15 @@ import {
   Image,
   ScrollView,
 } from 'react-native';
-import Footer from '../../components/footer';
-import Header from '../../components/header';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import { Footer } from '../../components';
+import { Header } from '../../components';
 import globalStyle from '../../theme/globalStyle';
 import styles from './styles';
 
 export const About = () => {
   return (
-    <View>
+    <SafeAreaView>
       <Header />
 
       <ScrollView>
@@ -79,6 +80,6 @@ export const About = () => {
         </View>
         <Footer />
       </ScrollView>
-    </View>
+    </SafeAreaView>
   );
 };

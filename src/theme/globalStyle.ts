@@ -4,7 +4,7 @@ import { color } from './color';
 export default StyleSheet.create({
   AndroidSafeArea: {
     flex: 1,
-    paddingTop: Platform.OS === 'android' ? 35 : 0,
+    paddingTop: Platform.OS === 'android' ? 17 : 0,
     backgroundColor: color.grayTitle,
   },
   containerImage: {
@@ -53,6 +53,22 @@ export default StyleSheet.create({
   containerCreatorNameView: {
     flex: 1,
     marginLeft: 12,
+  },
+  containerPriceButton: {
+    borderRadius: 8,
+    borderColor: color.grayPlaceholder,
+    borderWidth: 1,
+    alignSelf: 'center',
+  },
+  containerPriceButtonText: {
+    fontSize: 16,
+    fontFamily: 'Epilogue',
+    textAlign: 'center',
+    paddingVertical: 9,
+    paddingHorizontal: 30,
+    color: color.grayBG,
+    fontWeight: '400',
+    lineHeight: 22,
   },
   displayRegularLarge: {
     fontSize: 40,

@@ -1,22 +1,15 @@
 import React from 'react';
-import {
-  View,
-  Text,
-  SafeAreaView,
-  ScrollView,
-  Image,
-  TouchableOpacity,
-  StatusBar,
-} from 'react-native';
+import { View, Text, ScrollView, Image, TouchableOpacity } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
-import Header from '../../components/header';
-import Footer from '../../components/footer/index';
+import { Header } from '../../components';
+import { Footer } from '../../components';
 import styles from './styles';
 import globalStyle from '../../theme/globalStyle';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 export const DetailsCurrentBid = () => {
   return (
-    <View>
+    <SafeAreaView>
       <Header />
 
       <ScrollView>
@@ -220,6 +213,6 @@ export const DetailsCurrentBid = () => {
         </View>
         <Footer />
       </ScrollView>
-    </View>
+    </SafeAreaView>
   );
 };

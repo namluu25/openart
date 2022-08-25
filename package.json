@@ -8,7 +8,7 @@
     "start": "react-native start",
     "test": "jest",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
-    "splash" : "yarn react-native generate-bootsplash src/assets/images/icon/Logo.png --background-color=191838 --logo-width=150  --assets-path=assets --flavor=main"
+    "splash": "yarn react-native generate-bootsplash src/assets/images/icon/Logo.png --background-color=191838 --logo-width=150  --assets-path=assets --flavor=main"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.1.2",
@@ -27,6 +27,7 @@
     "@rneui/themed": "^4.0.0-rc.6",
     "axios": "^0.27.2",
     "modal-react-native-web": "^0.2.0",
+    "module-alias": "^2.2.2",
     "react": "18.0.0",
     "react-native": "^0.69.3",
     "react-native-bootsplash": "^4.3.2",
@@ -52,6 +53,7 @@
     "@typescript-eslint/eslint-plugin": "^5.29.0",
     "@typescript-eslint/parser": "^5.29.0",
     "babel-jest": "^26.6.3",
+    "babel-plugin-module-resolver": "^4.1.0",
     "eslint": "^7.32.0",
     "jest": "^26.6.3",
     "metro-react-native-babel-preset": "^0.70.3",

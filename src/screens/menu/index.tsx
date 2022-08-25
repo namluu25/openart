@@ -1,23 +1,17 @@
 import React, { useState } from 'react';
-import {
-  View,
-  Text,
-  SafeAreaView,
-  StatusBar,
-  TouchableOpacity,
-} from 'react-native';
-import Header from '../../components/header';
+import { View, Text, TouchableOpacity } from 'react-native';
+import { Header } from '../../components/header';
 import LinearGradient from 'react-native-linear-gradient';
 import { useNavigation } from '@react-navigation/native';
-import Connect_wallet from '../../components/modal-connect-wallet';
-import globalStyle from '../../theme/globalStyle';
+import { ConnectWallet } from '../../components/modal';
 import styles from './styles';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 export const Menu = () => {
   const [visible, setVisible] = useState(false);
   const navigation = useNavigation();
   return (
-    <View>
+    <SafeAreaView>
       <Header />
 
       <View style={styles.menu}>
@@ -54,7 +48,7 @@ export const Menu = () => {
           <Text style={styles.buttonText}>Connect wallet</Text>
         </LinearGradient>
       </TouchableOpacity>
-      <Connect_wallet visbile={visible} handleClose={() => setVisible(false)} />
-    </View>
+      <ConnectWallet visbile={visible} handleClose={() => setVisible(false)} />
+    </SafeAreaView>
   );
 };

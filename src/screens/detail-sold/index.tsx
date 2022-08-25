@@ -1,15 +1,7 @@
 import React from 'react';
-import {
-  View,
-  Text,
-  // SafeAreaView,
-  ScrollView,
-  Image,
-  TouchableOpacity,
-  StatusBar,
-} from 'react-native';
-import Header from '../../components/header';
-import Footer from '../../components/footer';
+import { View, Text, ScrollView, Image, TouchableOpacity } from 'react-native';
+import { Header } from '../../components';
+import { Footer } from '../../components';
 import styles from './styles';
 import globalStyle from '../../theme/globalStyle';
 import { SafeAreaView } from 'react-native-safe-area-context';

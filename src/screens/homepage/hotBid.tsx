@@ -8,7 +8,7 @@ import {
   Dimensions,
 } from 'react-native';
 import globalStyle from '../../theme/globalStyle';
-import styles from './styles';
+import styles from './hotBid-styles';
 
 export const HotBid = () => {
   const naviRef = useRef<ScrollView>(null);

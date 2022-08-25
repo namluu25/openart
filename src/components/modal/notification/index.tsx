@@ -1,7 +1,7 @@
 import React from 'react';
 import { Modal, Text, Image, TouchableOpacity, View } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
-import globalStyle from '../../theme/globalStyle';
+import globalStyle from '../../../theme/globalStyle';
 import styles from './styles';
 
 interface Props {
@@ -28,7 +28,7 @@ export const Notification = (props: Props) => {
             <View style={styles.secondRow}>
               <TouchableOpacity style={globalStyle.flexRow}>
                 <Image
-                  source={require('../../assets/images/notification/noti-1.png')}
+                  source={require('../../../assets/images/notification/noti-1.png')}
                 />
                 <View style={styles.item}>
                   <Text style={styles.itemText}>ETH received</Text>
@@ -45,7 +45,7 @@ export const Notification = (props: Props) => {
             <View style={styles.secondRow}>
               <TouchableOpacity style={globalStyle.flexRow}>
                 <Image
-                  source={require('../../assets/images/notification/noti-2.png')}
+                  source={require('../../../assets/images/notification/noti-2.png')}
                 />
                 <View style={styles.item}>
                   <Text style={styles.itemText}>Upload success</Text>
@@ -62,7 +62,7 @@ export const Notification = (props: Props) => {
             <View style={styles.secondRow}>
               <TouchableOpacity style={globalStyle.flexRow}>
                 <Image
-                  source={require('../../assets/images/notification/noti-3.png')}
+                  source={require('../../../assets/images/notification/noti-3.png')}
                 />
                 <View style={styles.item}>
                   <Text style={styles.itemText}>
@@ -81,7 +81,7 @@ export const Notification = (props: Props) => {
             <View style={styles.secondRow}>
               <TouchableOpacity style={globalStyle.flexRow}>
                 <Image
-                  source={require('../../assets/images/notification/noti-4.png')}
+                  source={require('../../../assets/images/notification/noti-4.png')}
                 />
                 <View style={styles.item}>
                   <Text style={styles.itemText}>ETH received</Text>

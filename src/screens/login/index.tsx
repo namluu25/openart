@@ -1,13 +1,5 @@
 import React from 'react';
-import {
-  View,
-  Text,
-  SafeAreaView,
-  StatusBar,
-  TouchableOpacity,
-  Image,
-  TextInput,
-} from 'react-native';
+import { View, Text, TouchableOpacity, Image, TextInput } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import { GoogleSignin } from '@react-native-google-signin/google-signin';
 import auth from '@react-native-firebase/auth';
@@ -16,6 +8,7 @@ import { faGoogle } from '@fortawesome/free-brands-svg-icons';
 import { useNavigation } from '@react-navigation/native';
 import styles from './styles';
 import globalStyle from '../../theme/globalStyle';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 GoogleSignin.configure({
   webClientId:
@@ -40,7 +33,7 @@ async function onGoogleButtonPress() {
 export const Login = () => {
   const navigation = useNavigation();
   return (
-    <View>
+    <SafeAreaView>
       <TouchableOpacity
         onPress={() => {
           navigation.navigate('Home' as never, {} as never);
@@ -81,6 +74,6 @@ export const Login = () => {
           <Text style={styles.googleButtonText}>Sign in with Google</Text>
         </TouchableOpacity>
       </View>
-    </View>
+    </SafeAreaView>
   );
 };

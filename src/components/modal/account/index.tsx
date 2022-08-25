@@ -3,7 +3,7 @@ import { Modal, Text, Image, TouchableOpacity, View } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { Switch } from 'react-native-paper';
 import styles from './styles';
-import globalStyle from '../../theme/globalStyle';
+import globalStyle from '../../../theme/globalStyle';
 
 interface Props {
   visbile?: boolean;
@@ -36,7 +36,7 @@ export const Account = (props: Props) => {
                 }}>
                 <Image
                   style={styles.avatar}
-                  source={require('../../assets/images/avatar/ava12.png')}
+                  source={require('../../../assets/images/avatar/ava12.png')}
                 />
               </TouchableOpacity>
               <View style={globalStyle.selfCenter}>
@@ -53,7 +53,7 @@ export const Account = (props: Props) => {
                   </TouchableOpacity>
                   <TouchableOpacity>
                     <Image
-                      source={require('../../assets/images/icon/copy-icon.png')}
+                      source={require('../../../assets/images/icon/copy-icon.png')}
                     />
                   </TouchableOpacity>
                 </View>
@@ -73,7 +73,7 @@ export const Account = (props: Props) => {
                   <Text style={styles.balance}>5.000 ETH</Text>
                   <TouchableOpacity>
                     <Image
-                      source={require('../../assets/images/icon/hide-icon.png')}
+                      source={require('../../../assets/images/icon/hide-icon.png')}
                     />
                   </TouchableOpacity>
                 </View>
@@ -87,25 +87,25 @@ export const Account = (props: Props) => {
                 }}
                 style={styles.touchableLine}>
                 <Image
-                  source={require('../../assets/images/icon/people-icon.png')}
+                  source={require('../../../assets/images/icon/people-icon.png')}
                 />
                 <Text style={styles.titleLine}>My account</Text>
               </TouchableOpacity>
               <TouchableOpacity style={styles.touchableLine}>
                 <Image
-                  source={require('../../assets/images/icon/picture-icon.png')}
+                  source={require('../../../assets/images/icon/picture-icon.png')}
                 />
                 <Text style={styles.titleLine}>My items</Text>
               </TouchableOpacity>
               <TouchableOpacity style={styles.touchableLine}>
                 <Image
-                  source={require('../../assets/images/icon/invoice-icon.png')}
+                  source={require('../../../assets/images/icon/invoice-icon.png')}
                 />
                 <Text style={styles.titleLine}>My invoice</Text>
               </TouchableOpacity>
               <TouchableOpacity style={styles.touchableLine}>
                 <Image
-                  source={require('../../assets/images/icon/back-arrow.png')}
+                  source={require('../../../assets/images/icon/back-arrow.png')}
                 />
                 <Text style={styles.titleLine}>Sign out</Text>
               </TouchableOpacity>

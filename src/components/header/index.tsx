@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { View, Image, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import { Account } from '../modal-account';
-import { Notification } from '../modal-notification';
+import { Account } from '../modal';
+import { Notification } from '../modal';
 import styles from '../header/styles';
 import globalStyle from '../../theme/globalStyle';
 

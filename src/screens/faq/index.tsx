@@ -1,21 +1,13 @@
 import React from 'react';
-import {
-  View,
-  Text,
-  SafeAreaView,
-  StatusBar,
-  ScrollView,
-  Image,
-  TouchableOpacity,
-} from 'react-native';
-import Footer from '../../components/footer';
-import Header from '../../components/header';
-import globalStyle from '../../theme/globalStyle';
+import { View, Text, ScrollView, Image, TouchableOpacity } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import { Footer } from '../../components';
+import { Header } from '../../components';
 import styles from './styles';
 
 export const FAQ = () => {
   return (
-    <View>
+    <SafeAreaView>
       <Header />
 
       <ScrollView>
@@ -64,6 +56,6 @@ export const FAQ = () => {
 
         <Footer />
       </ScrollView>
-    </View>
+    </SafeAreaView>
   );
 };

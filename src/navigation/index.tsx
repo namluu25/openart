@@ -1,4 +1,5 @@
 import React from 'react';
+import { StatusBar } from 'react-native';
 import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import RNBootSplash from 'react-native-bootsplash';
@@ -18,7 +19,7 @@ import {
   SearchFilter,
   SearchPopup,
   Login,
-} from '../screens/';
+} from '../screens';
 import { ItemContainer } from '../components';
 
 const MyTheme = {
@@ -31,11 +32,16 @@ const MyTheme = {
 
 const Stack = createNativeStackNavigator();
 
-export const AppContainer = () => {
+export const AppNavigation = () => {
   return (
     <NavigationContainer
       theme={MyTheme}
       onReady={() => RNBootSplash.hide({ fade: true })}>
+      <StatusBar
+        barStyle="light-content"
+        translucent={true}
+        backgroundColor="transparent"
+      />
       <Stack.Navigator
         initialRouteName="Home"
         screenOptions={{ headerShown: false }}>

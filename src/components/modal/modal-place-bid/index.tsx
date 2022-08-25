@@ -1,7 +1,7 @@
 import React from 'react';
 import { Modal, Text, Image, TouchableOpacity, View } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
-import globalStyle from '../../theme/globalStyle';
+import globalStyle from '../../../theme/globalStyle';
 import styles from './styles';
 
 interface Props {
@@ -9,7 +9,7 @@ interface Props {
   handleClose?: () => void;
 }
 
-export const Place_bid = (props: Props) => {
+export const PlaceBid = (props: Props) => {
   return (
     <>
       <Modal
@@ -26,7 +26,7 @@ export const Place_bid = (props: Props) => {
               <Text style={styles.textFirstRow}>Place a bid</Text>
               <TouchableOpacity onPress={props.handleClose}>
                 <Image
-                  source={require('../../assets/images/icon/close-icon.png')}
+                  source={require('../../../assets/images/icon/close-icon.png')}
                 />
               </TouchableOpacity>
             </View>
