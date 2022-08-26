@@ -10,7 +10,11 @@ import {
 import { Header } from 'components';
 import { useNavigation } from '@react-navigation/native';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
-import { faMagnifyingGlass, faXmark } from '@fortawesome/free-solid-svg-icons';
+import {
+  faMagnifyingGlass,
+  faXmark,
+  faFilter,
+} from '@fortawesome/free-solid-svg-icons';
 import styles from './styles';
 import { globalStyle } from 'theme/globalStyle';
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -42,6 +46,12 @@ export const SearchPopup = () => {
               <FontAwesomeIcon icon={faXmark} style={styles.icon} />
             </TouchableOpacity>
           </View>
+          <TouchableOpacity
+            onPress={() => {
+              navigation.navigate('SearchFilter' as never, {} as never);
+            }}>
+            <FontAwesomeIcon icon={faFilter} style={styles.icon} />
+          </TouchableOpacity>
           <TouchableOpacity
             onPress={() => {
               navigation.navigate('Home' as never, {} as never);

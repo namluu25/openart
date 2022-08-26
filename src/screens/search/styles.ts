@@ -4,9 +4,9 @@ import { color } from 'theme/color';
 export default StyleSheet.create({
   searchPopup: { marginHorizontal: 24, marginTop: 14 },
   inputBox: {
-    paddingVertical: 14,
+    paddingVertical: 8,
     paddingLeft: 36,
-    width: 274,
+    width: 250,
     borderRadius: 8,
     backgroundColor: color.grayBody,
     color: color.grayBG,
@@ -35,7 +35,6 @@ export default StyleSheet.create({
     fontSize: 16,
     lineHeight: 24,
     color: color.grayOffWhite,
-    marginLeft: 11,
   },
   secondRowView: {
     marginTop: 20,

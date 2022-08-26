@@ -6,6 +6,8 @@ export default StyleSheet.create({
     borderRadius: 8,
     backgroundColor: color.grayBody,
     marginBottom: 20,
+    paddingLeft: 15,
+    color: '#FCFCFC',
   },
   logoImage: {
     alignSelf: 'center',

@@ -57,9 +57,8 @@ export const AppNavigation = () => {
         <Stack.Screen name="UserProfile" component={UserProfile} />
         <Stack.Screen name="ProfileEmpty" component={ProfileEmpty} />
         <Stack.Screen name="ProfileEdit" component={ProfileEdit} />
-        <Stack.Screen name="Search" component={SearchFilter} />
+        <Stack.Screen name="SearchFilter" component={SearchFilter} />
         <Stack.Screen name="SearchPopup" component={SearchPopup} />
-        {/* <Stack.Screen name="TestAPI" component={TestAPI} /> */}
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="ItemContainer" component={ItemContainer} />
       </Stack.Navigator>

@@ -63,6 +63,7 @@ export default StyleSheet.create({
     paddingLeft: 24,
     borderRadius: 8,
     backgroundColor: color.grayBody,
+    color: color.grayBG,
   },
   inputCategory: { marginBottom: 40 },
   firstCategoryInputBox: {
@@ -71,6 +72,7 @@ export default StyleSheet.create({
     borderRadius: 8,
     backgroundColor: color.grayBody,
     marginBottom: 13,
+    color: color.grayBG,
   },
   secondCategoryText: {
     fontFamily: 'Epilogue',
@@ -87,6 +89,7 @@ export default StyleSheet.create({
     borderRadius: 8,
     backgroundColor: color.grayBody,
     paddingBottom: 100,
+    color: color.grayBG,
   },
   thirdCategoryIcon: {
     position: 'absolute',
