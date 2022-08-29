@@ -127,10 +127,13 @@ export const globalStyle = StyleSheet.create({
   selfStart: {
     alignSelf: 'flex-start',
   },
+  itemStart: {
+    alignItems: 'flex-start',
+  },
   itemBaseline: {
     alignItems: 'baseline',
   },
-  itemFlexEnd: {
+  itemEnd: {
     alignItems: 'flex-end',
   },
   itemCenter: {
@@ -144,6 +147,9 @@ export const globalStyle = StyleSheet.create({
   },
   justifyStart: {
     justifyContent: 'flex-start',
+  },
+  justifyAround: {
+    justifyContent: 'space-around',
   },
   flex: {
     flex: 1,

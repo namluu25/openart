@@ -5,7 +5,7 @@ export default StyleSheet.create({
   centeredView: {
     flex: 1,
     alignItems: 'flex-end',
-    paddingTop: 82,
+    paddingTop: 50,
     padding: 16,
     backgroundColor: 'rgba(0,0,0,0.5)',
   },

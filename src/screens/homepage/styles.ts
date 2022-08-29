@@ -100,7 +100,7 @@ export default StyleSheet.create({
   separatorLine: {
     borderBottomColor: 'white',
     borderBottomWidth: 1,
-    width: '92%',
+    width: '87%',
     alignSelf: 'center',
     marginBottom: 82,
   },
@@ -115,6 +115,30 @@ export default StyleSheet.create({
     fontFamily: 'Epilogue',
     textAlign: 'center',
     color: color.grayOffWhite,
+    fontWeight: '700',
+  },
+  buttonBid: {
+    borderRadius: 51,
+    marginTop: 12,
+    backgroundColor: color.grayBody,
+    paddingVertical: 13,
+    marginBottom: 40,
+  },
+  buttonBidActiveIcon: {
+    width: '8%',
+    marginRight: 4,
+  },
+  buttonBidTextLight: {
+    fontSize: 16,
+    fontFamily: 'Epilogue',
+    color: '#FCFCFC',
+    fontWeight: '400',
+  },
+  buttonBidTextBold: {
+    fontSize: 20,
+    fontFamily: 'Epilogue',
+    textAlign: 'center',
+    color: '#FCFCFC',
     fontWeight: '700',
   },
   liveAuctionView: {

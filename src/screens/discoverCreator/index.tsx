@@ -17,16 +17,7 @@ interface Items {
 }
 
 export const DiscoverCreator = () => {
-  const [apiData, setApiData] = useState<Array<Items>>([
-    {
-      id: 0,
-      name: ' ',
-      avatar: ' ',
-      coverImage: ' ',
-      description: ' ',
-      followers: ' ',
-    },
-  ]);
+  const [apiData, setApiData] = useState<Array<Items>>([]);
   useEffect(() => {
     axios
       .get('https://62fa6791ffd7197707ebe3f2.mockapi.io/creator')

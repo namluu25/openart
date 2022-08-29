@@ -34,6 +34,10 @@ export default StyleSheet.create({
     fontWeight: '700',
     color: color.grayOffWhite,
   },
+  imageView: {
+    height: 430,
+    marginBottom: 18,
+  },
   button: {
     borderRadius: 34,
     borderColor: color.grayLine,

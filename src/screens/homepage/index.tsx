@@ -10,10 +10,8 @@ import { faMicrophone } from '@fortawesome/free-solid-svg-icons';
 import styles from './styles';
 import { HotCollection } from './hotCollection';
 import { HotBid } from './hotBid';
-import { Header } from 'components';
-import { Footer } from 'components';
+import { Header, ItemContainer, Footer } from 'components';
 import { PlaceBid } from '@modal/placeBid';
-import { ItemContainer } from 'components';
 import { globalStyle } from 'theme/globalStyle';
 
 interface Items {
@@ -22,20 +20,13 @@ interface Items {
   avatar: string;
   creator_name: string;
   image: string;
+  sold_state: boolean;
 }
 
 export const Home = () => {
   const [visible, setVisible] = useState(false);
   const navigation = useNavigation();
-  const [apiData, setApiData] = useState<Array<Items>>([
-    {
-      id: 0,
-      name: ' ',
-      avatar: ' ',
-      creator_name: ' ',
-      image: ' ',
-    },
-  ]);
+  const [apiData, setApiData] = useState<Array<Items>>([]);
   useEffect(() => {
     axios
       .get('https://62fa6791ffd7197707ebe3f2.mockapi.io/homepage')
@@ -109,6 +100,7 @@ export const Home = () => {
             <PlaceBid visbile={visible} handleClose={() => setVisible(false)} />
           </View>
 
+          {/* live auction */}
           <View>
             <View style={styles.liveAuctionView}>
               <View style={styles.liveAuctionTextView}>
@@ -130,14 +122,54 @@ export const Home = () => {
                       name={item.name}
                       creator_name={item.creator_name}
                       avatar={item.avatar}
-                      navi={'DetailSold'}
+                      navi={
+                        item.sold_state ? 'DetailSold' : 'DetailsCurrentBid'
+                      }
                     />
-                    <TouchableOpacity style={styles.button}>
-                      <Text style={styles.buttonText}>
-                        Sold For
-                        <Text style={styles.buttonTextBold}> 2.00 ETH</Text>
-                      </Text>
-                    </TouchableOpacity>
+                    {item.sold_state ? (
+                      <TouchableOpacity style={styles.button}>
+                        <Text style={styles.buttonText}>
+                          Sold For
+                          <Text style={styles.buttonTextBold}> 2.00 ETH</Text>
+                        </Text>
+                      </TouchableOpacity>
+                    ) : (
+                      <TouchableOpacity style={styles.buttonBid}>
+                        <View
+                          style={[
+                            globalStyle.flexRow,
+                            globalStyle.justifyAround,
+                          ]}>
+                          <View
+                            style={[
+                              globalStyle.flexRow,
+                              globalStyle.itemBaseline,
+                            ]}>
+                            <Image
+                              resizeMode="contain"
+                              style={styles.buttonBidActiveIcon}
+                              source={require('@images/icon/active-icon.png')}
+                            />
+                            <View style={globalStyle.itemStart}>
+                              <Text style={styles.buttonBidTextLight}>
+                                Current bid
+                              </Text>
+                              <Text style={styles.buttonBidTextBold}>
+                                2.00 ETH
+                              </Text>
+                            </View>
+                          </View>
+                          <View style={globalStyle.itemStart}>
+                            <Text style={styles.buttonBidTextLight}>
+                              Ending in
+                            </Text>
+                            <Text style={styles.buttonBidTextBold}>
+                              27m 30s
+                            </Text>
+                          </View>
+                        </View>
+                      </TouchableOpacity>
+                    )}
                   </View>
                 );
               })}

@@ -1,12 +1,10 @@
-// 20220815141317
-// https://62f0be8a57311485d135dee1.mockapi.io/homepage
-
 [
     {
       "image": "https://i.imgur.com/eVuxxzl.png",
       "name": "Silent Wave",
       "avatar": "https://i.imgur.com/0aTs3RS.png",
       "creator_name": "Pawel Czerwinski",
+      "sold_state": false,
       "id": "1"
     },
     {
@@ -14,6 +12,7 @@
       "name": "Silent Color",
       "avatar": "https://i.imgur.com/a/8A8MrEY.png",
       "creator_name": "Pawel Czerwinski",
+      "sold_state": true,
       "id": "2"
     },
     {
@@ -21,6 +20,7 @@
       "name": "George",
       "avatar": "https://i.imgur.com/a/8A8MrEY.png",
       "creator_name": "Pawel Czerwinski",
+      "sold_state": true,
       "id": "3"
     },
     {
@@ -28,6 +28,7 @@
       "name": "Mirror",
       "avatar": "https://i.imgur.com/a/8A8MrEY.png",
       "creator_name": "Pawel Czerwinski",
+      "sold_state": false,
       "id": "4"
     },
     {
@@ -35,6 +36,7 @@
       "name": "Magic Mar",
       "avatar": "https://i.imgur.com/a/8A8MrEY.png",
       "creator_name": "Pawel Czerwinski",
+      "sold_state": false,
       "id": "5"
     },
     {
@@ -42,6 +44,7 @@
       "name": "Shedd Aquarium",
       "avatar": "https://i.imgur.com/a/8A8MrEY.png",
       "creator_name": "Pawel Czerwinski",
+      "sold_state": false,
       "id": "6"
     }
   ]

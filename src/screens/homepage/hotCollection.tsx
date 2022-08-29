@@ -13,10 +13,20 @@ export const HotCollection = () => {
         <Text style={styles.titleText}> Hot Collection</Text>
       </View>
 
-      <View style={[globalStyle.flexRow, globalStyle.justifyBetween]}>
+      <View
+        style={[
+          globalStyle.flexRow,
+          globalStyle.justifyBetween,
+          styles.imageView,
+        ]}>
         <View
           //image row 1
-          style={[globalStyle.flexColumn, globalStyle.justifyBetween]}>
+          style={[
+            globalStyle.flexColumn,
+            globalStyle.justifyBetween,
+            globalStyle.flex,
+            globalStyle.itemStart,
+          ]}>
           <Image
             source={require('@images/hotcollection/hot-collection-1.png')}
           />
@@ -27,9 +37,12 @@ export const HotCollection = () => {
 
         <View
           //image row 2
-          // marginTop: 28,
-          // marginBottom: 19,
-          style={[globalStyle.flexColumn, globalStyle.justifyBetween]}>
+          style={[
+            globalStyle.flexColumn,
+            globalStyle.justifyBetween,
+            globalStyle.flex,
+            globalStyle.itemEnd,
+          ]}>
           <Image
             source={require('@images/hotcollection/hot-collection-3.png')}
           />

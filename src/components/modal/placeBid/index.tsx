@@ -44,7 +44,7 @@ export const PlaceBid = (props: Props) => {
                 <Text style={styles.textFirstColumn}>Service fee</Text>
                 <Text style={styles.textFirstColumn}>Total</Text>
               </View>
-              <View style={globalStyle.itemFlexEnd}>
+              <View style={globalStyle.itemEnd}>
                 <Text style={styles.textSecondColumn}>ETH</Text>
                 <Text style={styles.textSecondColumn}>4.568 ETH</Text>
                 <Text style={styles.textSecondColumn}>0.001 ETH</Text>

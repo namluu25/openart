@@ -10,21 +10,21 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 
 interface Items {
   id: number;
-  name: string;
-  following: string;
-  followers: string;
-  description: string;
-  avatar: string;
-  coverImage: string;
-  hash: string;
+  name?: string;
+  following?: string;
+  followers?: string;
+  description?: string;
+  avatar?: string;
+  coverImage?: string;
+  hash?: string;
 }
 
 interface CreatedArt {
   id: number;
-  image: string;
-  name: string;
-  avatar: string;
-  creatorName: string;
+  image?: string;
+  name?: string;
+  avatar?: string;
+  creatorName?: string;
 }
 
 export const UserProfile = () => {
@@ -32,22 +32,11 @@ export const UserProfile = () => {
   const [apiData, setApiData] = useState<Array<Items>>([
     {
       id: 0,
-      following: ' ',
-      followers: ' ',
-      name: ' ',
-      description: ' ',
-      avatar: ' ',
-      coverImage: ' ',
-      hash: ' ',
     },
   ]);
   const [artData, setArtData] = useState<Array<CreatedArt>>([
     {
       id: 0,
-      image: ' ',
-      name: ' ',
-      avatar: ' ',
-      creatorName: ' ',
     },
   ]);
   useEffect(() => {

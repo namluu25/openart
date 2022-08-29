@@ -1,13 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { View, Text, ScrollView, Image, TouchableOpacity } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import LinearGradient from 'react-native-linear-gradient';
-import { Header } from 'components';
-import { Footer } from 'components';
+import { PlaceBid } from 'components/modal';
+import { Header, Footer } from 'components';
 import styles from './styles';
 import { globalStyle } from 'theme/globalStyle';
 
 export const DetailsCurrentBid = () => {
+  const [visible, setVisible] = useState(false);
+
   return (
     <SafeAreaView>
       <Header />
@@ -117,7 +119,7 @@ export const DetailsCurrentBid = () => {
                 <Text style={styles.secondItemText}>seconds</Text>
               </View>
             </View>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={() => setVisible(true)}>
               <LinearGradient
                 colors={['#0038F5', '#9F03FF']}
                 useAngle={true}
@@ -126,6 +128,7 @@ export const DetailsCurrentBid = () => {
                 <Text style={styles.placeBidButtonText}>Place a bid</Text>
               </LinearGradient>
             </TouchableOpacity>
+            <PlaceBid visbile={visible} handleClose={() => setVisible(false)} />
           </TouchableOpacity>
 
           <Text style={styles.activityTitle}>Activity</Text>

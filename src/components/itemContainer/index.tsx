@@ -54,7 +54,9 @@ export const ItemContainer = (props: Props) => {
             </Text>
             <Text style={globalStyle.containerCreatorInfo}>Creator</Text>
           </TouchableOpacity>
-          <Image source={require('@images/icon/heart-icon.png')} />
+          <TouchableOpacity>
+            <Image source={require('@images/icon/heart-icon.png')} />
+          </TouchableOpacity>
         </View>
       </View>
     </View>
