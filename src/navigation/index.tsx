@@ -1,26 +1,10 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { StatusBar } from 'react-native';
 import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import RNBootSplash from 'react-native-bootsplash';
-import {
-  About,
-  Home,
-  Menu,
-  FAQ,
-  JoinCommunity,
-  DiscoverCreator,
-  DetailSold,
-  DetailsAuction,
-  DetailsCurrentBid,
-  UserProfile,
-  ProfileEmpty,
-  ProfileEdit,
-  SearchFilter,
-  SearchPopup,
-  Login,
-} from 'screens';
-import { ItemContainer } from 'components';
+import { authentication } from 'firebase/firebase';
+import { AppStack } from './AppStack';
+import { AuthStack } from './AuthStack';
 
 const MyTheme = {
   ...DefaultTheme,
@@ -30,9 +14,17 @@ const MyTheme = {
   },
 };
 
-const Stack = createNativeStackNavigator();
-
 export const AppNavigation = () => {
+  const [isSignedin, setIsSignedin] = useState(false);
+  useEffect(() => {
+    authentication.onAuthStateChanged(user => {
+      if (user) {
+        setIsSignedin(true);
+      } else {
+        setIsSignedin(false);
+      }
+    });
+  }, []);
   return (
     <NavigationContainer
       theme={MyTheme}
@@ -42,26 +34,7 @@ export const AppNavigation = () => {
         translucent={true}
         backgroundColor="transparent"
       />
-      <Stack.Navigator
-        initialRouteName="Home"
-        screenOptions={{ headerShown: false }}>
-        <Stack.Screen name="Home" component={Home} />
-        <Stack.Screen name="Menu" component={Menu} />
-        <Stack.Screen name="About" component={About} />
-        <Stack.Screen name="FAQ" component={FAQ} />
-        <Stack.Screen name="JoinCommunity" component={JoinCommunity} />
-        <Stack.Screen name="DiscoverCreator" component={DiscoverCreator} />
-        <Stack.Screen name="DetailSold" component={DetailSold} />
-        <Stack.Screen name="DetailsAuction" component={DetailsAuction} />
-        <Stack.Screen name="DetailsCurrentBid" component={DetailsCurrentBid} />
-        <Stack.Screen name="UserProfile" component={UserProfile} />
-        <Stack.Screen name="ProfileEmpty" component={ProfileEmpty} />
-        <Stack.Screen name="ProfileEdit" component={ProfileEdit} />
-        <Stack.Screen name="SearchFilter" component={SearchFilter} />
-        <Stack.Screen name="SearchPopup" component={SearchPopup} />
-        <Stack.Screen name="Login" component={Login} />
-        <Stack.Screen name="ItemContainer" component={ItemContainer} />
-      </Stack.Navigator>
+      {isSignedin === true ? <AppStack /> : <AuthStack />}
     </NavigationContainer>
   );
 };
