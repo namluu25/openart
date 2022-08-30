@@ -19,6 +19,9 @@ export default StyleSheet.create({
   buttonView: {
     marginHorizontal: 30,
   },
+  registerButton: {
+    marginTop: 20,
+  },
   buttonText: {
     fontSize: 20,
     fontFamily: 'Epilogue',

@@ -4,6 +4,8 @@ import { useNavigation } from '@react-navigation/native';
 import { Switch } from 'react-native-paper';
 import styles from './styles';
 import { globalStyle } from 'theme/globalStyle';
+import { authentication } from 'firebase/firebase';
+import { signOut } from 'firebase/auth';
 
 interface Props {
   visbile?: boolean;
@@ -15,6 +17,16 @@ export const Account = (props: Props) => {
   const onToggleSwitch = () => setIsSwitchOn(!isSwitchOn);
   const navigation = useNavigation();
   const [visibleAccount, setVisibleAccount] = useState(false);
+  const signingOut = () => {
+    signOut(authentication)
+      .then(() => {
+        // Sign-out successful.
+      })
+      .catch(error => {
+        // An error happened.
+        console.log({ error });
+      });
+  };
   return (
     <>
       <Modal
@@ -93,7 +105,9 @@ export const Account = (props: Props) => {
                 <Image source={require('@images/icon/invoice-icon.png')} />
                 <Text style={styles.titleLine}>My invoice</Text>
               </TouchableOpacity>
-              <TouchableOpacity style={styles.touchableLine}>
+              <TouchableOpacity
+                style={styles.touchableLine}
+                onPress={signingOut}>
                 <Image source={require('@images/icon/back-arrow.png')} />
                 <Text style={styles.titleLine}>Sign out</Text>
               </TouchableOpacity>

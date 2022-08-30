@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { View, Text, TouchableOpacity, Image, TextInput } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import { GoogleSignin } from '@react-native-google-signin/google-signin';
@@ -9,6 +9,11 @@ import { useNavigation } from '@react-navigation/native';
 import styles from './styles';
 import { globalStyle } from 'theme/globalStyle';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { authentication } from 'firebase/firebase';
+import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+} from 'firebase/auth/';
 
 GoogleSignin.configure({
   webClientId:
@@ -32,6 +37,27 @@ async function onGoogleButtonPress() {
 
 export const Login = () => {
   const navigation = useNavigation();
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const registerUser = () => {
+    createUserWithEmailAndPassword(authentication, email, password)
+      .then(userCredential => {
+        const user = userCredential.user;
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  };
+  const signinUser = () => {
+    signInWithEmailAndPassword(authentication, email, password)
+      .then(userCredential => {
+        const user = userCredential.user;
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  };
+
   return (
     <SafeAreaView>
       <TouchableOpacity
@@ -48,22 +74,37 @@ export const Login = () => {
           style={styles.inputBox}
           placeholderTextColor="#FCFCFC"
           placeholder="Email address or phone number"
+          value={email}
+          onChangeText={text => setEmail(text)}
         />
         <TextInput
           style={styles.inputBox}
           placeholderTextColor="#FCFCFC"
           placeholder="Password"
+          value={password}
+          onChangeText={text => setPassword(text)}
+          secureTextEntry={true}
         />
       </View>
 
       <View style={styles.buttonView}>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={signinUser}>
           <LinearGradient
             colors={['#0038F5', '#9F03FF']}
             useAngle={true}
             angle={114.44}
             style={globalStyle.buttonRadius}>
             <Text style={styles.buttonText}>Login</Text>
+          </LinearGradient>
+        </TouchableOpacity>
+
+        <TouchableOpacity onPress={registerUser}>
+          <LinearGradient
+            colors={['#0038F5', '#9F03FF']}
+            useAngle={true}
+            angle={114.44}
+            style={[globalStyle.buttonRadius, styles.registerButton]}>
+            <Text style={styles.buttonText}>Register</Text>
           </LinearGradient>
         </TouchableOpacity>
 
