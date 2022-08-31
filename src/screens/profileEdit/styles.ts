@@ -2,7 +2,10 @@ import { StyleSheet } from 'react-native';
 import { color } from 'theme/color';
 
 export default StyleSheet.create({
-  coverImage: { width: '100%' },
+  coverImage: {
+    width: '100%',
+    height: 160,
+  },
   coverButtonView: {
     flexDirection: 'row',
     position: 'absolute',
@@ -26,6 +29,8 @@ export default StyleSheet.create({
     position: 'absolute',
     alignSelf: 'center',
     marginTop: 97,
+    height: 130,
+    width: 130,
   },
   userName: {
     textAlign: 'center',

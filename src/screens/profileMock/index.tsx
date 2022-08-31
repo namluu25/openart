@@ -9,7 +9,7 @@ import styles from './styles';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { authentication } from 'firebase/firebase';
 
-interface Items {
+export interface Items {
   id: number;
   name?: string;
   following?: string;
@@ -20,7 +20,7 @@ interface Items {
   hash?: string;
 }
 
-interface CreatedArt {
+export interface CreatedArt {
   id: number;
   image?: string;
   name?: string;
@@ -61,7 +61,11 @@ export const ProfileMock = () => {
           />
           <View style={styles.buttonView}>
             {/* button */}
-            <TouchableOpacity style={styles.buttonMenuBorder}>
+            <TouchableOpacity
+              style={styles.buttonMenuBorder}
+              onPress={() => {
+                navigation.navigate('ProfileEdit' as never, {} as never);
+              }}>
               <Image
                 style={styles.icon}
                 source={require('@images/icon/more-icon.png')}

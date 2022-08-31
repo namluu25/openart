@@ -41,18 +41,14 @@ export const Login = () => {
   const [password, setPassword] = useState('');
   const registerUser = () => {
     createUserWithEmailAndPassword(authentication, email, password)
-      .then(userCredential => {
-        const user = userCredential.user;
-      })
+      .then(() => {})
       .catch(error => {
         console.log(error);
       });
   };
   const signinUser = () => {
     signInWithEmailAndPassword(authentication, email, password)
-      .then(userCredential => {
-        const user = userCredential.user;
-      })
+      .then(() => {})
       .catch(error => {
         console.log(error);
       });

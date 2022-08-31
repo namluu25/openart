@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   View,
   Text,
@@ -13,8 +13,25 @@ import { Footer } from 'components';
 import styles from './styles';
 import { globalStyle } from 'theme/globalStyle';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import axios from 'axios';
+import { authentication } from 'firebase/firebase';
+import { Items } from 'screens/profileMock';
 
 export const ProfileEdit = () => {
+  const userEmail = authentication.currentUser?.email;
+  const [apiData, setApiData] = useState<Array<Items>>([
+    {
+      id: 0,
+    },
+  ]);
+  useEffect(() => {
+    axios
+      .get('https://62fa6791ffd7197707ebe3f2.mockapi.io/profile')
+      .then(res => {
+        setApiData(res.data);
+      })
+      .catch(error => console.log(error));
+  }, []);
   return (
     <SafeAreaView>
       <Header />
@@ -22,7 +39,7 @@ export const ProfileEdit = () => {
         <View>
           <Image
             style={styles.coverImage}
-            source={require('@images/profile/cover.png')}
+            source={{ uri: `${apiData[0]?.coverImage}` }}
           />
           <View style={styles.coverButtonView}>
             {/* button */}
@@ -39,12 +56,9 @@ export const ProfileEdit = () => {
               />
             </TouchableOpacity>
           </View>
-          <Image
-            style={styles.avatar}
-            source={require('@images/profile/ava.png')}
-          />
+          <Image style={styles.avatar} source={{ uri: apiData[0]?.avatar }} />
 
-          <Text style={styles.userName}>Gift Habeshaw</Text>
+          <Text style={styles.userName}>{userEmail}</Text>
           <View style={[globalStyle.flexRow, globalStyle.selfCenter]}>
             <Text style={styles.userHash}>52fs5ge5g45sov45a</Text>
             <TouchableOpacity>

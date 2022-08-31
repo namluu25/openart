@@ -17,6 +17,7 @@ export const Account = (props: Props) => {
   const onToggleSwitch = () => setIsSwitchOn(!isSwitchOn);
   const navigation = useNavigation();
   const [visibleAccount, setVisibleAccount] = useState(false);
+  const userEmail = authentication.currentUser?.email;
   const signingOut = () => {
     signOut(authentication)
       .then(() => {
@@ -43,7 +44,7 @@ export const Account = (props: Props) => {
             <View style={styles.firstRow}>
               <TouchableOpacity
                 onPress={() => {
-                  navigation.navigate('UserProfile' as never, {} as never);
+                  navigation.navigate('ProfileMock' as never, {} as never);
                   setVisibleAccount(false);
                 }}>
                 <Image
@@ -54,10 +55,10 @@ export const Account = (props: Props) => {
               <View style={globalStyle.selfCenter}>
                 <TouchableOpacity
                   onPress={() => {
-                    navigation.navigate('UserProfile' as never, {} as never);
+                    navigation.navigate('ProfileMock' as never, {} as never);
                     setVisibleAccount(false);
                   }}>
-                  <Text style={styles.username}>Gift Habeshaw</Text>
+                  <Text style={styles.username}>{userEmail}</Text>
                 </TouchableOpacity>
                 <View style={globalStyle.flexRow}>
                   <TouchableOpacity>
@@ -90,7 +91,7 @@ export const Account = (props: Props) => {
             <View style={styles.listItem}>
               <TouchableOpacity
                 onPress={() => {
-                  navigation.navigate('UserProfile' as never);
+                  navigation.navigate('ProfileMock' as never);
                   setVisibleAccount(false);
                 }}
                 style={styles.touchableLine}>
