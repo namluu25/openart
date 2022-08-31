@@ -7,6 +7,7 @@ import axios from 'axios';
 import { globalStyle } from 'theme/globalStyle';
 import styles from './styles';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { authentication } from 'firebase/firebase';
 
 interface Items {
   id: number;
@@ -27,8 +28,9 @@ interface CreatedArt {
   creatorName?: string;
 }
 
-export const UserProfile = () => {
+export const ProfileMock = () => {
   const navigation = useNavigation();
+  const userEmail = authentication.currentUser?.email;
   const [apiData, setApiData] = useState<Array<Items>>([
     {
       id: 0,
@@ -74,7 +76,7 @@ export const UserProfile = () => {
           </View>
           <Image style={styles.avatar} source={{ uri: apiData[0]?.avatar }} />
 
-          <Text style={styles.userName}>{apiData[0].name}</Text>
+          <Text style={styles.userName}>{userEmail}</Text>
           <View style={[globalStyle.flexRow, globalStyle.selfCenter]}>
             <Text style={styles.userHash}>{apiData[0].hash}</Text>
             <TouchableOpacity>
@@ -168,7 +170,7 @@ export const UserProfile = () => {
                       <TouchableOpacity
                         onPress={() => {
                           navigation.navigate(
-                            'DetailSold' as never,
+                            'DetailsSold' as never,
                             {} as never,
                           );
                         }}>

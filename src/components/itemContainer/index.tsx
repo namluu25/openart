@@ -32,7 +32,7 @@ export const ItemContainer = (props: Props) => {
           <View>
             <TouchableOpacity
               onPress={() => {
-                navigation.navigate('UserProfile' as never, {} as never);
+                navigation.navigate('ProfileMock' as never, {} as never);
               }}>
               <Image
                 style={globalStyle.containerAvatar}
@@ -46,7 +46,7 @@ export const ItemContainer = (props: Props) => {
           </View>
           <TouchableOpacity
             onPress={() => {
-              navigation.navigate('UserProfile' as never, {} as never);
+              navigation.navigate('ProfileMock' as never, {} as never);
             }}
             style={globalStyle.containerCreatorNameView}>
             <Text style={globalStyle.containerCreatorName}>

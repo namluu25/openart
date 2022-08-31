@@ -12,4 +12,4 @@ export * from './profileEdit';
 export * from './profileEmpty';
 export * from './search';
 export * from './searchFilter';
-export * from './userProfile';
+export * from './profileMock';

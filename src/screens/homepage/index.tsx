@@ -123,7 +123,7 @@ export const Home = () => {
                       creator_name={item.creator_name}
                       avatar={item.avatar}
                       navi={
-                        item.sold_state ? 'DetailSold' : 'DetailsCurrentBid'
+                        item.sold_state ? 'DetailsSold' : 'DetailsCurrentBid'
                       }
                     />
                     {item.sold_state ? (

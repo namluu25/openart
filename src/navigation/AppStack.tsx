@@ -7,10 +7,10 @@ import {
   FAQ,
   JoinCommunity,
   DiscoverCreator,
-  DetailSold,
+  DetailsSold,
   DetailsAuction,
   DetailsCurrentBid,
-  UserProfile,
+  ProfileMock,
   ProfileEmpty,
   ProfileEdit,
   SearchFilter,
@@ -31,10 +31,10 @@ export const AppStack = () => {
       <Stack.Screen name="FAQ" component={FAQ} />
       <Stack.Screen name="JoinCommunity" component={JoinCommunity} />
       <Stack.Screen name="DiscoverCreator" component={DiscoverCreator} />
-      <Stack.Screen name="DetailSold" component={DetailSold} />
+      <Stack.Screen name="DetailsSold" component={DetailsSold} />
       <Stack.Screen name="DetailsAuction" component={DetailsAuction} />
       <Stack.Screen name="DetailsCurrentBid" component={DetailsCurrentBid} />
-      <Stack.Screen name="UserProfile" component={UserProfile} />
+      <Stack.Screen name="ProfileMock" component={ProfileMock} />
       <Stack.Screen name="ProfileEmpty" component={ProfileEmpty} />
       <Stack.Screen name="ProfileEdit" component={ProfileEdit} />
       <Stack.Screen name="SearchFilter" component={SearchFilter} />

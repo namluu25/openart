@@ -6,7 +6,7 @@ import styles from './styles';
 import { globalStyle } from 'theme/globalStyle';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
-export const DetailSold = () => {
+export const DetailsSold = () => {
   return (
     <SafeAreaView>
       <Header />
