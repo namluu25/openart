@@ -1,12 +1,31 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { View, Text, ScrollView, TouchableOpacity, Image } from 'react-native';
 import { Header } from 'components';
 import { Footer } from 'components';
 import styles from './styles';
 import { globalStyle } from 'theme/globalStyle';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { Items } from 'screens/profileMock';
+import { authentication } from 'firebase/firebase';
+import { useNavigation } from '@react-navigation/native';
+import axios from 'axios';
 
 export const ProfileEmpty = () => {
+  const navigation = useNavigation();
+  const userEmail = authentication.currentUser?.email;
+  const [apiData, setApiData] = useState<Array<Items>>([
+    {
+      id: 0,
+    },
+  ]);
+  useEffect(() => {
+    axios
+      .get('https://62fa6791ffd7197707ebe3f2.mockapi.io/profile')
+      .then(res => {
+        setApiData(res.data);
+      })
+      .catch(error => console.log(error));
+  }, []);
   return (
     <SafeAreaView>
       <Header />
@@ -14,11 +33,15 @@ export const ProfileEmpty = () => {
         <View>
           <Image
             style={styles.coverImage}
-            source={require('@images/profile/cover.png')}
+            source={{ uri: `${apiData[0]?.coverImage}` }}
           />
           <View style={styles.coverButtonView}>
             {/* button */}
-            <TouchableOpacity style={styles.coverButtonMenu}>
+            <TouchableOpacity
+              style={styles.coverButtonMenu}
+              onPress={() => {
+                navigation.navigate('ProfileMock' as never, {} as never);
+              }}>
               <Image
                 style={styles.coverButtonIcon}
                 source={require('@images/icon/more-icon.png')}
@@ -31,12 +54,9 @@ export const ProfileEmpty = () => {
               />
             </TouchableOpacity>
           </View>
-          <Image
-            style={styles.avatar}
-            source={require('@images/profile/ava.png')}
-          />
+          <Image style={styles.avatar} source={{ uri: apiData[0]?.avatar }} />
 
-          <Text style={styles.userName}>Gift Habeshaw</Text>
+          <Text style={styles.userName}>{userEmail}</Text>
           <View style={[globalStyle.flexRow, globalStyle.selfCenter]}>
             <Text style={styles.userHash}>52fs5ge5g45sov45a</Text>
             <TouchableOpacity>
@@ -53,7 +73,11 @@ export const ProfileEmpty = () => {
               <Text style={styles.followRowNumber}>2024</Text>
               <Text style={styles.followRowText}>Followers</Text>
             </View>
-            <TouchableOpacity style={styles.followRowButton}>
+            <TouchableOpacity
+              style={styles.followRowButton}
+              onPress={() => {
+                navigation.navigate('ProfileEdit' as never, {} as never);
+              }}>
               <Image
                 style={styles.followRowButtonImage}
                 source={require('@images/icon/edit-icon.png')}
@@ -68,7 +92,11 @@ export const ProfileEmpty = () => {
             Start building your collection by placing bids on artwork.
           </Text>
         </View>
-        <TouchableOpacity style={styles.exploreButton}>
+        <TouchableOpacity
+          style={styles.exploreButton}
+          onPress={() => {
+            navigation.navigate('Home' as never, {} as never);
+          }}>
           <Text style={styles.exploreButtonText}>Explore OpenArt</Text>
         </TouchableOpacity>
         <Footer />

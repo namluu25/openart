@@ -61,11 +61,7 @@ export const ProfileMock = () => {
           />
           <View style={styles.buttonView}>
             {/* button */}
-            <TouchableOpacity
-              style={styles.buttonMenuBorder}
-              onPress={() => {
-                navigation.navigate('ProfileEdit' as never, {} as never);
-              }}>
+            <TouchableOpacity style={styles.buttonMenuBorder}>
               <Image
                 style={styles.icon}
                 source={require('@images/icon/more-icon.png')}

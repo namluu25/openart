@@ -42,28 +42,14 @@ export const Account = (props: Props) => {
           <View style={[styles.triangle]} />
           <View style={[styles.modalView]}>
             <View style={styles.firstRow}>
-              <TouchableOpacity
-                onPress={() => {
-                  navigation.navigate('ProfileMock' as never, {} as never);
-                  setVisibleAccount(false);
-                }}>
-                <Image
-                  style={styles.avatar}
-                  source={require('@images/avatar/ava12.png')}
-                />
-              </TouchableOpacity>
+              <Image
+                style={styles.avatar}
+                source={require('@images/avatar/ava12.png')}
+              />
               <View style={globalStyle.selfCenter}>
-                <TouchableOpacity
-                  onPress={() => {
-                    navigation.navigate('ProfileMock' as never, {} as never);
-                    setVisibleAccount(false);
-                  }}>
-                  <Text style={styles.username}>{userEmail}</Text>
-                </TouchableOpacity>
+                <Text style={styles.username}>{userEmail}</Text>
                 <View style={globalStyle.flexRow}>
-                  <TouchableOpacity>
-                    <Text style={styles.hash}>52fs5ge5g45sov45a</Text>
-                  </TouchableOpacity>
+                  <Text style={styles.hash}>52fs5ge5g45sov45a</Text>
                   <TouchableOpacity>
                     <Image source={require('@images/icon/copy-icon.png')} />
                   </TouchableOpacity>
@@ -91,7 +77,7 @@ export const Account = (props: Props) => {
             <View style={styles.listItem}>
               <TouchableOpacity
                 onPress={() => {
-                  navigation.navigate('ProfileMock' as never);
+                  navigation.navigate('ProfileEmpty' as never, {} as never);
                   setVisibleAccount(false);
                 }}
                 style={styles.touchableLine}>
