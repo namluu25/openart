@@ -6,8 +6,8 @@
  */
 const { getDefaultConfig } = require('metro-config');
 const { resolver: defaultResolver } = getDefaultConfig.getDefaultValues();
+
 module.exports = {
-  ...defaultResolver,
   transformer: {
     getTransformOptions: async () => ({
       transform: {
@@ -17,6 +17,7 @@ module.exports = {
     }),
   },
   resolver: {
+    ...defaultResolver,
     sourceExts: [...defaultResolver.sourceExts, 'cjs'],
   },
 };
