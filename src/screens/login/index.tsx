@@ -5,7 +5,6 @@ import { GoogleSignin } from '@react-native-google-signin/google-signin';
 import auth from '@react-native-firebase/auth';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { faGoogle } from '@fortawesome/free-brands-svg-icons';
-import { useNavigation } from '@react-navigation/native';
 import styles from './styles';
 import { globalStyle } from 'theme/globalStyle';
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -36,7 +35,6 @@ async function onGoogleButtonPress() {
 }
 
 export const Login = () => {
-  const navigation = useNavigation();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const registerUser = () => {
@@ -56,15 +54,10 @@ export const Login = () => {
 
   return (
     <SafeAreaView>
-      <TouchableOpacity
-        onPress={() => {
-          navigation.navigate('Home' as never, {} as never);
-        }}>
-        <Image
-          source={require('@images/icon/Logo.png')}
-          style={styles.logoImage}
-        />
-      </TouchableOpacity>
+      <Image
+        source={require('@images/icon/Logo.png')}
+        style={styles.logoImage}
+      />
       <View style={styles.inputView}>
         <TextInput
           style={styles.inputBox}
