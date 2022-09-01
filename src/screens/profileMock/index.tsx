@@ -10,7 +10,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { authentication } from 'firebase/firebase';
 
 export interface Items {
-  id: number;
+  id?: number;
   name?: string;
   following?: string;
   followers?: string;
@@ -31,16 +31,8 @@ export interface CreatedArt {
 export const ProfileMock = () => {
   const navigation = useNavigation();
   const userEmail = authentication.currentUser?.email;
-  const [apiData, setApiData] = useState<Array<Items>>([
-    {
-      id: 0,
-    },
-  ]);
-  const [artData, setArtData] = useState<Array<CreatedArt>>([
-    {
-      id: 0,
-    },
-  ]);
+  const [apiData, setApiData] = useState<Array<Items>>([]);
+  const [artData, setArtData] = useState<Array<CreatedArt>>([]);
   useEffect(() => {
     axios
       .get('https://62fa6791ffd7197707ebe3f2.mockapi.io/profile')
@@ -57,7 +49,7 @@ export const ProfileMock = () => {
         <View>
           <Image
             style={styles.coverImage}
-            source={{ uri: `${apiData[0]?.coverImage}` }}
+            source={{ uri: apiData[0]?.coverImage }}
           />
           <View style={styles.buttonView}>
             {/* button */}
@@ -78,7 +70,7 @@ export const ProfileMock = () => {
 
           <Text style={styles.userName}>{userEmail}</Text>
           <View style={[globalStyle.flexRow, globalStyle.selfCenter]}>
-            <Text style={styles.userHash}>{apiData[0].hash}</Text>
+            <Text style={styles.userHash}>{apiData[0]?.hash}</Text>
             <TouchableOpacity>
               <Image source={require('@images/icon/copy-icon.png')} />
             </TouchableOpacity>
@@ -89,12 +81,12 @@ export const ProfileMock = () => {
           <View>
             <View style={styles.followView}>
               <View>
-                <Text style={styles.followNumber}>{apiData[0].following}</Text>
+                <Text style={styles.followNumber}>{apiData[0]?.following}</Text>
                 <Text style={styles.followText}>Following</Text>
               </View>
 
               <View>
-                <Text style={styles.followNumber}>{apiData[0].followers}</Text>
+                <Text style={styles.followNumber}>{apiData[0]?.followers}</Text>
                 <Text style={styles.followText}>Followers</Text>
               </View>
 
@@ -126,7 +118,9 @@ export const ProfileMock = () => {
               />
             </View>
 
-            <Text style={styles.userDescription}>{apiData[0].description}</Text>
+            <Text style={styles.userDescription}>
+              {apiData[0]?.description}
+            </Text>
             <Text style={styles.memberSinceText}>Member since 2021</Text>
             <View style={[globalStyle.flexRow, globalStyle.justifyStart]}>
               <TouchableOpacity style={styles.socialButton}>

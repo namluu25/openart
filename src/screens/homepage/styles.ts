@@ -131,14 +131,14 @@ export default StyleSheet.create({
   buttonBidTextLight: {
     fontSize: 16,
     fontFamily: 'Epilogue',
-    color: 'grayOffWhite',
+    color: color.grayOffWhite,
     fontWeight: '400',
   },
   buttonBidTextBold: {
     fontSize: 20,
     fontFamily: 'Epilogue',
     textAlign: 'center',
-    color: 'grayOffWhite',
+    color: color.grayOffWhite,
     fontWeight: '700',
   },
   liveAuctionView: {

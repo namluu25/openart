@@ -19,11 +19,7 @@ import { Items } from 'screens/profileMock';
 
 export const ProfileEdit = () => {
   const userEmail = authentication.currentUser?.email;
-  const [apiData, setApiData] = useState<Array<Items>>([
-    {
-      id: 0,
-    },
-  ]);
+  const [apiData, setApiData] = useState<Array<Items>>([]);
   useEffect(() => {
     axios
       .get('https://62fa6791ffd7197707ebe3f2.mockapi.io/profile')
@@ -39,7 +35,7 @@ export const ProfileEdit = () => {
         <View>
           <Image
             style={styles.coverImage}
-            source={{ uri: `${apiData[0]?.coverImage}` }}
+            source={{ uri: apiData[0]?.coverImage }}
           />
           <View style={styles.coverButtonView}>
             {/* button */}

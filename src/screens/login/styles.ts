@@ -7,7 +7,7 @@ export default StyleSheet.create({
     backgroundColor: color.grayBody,
     marginBottom: 20,
     paddingLeft: 15,
-    color: 'grayOffWhite',
+    color: color.grayOffWhite,
   },
   logoImage: {
     alignSelf: 'center',
