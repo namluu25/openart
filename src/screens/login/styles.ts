@@ -8,6 +8,7 @@ export default StyleSheet.create({
     marginBottom: 20,
     paddingLeft: 15,
     color: color.grayOffWhite,
+    height: 48,
   },
   logoImage: {
     alignSelf: 'center',

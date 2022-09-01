@@ -9,6 +9,7 @@ export default StyleSheet.create({
     borderRadius: 8,
     backgroundColor: color.grayBody,
     color: color.grayBG,
+    height: 40,
   },
   searchFilter: {
     marginTop: 37,
