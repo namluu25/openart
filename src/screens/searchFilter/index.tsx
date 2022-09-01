@@ -7,7 +7,6 @@ import {
   Image,
   TextInput,
 } from 'react-native';
-import LinearGradient from 'react-native-linear-gradient';
 import { useNavigation } from '@react-navigation/native';
 import { Header } from 'components';
 import { Footer } from 'components';
@@ -18,6 +17,7 @@ import Slider from '@react-native-community/slider';
 import styles from './styles';
 import { globalStyle } from 'theme/globalStyle';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { ClickButton } from 'components/gradientButton';
 
 export const SearchFilter = () => {
   const navigation = useNavigation();
@@ -41,31 +41,15 @@ export const SearchFilter = () => {
           </View>
           <View style={styles.secondView}>
             <Text style={styles.titleItem}>Type</Text>
-            <View style={styles.secondItemView}>
-              <TouchableOpacity>
-                <LinearGradient
-                  colors={['#0038F5', '#9F03FF']}
-                  useAngle={true}
-                  angle={114.44}
-                  style={styles.secondGradientItemButton}>
-                  <Text style={styles.secondItemButtonText}>All items</Text>
-                </LinearGradient>
-              </TouchableOpacity>
-              <TouchableOpacity style={styles.secondItemButton}>
-                <Text style={styles.secondItemButtonText}>Game</Text>
-              </TouchableOpacity>
-              <TouchableOpacity style={styles.secondItemButton}>
-                <Text style={styles.secondItemButtonText}>Video</Text>
-              </TouchableOpacity>
-            </View>
-            <View style={styles.secondItemView}>
-              <TouchableOpacity style={styles.secondItemButton}>
-                <Text style={styles.secondItemButtonText}>Animation</Text>
-              </TouchableOpacity>
-              <TouchableOpacity style={styles.secondItemButton}>
-                <Text style={styles.secondItemButtonText}>Photography</Text>
-              </TouchableOpacity>
-            </View>
+            <ClickButton
+              value={[
+                { name: 'All items' },
+                { name: 'Game' },
+                { name: 'Video' },
+                { name: 'Animation' },
+                { name: 'Photography' },
+              ]}
+            />
           </View>
 
           <View style={styles.thirdView}>
@@ -88,46 +72,26 @@ export const SearchFilter = () => {
 
           <View style={styles.forthView}>
             <Text style={styles.titleItem}>Chains</Text>
-            <View style={styles.secondItemView}>
-              <TouchableOpacity>
-                <LinearGradient
-                  colors={['#0038F5', '#9F03FF']}
-                  useAngle={true}
-                  angle={114.44}
-                  style={styles.secondGradientItemButton}>
-                  <Text style={styles.secondItemButtonText}>Ethereum</Text>
-                </LinearGradient>
-              </TouchableOpacity>
-              <TouchableOpacity style={styles.secondItemButton}>
-                <Text style={styles.secondItemButtonText}>Matic</Text>
-              </TouchableOpacity>
-              <TouchableOpacity style={styles.secondItemButton}>
-                <Text style={styles.secondItemButtonText}>Klaytn</Text>
-              </TouchableOpacity>
-            </View>
+            <ClickButton
+              value={[
+                { name: 'Ethereum' },
+                { name: 'Matic' },
+                { name: 'Klaytn' },
+              ]}
+            />
           </View>
 
           <View style={styles.fifthView}>
             <Text style={styles.titleItem}>Onsale in</Text>
-            <View style={styles.secondItemView}>
-              <TouchableOpacity style={styles.secondItemButton}>
-                <Text style={styles.secondItemButtonText}>ETH</Text>
-              </TouchableOpacity>
-              <TouchableOpacity style={styles.secondItemButton}>
-                <Text style={styles.secondItemButtonText}>WETH</Text>
-              </TouchableOpacity>
-              <TouchableOpacity style={styles.secondItemButton}>
-                <Text style={styles.secondItemButtonText}>0xBTC</Text>
-              </TouchableOpacity>
-            </View>
-            <View style={globalStyle.flexRow}>
-              <TouchableOpacity style={styles.secondItemButton}>
-                <Text style={styles.secondItemButtonText}>1337</Text>
-              </TouchableOpacity>
-              <TouchableOpacity style={styles.secondItemButton}>
-                <Text style={styles.secondItemButtonText}>1MT</Text>
-              </TouchableOpacity>
-            </View>
+            <ClickButton
+              value={[
+                { name: 'ETH' },
+                { name: 'WETH' },
+                { name: '0xBTC' },
+                { name: '1337' },
+                { name: '1MT' },
+              ]}
+            />
           </View>
 
           <View style={styles.sixthView}>
@@ -151,7 +115,7 @@ export const SearchFilter = () => {
                 <View>
                   <TouchableOpacity
                     onPress={() => {
-                      navigation.navigate('DetailSold' as never, {} as never);
+                      navigation.navigate('DetailsSold' as never, {} as never);
                     }}>
                     <Image
                       style={globalStyle.containerImage}
@@ -190,7 +154,7 @@ export const SearchFilter = () => {
                 <View>
                   <TouchableOpacity
                     onPress={() => {
-                      navigation.navigate('DetailSold' as never, {} as never);
+                      navigation.navigate('DetailsSold' as never, {} as never);
                     }}>
                     <Image
                       style={globalStyle.containerImage}
@@ -229,7 +193,7 @@ export const SearchFilter = () => {
                 <View>
                   <TouchableOpacity
                     onPress={() => {
-                      navigation.navigate('DetailSold' as never, {} as never);
+                      navigation.navigate('DetailsSold' as never, {} as never);
                     }}>
                     <Image
                       style={globalStyle.containerImage}

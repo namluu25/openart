@@ -45,31 +45,6 @@ export default StyleSheet.create({
   secondView: {
     marginBottom: 26,
   },
-  secondItemView: {
-    flexDirection: 'row',
-    justifyContent: 'flex-start',
-    marginBottom: 11,
-  },
-  secondGradientItemButton: {
-    borderRadius: 30,
-    marginRight: 10,
-  },
-  secondItemButton: {
-    backgroundColor: color.grayBody,
-    borderRadius: 30,
-    marginRight: 10,
-  },
-  secondItemButtonText: {
-    fontSize: 16,
-    fontFamily: 'Epilogue',
-    textAlign: 'center',
-    lineHeight: 22,
-    fontWeight: '400',
-    color: color.grayBG,
-    marginHorizontal: 20,
-    paddingTop: 12,
-    paddingBottom: 8,
-  },
   thirdView: {
     marginBottom: 43,
   },
