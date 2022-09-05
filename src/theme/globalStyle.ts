@@ -1,58 +1,13 @@
-import { StyleSheet, Platform } from 'react-native';
+import { StyleSheet, Platform, Dimensions } from 'react-native';
 import { color } from './color';
+
+export const dimensions = Dimensions.get('window');
 
 export const globalStyle = StyleSheet.create({
   AndroidSafeArea: {
     flex: 1,
     paddingTop: Platform.OS === 'android' ? 17 : 0,
     backgroundColor: color.grayTitle,
-  },
-  containerImage: {
-    borderRadius: 24,
-    marginTop: 18,
-    width: 321,
-    height: 400,
-    marginBottom: 13,
-  },
-  container: {
-    backgroundColor: color.grayBody,
-    alignItems: 'center',
-    borderRadius: 32,
-  },
-  containerAvatar: {
-    borderRadius: 24,
-    paddingLeft: 12,
-    width: 48,
-    height: 48,
-  },
-  containerTitle: {
-    fontSize: 24,
-    fontWeight: '700',
-    color: color.grayOffWhite,
-    fontFamily: 'Epilogue',
-  },
-  containerCreatorName: {
-    fontSize: 18,
-    fontWeight: '700',
-    color: color.grayOffWhite,
-    fontFamily: 'Epilogue',
-  },
-  containerCreatorInfo: {
-    fontSize: 14,
-    fontWeight: '500',
-    color: color.grayOffWhite,
-    fontFamily: 'Epilogue',
-  },
-  containerCreatorInfoView: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    marginTop: 3,
-    marginBottom: 17,
-    alignItems: 'center',
-  },
-  containerCreatorNameView: {
-    flex: 1,
-    marginLeft: 12,
   },
   containerPriceButton: {
     borderRadius: 8,
@@ -69,6 +24,12 @@ export const globalStyle = StyleSheet.create({
     color: color.grayBG,
     fontWeight: '400',
     lineHeight: 22,
+  },
+  containerTitle: {
+    fontSize: 24,
+    fontWeight: '700',
+    color: color.grayOffWhite,
+    fontFamily: 'Epilogue',
   },
   displayRegularLarge: {
     fontSize: 40,
