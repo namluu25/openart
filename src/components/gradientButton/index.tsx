@@ -17,6 +17,7 @@ export const ClickButton = (props: Props) => {
     <View style={styles.secondItemView}>
       {value?.map(item => (
         <TouchableOpacity
+          key={item.name}
           style={styles.secondItemButton}
           onPress={() => setSelectedValue(item.name)}>
           {selectedValue === item.name ? (
