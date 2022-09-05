@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Text, Image, TouchableOpacity, View } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import styles from './styles';
+import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
+import { faHeart as HeartSolid } from '@fortawesome/free-solid-svg-icons';
+import { faHeart as HeartBlank } from '@fortawesome/free-regular-svg-icons';
 
 interface Props {
   image: string;
@@ -13,7 +16,10 @@ interface Props {
 
 export const ItemContainer = (props: Props) => {
   const navigation = useNavigation();
-
+  const [heartClick, setHeartClick] = useState(false);
+  const clickHeart = () => {
+    setHeartClick(!heartClick);
+  };
   return (
     <View style={[styles.container]}>
       <View>
@@ -50,8 +56,12 @@ export const ItemContainer = (props: Props) => {
             </Text>
             <Text style={styles.containerCreatorInfo}>Creator</Text>
           </TouchableOpacity>
-          <TouchableOpacity>
-            <Image source={require('@images/icon/heart-icon.png')} />
+          <TouchableOpacity onPress={clickHeart}>
+            <FontAwesomeIcon
+              icon={heartClick ? HeartSolid : HeartBlank}
+              size={23}
+              color={'white'}
+            />
           </TouchableOpacity>
         </View>
       </View>
