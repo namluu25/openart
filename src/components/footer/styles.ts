@@ -77,7 +77,8 @@ export default StyleSheet.create({
     fontFamily: 'Epilogue',
     color: color.grayOffWhite,
     fontWeight: '500',
-    paddingVertical: 28,
+    paddingTop: 28,
+    paddingBottom: 80,
     paddingLeft: 17,
   },
 });
