@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   View,
   Text,
@@ -7,20 +7,35 @@ import {
   Image,
   TextInput,
 } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
-import { Header } from 'components';
+import { Header, ItemContainer } from 'components';
 import { Footer } from 'components';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import { faMicrophone } from '@fortawesome/free-solid-svg-icons';
 import Slider from '@react-native-community/slider';
 import styles from './styles';
-import { globalStyle } from 'theme/globalStyle';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { ClickButton } from 'components/gradientButton';
+import axios from 'axios';
+
+interface CreatedArt {
+  id: number;
+  image: string;
+  name: string;
+  avatar: string;
+  creatorName: string;
+}
 
 export const SearchFilter = () => {
-  const navigation = useNavigation();
+  const [artData, setArtData] = useState<Array<CreatedArt>>([]);
+  useEffect(() => {
+    axios
+      .get('https://62fa6791ffd7197707ebe3f2.mockapi.io/profile')
+      .then(res => {
+        setArtData(res.data[0].createdArt);
+      })
+      .catch(error => console.log(error));
+  }, []);
   return (
     <SafeAreaView>
       <Header />
@@ -109,124 +124,25 @@ export const SearchFilter = () => {
             <Image source={require('@images/icon/close-icon.png')} />
             <Text style={styles.resetButtonText}>Reset all filter</Text>
           </TouchableOpacity>
-          <View style={styles.productView}>
-            <View>
-              <View style={globalStyle.container}>
-                <View>
-                  <TouchableOpacity
-                    onPress={() => {
-                      navigation.navigate('DetailsSold' as never, {} as never);
-                    }}>
-                    <Image
-                      style={globalStyle.containerImage}
-                      source={require('@images/user-profile/art-1.png')}
-                    />
-                  </TouchableOpacity>
-
-                  <Text style={globalStyle.containerTitle}>Silent Color</Text>
-                  <View style={globalStyle.containerCreatorInfoView}>
-                    <Image
-                      style={globalStyle.containerAvatar}
-                      source={require('@images/avatar/ava1.png')}
-                    />
-                    <View style={globalStyle.containerCreatorNameView}>
-                      <Text style={globalStyle.containerCreatorName}>
-                        Pawel Czerwinski
-                      </Text>
-                      <Text style={globalStyle.containerCreatorInfo}>
-                        Creator
-                      </Text>
-                    </View>
-                    <Image source={require('@images/icon/heart-icon.png')} />
-                  </View>
-                </View>
+          {artData.map((art: CreatedArt) => {
+            return (
+              <View key={art.id}>
+                <ItemContainer
+                  image={art.image}
+                  name={art.name}
+                  avatar={art.avatar}
+                  creator_name={art.creatorName}
+                  navi={'DetailsSold'}
+                />
+                <TouchableOpacity style={styles.productButton}>
+                  <Text style={styles.productButtonTextSmall}>
+                    Sold For
+                    <Text style={styles.productButtonTextLarge}> 2.00 ETH</Text>
+                  </Text>
+                </TouchableOpacity>
               </View>
-              <TouchableOpacity style={styles.productButton}>
-                <Text style={styles.productButtonTextSmall}>
-                  Sold For
-                  <Text style={styles.productButtonTextLarge}> 2.00 ETH</Text>
-                </Text>
-              </TouchableOpacity>
-            </View>
-
-            <View>
-              <View style={globalStyle.container}>
-                <View>
-                  <TouchableOpacity
-                    onPress={() => {
-                      navigation.navigate('DetailsSold' as never, {} as never);
-                    }}>
-                    <Image
-                      style={globalStyle.containerImage}
-                      source={require('@images/user-profile/art-2.png')}
-                    />
-                  </TouchableOpacity>
-
-                  <Text style={globalStyle.containerTitle}>George</Text>
-                  <View style={globalStyle.containerCreatorInfoView}>
-                    <Image
-                      style={globalStyle.containerAvatar}
-                      source={require('@images/avatar/ava1.png')}
-                    />
-                    <View style={globalStyle.containerCreatorNameView}>
-                      <Text style={globalStyle.containerCreatorName}>
-                        Pawel Czerwinski
-                      </Text>
-                      <Text style={globalStyle.containerCreatorInfo}>
-                        Creator
-                      </Text>
-                    </View>
-                    <Image source={require('@images/icon/heart-icon.png')} />
-                  </View>
-                </View>
-              </View>
-              <TouchableOpacity style={styles.productButton}>
-                <Text style={styles.productButtonTextSmall}>
-                  Sold For
-                  <Text style={styles.productButtonTextLarge}> 2.00 ETH</Text>
-                </Text>
-              </TouchableOpacity>
-            </View>
-
-            <View>
-              <View style={globalStyle.container}>
-                <View>
-                  <TouchableOpacity
-                    onPress={() => {
-                      navigation.navigate('DetailsSold' as never, {} as never);
-                    }}>
-                    <Image
-                      style={globalStyle.containerImage}
-                      source={require('@images/user-profile/art-3.png')}
-                    />
-                  </TouchableOpacity>
-
-                  <Text style={globalStyle.containerTitle}>Ocean</Text>
-                  <View style={globalStyle.containerCreatorInfoView}>
-                    <Image
-                      style={globalStyle.containerAvatar}
-                      source={require('@images/avatar/ava1.png')}
-                    />
-                    <View style={globalStyle.containerCreatorNameView}>
-                      <Text style={globalStyle.containerCreatorName}>
-                        Pawel Czerwinski
-                      </Text>
-                      <Text style={globalStyle.containerCreatorInfo}>
-                        Creator
-                      </Text>
-                    </View>
-                    <Image source={require('@images/icon/heart-icon.png')} />
-                  </View>
-                </View>
-              </View>
-              <TouchableOpacity style={styles.productButton}>
-                <Text style={styles.productButtonTextSmall}>
-                  Sold For
-                  <Text style={styles.productButtonTextLarge}> 2.00 ETH</Text>
-                </Text>
-              </TouchableOpacity>
-            </View>
-          </View>
+            );
+          })}
         </View>
         <TouchableOpacity style={styles.loadMoreButton}>
           <Image source={require('@images/icon/plus-icon.png')} />

@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, ScrollView, TouchableOpacity, Image } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
-import { Header } from 'components';
+import { Header, ItemContainer } from 'components';
 import { Footer } from 'components';
 import axios from 'axios';
 import { globalStyle } from 'theme/globalStyle';
@@ -10,7 +9,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { authentication } from 'firebase/firebase';
 import auth from '@react-native-firebase/auth';
 
-export interface Items {
+interface Items {
   id?: number;
   name?: string;
   following?: string;
@@ -21,16 +20,15 @@ export interface Items {
   hash?: string;
 }
 
-export interface CreatedArt {
+interface CreatedArt {
   id: number;
-  image?: string;
-  name?: string;
-  avatar?: string;
-  creatorName?: string;
+  image: string;
+  name: string;
+  avatar: string;
+  creatorName: string;
 }
 
 export const ProfileMock = () => {
-  const navigation = useNavigation();
   const userEmail =
     authentication.currentUser?.email || auth().currentUser?.email;
   const [apiData, setApiData] = useState<Array<Items>>([]);
@@ -157,58 +155,25 @@ export const ProfileMock = () => {
             </View>
           </View>
 
-          <>
-            {artData.map((art: CreatedArt) => {
-              return (
-                <View key={art.id}>
-                  <View style={globalStyle.container}>
-                    <View>
-                      <TouchableOpacity
-                        onPress={() => {
-                          navigation.navigate(
-                            'DetailsSold' as never,
-                            {} as never,
-                          );
-                        }}>
-                        <Image
-                          style={globalStyle.containerImage}
-                          source={{ uri: art.image }}
-                        />
-                      </TouchableOpacity>
-
-                      <Text style={globalStyle.containerTitle}>{art.name}</Text>
-                      <View style={globalStyle.containerCreatorInfoView}>
-                        <Image
-                          style={globalStyle.containerAvatar}
-                          source={{ uri: art.avatar }}
-                        />
-                        <View style={globalStyle.containerCreatorNameView}>
-                          <Text style={globalStyle.containerCreatorName}>
-                            {art.creatorName}
-                          </Text>
-                          <Text style={globalStyle.containerCreatorInfo}>
-                            Creator
-                          </Text>
-                        </View>
-                        <Image
-                          source={require('@images/icon/heart-icon.png')}
-                        />
-                      </View>
-                    </View>
-                  </View>
-                  <TouchableOpacity style={styles.productButton}>
-                    <Text style={styles.productButtonTextSmall}>
-                      Sold For
-                      <Text style={styles.productButtonTextLarge}>
-                        {' '}
-                        2.00 ETH
-                      </Text>
-                    </Text>
-                  </TouchableOpacity>
-                </View>
-              );
-            })}
-          </>
+          {artData.map((art: CreatedArt) => {
+            return (
+              <View key={art.id}>
+                <ItemContainer
+                  image={art.image}
+                  name={art.name}
+                  avatar={art.avatar}
+                  creator_name={art.creatorName}
+                  navi={'DetailsSold'}
+                />
+                <TouchableOpacity style={styles.productButton}>
+                  <Text style={styles.productButtonTextSmall}>
+                    Sold For
+                    <Text style={styles.productButtonTextLarge}> 2.00 ETH</Text>
+                  </Text>
+                </TouchableOpacity>
+              </View>
+            );
+          })}
 
           <TouchableOpacity style={styles.loadMoreButton}>
             <Image source={require('@images/icon/plus-icon.png')} />
