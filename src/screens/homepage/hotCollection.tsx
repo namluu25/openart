@@ -13,25 +13,17 @@ export const HotCollection = () => {
         <Text style={styles.titleText}> Hot Collection</Text>
       </View>
 
-      <View
-        style={[
-          globalStyle.flexRow,
-          globalStyle.justifyBetween,
-          styles.imageView,
-        ]}>
+      <View style={[globalStyle.flexRow, styles.imageView]}>
         <View
           //image row 1
-          style={[
-            globalStyle.flexColumn,
-            globalStyle.justifyBetween,
-            globalStyle.flex,
-            globalStyle.itemStart,
-          ]}>
+          style={[globalStyle.flexColumn, globalStyle.justifyBetween]}>
           <Image
+            style={styles.image}
             source={require('@images/hotcollection/hot-collection-1.png')}
           />
           <Image
-            source={require('@images/hotcollection/hot-collection-2.png')}
+            style={styles.image}
+            source={require('@images/hotcollection/hot-collection-3.png')}
           />
         </View>
 
@@ -44,9 +36,11 @@ export const HotCollection = () => {
             globalStyle.itemEnd,
           ]}>
           <Image
-            source={require('@images/hotcollection/hot-collection-3.png')}
+            style={styles.image}
+            source={require('@images/hotcollection/hot-collection-2.png')}
           />
           <Image
+            style={styles.image}
             source={require('@images/hotcollection/hot-collection-4.png')}
           />
         </View>

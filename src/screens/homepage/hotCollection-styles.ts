@@ -1,5 +1,8 @@
 import { StyleSheet } from 'react-native';
 import { color } from 'theme/color';
+import { dimensions } from 'theme/globalStyle';
+
+const imageWidth = Math.round(dimensions.width * 0.44);
 
 export default StyleSheet.create({
   titleView: {
@@ -35,8 +38,13 @@ export default StyleSheet.create({
     color: color.grayOffWhite,
   },
   imageView: {
-    height: 430,
+    height: 412,
     marginBottom: 18,
+  },
+  image: {
+    width: imageWidth,
+    height: '48%',
+    borderRadius: 16,
   },
   button: {
     borderRadius: 34,
