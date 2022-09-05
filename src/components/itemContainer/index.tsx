@@ -1,6 +1,5 @@
 import React from 'react';
 import { Text, Image, TouchableOpacity, View } from 'react-native';
-import { globalStyle } from 'theme/globalStyle';
 import { useNavigation } from '@react-navigation/native';
 import styles from './styles';
 
@@ -16,26 +15,23 @@ export const ItemContainer = (props: Props) => {
   const navigation = useNavigation();
 
   return (
-    <View style={[globalStyle.container]}>
+    <View style={[styles.container]}>
       <View>
         <TouchableOpacity
           onPress={() => {
             navigation.navigate(props.navi as never, {} as never);
           }}>
-          <Image
-            style={globalStyle.containerImage}
-            source={{ uri: props.image }}
-          />
+          <Image style={styles.containerImage} source={{ uri: props.image }} />
         </TouchableOpacity>
-        <Text style={globalStyle.containerTitle}>{props.name}</Text>
-        <View style={globalStyle.containerCreatorInfoView}>
+        <Text style={styles.containerTitle}>{props.name}</Text>
+        <View style={styles.containerCreatorInfoView}>
           <View>
             <TouchableOpacity
               onPress={() => {
                 navigation.navigate('ProfileMock' as never, {} as never);
               }}>
               <Image
-                style={globalStyle.containerAvatar}
+                style={styles.containerAvatar}
                 source={{ uri: props.avatar }}
               />
             </TouchableOpacity>
@@ -48,11 +44,11 @@ export const ItemContainer = (props: Props) => {
             onPress={() => {
               navigation.navigate('ProfileMock' as never, {} as never);
             }}
-            style={globalStyle.containerCreatorNameView}>
-            <Text style={globalStyle.containerCreatorName}>
+            style={styles.containerCreatorNameView}>
+            <Text style={styles.containerCreatorName}>
               {props.creator_name}
             </Text>
-            <Text style={globalStyle.containerCreatorInfo}>Creator</Text>
+            <Text style={styles.containerCreatorInfo}>Creator</Text>
           </TouchableOpacity>
           <TouchableOpacity>
             <Image source={require('@images/icon/heart-icon.png')} />
