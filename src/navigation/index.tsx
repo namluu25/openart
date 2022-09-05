@@ -5,6 +5,7 @@ import RNBootSplash from 'react-native-bootsplash';
 import { authentication } from 'firebase/firebase';
 import { AppStack } from './AppStack';
 import { AuthStack } from './AuthStack';
+import auth from '@react-native-firebase/auth';
 
 const MyTheme = {
   ...DefaultTheme,
@@ -18,6 +19,13 @@ export const AppNavigation = () => {
   const [isSignedin, setIsSignedin] = useState(false);
   useEffect(() => {
     authentication.onAuthStateChanged(user => {
+      if (user) {
+        setIsSignedin(true);
+      } else {
+        setIsSignedin(false);
+      }
+    });
+    auth().onAuthStateChanged(user => {
       if (user) {
         setIsSignedin(true);
       } else {

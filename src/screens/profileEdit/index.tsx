@@ -16,9 +16,11 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import axios from 'axios';
 import { authentication } from 'firebase/firebase';
 import { Items } from 'screens/profileMock';
+import auth from '@react-native-firebase/auth';
 
 export const ProfileEdit = () => {
-  const userEmail = authentication.currentUser?.email;
+  const userEmail =
+    authentication.currentUser?.email || auth().currentUser?.email;
   const [apiData, setApiData] = useState<Array<Items>>([]);
   useEffect(() => {
     axios

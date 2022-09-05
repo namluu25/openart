@@ -9,10 +9,12 @@ import { Items } from 'screens/profileMock';
 import { authentication } from 'firebase/firebase';
 import { useNavigation } from '@react-navigation/native';
 import axios from 'axios';
+import auth from '@react-native-firebase/auth';
 
 export const ProfileEmpty = () => {
   const navigation = useNavigation();
-  const userEmail = authentication.currentUser?.email;
+  const userEmail =
+    authentication.currentUser?.email || auth().currentUser?.email;
   const [apiData, setApiData] = useState<Array<Items>>([]);
   useEffect(() => {
     axios

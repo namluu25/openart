@@ -8,6 +8,7 @@ import { globalStyle } from 'theme/globalStyle';
 import styles from './styles';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { authentication } from 'firebase/firebase';
+import auth from '@react-native-firebase/auth';
 
 export interface Items {
   id?: number;
@@ -30,7 +31,8 @@ export interface CreatedArt {
 
 export const ProfileMock = () => {
   const navigation = useNavigation();
-  const userEmail = authentication.currentUser?.email;
+  const userEmail =
+    authentication.currentUser?.email || auth().currentUser?.email;
   const [apiData, setApiData] = useState<Array<Items>>([]);
   const [artData, setArtData] = useState<Array<CreatedArt>>([]);
   useEffect(() => {
