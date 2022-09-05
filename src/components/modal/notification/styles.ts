@@ -1,11 +1,17 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Platform } from 'react-native';
 import { color } from 'theme/color';
+import { dimensions } from 'theme/globalStyle';
+
+const paddingModal =
+  Platform.OS === 'android'
+    ? Math.round(dimensions.height * 0.065)
+    : Math.round(dimensions.height * 0.065) + 22;
 
 export default StyleSheet.create({
   centeredView: {
     flex: 1,
     alignItems: 'flex-end',
-    paddingTop: 50,
+    paddingTop: paddingModal,
     padding: 16,
     backgroundColor: 'rgba(0,0,0,0.5)',
   },
@@ -71,7 +77,7 @@ export default StyleSheet.create({
   },
   separatorLine: {
     borderBottomColor: 'white',
-    borderBottomWidth: 0.2,
+    borderBottomWidth: 0.5,
     width: '100%',
     alignSelf: 'center',
     marginTop: 10,
