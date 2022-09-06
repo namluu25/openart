@@ -16,7 +16,6 @@ import {
   SearchFilter,
   SearchPopup,
 } from 'screens';
-import { ItemContainer } from 'components';
 
 const Stack = createNativeStackNavigator();
 
@@ -39,7 +38,6 @@ export const AppStack = () => {
       <Stack.Screen name="ProfileEdit" component={ProfileEdit} />
       <Stack.Screen name="SearchFilter" component={SearchFilter} />
       <Stack.Screen name="SearchPopup" component={SearchPopup} />
-      <Stack.Screen name="ItemContainer" component={ItemContainer} />
     </Stack.Navigator>
   );
 };

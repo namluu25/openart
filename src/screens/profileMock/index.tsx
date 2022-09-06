@@ -9,7 +9,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { authentication } from 'firebase/firebase';
 import auth from '@react-native-firebase/auth';
 
-interface Items {
+export interface Items {
   id?: number;
   name?: string;
   following?: string;
@@ -20,7 +20,7 @@ interface Items {
   hash?: string;
 }
 
-interface CreatedArt {
+export interface CreatedArt {
   id: number;
   image: string;
   name: string;
