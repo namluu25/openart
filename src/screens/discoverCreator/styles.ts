@@ -28,27 +28,6 @@ export default StyleSheet.create({
   buttonView: {
     marginTop: 39,
     marginBottom: 23,
-    flexDirection: 'row',
-    alignItems: 'flex-start',
-  },
-  gradientButton: {
-    borderRadius: 30,
-    marginRight: 8,
-  },
-  normalButton: {
-    borderRadius: 30,
-    backgroundColor: color.grayBody,
-  },
-  buttonText: {
-    fontSize: 16,
-    fontFamily: 'Epilogue',
-    textAlign: 'center',
-    lineHeight: 22,
-    fontWeight: '400',
-    color: color.grayBG,
-    paddingHorizontal: 20,
-    paddingTop: 12,
-    paddingBottom: 8,
   },
   itemMargin: {
     marginBottom: 40,

@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, ScrollView, TouchableOpacity, Image } from 'react-native';
-import LinearGradient from 'react-native-linear-gradient';
-import { Header } from 'components';
-import { Footer } from 'components';
-import axios from 'axios';
-import styles from './styles';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import axios from 'axios';
+import { Header, Footer, GradientButton } from 'components';
+import styles from './styles';
 
 interface Items {
   id: number;
@@ -36,18 +34,9 @@ export const DiscoverCreator = () => {
             Follow at least five creators to build your feed…
           </Text>
           <View style={styles.buttonView}>
-            <TouchableOpacity>
-              <LinearGradient
-                colors={['#0038F5', '#9F03FF']}
-                useAngle={true}
-                angle={114.44}
-                style={styles.gradientButton}>
-                <Text style={styles.buttonText}>Feature Creatior</Text>
-              </LinearGradient>
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.normalButton}>
-              <Text style={styles.buttonText}>All Creator</Text>
-            </TouchableOpacity>
+            <GradientButton
+              value={[{ name: 'Feature Creatior' }, { name: 'All Creator' }]}
+            />
           </View>
           {apiData.map((item: Items) => {
             return (
