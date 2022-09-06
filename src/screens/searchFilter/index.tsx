@@ -15,7 +15,7 @@ import { faMicrophone } from '@fortawesome/free-solid-svg-icons';
 import Slider from '@react-native-community/slider';
 import styles from './styles';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { ClickButton } from 'components/gradientButton';
+import { GradientButton } from 'components/gradientButton';
 import axios from 'axios';
 
 interface CreatedArt {
@@ -56,7 +56,7 @@ export const SearchFilter = () => {
           </View>
           <View style={styles.secondView}>
             <Text style={styles.titleItem}>Type</Text>
-            <ClickButton
+            <GradientButton
               value={[
                 { name: 'All items' },
                 { name: 'Game' },
@@ -87,7 +87,7 @@ export const SearchFilter = () => {
 
           <View style={styles.forthView}>
             <Text style={styles.titleItem}>Chains</Text>
-            <ClickButton
+            <GradientButton
               value={[
                 { name: 'Ethereum' },
                 { name: 'Matic' },
@@ -98,7 +98,7 @@ export const SearchFilter = () => {
 
           <View style={styles.fifthView}>
             <Text style={styles.titleItem}>Onsale in</Text>
-            <ClickButton
+            <GradientButton
               value={[
                 { name: 'ETH' },
                 { name: 'WETH' },

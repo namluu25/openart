@@ -10,7 +10,7 @@ interface ButtonName {
 interface Props {
   value: Array<ButtonName>;
 }
-export const ClickButton = (props: Props) => {
+export const GradientButton = (props: Props) => {
   const { value } = props;
   const [selectedValue, setSelectedValue] = useState('All items');
   return (
