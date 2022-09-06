@@ -1,5 +1,12 @@
 import React, { useState } from 'react';
-import { View, Text, TouchableOpacity, Image, TextInput } from 'react-native';
+import {
+  View,
+  Text,
+  TouchableOpacity,
+  Image,
+  TextInput,
+  Alert,
+} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import { GoogleSignin } from '@react-native-google-signin/google-signin';
 import auth from '@react-native-firebase/auth';
@@ -39,16 +46,30 @@ export const Login = () => {
   const [password, setPassword] = useState('');
   const registerUser = () => {
     createUserWithEmailAndPassword(authentication, email, password)
-      .then(() => {})
+      .then(() => {
+        Alert.alert('Register user successfully');
+      })
       .catch(error => {
-        console.log(error);
+        if (error.message === 'Firebase: Error (auth/email-already-in-use).') {
+          Alert.alert('Email already in use.');
+        } else if (error.message === 'Firebase: Error (auth/invalid-email).') {
+          Alert.alert('Invalid email address.');
+        } else {
+          Alert.alert('Password should be at least 6 characters.');
+        }
       });
   };
   const signinUser = () => {
     signInWithEmailAndPassword(authentication, email, password)
       .then(() => {})
       .catch(error => {
-        console.log(error);
+        if (error.message === 'Firebase: Error (auth/user-not-found).') {
+          Alert.alert('User not found, please register.');
+        } else if (error.message === 'Firebase: Error (auth/invalid-email).') {
+          Alert.alert('Invalid email address.');
+        } else {
+          Alert.alert('Wrong password.');
+        }
       });
   };
 
