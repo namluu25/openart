@@ -90,7 +90,6 @@ export default StyleSheet.create({
     fontFamily: 'Epilogue',
     fontWeight: '700',
     fontSize: 32,
-    lineHeight: 36,
     color: color.grayOffWhite,
     marginLeft: 20,
   },
@@ -98,7 +97,6 @@ export default StyleSheet.create({
     fontFamily: 'Epilogue',
     fontWeight: '500',
     fontSize: 16,
-    lineHeight: 24,
     color: color.grayBG,
   },
   secondRowButton: {
