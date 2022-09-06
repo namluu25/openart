@@ -2,6 +2,9 @@ import { StyleSheet } from 'react-native';
 import { color } from 'theme/color';
 
 export default StyleSheet.create({
+  buttonColor: {
+    backgroundColor: color.grayOffWhite,
+  },
   inputBox: {
     borderRadius: 8,
     backgroundColor: color.grayBody,
@@ -9,6 +12,8 @@ export default StyleSheet.create({
     paddingLeft: 15,
     color: color.grayOffWhite,
     height: 48,
+    borderWidth: 1,
+    borderColor: color.grayOffWhite,
   },
   logoImage: {
     alignSelf: 'center',
@@ -28,7 +33,7 @@ export default StyleSheet.create({
     fontFamily: 'Epilogue',
     textAlign: 'center',
     padding: 10,
-    color: color.grayOffWhite,
+    color: color.grayTitle,
     fontWeight: '700',
   },
   googleButton: {

@@ -5,21 +5,23 @@ import {
   TouchableOpacity,
   Image,
   TextInput,
-  Alert,
+  KeyboardAvoidingView,
+  TouchableWithoutFeedback,
+  Keyboard,
 } from 'react-native';
-import LinearGradient from 'react-native-linear-gradient';
-import { GoogleSignin } from '@react-native-google-signin/google-signin';
-import auth from '@react-native-firebase/auth';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { faGoogle } from '@fortawesome/free-brands-svg-icons';
 import styles from './styles';
 import { globalStyle } from 'theme/globalStyle';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import { GoogleSignin } from '@react-native-google-signin/google-signin';
+import auth from '@react-native-firebase/auth';
 import { authentication } from 'firebase/firebase';
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
 } from 'firebase/auth/';
+import Toast from 'react-native-toast-message';
 
 GoogleSignin.configure({
   webClientId:
@@ -47,15 +49,27 @@ export const Login = () => {
   const registerUser = () => {
     createUserWithEmailAndPassword(authentication, email, password)
       .then(() => {
-        Alert.alert('Register user successfully');
+        Toast.show({
+          type: 'success',
+          text1: 'Register user successfully',
+        });
       })
       .catch(error => {
         if (error.message === 'Firebase: Error (auth/email-already-in-use).') {
-          Alert.alert('Email already in use.');
+          Toast.show({
+            type: 'error',
+            text1: 'Email already in use',
+          });
         } else if (error.message === 'Firebase: Error (auth/invalid-email).') {
-          Alert.alert('Invalid email address.');
+          Toast.show({
+            type: 'error',
+            text1: 'Invalid email address',
+          });
         } else {
-          Alert.alert('Password should be at least 6 characters.');
+          Toast.show({
+            type: 'error',
+            text1: 'Password should be at least 6 characters',
+          });
         }
       });
   };
@@ -64,67 +78,81 @@ export const Login = () => {
       .then(() => {})
       .catch(error => {
         if (error.message === 'Firebase: Error (auth/user-not-found).') {
-          Alert.alert('User not found, please register.');
+          Toast.show({
+            type: 'error',
+            text1: 'User not found, please register',
+          });
         } else if (error.message === 'Firebase: Error (auth/invalid-email).') {
-          Alert.alert('Invalid email address.');
+          Toast.show({
+            type: 'error',
+            text1: 'Invalid email address',
+          });
         } else {
-          Alert.alert('Wrong password.');
+          Toast.show({
+            type: 'error',
+            text1: 'Wrong password',
+          });
         }
       });
   };
 
   return (
-    <SafeAreaView>
-      <Image
-        source={require('@images/icon/Logo.png')}
-        style={styles.logoImage}
-      />
-      <View style={styles.inputView}>
-        <TextInput
-          style={styles.inputBox}
-          placeholderTextColor="#FCFCFC"
-          placeholder="Email address or phone number"
-          value={email}
-          onChangeText={text => setEmail(text)}
-        />
-        <TextInput
-          style={styles.inputBox}
-          placeholderTextColor="#FCFCFC"
-          placeholder="Password"
-          value={password}
-          onChangeText={text => setPassword(text)}
-          secureTextEntry={true}
-        />
-      </View>
+    <SafeAreaView style={[globalStyle.flex, globalStyle.justifyCenter]}>
+      <KeyboardAvoidingView behavior="padding">
+        <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+          <View>
+            <Image
+              source={require('@images/icon/Logo.png')}
+              style={styles.logoImage}
+            />
+            <View style={styles.inputView}>
+              <TextInput
+                style={styles.inputBox}
+                placeholderTextColor="#FCFCFC"
+                placeholder="Email address or phone number"
+                value={email}
+                onChangeText={text => setEmail(text)}
+              />
+              <TextInput
+                style={styles.inputBox}
+                placeholderTextColor="#FCFCFC"
+                placeholder="Password"
+                value={password}
+                onChangeText={text => setPassword(text)}
+                secureTextEntry={true}
+              />
+            </View>
 
-      <View style={styles.buttonView}>
-        <TouchableOpacity onPress={signinUser}>
-          <LinearGradient
-            colors={['#0038F5', '#9F03FF']}
-            useAngle={true}
-            angle={114.44}
-            style={globalStyle.buttonRadius}>
-            <Text style={styles.buttonText}>Login</Text>
-          </LinearGradient>
-        </TouchableOpacity>
+            <View style={styles.buttonView}>
+              <TouchableOpacity
+                onPress={signinUser}
+                style={[globalStyle.buttonRadius, styles.buttonColor]}>
+                <Text style={styles.buttonText}>Login</Text>
+              </TouchableOpacity>
 
-        <TouchableOpacity onPress={registerUser}>
-          <LinearGradient
-            colors={['#0038F5', '#9F03FF']}
-            useAngle={true}
-            angle={114.44}
-            style={[globalStyle.buttonRadius, styles.registerButton]}>
-            <Text style={styles.buttonText}>Register</Text>
-          </LinearGradient>
-        </TouchableOpacity>
+              <TouchableOpacity
+                onPress={registerUser}
+                style={[
+                  globalStyle.buttonRadius,
+                  styles.registerButton,
+                  styles.buttonColor,
+                ]}>
+                <Text style={styles.buttonText}>Register</Text>
+              </TouchableOpacity>
 
-        <TouchableOpacity
-          style={styles.googleButton}
-          onPress={() => onGoogleButtonPress()}>
-          <FontAwesomeIcon icon={faGoogle} style={styles.googleButtonLogo} />
-          <Text style={styles.googleButtonText}>Sign in with Google</Text>
-        </TouchableOpacity>
-      </View>
+              <TouchableOpacity
+                style={styles.googleButton}
+                onPress={() => onGoogleButtonPress()}>
+                <FontAwesomeIcon
+                  icon={faGoogle}
+                  style={styles.googleButtonLogo}
+                />
+                <Text style={styles.googleButtonText}>Sign in with Google</Text>
+              </TouchableOpacity>
+            </View>
+          </View>
+        </TouchableWithoutFeedback>
+      </KeyboardAvoidingView>
     </SafeAreaView>
   );
 };
