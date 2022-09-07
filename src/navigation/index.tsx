@@ -42,7 +42,7 @@ export const AppNavigation = () => {
         translucent={true}
         backgroundColor="transparent"
       />
-      {isSignedin === false ? <AppStack /> : <AuthStack />}
+      {isSignedin === true ? <AppStack /> : <AuthStack />}
     </NavigationContainer>
   );
 };

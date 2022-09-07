@@ -23,8 +23,8 @@ export default StyleSheet.create({
   },
   closeIconButton: {
     position: 'absolute',
-    marginRight: 8,
-    marginVertical: 12,
+    paddingRight: 8,
+    paddingVertical: 12,
     right: 0,
   },
   icon: {

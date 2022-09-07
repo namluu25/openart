@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -21,6 +21,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 
 export const SearchPopup = () => {
   const navigation = useNavigation();
+  const [search, setSearch] = useState('');
   return (
     <SafeAreaView>
       <Header />
@@ -38,11 +39,15 @@ export const SearchPopup = () => {
               placeholderTextColor="#FCFCFC"
               placeholder=" "
               autoFocus={true}
+              value={search}
+              onChangeText={setSearch}
             />
             <TouchableOpacity style={styles.seachIconButton}>
               <FontAwesomeIcon icon={faMagnifyingGlass} style={styles.icon} />
             </TouchableOpacity>
-            <TouchableOpacity style={styles.closeIconButton}>
+            <TouchableOpacity
+              style={styles.closeIconButton}
+              onPress={() => setSearch('')}>
               <FontAwesomeIcon icon={faXmark} style={styles.icon} />
             </TouchableOpacity>
           </View>
