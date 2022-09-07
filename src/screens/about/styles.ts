@@ -1,6 +1,8 @@
 import { StyleSheet } from 'react-native';
 import { color } from 'theme/color';
+import { dimensions } from 'theme/globalStyle';
 
+const boxWidth = Math.round(dimensions.width * 0.44);
 export default StyleSheet.create({
   titleText: {
     fontSize: 20,
@@ -46,13 +48,17 @@ export default StyleSheet.create({
   boxView: {
     backgroundColor: color.grayBody,
     alignItems: 'center',
+    justifyContent: 'center',
     borderRadius: 24,
     height: 188,
-    width: 166,
+    width: boxWidth,
   },
   boxImage: {
-    marginTop: 10,
-    marginBottom: 13,
+    marginBottom: 18,
+  },
+  boxImage1: {
+    marginBottom: 18,
+    marginTop: 15,
   },
   boxText: {
     fontSize: 16,

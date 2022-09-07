@@ -32,7 +32,7 @@ export const About = () => {
             <View style={[globalStyle.flexRow, globalStyle.justifyBetween]}>
               <View style={styles.boxView}>
                 <Image
-                  style={styles.boxImage}
+                  style={styles.boxImage1}
                   source={require('@images/icon/about-icon-2.png')}
                 />
                 <Text style={styles.boxText}>Build together</Text>
