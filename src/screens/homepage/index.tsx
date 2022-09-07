@@ -113,67 +113,63 @@ export const Home = () => {
                 </Text>
               </TouchableOpacity>
             </View>
-            <ScrollView>
-              {apiData.slice(1).map((item: Items) => {
-                return (
-                  <View key={item.id}>
-                    <ItemContainer
-                      image={item.image}
-                      name={item.name}
-                      creator_name={item.creator_name}
-                      avatar={item.avatar}
-                      navi={
-                        item.sold_state ? 'DetailsSold' : 'DetailsCurrentBid'
-                      }
-                    />
-                    {item.sold_state ? (
-                      <TouchableOpacity style={styles.button}>
-                        <Text style={styles.buttonText}>
-                          Sold For
-                          <Text style={styles.buttonTextBold}> 2.00 ETH</Text>
-                        </Text>
-                      </TouchableOpacity>
-                    ) : (
-                      <TouchableOpacity style={styles.buttonBid}>
+            {apiData.slice(1).map((item: Items) => {
+              return (
+                <View key={item.id}>
+                  <ItemContainer
+                    image={item.image}
+                    name={item.name}
+                    creator_name={item.creator_name}
+                    avatar={item.avatar}
+                    navi={item.sold_state ? 'DetailsSold' : 'DetailsCurrentBid'}
+                  />
+                  {item.sold_state ? (
+                    <TouchableOpacity style={styles.button}>
+                      <Text style={styles.buttonText}>
+                        Sold For
+                        <Text style={styles.buttonTextBold}> 2.00 ETH</Text>
+                      </Text>
+                    </TouchableOpacity>
+                  ) : (
+                    <TouchableOpacity
+                      style={styles.buttonBid}
+                      onPress={() => setVisible(true)}>
+                      <View
+                        style={[
+                          globalStyle.flexRow,
+                          globalStyle.justifyAround,
+                        ]}>
                         <View
                           style={[
                             globalStyle.flexRow,
-                            globalStyle.justifyAround,
+                            globalStyle.itemBaseline,
                           ]}>
-                          <View
-                            style={[
-                              globalStyle.flexRow,
-                              globalStyle.itemBaseline,
-                            ]}>
-                            <Image
-                              resizeMode="contain"
-                              style={styles.buttonBidActiveIcon}
-                              source={require('@images/icon/active-icon.png')}
-                            />
-                            <View style={globalStyle.itemStart}>
-                              <Text style={styles.buttonBidTextLight}>
-                                Current bid
-                              </Text>
-                              <Text style={styles.buttonBidTextBold}>
-                                2.00 ETH
-                              </Text>
-                            </View>
-                          </View>
+                          <Image
+                            resizeMode="contain"
+                            style={styles.buttonBidActiveIcon}
+                            source={require('@images/icon/active-icon.png')}
+                          />
                           <View style={globalStyle.itemStart}>
                             <Text style={styles.buttonBidTextLight}>
-                              Ending in
+                              Current bid
                             </Text>
                             <Text style={styles.buttonBidTextBold}>
-                              27m 30s
+                              2.00 ETH
                             </Text>
                           </View>
                         </View>
-                      </TouchableOpacity>
-                    )}
-                  </View>
-                );
-              })}
-            </ScrollView>
+                        <View style={globalStyle.itemStart}>
+                          <Text style={styles.buttonBidTextLight}>
+                            Ending in
+                          </Text>
+                          <Text style={styles.buttonBidTextBold}>27m 30s</Text>
+                        </View>
+                      </View>
+                    </TouchableOpacity>
+                  )}
+                </View>
+              );
+            })}
           </View>
 
           <HotBid />
