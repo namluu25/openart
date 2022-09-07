@@ -50,7 +50,7 @@ export const ItemContainer = (props: Props) => {
             </Text>
             <Text style={styles.containerCreatorInfo}>Creator</Text>
           </TouchableOpacity>
-          <HeartButton style={{}} size={23} />
+          <HeartButton size={23} />
         </View>
       </View>
     </View>

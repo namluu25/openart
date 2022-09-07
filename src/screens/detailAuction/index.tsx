@@ -38,10 +38,8 @@ export const DetailsAuction = () => {
               <Text style={globalStyle.containerTitle}>Silent Color</Text>
               <View style={globalStyle.flexRow}>
                 {/* button */}
-                <View style={styles.buttonBorder}>
-                  <HeartButton style={styles.buttonImage} size={24} />
-                </View>
-                <ShareButton />
+                <HeartButton style={styles.buttonBorder} size={24} />
+                <ShareButton style={styles.buttonBorder} />
               </View>
             </View>
 

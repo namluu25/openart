@@ -17,9 +17,6 @@ export default StyleSheet.create({
     alignSelf: 'center',
     marginLeft: 12,
   },
-  buttonImage: {
-    margin: 11,
-  },
   userButton: {
     backgroundColor: color.grayBody,
     borderRadius: 52,

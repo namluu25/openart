@@ -7,8 +7,7 @@ import {
   Image,
   Linking,
 } from 'react-native';
-import { Header, ItemContainer } from 'components';
-import { Footer } from 'components';
+import { Header, ItemContainer, ShareButton, Footer } from 'components';
 import axios from 'axios';
 import { globalStyle } from 'theme/globalStyle';
 import styles from './styles';
@@ -66,12 +65,7 @@ export const ProfileMock = () => {
                 source={require('@images/icon/more-icon.png')}
               />
             </TouchableOpacity>
-            <TouchableOpacity style={styles.buttonShareBorder}>
-              <Image
-                style={styles.icon}
-                source={require('@images/icon/export-icon.png')}
-              />
-            </TouchableOpacity>
+            <ShareButton style={styles.buttonShareBorder} />
           </View>
           <Image style={styles.avatar} source={{ uri: apiData[0]?.avatar }} />
 

@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, ScrollView, TouchableOpacity, Image } from 'react-native';
-import { Header } from 'components';
-import { Footer } from 'components';
+import { Header, ShareButton, Footer } from 'components';
 import styles from './styles';
 import { globalStyle } from 'theme/globalStyle';
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -45,12 +44,7 @@ export const ProfileEmpty = () => {
                 source={require('@images/icon/more-icon.png')}
               />
             </TouchableOpacity>
-            <TouchableOpacity style={styles.coverButtonShare}>
-              <Image
-                style={styles.coverButtonIcon}
-                source={require('@images/icon/export-icon.png')}
-              />
-            </TouchableOpacity>
+            <ShareButton style={styles.coverButtonShare} />
           </View>
           <Image style={styles.avatar} source={{ uri: apiData[0]?.avatar }} />
 
