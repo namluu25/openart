@@ -1,3 +1,4 @@
+import { useNavigation } from '@react-navigation/native';
 import React, { useRef } from 'react';
 import {
   View,
@@ -12,6 +13,7 @@ import styles from './hotBid-styles';
 
 export const HotBid = () => {
   const naviRef = useRef<ScrollView>(null);
+  const navigation = useNavigation();
   const screenWidth = Dimensions.get('window').width;
   return (
     <View style={styles.hotBid}>
@@ -47,10 +49,15 @@ export const HotBid = () => {
         <View style={styles.itemView}>
           {/* 1 item view */}
           <View>
-            <Image
-              // image
-              source={require('@images/hotbid/hotbid-1.png')}
-            />
+            <TouchableOpacity
+              onPress={() => {
+                navigation.navigate('DetailsAuction' as never, {} as never);
+              }}>
+              <Image
+                // image
+                source={require('@images/hotbid/hotbid-1.png')}
+              />
+            </TouchableOpacity>
             <View style={styles.followerAvatarView}>
               <Image
                 style={styles.firstFollower}
@@ -93,10 +100,15 @@ export const HotBid = () => {
         <View style={styles.itemView}>
           {/* 1 item view */}
           <View>
-            <Image
-              // image
-              source={require('@images/hotbid/hotbid-1.png')}
-            />
+            <TouchableOpacity
+              onPress={() => {
+                navigation.navigate('DetailsAuction' as never, {} as never);
+              }}>
+              <Image
+                // image
+                source={require('@images/hotbid/hotbid-1.png')}
+              />
+            </TouchableOpacity>
             <View style={styles.followerAvatarView}>
               <Image
                 style={styles.firstFollower}
