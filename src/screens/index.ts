@@ -13,3 +13,4 @@ export * from './profileEmpty';
 export * from './search';
 export * from './searchFilter';
 export * from './profileMock';
+export * from './register';

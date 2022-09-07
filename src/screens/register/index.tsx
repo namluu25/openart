@@ -10,49 +10,41 @@ import {
   Keyboard,
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
-import { faGoogle } from '@fortawesome/free-brands-svg-icons';
 import styles from './styles';
 import { globalStyle } from 'theme/globalStyle';
-import { GoogleSignin } from '@react-native-google-signin/google-signin';
-import auth from '@react-native-firebase/auth';
 import { authentication } from 'firebase/firebase';
-import { signInWithEmailAndPassword } from 'firebase/auth/';
+import { createUserWithEmailAndPassword } from 'firebase/auth/';
 import Toast from 'react-native-toast-message';
-import { useNavigation } from '@react-navigation/native';
+import firestore from '@react-native-firebase/firestore';
+// import { collection, getDocs } from 'firebase/firestore/lite';
 
-GoogleSignin.configure({
-  webClientId:
-    '14813577460-bkjpc8pp44uk7saapmg5ku9m7b39ei8u.apps.googleusercontent.com',
-});
-
-async function onGoogleButtonPress() {
-  try {
-    // Get the users ID token
-    const { idToken } = await GoogleSignin.signIn();
-
-    // Create a Google credential with the token
-    const googleCredential = auth.GoogleAuthProvider.credential(idToken);
-
-    // Sign-in the user with the credential
-    await auth().signInWithCredential(googleCredential);
-  } catch (error) {
-    console.log({ error });
-  }
-}
-
-export const Login = () => {
-  const navigation = useNavigation();
+export const Register = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const signinUser = () => {
-    signInWithEmailAndPassword(authentication, email, password)
-      .then(() => {})
+  const [name, setName] = useState('');
+  const registerUser = () => {
+    createUserWithEmailAndPassword(authentication, email, password)
+      .then(user => {
+        Toast.show({
+          type: 'success',
+          text1: 'Register user successfully',
+        });
+        firestore()
+          .collection('Users')
+          .doc(user.user.uid)
+          .set({ name, email })
+          .then(() => {
+            console.log('User added!');
+            console.log(user.user.uid);
+            // console.log(authentication.);
+          });
+      })
       .catch(error => {
-        if (error.message === 'Firebase: Error (auth/user-not-found).') {
+        console.log(error);
+        if (error.message === 'Firebase: Error (auth/email-already-in-use).') {
           Toast.show({
             type: 'error',
-            text1: 'User not found, please register',
+            text1: 'Email already in use',
           });
         } else if (error.message === 'Firebase: Error (auth/invalid-email).') {
           Toast.show({
@@ -62,14 +54,22 @@ export const Login = () => {
         } else {
           Toast.show({
             type: 'error',
-            text1: 'Wrong password',
+            text1: 'Password should be at least 6 characters',
           });
         }
       });
+    // firestore()
+    //   .collection('Users')
+    //   .doc(authentication.currentUser?.uid)
+    //   .set({ name, email })
+    //   .then(() => {
+    //     console.log('User added!');
+    //     console.log(authentication.);
+    //   });
   };
 
   return (
-    <SafeAreaView style={[globalStyle.flex, globalStyle.justifyCenter]}>
+    <SafeAreaView style={[globalStyle.flex]}>
       <KeyboardAvoidingView behavior="padding">
         <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
           <View>
@@ -81,7 +81,14 @@ export const Login = () => {
               <TextInput
                 style={styles.inputBox}
                 placeholderTextColor="#FCFCFC"
-                placeholder="Email address or phone number"
+                placeholder="Name"
+                value={name}
+                onChangeText={text => setName(text)}
+              />
+              <TextInput
+                style={styles.inputBox}
+                placeholderTextColor="#FCFCFC"
+                placeholder="Email Address"
                 value={email}
                 onChangeText={text => setEmail(text)}
               />
@@ -97,31 +104,13 @@ export const Login = () => {
 
             <View style={styles.buttonView}>
               <TouchableOpacity
-                onPress={signinUser}
-                style={[globalStyle.buttonRadius, styles.buttonColor]}>
-                <Text style={styles.buttonText}>Login</Text>
-              </TouchableOpacity>
-
-              <TouchableOpacity
-                onPress={() => {
-                  navigation.navigate('Register' as never, {} as never);
-                }}
+                onPress={registerUser}
                 style={[
                   globalStyle.buttonRadius,
                   styles.registerButton,
                   styles.buttonColor,
                 ]}>
                 <Text style={styles.buttonText}>Register</Text>
-              </TouchableOpacity>
-
-              <TouchableOpacity
-                style={styles.googleButton}
-                onPress={() => onGoogleButtonPress()}>
-                <FontAwesomeIcon
-                  icon={faGoogle}
-                  style={styles.googleButtonLogo}
-                />
-                <Text style={styles.googleButtonText}>Sign in with Google</Text>
               </TouchableOpacity>
             </View>
           </View>
