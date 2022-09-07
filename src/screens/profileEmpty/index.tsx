@@ -13,8 +13,8 @@ import auth from '@react-native-firebase/auth';
 
 export const ProfileEmpty = () => {
   const navigation = useNavigation();
-  const userEmail =
-    authentication.currentUser?.email || auth().currentUser?.email;
+  const userFullName =
+    authentication.currentUser?.displayName || auth().currentUser?.displayName;
   const [apiData, setApiData] = useState<Array<Items>>([]);
   useEffect(() => {
     axios
@@ -54,7 +54,7 @@ export const ProfileEmpty = () => {
           </View>
           <Image style={styles.avatar} source={{ uri: apiData[0]?.avatar }} />
 
-          <Text style={styles.userName}>{userEmail}</Text>
+          <Text style={styles.userName}>{userFullName}</Text>
           <View style={[globalStyle.flexRow, globalStyle.selfCenter]}>
             <Text style={styles.userHash}>52fs5ge5g45sov45a</Text>
             <TouchableOpacity>

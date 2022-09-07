@@ -27,8 +27,8 @@ export const Account = (props: Props) => {
   const onToggleSwitch = () => setIsSwitchOn(!isSwitchOn);
   const navigation = useNavigation();
   const [visibleAccount, setVisibleAccount] = useState(false);
-  const userEmail =
-    authentication.currentUser?.email || auth().currentUser?.email;
+  const userFullName =
+    authentication.currentUser?.displayName || auth().currentUser?.displayName;
   const signingOut = () => {
     signOut(authentication)
       .then(() => {
@@ -69,7 +69,7 @@ export const Account = (props: Props) => {
                   source={{ uri: apiData[0]?.avatar }}
                 />
                 <View style={globalStyle.selfCenter}>
-                  <Text style={styles.username}>{userEmail}</Text>
+                  <Text style={styles.username}>{userFullName}</Text>
                   <View style={globalStyle.flexRow}>
                     <Text style={styles.hash}>52fs5ge5g45sov45a</Text>
                     <TouchableOpacity>

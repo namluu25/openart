@@ -36,8 +36,8 @@ export interface CreatedArt {
 }
 
 export const ProfileMock = () => {
-  const userEmail =
-    authentication.currentUser?.email || auth().currentUser?.email;
+  const userFullName =
+    authentication.currentUser?.displayName || auth().currentUser?.displayName;
   const [apiData, setApiData] = useState<Array<Items>>([]);
   const [artData, setArtData] = useState<Array<CreatedArt>>([]);
   useEffect(() => {
@@ -75,7 +75,7 @@ export const ProfileMock = () => {
           </View>
           <Image style={styles.avatar} source={{ uri: apiData[0]?.avatar }} />
 
-          <Text style={styles.userName}>{userEmail}</Text>
+          <Text style={styles.userName}>{userFullName}</Text>
           <View style={[globalStyle.flexRow, globalStyle.selfCenter]}>
             <Text style={styles.userHash}>{apiData[0]?.hash}</Text>
             <TouchableOpacity>

@@ -13,10 +13,8 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import styles from './styles';
 import { globalStyle } from 'theme/globalStyle';
 import { authentication } from 'firebase/firebase';
-import { createUserWithEmailAndPassword } from 'firebase/auth/';
+import { createUserWithEmailAndPassword, updateProfile } from 'firebase/auth/';
 import Toast from 'react-native-toast-message';
-import firestore from '@react-native-firebase/firestore';
-// import { collection, getDocs } from 'firebase/firestore/lite';
 
 export const Register = () => {
   const [email, setEmail] = useState('');
@@ -24,20 +22,14 @@ export const Register = () => {
   const [name, setName] = useState('');
   const registerUser = () => {
     createUserWithEmailAndPassword(authentication, email, password)
-      .then(user => {
+      .then(userCredentials => {
+        updateProfile(userCredentials.user, {
+          displayName: name,
+        });
         Toast.show({
           type: 'success',
           text1: 'Register user successfully',
         });
-        firestore()
-          .collection('Users')
-          .doc(user.user.uid)
-          .set({ name, email })
-          .then(() => {
-            console.log('User added!');
-            console.log(user.user.uid);
-            // console.log(authentication.);
-          });
       })
       .catch(error => {
         console.log(error);
@@ -58,14 +50,6 @@ export const Register = () => {
           });
         }
       });
-    // firestore()
-    //   .collection('Users')
-    //   .doc(authentication.currentUser?.uid)
-    //   .set({ name, email })
-    //   .then(() => {
-    //     console.log('User added!');
-    //     console.log(authentication.);
-    //   });
   };
 
   return (

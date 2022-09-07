@@ -19,9 +19,9 @@ import { Items } from 'screens/profileMock';
 import auth from '@react-native-firebase/auth';
 
 export const ProfileEdit = () => {
-  const userEmail =
-    authentication.currentUser?.email || auth().currentUser?.email;
   const [apiData, setApiData] = useState<Array<Items>>([]);
+  const userFullName =
+    authentication.currentUser?.displayName || auth().currentUser?.displayName;
   useEffect(() => {
     axios
       .get('https://62fa6791ffd7197707ebe3f2.mockapi.io/profile')
@@ -56,7 +56,7 @@ export const ProfileEdit = () => {
           </View>
           <Image style={styles.avatar} source={{ uri: apiData[0]?.avatar }} />
 
-          <Text style={styles.userName}>{userEmail}</Text>
+          <Text style={styles.userName}>{userFullName}</Text>
           <View style={[globalStyle.flexRow, globalStyle.selfCenter]}>
             <Text style={styles.userHash}>52fs5ge5g45sov45a</Text>
             <TouchableOpacity>
