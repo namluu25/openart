@@ -1,70 +1,86 @@
+import { useNavigation } from '@react-navigation/native';
 import React from 'react';
 import { View, Text, Image, TouchableOpacity } from 'react-native';
 import { globalStyle } from 'theme/globalStyle';
 import styles from './hotCollection-styles';
 
 export const HotCollection = () => {
+  const navigation = useNavigation();
   return (
     <>
-      <View
-        // title view
-        style={styles.titleView}>
+      <View style={styles.titleView}>
+        {/* title view */}
         <Image source={require('@images/icon/sparkle-icon.png')} />
         <Text style={styles.titleText}> Hot Collection</Text>
       </View>
 
       <View style={[globalStyle.flexRow, styles.imageView]}>
-        <View
-          //image row 1
-          style={[globalStyle.flexColumn, globalStyle.justifyBetween]}>
-          <Image
+        <View style={[globalStyle.flexColumn, globalStyle.justifyBetween]}>
+          {/* image row 1 */}
+          <TouchableOpacity
             style={styles.image}
-            source={require('@images/hotcollection/hot-collection-1.png')}
-          />
-          <Image
+            onPress={() => {
+              navigation.navigate('DiscoverCreator' as never, {} as never);
+            }}>
+            <Image
+              source={require('@images/hotcollection/hot-collection-1.png')}
+            />
+          </TouchableOpacity>
+          <TouchableOpacity
             style={styles.image}
-            source={require('@images/hotcollection/hot-collection-3.png')}
-          />
+            onPress={() => {
+              navigation.navigate('DiscoverCreator' as never, {} as never);
+            }}>
+            <Image
+              source={require('@images/hotcollection/hot-collection-3.png')}
+            />
+          </TouchableOpacity>
         </View>
 
         <View
-          //image row 2
           style={[
             globalStyle.flexColumn,
             globalStyle.justifyBetween,
             globalStyle.flex,
             globalStyle.itemEnd,
           ]}>
-          <Image
+          {/* image row 2 */}
+          <TouchableOpacity
             style={styles.image}
-            source={require('@images/hotcollection/hot-collection-2.png')}
-          />
-          <Image
+            onPress={() => {
+              navigation.navigate('DiscoverCreator' as never, {} as never);
+            }}>
+            <Image
+              source={require('@images/hotcollection/hot-collection-2.png')}
+            />
+          </TouchableOpacity>
+          <TouchableOpacity
             style={styles.image}
-            source={require('@images/hotcollection/hot-collection-4.png')}
-          />
+            onPress={() => {
+              navigation.navigate('DiscoverCreator' as never, {} as never);
+            }}>
+            <Image
+              source={require('@images/hotcollection/hot-collection-4.png')}
+            />
+          </TouchableOpacity>
         </View>
       </View>
 
-      <View
-        //   image title and button
-        style={[globalStyle.flexRow, globalStyle.justifyBetween]}>
-        <Text
-          // title
-          style={styles.titleImage}>
+      <View style={[globalStyle.flexRow, globalStyle.justifyBetween]}>
+        {/* image title and button */}
+        <Text style={styles.titleImage}>
+          {/* title */}
           Water and sunflower
         </Text>
 
-        <TouchableOpacity
-          // button 30 items
-          style={styles.button}>
+        <TouchableOpacity style={styles.button}>
+          {/* button 30 items */}
           <Text style={styles.buttonText}>30 items</Text>
         </TouchableOpacity>
       </View>
 
-      <View
-        //   author and follow button
-        style={styles.authorView}>
+      <View style={styles.authorView}>
+        {/* author and follow button */}
         <View
           style={[
             globalStyle.flexRow,
@@ -83,12 +99,16 @@ export const HotCollection = () => {
               source={require('@images/icon/active-icon.png')}
             />
           </View>
-          <Text style={styles.nftText}>By Rodion Kutsaev</Text>
+          <TouchableOpacity
+            onPress={() => {
+              navigation.navigate('ProfileMock' as never, {} as never);
+            }}>
+            <Text style={styles.nftText}>By Rodion Kutsaev</Text>
+          </TouchableOpacity>
         </View>
 
-        <TouchableOpacity
-          // button 30 items
-          style={styles.followButton}>
+        <TouchableOpacity style={styles.followButton}>
+          {/* button 30 items */}
           <Image source={require('@images/icon/heart-icon.png')} />
           <Text style={styles.followButtonText}>Follow</Text>
         </TouchableOpacity>
