@@ -37,7 +37,7 @@ export const ProfileEmpty = () => {
             <TouchableOpacity
               style={styles.coverButtonMenu}
               onPress={() => {
-                navigation.navigate('ProfileMock' as never, {} as never);
+                navigation.navigate('ProfileMock' as never);
               }}>
               <Image
                 style={styles.coverButtonIcon}
@@ -68,7 +68,7 @@ export const ProfileEmpty = () => {
             <TouchableOpacity
               style={styles.followRowButton}
               onPress={() => {
-                navigation.navigate('ProfileEdit' as never, {} as never);
+                navigation.navigate('ProfileEdit' as never);
               }}>
               <Image
                 style={styles.followRowButtonImage}
@@ -87,7 +87,7 @@ export const ProfileEmpty = () => {
         <TouchableOpacity
           style={styles.exploreButton}
           onPress={() => {
-            navigation.navigate('Home' as never, {} as never);
+            navigation.navigate('Home' as never);
           }}>
           <Text style={styles.exploreButtonText}>Explore OpenArt</Text>
         </TouchableOpacity>

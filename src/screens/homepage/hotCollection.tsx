@@ -20,7 +20,7 @@ export const HotCollection = () => {
           <TouchableOpacity
             style={styles.image}
             onPress={() => {
-              navigation.navigate('DiscoverCreator' as never, {} as never);
+              navigation.navigate('DiscoverCreator' as never);
             }}>
             <Image
               source={require('@images/hotcollection/hot-collection-1.png')}
@@ -29,7 +29,7 @@ export const HotCollection = () => {
           <TouchableOpacity
             style={styles.image}
             onPress={() => {
-              navigation.navigate('DiscoverCreator' as never, {} as never);
+              navigation.navigate('DiscoverCreator' as never);
             }}>
             <Image
               source={require('@images/hotcollection/hot-collection-3.png')}
@@ -48,7 +48,7 @@ export const HotCollection = () => {
           <TouchableOpacity
             style={styles.image}
             onPress={() => {
-              navigation.navigate('DiscoverCreator' as never, {} as never);
+              navigation.navigate('DiscoverCreator' as never);
             }}>
             <Image
               source={require('@images/hotcollection/hot-collection-2.png')}
@@ -57,7 +57,7 @@ export const HotCollection = () => {
           <TouchableOpacity
             style={styles.image}
             onPress={() => {
-              navigation.navigate('DiscoverCreator' as never, {} as never);
+              navigation.navigate('DiscoverCreator' as never);
             }}>
             <Image
               source={require('@images/hotcollection/hot-collection-4.png')}
@@ -101,7 +101,7 @@ export const HotCollection = () => {
           </View>
           <TouchableOpacity
             onPress={() => {
-              navigation.navigate('ProfileMock' as never, {} as never);
+              navigation.navigate('ProfileMock' as never);
             }}>
             <Text style={styles.nftText}>By Rodion Kutsaev</Text>
           </TouchableOpacity>

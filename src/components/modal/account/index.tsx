@@ -99,7 +99,7 @@ export const Account = (props: Props) => {
               <View style={styles.listItem}>
                 <TouchableOpacity
                   onPress={() => {
-                    navigation.navigate('ProfileEmpty' as never, {} as never);
+                    navigation.navigate('ProfileEmpty' as never);
                     setVisibleAccount(false);
                   }}
                   style={styles.touchableLine}>

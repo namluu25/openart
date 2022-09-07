@@ -51,7 +51,7 @@ export const HotBid = () => {
           <View>
             <TouchableOpacity
               onPress={() => {
-                navigation.navigate('DetailsAuction' as never, {} as never);
+                navigation.navigate('DetailsAuction' as never);
               }}>
               <Image
                 // image
@@ -102,7 +102,7 @@ export const HotBid = () => {
           <View>
             <TouchableOpacity
               onPress={() => {
-                navigation.navigate('DetailsAuction' as never, {} as never);
+                navigation.navigate('DetailsAuction' as never);
               }}>
               <Image
                 // image

@@ -14,7 +14,7 @@ export const Header = () => {
     <View style={styles.header}>
       <TouchableOpacity
         onPress={() => {
-          navigation.navigate('Home' as never, {} as never);
+          navigation.navigate('Home' as never);
         }}>
         <Image source={require('@images/icon/Logo.png')} />
       </TouchableOpacity>
@@ -34,7 +34,7 @@ export const Header = () => {
 
         <TouchableOpacity
           onPress={() => {
-            navigation.navigate('Menu' as never, {} as never);
+            navigation.navigate('Menu' as never);
           }}>
           <Image source={require('@images/icon/Menu.png')} />
         </TouchableOpacity>

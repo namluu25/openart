@@ -17,19 +17,19 @@ export const Menu = () => {
       <View style={styles.menu}>
         <TouchableOpacity
           onPress={() => {
-            navigation.navigate('About' as never, {} as never);
+            navigation.navigate('About' as never);
           }}>
           <Text style={styles.menuText}>About OpenArt</Text>
         </TouchableOpacity>
         <TouchableOpacity
           onPress={() => {
-            navigation.navigate('JoinCommunity' as never, {} as never);
+            navigation.navigate('JoinCommunity' as never);
           }}>
           <Text style={styles.menuText}>Blog</Text>
         </TouchableOpacity>
         <TouchableOpacity
           onPress={() => {
-            navigation.navigate('FAQ' as never, {} as never);
+            navigation.navigate('FAQ' as never);
           }}>
           <Text style={styles.menuText}>Help</Text>
         </TouchableOpacity>

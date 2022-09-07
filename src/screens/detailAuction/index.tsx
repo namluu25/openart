@@ -46,7 +46,7 @@ export const DetailsAuction = () => {
             <TouchableOpacity
               style={styles.userButton}
               onPress={() => {
-                navigation.navigate('ProfileMock' as never, {} as never);
+                navigation.navigate('ProfileMock' as never);
               }}>
               <Image
                 style={styles.userAvatar}

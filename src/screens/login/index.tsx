@@ -104,7 +104,7 @@ export const Login = () => {
 
               <TouchableOpacity
                 onPress={() => {
-                  navigation.navigate('Register' as never, {} as never);
+                  navigation.navigate('Register' as never);
                 }}
                 style={[
                   globalStyle.buttonRadius,

@@ -34,7 +34,7 @@ export const Footer = () => {
         <TouchableOpacity
           style={[globalStyle.buttonRadius, styles.buttonDiscover]}
           onPress={() => {
-            navigation.navigate('DiscoverCreator' as never, {} as never);
+            navigation.navigate('DiscoverCreator' as never);
           }}>
           <Text style={styles.buttonText}>Discover more</Text>
         </TouchableOpacity>
@@ -61,7 +61,7 @@ export const Footer = () => {
             </TouchableOpacity>
             <TouchableOpacity
               onPress={() => {
-                navigation.navigate('JoinCommunity' as never, {} as never);
+                navigation.navigate('JoinCommunity' as never);
               }}>
               <Text style={styles.aboutText}>Blog</Text>
             </TouchableOpacity>
@@ -70,7 +70,7 @@ export const Footer = () => {
             {/* about */}
             <TouchableOpacity
               onPress={() => {
-                navigation.navigate('About' as never, {} as never);
+                navigation.navigate('About' as never);
               }}>
               <Text style={styles.aboutText}>About</Text>
             </TouchableOpacity>
@@ -92,7 +92,7 @@ export const Footer = () => {
             </TouchableOpacity>
             <TouchableOpacity
               onPress={() => {
-                navigation.navigate('FAQ' as never, {} as never);
+                navigation.navigate('FAQ' as never);
               }}>
               <Text style={styles.aboutText}>Help</Text>
             </TouchableOpacity>

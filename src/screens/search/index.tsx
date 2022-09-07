@@ -48,13 +48,13 @@ export const SearchPopup = () => {
           </View>
           <TouchableOpacity
             onPress={() => {
-              navigation.navigate('SearchFilter' as never, {} as never);
+              navigation.navigate('SearchFilter' as never);
             }}>
             <FontAwesomeIcon icon={faFilter} style={styles.icon} />
           </TouchableOpacity>
           <TouchableOpacity
             onPress={() => {
-              navigation.navigate('Home' as never, {} as never);
+              navigation.navigate('Home' as never);
             }}>
             <Text style={styles.cancelText}>Cancel</Text>
           </TouchableOpacity>

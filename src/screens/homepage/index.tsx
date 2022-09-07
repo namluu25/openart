@@ -50,7 +50,7 @@ export const Home = () => {
             <TouchableOpacity
               style={styles.searchBar}
               onPressIn={() => {
-                navigation.navigate('SearchPopup' as never, {} as never);
+                navigation.navigate('SearchPopup' as never);
               }}>
               <TouchableOpacity>
                 <FontAwesomeIcon
@@ -97,7 +97,7 @@ export const Home = () => {
             <TouchableOpacity
               style={styles.normalButton}
               onPress={() => {
-                navigation.navigate('DetailsAuction' as never, {} as never);
+                navigation.navigate('DetailsAuction' as never);
               }}>
               <Text style={styles.buttonText}>View Artwork</Text>
             </TouchableOpacity>
