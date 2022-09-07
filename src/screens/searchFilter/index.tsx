@@ -15,14 +15,7 @@ import { faMicrophone } from '@fortawesome/free-solid-svg-icons';
 import Slider from '@react-native-community/slider';
 import styles from './styles';
 import axios from 'axios';
-
-interface CreatedArt {
-  id: number;
-  image: string;
-  name: string;
-  avatar: string;
-  creatorName: string;
-}
+import { CreatedArt } from 'screens/profileMock';
 
 export const SearchFilter = () => {
   const [artData, setArtData] = useState<Array<CreatedArt>>([]);

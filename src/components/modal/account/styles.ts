@@ -42,7 +42,11 @@ export default StyleSheet.create({
     marginBottom: 27,
     marginHorizontal: 26,
   },
-  avatar: { marginRight: 17 },
+  avatar: {
+    marginRight: 17,
+    width: 77,
+    height: 77,
+  },
   username: {
     fontFamily: 'Epilogue',
     fontWeight: '700',
