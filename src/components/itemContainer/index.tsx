@@ -3,6 +3,7 @@ import { Text, Image, TouchableOpacity, View } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import styles from './styles';
 import { HeartButton } from 'components';
+import { globalStyle } from 'theme/globalStyle';
 
 interface Props {
   image: string;
@@ -25,31 +26,33 @@ export const ItemContainer = (props: Props) => {
         </TouchableOpacity>
         <Text style={styles.containerTitle}>{props.name}</Text>
         <View style={styles.containerCreatorInfoView}>
-          <View>
+          <View style={globalStyle.flexRow}>
+            <View>
+              <TouchableOpacity
+                onPress={() => {
+                  navigation.navigate('ProfileMock' as never);
+                }}>
+                <Image
+                  style={styles.containerAvatar}
+                  source={{ uri: props.avatar }}
+                />
+              </TouchableOpacity>
+              <Image
+                style={styles.activeIcon}
+                source={require('@images/icon/active-icon.png')}
+              />
+            </View>
             <TouchableOpacity
               onPress={() => {
                 navigation.navigate('ProfileMock' as never);
-              }}>
-              <Image
-                style={styles.containerAvatar}
-                source={{ uri: props.avatar }}
-              />
+              }}
+              style={styles.containerCreatorNameView}>
+              <Text style={styles.containerCreatorName}>
+                {props.creator_name}
+              </Text>
+              <Text style={styles.containerCreatorInfo}>Creator</Text>
             </TouchableOpacity>
-            <Image
-              style={styles.activeIcon}
-              source={require('@images/icon/active-icon.png')}
-            />
           </View>
-          <TouchableOpacity
-            onPress={() => {
-              navigation.navigate('ProfileMock' as never);
-            }}
-            style={styles.containerCreatorNameView}>
-            <Text style={styles.containerCreatorName}>
-              {props.creator_name}
-            </Text>
-            <Text style={styles.containerCreatorInfo}>Creator</Text>
-          </TouchableOpacity>
           <HeartButton size={23} />
         </View>
       </View>

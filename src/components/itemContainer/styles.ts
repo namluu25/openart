@@ -56,7 +56,6 @@ export default StyleSheet.create({
     alignItems: 'center',
   },
   containerCreatorNameView: {
-    flex: 1,
     marginLeft: 12,
   },
 });
