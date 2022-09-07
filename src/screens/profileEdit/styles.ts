@@ -201,4 +201,7 @@ export default StyleSheet.create({
     alignSelf: 'center',
     marginBottom: 90,
   },
+  copyIcon: {
+    paddingTop: 5,
+  },
 });

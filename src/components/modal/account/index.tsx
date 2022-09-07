@@ -72,7 +72,7 @@ export const Account = (props: Props) => {
                   <Text style={styles.username}>{userFullName}</Text>
                   <View style={globalStyle.flexRow}>
                     <Text style={styles.hash}>52fs5ge5g45sov45a</Text>
-                    <TouchableOpacity>
+                    <TouchableOpacity style={styles.copyIcon}>
                       <Image source={require('@images/icon/copy-icon.png')} />
                     </TouchableOpacity>
                   </View>

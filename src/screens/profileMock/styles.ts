@@ -231,4 +231,7 @@ export default StyleSheet.create({
     color: color.grayOffWhite,
     fontWeight: '700',
   },
+  copyIcon: {
+    paddingTop: 5,
+  },
 });

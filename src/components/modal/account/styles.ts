@@ -138,4 +138,7 @@ export default StyleSheet.create({
   switch: {
     marginRight: 23,
   },
+  copyIcon: {
+    paddingTop: 5,
+  },
 });

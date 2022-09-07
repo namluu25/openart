@@ -72,7 +72,7 @@ export const ProfileMock = () => {
           <Text style={styles.userName}>{userFullName}</Text>
           <View style={[globalStyle.flexRow, globalStyle.selfCenter]}>
             <Text style={styles.userHash}>{apiData[0]?.hash}</Text>
-            <TouchableOpacity>
+            <TouchableOpacity style={styles.copyIcon}>
               <Image source={require('@images/icon/copy-icon.png')} />
             </TouchableOpacity>
           </View>

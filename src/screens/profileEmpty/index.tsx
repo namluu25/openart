@@ -51,7 +51,7 @@ export const ProfileEmpty = () => {
           <Text style={styles.userName}>{userFullName}</Text>
           <View style={[globalStyle.flexRow, globalStyle.selfCenter]}>
             <Text style={styles.userHash}>52fs5ge5g45sov45a</Text>
-            <TouchableOpacity>
+            <TouchableOpacity style={styles.copyIcon}>
               <Image source={require('@images/icon/copy-icon.png')} />
             </TouchableOpacity>
           </View>
