@@ -1,12 +1,20 @@
 import React from 'react';
-import { View, Text, ScrollView, Image, TouchableOpacity } from 'react-native';
-import { Header } from 'components';
-import { Footer } from 'components';
+import {
+  View,
+  Text,
+  ScrollView,
+  Image,
+  TouchableOpacity,
+  Linking,
+} from 'react-native';
+import { Header, HeartButton, Footer, ShareButton } from 'components';
 import styles from './styles';
 import { globalStyle } from 'theme/globalStyle';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { useNavigation } from '@react-navigation/native';
 
 export const DetailsSold = () => {
+  const navigation = useNavigation();
   return (
     <SafeAreaView>
       <Header />
@@ -27,22 +35,18 @@ export const DetailsSold = () => {
               <Text style={globalStyle.containerTitle}>Silent Color</Text>
               <View style={globalStyle.flexRow}>
                 {/* button */}
-                <TouchableOpacity style={styles.buttonBorder}>
-                  <Image
-                    style={styles.buttonImage}
-                    source={require('@images/icon/heart-icon.png')}
-                  />
-                </TouchableOpacity>
-                <TouchableOpacity style={styles.buttonBorder}>
-                  <Image
-                    style={styles.buttonImage}
-                    source={require('@images/icon/export-icon.png')}
-                  />
-                </TouchableOpacity>
+                <View style={styles.buttonBorder}>
+                  <HeartButton style={styles.buttonImage} size={24} />
+                </View>
+                <ShareButton />
               </View>
             </View>
 
-            <TouchableOpacity style={styles.userButton}>
+            <TouchableOpacity
+              style={styles.userButton}
+              onPress={() => {
+                navigation.navigate('ProfileMock' as never, {} as never);
+              }}>
               <Image
                 style={styles.userAvatar}
                 source={require('@images/avatar/ava3.png')}
@@ -76,19 +80,25 @@ export const DetailsSold = () => {
             </View>
           </View>
 
-          <TouchableOpacity style={styles.shareButton}>
+          <TouchableOpacity
+            style={styles.shareButton}
+            onPress={() => Linking.openURL('https://etherscan.io/')}>
             <Image source={require('@images/icon/etherscan-logo.png')} />
             <Text style={styles.shareButtonText}>View on Etherscan</Text>
             <Image source={require('@images/icon/external-icon.png')} />
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.shareButton}>
+          <TouchableOpacity
+            style={styles.shareButton}
+            onPress={() => Linking.openURL('https://ipfs.tech/')}>
             <Image source={require('@images/icon/star-icon.png')} />
             <Text style={styles.shareButtonText}>View on IPFS</Text>
             <Image source={require('@images/icon/external-icon.png')} />
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.shareButton}>
+          <TouchableOpacity
+            style={styles.shareButton}
+            onPress={() => Linking.openURL('https://ipfs.tech/')}>
             <Image source={require('@images/icon/chartPie-icon.png')} />
             <Text style={styles.shareButtonText}>View IPFS Metadata</Text>
             <Image source={require('@images/icon/external-icon.png')} />
@@ -105,7 +115,11 @@ export const DetailsSold = () => {
             />
             <View style={styles.soldSecondRowView}>
               <Text style={styles.soldSecondRowTitle}>Owner by</Text>
-              <TouchableOpacity style={styles.soldSecondRowButton}>
+              <TouchableOpacity
+                style={styles.soldSecondRowButton}
+                onPress={() => {
+                  navigation.navigate('ProfileMock' as never, {} as never);
+                }}>
                 <Image
                   style={styles.buttonAvatar}
                   source={require('@images/avatar/ava4.png')}

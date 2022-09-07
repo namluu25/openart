@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Image, TouchableOpacity, Text } from 'react-native';
+import { View, Image, TouchableOpacity, Text, Linking } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import { useNavigation } from '@react-navigation/native';
 import styles from './styles';
@@ -45,37 +45,55 @@ export const Footer = () => {
           style={styles.footerContact}>
           <View>
             {/* insta */}
-            <TouchableOpacity>
+            <TouchableOpacity
+              onPress={() =>
+                Linking.openURL('https://www.instagram.com/elonmusk/')
+              }>
               <Text style={styles.aboutText}>Instagram</Text>
             </TouchableOpacity>
-            <TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => Linking.openURL('https://twitter.com/elonmusk')}>
               <Text style={styles.aboutText}>Twitter</Text>
             </TouchableOpacity>
-            <TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => Linking.openURL('https://discord.gg/MtuYEAHEnD')}>
               <Text style={styles.aboutText}>Discord</Text>
             </TouchableOpacity>
-            <TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => {
+                navigation.navigate('JoinCommunity' as never, {} as never);
+              }}>
               <Text style={styles.aboutText}>Blog</Text>
             </TouchableOpacity>
           </View>
           <View style={styles.infoSecondColumn}>
             {/* about */}
-            <TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => {
+                navigation.navigate('About' as never, {} as never);
+              }}>
               <Text style={styles.aboutText}>About</Text>
             </TouchableOpacity>
-            <TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => Linking.openURL('https://google.com')}>
               <Text style={styles.aboutText}>Community Guidelines</Text>
             </TouchableOpacity>
-            <TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => Linking.openURL('https://google.com')}>
               <Text style={styles.aboutText}>Terms of Services</Text>
             </TouchableOpacity>
-            <TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => Linking.openURL('https://google.com')}>
               <Text style={styles.aboutText}>Privacy</Text>
             </TouchableOpacity>
-            <TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => Linking.openURL('https://google.com')}>
               <Text style={styles.aboutText}>Careers</Text>
             </TouchableOpacity>
-            <TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => {
+                navigation.navigate('FAQ' as never, {} as never);
+              }}>
               <Text style={styles.aboutText}>Help</Text>
             </TouchableOpacity>
           </View>

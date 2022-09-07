@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, ScrollView, TouchableOpacity, Image } from 'react-native';
+import { View, Text, ScrollView, TouchableOpacity, Image, Linking } from 'react-native';
 import { Header, ItemContainer } from 'components';
 import { Footer } from 'components';
 import axios from 'axios';
@@ -123,14 +123,22 @@ export const ProfileMock = () => {
             </Text>
             <Text style={styles.memberSinceText}>Member since 2021</Text>
             <View style={[globalStyle.flexRow, globalStyle.justifyStart]}>
-              <TouchableOpacity style={styles.socialButton}>
+              <TouchableOpacity
+                style={styles.socialButton}
+                onPress={() =>
+                  Linking.openURL('https://www.twitter.com/elonmusk/')
+                }>
                 <Image
                   style={styles.socialButtonIcon}
                   source={require('@images/icon/twitter-icon.png')}
                 />
                 <Text style={styles.socialButtonText}>@openart</Text>
               </TouchableOpacity>
-              <TouchableOpacity style={styles.socialButton}>
+              <TouchableOpacity
+                style={styles.socialButton}
+                onPress={() =>
+                  Linking.openURL('https://www.instagram.com/elonmusk/')
+                }>
                 <Image
                   style={styles.socialButtonIcon}
                   source={require('@images/icon/instagram-icon.png')}
@@ -138,7 +146,9 @@ export const ProfileMock = () => {
                 <Text style={styles.socialButtonText}>@openart.design</Text>
               </TouchableOpacity>
             </View>
-            <TouchableOpacity style={styles.socialButtonSecondRow}>
+            <TouchableOpacity
+              style={styles.socialButtonSecondRow}
+              onPress={() => Linking.openURL('https://www.google.com')}>
               <Image
                 style={styles.socialButtonIcon}
                 source={require('@images/icon/link-icon.png')}

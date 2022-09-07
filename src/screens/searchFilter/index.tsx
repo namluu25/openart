@@ -7,15 +7,13 @@ import {
   Image,
   TextInput,
 } from 'react-native';
-import { Header, ItemContainer } from 'components';
-import { Footer } from 'components';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import { Header, ItemContainer, Footer, GradientButton } from 'components';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import { faMicrophone } from '@fortawesome/free-solid-svg-icons';
 import Slider from '@react-native-community/slider';
 import styles from './styles';
-import { SafeAreaView } from 'react-native-safe-area-context';
-import { GradientButton } from 'components/gradientButton';
 import axios from 'axios';
 
 interface CreatedArt {

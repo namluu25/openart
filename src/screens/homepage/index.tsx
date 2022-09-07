@@ -94,7 +94,11 @@ export const Home = () => {
                 <Text style={styles.buttonText}>Place a bid</Text>
               </LinearGradient>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.normalButton}>
+            <TouchableOpacity
+              style={styles.normalButton}
+              onPress={() => {
+                navigation.navigate('DetailsAuction' as never, {} as never);
+              }}>
               <Text style={styles.buttonText}>View Artwork</Text>
             </TouchableOpacity>
             <PlaceBid visbile={visible} handleClose={() => setVisible(false)} />
