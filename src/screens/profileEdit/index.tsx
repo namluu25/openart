@@ -16,11 +16,46 @@ import axios from 'axios';
 import { authentication } from 'firebase/firebase';
 import { Items } from 'screens/profileMock';
 import auth from '@react-native-firebase/auth';
+import { onAuthStateChanged, updateEmail, updateProfile } from 'firebase/auth';
+import Toast from 'react-native-toast-message';
+import { useNavigation } from '@react-navigation/native';
 
 export const ProfileEdit = () => {
-  const [apiData, setApiData] = useState<Array<Items>>([]);
+  const navigation = useNavigation();
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
   const userFullName =
     authentication.currentUser?.displayName || auth().currentUser?.displayName;
+  const updateInfo = () => {
+    onAuthStateChanged(authentication, user => {
+      if (user) {
+        updateProfile(user, { displayName: name }).then(() => {
+          updateEmail(user, email).then(() => {
+            Toast.show({
+              type: 'success',
+              text1: 'Update successful!',
+            });
+            navigation.navigate('ProfileEmpty' as never);
+          });
+        });
+      } else {
+        auth()
+          .currentUser?.updateProfile({ displayName: name })
+          .then(() => {
+            auth()
+              .currentUser?.updateEmail(email)
+              .then(() => {
+                Toast.show({
+                  type: 'success',
+                  text1: 'Update successful!',
+                });
+                navigation.navigate('ProfileEmpty' as never);
+              });
+          });
+      }
+    });
+  };
+  const [apiData, setApiData] = useState<Array<Items>>([]);
   useEffect(() => {
     axios
       .get('https://62fa6791ffd7197707ebe3f2.mockapi.io/profile')
@@ -66,6 +101,7 @@ export const ProfileEdit = () => {
               style={styles.firstCategoryInputBox}
               placeholderTextColor="#FCFCFC"
               placeholder="Name"
+              onChangeText={text => setName(text)}
             />
             <TextInput
               style={styles.inputBox}
@@ -80,6 +116,7 @@ export const ProfileEdit = () => {
               style={[styles.inputBox]}
               placeholderTextColor="#FCFCFC"
               placeholder="Email"
+              onChangeText={text => setEmail(text)}
             />
             <Text style={styles.secondCategoryText}>
               Add your email address to receive notifications about your
@@ -182,7 +219,7 @@ export const ProfileEdit = () => {
             </TouchableOpacity>
           </View>
 
-          <TouchableOpacity>
+          <TouchableOpacity onPress={updateInfo}>
             <LinearGradient
               colors={['#0038F5', '#9F03FF']}
               useAngle={true}

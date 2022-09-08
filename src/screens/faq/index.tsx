@@ -1,8 +1,7 @@
 import React from 'react';
 import { View, Text, ScrollView, Image, TouchableOpacity } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { Footer } from 'components';
-import { Header } from 'components';
+import { Header, Footer } from 'components';
 import styles from './styles';
 
 export const FAQ = () => {
