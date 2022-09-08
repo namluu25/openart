@@ -6,8 +6,7 @@ export default StyleSheet.create({
     backgroundColor: color.grayOffWhite,
   },
   backArrowButton: {
-    // position: 'absolute',
-    marginLeft: 9,
+    marginLeft: 16,
   },
   title: {
     marginBottom: 40,

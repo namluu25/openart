@@ -23,7 +23,7 @@ export default StyleSheet.create({
     marginLeft: 8,
   },
   coverButtonIcon: {
-    margin: 10,
+    margin: 11,
   },
   avatar: {
     position: 'absolute',

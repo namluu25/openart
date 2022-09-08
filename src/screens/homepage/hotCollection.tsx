@@ -3,6 +3,8 @@ import React from 'react';
 import { View, Text, Image, TouchableOpacity } from 'react-native';
 import { globalStyle } from 'theme/globalStyle';
 import styles from './hotCollection-styles';
+import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
+import { faHeart } from '@fortawesome/free-regular-svg-icons';
 
 export const HotCollection = () => {
   const navigation = useNavigation();
@@ -10,7 +12,7 @@ export const HotCollection = () => {
     <>
       <View style={styles.titleView}>
         {/* title view */}
-        <Image source={require('@images/icon/sparkle-icon.png')} />
+        <Image source={require('@images/icon/sparkle.png')} />
         <Text style={styles.titleText}> Hot Collection</Text>
       </View>
 
@@ -96,7 +98,7 @@ export const HotCollection = () => {
             </TouchableOpacity>
             <Image
               style={styles.activeIcon}
-              source={require('@images/icon/active-icon.png')}
+              source={require('@images/icon/active.png')}
             />
           </View>
           <TouchableOpacity
@@ -109,7 +111,7 @@ export const HotCollection = () => {
 
         <TouchableOpacity style={styles.followButton}>
           {/* button 30 items */}
-          <Image source={require('@images/icon/heart-icon.png')} />
+          <FontAwesomeIcon icon={faHeart} size={24} color={'white'} />
           <Text style={styles.followButtonText}>Follow</Text>
         </TouchableOpacity>
       </View>

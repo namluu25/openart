@@ -14,7 +14,7 @@ export const About = () => {
         <View>
           <View style={[globalStyle.flex, globalStyle.itemCenter]}>
             <Text style={styles.titleText}>About OpenArt</Text>
-            <Image source={require('@images/icon/about-icon-1.png')} />
+            <Image source={require('@images/icon/about-1.png')} />
             <Text style={styles.firstParagraph}>
               OpenArt help anyone create a beautiful website, landing page, app
               to collect NFTs digital art
@@ -32,14 +32,14 @@ export const About = () => {
               <View style={styles.boxView}>
                 <Image
                   style={styles.boxImage1}
-                  source={require('@images/icon/about-icon-2.png')}
+                  source={require('@images/icon/about-2.png')}
                 />
                 <Text style={styles.boxText}>Build together</Text>
               </View>
               <View style={styles.boxView}>
                 <Image
                   style={styles.boxImage}
-                  source={require('@images/icon/about-icon-3.png')}
+                  source={require('@images/icon/about-3.png')}
                 />
                 <Text style={styles.boxText}>Trust</Text>
               </View>

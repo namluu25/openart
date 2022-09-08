@@ -4,6 +4,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import axios from 'axios';
 import { Header, Footer, GradientButton } from 'components';
 import styles from './styles';
+import Plus from '@images/icon/Plus.svg';
 
 interface Items {
   id: number;
@@ -70,7 +71,7 @@ export const DiscoverCreator = () => {
             );
           })}
           <TouchableOpacity style={styles.loadMoreButton}>
-            <Image source={require('@images/icon/plus-icon.png')} />
+            <Plus style={styles.plusIcon} />
             <Text style={styles.loadMoreButtonText}>Load more</Text>
           </TouchableOpacity>
         </View>

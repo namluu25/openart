@@ -120,4 +120,5 @@ export default StyleSheet.create({
     color: color.grayOffWhite,
     fontWeight: '700',
   },
+  plusIcon: { marginRight: 11 },
 });

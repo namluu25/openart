@@ -9,7 +9,10 @@ export const Footer = () => {
   const navigation = useNavigation();
   return (
     <View>
-      <Image source={require('@images/icon/Logo.png')} style={styles.logo} />
+      <Image
+        source={require('@images/icon/logo-footer.png')}
+        style={styles.logo}
+      />
       <Text style={styles.slogan300}>
         The{' '}
         <Text style={styles.sloganSemiBold}>
@@ -19,9 +22,8 @@ export const Footer = () => {
           </Text>
         </Text>
       </Text>
-      <View
-        //   button
-        style={styles.buttonView}>
+      <View style={styles.buttonView}>
+        {/* button */}
         <TouchableOpacity>
           <LinearGradient
             colors={['#0038F5', '#9F03FF']}
@@ -40,9 +42,8 @@ export const Footer = () => {
         </TouchableOpacity>
       </View>
       <View style={styles.footerBottom}>
-        <View
-          // info section
-          style={styles.footerContact}>
+        <View style={styles.footerContact}>
+          {/* info section */}
           <View>
             {/* insta */}
             <TouchableOpacity
@@ -100,8 +101,8 @@ export const Footer = () => {
         </View>
 
         <View
-          // separator line
           style={styles.separatorLine}
+          // separator line
         />
         <Text style={styles.openartText}>© 2021 Openart</Text>
       </View>

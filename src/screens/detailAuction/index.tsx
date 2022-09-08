@@ -14,6 +14,9 @@ import { PlaceBid } from '@modal/placeBid';
 import { globalStyle } from 'theme/globalStyle';
 import styles from './styles';
 import { useNavigation } from '@react-navigation/native';
+import ChartPie from '@images/icon/ChartPie.svg';
+import External from '@images/icon/External.svg';
+import Star from '@images/icon/Star.svg';
 
 export const DetailsAuction = () => {
   const navigation = useNavigation();
@@ -84,25 +87,28 @@ export const DetailsAuction = () => {
           <TouchableOpacity
             style={styles.shareButton}
             onPress={() => Linking.openURL('https://etherscan.io/')}>
-            <Image source={require('@images/icon/etherscan-logo.png')} />
+            <Image
+              style={styles.etherIcon}
+              source={require('@images/icon/etherscan-logo.png')}
+            />
             <Text style={styles.shareButtonText}>View on Etherscan</Text>
-            <Image source={require('@images/icon/external-icon.png')} />
+            <External />
           </TouchableOpacity>
 
           <TouchableOpacity
             style={styles.shareButton}
             onPress={() => Linking.openURL('https://ipfs.tech/')}>
-            <Image source={require('@images/icon/star-icon.png')} />
+            <Star style={styles.starIcon} />
             <Text style={styles.shareButtonText}>View on IPFS</Text>
-            <Image source={require('@images/icon/external-icon.png')} />
+            <External />
           </TouchableOpacity>
 
           <TouchableOpacity
             style={styles.shareButton}
             onPress={() => Linking.openURL('https://ipfs.tech/')}>
-            <Image source={require('@images/icon/chartPie-icon.png')} />
+            <ChartPie style={styles.chartIcon} />
             <Text style={styles.shareButtonText}>View IPFS Metadata</Text>
-            <Image source={require('@images/icon/external-icon.png')} />
+            <External />
           </TouchableOpacity>
 
           <View style={styles.placeBidView}>
@@ -147,7 +153,7 @@ export const DetailsAuction = () => {
                 </View>
               </View>
             </View>
-            <Image source={require('@images/icon/external-icon.png')} />
+            <External />
           </TouchableOpacity>
 
           <TouchableOpacity style={styles.activityButton}>
@@ -169,7 +175,7 @@ export const DetailsAuction = () => {
                 </View>
               </View>
             </View>
-            <Image source={require('@images/icon/external-icon.png')} />
+            <External />
           </TouchableOpacity>
         </View>
         <PlaceBid visbile={visible} handleClose={() => setVisible(false)} />

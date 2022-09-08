@@ -89,8 +89,8 @@ export default StyleSheet.create({
   },
   secondRowBalance: {
     flexDirection: 'row',
-    alignItems: 'baseline',
   },
+  hideIcon: { marginTop: 8 },
   balance: {
     fontFamily: 'Epilogue',
     fontWeight: '700',

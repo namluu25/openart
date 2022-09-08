@@ -1,18 +1,11 @@
-//import liraries
 import React from 'react';
-import {
-  Share,
-  TouchableOpacity,
-  Image,
-  StyleProp,
-  ViewStyle,
-} from 'react-native';
+import { Share, TouchableOpacity, StyleProp, ViewStyle } from 'react-native';
 import styles from './styles';
+import Export from '@images/icon/Export.svg';
 
 interface Props {
   style?: StyleProp<ViewStyle>;
 }
-// create a component
 export const ShareButton = (props: Props) => {
   const shareData = async () => {
     try {
@@ -23,10 +16,7 @@ export const ShareButton = (props: Props) => {
   };
   return (
     <TouchableOpacity style={props.style} onPress={shareData}>
-      <Image
-        style={styles.buttonImage}
-        source={require('@images/icon/export-icon.png')}
-      />
+      <Export style={styles.buttonImage} />
     </TouchableOpacity>
   );
 };

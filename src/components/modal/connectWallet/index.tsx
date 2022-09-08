@@ -10,6 +10,7 @@ import {
 import LinearGradient from 'react-native-linear-gradient';
 import { globalStyle } from 'theme/globalStyle';
 import styles from './styles';
+import Close from '@images/icon/Close.svg';
 
 interface Props {
   visbile?: boolean;
@@ -33,12 +34,12 @@ export const ConnectWallet = (props: Props) => {
               <View style={styles.firstRow}>
                 <Text style={styles.textFirstRow}>Connect wallet</Text>
                 <TouchableOpacity onPress={props.handleClose}>
-                  <Image source={require('@images/icon/close-icon.png')} />
+                  <Close />
                 </TouchableOpacity>
               </View>
               <Image
                 style={globalStyle.selfCenter}
-                source={require('@images/icon/connect-wallet-icon.png')}
+                source={require('@images/icon/connect-wallet.png')}
               />
               <Text style={styles.textSecondRow}>
                 By connecting your wallet, you agree to our{' '}

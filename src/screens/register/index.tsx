@@ -3,7 +3,6 @@ import {
   View,
   Text,
   TouchableOpacity,
-  Image,
   TextInput,
   KeyboardAvoidingView,
   TouchableWithoutFeedback,
@@ -16,6 +15,7 @@ import { authentication } from 'firebase/firebase';
 import { createUserWithEmailAndPassword, updateProfile } from 'firebase/auth/';
 import Toast from 'react-native-toast-message';
 import { useNavigation } from '@react-navigation/native';
+import ArrowBack from '@images/icon/ArrowBack.svg';
 
 export const Register = () => {
   const navigation = useNavigation();
@@ -63,10 +63,7 @@ export const Register = () => {
               onPress={() => {
                 navigation.navigate('Login' as never);
               }}>
-              <Image
-                source={require('@images/icon/back-arrow.png')}
-                style={styles.backArrowButton}
-              />
+              <ArrowBack style={styles.backArrowButton} />
             </TouchableOpacity>
             <Text style={styles.title}>Create account</Text>
             <View style={styles.inputView}>

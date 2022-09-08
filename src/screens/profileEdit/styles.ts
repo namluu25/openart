@@ -23,7 +23,7 @@ export default StyleSheet.create({
     marginLeft: 8,
   },
   coverButtonIcon: {
-    margin: 10,
+    margin: 11,
   },
   avatar: {
     position: 'absolute',
@@ -171,6 +171,7 @@ export default StyleSheet.create({
     marginBottom: 13,
   },
   sixthButtonIcon: { marginRight: 12 },
+  youtubeIcon: { marginRight: 11, marginTop: 5 },
   sixthButtonText: {
     fontSize: 16,
     fontFamily: 'Epilogue',

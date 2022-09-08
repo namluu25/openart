@@ -74,7 +74,7 @@ export const Login = () => {
         <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
           <View>
             <Image
-              source={require('@images/icon/Logo.png')}
+              source={require('@images/icon/logo-header.png')}
               style={styles.logoImage}
             />
             <View style={styles.inputView}>

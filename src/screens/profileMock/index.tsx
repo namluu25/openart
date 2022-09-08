@@ -14,6 +14,12 @@ import styles from './styles';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { authentication } from 'firebase/firebase';
 import auth from '@react-native-firebase/auth';
+import Copy from '@images/icon/Copy.svg';
+import Instagram from '@images/icon/Instagram.svg';
+import Link from '@images/icon/Link.svg';
+import More from '@images/icon/More.svg';
+import Plus from '@images/icon/Plus.svg';
+import Twitter from '@images/icon/Twitter.svg';
 
 export interface Items {
   id?: number;
@@ -60,10 +66,7 @@ export const ProfileMock = () => {
           <View style={styles.buttonView}>
             {/* button */}
             <TouchableOpacity style={styles.buttonMenuBorder}>
-              <Image
-                style={styles.icon}
-                source={require('@images/icon/more-icon.png')}
-              />
+              <More style={styles.icon} />
             </TouchableOpacity>
             <ShareButton style={styles.buttonShareBorder} />
           </View>
@@ -73,7 +76,7 @@ export const ProfileMock = () => {
           <View style={[globalStyle.flexRow, globalStyle.selfCenter]}>
             <Text style={styles.userHash}>{apiData[0]?.hash}</Text>
             <TouchableOpacity style={styles.copyIcon}>
-              <Image source={require('@images/icon/copy-icon.png')} />
+              <Copy />
             </TouchableOpacity>
           </View>
         </View>
@@ -129,10 +132,7 @@ export const ProfileMock = () => {
                 onPress={() =>
                   Linking.openURL('https://www.twitter.com/elonmusk/')
                 }>
-                <Image
-                  style={styles.socialButtonIcon}
-                  source={require('@images/icon/twitter-icon.png')}
-                />
+                <Twitter style={styles.socialButtonIcon} />
                 <Text style={styles.socialButtonText}>@openart</Text>
               </TouchableOpacity>
               <TouchableOpacity
@@ -140,20 +140,14 @@ export const ProfileMock = () => {
                 onPress={() =>
                   Linking.openURL('https://www.instagram.com/elonmusk/')
                 }>
-                <Image
-                  style={styles.socialButtonIcon}
-                  source={require('@images/icon/instagram-icon.png')}
-                />
+                <Instagram style={styles.socialButtonIcon} />
                 <Text style={styles.socialButtonText}>@openart.design</Text>
               </TouchableOpacity>
             </View>
             <TouchableOpacity
               style={styles.socialButtonSecondRow}
               onPress={() => Linking.openURL('https://www.google.com')}>
-              <Image
-                style={styles.socialButtonIcon}
-                source={require('@images/icon/link-icon.png')}
-              />
+              <Link style={styles.socialButtonIcon} />
               <Text style={styles.socialButtonText}>Openart.design</Text>
             </TouchableOpacity>
             <View style={styles.productTitleView}>
@@ -187,7 +181,7 @@ export const ProfileMock = () => {
           })}
 
           <TouchableOpacity style={styles.loadMoreButton}>
-            <Image source={require('@images/icon/plus-icon.png')} />
+            <Plus style={styles.plusIcon} />
             <Text style={styles.loadMoreButtonText}>Load more</Text>
           </TouchableOpacity>
         </View>

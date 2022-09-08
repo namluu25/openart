@@ -19,4 +19,9 @@ export default StyleSheet.create({
     marginRight: 31,
     borderRadius: 50,
   },
+  logo: {
+    width: 140,
+    height: 37,
+  },
+  headerIcon: { width: 24, height: 24 },
 });

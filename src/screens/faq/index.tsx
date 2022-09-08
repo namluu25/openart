@@ -1,8 +1,9 @@
 import React from 'react';
-import { View, Text, ScrollView, Image, TouchableOpacity } from 'react-native';
+import { View, Text, ScrollView, TouchableOpacity } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Header, Footer } from 'components';
 import styles from './styles';
+import ArrowDown from '@images/icon/ArrowDown.svg';
 
 export const FAQ = () => {
   return (
@@ -19,27 +20,27 @@ export const FAQ = () => {
           </Text>
           <TouchableOpacity style={styles.button}>
             <Text style={styles.buttonText}>General</Text>
-            <Image source={require('@images/icon/arrow-down-icon.png')} />
+            <ArrowDown />
           </TouchableOpacity>
 
           <TouchableOpacity style={styles.button}>
             <Text style={styles.buttonText}>How does it work</Text>
-            <Image source={require('@images/icon/arrow-down-icon.png')} />
+            <ArrowDown />
           </TouchableOpacity>
 
           <TouchableOpacity style={styles.button}>
             <Text style={styles.buttonText}>How to start</Text>
-            <Image source={require('@images/icon/arrow-down-icon.png')} />
+            <ArrowDown />
           </TouchableOpacity>
 
           <TouchableOpacity style={styles.button}>
             <Text style={styles.buttonText}>How to payment</Text>
-            <Image source={require('@images/icon/arrow-down-icon.png')} />
+            <ArrowDown />
           </TouchableOpacity>
 
           <TouchableOpacity style={styles.button}>
             <Text style={styles.buttonText}>How to bid</Text>
-            <Image source={require('@images/icon/arrow-down-icon.png')} />
+            <ArrowDown />
           </TouchableOpacity>
         </View>
 

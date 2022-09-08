@@ -19,6 +19,15 @@ import auth from '@react-native-firebase/auth';
 import { onAuthStateChanged, updateEmail, updateProfile } from 'firebase/auth';
 import Toast from 'react-native-toast-message';
 import { useNavigation } from '@react-navigation/native';
+import Copy from '@images/icon/Copy.svg';
+import Discord from '@images/icon/Discord.svg';
+import Facebook from '@images/icon/Facebook.svg';
+import Instagram from '@images/icon/Instagram.svg';
+import Link from '@images/icon/Link.svg';
+import More from '@images/icon/More.svg';
+import Picture from '@images/icon/Picture.svg';
+import Tiktok from '@images/icon/Tiktok.svg';
+import Youtube from '@images/icon/Youtube.svg';
 
 export const ProfileEdit = () => {
   const navigation = useNavigation();
@@ -76,10 +85,7 @@ export const ProfileEdit = () => {
           <View style={styles.coverButtonView}>
             {/* button */}
             <TouchableOpacity style={styles.coverButtonMenu}>
-              <Image
-                style={styles.coverButtonIcon}
-                source={require('@images/icon/more-icon.png')}
-              />
+              <More style={styles.coverButtonIcon} />
             </TouchableOpacity>
             <ShareButton style={styles.coverButtonShare} />
           </View>
@@ -89,7 +95,7 @@ export const ProfileEdit = () => {
           <View style={[globalStyle.flexRow, globalStyle.selfCenter]}>
             <Text style={styles.userHash}>52fs5ge5g45sov45a</Text>
             <TouchableOpacity style={styles.copyIcon}>
-              <Image source={require('@images/icon/copy-icon.png')} />
+              <Copy />
             </TouchableOpacity>
           </View>
         </View>
@@ -134,7 +140,7 @@ export const ProfileEdit = () => {
               />
               <Image
                 style={styles.thirdCategoryIcon}
-                source={require('@images/icon/form-icon.png')}
+                source={require('@images/icon/form.png')}
               />
             </View>
           </View>
@@ -142,7 +148,7 @@ export const ProfileEdit = () => {
           <View style={styles.inputCategory}>
             <Text style={styles.inputTitle}>Upload a profile image</Text>
             <TouchableOpacity style={styles.forthCategoryButton}>
-              <Image source={require('@images/icon/picture-icon.png')} />
+              <Picture />
               <Text style={styles.forthButtonTextLarge}>
                 Drag and drop or browce a file
               </Text>
@@ -158,15 +164,11 @@ export const ProfileEdit = () => {
               Show the Foundation community that your profile is authentic.
             </Text>
             <TouchableOpacity style={styles.fifthButtonTwitter}>
-              <Image
-                source={require('@images/icon/twitter-icon-gradient.png')}
-              />
+              <Image source={require('@images/icon/twitter-gradient.png')} />
               <Text style={styles.fifthButtonText}>Verify via Twitter</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.fifthButtonInstagram}>
-              <Image
-                source={require('@images/icon/instagram-icon-gradient.png')}
-              />
+              <Image source={require('@images/icon/instagram-gradient.png')} />
               <Text style={styles.fifthButtonText}>Verify via Instagram</Text>
             </TouchableOpacity>
           </View>
@@ -176,45 +178,27 @@ export const ProfileEdit = () => {
               Add links to your social media profiles.
             </Text>
             <TouchableOpacity style={styles.sixthButton}>
-              <Image
-                style={styles.sixthButtonIcon}
-                source={require('@images/icon/link-icon.png')}
-              />
+              <Link style={styles.sixthButtonIcon} />
               <Text style={styles.sixthButtonText}>Website</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.sixthButton}>
-              <Image
-                style={styles.sixthButtonIcon}
-                source={require('@images/icon/discord-icon.png')}
-              />
+              <Discord style={styles.sixthButtonIcon} />
               <Text style={styles.sixthButtonText}>Discord</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.sixthButton}>
-              <Image
-                style={styles.sixthButtonIcon}
-                source={require('@images/icon/instagram-icon.png')}
-              />
+              <Instagram style={styles.sixthButtonIcon} />
               <Text style={styles.sixthButtonText}>Instagram</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.sixthButton}>
-              <Image
-                style={styles.sixthButtonIcon}
-                source={require('@images/icon/youtube-icon.png')}
-              />
+              <Youtube style={styles.youtubeIcon} />
               <Text style={styles.sixthButtonText}>Youtube channel</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.sixthButton}>
-              <Image
-                style={styles.sixthButtonIcon}
-                source={require('@images/icon/facebook-icon.png')}
-              />
+              <Facebook style={styles.sixthButtonIcon} />
               <Text style={styles.sixthButtonText}>Facebook</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.sixthButtonTiktok}>
-              <Image
-                style={styles.sixthButtonIcon}
-                source={require('@images/icon/tiktok-icon.png')}
-              />
+              <Tiktok style={styles.sixthButtonIcon} />
               <Text style={styles.sixthButtonText}>Tiktok</Text>
             </TouchableOpacity>
           </View>

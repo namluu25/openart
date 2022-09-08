@@ -108,7 +108,7 @@ export const Home = () => {
           <View>
             <View style={styles.liveAuctionView}>
               <View style={styles.liveAuctionTextView}>
-                <Image source={require('@images/icon/live-icon.png')} />
+                <Image source={require('@images/icon/live.png')} />
                 <Text style={styles.liveAuctionText}>Live auctions</Text>
               </View>
               <TouchableOpacity style={globalStyle.containerPriceButton}>
@@ -151,7 +151,7 @@ export const Home = () => {
                           <Image
                             resizeMode="contain"
                             style={styles.buttonBidActiveIcon}
-                            source={require('@images/icon/active-icon.png')}
+                            source={require('@images/icon/active.png')}
                           />
                           <View style={globalStyle.itemStart}>
                             <Text style={styles.buttonBidTextLight}>

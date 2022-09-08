@@ -9,6 +9,9 @@ import { authentication } from 'firebase/firebase';
 import { useNavigation } from '@react-navigation/native';
 import axios from 'axios';
 import auth from '@react-native-firebase/auth';
+import Copy from '@images/icon/Copy.svg';
+import Edit from '@images/icon/Edit.svg';
+import More from '@images/icon/More.svg';
 
 export const ProfileEmpty = () => {
   const navigation = useNavigation();
@@ -39,10 +42,7 @@ export const ProfileEmpty = () => {
               onPress={() => {
                 navigation.navigate('ProfileMock' as never);
               }}>
-              <Image
-                style={styles.coverButtonIcon}
-                source={require('@images/icon/more-icon.png')}
-              />
+              <More style={styles.coverButtonIcon} />
             </TouchableOpacity>
             <ShareButton style={styles.coverButtonShare} />
           </View>
@@ -52,7 +52,7 @@ export const ProfileEmpty = () => {
           <View style={[globalStyle.flexRow, globalStyle.selfCenter]}>
             <Text style={styles.userHash}>52fs5ge5g45sov45a</Text>
             <TouchableOpacity style={styles.copyIcon}>
-              <Image source={require('@images/icon/copy-icon.png')} />
+              <Copy />
             </TouchableOpacity>
           </View>
 
@@ -70,10 +70,7 @@ export const ProfileEmpty = () => {
               onPress={() => {
                 navigation.navigate('ProfileEdit' as never);
               }}>
-              <Image
-                style={styles.followRowButtonImage}
-                source={require('@images/icon/edit-icon.png')}
-              />
+              <Edit style={styles.followRowButtonImage} />
             </TouchableOpacity>
           </View>
           <Text style={styles.thirdRowText}>Member since 2021</Text>

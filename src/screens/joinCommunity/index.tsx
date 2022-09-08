@@ -33,7 +33,7 @@ export const JoinCommunity = () => {
           </TouchableOpacity>
           <Image
             style={globalStyle.selfCenter}
-            source={require('@images/icon/join-community-icon.png')}
+            source={require('@images/icon/join-community.png')}
           />
           <Text style={styles.lastRowText}>
             Current number of profiles on the Community Upvote:

@@ -75,7 +75,12 @@ export default StyleSheet.create({
     color: color.grayOffWhite,
     fontWeight: '700',
     lineHeight: 24,
+    alignItems: 'flex-start',
+    flex: 1,
   },
+  etherIcon: { marginRight: 30 },
+  starIcon: { marginRight: 30, marginLeft: 2 },
+  chartIcon: { marginRight: 30, marginLeft: 6 },
   placeBidView: {
     flexDirection: 'column',
     borderRadius: 24,

@@ -4,7 +4,6 @@ import {
   Text,
   ScrollView,
   TouchableOpacity,
-  Image,
   TextInput,
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -16,6 +15,9 @@ import Slider from '@react-native-community/slider';
 import styles from './styles';
 import axios from 'axios';
 import { CreatedArt } from 'screens/profileMock';
+import Close from '@images/icon/Close.svg';
+import ArrowDown from '@images/icon/ArrowDown.svg';
+import Plus from '@images/icon/Plus.svg';
 
 export const SearchFilter = () => {
   const [artData, setArtData] = useState<Array<CreatedArt>>([]);
@@ -68,7 +70,6 @@ export const SearchFilter = () => {
               minimumTrackTintColor="#0038F5"
               maximumTrackTintColor="#F0F0F0"
               step={0.2}
-              // value=
             />
             <View style={styles.thirdRowTextView}>
               <Text style={styles.thirdRowText}>0.01 ETH</Text>
@@ -104,7 +105,7 @@ export const SearchFilter = () => {
             <Text style={styles.titleItem}>Creator</Text>
             <TouchableOpacity style={styles.sixthRowDropdown}>
               <Text style={styles.sixthRowDropdownText}>Verified only</Text>
-              <Image source={require('@images/icon/arrow-down-icon.png')} />
+              <ArrowDown />
             </TouchableOpacity>
           </View>
           <View
@@ -112,7 +113,7 @@ export const SearchFilter = () => {
             style={styles.separatorLine}
           />
           <TouchableOpacity style={styles.resetButton}>
-            <Image source={require('@images/icon/close-icon.png')} />
+            <Close />
             <Text style={styles.resetButtonText}>Reset all filter</Text>
           </TouchableOpacity>
           {artData.map((art: CreatedArt) => {
@@ -136,7 +137,7 @@ export const SearchFilter = () => {
           })}
         </View>
         <TouchableOpacity style={styles.loadMoreButton}>
-          <Image source={require('@images/icon/plus-icon.png')} />
+          <Plus style={styles.plusIcon} />
           <Text style={styles.loadMoreButtonText}>Load more</Text>
         </TouchableOpacity>
         <Footer />

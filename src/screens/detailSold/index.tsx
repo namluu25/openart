@@ -12,6 +12,9 @@ import styles from './styles';
 import { globalStyle } from 'theme/globalStyle';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation } from '@react-navigation/native';
+import ChartPie from '@images/icon/ChartPie.svg';
+import External from '@images/icon/External.svg';
+import Star from '@images/icon/Star.svg';
 
 export const DetailsSold = () => {
   const navigation = useNavigation();
@@ -81,25 +84,28 @@ export const DetailsSold = () => {
           <TouchableOpacity
             style={styles.shareButton}
             onPress={() => Linking.openURL('https://etherscan.io/')}>
-            <Image source={require('@images/icon/etherscan-logo.png')} />
+            <Image
+              style={styles.etherIcon}
+              source={require('@images/icon/etherscan-logo.png')}
+            />
             <Text style={styles.shareButtonText}>View on Etherscan</Text>
-            <Image source={require('@images/icon/external-icon.png')} />
+            <External />
           </TouchableOpacity>
 
           <TouchableOpacity
             style={styles.shareButton}
             onPress={() => Linking.openURL('https://ipfs.tech/')}>
-            <Image source={require('@images/icon/star-icon.png')} />
+            <Star style={styles.starIcon} />
             <Text style={styles.shareButtonText}>View on IPFS</Text>
-            <Image source={require('@images/icon/external-icon.png')} />
+            <External />
           </TouchableOpacity>
 
           <TouchableOpacity
             style={styles.shareButton}
             onPress={() => Linking.openURL('https://ipfs.tech/')}>
-            <Image source={require('@images/icon/chartPie-icon.png')} />
+            <ChartPie style={styles.chartIcon} />
             <Text style={styles.shareButtonText}>View IPFS Metadata</Text>
-            <Image source={require('@images/icon/external-icon.png')} />
+            <External />
           </TouchableOpacity>
 
           <View style={styles.soldView}>
@@ -109,7 +115,7 @@ export const DetailsSold = () => {
             </View>
             <Image
               style={styles.soldFirstRowImage}
-              source={require('@images/icon/sparkle-icon.png')}
+              source={require('@images/icon/sparkle.png')}
             />
             <View style={styles.soldSecondRowView}>
               <Text style={styles.soldSecondRowTitle}>Owner by</Text>
@@ -145,7 +151,7 @@ export const DetailsSold = () => {
                 <Text style={styles.buttonPriceSold}>Sold for 1.50 ETH</Text>
               </View>
             </View>
-            <Image source={require('@images/icon/external-icon.png')} />
+            <External />
           </TouchableOpacity>
 
           <TouchableOpacity style={styles.activityButton}>
@@ -167,7 +173,7 @@ export const DetailsSold = () => {
                 </View>
               </View>
             </View>
-            <Image source={require('@images/icon/external-icon.png')} />
+            <External />
           </TouchableOpacity>
 
           <TouchableOpacity style={styles.activityButton}>
@@ -189,7 +195,7 @@ export const DetailsSold = () => {
                 </View>
               </View>
             </View>
-            <Image source={require('@images/icon/external-icon.png')} />
+            <External />
           </TouchableOpacity>
         </View>
         <Footer />

@@ -16,6 +16,13 @@ import auth from '@react-native-firebase/auth';
 import { signOut } from 'firebase/auth';
 import { Items } from 'screens/profileMock';
 import axios from 'axios';
+import ArrowBack from '@images/icon/ArrowBack.svg';
+import Copy from '@images/icon/Copy.svg';
+import Hide from '@images/icon/Hide.svg';
+import Invoice from '@images/icon/Invoice.svg';
+import People from '@images/icon/People.svg';
+import Picture from '@images/icon/Picture.svg';
+import Wallet from '@images/icon/Wallet.svg';
 
 interface Props {
   visbile?: boolean;
@@ -73,7 +80,7 @@ export const Account = (props: Props) => {
                   <View style={globalStyle.flexRow}>
                     <Text style={styles.hash}>52fs5ge5g45sov45a</Text>
                     <TouchableOpacity style={styles.copyIcon}>
-                      <Image source={require('@images/icon/copy-icon.png')} />
+                      <Copy />
                     </TouchableOpacity>
                   </View>
                 </View>
@@ -81,17 +88,14 @@ export const Account = (props: Props) => {
 
               <View style={styles.secondRow}>
                 <TouchableOpacity style={styles.walletBorder}>
-                  <Image
-                    style={styles.walletIcon}
-                    source={require('@images/icon/wallet-icon.png')}
-                  />
+                  <Wallet style={styles.walletIcon} />
                 </TouchableOpacity>
                 <View style={globalStyle.flexColumn}>
                   <Text style={styles.balanceText}>Balance</Text>
                   <View style={styles.secondRowBalance}>
                     <Text style={styles.balance}>5.000 ETH</Text>
                     <TouchableOpacity>
-                      <Image source={require('@images/icon/hide-icon.png')} />
+                      <Hide style={styles.hideIcon} />
                     </TouchableOpacity>
                   </View>
                 </View>
@@ -103,21 +107,21 @@ export const Account = (props: Props) => {
                     setVisibleAccount(false);
                   }}
                   style={styles.touchableLine}>
-                  <Image source={require('@images/icon/people-icon.png')} />
+                  <People />
                   <Text style={styles.titleLine}>My account</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.touchableLine}>
-                  <Image source={require('@images/icon/picture-icon.png')} />
+                  <Picture />
                   <Text style={styles.titleLine}>My items</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.touchableLine}>
-                  <Image source={require('@images/icon/invoice-icon.png')} />
+                  <Invoice />
                   <Text style={styles.titleLine}>My invoice</Text>
                 </TouchableOpacity>
                 <TouchableOpacity
                   style={styles.touchableLine}
                   onPress={signingOut}>
-                  <Image source={require('@images/icon/back-arrow.png')} />
+                  <ArrowBack />
                   <Text style={styles.titleLine}>Sign out</Text>
                 </TouchableOpacity>
               </View>

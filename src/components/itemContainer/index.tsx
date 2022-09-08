@@ -39,7 +39,7 @@ export const ItemContainer = (props: Props) => {
               </TouchableOpacity>
               <Image
                 style={styles.activeIcon}
-                source={require('@images/icon/active-icon.png')}
+                source={require('@images/icon/active.png')}
               />
             </View>
             <TouchableOpacity

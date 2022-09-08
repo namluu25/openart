@@ -14,6 +14,9 @@ import { Header, Footer, HeartButton, ShareButton } from 'components';
 import styles from './styles';
 import { globalStyle } from 'theme/globalStyle';
 import { useNavigation } from '@react-navigation/native';
+import ChartPie from '@images/icon/ChartPie.svg';
+import External from '@images/icon/External.svg';
+import Star from '@images/icon/Star.svg';
 
 export const DetailsCurrentBid = () => {
   const navigation = useNavigation();
@@ -85,25 +88,28 @@ export const DetailsCurrentBid = () => {
           <TouchableOpacity
             style={styles.shareButton}
             onPress={() => Linking.openURL('https://etherscan.io/')}>
-            <Image source={require('@images/icon/etherscan-logo.png')} />
+            <Image
+              style={styles.etherIcon}
+              source={require('@images/icon/etherscan-logo.png')}
+            />
             <Text style={styles.shareButtonText}>View on Etherscan</Text>
-            <Image source={require('@images/icon/external-icon.png')} />
+            <External />
           </TouchableOpacity>
 
           <TouchableOpacity
             style={styles.shareButton}
             onPress={() => Linking.openURL('https://ipfs.tech/')}>
-            <Image source={require('@images/icon/star-icon.png')} />
+            <Star style={styles.starIcon} />
             <Text style={styles.shareButtonText}>View on IPFS</Text>
-            <Image source={require('@images/icon/external-icon.png')} />
+            <External />
           </TouchableOpacity>
 
           <TouchableOpacity
             style={styles.shareButton}
             onPress={() => Linking.openURL('https://ipfs.tech/')}>
-            <Image source={require('@images/icon/chartPie-icon.png')} />
+            <ChartPie style={styles.chartIcon} />
             <Text style={styles.shareButtonText}>View IPFS Metadata</Text>
-            <Image source={require('@images/icon/external-icon.png')} />
+            <External />
           </TouchableOpacity>
 
           <TouchableOpacity style={styles.placeBidView}>
@@ -158,7 +164,7 @@ export const DetailsCurrentBid = () => {
                 <Text style={styles.buttonPriceSold}>Sold for 1.50 ETH</Text>
               </View>
             </View>
-            <Image source={require('@images/icon/external-icon.png')} />
+            <External />
           </TouchableOpacity>
 
           <TouchableOpacity style={styles.activityButton}>
@@ -180,7 +186,7 @@ export const DetailsCurrentBid = () => {
                 </View>
               </View>
             </View>
-            <Image source={require('@images/icon/external-icon.png')} />
+            <External />
           </TouchableOpacity>
 
           <TouchableOpacity style={styles.activityButton}>
@@ -202,7 +208,7 @@ export const DetailsCurrentBid = () => {
                 </View>
               </View>
             </View>
-            <Image source={require('@images/icon/external-icon.png')} />
+            <External />
           </TouchableOpacity>
         </View>
         <Footer />

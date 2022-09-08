@@ -101,7 +101,6 @@ export default StyleSheet.create({
     marginBottom: 26,
   },
   resetButton: {
-    // flex: 1,
     borderRadius: 8,
     borderColor: color.grayBG,
     borderWidth: 1,
@@ -162,5 +161,8 @@ export default StyleSheet.create({
     paddingVertical: 15,
     color: color.grayOffWhite,
     fontWeight: '700',
+  },
+  plusIcon: {
+    marginRight: 11,
   },
 });

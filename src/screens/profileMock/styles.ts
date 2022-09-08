@@ -22,7 +22,7 @@ export default StyleSheet.create({
     backgroundColor: color.grayBody,
     marginRight: 16,
   },
-  icon: { margin: 10 },
+  icon: { margin: 11 },
   avatar: {
     position: 'absolute',
     alignSelf: 'center',
@@ -233,5 +233,8 @@ export default StyleSheet.create({
   },
   copyIcon: {
     paddingTop: 5,
+  },
+  plusIcon: {
+    marginRight: 11,
   },
 });

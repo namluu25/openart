@@ -10,6 +10,8 @@ import {
 } from 'react-native';
 import { globalStyle } from 'theme/globalStyle';
 import styles from './hotBid-styles';
+import ArrowBack from '@images/icon/ArrowBack.svg';
+import ArrowForward from '@images/icon/ArrowForward.svg';
 
 export const HotBid = () => {
   const naviRef = useRef<ScrollView>(null);
@@ -19,7 +21,7 @@ export const HotBid = () => {
     <View style={styles.hotBid}>
       <View style={styles.titleView}>
         <View style={[globalStyle.flexRow, globalStyle.itemBaseline]}>
-          <Image source={require('@images/icon/fire-icon.png')} />
+          <Image source={require('@images/icon/fire.png')} />
           <Text style={styles.titleText}> Hot bid</Text>
         </View>
 
@@ -28,17 +30,14 @@ export const HotBid = () => {
             onPress={() => {
               naviRef.current?.scrollTo({ x: 0, animated: true });
             }}>
-            <Image
-              source={require('@images/icon/back-arrow.png')}
-              style={styles.leftArrow}
-            />
+            <ArrowBack style={styles.leftArrow} />
           </TouchableOpacity>
 
           <TouchableOpacity
             onPress={() => {
               naviRef.current?.scrollTo({ x: screenWidth, animated: true });
             }}>
-            <Image source={require('@images/icon/forward-arrow.png')} />
+            <ArrowForward />
           </TouchableOpacity>
         </View>
       </View>
@@ -74,18 +73,15 @@ export const HotBid = () => {
             </View>
           </View>
           <View style={styles.itemInfo}>
-            <View
-              //   tittle + 2nd row
-              style={[globalStyle.flexRow, globalStyle.itemBaseline]}>
-              <Text
-                // title
-                style={styles.itemInfoTitle}>
+            <View style={[globalStyle.flexRow, globalStyle.itemBaseline]}>
+              {/* tittle + 2nd row */}
+              <Text style={styles.itemInfoTitle}>
+                {/* title */}
                 Inside Kings Cross
               </Text>
 
-              <TouchableOpacity
-                // 2.3eth
-                style={styles.itemPriceButton}>
+              <TouchableOpacity style={styles.itemPriceButton}>
+                {/* 2.3eth */}
                 <Text style={styles.itemPriceButtonText}>2.3 ETH</Text>
               </TouchableOpacity>
             </View>
@@ -125,18 +121,15 @@ export const HotBid = () => {
             </View>
           </View>
           <View style={styles.itemInfo}>
-            <View
-              //   tittle + 2nd row
-              style={[globalStyle.flexRow, globalStyle.itemBaseline]}>
-              <Text
-                // title
-                style={styles.itemInfoTitle}>
+            <View style={[globalStyle.flexRow, globalStyle.itemBaseline]}>
+              {/* tittle + 2nd row */}
+              <Text style={styles.itemInfoTitle}>
+                {/* title */}
                 Inside Kings Cross
               </Text>
 
-              <TouchableOpacity
-                // 2.3eth
-                style={styles.itemPriceButton}>
+              <TouchableOpacity style={styles.itemPriceButton}>
+                {/* 2.3eth */}
                 <Text style={styles.itemPriceButtonText}>2.3 ETH</Text>
               </TouchableOpacity>
             </View>

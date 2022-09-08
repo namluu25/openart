@@ -18,6 +18,8 @@ export default StyleSheet.create({
   logoImage: {
     alignSelf: 'center',
     marginVertical: 20,
+    width: 200,
+    height: 53,
   },
   inputView: {
     marginHorizontal: 16,
