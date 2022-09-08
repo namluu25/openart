@@ -103,18 +103,6 @@ export const Login = () => {
               </TouchableOpacity>
 
               <TouchableOpacity
-                onPress={() => {
-                  navigation.navigate('Register' as never);
-                }}
-                style={[
-                  globalStyle.buttonRadius,
-                  styles.registerButton,
-                  styles.buttonColor,
-                ]}>
-                <Text style={styles.buttonText}>Register</Text>
-              </TouchableOpacity>
-
-              <TouchableOpacity
                 style={styles.googleButton}
                 onPress={() => onGoogleButtonPress()}>
                 <FontAwesomeIcon
@@ -123,6 +111,23 @@ export const Login = () => {
                 />
                 <Text style={styles.googleButtonText}>Sign in with Google</Text>
               </TouchableOpacity>
+              <View
+                style={[
+                  globalStyle.itemCenter,
+                  styles.registerButton,
+                  globalStyle.flexRow,
+                  globalStyle.selfCenter,
+                ]}>
+                <Text style={styles.registerButtonSmallText}>
+                  Don't have an account?
+                </Text>
+                <TouchableOpacity
+                  onPress={() => {
+                    navigation.navigate('Register' as never);
+                  }}>
+                  <Text style={[styles.registerButtonText]}> Register</Text>
+                </TouchableOpacity>
+              </View>
             </View>
           </View>
         </TouchableWithoutFeedback>

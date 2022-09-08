@@ -12,7 +12,7 @@ export default StyleSheet.create({
     paddingLeft: 15,
     color: color.grayOffWhite,
     height: 48,
-    borderWidth: 1,
+    borderWidth: 0.3,
     borderColor: color.grayOffWhite,
   },
   logoImage: {
@@ -26,7 +26,22 @@ export default StyleSheet.create({
     marginHorizontal: 30,
   },
   registerButton: {
-    marginTop: 20,
+    marginTop: 13,
+  },
+  registerButtonText: {
+    fontSize: 15,
+    fontFamily: 'Epilogue',
+    textAlign: 'center',
+    color: '#2196f3',
+    fontWeight: '700',
+    textDecorationColor: 'underline',
+  },
+  registerButtonSmallText: {
+    fontSize: 12,
+    fontFamily: 'Epilogue',
+    textAlign: 'center',
+    color: color.grayOffWhite,
+    fontWeight: '700',
   },
   buttonText: {
     fontSize: 20,
@@ -38,21 +53,22 @@ export default StyleSheet.create({
   },
   googleButton: {
     marginTop: 20,
-    backgroundColor: '#2196f3',
     borderRadius: 8,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
-    padding: 10,
   },
   googleButtonLogo: {
     color: color.grayOffWhite,
-    marginRight: 10,
+    marginRight: 8,
+    padding: 10,
+    backgroundColor: '#2196f3',
+    borderRadius: 3,
   },
   googleButtonText: {
-    fontSize: 20,
+    fontSize: 15,
     fontFamily: 'Epilogue',
-    color: color.grayOffWhite,
+    color: '#2196f3',
     fontWeight: '700',
   },
 });

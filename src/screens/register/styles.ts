@@ -5,6 +5,18 @@ export default StyleSheet.create({
   buttonColor: {
     backgroundColor: color.grayOffWhite,
   },
+  backArrowButton: {
+    // position: 'absolute',
+    marginLeft: 9,
+  },
+  title: {
+    marginBottom: 40,
+    color: color.grayOffWhite,
+    textAlign: 'center',
+    fontSize: 30,
+    fontFamily: 'Epilogue',
+    fontWeight: '700',
+  },
   inputBox: {
     borderRadius: 8,
     backgroundColor: color.grayBody,
@@ -12,12 +24,8 @@ export default StyleSheet.create({
     paddingLeft: 15,
     color: color.grayOffWhite,
     height: 48,
-    borderWidth: 1,
+    borderWidth: 0.3,
     borderColor: color.grayOffWhite,
-  },
-  logoImage: {
-    alignSelf: 'center',
-    marginVertical: 20,
   },
   inputView: {
     marginHorizontal: 16,

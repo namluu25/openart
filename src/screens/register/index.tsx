@@ -15,8 +15,10 @@ import { globalStyle } from 'theme/globalStyle';
 import { authentication } from 'firebase/firebase';
 import { createUserWithEmailAndPassword, updateProfile } from 'firebase/auth/';
 import Toast from 'react-native-toast-message';
+import { useNavigation } from '@react-navigation/native';
 
 export const Register = () => {
+  const navigation = useNavigation();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [name, setName] = useState('');
@@ -56,11 +58,17 @@ export const Register = () => {
     <SafeAreaView style={[globalStyle.flex]}>
       <KeyboardAvoidingView behavior="padding">
         <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
-          <View>
-            <Image
-              source={require('@images/icon/Logo.png')}
-              style={styles.logoImage}
-            />
+          <>
+            <TouchableOpacity
+              onPress={() => {
+                navigation.navigate('Login' as never);
+              }}>
+              <Image
+                source={require('@images/icon/back-arrow.png')}
+                style={styles.backArrowButton}
+              />
+            </TouchableOpacity>
+            <Text style={styles.title}>Create account</Text>
             <View style={styles.inputView}>
               <TextInput
                 style={styles.inputBox}
@@ -97,7 +105,7 @@ export const Register = () => {
                 <Text style={styles.buttonText}>Register</Text>
               </TouchableOpacity>
             </View>
-          </View>
+          </>
         </TouchableWithoutFeedback>
       </KeyboardAvoidingView>
     </SafeAreaView>
