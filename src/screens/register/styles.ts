@@ -23,8 +23,8 @@ export default StyleSheet.create({
     paddingLeft: 15,
     color: color.grayOffWhite,
     height: 48,
-    borderWidth: 0.3,
-    borderColor: color.grayOffWhite,
+    borderWidth: 1,
+    borderColor: color.grayPlaceholder,
   },
   inputView: {
     marginHorizontal: 16,

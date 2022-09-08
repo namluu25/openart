@@ -12,8 +12,8 @@ export default StyleSheet.create({
     paddingLeft: 15,
     color: color.grayOffWhite,
     height: 48,
-    borderWidth: 0.3,
-    borderColor: color.grayOffWhite,
+    borderWidth: 1,
+    borderColor: color.grayPlaceholder,
   },
   logoImage: {
     alignSelf: 'center',
@@ -64,8 +64,6 @@ export default StyleSheet.create({
     color: color.grayOffWhite,
     marginRight: 8,
     padding: 10,
-    backgroundColor: '#2196f3',
-    borderRadius: 3,
   },
   googleButtonText: {
     fontSize: 15,
