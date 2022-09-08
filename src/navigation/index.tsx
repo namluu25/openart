@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { StatusBar } from 'react-native';
 import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
 import RNBootSplash from 'react-native-bootsplash';
-import { authentication } from 'firebase/firebase';
+import { authentication } from 'firebase/config';
 import { AppStack } from './AppStack';
 import { AuthStack } from './AuthStack';
 import auth from '@react-native-firebase/auth';

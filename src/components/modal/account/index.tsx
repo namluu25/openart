@@ -11,7 +11,7 @@ import { useNavigation } from '@react-navigation/native';
 import { Switch } from 'react-native-paper';
 import styles from './styles';
 import { globalStyle } from 'theme/globalStyle';
-import { authentication } from 'firebase/firebase';
+import { authentication } from 'firebase/config';
 import auth from '@react-native-firebase/auth';
 import { signOut } from 'firebase/auth';
 import { Items } from 'screens/profileMock';

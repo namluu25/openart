@@ -16,7 +16,7 @@ import styles from './styles';
 import { globalStyle } from 'theme/globalStyle';
 import { GoogleSignin } from '@react-native-google-signin/google-signin';
 import auth from '@react-native-firebase/auth';
-import { authentication } from 'firebase/firebase';
+import { authentication } from 'firebase/config';
 import { signInWithEmailAndPassword } from 'firebase/auth/';
 import Toast from 'react-native-toast-message';
 import { useNavigation } from '@react-navigation/native';

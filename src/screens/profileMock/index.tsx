@@ -12,7 +12,7 @@ import axios from 'axios';
 import { globalStyle } from 'theme/globalStyle';
 import styles from './styles';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { authentication } from 'firebase/firebase';
+import { authentication } from 'firebase/config';
 import auth from '@react-native-firebase/auth';
 import Copy from '@images/icon/Copy.svg';
 import Instagram from '@images/icon/Instagram.svg';

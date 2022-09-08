@@ -5,7 +5,7 @@ import styles from './styles';
 import { globalStyle } from 'theme/globalStyle';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Items } from 'screens/profileMock';
-import { authentication } from 'firebase/firebase';
+import { authentication } from 'firebase/config';
 import { useNavigation } from '@react-navigation/native';
 import axios from 'axios';
 import auth from '@react-native-firebase/auth';

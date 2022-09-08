@@ -11,7 +11,7 @@ import {
 import { SafeAreaView } from 'react-native-safe-area-context';
 import styles from './styles';
 import { globalStyle } from 'theme/globalStyle';
-import { authentication } from 'firebase/firebase';
+import { authentication } from 'firebase/config';
 import { createUserWithEmailAndPassword, updateProfile } from 'firebase/auth/';
 import Toast from 'react-native-toast-message';
 import { useNavigation } from '@react-navigation/native';

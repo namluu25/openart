@@ -13,7 +13,7 @@ import styles from './styles';
 import { globalStyle } from 'theme/globalStyle';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import axios from 'axios';
-import { authentication } from 'firebase/firebase';
+import { authentication } from 'firebase/config';
 import { Items } from 'screens/profileMock';
 import auth from '@react-native-firebase/auth';
 import { onAuthStateChanged, updateEmail, updateProfile } from 'firebase/auth';
