@@ -8,7 +8,7 @@
     "start": "react-native start",
     "test": "jest",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
-    "splash": "yarn react-native generate-bootsplash src/assets/images/icon/Logo.png --background-color=191838 --logo-width=150  --assets-path=assets --flavor=main"
+    "splash": "yarn react-native generate-bootsplash src/assets/images/icon/logo-header.png --background-color=2A2A2E --logo-width=192  --assets-path=assets --flavor=main"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.1.2",
