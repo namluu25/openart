@@ -1,4 +1,8 @@
-<svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-<circle cx="11.8877" cy="7.61991" r="3.61136" stroke="#FCFCFC" stroke-width="2"/>
-<path d="M4.31738 24.0194V19.448C4.31738 17.2388 6.10824 15.448 8.31738 15.448H16.1251C18.3342 15.448 20.1251 17.2388 20.1251 19.448V24.0297" stroke="#FCFCFC" stroke-width="2"/>
+<svg width="24" height="25" xmlns="http://www.w3.org/2000/svg" fill="none">
+
+ <g>
+  <title>Layer 1</title>
+  <circle id="svg_1" stroke-width="2" stroke="#FCFCFC" r="3.61136" cy="6.14623" cx="11.99296"/>
+  <path stroke="#FCFCFC" style="vector-effect: non-scaling-stroke;" id="svg_2" stroke-width="2" d="m4.31738,21.59873l0,-4.40318c0,-2.12791 1.79086,-3.85281 4,-3.85281l7.80772,0c2.2091,0 4,1.7249 4,3.85281l0,4.4131"/>
+ </g>
 </svg>
