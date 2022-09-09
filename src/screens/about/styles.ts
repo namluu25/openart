@@ -38,7 +38,7 @@ export default StyleSheet.create({
     marginHorizontal: 16,
   },
   secondTitle: {
-    ontSize: 20,
+    fontSize: 20,
     fontFamily: 'Epilogue',
     color: color.grayBG,
     fontWeight: '700',

@@ -23,7 +23,7 @@ export default StyleSheet.create({
   },
   closeIconButton: {
     position: 'absolute',
-    paddingRight: 8,
+    paddingHorizontal: 8,
     paddingVertical: 12,
     right: 0,
   },
@@ -51,6 +51,7 @@ export default StyleSheet.create({
   item: {
     flexDirection: 'row',
     marginBottom: 21,
+    marginLeft: 13,
   },
   itemTextLarge: {
     fontFamily: 'Epilogue',

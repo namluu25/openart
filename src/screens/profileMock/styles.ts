@@ -186,6 +186,8 @@ export default StyleSheet.create({
     fontSize: 24,
     lineHeight: 32,
     color: color.grayLabel,
+  },
+  collectedTextMargin: {
     marginLeft: 35,
   },
   productTitleView: {

@@ -12,6 +12,8 @@ export default StyleSheet.create({
     fontWeight: '700',
     lineHeight: 36,
     color: color.grayOffWhite,
+  },
+  textMargin: {
     marginBottom: 24,
   },
   button: {

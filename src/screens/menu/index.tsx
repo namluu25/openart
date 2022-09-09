@@ -18,22 +18,25 @@ export const Menu = () => {
         <TouchableOpacity
           onPress={() => {
             navigation.navigate('About' as never);
-          }}>
+          }}
+          style={styles.textMargin}>
           <Text style={styles.menuText}>About OpenArt</Text>
         </TouchableOpacity>
         <TouchableOpacity
           onPress={() => {
             navigation.navigate('JoinCommunity' as never);
-          }}>
+          }}
+          style={styles.textMargin}>
           <Text style={styles.menuText}>Blog</Text>
         </TouchableOpacity>
         <TouchableOpacity
           onPress={() => {
             navigation.navigate('FAQ' as never);
-          }}>
+          }}
+          style={styles.textMargin}>
           <Text style={styles.menuText}>Help</Text>
         </TouchableOpacity>
-        <TouchableOpacity>
+        <TouchableOpacity style={styles.textMargin}>
           <Text style={styles.menuText}>Contact</Text>
         </TouchableOpacity>
       </View>

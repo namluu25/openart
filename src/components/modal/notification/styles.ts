@@ -76,8 +76,8 @@ export default StyleSheet.create({
     marginTop: 3,
   },
   separatorLine: {
-    borderBottomColor: 'white',
-    borderBottomWidth: 0.5,
+    borderBottomColor: color.grayLabel,
+    borderBottomWidth: 1,
     width: '100%',
     alignSelf: 'center',
     marginTop: 10,

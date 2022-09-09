@@ -22,7 +22,7 @@ export const JoinCommunity = () => {
             that puts power in the hands of creators.
           </Text>
 
-          <TouchableOpacity>
+          <TouchableOpacity style={styles.touchButton}>
             <LinearGradient
               colors={['#0038F5', '#9F03FF']}
               useAngle={true}

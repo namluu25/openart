@@ -29,6 +29,8 @@ export default StyleSheet.create({
   },
   button: {
     borderRadius: 8,
+  },
+  touchButton: {
     marginBottom: 12,
   },
   buttonText: {

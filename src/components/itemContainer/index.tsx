@@ -21,7 +21,8 @@ export const ItemContainer = (props: Props) => {
         <TouchableOpacity
           onPress={() => {
             navigation.navigate(props.navi as never);
-          }}>
+          }}
+          style={styles.touchContainerImage}>
           <Image style={styles.containerImage} source={{ uri: props.image }} />
         </TouchableOpacity>
         <Text style={styles.containerTitle}>{props.name}</Text>

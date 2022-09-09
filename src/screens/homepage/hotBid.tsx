@@ -29,8 +29,9 @@ export const HotBid = () => {
           <TouchableOpacity
             onPress={() => {
               naviRef.current?.scrollTo({ x: 0, animated: true });
-            }}>
-            <ArrowBack style={styles.leftArrow} />
+            }}
+            style={styles.leftArrow}>
+            <ArrowBack />
           </TouchableOpacity>
 
           <TouchableOpacity

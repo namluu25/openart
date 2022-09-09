@@ -134,7 +134,9 @@ export const DetailsCurrentBid = () => {
                 <Text style={styles.secondItemText}>seconds</Text>
               </View>
             </View>
-            <TouchableOpacity onPress={() => setVisible(true)}>
+            <TouchableOpacity
+              onPress={() => setVisible(true)}
+              style={styles.touchPlaceBidButton}>
               <LinearGradient
                 colors={['#0038F5', '#9F03FF']}
                 useAngle={true}

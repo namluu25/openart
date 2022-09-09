@@ -154,7 +154,7 @@ export const ProfileMock = () => {
               <TouchableOpacity>
                 <Text style={styles.productTitleHighlighted}>Created</Text>
               </TouchableOpacity>
-              <TouchableOpacity>
+              <TouchableOpacity style={styles.collectedTextMargin}>
                 <Text style={styles.productTitleNormal}>Collected</Text>
               </TouchableOpacity>
             </View>

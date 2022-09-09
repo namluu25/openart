@@ -14,9 +14,11 @@ export default StyleSheet.create({
   },
   containerImage: {
     borderRadius: 24,
-    marginTop: 18,
     width: containterImageWidth,
     height: 400,
+  },
+  touchContainerImage: {
+    marginTop: 18,
     marginBottom: 13,
   },
   container: {

@@ -66,8 +66,9 @@ export default StyleSheet.create({
   },
   gradientButton: {
     borderRadius: 8,
+  },
+  touchGradientButton: {
     marginBottom: 12,
-    backgroundColor: '#2A2A2E',
   },
   normalButton: {
     borderRadius: 8,

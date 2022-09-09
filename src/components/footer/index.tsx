@@ -24,12 +24,12 @@ export const Footer = () => {
       </Text>
       <View style={styles.buttonView}>
         {/* button */}
-        <TouchableOpacity>
+        <TouchableOpacity style={styles.buttonEarnNow}>
           <LinearGradient
             colors={['#0038F5', '#9F03FF']}
             useAngle={true}
             angle={114.44}
-            style={[styles.buttonEarnNow, globalStyle.buttonRadius]}>
+            style={globalStyle.buttonRadius}>
             <Text style={styles.buttonText}>Earn now</Text>
           </LinearGradient>
         </TouchableOpacity>

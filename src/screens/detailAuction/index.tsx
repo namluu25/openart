@@ -121,7 +121,9 @@ export const DetailsAuction = () => {
               Once a bid has been placed and the reserve price has been met, a
               24 hour auction for this artwork will begin.
             </Text>
-            <TouchableOpacity onPress={() => setVisible(true)}>
+            <TouchableOpacity
+              onPress={() => setVisible(true)}
+              style={styles.touchPlaceBidButton}>
               <LinearGradient
                 colors={['#0038F5', '#9F03FF']}
                 useAngle={true}

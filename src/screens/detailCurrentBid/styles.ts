@@ -143,16 +143,19 @@ export default StyleSheet.create({
     lineHeight: 20,
     color: color.grayBG,
   },
-  placeBidButton: {
-    borderRadius: 8,
+  touchPlaceBidButton: {
     marginTop: 34,
     marginBottom: 38,
+  },
+  placeBidButton: {
+    borderRadius: 8,
   },
   placeBidButtonText: {
     fontSize: 16,
     fontFamily: 'Epilogue',
     textAlign: 'center',
-    padding: 15,
+    paddingHorizontal: 15,
+    paddingVertical: 9,
     color: color.grayOffWhite,
     fontWeight: '700',
   },

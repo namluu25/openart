@@ -85,7 +85,9 @@ export const Home = () => {
           </View>
 
           <View>
-            <TouchableOpacity onPress={() => setVisible(true)}>
+            <TouchableOpacity
+              onPress={() => setVisible(true)}
+              style={styles.touchGradientButton}>
               <LinearGradient
                 colors={['#0038F5', '#9F03FF']}
                 useAngle={true}
