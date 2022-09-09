@@ -9,18 +9,18 @@ export default StyleSheet.create({
   },
   title: {
     fontSize: 20,
-    fontFamily: 'Epilogue',
+
     color: color.grayBG,
-    fontWeight: '700',
+    fontFamily: 'Epilogue-Bold',
     lineHeight: 28,
     textAlign: 'center',
     marginHorizontal: 45,
   },
   description: {
     fontSize: 16,
-    fontFamily: 'Epilogue',
+
     color: color.grayBG,
-    fontWeight: '400',
+    fontFamily: 'Epilogue-Regular',
     lineHeight: 22,
     textAlign: 'center',
     marginTop: 20,
@@ -35,19 +35,19 @@ export default StyleSheet.create({
   },
   buttonText: {
     fontSize: 20,
-    fontFamily: 'Epilogue',
+
     textAlign: 'center',
     lineHeight: 28,
     paddingHorizontal: 50,
     paddingVertical: 15,
     color: color.grayOffWhite,
-    fontWeight: '700',
+    fontFamily: 'Epilogue-Bold',
   },
   lastRowText: {
     fontSize: 16,
-    fontFamily: 'Epilogue',
+
     color: color.grayOffWhite,
-    fontWeight: '400',
+    fontFamily: 'Epilogue-Regular',
     lineHeight: 22,
     textAlign: 'center',
     marginHorizontal: 31,
@@ -55,9 +55,9 @@ export default StyleSheet.create({
   },
   lastRowNumber: {
     fontSize: 24,
-    fontFamily: 'Epilogue',
+
     color: color.grayOffWhite,
-    fontWeight: '700',
+    fontFamily: 'Epilogue-Bold',
     lineHeight: 32,
     textAlign: 'center',
     marginHorizontal: 31,

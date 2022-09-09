@@ -29,9 +29,8 @@ export default StyleSheet.create({
     marginLeft: 5,
   },
   userName: {
-    fontFamily: 'Epilogue',
     fontSize: 16,
-    fontWeight: '700',
+    fontFamily: 'Epilogue-Bold',
     color: color.grayBG,
     alignSelf: 'center',
     paddingRight: 16,
@@ -39,9 +38,9 @@ export default StyleSheet.create({
   },
   infoDescription: {
     marginVertical: 11,
-    fontFamily: 'Epilogue',
+
     fontSize: 13,
-    fontWeight: '500',
+    fontFamily: 'Epilogue-Medium',
     color: color.grayBG,
     lineHeight: 20,
   },
@@ -53,9 +52,8 @@ export default StyleSheet.create({
     marginRight: 2,
   },
   hashtagButtonText: {
-    fontFamily: 'Epilogue',
     fontSize: 13,
-    fontWeight: '500',
+    fontFamily: 'Epilogue-Medium',
     color: color.grayBG,
     paddingHorizontal: 10,
     paddingVertical: 4,
@@ -71,9 +69,9 @@ export default StyleSheet.create({
   },
   shareButtonText: {
     fontSize: 16,
-    fontFamily: 'Epilogue',
+
     color: color.grayOffWhite,
-    fontWeight: '700',
+    fontFamily: 'Epilogue-Bold',
     lineHeight: 24,
     alignItems: 'flex-start',
     flex: 1,
@@ -96,16 +94,16 @@ export default StyleSheet.create({
   },
   soldFirstRowTitle: {
     fontSize: 20,
-    fontFamily: 'Epilogue',
+
     color: color.grayBG,
-    fontWeight: '400',
+    fontFamily: 'Epilogue-Regular',
     lineHeight: 28,
   },
   soldFirstRowPrice: {
     fontSize: 16,
-    fontFamily: 'Epilogue',
+
     color: color.grayBG,
-    fontWeight: '700',
+    fontFamily: 'Epilogue-Bold',
     lineHeight: 24,
   },
   soldFirstRowImage: {
@@ -122,9 +120,9 @@ export default StyleSheet.create({
   },
   soldSecondRowTitle: {
     fontSize: 20,
-    fontFamily: 'Epilogue',
+
     color: color.grayBG,
-    fontWeight: '400',
+    fontFamily: 'Epilogue-Regular',
     lineHeight: 28,
     paddingRight: 7,
   },
@@ -140,9 +138,8 @@ export default StyleSheet.create({
     marginLeft: 5,
   },
   buttonText: {
-    fontFamily: 'Epilogue',
     fontSize: 16,
-    fontWeight: '700',
+    fontFamily: 'Epilogue-Bold',
     color: color.grayBG,
     alignSelf: 'center',
     paddingRight: 16,
@@ -150,9 +147,9 @@ export default StyleSheet.create({
   },
   activityTitle: {
     fontSize: 20,
-    fontFamily: 'Epilogue',
+
     color: color.grayBG,
-    fontWeight: '400',
+    fontFamily: 'Epilogue-Regular',
     lineHeight: 28,
     paddingTop: 26,
   },
@@ -171,38 +168,38 @@ export default StyleSheet.create({
   },
   activityButtonTitle: {
     fontSize: 14,
-    fontFamily: 'Epilogue',
+
     color: color.grayOffWhite,
-    fontWeight: '700',
+    fontFamily: 'Epilogue-Bold',
     lineHeight: 20,
   },
   activityButtonDate: {
     fontSize: 13,
-    fontFamily: 'Epilogue',
+
     color: color.grayLine,
-    fontWeight: '500',
+    fontFamily: 'Epilogue-Medium',
     lineHeight: 20,
   },
   buttonPriceSold: {
     fontSize: 16,
-    fontFamily: 'Epilogue',
+
     color: color.grayLine,
-    fontWeight: '700',
+    fontFamily: 'Epilogue-Bold',
     lineHeight: 24,
   },
   buttonPriceBold: {
     fontSize: 16,
-    fontFamily: 'Epilogue',
+
     color: color.grayLine,
-    fontWeight: '700',
+    fontFamily: 'Epilogue-Bold',
     lineHeight: 24,
     paddingRight: 3,
   },
   buttonPriceLight: {
     fontSize: 13,
-    fontFamily: 'Epilogue',
+
     color: color.grayInputBG,
-    fontWeight: '500',
+    fontFamily: 'Epilogue-Medium',
     lineHeight: 20,
     alignSelf: 'center',
   },

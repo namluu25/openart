@@ -3,9 +3,9 @@ import { color } from 'theme/color';
 export default StyleSheet.create({
   aboutText: {
     fontSize: 16,
-    fontFamily: 'Epilogue',
+
     color: color.grayOffWhite,
-    fontWeight: '400',
+    fontFamily: 'Epilogue-Regular',
     lineHeight: 30,
   },
   logo: {
@@ -16,21 +16,21 @@ export default StyleSheet.create({
   },
   slogan300: {
     fontSize: 26,
-    fontFamily: 'Epilogue',
-    fontWeight: '300',
+
+    fontFamily: 'Epilogue-Light',
     lineHeight: 34,
     color: color.grayOffWhite,
     alignSelf: 'center',
     marginTop: 4,
   },
   sloganSemiBold: {
-    fontWeight: '400',
+    fontFamily: 'Epilogue-Regular',
   },
   slogan600: {
-    fontWeight: '600',
+    fontFamily: 'Epilogue-SemiBold',
   },
   slogan700: {
-    fontWeight: '700',
+    fontFamily: 'Epilogue-Bold',
   },
   buttonView: {
     margin: 11,
@@ -41,11 +41,11 @@ export default StyleSheet.create({
   },
   buttonText: {
     fontSize: 20,
-    fontFamily: 'Epilogue',
+
     textAlign: 'center',
     padding: 15,
     color: color.grayOffWhite,
-    fontWeight: '700',
+    fontFamily: 'Epilogue-Bold',
   },
   buttonDiscover: {
     borderColor: '#0038F5',
@@ -74,9 +74,9 @@ export default StyleSheet.create({
   },
   openartText: {
     fontSize: 13,
-    fontFamily: 'Epilogue',
+
     color: color.grayOffWhite,
-    fontWeight: '500',
+    fontFamily: 'Epilogue-Medium',
     paddingTop: 28,
     paddingBottom: 80,
     paddingLeft: 17,

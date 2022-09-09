@@ -14,8 +14,8 @@ export default StyleSheet.create({
   },
   titleText: {
     fontSize: 24,
-    fontFamily: 'Epilogue',
-    fontWeight: '700',
+
+    fontFamily: 'Epilogue-Bold',
     color: color.grayOffWhite,
   },
   leftArrow: {
@@ -55,9 +55,8 @@ export default StyleSheet.create({
     marginLeft: 9,
   },
   itemInfoTitle: {
-    fontFamily: 'Epilogue',
     fontSize: 16,
-    fontWeight: '700',
+    fontFamily: 'Epilogue-Bold',
     color: color.grayOffWhite,
     marginRight: 8,
   },
@@ -69,23 +68,21 @@ export default StyleSheet.create({
   },
   itemPriceButtonText: {
     fontSize: 16,
-    fontFamily: 'Epilogue',
+
     paddingHorizontal: 10,
     paddingVertical: 2,
     color: color.grayBG,
-    fontWeight: '700',
+    fontFamily: 'Epilogue-Bold',
   },
   itemHighBid: {
-    fontFamily: 'Epilogue',
     fontSize: 13,
-    fontWeight: '500',
+    fontFamily: 'Epilogue-Medium',
     color: color.grayOffWhite,
     marginTop: 4,
   },
   itemHighBidPrice: {
-    fontFamily: 'Epilogue',
     fontSize: 14,
-    fontWeight: '700',
+    fontFamily: 'Epilogue-Bold',
     color: color.grayOffWhite,
   },
 });

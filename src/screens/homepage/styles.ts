@@ -5,17 +5,15 @@ export default StyleSheet.create({
   home: { marginHorizontal: 16 },
   titleText: {
     fontSize: 18,
-    fontWeight: '700',
+    fontFamily: 'Epilogue-Bold',
     textAlign: 'center',
     color: color.grayOffWhite,
-    fontFamily: 'Epilogue',
   },
   boldTitleText: {
     fontSize: 32,
-    fontWeight: '700',
+    fontFamily: 'Epilogue-Bold',
     textAlign: 'center',
     color: color.grayOffWhite,
-    fontFamily: 'Epilogue',
   },
   searchBar: {
     marginHorizontal: 8,
@@ -42,25 +40,22 @@ export default StyleSheet.create({
     marginBottom: 15.29,
   },
   priceViewFirst: {
-    fontFamily: 'Epilogue',
     fontSize: 16,
-    fontWeight: '400',
+    fontFamily: 'Epilogue-Regular',
     lineHeight: 22,
     color: color.grayOffWhite,
     marginRight: 5.98,
   },
   priceViewSecond: {
-    fontFamily: 'Epilogue',
     fontSize: 32,
-    fontWeight: '700',
+    fontFamily: 'Epilogue-Bold',
     lineHeight: 36,
     color: color.grayOffWhite,
     marginRight: 7.51,
   },
   priceViewThird: {
-    fontFamily: 'Epilogue',
     fontSize: 16,
-    fontWeight: '700',
+    fontFamily: 'Epilogue-Bold',
     lineHeight: 24,
     color: color.grayPlaceholder,
   },
@@ -77,11 +72,11 @@ export default StyleSheet.create({
   },
   buttonText: {
     fontSize: 20,
-    fontFamily: 'Epilogue',
+
     textAlign: 'center',
     padding: 15,
     color: color.grayOffWhite,
-    fontWeight: '700',
+    fontFamily: 'Epilogue-Bold',
   },
   viewMoreButton: {
     borderRadius: 8,
@@ -92,11 +87,11 @@ export default StyleSheet.create({
   },
   viewMoreButtonText: {
     fontSize: 20,
-    fontFamily: 'Epilogue',
+
     textAlign: 'center',
     padding: 15,
     color: color.grayOffWhite,
-    fontWeight: '700',
+    fontFamily: 'Epilogue-Bold',
   },
   separatorLine: {
     borderBottomColor: 'white',
@@ -113,10 +108,10 @@ export default StyleSheet.create({
   },
   buttonTextBold: {
     fontSize: 24,
-    fontFamily: 'Epilogue',
+
     textAlign: 'center',
     color: color.grayOffWhite,
-    fontWeight: '700',
+    fontFamily: 'Epilogue-Bold',
   },
   buttonBid: {
     borderRadius: 51,
@@ -131,16 +126,16 @@ export default StyleSheet.create({
   },
   buttonBidTextLight: {
     fontSize: 16,
-    fontFamily: 'Epilogue',
+
     color: color.grayOffWhite,
-    fontWeight: '400',
+    fontFamily: 'Epilogue-Regular',
   },
   buttonBidTextBold: {
     fontSize: 20,
-    fontFamily: 'Epilogue',
+
     textAlign: 'center',
     color: color.grayOffWhite,
-    fontWeight: '700',
+    fontFamily: 'Epilogue-Bold',
   },
   liveAuctionView: {
     flex: 1,
@@ -158,9 +153,9 @@ export default StyleSheet.create({
   },
   liveAuctionText: {
     fontSize: 24,
-    fontFamily: 'Epilogue',
+
     color: color.grayBG,
-    fontWeight: '700',
+    fontFamily: 'Epilogue-Bold',
     marginLeft: 7,
   },
 });

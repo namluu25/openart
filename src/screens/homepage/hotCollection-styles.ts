@@ -11,10 +11,9 @@ export default StyleSheet.create({
     marginBottom: 40,
   },
   titleText: {
-    fontFamily: 'Epilogue',
     fontSize: 24,
     color: color.grayOffWhite,
-    fontWeight: '700',
+    fontFamily: 'Epilogue-Bold',
   },
   avatar: {
     borderRadius: 24,
@@ -26,15 +25,14 @@ export default StyleSheet.create({
   },
   nftText: {
     fontSize: 13,
-    fontWeight: '700',
+    fontFamily: 'Epilogue-Bold',
     color: color.grayOffWhite,
-    fontFamily: 'Epilogue',
+
     paddingLeft: 12,
   },
   titleImage: {
-    fontFamily: 'Epilogue',
     fontSize: 20,
-    fontWeight: '700',
+    fontFamily: 'Epilogue-Bold',
     color: color.grayOffWhite,
   },
   imageView: {
@@ -54,12 +52,12 @@ export default StyleSheet.create({
   },
   buttonText: {
     fontSize: 16,
-    fontFamily: 'Epilogue',
+
     textAlign: 'center',
     paddingHorizontal: 12,
     paddingVertical: 4,
     color: color.grayBG,
-    fontWeight: '700',
+    fontFamily: 'Epilogue-Bold',
   },
   authorView: {
     flexDirection: 'row',
@@ -84,10 +82,10 @@ export default StyleSheet.create({
   },
   followButtonText: {
     fontSize: 16,
-    fontFamily: 'Epilogue',
+
     textAlign: 'center',
     color: color.grayBG,
-    fontWeight: '400',
+    fontFamily: 'Epilogue-Regular',
     alignSelf: 'center',
     marginLeft: 9,
   },

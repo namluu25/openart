@@ -34,21 +34,18 @@ export default StyleSheet.create({
   },
   containerTitle: {
     fontSize: 24,
-    fontWeight: '700',
+    fontFamily: 'Epilogue-Bold',
     color: color.grayOffWhite,
-    fontFamily: 'Epilogue',
   },
   containerCreatorName: {
     fontSize: 18,
-    fontWeight: '700',
+    fontFamily: 'Epilogue-Bold',
     color: color.grayOffWhite,
-    fontFamily: 'Epilogue',
   },
   containerCreatorInfo: {
     fontSize: 14,
-    fontWeight: '500',
+    fontFamily: 'Epilogue-Medium',
     color: color.grayOffWhite,
-    fontFamily: 'Epilogue',
   },
   containerCreatorInfoView: {
     flexDirection: 'row',

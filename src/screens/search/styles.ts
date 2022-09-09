@@ -31,8 +31,7 @@ export default StyleSheet.create({
     color: color.grayBG,
   },
   cancelText: {
-    fontFamily: 'Epilogue',
-    fontWeight: '700',
+    fontFamily: 'Epilogue-Bold',
     fontSize: 16,
     lineHeight: 24,
     color: color.grayOffWhite,
@@ -41,8 +40,7 @@ export default StyleSheet.create({
     marginTop: 20,
   },
   itemTitle: {
-    fontFamily: 'Epilogue',
-    fontWeight: '400',
+    fontFamily: 'Epilogue-Regular',
     fontSize: 20,
     lineHeight: 28,
     color: color.grayBG,
@@ -54,15 +52,13 @@ export default StyleSheet.create({
     marginLeft: 13,
   },
   itemTextLarge: {
-    fontFamily: 'Epilogue',
-    fontWeight: '700',
+    fontFamily: 'Epilogue-Bold',
     fontSize: 20,
     lineHeight: 28,
     color: color.grayOffWhite,
   },
   itemTextSmall: {
-    fontFamily: 'Epilogue',
-    fontWeight: '400',
+    fontFamily: 'Epilogue-Regular',
     fontSize: 16,
     lineHeight: 22,
     color: color.grayBG,

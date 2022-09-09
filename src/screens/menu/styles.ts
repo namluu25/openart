@@ -7,9 +7,8 @@ export default StyleSheet.create({
     alignItems: 'center',
   },
   menuText: {
-    fontFamily: 'Epilogue',
     fontSize: 32,
-    fontWeight: '700',
+    fontFamily: 'Epilogue-Bold',
     lineHeight: 36,
     color: color.grayOffWhite,
   },
@@ -27,10 +26,10 @@ export default StyleSheet.create({
   },
   buttonText: {
     fontSize: 20,
-    fontFamily: 'Epilogue',
+
     textAlign: 'center',
     padding: 15,
     color: color.grayOffWhite,
-    fontWeight: '700',
+    fontFamily: 'Epilogue-Bold',
   },
 });

@@ -6,18 +6,18 @@ const boxWidth = Math.round(dimensions.width * 0.44);
 export default StyleSheet.create({
   titleText: {
     fontSize: 20,
-    fontFamily: 'Epilogue',
+
     color: color.grayBG,
-    fontWeight: '700',
+    fontFamily: 'Epilogue-Bold',
     lineHeight: 28,
     alignSelf: 'center',
     marginBottom: 11,
   },
   firstParagraph: {
     fontSize: 16,
-    fontFamily: 'Epilogue',
+
     color: color.grayBG,
-    fontWeight: '400',
+    fontFamily: 'Epilogue-Regular',
     lineHeight: 22,
     textAlign: 'center',
     marginTop: 16,
@@ -26,9 +26,9 @@ export default StyleSheet.create({
   },
   secondParagraph: {
     fontSize: 16,
-    fontFamily: 'Epilogue',
+
     color: color.grayBG,
-    fontWeight: '400',
+    fontFamily: 'Epilogue-Regular',
     lineHeight: 22,
     marginHorizontal: 31,
     marginBottom: 28,
@@ -39,9 +39,9 @@ export default StyleSheet.create({
   },
   secondTitle: {
     fontSize: 20,
-    fontFamily: 'Epilogue',
+
     color: color.grayBG,
-    fontWeight: '700',
+    fontFamily: 'Epilogue-Bold',
     lineHeight: 28,
     marginBottom: 40,
   },
@@ -62,24 +62,24 @@ export default StyleSheet.create({
   },
   boxText: {
     fontSize: 16,
-    fontFamily: 'Epilogue',
+
     color: color.grayOffWhite,
-    fontWeight: '700',
+    fontFamily: 'Epilogue-Bold',
     lineHeight: 24,
   },
   thirdView: { marginHorizontal: 31 },
   thirdTitleText: {
     fontSize: 16,
-    fontFamily: 'Epilogue',
+
     color: color.grayBG,
-    fontWeight: '700',
+    fontFamily: 'Epilogue-Bold',
     lineHeight: 24,
   },
   thirdParagraph: {
     fontSize: 16,
-    fontFamily: 'Epilogue',
+
     color: color.grayBG,
-    fontWeight: '400',
+    fontFamily: 'Epilogue-Regular',
     lineHeight: 22,
     marginBottom: 38,
   },

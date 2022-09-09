@@ -23,22 +23,20 @@ export default StyleSheet.create({
     marginBottom: 12,
   },
   textFirstRow: {
-    fontFamily: 'Epilogue',
     fontSize: 24,
-    fontWeight: '700',
+    fontFamily: 'Epilogue-Bold',
     lineHeight: 32,
     color: color.grayBG,
   },
   textSecondRow: {
-    fontFamily: 'Epilogue',
     fontSize: 16,
-    fontWeight: '400',
+    fontFamily: 'Epilogue-Regular',
     lineHeight: 22,
     color: color.grayBG,
     marginBottom: 20,
   },
   textSecondRowBold: {
-    fontWeight: '700',
+    fontFamily: 'Epilogue-Bold',
   },
   connectButton: {
     marginBottom: 18,
@@ -46,16 +44,15 @@ export default StyleSheet.create({
   },
   buttonText: {
     fontSize: 20,
-    fontFamily: 'Epilogue',
+
     textAlign: 'center',
     paddingVertical: 15,
     color: color.grayOffWhite,
-    fontWeight: '700',
+    fontFamily: 'Epilogue-Bold',
   },
   lastRowText: {
-    fontFamily: 'Epilogue',
     fontSize: 16,
-    fontWeight: '400',
+    fontFamily: 'Epilogue-Regular',
     lineHeight: 22,
     color: color.grayBG,
     textAlign: 'center',

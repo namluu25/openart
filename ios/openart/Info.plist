@@ -48,11 +48,15 @@
 		</dict>
 	</dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string></string>
+	<string/>
 	<key>UIAppFonts</key>
 	<array>
-		<string>Epilogue-VariableFont_wght.ttf</string>
 		<string>RedHatDisplay-Regular.ttf</string>
+		<string>Epilogue-Bold.ttf</string>
+		<string>Epilogue-Light.ttf</string>
+		<string>Epilogue-Medium.ttf</string>
+		<string>Epilogue-Regular.ttf</string>
+		<string>Epilogue-SemiBold.ttf</string>
 	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>BootSplash</string>

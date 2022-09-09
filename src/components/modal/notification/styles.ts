@@ -37,8 +37,7 @@ export default StyleSheet.create({
     marginRight: 109,
   },
   firstRow: {
-    fontFamily: 'Epilogue',
-    fontWeight: '700',
+    fontFamily: 'Epilogue-Bold',
     fontSize: 24,
     lineHeight: 32,
     color: color.grayOffWhite,
@@ -54,22 +53,19 @@ export default StyleSheet.create({
     marginLeft: 16,
   },
   itemText: {
-    fontFamily: 'Epilogue',
-    fontWeight: '700',
+    fontFamily: 'Epilogue-Bold',
     fontSize: 16,
     lineHeight: 24,
     color: color.grayOffWhite,
   },
   itemPrice: {
-    fontFamily: 'Epilogue',
-    fontWeight: '400',
+    fontFamily: 'Epilogue-Regular',
     fontSize: 16,
     lineHeight: 22,
     color: color.grayInputBG,
   },
   itemDate: {
-    fontFamily: 'Epilogue',
-    fontWeight: '500',
+    fontFamily: 'Epilogue-Medium',
     fontSize: 13,
     lineHeight: 20,
     color: color.grayBG,
@@ -90,11 +86,11 @@ export default StyleSheet.create({
   },
   textButton: {
     fontSize: 16,
-    fontFamily: 'Epilogue',
+
     textAlign: 'center',
     padding: 15,
     color: color.grayOffWhite,
-    fontWeight: '700',
+    fontFamily: 'Epilogue-Bold',
   },
   normalButton: {
     borderColor: '#0038F5',

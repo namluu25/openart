@@ -8,17 +8,17 @@ export default StyleSheet.create({
   },
   title: {
     fontSize: 20,
-    fontFamily: 'Epilogue',
+
     color: color.grayBG,
-    fontWeight: '700',
+    fontFamily: 'Epilogue-Bold',
     lineHeight: 28,
     alignSelf: 'center',
   },
   description: {
     fontSize: 16,
-    fontFamily: 'Epilogue',
+
     color: color.grayBG,
-    fontWeight: '400',
+    fontFamily: 'Epilogue-Regular',
     lineHeight: 24,
     textAlign: 'center',
     marginTop: 16,
@@ -45,9 +45,9 @@ export default StyleSheet.create({
   },
   buttonText: {
     fontSize: 16,
-    fontFamily: 'Epilogue',
+
     color: color.grayBG,
-    fontWeight: '400',
+    fontFamily: 'Epilogue-Regular',
     lineHeight: 22,
   },
 });

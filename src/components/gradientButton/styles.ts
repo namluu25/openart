@@ -20,10 +20,10 @@ export default StyleSheet.create({
   },
   secondItemButtonText: {
     fontSize: 16,
-    fontFamily: 'Epilogue',
+
     textAlign: 'center',
     lineHeight: 22,
-    fontWeight: '400',
+    fontFamily: 'Epilogue-Regular',
     color: color.grayBG,
     marginHorizontal: 20,
     paddingTop: 12,

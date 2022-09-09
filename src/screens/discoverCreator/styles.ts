@@ -9,18 +9,18 @@ export default StyleSheet.create({
   },
   title: {
     fontSize: 20,
-    fontFamily: 'Epilogue',
+
     textAlign: 'center',
     lineHeight: 28,
-    fontWeight: '700',
+    fontFamily: 'Epilogue-Bold',
     color: color.grayOffWhite,
   },
   description: {
     fontSize: 16,
-    fontFamily: 'Epilogue',
+
     textAlign: 'center',
     lineHeight: 22,
-    fontWeight: '400',
+    fontFamily: 'Epilogue-Regular',
     color: color.grayBG,
     marginHorizontal: 56,
     marginTop: 16,
@@ -42,16 +42,14 @@ export default StyleSheet.create({
     height: 135,
   },
   itemName: {
-    fontFamily: 'Epilogue',
-    fontWeight: '700',
+    fontFamily: 'Epilogue-Bold',
     fontSize: 24,
     lineHeight: 32,
     color: color.grayOffWhite,
     textAlign: 'center',
   },
   itemDescription: {
-    fontFamily: 'Epilogue',
-    fontWeight: '400',
+    fontFamily: 'Epilogue-Regular',
     fontSize: 16,
     lineHeight: 22,
     color: color.grayBG,
@@ -66,15 +64,13 @@ export default StyleSheet.create({
     marginBottom: 16,
   },
   secondRowFollower: {
-    fontFamily: 'Epilogue',
-    fontWeight: '700',
+    fontFamily: 'Epilogue-Bold',
     fontSize: 32,
     color: color.grayOffWhite,
     marginLeft: 20,
   },
   secondRowText: {
-    fontFamily: 'Epilogue',
-    fontWeight: '500',
+    fontFamily: 'Epilogue-Medium',
     fontSize: 16,
     color: color.grayBG,
   },
@@ -84,8 +80,7 @@ export default StyleSheet.create({
     marginRight: 17,
   },
   secondRowButtonText: {
-    fontFamily: 'Epilogue',
-    fontWeight: '700',
+    fontFamily: 'Epilogue-Bold',
     fontSize: 16,
     lineHeight: 24,
     color: color.grayOffWhite,
@@ -114,11 +109,11 @@ export default StyleSheet.create({
   },
   loadMoreButtonText: {
     fontSize: 20,
-    fontFamily: 'Epilogue',
+
     textAlign: 'center',
     paddingVertical: 15,
     color: color.grayOffWhite,
-    fontWeight: '700',
+    fontFamily: 'Epilogue-Bold',
   },
   plusIcon: { marginRight: 11 },
 });

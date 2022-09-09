@@ -2,8 +2,24 @@
   "migIndex": 1,
   "data": [
     {
-      "path": "src/assets/fonts/Epilogue-VariableFont_wght.ttf",
-      "sha1": "7613564b7cb346f1349948f6acb69fc9b092b2a9"
+      "path": "src/assets/fonts/Epilogue-Bold.ttf",
+      "sha1": "0a7aed05d96cb5c3bb3c0c67da67dddd604494ee"
+    },
+    {
+      "path": "src/assets/fonts/Epilogue-Light.ttf",
+      "sha1": "e90f3a42c2c953d0504f44032df75d3fcc8bae3f"
+    },
+    {
+      "path": "src/assets/fonts/Epilogue-Medium.ttf",
+      "sha1": "cb7c0d77381cb70450fd622e1d6a38a18accacaa"
+    },
+    {
+      "path": "src/assets/fonts/Epilogue-Regular.ttf",
+      "sha1": "c5714e5d1e97f2591afefb082a10d93b96c37495"
+    },
+    {
+      "path": "src/assets/fonts/Epilogue-SemiBold.ttf",
+      "sha1": "0c3a80fa92b54ddf40dd8bc90446b5a67a4d5382"
     },
     {
       "path": "src/assets/fonts/RedHatDisplay-Regular.ttf",

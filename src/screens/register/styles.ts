@@ -13,8 +13,8 @@ export default StyleSheet.create({
     color: color.grayOffWhite,
     textAlign: 'center',
     fontSize: 30,
-    fontFamily: 'Epilogue',
-    fontWeight: '700',
+
+    fontFamily: 'Epilogue-Bold',
   },
   inputBox: {
     borderRadius: 8,
@@ -37,11 +37,11 @@ export default StyleSheet.create({
   },
   buttonText: {
     fontSize: 20,
-    fontFamily: 'Epilogue',
+
     textAlign: 'center',
     padding: 10,
     color: color.grayTitle,
-    fontWeight: '700',
+    fontFamily: 'Epilogue-Bold',
   },
   googleButton: {
     marginTop: 20,
@@ -58,8 +58,8 @@ export default StyleSheet.create({
   },
   googleButtonText: {
     fontSize: 20,
-    fontFamily: 'Epilogue',
+
     color: color.grayOffWhite,
-    fontWeight: '700',
+    fontFamily: 'Epilogue-Bold',
   },
 });

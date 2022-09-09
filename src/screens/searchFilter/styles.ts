@@ -37,9 +37,9 @@ export default StyleSheet.create({
   },
   titleItem: {
     fontSize: 20,
-    fontFamily: 'Epilogue',
+
     lineHeight: 28,
-    fontWeight: '400',
+    fontFamily: 'Epilogue-Regular',
     color: color.grayOffWhite,
     marginBottom: 16,
   },
@@ -60,8 +60,7 @@ export default StyleSheet.create({
     justifyContent: 'space-between',
   },
   thirdRowText: {
-    fontFamily: 'Epilogue',
-    fontWeight: '500',
+    fontFamily: 'Epilogue-Medium',
     fontSize: 13,
     lineHeight: 20,
     color: color.grayBG,
@@ -88,9 +87,9 @@ export default StyleSheet.create({
   },
   sixthRowDropdownText: {
     fontSize: 16,
-    fontFamily: 'Epilogue',
+
     color: color.grayBG,
-    fontWeight: '400',
+    fontFamily: 'Epilogue-Regular',
     lineHeight: 22,
   },
   separatorLine: {
@@ -112,12 +111,12 @@ export default StyleSheet.create({
   },
   resetButtonText: {
     fontSize: 16,
-    fontFamily: 'Epilogue',
+
     paddingTop: 10,
     paddingBottom: 8,
     paddingHorizontal: 8,
     color: color.grayOffWhite,
-    fontWeight: '400',
+    fontFamily: 'Epilogue-Regular',
   },
   productView: {
     marginTop: 27,
@@ -131,17 +130,17 @@ export default StyleSheet.create({
   },
   productButtonTextSmall: {
     fontSize: 20,
-    fontFamily: 'Epilogue',
+
     textAlign: 'center',
     color: color.grayOffWhite,
-    fontWeight: '400',
+    fontFamily: 'Epilogue-Regular',
   },
   productButtonTextLarge: {
     fontSize: 24,
-    fontFamily: 'Epilogue',
+
     textAlign: 'center',
     color: color.grayOffWhite,
-    fontWeight: '700',
+    fontFamily: 'Epilogue-Bold',
   },
   loadMoreButton: {
     borderRadius: 8,
@@ -156,11 +155,11 @@ export default StyleSheet.create({
   },
   loadMoreButtonText: {
     fontSize: 20,
-    fontFamily: 'Epilogue',
+
     textAlign: 'center',
     paddingVertical: 15,
     color: color.grayOffWhite,
-    fontWeight: '700',
+    fontFamily: 'Epilogue-Bold',
   },
   plusIcon: {
     marginRight: 11,

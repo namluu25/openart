@@ -48,15 +48,13 @@ export default StyleSheet.create({
     height: 77,
   },
   username: {
-    fontFamily: 'Epilogue',
-    fontWeight: '700',
+    fontFamily: 'Epilogue-Bold',
     fontSize: 18,
     lineHeight: 28,
     color: color.grayOffWhite,
   },
   hash: {
-    fontFamily: 'Epilogue',
-    fontWeight: '500',
+    fontFamily: 'Epilogue-Medium',
     fontSize: 13,
     lineHeight: 20,
     color: color.grayBG,
@@ -81,8 +79,7 @@ export default StyleSheet.create({
     margin: 8,
   },
   balanceText: {
-    fontFamily: 'Epilogue',
-    fontWeight: '400',
+    fontFamily: 'Epilogue-Regular',
     fontSize: 16,
     lineHeight: 22,
     color: color.grayBG,
@@ -92,8 +89,7 @@ export default StyleSheet.create({
   },
   hideIcon: { marginTop: 8 },
   balance: {
-    fontFamily: 'Epilogue',
-    fontWeight: '700',
+    fontFamily: 'Epilogue-Bold',
     fontSize: 24,
     lineHeight: 32,
     color: color.grayOffWhite,
@@ -109,8 +105,8 @@ export default StyleSheet.create({
   },
   titleLine: {
     marginLeft: 13,
-    fontFamily: 'Epilogue',
-    fontWeight: '400',
+
+    fontFamily: 'Epilogue-Regular',
     fontSize: 16,
     lineHeight: 22,
     color: color.grayBG,
@@ -129,8 +125,8 @@ export default StyleSheet.create({
   },
   lastRowText: {
     marginLeft: 31,
-    fontFamily: 'Epilogue',
-    fontWeight: '700',
+
+    fontFamily: 'Epilogue-Bold',
     fontSize: 16,
     lineHeight: 24,
     color: color.grayBG,

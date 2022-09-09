@@ -32,8 +32,8 @@ export default StyleSheet.create({
   },
   userName: {
     textAlign: 'center',
-    fontFamily: 'Epilogue',
-    fontWeight: '700',
+
+    fontFamily: 'Epilogue-Bold',
     fontSize: 18,
     lineHeight: 28,
     marginTop: 75,
@@ -41,8 +41,8 @@ export default StyleSheet.create({
   },
   userHash: {
     textAlign: 'center',
-    fontFamily: 'Epilogue',
-    fontWeight: '500',
+
+    fontFamily: 'Epilogue-Medium',
     fontSize: 13,
     lineHeight: 20,
     marginRight: 4,
@@ -59,15 +59,13 @@ export default StyleSheet.create({
     marginBottom: 29,
   },
   followNumber: {
-    fontFamily: 'Epilogue',
-    fontWeight: '700',
+    fontFamily: 'Epilogue-Bold',
     fontSize: 32,
     lineHeight: 36,
     color: color.grayOffWhite,
   },
   followText: {
-    fontFamily: 'Epilogue',
-    fontWeight: '700',
+    fontFamily: 'Epilogue-Bold',
     fontSize: 16,
     lineHeight: 24,
     color: color.grayBG,
@@ -78,8 +76,7 @@ export default StyleSheet.create({
     alignSelf: 'center',
   },
   followButtonText: {
-    fontFamily: 'Epilogue',
-    fontWeight: '700',
+    fontFamily: 'Epilogue-Bold',
     fontSize: 16,
     lineHeight: 24,
     color: color.grayOffWhite,
@@ -87,8 +84,7 @@ export default StyleSheet.create({
     paddingVertical: 9,
   },
   listFollowTitle: {
-    fontFamily: 'Epilogue',
-    fontWeight: '400',
+    fontFamily: 'Epilogue-Regular',
     fontSize: 20,
     lineHeight: 28,
     color: color.grayBG,
@@ -128,16 +124,14 @@ export default StyleSheet.create({
     marginLeft: 85,
   },
   userDescription: {
-    fontFamily: 'Epilogue',
-    fontWeight: '500',
+    fontFamily: 'Epilogue-Medium',
     fontSize: 13,
     lineHeight: 20,
     color: color.grayBG,
     marginTop: 28,
   },
   memberSinceText: {
-    fontFamily: 'Epilogue',
-    fontWeight: '500',
+    fontFamily: 'Epilogue-Medium',
     fontSize: 13,
     lineHeight: 20,
     color: color.grayBG,
@@ -165,8 +159,7 @@ export default StyleSheet.create({
     marginLeft: 12,
   },
   socialButtonText: {
-    fontFamily: 'Epilogue',
-    fontWeight: '700',
+    fontFamily: 'Epilogue-Bold',
     fontSize: 16,
     lineHeight: 24,
     color: color.grayBG,
@@ -174,15 +167,13 @@ export default StyleSheet.create({
     marginRight: 14,
   },
   productTitleHighlighted: {
-    fontFamily: 'Epilogue',
-    fontWeight: '700',
+    fontFamily: 'Epilogue-Bold',
     fontSize: 24,
     lineHeight: 32,
     color: color.grayOffWhite,
   },
   productTitleNormal: {
-    fontFamily: 'Epilogue',
-    fontWeight: '700',
+    fontFamily: 'Epilogue-Bold',
     fontSize: 24,
     lineHeight: 32,
     color: color.grayLabel,
@@ -204,17 +195,17 @@ export default StyleSheet.create({
   },
   productButtonTextSmall: {
     fontSize: 20,
-    fontFamily: 'Epilogue',
+
     textAlign: 'center',
     color: color.grayOffWhite,
-    fontWeight: '400',
+    fontFamily: 'Epilogue-Regular',
   },
   productButtonTextLarge: {
     fontSize: 24,
-    fontFamily: 'Epilogue',
+
     textAlign: 'center',
     color: color.grayOffWhite,
-    fontWeight: '700',
+    fontFamily: 'Epilogue-Bold',
   },
   loadMoreButton: {
     borderRadius: 8,
@@ -227,11 +218,11 @@ export default StyleSheet.create({
   },
   loadMoreButtonText: {
     fontSize: 20,
-    fontFamily: 'Epilogue',
+
     textAlign: 'center',
     paddingVertical: 15,
     color: color.grayOffWhite,
-    fontWeight: '700',
+    fontFamily: 'Epilogue-Bold',
   },
   copyIcon: {
     paddingTop: 5,

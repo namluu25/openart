@@ -34,8 +34,8 @@ export default StyleSheet.create({
   },
   userName: {
     textAlign: 'center',
-    fontFamily: 'Epilogue',
-    fontWeight: '700',
+
+    fontFamily: 'Epilogue-Bold',
     fontSize: 18,
     lineHeight: 28,
     marginTop: 74,
@@ -43,8 +43,8 @@ export default StyleSheet.create({
   },
   userHash: {
     textAlign: 'center',
-    fontFamily: 'Epilogue',
-    fontWeight: '500',
+
+    fontFamily: 'Epilogue-Medium',
     fontSize: 13,
     lineHeight: 20,
     marginRight: 4,
@@ -60,15 +60,13 @@ export default StyleSheet.create({
     marginTop: 27,
   },
   followRowNumber: {
-    fontFamily: 'Epilogue',
-    fontWeight: '700',
+    fontFamily: 'Epilogue-Bold',
     fontSize: 32,
     lineHeight: 36,
     color: color.grayOffWhite,
   },
   followRowText: {
-    fontFamily: 'Epilogue',
-    fontWeight: '700',
+    fontFamily: 'Epilogue-Bold',
     fontSize: 16,
     lineHeight: 24,
     color: color.grayBG,
@@ -85,8 +83,7 @@ export default StyleSheet.create({
     marginBottom: 7,
   },
   thirdRowText: {
-    fontFamily: 'Epilogue',
-    fontWeight: '400',
+    fontFamily: 'Epilogue-Regular',
     fontSize: 16,
     lineHeight: 22,
     color: color.grayOffWhite,
@@ -94,8 +91,7 @@ export default StyleSheet.create({
     textAlign: 'center',
   },
   forthRowTextLarge: {
-    fontFamily: 'Epilogue',
-    fontWeight: '700',
+    fontFamily: 'Epilogue-Bold',
     fontSize: 20,
     lineHeight: 28,
     color: color.grayOffWhite,
@@ -103,8 +99,7 @@ export default StyleSheet.create({
     textAlign: 'center',
   },
   forthRowTextSmall: {
-    fontFamily: 'Epilogue',
-    fontWeight: '400',
+    fontFamily: 'Epilogue-Regular',
     fontSize: 16,
     lineHeight: 22,
     color: color.grayBG,
@@ -121,11 +116,11 @@ export default StyleSheet.create({
   },
   exploreButtonText: {
     fontSize: 20,
-    fontFamily: 'Epilogue',
+
     textAlign: 'center',
     paddingVertical: 15,
     color: color.grayOffWhite,
-    fontWeight: '700',
+    fontFamily: 'Epilogue-Bold',
   },
   copyIcon: {
     paddingTop: 5,

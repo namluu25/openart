@@ -32,26 +32,26 @@ export default StyleSheet.create({
   },
   registerButtonText: {
     fontSize: 15,
-    fontFamily: 'Epilogue',
+
     textAlign: 'center',
     color: '#2196f3',
-    fontWeight: '700',
+    fontFamily: 'Epilogue-Bold',
     textDecorationColor: 'underline',
   },
   registerButtonSmallText: {
     fontSize: 12,
-    fontFamily: 'Epilogue',
+
     textAlign: 'center',
     color: color.grayOffWhite,
-    fontWeight: '700',
+    fontFamily: 'Epilogue-Bold',
   },
   buttonText: {
     fontSize: 20,
-    fontFamily: 'Epilogue',
+
     textAlign: 'center',
     padding: 10,
     color: color.grayTitle,
-    fontWeight: '700',
+    fontFamily: 'Epilogue-Bold',
   },
   googleButton: {
     marginTop: 20,
@@ -67,8 +67,8 @@ export default StyleSheet.create({
   },
   googleButtonText: {
     fontSize: 15,
-    fontFamily: 'Epilogue',
+
     color: '#2196f3',
-    fontWeight: '700',
+    fontFamily: 'Epilogue-Bold',
   },
 });

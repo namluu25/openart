@@ -34,8 +34,8 @@ export default StyleSheet.create({
   },
   userName: {
     textAlign: 'center',
-    fontFamily: 'Epilogue',
-    fontWeight: '700',
+
+    fontFamily: 'Epilogue-Bold',
     fontSize: 18,
     lineHeight: 28,
     marginTop: 74,
@@ -43,8 +43,8 @@ export default StyleSheet.create({
   },
   userHash: {
     textAlign: 'center',
-    fontFamily: 'Epilogue',
-    fontWeight: '500',
+
+    fontFamily: 'Epilogue-Medium',
     fontSize: 13,
     lineHeight: 20,
     marginRight: 4,
@@ -56,8 +56,7 @@ export default StyleSheet.create({
     marginBottom: 28,
   },
   inputTitle: {
-    fontFamily: 'Epilogue',
-    fontWeight: '400',
+    fontFamily: 'Epilogue-Regular',
     fontSize: 20,
     lineHeight: 28,
     color: color.grayBG,
@@ -80,8 +79,7 @@ export default StyleSheet.create({
     color: color.grayBG,
   },
   secondCategoryText: {
-    fontFamily: 'Epilogue',
-    fontWeight: '500',
+    fontFamily: 'Epilogue-Medium',
     fontSize: 13,
     lineHeight: 20,
     color: color.grayPlaceholder,
@@ -115,22 +113,21 @@ export default StyleSheet.create({
   },
   forthButtonTextLarge: {
     fontSize: 20,
-    fontFamily: 'Epilogue',
+
     color: color.grayBG,
-    fontWeight: '700',
+    fontFamily: 'Epilogue-Bold',
     lineHeight: 28,
   },
   forthButtonTextSmall: {
     fontSize: 13,
-    fontFamily: 'Epilogue',
+
     color: color.grayInputBG,
-    fontWeight: '500',
+    fontFamily: 'Epilogue-Medium',
     lineHeight: 20,
     textAlign: 'center',
   },
   fifthDescription: {
-    fontFamily: 'Epilogue',
-    fontWeight: '400',
+    fontFamily: 'Epilogue-Regular',
     fontSize: 16,
     lineHeight: 22,
     color: color.grayInputBG,
@@ -155,11 +152,11 @@ export default StyleSheet.create({
   },
   fifthButtonText: {
     fontSize: 20,
-    fontFamily: 'Epilogue',
+
     textAlign: 'center',
     padding: 15,
     color: color.grayOffWhite,
-    fontWeight: '700',
+    fontFamily: 'Epilogue-Bold',
   },
   sixthButton: {
     borderRadius: 8,
@@ -174,18 +171,18 @@ export default StyleSheet.create({
   youtubeIcon: { marginRight: 11, marginTop: 5 },
   sixthButtonText: {
     fontSize: 16,
-    fontFamily: 'Epilogue',
+
     color: color.grayOffWhite,
-    fontWeight: '500',
+    fontFamily: 'Epilogue-Medium',
     lineHeight: 24,
   },
   saveButtonText: {
     fontSize: 20,
-    fontFamily: 'Epilogue',
+
     textAlign: 'center',
     padding: 15,
     color: color.grayOffWhite,
-    fontWeight: '700',
+    fontFamily: 'Epilogue-Bold',
   },
   sixthButtonTiktok: {
     borderRadius: 8,
