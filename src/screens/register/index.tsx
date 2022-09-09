@@ -13,6 +13,7 @@ import styles from './styles';
 import { globalStyle } from 'theme/globalStyle';
 import { authentication } from 'firebase/config';
 import { createUserWithEmailAndPassword, updateProfile } from 'firebase/auth/';
+import firestore from '@react-native-firebase/firestore';
 import Toast from 'react-native-toast-message';
 import { useNavigation } from '@react-navigation/native';
 import ArrowBack from '@images/icon/ArrowBack.svg';
@@ -22,15 +23,22 @@ export const Register = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [name, setName] = useState('');
+  const [username, setUsername] = useState('');
   const registerUser = () => {
     createUserWithEmailAndPassword(authentication, email, password)
       .then(userCredentials => {
-        updateProfile(userCredentials.user, {
+        const userProfile = updateProfile(userCredentials.user, {
           displayName: name,
         });
-        Toast.show({
-          type: 'success',
-          text1: 'Register user successfully',
+        const firestoreStore = firestore()
+          .collection('Users')
+          .doc(userCredentials.user.uid)
+          .set({ name, email, username });
+        Promise.all([userProfile, firestoreStore]).then(() => {
+          Toast.show({
+            type: 'success',
+            text1: 'Register user successfully',
+          });
         });
       })
       .catch(error => {
@@ -73,6 +81,13 @@ export const Register = () => {
                 placeholder="Name"
                 value={name}
                 onChangeText={text => setName(text)}
+              />
+              <TextInput
+                style={styles.inputBox}
+                placeholderTextColor="#FCFCFC"
+                placeholder="User Name"
+                value={username}
+                onChangeText={text => setUsername(text)}
               />
               <TextInput
                 style={styles.inputBox}

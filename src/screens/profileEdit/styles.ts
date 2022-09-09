@@ -112,11 +112,9 @@ export default StyleSheet.create({
     paddingHorizontal: 30,
   },
   forthButtonTextLarge: {
-    fontSize: 20,
-
+    fontSize: 18,
     color: color.grayBG,
     fontFamily: 'Epilogue-Bold',
-    lineHeight: 28,
   },
   forthButtonTextSmall: {
     fontSize: 13,

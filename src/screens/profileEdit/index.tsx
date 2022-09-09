@@ -17,6 +17,7 @@ import { authentication } from 'firebase/config';
 import { Items } from 'screens/profileMock';
 import auth from '@react-native-firebase/auth';
 import { onAuthStateChanged, updateEmail, updateProfile } from 'firebase/auth';
+import firestore from '@react-native-firebase/firestore';
 import Toast from 'react-native-toast-message';
 import { useNavigation } from '@react-navigation/native';
 import Copy from '@images/icon/Copy.svg';
@@ -33,13 +34,22 @@ export const ProfileEdit = () => {
   const navigation = useNavigation();
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
+  const [username, setUsername] = useState('');
   const userFullName =
     authentication.currentUser?.displayName || auth().currentUser?.displayName;
+  const userID = authentication.currentUser?.uid || auth().currentUser?.uid;
   const updateInfo = () => {
     onAuthStateChanged(authentication, user => {
       if (user) {
         updateProfile(user, { displayName: name }).then(() => {
           updateEmail(user, email).then(() => {
+            firestore()
+              .collection('Users')
+              .doc(userID)
+              .update({ username, name, email })
+              .then(() => {
+                console.log('User updated!');
+              });
             Toast.show({
               type: 'success',
               text1: 'Update successful!',
@@ -54,6 +64,13 @@ export const ProfileEdit = () => {
             auth()
               .currentUser?.updateEmail(email)
               .then(() => {
+                firestore()
+                  .collection('Users')
+                  .doc(userID)
+                  .update({ username, name, email })
+                  .then(() => {
+                    console.log('User updated!');
+                  });
                 Toast.show({
                   type: 'success',
                   text1: 'Update successful!',
@@ -113,6 +130,7 @@ export const ProfileEdit = () => {
               style={styles.inputBox}
               placeholderTextColor="#FCFCFC"
               placeholder="User Name"
+              onChangeText={text => setUsername(text)}
             />
           </View>
 
@@ -150,7 +168,7 @@ export const ProfileEdit = () => {
             <TouchableOpacity style={styles.forthCategoryButton}>
               <Picture />
               <Text style={styles.forthButtonTextLarge}>
-                Drag and drop or browce a file
+                Drag and drop or browse a file
               </Text>
               <Text style={styles.forthButtonTextSmall}>
                 Recommended size: JPG, PNG, GIF (1500x1500px, Max 10mb)

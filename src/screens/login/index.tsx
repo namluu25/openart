@@ -20,6 +20,7 @@ import { authentication } from 'firebase/config';
 import { signInWithEmailAndPassword } from 'firebase/auth/';
 import Toast from 'react-native-toast-message';
 import { useNavigation } from '@react-navigation/native';
+import firestore from '@react-native-firebase/firestore';
 
 GoogleSignin.configure({
   webClientId:
@@ -36,6 +37,14 @@ async function onGoogleButtonPress() {
 
     // Sign-in the user with the credential
     await auth().signInWithCredential(googleCredential);
+    const id = auth().currentUser?.uid;
+    const name = auth().currentUser?.displayName;
+    const email = auth().currentUser?.email;
+    const username = '';
+    await firestore()
+      .collection('Users')
+      .doc(id)
+      .set({ name, email, username });
   } catch (error) {
     console.log({ error });
   }

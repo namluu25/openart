@@ -8,7 +8,8 @@
     "start": "react-native start",
     "test": "jest",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
-    "splash": "yarn react-native generate-bootsplash src/assets/images/icon/logo-header.png --background-color=2A2A2E --logo-width=192  --assets-path=assets --flavor=main"
+    "splash": "yarn react-native generate-bootsplash src/assets/images/icon/logo-header.png --background-color=2A2A2E --logo-width=192  --assets-path=assets --flavor=main",
+    "assets": "npx react-native-asset"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.1.2",
@@ -20,6 +21,7 @@
     "@react-native-community/slider": "^4.2.4",
     "@react-native-firebase/app": "^15.4.0",
     "@react-native-firebase/auth": "^15.4.0",
+    "@react-native-firebase/firestore": "^15.4.0",
     "@react-native-google-signin/google-signin": "^8.0.0",
     "@react-navigation/native": "^6.0.11",
     "@react-navigation/native-stack": "^6.7.0",
