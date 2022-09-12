@@ -41,10 +41,11 @@ async function onGoogleButtonPress() {
     const name = auth().currentUser?.displayName;
     const email = auth().currentUser?.email;
     const username = '';
+    const avatar = '';
     await firestore()
       .collection('Users')
       .doc(id)
-      .set({ name, email, username });
+      .set({ name, email, username, avatar });
   } catch (error) {
     console.log({ error });
   }

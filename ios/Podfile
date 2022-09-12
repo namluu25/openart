@@ -4,6 +4,7 @@ require_relative '../node_modules/@react-native-community/cli-platform-ios/nativ
 # use_frameworks!
 platform :ios, '12.4'
 install! 'cocoapods', :deterministic_uuids => false
+use_frameworks! :linkage => :static
 
 target 'openart' do
   config = use_native_modules!

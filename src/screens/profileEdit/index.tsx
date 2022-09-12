@@ -6,6 +6,7 @@ import {
   TouchableOpacity,
   Image,
   TextInput,
+  Platform,
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import { Header, ShareButton, Footer } from 'components';
@@ -18,8 +19,10 @@ import { Items } from 'screens/profileMock';
 import auth from '@react-native-firebase/auth';
 import { onAuthStateChanged, updateEmail, updateProfile } from 'firebase/auth';
 import firestore from '@react-native-firebase/firestore';
+import storage from '@react-native-firebase/storage';
 import Toast from 'react-native-toast-message';
 import { useNavigation } from '@react-navigation/native';
+import ImagePicker from 'react-native-image-crop-picker';
 import Copy from '@images/icon/Copy.svg';
 import Discord from '@images/icon/Discord.svg';
 import Facebook from '@images/icon/Facebook.svg';
@@ -31,13 +34,24 @@ import Tiktok from '@images/icon/Tiktok.svg';
 import Youtube from '@images/icon/Youtube.svg';
 
 export const ProfileEdit = () => {
+  useEffect(() => {
+    axios
+      .get('https://62fa6791ffd7197707ebe3f2.mockapi.io/profile')
+      .then(res => {
+        setApiData(res.data);
+      })
+      .catch(error => console.log(error));
+  }, []);
+  const [apiData, setApiData] = useState<Array<Items>>([]);
   const navigation = useNavigation();
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [username, setUsername] = useState('');
+  const [avatar, setAvatar] = useState('');
   const userFullName =
     authentication.currentUser?.displayName || auth().currentUser?.displayName;
   const userID = authentication.currentUser?.uid || auth().currentUser?.uid;
+
   const updateInfo = () => {
     onAuthStateChanged(authentication, user => {
       if (user) {
@@ -46,7 +60,7 @@ export const ProfileEdit = () => {
             firestore()
               .collection('Users')
               .doc(userID)
-              .update({ username, name, email })
+              .update({ username, name, email, avatar })
               .then(() => {
                 console.log('User updated!');
               });
@@ -54,7 +68,7 @@ export const ProfileEdit = () => {
               type: 'success',
               text1: 'Update successful!',
             });
-            navigation.navigate('ProfileEmpty' as never);
+            navigation.navigate('Home' as never);
           });
         });
       } else {
@@ -67,7 +81,7 @@ export const ProfileEdit = () => {
                 firestore()
                   .collection('Users')
                   .doc(userID)
-                  .update({ username, name, email })
+                  .update({ username, name, email, avatar })
                   .then(() => {
                     console.log('User updated!');
                   });
@@ -75,21 +89,32 @@ export const ProfileEdit = () => {
                   type: 'success',
                   text1: 'Update successful!',
                 });
-                navigation.navigate('ProfileEmpty' as never);
+                navigation.navigate('Home' as never);
               });
           });
       }
     });
   };
-  const [apiData, setApiData] = useState<Array<Items>>([]);
-  useEffect(() => {
-    axios
-      .get('https://62fa6791ffd7197707ebe3f2.mockapi.io/profile')
-      .then(res => {
-        setApiData(res.data);
+  const avatarUpload = () => {
+    ImagePicker.openPicker({
+      width: 390,
+      height: 390,
+      cropping: true,
+    })
+      .then(async image => {
+        const imageUri = Platform.OS === 'ios' ? image.sourceURL! : image.path;
+        let fileName = imageUri.substring(imageUri.lastIndexOf('/') + 1);
+        fileName = userID + '-' + fileName;
+        await storage().ref(fileName).putFile(imageUri);
+        const url = await storage().ref(fileName).getDownloadURL();
+        setAvatar(url);
+        Toast.show({
+          type: 'success',
+          text1: 'Upload avatar successfully!',
+        });
       })
-      .catch(error => console.log(error));
-  }, []);
+      .catch(() => {});
+  };
   return (
     <SafeAreaView>
       <Header />
@@ -106,8 +131,10 @@ export const ProfileEdit = () => {
             </TouchableOpacity>
             <ShareButton style={styles.coverButtonShare} />
           </View>
-          <Image style={styles.avatar} source={{ uri: apiData[0]?.avatar }} />
-
+          <Image
+            style={styles.avatar}
+            source={require('@images/avatar/blank.png')}
+          />
           <Text style={styles.userName}>{userFullName}</Text>
           <View style={[globalStyle.flexRow, globalStyle.selfCenter]}>
             <Text style={styles.userHash}>52fs5ge5g45sov45a</Text>
@@ -165,7 +192,9 @@ export const ProfileEdit = () => {
 
           <View style={styles.inputCategory}>
             <Text style={styles.inputTitle}>Upload a profile image</Text>
-            <TouchableOpacity style={styles.forthCategoryButton}>
+            <TouchableOpacity
+              style={styles.forthCategoryButton}
+              onPress={avatarUpload}>
               <Picture />
               <Text style={styles.forthButtonTextLarge}>
                 Drag and drop or browse a file

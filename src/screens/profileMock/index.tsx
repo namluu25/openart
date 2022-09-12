@@ -41,10 +41,6 @@ export interface CreatedArt {
 }
 
 export const ProfileMock = () => {
-  const userFullName =
-    authentication.currentUser?.displayName || auth().currentUser?.displayName;
-  const [apiData, setApiData] = useState<Array<Items>>([]);
-  const [artData, setArtData] = useState<Array<CreatedArt>>([]);
   useEffect(() => {
     axios
       .get('https://62fa6791ffd7197707ebe3f2.mockapi.io/profile')
@@ -54,6 +50,10 @@ export const ProfileMock = () => {
       })
       .catch(error => console.log(error));
   }, []);
+  const [apiData, setApiData] = useState<Array<Items>>([]);
+  const [artData, setArtData] = useState<Array<CreatedArt>>([]);
+  const userFullName =
+    authentication.currentUser?.displayName || auth().currentUser?.displayName;
   return (
     <SafeAreaView>
       <Header />

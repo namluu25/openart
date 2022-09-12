@@ -24,9 +24,6 @@ interface Items {
 }
 
 export const Home = () => {
-  const [visible, setVisible] = useState(false);
-  const navigation = useNavigation();
-  const [apiData, setApiData] = useState<Array<Items>>([]);
   useEffect(() => {
     axios
       .get('https://62fa6791ffd7197707ebe3f2.mockapi.io/homepage')
@@ -35,6 +32,9 @@ export const Home = () => {
       })
       .catch(error => console.log(error));
   }, []);
+  const [apiData, setApiData] = useState<Array<Items>>([]);
+  const [visible, setVisible] = useState(false);
+  const navigation = useNavigation();
   return (
     <SafeAreaView>
       <Header />

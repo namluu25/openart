@@ -31,6 +31,7 @@ export default StyleSheet.create({
     marginTop: 97,
     height: 130,
     width: 130,
+    borderRadius: 100,
   },
   userName: {
     textAlign: 'center',

@@ -20,7 +20,6 @@ import ArrowDown from '@images/icon/ArrowDown.svg';
 import Plus from '@images/icon/Plus.svg';
 
 export const SearchFilter = () => {
-  const [artData, setArtData] = useState<Array<CreatedArt>>([]);
   useEffect(() => {
     axios
       .get('https://62fa6791ffd7197707ebe3f2.mockapi.io/profile')
@@ -29,6 +28,7 @@ export const SearchFilter = () => {
       })
       .catch(error => console.log(error));
   }, []);
+  const [artData, setArtData] = useState<Array<CreatedArt>>([]);
   return (
     <SafeAreaView>
       <Header />

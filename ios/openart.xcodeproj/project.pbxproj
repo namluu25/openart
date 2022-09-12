@@ -8,19 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* openartTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* openartTests.m */; };
+		0B34CE00C77D3EE6C46075D5 /* Pods_openart_openartTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6674468C800AE97DA6491863 /* Pods_openart_openartTests.framework */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		288BCE3D15D74051914EC6D5 /* RedHatDisplay-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3B5995EFB1DD4351A5D15505 /* RedHatDisplay-Regular.ttf */; };
-		369AB6FC459492FEB4A9E57C /* libPods-openart.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EEE66D8B789E320C5C207EF3 /* libPods-openart.a */; };
 		65DD9508E4F64EABA03096F3 /* Epilogue-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 830CC598DADD470CABF62DDA /* Epilogue-Medium.ttf */; };
 		68ED0C8F56AC49AF9DD77F69 /* Epilogue-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2130E0C606AE412FBB72E0FC /* Epilogue-Light.ttf */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		A8880B55000D3BE646738E77 /* libPods-openart-openartTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 929E93339A614AFC5A0A2132 /* libPods-openart-openartTests.a */; };
 		C89DFB039F174A40AFB5FEAC /* Epilogue-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1E499E563F514591BC258E47 /* Epilogue-Bold.ttf */; };
 		D1354E9A6D9F46099EABF7EE /* Epilogue-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D455689D88DF437093764C48 /* Epilogue-SemiBold.ttf */; };
 		D158F3EF28B37B65002F1481 /* BootSplash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D158F3EE28B37B65002F1481 /* BootSplash.storyboard */; };
 		D1B6D04928AF350A00E8F71E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D1B6D04828AF350A00E8F71E /* GoogleService-Info.plist */; };
+		D706246857DD5CC6BE124EAD /* Pods_openart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D3D8E9A027D89847B0297DB /* Pods_openart.framework */; };
 		E185DF1A748E4E0BBAA96974 /* Epilogue-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 846262B834BB44189A970628 /* Epilogue-Regular.ttf */; };
 /* End PBXBuildFile section */
 
@@ -48,18 +48,18 @@
 		2130E0C606AE412FBB72E0FC /* Epilogue-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Epilogue-Light.ttf"; path = "../src/assets/fonts/Epilogue-Light.ttf"; sourceTree = "<group>"; };
 		3977C7B753FD86C92EE96C97 /* Pods-openart-openartTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-openart-openartTests.debug.xcconfig"; path = "Target Support Files/Pods-openart-openartTests/Pods-openart-openartTests.debug.xcconfig"; sourceTree = "<group>"; };
 		3B5995EFB1DD4351A5D15505 /* RedHatDisplay-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "RedHatDisplay-Regular.ttf"; path = "../src/assets/fonts/RedHatDisplay-Regular.ttf"; sourceTree = "<group>"; };
+		6674468C800AE97DA6491863 /* Pods_openart_openartTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_openart_openartTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = openart/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		830CC598DADD470CABF62DDA /* Epilogue-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Epilogue-Medium.ttf"; path = "../src/assets/fonts/Epilogue-Medium.ttf"; sourceTree = "<group>"; };
 		844C0B777162D28D7B509775 /* Pods-openart.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-openart.debug.xcconfig"; path = "Target Support Files/Pods-openart/Pods-openart.debug.xcconfig"; sourceTree = "<group>"; };
 		846262B834BB44189A970628 /* Epilogue-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Epilogue-Regular.ttf"; path = "../src/assets/fonts/Epilogue-Regular.ttf"; sourceTree = "<group>"; };
-		929E93339A614AFC5A0A2132 /* libPods-openart-openartTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-openart-openartTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D3D8E9A027D89847B0297DB /* Pods_openart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_openart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD0BCCBF5C7E2CBF9B46398D /* Pods-openart-openartTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-openart-openartTests.release.xcconfig"; path = "Target Support Files/Pods-openart-openartTests/Pods-openart-openartTests.release.xcconfig"; sourceTree = "<group>"; };
 		CC9DA0DAD5272ACEE61E78E3 /* Pods-openart.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-openart.release.xcconfig"; path = "Target Support Files/Pods-openart/Pods-openart.release.xcconfig"; sourceTree = "<group>"; };
 		D158F3EE28B37B65002F1481 /* BootSplash.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = BootSplash.storyboard; path = openart/BootSplash.storyboard; sourceTree = "<group>"; };
 		D1B6D04828AF350A00E8F71E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D455689D88DF437093764C48 /* Epilogue-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Epilogue-SemiBold.ttf"; path = "../src/assets/fonts/Epilogue-SemiBold.ttf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
-		EEE66D8B789E320C5C207EF3 /* libPods-openart.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-openart.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,7 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A8880B55000D3BE646738E77 /* libPods-openart-openartTests.a in Frameworks */,
+				0B34CE00C77D3EE6C46075D5 /* Pods_openart_openartTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,7 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				369AB6FC459492FEB4A9E57C /* libPods-openart.a in Frameworks */,
+				D706246857DD5CC6BE124EAD /* Pods_openart.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -117,8 +117,8 @@
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				EEE66D8B789E320C5C207EF3 /* libPods-openart.a */,
-				929E93339A614AFC5A0A2132 /* libPods-openart-openartTests.a */,
+				9D3D8E9A027D89847B0297DB /* Pods_openart.framework */,
+				6674468C800AE97DA6491863 /* Pods_openart_openartTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

@@ -7,17 +7,22 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { Items } from 'screens/profileMock';
 import { authentication } from 'firebase/config';
 import { useNavigation } from '@react-navigation/native';
+import firestore from '@react-native-firebase/firestore';
 import axios from 'axios';
 import auth from '@react-native-firebase/auth';
 import Copy from '@images/icon/Copy.svg';
 import Edit from '@images/icon/Edit.svg';
 import More from '@images/icon/More.svg';
 
+interface DocumentData {
+  avatar?: string;
+  email?: string;
+  name?: string;
+  username?: string;
+}
+const userID = authentication.currentUser?.uid || auth().currentUser?.uid;
+
 export const ProfileEmpty = () => {
-  const navigation = useNavigation();
-  const userFullName =
-    authentication.currentUser?.displayName || auth().currentUser?.displayName;
-  const [apiData, setApiData] = useState<Array<Items>>([]);
   useEffect(() => {
     axios
       .get('https://62fa6791ffd7197707ebe3f2.mockapi.io/profile')
@@ -25,7 +30,20 @@ export const ProfileEmpty = () => {
         setApiData(res.data);
       })
       .catch(error => console.log(error));
+    const getFirestore = async () => {
+      await firestore()
+        .collection('Users')
+        .doc(userID)
+        .get()
+        .then(res => setUserData(res.data()!));
+    };
+    getFirestore();
   }, []);
+  const [userData, setUserData] = useState<DocumentData>({});
+  const [apiData, setApiData] = useState<Array<Items>>([]);
+  const navigation = useNavigation();
+  const userFullName =
+    authentication.currentUser?.displayName || auth().currentUser?.displayName;
   return (
     <SafeAreaView>
       <Header />
@@ -46,7 +64,14 @@ export const ProfileEmpty = () => {
             </TouchableOpacity>
             <ShareButton style={styles.coverButtonShare} />
           </View>
-          <Image style={styles.avatar} source={{ uri: apiData[0]?.avatar }} />
+          <Image
+            style={styles.avatar}
+            source={
+              !userData.avatar
+                ? require('@images/avatar/blank.png')
+                : { uri: userData.avatar }
+            }
+          />
 
           <Text style={styles.userName}>{userFullName}</Text>
           <View style={[globalStyle.flexRow, globalStyle.selfCenter]}>

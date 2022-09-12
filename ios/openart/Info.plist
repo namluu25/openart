@@ -49,6 +49,10 @@
 	</dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string/>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Photo library access requires to upload photo<string/>
+	<key>NSCameraUsageDescription</key>
+	<string/>
 	<key>UIAppFonts</key>
 	<array>
 		<string>RedHatDisplay-Regular.ttf</string>

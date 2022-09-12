@@ -14,8 +14,8 @@ import { globalStyle } from 'theme/globalStyle';
 import { authentication } from 'firebase/config';
 import auth from '@react-native-firebase/auth';
 import { signOut } from 'firebase/auth';
-import { Items } from 'screens/profileMock';
-import axios from 'axios';
+import firestore from '@react-native-firebase/firestore';
+
 import ArrowBack from '@images/icon/ArrowBack.svg';
 import Copy from '@images/icon/Copy.svg';
 import Hide from '@images/icon/Hide.svg';
@@ -29,7 +29,27 @@ interface Props {
   handleClose?: () => void;
 }
 
+interface DocumentData {
+  avatar?: string;
+  email?: string;
+  name?: string;
+  username?: string;
+}
+
+const userID = authentication.currentUser?.uid || auth().currentUser?.uid;
+
 export const Account = (props: Props) => {
+  useEffect(() => {
+    const getFirestore = async () => {
+      await firestore()
+        .collection('Users')
+        .doc(userID)
+        .get()
+        .then(res => setUserData(res.data()!));
+    };
+    getFirestore();
+  }, []);
+  const [userData, setUserData] = useState<DocumentData>({});
   const [isSwitchOn, setIsSwitchOn] = React.useState(false);
   const onToggleSwitch = () => setIsSwitchOn(!isSwitchOn);
   const navigation = useNavigation();
@@ -37,25 +57,10 @@ export const Account = (props: Props) => {
   const userFullName =
     authentication.currentUser?.displayName || auth().currentUser?.displayName;
   const signingOut = () => {
-    signOut(authentication)
-      .then(() => {
-        // Sign-out successful.
-      })
-      .catch(error => {
-        // An error happened.
-        console.log({ error });
-      });
+    signOut(authentication);
     auth().signOut();
   };
-  const [apiData, setApiData] = useState<Array<Items>>([]);
-  useEffect(() => {
-    axios
-      .get('https://62fa6791ffd7197707ebe3f2.mockapi.io/profile')
-      .then(res => {
-        setApiData(res.data);
-      })
-      .catch(error => console.log(error));
-  }, []);
+
   return (
     <>
       <Modal
@@ -73,7 +78,11 @@ export const Account = (props: Props) => {
               <View style={styles.firstRow}>
                 <Image
                   style={styles.avatar}
-                  source={{ uri: apiData[0]?.avatar }}
+                  source={
+                    !userData.avatar
+                      ? require('@images/avatar/blank.png')
+                      : { uri: userData.avatar }
+                  }
                 />
                 <View style={globalStyle.selfCenter}>
                   <Text style={styles.username}>{userFullName}</Text>

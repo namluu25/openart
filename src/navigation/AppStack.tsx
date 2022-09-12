@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import {
   About,
@@ -16,13 +16,41 @@ import {
   SearchFilter,
   SearchPopup,
 } from 'screens';
+import { authentication } from 'firebase/config';
+import auth from '@react-native-firebase/auth';
+import firestore from '@react-native-firebase/firestore';
 
+interface DocumentData {
+  avatar?: string;
+  email?: string;
+  name?: string;
+  username?: string;
+}
 const Stack = createNativeStackNavigator();
+const userID = authentication.currentUser?.uid || auth().currentUser?.uid;
 
 export const AppStack = () => {
+  useEffect(() => {
+    const getFirestore = async () => {
+      await firestore()
+        .collection('Users')
+        .doc(userID)
+        .get()
+        .then(res => setUserData(res.data()!));
+    };
+    getFirestore();
+  }, []);
+  const [userData, setUserData] = useState<DocumentData>({});
+  const initialRouteCheck = () => {
+    if (!userData.email || !userData.name || !userData.username) {
+      return 'ProfileEdit';
+    } else {
+      return 'Home';
+    }
+  };
   return (
     <Stack.Navigator
-      initialRouteName="Home"
+      initialRouteName={initialRouteCheck()}
       screenOptions={{ headerShown: false }}>
       <Stack.Screen name="Home" component={Home} />
       <Stack.Screen name="Menu" component={Menu} />

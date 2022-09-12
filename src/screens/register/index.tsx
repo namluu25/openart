@@ -24,6 +24,7 @@ export const Register = () => {
   const [password, setPassword] = useState('');
   const [name, setName] = useState('');
   const [username, setUsername] = useState('');
+  const avatar = '';
   const registerUser = () => {
     createUserWithEmailAndPassword(authentication, email, password)
       .then(userCredentials => {
@@ -33,7 +34,7 @@ export const Register = () => {
         const firestoreStore = firestore()
           .collection('Users')
           .doc(userCredentials.user.uid)
-          .set({ name, email, username });
+          .set({ name, email, username, avatar });
         Promise.all([userProfile, firestoreStore]).then(() => {
           Toast.show({
             type: 'success',

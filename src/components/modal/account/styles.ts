@@ -46,6 +46,7 @@ export default StyleSheet.create({
     marginRight: 17,
     width: 77,
     height: 77,
+    borderRadius: 100,
   },
   username: {
     fontFamily: 'Epilogue-Bold',
