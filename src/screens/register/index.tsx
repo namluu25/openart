@@ -105,7 +105,10 @@ export const Register = () => {
 
             <View style={styles.buttonView}>
               <TouchableOpacity
-                onPress={registerUser}
+                onPress={() => {
+                  navigation.navigate('Login' as never);
+                  registerUser();
+                }}
                 style={[
                   globalStyle.buttonRadius,
                   styles.registerButton,

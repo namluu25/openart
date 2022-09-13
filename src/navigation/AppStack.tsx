@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import {
   About,
@@ -16,16 +16,34 @@ import {
   SearchFilter,
   SearchPopup,
 } from 'screens';
+import { authentication } from 'firebase/config';
+import auth from '@react-native-firebase/auth';
+import firestore from '@react-native-firebase/firestore';
 
-interface Props {
-  value: string | null;
-}
 const Stack = createNativeStackNavigator();
 
-export const AppStack = (props: Props) => {
-  return props.value !== null ? (
+export const AppStack = () => {
+  const [route, setRoute] = useState<string | null>(null);
+  useEffect(() => {
+    (async () => {
+      try {
+        const userID =
+          authentication.currentUser?.uid || auth().currentUser?.uid;
+        const res = await firestore().collection('Users').doc(userID).get();
+        const { email, name, username } = res.data()!;
+        if (!email || !name || !username) {
+          setRoute('ProfileEdit');
+        } else {
+          setRoute('Home');
+        }
+      } catch (err) {
+        console.log(err);
+      }
+    })();
+  }, []);
+  return route !== null ? (
     <Stack.Navigator
-      initialRouteName={props.value as 'ProfileEdit' | 'Home'}
+      initialRouteName={route as 'ProfileEdit' | 'Home'}
       screenOptions={{ headerShown: false }}>
       <Stack.Screen name="Home" component={Home} />
       <Stack.Screen name="Menu" component={Menu} />

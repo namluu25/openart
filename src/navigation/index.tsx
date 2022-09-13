@@ -6,7 +6,6 @@ import { authentication } from 'firebase/config';
 import { AppStack } from './AppStack';
 import { AuthStack } from './AuthStack';
 import auth from '@react-native-firebase/auth';
-import firestore from '@react-native-firebase/firestore';
 
 const MyTheme = {
   ...DefaultTheme,
@@ -17,7 +16,6 @@ const MyTheme = {
 };
 
 export const AppNavigation = () => {
-  const [initRoute, setInitRoute] = useState<string | null>(null);
   const [isSignedin, setIsSignedin] = useState(false);
   useEffect(() => {
     authentication.onAuthStateChanged(user => {
@@ -34,17 +32,6 @@ export const AppNavigation = () => {
         setIsSignedin(false);
       }
     });
-    (async () => {
-      const userID = authentication.currentUser?.uid || auth().currentUser?.uid;
-      const res = await firestore().collection('Users').doc(userID).get();
-      const { email, name, username } = res.data()!;
-      // console.log(email, name, username);
-      if (!email || !name || !username) {
-        setInitRoute('ProfileEdit');
-      } else {
-        setInitRoute('Home');
-      }
-    })();
   }, []);
   return (
     <NavigationContainer
@@ -55,7 +42,7 @@ export const AppNavigation = () => {
         translucent={true}
         backgroundColor="transparent"
       />
-      {isSignedin === true ? <AppStack value={initRoute} /> : <AuthStack />}
+      {isSignedin === true ? <AppStack /> : <AuthStack />}
     </NavigationContainer>
   );
 };
