@@ -33,7 +33,16 @@ import Picture from '@images/icon/Picture.svg';
 import Tiktok from '@images/icon/Tiktok.svg';
 import Youtube from '@images/icon/Youtube.svg';
 
+interface DocumentData {
+  avatar?: string;
+  email?: string;
+  name?: string;
+  username?: string;
+  hash?: string;
+}
+
 export const ProfileEdit = () => {
+  const userID = authentication.currentUser?.uid || auth().currentUser?.uid;
   useEffect(() => {
     axios
       .get('https://62fa6791ffd7197707ebe3f2.mockapi.io/profile')
@@ -41,7 +50,15 @@ export const ProfileEdit = () => {
         setApiData(res.data);
       })
       .catch(error => console.log(error));
-  }, []);
+    const subscriber = firestore()
+      .collection('Users')
+      .doc(userID)
+      .onSnapshot(documentSnapshot => {
+        setUserData(documentSnapshot.data()!);
+      });
+    return () => subscriber();
+  }, [userID]);
+  const [userData, setUserData] = useState<DocumentData>({});
   const [apiData, setApiData] = useState<Array<Items>>([]);
   const navigation = useNavigation();
   const [name, setName] = useState('');
@@ -50,7 +67,6 @@ export const ProfileEdit = () => {
   const [avatar, setAvatar] = useState('');
   const userFullName =
     authentication.currentUser?.displayName || auth().currentUser?.displayName;
-  const userID = authentication.currentUser?.uid || auth().currentUser?.uid;
 
   const updateInfo = () => {
     onAuthStateChanged(authentication, user => {
@@ -133,11 +149,15 @@ export const ProfileEdit = () => {
           </View>
           <Image
             style={styles.avatar}
-            source={require('@images/avatar/blank.png')}
+            source={
+              !userData.avatar
+                ? require('@images/avatar/blank.png')
+                : { uri: userData.avatar }
+            }
           />
-          <Text style={styles.userName}>{userFullName}</Text>
+          <Text style={styles.userName}>{userData.name}</Text>
           <View style={[globalStyle.flexRow, globalStyle.selfCenter]}>
-            <Text style={styles.userHash}>52fs5ge5g45sov45a</Text>
+            <Text style={styles.userHash}>{userData.hash}</Text>
             <TouchableOpacity style={styles.copyIcon}>
               <Copy />
             </TouchableOpacity>

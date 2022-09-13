@@ -14,6 +14,7 @@ import styles from './styles';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { authentication } from 'firebase/config';
 import auth from '@react-native-firebase/auth';
+import firestore from '@react-native-firebase/firestore';
 import Copy from '@images/icon/Copy.svg';
 import Instagram from '@images/icon/Instagram.svg';
 import Link from '@images/icon/Link.svg';
@@ -40,7 +41,16 @@ export interface CreatedArt {
   creatorName: string;
 }
 
+interface DocumentData {
+  avatar?: string;
+  email?: string;
+  name?: string;
+  username?: string;
+  hash?: string;
+}
+
 export const ProfileMock = () => {
+  const userID = authentication.currentUser?.uid || auth().currentUser?.uid;
   useEffect(() => {
     axios
       .get('https://62fa6791ffd7197707ebe3f2.mockapi.io/profile')
@@ -49,11 +59,17 @@ export const ProfileMock = () => {
         setArtData(res.data[0].createdArt);
       })
       .catch(error => console.log(error));
-  }, []);
+    const subscriber = firestore()
+      .collection('Users')
+      .doc(userID)
+      .onSnapshot(documentSnapshot => {
+        setUserData(documentSnapshot.data()!);
+      });
+    return () => subscriber();
+  }, [userID]);
+  const [userData, setUserData] = useState<DocumentData>({});
   const [apiData, setApiData] = useState<Array<Items>>([]);
   const [artData, setArtData] = useState<Array<CreatedArt>>([]);
-  const userFullName =
-    authentication.currentUser?.displayName || auth().currentUser?.displayName;
   return (
     <SafeAreaView>
       <Header />
@@ -70,11 +86,11 @@ export const ProfileMock = () => {
             </TouchableOpacity>
             <ShareButton style={styles.buttonShareBorder} />
           </View>
-          <Image style={styles.avatar} source={{ uri: apiData[0]?.avatar }} />
+          <Image style={styles.avatar} source={{ uri: userData.avatar }} />
 
-          <Text style={styles.userName}>{userFullName}</Text>
+          <Text style={styles.userName}>{userData.name}</Text>
           <View style={[globalStyle.flexRow, globalStyle.selfCenter]}>
-            <Text style={styles.userHash}>{apiData[0]?.hash}</Text>
+            <Text style={styles.userHash}>{userData.hash}</Text>
             <TouchableOpacity style={styles.copyIcon}>
               <Copy />
             </TouchableOpacity>

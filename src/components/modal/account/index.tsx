@@ -34,6 +34,7 @@ interface DocumentData {
   email?: string;
   name?: string;
   username?: string;
+  hash?: string;
 }
 
 const userID = authentication.currentUser?.uid || auth().currentUser?.uid;
@@ -54,8 +55,6 @@ export const Account = (props: Props) => {
   const onToggleSwitch = () => setIsSwitchOn(!isSwitchOn);
   const navigation = useNavigation();
   const [visibleAccount, setVisibleAccount] = useState(false);
-  const userFullName =
-    authentication.currentUser?.displayName || auth().currentUser?.displayName;
   const signingOut = () => {
     signOut(authentication).catch(error => console.log(error));
     auth()
@@ -87,9 +86,9 @@ export const Account = (props: Props) => {
                   }
                 />
                 <View style={globalStyle.selfCenter}>
-                  <Text style={styles.username}>{userFullName}</Text>
+                  <Text style={styles.username}>{userData.name}</Text>
                   <View style={globalStyle.flexRow}>
-                    <Text style={styles.hash}>52fs5ge5g45sov45a</Text>
+                    <Text style={styles.hash}>{userData.hash}</Text>
                     <TouchableOpacity style={styles.copyIcon}>
                       <Copy />
                     </TouchableOpacity>

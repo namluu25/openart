@@ -12,7 +12,11 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import styles from './styles';
 import { globalStyle } from 'theme/globalStyle';
 import { authentication } from 'firebase/config';
-import { createUserWithEmailAndPassword, updateProfile } from 'firebase/auth/';
+import {
+  createUserWithEmailAndPassword,
+  signOut,
+  updateProfile,
+} from 'firebase/auth/';
 import firestore from '@react-native-firebase/firestore';
 import Toast from 'react-native-toast-message';
 import { useNavigation } from '@react-navigation/native';
@@ -38,6 +42,7 @@ export const Register = () => {
   const registerUser = () => {
     createUserWithEmailAndPassword(authentication, email, password)
       .then(userCredentials => {
+        signOut(authentication);
         const userProfile = updateProfile(userCredentials.user, {
           displayName: name,
         });

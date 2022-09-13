@@ -19,6 +19,7 @@ interface DocumentData {
   email?: string;
   name?: string;
   username?: string;
+  hash?: string;
 }
 
 export const ProfileEmpty = () => {
@@ -41,8 +42,6 @@ export const ProfileEmpty = () => {
   const [userData, setUserData] = useState<DocumentData>({});
   const [apiData, setApiData] = useState<Array<Items>>([]);
   const navigation = useNavigation();
-  const userFullName =
-    authentication.currentUser?.displayName || auth().currentUser?.displayName;
   return (
     <SafeAreaView>
       <Header />
@@ -72,9 +71,9 @@ export const ProfileEmpty = () => {
             }
           />
 
-          <Text style={styles.userName}>{userFullName}</Text>
+          <Text style={styles.userName}>{userData.name}</Text>
           <View style={[globalStyle.flexRow, globalStyle.selfCenter]}>
-            <Text style={styles.userHash}>52fs5ge5g45sov45a</Text>
+            <Text style={styles.userHash}>{userData.hash}</Text>
             <TouchableOpacity style={styles.copyIcon}>
               <Copy />
             </TouchableOpacity>
