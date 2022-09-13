@@ -20,9 +20,9 @@ interface DocumentData {
   name?: string;
   username?: string;
 }
-const userID = authentication.currentUser?.uid || auth().currentUser?.uid;
 
 export const ProfileEmpty = () => {
+  const userID = authentication.currentUser?.uid || auth().currentUser?.uid;
   useEffect(() => {
     axios
       .get('https://62fa6791ffd7197707ebe3f2.mockapi.io/profile')
@@ -30,15 +30,14 @@ export const ProfileEmpty = () => {
         setApiData(res.data);
       })
       .catch(error => console.log(error));
-    const getFirestore = async () => {
-      await firestore()
-        .collection('Users')
-        .doc(userID)
-        .get()
-        .then(res => setUserData(res.data()!));
-    };
-    getFirestore();
-  }, []);
+    const subscriber = firestore()
+      .collection('Users')
+      .doc(userID)
+      .onSnapshot(documentSnapshot => {
+        setUserData(documentSnapshot.data()!);
+      });
+    return () => subscriber();
+  }, [userID]);
   const [userData, setUserData] = useState<DocumentData>({});
   const [apiData, setApiData] = useState<Array<Items>>([]);
   const navigation = useNavigation();

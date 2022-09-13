@@ -20,37 +20,26 @@ import { authentication } from 'firebase/config';
 import auth from '@react-native-firebase/auth';
 import firestore from '@react-native-firebase/firestore';
 
-interface DocumentData {
-  avatar?: string;
-  email?: string;
-  name?: string;
-  username?: string;
-}
 const Stack = createNativeStackNavigator();
-const userID = authentication.currentUser?.uid || auth().currentUser?.uid;
 
 export const AppStack = () => {
+  const [route, setRoute] = useState<string | null>(null);
   useEffect(() => {
-    const getFirestore = async () => {
-      await firestore()
-        .collection('Users')
-        .doc(userID)
-        .get()
-        .then(res => setUserData(res.data()!));
-    };
-    getFirestore();
+    (async () => {
+      const userID = authentication.currentUser?.uid || auth().currentUser?.uid;
+      const res = await firestore().collection('Users').doc(userID).get();
+      const { email, name, username } = res.data()!;
+      // console.log(email, name, username);
+      if (!email || !name || !username) {
+        setRoute('ProfileEdit');
+      } else {
+        setRoute('Home');
+      }
+    })();
   }, []);
-  const [userData, setUserData] = useState<DocumentData>({});
-  const initialRouteCheck = () => {
-    if (!userData.email || !userData.name || !userData.username) {
-      return 'ProfileEdit';
-    } else {
-      return 'Home';
-    }
-  };
-  return (
+  return route !== null ? (
     <Stack.Navigator
-      initialRouteName={initialRouteCheck()}
+      initialRouteName={route as 'ProfileEdit' | 'Home'}
       screenOptions={{ headerShown: false }}>
       <Stack.Screen name="Home" component={Home} />
       <Stack.Screen name="Menu" component={Menu} />
@@ -67,5 +56,5 @@ export const AppStack = () => {
       <Stack.Screen name="SearchFilter" component={SearchFilter} />
       <Stack.Screen name="SearchPopup" component={SearchPopup} />
     </Stack.Navigator>
-  );
+  ) : null;
 };

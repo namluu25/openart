@@ -22,8 +22,8 @@ export const Register = () => {
   const navigation = useNavigation();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [name, setName] = useState('');
-  const [username, setUsername] = useState('');
+  const name = '';
+  const username = '';
   const avatar = '';
   const registerUser = () => {
     createUserWithEmailAndPassword(authentication, email, password)
@@ -76,20 +76,6 @@ export const Register = () => {
             </TouchableOpacity>
             <Text style={styles.title}>Create account</Text>
             <View style={styles.inputView}>
-              <TextInput
-                style={styles.inputBox}
-                placeholderTextColor="#FCFCFC"
-                placeholder="Name"
-                value={name}
-                onChangeText={text => setName(text)}
-              />
-              <TextInput
-                style={styles.inputBox}
-                placeholderTextColor="#FCFCFC"
-                placeholder="User Name"
-                value={username}
-                onChangeText={text => setUsername(text)}
-              />
               <TextInput
                 style={styles.inputBox}
                 placeholderTextColor="#FCFCFC"

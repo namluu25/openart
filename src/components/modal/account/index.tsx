@@ -45,20 +45,22 @@ export const Account = (props: Props) => {
         .collection('Users')
         .doc(userID)
         .get()
-        .then(res => setUserData(res.data()!));
+        .then(documentSnapshot => setUserData(documentSnapshot.data()!));
     };
     getFirestore();
   }, []);
   const [userData, setUserData] = useState<DocumentData>({});
-  const [isSwitchOn, setIsSwitchOn] = React.useState(false);
+  const [isSwitchOn, setIsSwitchOn] = useState(false);
   const onToggleSwitch = () => setIsSwitchOn(!isSwitchOn);
   const navigation = useNavigation();
   const [visibleAccount, setVisibleAccount] = useState(false);
   const userFullName =
     authentication.currentUser?.displayName || auth().currentUser?.displayName;
   const signingOut = () => {
-    signOut(authentication);
-    auth().signOut();
+    signOut(authentication).catch(error => console.log(error));
+    auth()
+      .signOut()
+      .catch(error => console.log(error));
   };
 
   return (
