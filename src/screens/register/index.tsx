@@ -25,6 +25,16 @@ export const Register = () => {
   const name = '';
   const username = '';
   const avatar = '';
+  const genHash = () => {
+    const characters = 'abcdefghijklmnopqrstuvwxyz0123456789';
+    let result = ' ';
+    const charactersLength = characters.length;
+    for (let i = 0; i < 17; i++) {
+      result += characters.charAt(Math.floor(Math.random() * charactersLength));
+    }
+    return result;
+  };
+  const hash = genHash();
   const registerUser = () => {
     createUserWithEmailAndPassword(authentication, email, password)
       .then(userCredentials => {
@@ -34,7 +44,7 @@ export const Register = () => {
         const firestoreStore = firestore()
           .collection('Users')
           .doc(userCredentials.user.uid)
-          .set({ name, email, username, avatar });
+          .set({ name, email, username, avatar, hash });
         Promise.all([userProfile, firestoreStore]).then(() => {
           Toast.show({
             type: 'success',
@@ -43,7 +53,7 @@ export const Register = () => {
         });
       })
       .catch(error => {
-        console.log(error);
+        console.log(error.message);
         if (error.message === 'Firebase: Error (auth/email-already-in-use).') {
           Toast.show({
             type: 'error',

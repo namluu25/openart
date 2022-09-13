@@ -37,6 +37,19 @@ async function onGoogleButtonPress() {
 
     // Sign-in the user with the credential
     await auth().signInWithCredential(googleCredential);
+    const genHash = () => {
+      const characters = 'abcdefghijklmnopqrstuvwxyz0123456789';
+      let result = ' ';
+      const charactersLength = characters.length;
+      for (let i = 0; i < 17; i++) {
+        result += characters.charAt(
+          Math.floor(Math.random() * charactersLength),
+        );
+      }
+
+      return result;
+    };
+    const hash = genHash();
     const id = auth().currentUser?.uid;
     const name = auth().currentUser?.displayName;
     const email = auth().currentUser?.email;
@@ -45,7 +58,7 @@ async function onGoogleButtonPress() {
     await firestore()
       .collection('Users')
       .doc(id)
-      .set({ name, email, username, avatar });
+      .set({ name, email, username, avatar, hash });
   } catch (error) {
     console.log({ error });
   }
