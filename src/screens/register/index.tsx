@@ -50,12 +50,15 @@ export const Register = () => {
           .collection('Users')
           .doc(userCredentials.user.uid)
           .set({ name, email, username, avatar, hash });
-        Promise.all([userProfile, firestoreStore]).then(() => {
-          Toast.show({
-            type: 'success',
-            text1: 'Register user successfully',
-          });
-        });
+        Promise.all([userProfile, firestoreStore])
+          .then(() => {
+            Toast.show({
+              type: 'success',
+              text1: 'Register user successfully',
+            });
+            navigation.navigate('Login' as never);
+          })
+          .catch(error => console.log(error));
       })
       .catch(error => {
         console.log(error.message);
@@ -76,7 +79,6 @@ export const Register = () => {
           });
         }
       });
-    navigation.navigate('Login' as never);
   };
 
   return (

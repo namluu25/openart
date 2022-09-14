@@ -128,7 +128,7 @@ export const ProfileEdit = () => {
           text1: 'Upload avatar successfully!',
         });
       })
-      .catch(() => {});
+      .catch(error => console.log(error));
   };
   return (
     <SafeAreaView>

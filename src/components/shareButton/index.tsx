@@ -12,7 +12,9 @@ export const ShareButton = (props: Props) => {
       await Share.share({
         message: 'Share item:',
       });
-    } catch (error) {}
+    } catch (error) {
+      console.log(error);
+    }
   };
   return (
     <TouchableOpacity style={props.style} onPress={shareData}>
