@@ -39,9 +39,14 @@ export default StyleSheet.create({
     height: 412,
     marginBottom: 18,
   },
-  image: {
+  imageTouch: {
     width: imageWidth,
     height: '48%',
+    borderRadius: 16,
+  },
+  image: {
+    width: imageWidth,
+    height: '100%',
     borderRadius: 16,
   },
   button: {

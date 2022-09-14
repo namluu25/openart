@@ -16,52 +16,55 @@ export const HotCollection = () => {
         <Text style={styles.titleText}> Hot Collection</Text>
       </View>
 
-      <View style={[globalStyle.flexRow, styles.imageView]}>
+      <View
+        style={[
+          globalStyle.flexRow,
+          styles.imageView,
+          globalStyle.justifyBetween,
+        ]}>
         <View style={[globalStyle.flexColumn, globalStyle.justifyBetween]}>
-          {/* image row 1 */}
+          {/* image col 1 */}
           <TouchableOpacity
-            style={styles.image}
+            style={styles.imageTouch}
             onPress={() => {
               navigation.navigate('DiscoverCreator' as never);
             }}>
             <Image
+              style={styles.image}
               source={require('@images/hotcollection/hot-collection-1.png')}
             />
           </TouchableOpacity>
           <TouchableOpacity
-            style={styles.image}
+            style={styles.imageTouch}
             onPress={() => {
               navigation.navigate('DiscoverCreator' as never);
             }}>
             <Image
+              style={styles.image}
               source={require('@images/hotcollection/hot-collection-3.png')}
             />
           </TouchableOpacity>
         </View>
 
-        <View
-          style={[
-            globalStyle.flexColumn,
-            globalStyle.justifyBetween,
-            globalStyle.flex,
-            globalStyle.itemEnd,
-          ]}>
-          {/* image row 2 */}
+        <View style={[globalStyle.flexColumn, globalStyle.justifyBetween]}>
+          {/* image col 2 */}
           <TouchableOpacity
-            style={styles.image}
+            style={styles.imageTouch}
             onPress={() => {
               navigation.navigate('DiscoverCreator' as never);
             }}>
             <Image
+              style={styles.image}
               source={require('@images/hotcollection/hot-collection-2.png')}
             />
           </TouchableOpacity>
           <TouchableOpacity
-            style={styles.image}
+            style={styles.imageTouch}
             onPress={() => {
               navigation.navigate('DiscoverCreator' as never);
             }}>
             <Image
+              style={styles.image}
               source={require('@images/hotcollection/hot-collection-4.png')}
             />
           </TouchableOpacity>
