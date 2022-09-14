@@ -50,13 +50,14 @@ export const ProfileEdit = () => {
         setApiData(res.data);
       })
       .catch(error => console.log(error));
-    const subscriber = firestore()
+    firestore()
       .collection('Users')
       .doc(userID)
-      .onSnapshot(documentSnapshot => {
+      .get()
+      .then(documentSnapshot => {
         setUserData(documentSnapshot.data()!);
       });
-    return () => subscriber();
+    // return () => subscriber();r
   }, [userID]);
   const [userData, setUserData] = useState<DocumentData>({});
   const [apiData, setApiData] = useState<Array<Items>>([]);
@@ -65,8 +66,6 @@ export const ProfileEdit = () => {
   const [email, setEmail] = useState('');
   const [username, setUsername] = useState('');
   const [avatar, setAvatar] = useState('');
-  const userFullName =
-    authentication.currentUser?.displayName || auth().currentUser?.displayName;
 
   const updateInfo = () => {
     onAuthStateChanged(authentication, user => {

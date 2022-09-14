@@ -39,8 +39,8 @@ export const Register = () => {
     return result;
   };
   const hash = genHash();
-  const registerUser = () => {
-    createUserWithEmailAndPassword(authentication, email, password)
+  const registerUser = async () => {
+    await createUserWithEmailAndPassword(authentication, email, password)
       .then(userCredentials => {
         signOut(authentication);
         const userProfile = updateProfile(userCredentials.user, {
@@ -76,6 +76,7 @@ export const Register = () => {
           });
         }
       });
+    navigation.navigate('Login' as never);
   };
 
   return (
@@ -110,10 +111,7 @@ export const Register = () => {
 
             <View style={styles.buttonView}>
               <TouchableOpacity
-                onPress={() => {
-                  navigation.navigate('Login' as never);
-                  registerUser();
-                }}
+                onPress={() => registerUser()}
                 style={[
                   globalStyle.buttonRadius,
                   styles.registerButton,
