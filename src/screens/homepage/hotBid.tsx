@@ -55,6 +55,7 @@ export const HotBid = () => {
               }}>
               <Image
                 // image
+                style={styles.imageWidth}
                 source={require('@images/hotbid/hotbid-1.png')}
               />
             </TouchableOpacity>
@@ -103,6 +104,7 @@ export const HotBid = () => {
               }}>
               <Image
                 // image
+                style={styles.imageWidth}
                 source={require('@images/hotbid/hotbid-1.png')}
               />
             </TouchableOpacity>

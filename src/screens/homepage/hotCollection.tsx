@@ -27,7 +27,7 @@ export const HotCollection = () => {
           <TouchableOpacity
             style={styles.imageTouch}
             onPress={() => {
-              navigation.navigate('DiscoverCreator' as never);
+              navigation.navigate('DetailsSold' as never);
             }}>
             <Image
               style={styles.image}
@@ -37,7 +37,7 @@ export const HotCollection = () => {
           <TouchableOpacity
             style={styles.imageTouch}
             onPress={() => {
-              navigation.navigate('DiscoverCreator' as never);
+              navigation.navigate('DetailsSold' as never);
             }}>
             <Image
               style={styles.image}
@@ -51,7 +51,7 @@ export const HotCollection = () => {
           <TouchableOpacity
             style={styles.imageTouch}
             onPress={() => {
-              navigation.navigate('DiscoverCreator' as never);
+              navigation.navigate('DetailsSold' as never);
             }}>
             <Image
               style={styles.image}
@@ -61,7 +61,7 @@ export const HotCollection = () => {
           <TouchableOpacity
             style={styles.imageTouch}
             onPress={() => {
-              navigation.navigate('DiscoverCreator' as never);
+              navigation.navigate('DetailsSold' as never);
             }}>
             <Image
               style={styles.image}

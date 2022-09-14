@@ -22,6 +22,7 @@ export default StyleSheet.create({
     marginRight: 30,
   },
   itemView: { marginRight: 12 },
+  imageWidth: { width: '100%' },
   followerAvatarView: {
     position: 'absolute',
     bottom: 0,

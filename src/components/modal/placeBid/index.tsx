@@ -59,12 +59,12 @@ export const PlaceBid = (props: Props) => {
                   <Text style={styles.textSecondColumn}>0.001 ETH</Text>
                 </View>
               </View>
-              <TouchableOpacity>
+              <TouchableOpacity style={styles.gradientButton}>
                 <LinearGradient
                   colors={['#0038F5', '#9F03FF']}
                   useAngle={true}
                   angle={114.44}
-                  style={[styles.gradientButton, globalStyle.buttonRadius]}>
+                  style={globalStyle.buttonRadius}>
                   <Text style={styles.textButton}>Place a bid</Text>
                 </LinearGradient>
               </TouchableOpacity>
