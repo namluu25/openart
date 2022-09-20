@@ -37,19 +37,17 @@ interface DocumentData {
   hash?: string;
 }
 
-const userID = authentication.currentUser?.uid || auth().currentUser?.uid;
-
 export const Account = (props: Props) => {
+  const userID = authentication.currentUser?.uid || auth().currentUser?.uid;
   useEffect(() => {
-    const getFirestore = async () => {
-      await firestore()
-        .collection('Users')
-        .doc(userID)
-        .get()
-        .then(documentSnapshot => setUserData(documentSnapshot.data()!));
-    };
-    getFirestore();
-  }, []);
+    const subscriber = firestore()
+      .collection('Users')
+      .doc(userID)
+      .onSnapshot(documentSnapshot => {
+        setUserData(documentSnapshot.data()!);
+      });
+    return () => subscriber();
+  }, [userID]);
   const [userData, setUserData] = useState<DocumentData>({});
   const [isSwitchOn, setIsSwitchOn] = useState(false);
   const onToggleSwitch = () => setIsSwitchOn(!isSwitchOn);
