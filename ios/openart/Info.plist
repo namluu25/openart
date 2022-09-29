@@ -50,7 +50,7 @@
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string/>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Photo library access requires to upload photo<string/>
+	<string/>
 	<key>NSCameraUsageDescription</key>
 	<string/>
 	<key>UIAppFonts</key>
