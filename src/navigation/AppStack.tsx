@@ -15,7 +15,8 @@ import {
   ProfileEdit,
   SearchFilter,
   SearchPopup,
-} from 'screens';
+} from 'screens/user';
+import { Profile } from 'screens/creator';
 import { authentication } from 'firebase/config';
 import auth from '@react-native-firebase/auth';
 import firestore from '@react-native-firebase/firestore';
@@ -43,7 +44,8 @@ export const AppStack = () => {
   }, []);
   return route !== null ? (
     <Stack.Navigator
-      initialRouteName={route as 'ProfileEdit' | 'Home'}
+      initialRouteName={'Profile'}
+      // {route as 'ProfileEdit' | 'Home'}
       screenOptions={{ headerShown: false }}>
       <Stack.Screen name="Home" component={Home} />
       <Stack.Screen name="Menu" component={Menu} />
@@ -59,6 +61,7 @@ export const AppStack = () => {
       <Stack.Screen name="ProfileEdit" component={ProfileEdit} />
       <Stack.Screen name="SearchFilter" component={SearchFilter} />
       <Stack.Screen name="SearchPopup" component={SearchPopup} />
+      <Stack.Screen name="Profile" component={Profile} />
     </Stack.Navigator>
   ) : null;
 };

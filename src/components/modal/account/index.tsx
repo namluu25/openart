@@ -53,6 +53,7 @@ export const Account = (props: Props) => {
   const onToggleSwitch = () => setIsSwitchOn(!isSwitchOn);
   const navigation = useNavigation();
   const [visibleAccount, setVisibleAccount] = useState(false);
+  console.log(visibleAccount);
   const signingOut = () => {
     signOut(authentication).catch(error => console.log(error));
     auth()
