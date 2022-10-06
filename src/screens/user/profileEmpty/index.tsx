@@ -4,7 +4,7 @@ import { Header, ShareButton, Footer } from 'components';
 import styles from './styles';
 import { globalStyle } from 'theme/globalStyle';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { Items } from 'screens/profileMock';
+import { Items } from 'screens/user/profileMock';
 import { authentication } from 'firebase/config';
 import { useNavigation } from '@react-navigation/native';
 import firestore from '@react-native-firebase/firestore';

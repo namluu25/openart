@@ -14,7 +14,7 @@ import { faMicrophone } from '@fortawesome/free-solid-svg-icons';
 import Slider from '@react-native-community/slider';
 import styles from './styles';
 import axios from 'axios';
-import { CreatedArt } from 'screens/profileMock';
+import { CreatedArt } from 'screens/user/profileMock';
 import Close from '@images/icon/Close.svg';
 import ArrowDown from '@images/icon/ArrowDown.svg';
 import Plus from '@images/icon/Plus.svg';
