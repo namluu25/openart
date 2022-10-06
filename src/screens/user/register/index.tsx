@@ -31,7 +31,7 @@ export const Register = () => {
   const avatar = '';
   const genHash = () => {
     const characters = 'abcdefghijklmnopqrstuvwxyz0123456789';
-    let result = ' ';
+    let result = '';
     const charactersLength = characters.length;
     for (let i = 0; i < 17; i++) {
       result += characters.charAt(Math.floor(Math.random() * charactersLength));
@@ -39,6 +39,7 @@ export const Register = () => {
     return result;
   };
   const hash = genHash();
+  const [errorMessage, setErrorMessage] = useState('');
   const registerUser = async () => {
     await createUserWithEmailAndPassword(authentication, email, password)
       .then(userCredentials => {
@@ -50,18 +51,13 @@ export const Register = () => {
           .collection('Users')
           .doc(userCredentials.user.uid)
           .set({ name, email, username, avatar, hash });
-        Promise.all([userProfile, firestoreStore])
-          .then(() => {
-            Toast.show({
-              type: 'success',
-              text1: 'Register user successfully',
-            });
-            navigation.navigate('Login' as never);
-          })
-          .catch(error => console.log(error));
+        Promise.all([userProfile, firestoreStore]).catch(error =>
+          console.log(error),
+        );
       })
       .catch(error => {
         console.log(error.message);
+        setErrorMessage(error.message);
         if (error.message === 'Firebase: Error (auth/email-already-in-use).') {
           Toast.show({
             type: 'error',
@@ -79,6 +75,13 @@ export const Register = () => {
           });
         }
       });
+    if (errorMessage === '') {
+      Toast.show({
+        type: 'success',
+        text1: 'Register user successfully',
+      });
+      navigation.navigate('Login' as never);
+    }
   };
 
   return (
