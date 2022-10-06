@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>14813577460-sjbck78k9oqb607fruo1rl15ecot4and.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.14813577460-sjbck78k9oqb607fruo1rl15ecot4and</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>14813577460-a10rqleb2cg3nt985f21r1o4gnjdkmun.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAIlo-UtToGxLrWkubPznoo7101eHXEyts</string>
+	<key>GCM_SENDER_ID</key>
+	<string>14813577460</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>org.reactjs.native.example.openart</string>
+	<key>PROJECT_ID</key>
+	<string>openart-signin</string>
+	<key>STORAGE_BUCKET</key>
+	<string>openart-signin.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:14813577460:ios:4627dd25daeb5c53105ea1</string>
+	<key>DATABASE_URL</key>
+	<string>https://openart-signin-default-rtdb.firebaseio.com</string>
+</dict>
+</plist>
