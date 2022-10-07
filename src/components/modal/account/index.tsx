@@ -26,7 +26,7 @@ import Wallet from '@images/icon/Wallet.svg';
 
 interface Props {
   visbile?: boolean;
-  handleClose?: () => void;
+  handleClose: () => void;
 }
 
 interface DocumentData {
@@ -52,8 +52,6 @@ export const Account = (props: Props) => {
   const [isSwitchOn, setIsSwitchOn] = useState(false);
   const onToggleSwitch = () => setIsSwitchOn(!isSwitchOn);
   const navigation = useNavigation();
-  const [visibleAccount, setVisibleAccount] = useState(false);
-  console.log(visibleAccount);
   const signingOut = () => {
     signOut(authentication).catch(error => console.log(error));
     auth()
@@ -113,7 +111,7 @@ export const Account = (props: Props) => {
                 <TouchableOpacity
                   onPress={() => {
                     navigation.navigate('ProfileEmpty' as never);
-                    setVisibleAccount(false);
+                    props.handleClose();
                   }}
                   style={styles.touchableLine}>
                   <People />
@@ -147,10 +145,6 @@ export const Account = (props: Props) => {
                   onValueChange={onToggleSwitch}
                 />
               </View>
-              <Account
-                visbile={visibleAccount}
-                handleClose={() => setVisibleAccount(false)}
-              />
             </View>
           </TouchableWithoutFeedback>
         </TouchableOpacity>
