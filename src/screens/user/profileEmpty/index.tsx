@@ -1,46 +1,17 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { View, Text, ScrollView, TouchableOpacity, Image } from 'react-native';
 import { Header, ShareButton, Footer } from 'components';
 import styles from './styles';
 import { globalStyle } from 'theme/globalStyle';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { Items } from 'screens/user/profileMock';
-import { authentication } from 'firebase/config';
 import { useNavigation } from '@react-navigation/native';
-import firestore from '@react-native-firebase/firestore';
-import axios from 'axios';
-import auth from '@react-native-firebase/auth';
 import Copy from '@images/icon/Copy.svg';
 import Edit from '@images/icon/Edit.svg';
 import More from '@images/icon/More.svg';
-
-interface DocumentData {
-  avatar?: string;
-  email?: string;
-  name?: string;
-  username?: string;
-  hash?: string;
-}
+import { useFetchData } from 'hooks/useFetchData';
 
 export const ProfileEmpty = () => {
-  const userID = authentication.currentUser?.uid || auth().currentUser?.uid;
-  useEffect(() => {
-    axios
-      .get('https://62fa6791ffd7197707ebe3f2.mockapi.io/profile')
-      .then(res => {
-        setApiData(res.data);
-      })
-      .catch(error => console.log(error));
-    const subscriber = firestore()
-      .collection('Users')
-      .doc(userID)
-      .onSnapshot(documentSnapshot => {
-        setUserData(documentSnapshot.data()!);
-      });
-    return () => subscriber();
-  }, [userID]);
-  const [userData, setUserData] = useState<DocumentData>({});
-  const [apiData, setApiData] = useState<Array<Items>>([]);
+  const { profileData, userData } = useFetchData();
   const navigation = useNavigation();
   return (
     <SafeAreaView>
@@ -49,7 +20,7 @@ export const ProfileEmpty = () => {
         <View>
           <Image
             style={styles.coverImage}
-            source={{ uri: apiData[0]?.coverImage }}
+            source={{ uri: profileData[0]?.coverImage }}
           />
           <View style={styles.coverButtonView}>
             {/* button */}

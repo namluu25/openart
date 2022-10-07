@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React, { useState } from 'react';
 import LinearGradient from 'react-native-linear-gradient';
 import { ScrollView, View, Text, TouchableOpacity, Image } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -13,26 +12,10 @@ import { HotBid } from './hotBid';
 import { Header, ItemContainer, Footer } from 'components';
 import { PlaceBid } from '@modal/placeBid';
 import { globalStyle } from 'theme/globalStyle';
-
-interface Items {
-  id: number;
-  name: string;
-  avatar: string;
-  creator_name: string;
-  image: string;
-  sold_state: boolean;
-}
+import { useFetchData, HomeItems } from 'hooks/useFetchData';
 
 export const Home = () => {
-  useEffect(() => {
-    axios
-      .get('https://62fa6791ffd7197707ebe3f2.mockapi.io/homepage')
-      .then(res => {
-        setApiData(res.data);
-      })
-      .catch(error => console.log(error));
-  }, []);
-  const [apiData, setApiData] = useState<Array<Items>>([]);
+  const { homeData } = useFetchData();
   const [visible, setVisible] = useState(false);
   const navigation = useNavigation();
   return (
@@ -71,10 +54,10 @@ export const Home = () => {
           </View>
 
           <ItemContainer
-            image={apiData[0]?.image}
-            name={apiData[0]?.name}
-            avatar={apiData[0]?.avatar}
-            creator_name={apiData[0]?.creator_name}
+            image={homeData[0]?.image}
+            name={homeData[0]?.name}
+            avatar={homeData[0]?.avatar}
+            creator_name={homeData[0]?.creator_name}
             navi={'DetailsAuction'}
           />
 
@@ -119,7 +102,7 @@ export const Home = () => {
                 </Text>
               </TouchableOpacity>
             </View>
-            {apiData.slice(1).map((item: Items) => {
+            {homeData.slice(1).map((item: HomeItems) => {
               return (
                 <View key={item.id}>
                   <ItemContainer

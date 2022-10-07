@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import {
   Modal,
   Text,
@@ -14,8 +14,6 @@ import { globalStyle } from 'theme/globalStyle';
 import { authentication } from 'firebase/config';
 import auth from '@react-native-firebase/auth';
 import { signOut } from 'firebase/auth';
-import firestore from '@react-native-firebase/firestore';
-
 import ArrowBack from '@images/icon/ArrowBack.svg';
 import Copy from '@images/icon/Copy.svg';
 import Hide from '@images/icon/Hide.svg';
@@ -23,42 +21,24 @@ import Invoice from '@images/icon/Invoice.svg';
 import People from '@images/icon/People.svg';
 import Picture from '@images/icon/Picture.svg';
 import Wallet from '@images/icon/Wallet.svg';
+import { useFetchData } from 'hooks/useFetchData';
 
 interface Props {
   visbile?: boolean;
   handleClose: () => void;
 }
 
-interface DocumentData {
-  avatar?: string;
-  email?: string;
-  name?: string;
-  username?: string;
-  hash?: string;
-}
-
 export const Account = (props: Props) => {
-  const userID = authentication.currentUser?.uid || auth().currentUser?.uid;
-  useEffect(() => {
-    const subscriber = firestore()
-      .collection('Users')
-      .doc(userID)
-      .onSnapshot(documentSnapshot => {
-        setUserData(documentSnapshot.data()!);
-      });
-    return () => subscriber();
-  }, [userID]);
-  const [userData, setUserData] = useState<DocumentData>({});
+  const { userData } = useFetchData();
+  const navigation = useNavigation();
   const [isSwitchOn, setIsSwitchOn] = useState(false);
   const onToggleSwitch = () => setIsSwitchOn(!isSwitchOn);
-  const navigation = useNavigation();
   const signingOut = () => {
     signOut(authentication).catch(error => console.log(error));
     auth()
       .signOut()
       .catch(error => console.log(error));
   };
-
   return (
     <>
       <Modal

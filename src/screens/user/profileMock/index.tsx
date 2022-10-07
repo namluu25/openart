@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import {
   View,
   Text,
@@ -8,68 +8,19 @@ import {
   Linking,
 } from 'react-native';
 import { Header, ItemContainer, ShareButton, Footer } from 'components';
-import axios from 'axios';
 import { globalStyle } from 'theme/globalStyle';
 import styles from './styles';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { authentication } from 'firebase/config';
-import auth from '@react-native-firebase/auth';
-import firestore from '@react-native-firebase/firestore';
 import Copy from '@images/icon/Copy.svg';
 import Instagram from '@images/icon/Instagram.svg';
 import Link from '@images/icon/Link.svg';
 import More from '@images/icon/More.svg';
 import Plus from '@images/icon/Plus.svg';
 import Twitter from '@images/icon/Twitter.svg';
-
-export interface Items {
-  id?: number;
-  name?: string;
-  following?: string;
-  followers?: string;
-  description?: string;
-  avatar?: string;
-  coverImage?: string;
-  hash?: string;
-}
-
-export interface CreatedArt {
-  id: number;
-  image: string;
-  name: string;
-  avatar: string;
-  creatorName: string;
-}
-
-interface DocumentData {
-  avatar?: string;
-  email?: string;
-  name?: string;
-  username?: string;
-  hash?: string;
-}
+import { useFetchData, ProfileCreatedArt } from 'hooks/useFetchData';
 
 export const ProfileMock = () => {
-  const userID = authentication.currentUser?.uid || auth().currentUser?.uid;
-  useEffect(() => {
-    axios
-      .get('https://62fa6791ffd7197707ebe3f2.mockapi.io/profile')
-      .then(res => {
-        setApiData(res.data);
-        setArtData(res.data[0].createdArt);
-      })
-      .catch(error => console.log(error));
-    const subscriber = firestore()
-      .collection('Users')
-      .doc(userID)
-      .onSnapshot(documentSnapshot => {
-        setUserData(documentSnapshot.data()!);
-      });
-    return () => subscriber();
-  }, [userID]);
-  const [userData, setUserData] = useState<DocumentData>({});
-  const [apiData, setApiData] = useState<Array<Items>>([]);
-  const [artData, setArtData] = useState<Array<CreatedArt>>([]);
+  const { profileData, profileArtData, userData } = useFetchData();
   return (
     <SafeAreaView>
       <Header />
@@ -77,7 +28,7 @@ export const ProfileMock = () => {
         <View>
           <Image
             style={styles.coverImage}
-            source={{ uri: apiData[0]?.coverImage }}
+            source={{ uri: profileData[0]?.coverImage }}
           />
           <View style={styles.buttonView}>
             {/* button */}
@@ -101,12 +52,16 @@ export const ProfileMock = () => {
           <View>
             <View style={styles.followView}>
               <View>
-                <Text style={styles.followNumber}>{apiData[0]?.following}</Text>
+                <Text style={styles.followNumber}>
+                  {profileData[0]?.following}
+                </Text>
                 <Text style={styles.followText}>Following</Text>
               </View>
 
               <View>
-                <Text style={styles.followNumber}>{apiData[0]?.followers}</Text>
+                <Text style={styles.followNumber}>
+                  {profileData[0]?.followers}
+                </Text>
                 <Text style={styles.followText}>Followers</Text>
               </View>
 
@@ -139,7 +94,7 @@ export const ProfileMock = () => {
             </View>
 
             <Text style={styles.userDescription}>
-              {apiData[0]?.description}
+              {profileData[0]?.description}
             </Text>
             <Text style={styles.memberSinceText}>Member since 2021</Text>
             <View style={[globalStyle.flexRow, globalStyle.justifyStart]}>
@@ -176,7 +131,7 @@ export const ProfileMock = () => {
             </View>
           </View>
 
-          {artData.map((art: CreatedArt) => {
+          {profileArtData.map((art: ProfileCreatedArt) => {
             return (
               <View key={art.id}>
                 <ItemContainer

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -13,9 +13,7 @@ import { Header, ShareButton, Footer } from 'components';
 import styles from './styles';
 import { globalStyle } from 'theme/globalStyle';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import axios from 'axios';
 import { authentication } from 'firebase/config';
-import { Items } from 'screens/user/profileMock';
 import auth from '@react-native-firebase/auth';
 import { onAuthStateChanged, updateEmail, updateProfile } from 'firebase/auth';
 import firestore from '@react-native-firebase/firestore';
@@ -32,35 +30,11 @@ import More from '@images/icon/More.svg';
 import Picture from '@images/icon/Picture.svg';
 import Tiktok from '@images/icon/Tiktok.svg';
 import Youtube from '@images/icon/Youtube.svg';
-
-interface DocumentData {
-  avatar?: string;
-  email?: string;
-  name?: string;
-  username?: string;
-  hash?: string;
-}
+import { useFetchData } from 'hooks/useFetchData';
 
 export const ProfileEdit = () => {
   const userID = authentication.currentUser?.uid || auth().currentUser?.uid;
-  useEffect(() => {
-    axios
-      .get('https://62fa6791ffd7197707ebe3f2.mockapi.io/profile')
-      .then(res => {
-        setApiData(res.data);
-      })
-      .catch(error => console.log(error));
-    firestore()
-      .collection('Users')
-      .doc(userID)
-      .get()
-      .then(documentSnapshot => {
-        setUserData(documentSnapshot.data()!);
-      });
-    // return () => subscriber();r
-  }, [userID]);
-  const [userData, setUserData] = useState<DocumentData>({});
-  const [apiData, setApiData] = useState<Array<Items>>([]);
+  const { profileData, userData } = useFetchData();
   const navigation = useNavigation();
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -137,7 +111,7 @@ export const ProfileEdit = () => {
         <View>
           <Image
             style={styles.coverImage}
-            source={{ uri: apiData[0]?.coverImage }}
+            source={{ uri: profileData[0]?.coverImage }}
           />
           <View style={styles.coverButtonView}>
             {/* button */}

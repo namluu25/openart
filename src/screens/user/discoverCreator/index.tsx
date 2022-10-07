@@ -1,30 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { View, Text, ScrollView, TouchableOpacity, Image } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import axios from 'axios';
 import { Header, Footer, GradientButton } from 'components';
 import styles from './styles';
 import Plus from '@images/icon/Plus.svg';
-
-interface Items {
-  id: number;
-  name: string;
-  avatar: string;
-  coverImage: string;
-  description: string;
-  followers: string;
-}
+import { useFetchData, CreatorItems } from 'hooks/useFetchData';
 
 export const DiscoverCreator = () => {
-  const [apiData, setApiData] = useState<Array<Items>>([]);
-  useEffect(() => {
-    axios
-      .get('https://62fa6791ffd7197707ebe3f2.mockapi.io/creator')
-      .then(res => {
-        setApiData(res.data);
-      })
-      .catch(error => console.log(error));
-  }, []);
+  const { creatorData } = useFetchData();
   return (
     <SafeAreaView>
       <Header />
@@ -39,7 +22,7 @@ export const DiscoverCreator = () => {
               value={[{ name: 'Feature Creatior' }, { name: 'All Creator' }]}
             />
           </View>
-          {apiData.map((item: Items) => {
+          {creatorData.map((item: CreatorItems) => {
             return (
               <View key={item.id}>
                 <View style={styles.itemMargin}>

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import {
   View,
   Text,
@@ -11,24 +11,15 @@ import { Header, ItemContainer, Footer, GradientButton } from 'components';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import { faMicrophone } from '@fortawesome/free-solid-svg-icons';
+import { useFetchData, ProfileCreatedArt } from 'hooks/useFetchData';
 import Slider from '@react-native-community/slider';
 import styles from './styles';
-import axios from 'axios';
-import { CreatedArt } from 'screens/user/profileMock';
 import Close from '@images/icon/Close.svg';
 import ArrowDown from '@images/icon/ArrowDown.svg';
 import Plus from '@images/icon/Plus.svg';
 
 export const SearchFilter = () => {
-  useEffect(() => {
-    axios
-      .get('https://62fa6791ffd7197707ebe3f2.mockapi.io/profile')
-      .then(res => {
-        setArtData(res.data[0].createdArt);
-      })
-      .catch(error => console.log(error));
-  }, []);
-  const [artData, setArtData] = useState<Array<CreatedArt>>([]);
+  const { profileArtData } = useFetchData();
   return (
     <SafeAreaView>
       <Header />
@@ -116,7 +107,7 @@ export const SearchFilter = () => {
             <Close />
             <Text style={styles.resetButtonText}>Reset all filter</Text>
           </TouchableOpacity>
-          {artData.map((art: CreatedArt) => {
+          {profileArtData.map((art: ProfileCreatedArt) => {
             return (
               <View key={art.id}>
                 <ItemContainer
