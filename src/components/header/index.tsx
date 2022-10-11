@@ -4,7 +4,7 @@ import { useNavigation } from '@react-navigation/native';
 import { Account } from '@modal/account';
 import { Notification } from '@modal/notification';
 import styles from './styles';
-import { globalStyle } from 'theme/globalStyle';
+import globalStyle from 'theme/globalStyle';
 import Menu from '../../assets/images/icon/Menu.svg';
 import Notifications from '@images/icon/Notifications.svg';
 import People from '@images/icon/People.svg';
@@ -24,7 +24,7 @@ export const Header = () => {
           style={styles.logo}
         />
       </TouchableOpacity>
-      <View style={[globalStyle.flexRow, globalStyle.justifyCenter]}>
+      <View style={[globalStyle().flexRow, globalStyle().justifyCenter]}>
         <TouchableOpacity
           onPress={() => setVisibleNotification(true)}
           style={
@@ -42,7 +42,7 @@ export const Header = () => {
           onPress={() => {
             navigation.navigate('Menu' as never);
           }}>
-          <Menu style={styles.headerIcon} />
+          <Menu style={styles.headerIcon} stroke={'#222222'} />
         </TouchableOpacity>
       </View>
       <Account

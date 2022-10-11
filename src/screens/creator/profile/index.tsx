@@ -1,8 +1,8 @@
 import React from 'react';
 import { View, Text, ScrollView, TouchableOpacity, Image } from 'react-native';
 import { Header, ItemContainer, ShareButton, Footer } from 'components';
-import { globalStyle } from 'theme/globalStyle';
-import styles from './styles';
+import globalStyle from 'theme/globalStyle';
+import { Styles } from './styles';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import Copy from '@images/icon/Copy.svg';
 import Link from '@images/icon/Link.svg';
@@ -23,78 +23,78 @@ export const Profile = () => {
       <ScrollView>
         <View>
           <Image
-            style={styles.coverImage}
+            style={Styles().coverImage}
             source={{ uri: profileData[0]?.coverImage }}
           />
-          <Image style={styles.avatar} source={{ uri: userData.avatar }} />
+          <Image style={Styles().avatar} source={{ uri: userData.avatar }} />
 
-          <Text style={styles.userName}>{userData.name}</Text>
-          <View style={[globalStyle.flexRow, globalStyle.selfCenter]}>
-            <Text style={styles.userHash}>{userData.hash}</Text>
-            <TouchableOpacity style={styles.copyIcon}>
+          <Text style={Styles().userName}>{userData.name}</Text>
+          <View style={[globalStyle().flexRow, globalStyle().selfCenter]}>
+            <Text style={Styles().userHash}>{userData.hash}</Text>
+            <TouchableOpacity style={Styles().copyIcon}>
               <Copy />
             </TouchableOpacity>
           </View>
         </View>
 
-        <View style={styles.secondView}>
-          <TouchableOpacity style={styles.box}>
-            <View style={styles.boxInner}>
+        <View style={Styles().secondView}>
+          <TouchableOpacity style={Styles().box}>
+            <View style={Styles().boxInner}>
               <View
                 style={[
-                  globalStyle.flexRow,
-                  globalStyle.itemCenter,
-                  styles.boxMargin,
+                  globalStyle().flexRow,
+                  globalStyle().itemCenter,
+                  Styles().boxMargin,
                 ]}>
                 <Mail />
-                <Text style={styles.boxText}>{userData.email}</Text>
+                <Text style={Styles().boxText}>{userData.email}</Text>
               </View>
               <View
                 style={[
-                  globalStyle.flexRow,
-                  globalStyle.itemCenter,
-                  styles.boxMargin,
+                  globalStyle().flexRow,
+                  globalStyle().itemCenter,
+                  Styles().boxMargin,
                 ]}>
                 <Card />
-                <Text style={[styles.boxText, styles.boxTextUnderline]}>
+                <Text style={[Styles().boxText, Styles().boxTextUnderline]}>
                   Linked
                 </Text>
               </View>
               <View
                 style={[
-                  globalStyle.flexRow,
-                  globalStyle.itemCenter,
-                  styles.boxMargin,
+                  globalStyle().flexRow,
+                  globalStyle().itemCenter,
+                  Styles().boxMargin,
                 ]}>
                 <Call />
-                <Text style={styles.boxText}>(+60) 264 859 62</Text>
+                <Text style={Styles().boxText}>(+60) 264 859 62</Text>
               </View>
-              <View style={[globalStyle.flexRow, globalStyle.itemCenter]}>
+              <View style={[globalStyle().flexRow, globalStyle().itemCenter]}>
                 <Link />
-                <Text style={styles.boxText}>OpenArt.design</Text>
+                <Text style={Styles().boxText}>OpenArt.design</Text>
               </View>
               <View
                 style={[
-                  globalStyle.justifyCenter,
-                  globalStyle.flexRow,
-                  styles.boxButtonMargin,
+                  globalStyle().justifyCenter,
+                  globalStyle().flexRow,
+                  Styles().boxButtonMargin,
                 ]}>
-                <TouchableOpacity style={styles.followButton}>
+                <TouchableOpacity style={Styles().followButton}>
                   <FontAwesomeIcon icon={faHeart} size={24} color={'white'} />
-                  <Text style={styles.followButtonText}>Follow</Text>
+                  <Text style={Styles().followButtonText}>Follow</Text>
                 </TouchableOpacity>
-                <ShareButton style={styles.coverButtonShare} />
-                <TouchableOpacity style={styles.coverButtonMenu}>
-                  <More style={styles.coverButtonIcon} />
+                <ShareButton style={Styles().coverButtonShare} />
+                <TouchableOpacity style={Styles().coverButtonMenu}>
+                  <More style={Styles().coverButtonIcon} />
                 </TouchableOpacity>
               </View>
-              <TouchableOpacity style={styles.followRowButton}>
-                <Edit style={styles.followRowButtonImage} />
+              <TouchableOpacity style={Styles().followRowButton}>
+                <Edit style={Styles().followRowButtonImage} />
               </TouchableOpacity>
-              <Text style={styles.memberText}>Member since 2021</Text>
+              <Text style={Styles().memberText}>Member since 2021</Text>
             </View>
           </TouchableOpacity>
-          <Text style={styles.title}>My items</Text>
+          <Text style={Styles().title}>My items</Text>
 
           {profileArtData.map((art: ProfileCreatedArt) => {
             return (
@@ -106,18 +106,21 @@ export const Profile = () => {
                   creator_name={art.creatorName}
                   navi={'DetailsSold'}
                 />
-                <TouchableOpacity style={styles.productButton}>
-                  <Text style={styles.productButtonTextSmall}>
+                <TouchableOpacity style={Styles().productButton}>
+                  <Text style={Styles().productButtonTextSmall}>
                     Sold For
-                    <Text style={styles.productButtonTextLarge}> 2.00 ETH</Text>
+                    <Text style={Styles().productButtonTextLarge}>
+                      {' '}
+                      2.00 ETH
+                    </Text>
                   </Text>
                 </TouchableOpacity>
               </View>
             );
           })}
 
-          <TouchableOpacity style={styles.loadMoreButton}>
-            <Text style={styles.loadMoreButtonText}>Load more</Text>
+          <TouchableOpacity style={Styles().loadMoreButton}>
+            <Text style={Styles().loadMoreButtonText}>Load more</Text>
           </TouchableOpacity>
         </View>
         <Footer />

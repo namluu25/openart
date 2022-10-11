@@ -13,7 +13,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { faGoogle } from '@fortawesome/free-brands-svg-icons';
 import styles from './styles';
-import { globalStyle } from 'theme/globalStyle';
+import globalStyle from 'theme/globalStyle';
 import { GoogleSignin } from '@react-native-google-signin/google-signin';
 import auth from '@react-native-firebase/auth';
 import { authentication } from 'firebase/config';
@@ -92,24 +92,24 @@ export const Login = () => {
   };
 
   return (
-    <SafeAreaView style={[globalStyle.flex, globalStyle.justifyCenter]}>
+    <SafeAreaView style={[globalStyle().flex, globalStyle().justifyCenter]}>
       <KeyboardAvoidingView behavior="padding">
         <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
           <View>
             <Image
               source={require('@images/icon/logo-header.png')}
-              style={styles.logoImage}
+              style={styles().logoImage}
             />
-            <View style={styles.inputView}>
+            <View style={styles().inputView}>
               <TextInput
-                style={styles.inputBox}
+                style={styles().inputBox}
                 placeholderTextColor="#FCFCFC"
                 placeholder="Email address or phone number"
                 value={email}
                 onChangeText={text => setEmail(text)}
               />
               <TextInput
-                style={styles.inputBox}
+                style={styles().inputBox}
                 placeholderTextColor="#FCFCFC"
                 placeholder="Password"
                 value={password}
@@ -118,37 +118,39 @@ export const Login = () => {
               />
             </View>
 
-            <View style={styles.buttonView}>
+            <View style={styles().buttonView}>
               <TouchableOpacity
                 onPress={signinUser}
-                style={[globalStyle.buttonRadius, styles.buttonColor]}>
-                <Text style={styles.buttonText}>Login</Text>
+                style={[globalStyle().buttonRadius, styles().buttonColor]}>
+                <Text style={styles().buttonText}>Login</Text>
               </TouchableOpacity>
 
               <TouchableOpacity
-                style={styles.googleButton}
+                style={styles().googleButton}
                 onPress={() => onGoogleButtonPress()}>
                 <FontAwesomeIcon
                   icon={faGoogle}
-                  style={styles.googleButtonLogo}
+                  style={styles().googleButtonLogo}
                 />
-                <Text style={styles.googleButtonText}>Sign in with Google</Text>
+                <Text style={styles().googleButtonText}>
+                  Sign in with Google
+                </Text>
               </TouchableOpacity>
               <View
                 style={[
-                  globalStyle.itemCenter,
-                  styles.registerButton,
-                  globalStyle.flexRow,
-                  globalStyle.selfCenter,
+                  globalStyle().itemCenter,
+                  styles().registerButton,
+                  globalStyle().flexRow,
+                  globalStyle().selfCenter,
                 ]}>
-                <Text style={styles.registerButtonSmallText}>
+                <Text style={styles().registerButtonSmallText}>
                   Don't have an account?
                 </Text>
                 <TouchableOpacity
                   onPress={() => {
                     navigation.navigate('Register' as never);
                   }}>
-                  <Text style={[styles.registerButtonText]}> Register</Text>
+                  <Text style={[styles().registerButtonText]}> Register</Text>
                 </TouchableOpacity>
               </View>
             </View>

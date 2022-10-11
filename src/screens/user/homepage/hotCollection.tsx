@@ -1,7 +1,7 @@
 import { useNavigation } from '@react-navigation/native';
 import React from 'react';
 import { View, Text, Image, TouchableOpacity } from 'react-native';
-import { globalStyle } from 'theme/globalStyle';
+import globalStyle from 'theme/globalStyle';
 import styles from './hotCollection-styles';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { faHeart } from '@fortawesome/free-regular-svg-icons';
@@ -18,11 +18,11 @@ export const HotCollection = () => {
 
       <View
         style={[
-          globalStyle.flexRow,
+          globalStyle().flexRow,
           styles.imageView,
-          globalStyle.justifyBetween,
+          globalStyle().justifyBetween,
         ]}>
-        <View style={[globalStyle.flexColumn, globalStyle.justifyBetween]}>
+        <View style={[globalStyle().flexColumn, globalStyle().justifyBetween]}>
           {/* image col 1 */}
           <TouchableOpacity
             style={styles.imageTouch}
@@ -46,7 +46,7 @@ export const HotCollection = () => {
           </TouchableOpacity>
         </View>
 
-        <View style={[globalStyle.flexColumn, globalStyle.justifyBetween]}>
+        <View style={[globalStyle().flexColumn, globalStyle().justifyBetween]}>
           {/* image col 2 */}
           <TouchableOpacity
             style={styles.imageTouch}
@@ -71,7 +71,7 @@ export const HotCollection = () => {
         </View>
       </View>
 
-      <View style={[globalStyle.flexRow, globalStyle.justifyBetween]}>
+      <View style={[globalStyle().flexRow, globalStyle().justifyBetween]}>
         {/* image title and button */}
         <Text style={styles.titleImage}>
           {/* title */}
@@ -88,9 +88,9 @@ export const HotCollection = () => {
         {/* author and follow button */}
         <View
           style={[
-            globalStyle.flexRow,
-            globalStyle.justifyBetween,
-            globalStyle.itemCenter,
+            globalStyle().flexRow,
+            globalStyle().justifyBetween,
+            globalStyle().itemCenter,
           ]}>
           <View>
             <TouchableOpacity>

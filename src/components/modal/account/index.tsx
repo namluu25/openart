@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import {
   Modal,
   Text,
@@ -10,7 +10,7 @@ import {
 import { useNavigation } from '@react-navigation/native';
 import { Switch } from 'react-native-paper';
 import styles from './styles';
-import { globalStyle } from 'theme/globalStyle';
+import globalStyle from 'theme/globalStyle';
 import { authentication } from 'firebase/config';
 import auth from '@react-native-firebase/auth';
 import { signOut } from 'firebase/auth';
@@ -22,6 +22,7 @@ import People from '@images/icon/People.svg';
 import Picture from '@images/icon/Picture.svg';
 import Wallet from '@images/icon/Wallet.svg';
 import { useFetchData } from 'hooks/useFetchData';
+import { ThemeContext } from '../../../../App';
 
 interface Props {
   visbile?: boolean;
@@ -29,10 +30,14 @@ interface Props {
 }
 
 export const Account = (props: Props) => {
+  const { theme, setTsheme } = useContext(ThemeContext);
   const { userData } = useFetchData();
   const navigation = useNavigation();
-  const [isSwitchOn, setIsSwitchOn] = useState(false);
-  const onToggleSwitch = () => setIsSwitchOn(!isSwitchOn);
+  const [isSwitchOn, setIsSwitchOn] = useState(true);
+  const onToggleSwitch = () => {
+    setIsSwitchOn(!isSwitchOn);
+    setTheme(theme === 'light' ? 'dark' : 'light');
+  };
   const signingOut = () => {
     signOut(authentication).catch(error => console.log(error));
     auth()
@@ -47,79 +52,79 @@ export const Account = (props: Props) => {
         visible={props.visbile}
         onRequestClose={props.handleClose}>
         <TouchableOpacity
-          style={styles.centeredView}
+          style={styles().centeredView}
           onPress={props.handleClose}
           activeOpacity={1}>
-          <View style={[styles.triangle]} />
+          <View style={[styles().triangle]} />
           <TouchableWithoutFeedback>
-            <View style={[styles.modalView]}>
-              <View style={styles.firstRow}>
+            <View style={[styles().modalView]}>
+              <View style={styles().firstRow}>
                 <Image
-                  style={styles.avatar}
+                  style={styles().avatar}
                   source={
                     !userData.avatar
                       ? require('@images/avatar/blank.png')
                       : { uri: userData.avatar }
                   }
                 />
-                <View style={globalStyle.selfCenter}>
-                  <Text style={styles.username}>{userData.name}</Text>
-                  <View style={globalStyle.flexRow}>
-                    <Text style={styles.hash}>{userData.hash}</Text>
-                    <TouchableOpacity style={styles.copyIcon}>
+                <View style={globalStyle().selfCenter}>
+                  <Text style={styles().username}>{userData.name}</Text>
+                  <View style={globalStyle().flexRow}>
+                    <Text style={styles().hash}>{userData.hash}</Text>
+                    <TouchableOpacity style={styles().copyIcon}>
                       <Copy />
                     </TouchableOpacity>
                   </View>
                 </View>
               </View>
 
-              <View style={styles.secondRow}>
-                <TouchableOpacity style={styles.walletBorder}>
-                  <Wallet style={styles.walletIcon} />
+              <View style={styles().secondRow}>
+                <TouchableOpacity style={styles().walletBorder}>
+                  <Wallet style={styles().walletIcon} />
                 </TouchableOpacity>
-                <View style={globalStyle.flexColumn}>
-                  <Text style={styles.balanceText}>Balance</Text>
-                  <View style={styles.secondRowBalance}>
-                    <Text style={styles.balance}>5.000 ETH</Text>
+                <View style={globalStyle().flexColumn}>
+                  <Text style={styles().balanceText}>Balance</Text>
+                  <View style={styles().secondRowBalance}>
+                    <Text style={styles().balance}>5.000 ETH</Text>
                     <TouchableOpacity>
-                      <Hide style={styles.hideIcon} />
+                      <Hide style={styles().hideIcon} />
                     </TouchableOpacity>
                   </View>
                 </View>
               </View>
-              <View style={styles.listItem}>
+              <View style={styles().listItem}>
                 <TouchableOpacity
                   onPress={() => {
                     navigation.navigate('ProfileEmpty' as never);
                     props.handleClose();
                   }}
-                  style={styles.touchableLine}>
+                  style={styles().touchableLine}>
                   <People />
-                  <Text style={styles.titleLine}>My account</Text>
+                  <Text style={styles().titleLine}>My account</Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.touchableLine}>
+                <TouchableOpacity style={styles().touchableLine}>
                   <Picture />
-                  <Text style={styles.titleLine}>My items</Text>
+                  <Text style={styles().titleLine}>My items</Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.touchableLine}>
+                <TouchableOpacity style={styles().touchableLine}>
                   <Invoice />
-                  <Text style={styles.titleLine}>My invoice</Text>
+                  <Text style={styles().titleLine}>My invoice</Text>
                 </TouchableOpacity>
                 <TouchableOpacity
-                  style={styles.touchableLine}
+                  style={styles().touchableLine}
                   onPress={signingOut}>
                   <ArrowBack />
-                  <Text style={styles.titleLine}>Sign out</Text>
+                  <Text style={styles().titleLine}>Sign out</Text>
                 </TouchableOpacity>
               </View>
               <View
                 // separator line
-                style={styles.separatorLine}
+                style={styles().separatorLine}
               />
-              <View style={styles.lastRow}>
-                <Text style={styles.lastRowText}>Dark mode</Text>
+              <View style={styles().lastRow}>
+                <Text style={styles().lastRowText}>Dark mode</Text>
                 <Switch
-                  style={styles.switch}
+                  style={styles().switch}
                   color="#004BFB"
                   value={isSwitchOn}
                   onValueChange={onToggleSwitch}

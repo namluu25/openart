@@ -23,5 +23,5 @@ export default StyleSheet.create({
     width: 140,
     height: 37,
   },
-  headerIcon: { width: 24, height: 24 },
+  headerIcon: { width: 24, height: 24, color: 'black' },
 });

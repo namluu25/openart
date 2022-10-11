@@ -14,41 +14,41 @@ export const Menu = () => {
     <SafeAreaView>
       <Header />
 
-      <View style={styles.menu}>
+      <View style={styles().menu}>
         <TouchableOpacity
           onPress={() => {
             navigation.navigate('About' as never);
           }}
-          style={styles.textMargin}>
-          <Text style={styles.menuText}>About OpenArt</Text>
+          style={styles().textMargin}>
+          <Text style={styles().menuText}>About OpenArt</Text>
         </TouchableOpacity>
         <TouchableOpacity
           onPress={() => {
             navigation.navigate('JoinCommunity' as never);
           }}
-          style={styles.textMargin}>
-          <Text style={styles.menuText}>Blog</Text>
+          style={styles().textMargin}>
+          <Text style={styles().menuText}>Blog</Text>
         </TouchableOpacity>
         <TouchableOpacity
           onPress={() => {
             navigation.navigate('FAQ' as never);
           }}
-          style={styles.textMargin}>
-          <Text style={styles.menuText}>Help</Text>
+          style={styles().textMargin}>
+          <Text style={styles().menuText}>Help</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.textMargin}>
-          <Text style={styles.menuText}>Contact</Text>
+        <TouchableOpacity style={styles().textMargin}>
+          <Text style={styles().menuText}>Contact</Text>
         </TouchableOpacity>
       </View>
       <TouchableOpacity
         onPress={() => setVisible(true)}
-        style={styles.marginButton}>
+        style={styles().marginButton}>
         <LinearGradient
           colors={['#0038F5', '#9F03FF']}
           useAngle={true}
           angle={114.44}
-          style={styles.button}>
-          <Text style={styles.buttonText}>Connect wallet</Text>
+          style={styles().button}>
+          <Text style={styles().buttonText}>Connect wallet</Text>
         </LinearGradient>
       </TouchableOpacity>
       <ConnectWallet visbile={visible} handleClose={() => setVisible(false)} />

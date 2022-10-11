@@ -8,7 +8,7 @@ import {
   TouchableOpacity,
   Dimensions,
 } from 'react-native';
-import { globalStyle } from 'theme/globalStyle';
+import globalStyle from 'theme/globalStyle';
 import styles from './hotBid-styles';
 import ArrowBack from '@images/icon/ArrowBack.svg';
 import ArrowForward from '@images/icon/ArrowForward.svg';
@@ -20,12 +20,12 @@ export const HotBid = () => {
   return (
     <View style={styles.hotBid}>
       <View style={styles.titleView}>
-        <View style={[globalStyle.flexRow, globalStyle.itemBaseline]}>
+        <View style={[globalStyle().flexRow, globalStyle().itemBaseline]}>
           <Image source={require('@images/icon/fire.png')} />
           <Text style={styles.titleText}> Hot bid</Text>
         </View>
 
-        <View style={globalStyle.flexRow}>
+        <View style={globalStyle().flexRow}>
           <TouchableOpacity
             onPress={() => {
               naviRef.current?.scrollTo({ x: 0, animated: true });
@@ -75,7 +75,7 @@ export const HotBid = () => {
             </View>
           </View>
           <View style={styles.itemInfo}>
-            <View style={[globalStyle.flexRow, globalStyle.itemBaseline]}>
+            <View style={[globalStyle().flexRow, globalStyle().itemBaseline]}>
               {/* tittle + 2nd row */}
               <Text style={styles.itemInfoTitle}>
                 {/* title */}
@@ -124,7 +124,7 @@ export const HotBid = () => {
             </View>
           </View>
           <View style={styles.itemInfo}>
-            <View style={[globalStyle.flexRow, globalStyle.itemBaseline]}>
+            <View style={[globalStyle().flexRow, globalStyle().itemBaseline]}>
               {/* tittle + 2nd row */}
               <Text style={styles.itemInfoTitle}>
                 {/* title */}

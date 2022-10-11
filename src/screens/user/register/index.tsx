@@ -10,7 +10,7 @@ import {
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import styles from './styles';
-import { globalStyle } from 'theme/globalStyle';
+import globalStyle from 'theme/globalStyle';
 import { authentication } from 'firebase/config';
 import {
   createUserWithEmailAndPassword,
@@ -85,7 +85,7 @@ export const Register = () => {
   };
 
   return (
-    <SafeAreaView style={[globalStyle.flex]}>
+    <SafeAreaView style={[globalStyle().flex]}>
       <KeyboardAvoidingView behavior="padding">
         <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
           <>
@@ -93,19 +93,19 @@ export const Register = () => {
               onPress={() => {
                 navigation.navigate('Login' as never);
               }}>
-              <ArrowBack style={styles.backArrowButton} />
+              <ArrowBack style={styles().backArrowButton} />
             </TouchableOpacity>
-            <Text style={styles.title}>Create account</Text>
-            <View style={styles.inputView}>
+            <Text style={styles().title}>Create account</Text>
+            <View style={styles().inputView}>
               <TextInput
-                style={styles.inputBox}
+                style={styles().inputBox}
                 placeholderTextColor="#FCFCFC"
                 placeholder="Email Address"
                 value={email}
                 onChangeText={text => setEmail(text)}
               />
               <TextInput
-                style={styles.inputBox}
+                style={styles().inputBox}
                 placeholderTextColor="#FCFCFC"
                 placeholder="Password"
                 value={password}
@@ -114,15 +114,15 @@ export const Register = () => {
               />
             </View>
 
-            <View style={styles.buttonView}>
+            <View style={styles().buttonView}>
               <TouchableOpacity
                 onPress={() => registerUser()}
                 style={[
-                  globalStyle.buttonRadius,
-                  styles.registerButton,
-                  styles.buttonColor,
+                  globalStyle().buttonRadius,
+                  styles().registerButton,
+                  styles().buttonColor,
                 ]}>
-                <Text style={styles.buttonText}>Register</Text>
+                <Text style={styles().buttonText}>Register</Text>
               </TouchableOpacity>
             </View>
           </>

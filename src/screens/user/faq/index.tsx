@@ -11,35 +11,35 @@ export const FAQ = () => {
       <Header />
 
       <ScrollView>
-        <View style={styles.faq}>
-          <Text style={styles.title}>Frequently asked questions</Text>
-          <Text style={styles.description}>
+        <View style={styles().faq}>
+          <Text style={styles().title}>Frequently asked questions</Text>
+          <Text style={styles().description}>
             Join our community now to get free updates and also alot of freebies
             are waiting for you or{' '}
-            <Text style={styles.underlineDescription}>Contact Support</Text>
+            <Text style={styles().underlineDescription}>Contact Support</Text>
           </Text>
-          <TouchableOpacity style={styles.button}>
-            <Text style={styles.buttonText}>General</Text>
+          <TouchableOpacity style={styles().button}>
+            <Text style={styles().buttonText}>General</Text>
             <ArrowDown />
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.button}>
-            <Text style={styles.buttonText}>How does it work</Text>
+          <TouchableOpacity style={styles().button}>
+            <Text style={styles().buttonText}>How does it work</Text>
             <ArrowDown />
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.button}>
-            <Text style={styles.buttonText}>How to start</Text>
+          <TouchableOpacity style={styles().button}>
+            <Text style={styles().buttonText}>How to start</Text>
             <ArrowDown />
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.button}>
-            <Text style={styles.buttonText}>How to payment</Text>
+          <TouchableOpacity style={styles().button}>
+            <Text style={styles().buttonText}>How to payment</Text>
             <ArrowDown />
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.button}>
-            <Text style={styles.buttonText}>How to bid</Text>
+          <TouchableOpacity style={styles().button}>
+            <Text style={styles().buttonText}>How to bid</Text>
             <ArrowDown />
           </TouchableOpacity>
         </View>
