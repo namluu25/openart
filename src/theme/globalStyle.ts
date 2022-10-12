@@ -1,12 +1,9 @@
-import { useContext } from 'react';
 import { StyleSheet, Platform, Dimensions } from 'react-native';
-import { ThemeContext } from '../../App';
 import { color } from './color';
 
 export const dimensions = Dimensions.get('window');
 
-export default () => {
-  const { theme } = useContext(ThemeContext);
+export default (theme?: string) => {
   return StyleSheet.create({
     AndroidSafeArea: {
       flex: 1,
@@ -21,7 +18,6 @@ export default () => {
     },
     containerPriceButtonText: {
       fontSize: 16,
-
       textAlign: 'center',
       paddingVertical: 9,
       paddingHorizontal: 30,
@@ -111,6 +107,18 @@ export default () => {
     },
     flex: {
       flex: 1,
+    },
+    logoText: {
+      fontFamily: 'Epilogue-Light',
+      fontSize: 39,
+      lineHeight: 34,
+      color: theme === 'light' ? color.grayTitle : color.grayOffWhite,
+    },
+    logoTextCap: {
+      fontFamily: 'Epilogue-Light',
+      fontSize: 45,
+      lineHeight: 45,
+      color: theme === 'light' ? color.grayTitle : color.grayOffWhite,
     },
   });
 };

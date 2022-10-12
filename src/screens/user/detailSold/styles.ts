@@ -1,10 +1,7 @@
-import { useContext } from 'react';
 import { StyleSheet } from 'react-native';
 import { color } from 'theme/color';
-import { ThemeContext } from '../../../../App';
 
-export default () => {
-  const { theme } = useContext(ThemeContext);
+export default (theme?: string) => {
   return StyleSheet.create({
     sold: {
       marginTop: 53,
@@ -81,8 +78,16 @@ export default () => {
       flex: 1,
     },
     etherIcon: { marginRight: 30 },
-    starIcon: { marginRight: 30, marginLeft: 2 },
-    chartIcon: { marginRight: 30, marginLeft: 6 },
+    starIcon: {
+      marginRight: 30,
+      marginLeft: 2,
+      color: theme === 'light' ? color.grayTitle : color.grayOffWhite,
+    },
+    chartIcon: {
+      marginRight: 30,
+      marginLeft: 6,
+      color: theme === 'light' ? color.grayTitle : color.grayOffWhite,
+    },
     soldView: {
       borderRadius: 24,
       backgroundColor: theme === 'dark' ? color.grayBody : color.grayInputBG,
@@ -206,6 +211,9 @@ export default () => {
       fontFamily: 'Epilogue-Medium',
       lineHeight: 20,
       alignSelf: 'center',
+    },
+    svg: {
+      color: theme === 'light' ? color.grayTitle : color.grayOffWhite,
     },
   });
 };

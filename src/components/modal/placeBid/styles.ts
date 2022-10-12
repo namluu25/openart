@@ -1,10 +1,7 @@
-import { useContext } from 'react';
 import { StyleSheet } from 'react-native';
 import { color } from 'theme/color';
-import { ThemeContext } from '../../../../App';
 
-export default () => {
-  const { theme } = useContext(ThemeContext);
+export default (theme?: string) => {
   return StyleSheet.create({
     centeredView: {
       flex: 1,
@@ -78,6 +75,9 @@ export default () => {
       padding: 15,
       color: theme === 'light' ? color.grayPlaceholder : color.grayOffWhite,
       fontFamily: 'Epilogue-Bold',
+    },
+    svg: {
+      color: theme === 'light' ? color.grayTitle : color.grayOffWhite,
     },
   });
 };

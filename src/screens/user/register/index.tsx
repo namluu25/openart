@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import {
   View,
   Text,
@@ -21,8 +21,10 @@ import firestore from '@react-native-firebase/firestore';
 import Toast from 'react-native-toast-message';
 import { useNavigation } from '@react-navigation/native';
 import ArrowBack from '@images/icon/ArrowBack.svg';
+import { ThemeContext } from '../../../hooks/context';
 
 export const Register = () => {
+  const { theme } = useContext(ThemeContext);
   const navigation = useNavigation();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -85,7 +87,7 @@ export const Register = () => {
   };
 
   return (
-    <SafeAreaView style={[globalStyle().flex]}>
+    <SafeAreaView style={[globalStyle(theme).flex]}>
       <KeyboardAvoidingView behavior="padding">
         <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
           <>
@@ -93,19 +95,19 @@ export const Register = () => {
               onPress={() => {
                 navigation.navigate('Login' as never);
               }}>
-              <ArrowBack style={styles().backArrowButton} />
+              <ArrowBack style={styles(theme).backArrowButton} />
             </TouchableOpacity>
-            <Text style={styles().title}>Create account</Text>
-            <View style={styles().inputView}>
+            <Text style={styles(theme).title}>Create account</Text>
+            <View style={styles(theme).inputView}>
               <TextInput
-                style={styles().inputBox}
+                style={styles(theme).inputBox}
                 placeholderTextColor="#FCFCFC"
                 placeholder="Email Address"
                 value={email}
                 onChangeText={text => setEmail(text)}
               />
               <TextInput
-                style={styles().inputBox}
+                style={styles(theme).inputBox}
                 placeholderTextColor="#FCFCFC"
                 placeholder="Password"
                 value={password}
@@ -114,15 +116,15 @@ export const Register = () => {
               />
             </View>
 
-            <View style={styles().buttonView}>
+            <View style={styles(theme).buttonView}>
               <TouchableOpacity
                 onPress={() => registerUser()}
                 style={[
-                  globalStyle().buttonRadius,
-                  styles().registerButton,
-                  styles().buttonColor,
+                  globalStyle(theme).buttonRadius,
+                  styles(theme).registerButton,
+                  styles(theme).buttonColor,
                 ]}>
-                <Text style={styles().buttonText}>Register</Text>
+                <Text style={styles(theme).buttonText}>Register</Text>
               </TouchableOpacity>
             </View>
           </>

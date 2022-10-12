@@ -1,10 +1,7 @@
-import { useContext } from 'react';
 import { StyleSheet } from 'react-native';
 import { color } from 'theme/color';
-import { ThemeContext } from '../../../../App';
 
-export default () => {
-  const { theme } = useContext(ThemeContext);
+export default (theme?: string) => {
   return StyleSheet.create({
     buttonColor: {
       backgroundColor:
@@ -23,8 +20,6 @@ export default () => {
     logoImage: {
       alignSelf: 'center',
       marginVertical: 20,
-      width: 200,
-      height: 53,
     },
     inputView: {
       marginHorizontal: 16,

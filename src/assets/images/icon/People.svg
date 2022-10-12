@@ -2,7 +2,7 @@
 
  <g>
   <title>Layer 1</title>
-  <circle id="svg_1" stroke-width="2" stroke="#FCFCFC" r="3.61136" cy="6.14623" cx="11.99296"/>
-  <path stroke="#FCFCFC" style="vector-effect: non-scaling-stroke;" id="svg_2" stroke-width="2" d="m4.31738,21.59873l0,-4.40318c0,-2.12791 1.79086,-3.85281 4,-3.85281l7.80772,0c2.2091,0 4,1.7249 4,3.85281l0,4.4131"/>
+  <circle id="svg_1" stroke-width="2" stroke="currentColor" r="3.61136" cy="6.14623" cx="11.99296"/>
+  <path stroke="currentColor" style="vector-effect: non-scaling-stroke;" id="svg_2" stroke-width="2" d="m4.31738,21.59873l0,-4.40318c0,-2.12791 1.79086,-3.85281 4,-3.85281l7.80772,0c2.2091,0 4,1.7249 4,3.85281l0,4.4131"/>
  </g>
 </svg>

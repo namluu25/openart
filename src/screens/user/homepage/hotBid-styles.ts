@@ -1,10 +1,7 @@
-import { useContext } from 'react';
 import { StyleSheet } from 'react-native';
 import { color } from 'theme/color';
-import { ThemeContext } from '../../../../App';
 
-export default () => {
-  const { theme } = useContext(ThemeContext);
+export const styles = (theme?: string) => {
   return StyleSheet.create({
     hotBid: {
       marginBottom: 58,
@@ -89,6 +86,9 @@ export default () => {
       fontSize: 14,
       fontFamily: 'Epilogue-Bold',
       color: theme === 'light' ? color.grayPlaceholder : color.grayOffWhite,
+    },
+    icon: {
+      color: theme === 'light' ? color.grayTitle : color.grayOffWhite,
     },
   });
 };

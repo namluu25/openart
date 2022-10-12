@@ -1,13 +1,10 @@
-import { useContext } from 'react';
 import { StyleSheet } from 'react-native';
 import { color } from 'theme/color';
 import { dimensions } from 'theme/globalStyle';
-import { ThemeContext } from '../../../../App';
 
 const imageWidth = Math.round(dimensions.width * 0.44);
 
-export default () => {
-  const { theme } = useContext(ThemeContext);
+export const styles = (theme?: string) => {
   return StyleSheet.create({
     titleView: {
       marginTop: 34,

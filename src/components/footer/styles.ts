@@ -1,14 +1,10 @@
-import { useContext } from 'react';
 import { StyleSheet } from 'react-native';
 import { color } from 'theme/color';
-import { ThemeContext } from '../../../App';
 
-export default () => {
-  const { theme } = useContext(ThemeContext);
+export default (theme?: string) => {
   return StyleSheet.create({
     aboutText: {
       fontSize: 16,
-
       color: theme === 'light' ? color.grayPlaceholder : color.grayOffWhite,
       fontFamily: 'Epilogue-Regular',
       lineHeight: 30,
@@ -21,7 +17,6 @@ export default () => {
     },
     slogan300: {
       fontSize: 26,
-
       fontFamily: 'Epilogue-Light',
       lineHeight: 34,
       color: theme === 'light' ? color.grayPlaceholder : color.grayOffWhite,
@@ -46,7 +41,6 @@ export default () => {
     },
     buttonText: {
       fontSize: 20,
-
       textAlign: 'center',
       padding: 15,
       color: theme === 'light' ? color.grayPlaceholder : color.grayOffWhite,

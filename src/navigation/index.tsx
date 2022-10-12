@@ -6,7 +6,7 @@ import { authentication } from 'firebase/config';
 import { AppStack } from './AppStack';
 import { AuthStack } from './AuthStack';
 import auth from '@react-native-firebase/auth';
-import { ThemeContext } from '../../App';
+import { ThemeContext } from '../hooks/context';
 
 export const AppNavigation = () => {
   const { theme } = useContext(ThemeContext);
@@ -40,7 +40,7 @@ export const AppNavigation = () => {
       theme={MyTheme}
       onReady={() => RNBootSplash.hide({ fade: true })}>
       <StatusBar
-        barStyle="light-content"
+        barStyle={theme === 'light' ? 'dark-content' : 'light-content'}
         translucent={true}
         backgroundColor="transparent"
       />

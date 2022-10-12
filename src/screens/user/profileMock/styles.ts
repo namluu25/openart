@@ -1,10 +1,7 @@
-import { useContext } from 'react';
 import { StyleSheet } from 'react-native';
 import { color } from 'theme/color';
-import { ThemeContext } from '../../../../App';
 
-export default () => {
-  const { theme } = useContext(ThemeContext);
+export default (theme?: string) => {
   return StyleSheet.create({
     coverImage: {
       width: '100%',
@@ -26,7 +23,10 @@ export default () => {
       backgroundColor: theme === 'dark' ? color.grayBody : color.grayInputBG,
       marginRight: 16,
     },
-    icon: { margin: 11 },
+    icon: {
+      margin: 11,
+      color: theme === 'light' ? color.grayTitle : color.grayOffWhite,
+    },
     avatar: {
       position: 'absolute',
       alignSelf: 'center',
@@ -162,6 +162,7 @@ export default () => {
     },
     socialButtonIcon: {
       marginLeft: 12,
+      color: theme === 'light' ? color.grayTitle : color.grayOffWhite,
     },
     socialButtonText: {
       fontFamily: 'Epilogue-Bold',
@@ -234,6 +235,10 @@ export default () => {
     },
     plusIcon: {
       marginRight: 11,
+      color: theme === 'light' ? color.grayTitle : color.grayOffWhite,
+    },
+    svg: {
+      color: theme === 'light' ? color.grayTitle : color.grayOffWhite,
     },
   });
 };

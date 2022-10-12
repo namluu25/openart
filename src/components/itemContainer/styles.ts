@@ -1,13 +1,10 @@
-import { useContext } from 'react';
 import { StyleSheet } from 'react-native';
 import { color } from 'theme/color';
 import { dimensions } from 'theme/globalStyle';
-import { ThemeContext } from '../../../App';
 
 const containterImageWidth = Math.round(dimensions.width * 0.85);
 
-export default () => {
-  const { theme } = useContext(ThemeContext);
+export default (theme?: string) => {
   return StyleSheet.create({
     activeIcon: {
       position: 'absolute',

@@ -1,10 +1,7 @@
-import { useContext } from 'react';
 import { StyleSheet } from 'react-native';
 import { color } from 'theme/color';
-import { ThemeContext } from '../../../../App';
 
-export default () => {
-  const { theme } = useContext(ThemeContext);
+export default (theme?: string) => {
   return StyleSheet.create({
     coverImage: {
       width: '100%',
@@ -170,8 +167,15 @@ export default () => {
       justifyContent: 'flex-start',
       marginBottom: 13,
     },
-    sixthButtonIcon: { marginRight: 12 },
-    youtubeIcon: { marginRight: 11, marginTop: 5 },
+    sixthButtonIcon: {
+      marginRight: 12,
+      color: theme === 'light' ? color.grayTitle : color.grayOffWhite,
+    },
+    youtubeIcon: {
+      marginRight: 11,
+      marginTop: 5,
+      color: theme === 'light' ? color.grayTitle : color.grayOffWhite,
+    },
     sixthButtonText: {
       fontSize: 16,
 
@@ -204,6 +208,9 @@ export default () => {
     },
     copyIcon: {
       paddingTop: 5,
+    },
+    svg: {
+      color: theme === 'light' ? color.grayTitle : color.grayOffWhite,
     },
   });
 };

@@ -1,10 +1,7 @@
-import { useContext } from 'react';
 import { StyleSheet } from 'react-native';
 import { color } from 'theme/color';
-import { ThemeContext } from '../../../../App';
 
-export const Styles = () => {
-  const theme = useContext(ThemeContext);
+export default (theme?: string) => {
   return StyleSheet.create({
     coverImage: {
       width: '100%',
@@ -127,6 +124,7 @@ export const Styles = () => {
     },
     coverButtonIcon: {
       margin: 11,
+      color: theme === 'light' ? color.grayTitle : color.grayOffWhite,
     },
     boxButtonMargin: {
       marginTop: 32,
@@ -190,9 +188,8 @@ export const Styles = () => {
       color: theme === 'light' ? color.grayPlaceholder : color.grayOffWhite,
     },
     followRowButton: {
-      backgroundColor: color.grayTitle,
+      backgroundColor: theme === 'dark' ? color.grayTitle : color.grayLine,
       borderRadius: 100,
-      // alignSelf: 'center',
       position: 'absolute',
       right: 13,
       top: 13,
@@ -200,6 +197,7 @@ export const Styles = () => {
     followRowButtonImage: {
       alignSelf: 'center',
       margin: 13,
+      color: theme === 'light' ? color.grayTitle : color.grayOffWhite,
     },
     title: {
       marginBottom: 25,
@@ -231,14 +229,12 @@ export const Styles = () => {
     },
     productButtonTextSmall: {
       fontSize: 20,
-
       textAlign: 'center',
       color: theme === 'light' ? color.grayPlaceholder : color.grayOffWhite,
       fontFamily: 'Epilogue-Regular',
     },
     productButtonTextLarge: {
       fontSize: 24,
-
       textAlign: 'center',
       color: theme === 'light' ? color.grayPlaceholder : color.grayOffWhite,
       fontFamily: 'Epilogue-Bold',
@@ -265,6 +261,9 @@ export const Styles = () => {
     },
     plusIcon: {
       marginRight: 11,
+    },
+    svg: {
+      color: theme === 'light' ? color.grayTitle : color.grayOffWhite,
     },
   });
 };

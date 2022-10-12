@@ -1,10 +1,7 @@
-import { useContext } from 'react';
 import { StyleSheet } from 'react-native';
 import { color } from 'theme/color';
-import { ThemeContext } from '../../../../App';
 
-export default () => {
-  const { theme } = useContext(ThemeContext);
+export default (theme?: string) => {
   return StyleSheet.create({
     coverImage: {
       width: '100%',
@@ -28,6 +25,7 @@ export default () => {
     },
     coverButtonIcon: {
       margin: 11,
+      color: theme === 'light' ? color.grayTitle : color.grayOffWhite,
     },
     avatar: {
       position: 'absolute',
@@ -86,6 +84,7 @@ export default () => {
       marginHorizontal: 26,
       marginTop: 9,
       marginBottom: 7,
+      color: theme === 'light' ? color.grayTitle : color.grayOffWhite,
     },
     thirdRowText: {
       fontFamily: 'Epilogue-Regular',
@@ -129,6 +128,9 @@ export default () => {
     },
     copyIcon: {
       paddingTop: 5,
+    },
+    svg: {
+      color: theme === 'light' ? color.grayTitle : color.grayOffWhite,
     },
   });
 };

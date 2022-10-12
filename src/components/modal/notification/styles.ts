@@ -1,16 +1,13 @@
-import { useContext } from 'react';
 import { StyleSheet, Platform } from 'react-native';
 import { color } from 'theme/color';
 import { dimensions } from 'theme/globalStyle';
-import { ThemeContext } from '../../../../App';
 
 const paddingModal =
   Platform.OS === 'android'
     ? Math.round(dimensions.height * 0.065)
     : Math.round(dimensions.height * 0.065) + 22;
 
-export default () => {
-  const { theme } = useContext(ThemeContext);
+export default (theme?: string) => {
   return StyleSheet.create({
     centeredView: {
       flex: 1,

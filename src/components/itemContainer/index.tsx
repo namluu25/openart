@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Text, Image, TouchableOpacity, View } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import styles from './styles';
 import { HeartButton } from 'components';
 import globalStyle from 'theme/globalStyle';
+import { ThemeContext } from '../../hooks/context';
 
 interface Props {
   image: string;
@@ -14,35 +15,36 @@ interface Props {
 }
 
 export const ItemContainer = (props: Props) => {
+  const { theme } = useContext(ThemeContext);
   const navigation = useNavigation();
   return (
-    <View style={[styles().container]}>
+    <View style={[styles(theme).container]}>
       <View>
         <TouchableOpacity
           onPress={() => {
             navigation.navigate(props.navi as never);
           }}
-          style={styles().touchContainerImage}>
+          style={styles(theme).touchContainerImage}>
           <Image
-            style={styles().containerImage}
+            style={styles(theme).containerImage}
             source={{ uri: props.image }}
           />
         </TouchableOpacity>
-        <Text style={styles().containerTitle}>{props.name}</Text>
-        <View style={styles().containerCreatorInfoView}>
-          <View style={globalStyle().flexRow}>
+        <Text style={styles(theme).containerTitle}>{props.name}</Text>
+        <View style={styles(theme).containerCreatorInfoView}>
+          <View style={globalStyle(theme).flexRow}>
             <View>
               <TouchableOpacity
                 onPress={() => {
                   navigation.navigate('ProfileMock' as never);
                 }}>
                 <Image
-                  style={styles().containerAvatar}
+                  style={styles(theme).containerAvatar}
                   source={{ uri: props.avatar }}
                 />
               </TouchableOpacity>
               <Image
-                style={styles().activeIcon}
+                style={styles(theme).activeIcon}
                 source={require('@images/icon/active.png')}
               />
             </View>
@@ -50,11 +52,11 @@ export const ItemContainer = (props: Props) => {
               onPress={() => {
                 navigation.navigate('ProfileMock' as never);
               }}
-              style={styles().containerCreatorNameView}>
-              <Text style={styles().containerCreatorName}>
+              style={styles(theme).containerCreatorNameView}>
+              <Text style={styles(theme).containerCreatorName}>
                 {props.creator_name}
               </Text>
-              <Text style={styles().containerCreatorInfo}>Creator</Text>
+              <Text style={styles(theme).containerCreatorInfo}>Creator</Text>
             </TouchableOpacity>
           </View>
           <HeartButton size={23} />

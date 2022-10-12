@@ -1,10 +1,7 @@
-import { useContext } from 'react';
 import { StyleSheet } from 'react-native';
 import { color } from 'theme/color';
-import { ThemeContext } from '../../../../App';
 
-export default () => {
-  const { theme } = useContext(ThemeContext);
+export default (theme?: string) => {
   return StyleSheet.create({
     faq: {
       marginTop: 32,
@@ -49,10 +46,12 @@ export default () => {
     },
     buttonText: {
       fontSize: 16,
-
       color: theme === 'light' ? color.grayLabel : color.grayBG,
       fontFamily: 'Epilogue-Regular',
       lineHeight: 22,
+    },
+    icon: {
+      color: theme === 'light' ? color.grayLabel : color.grayOffWhite,
     },
   });
 };

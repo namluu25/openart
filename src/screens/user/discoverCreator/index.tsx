@@ -1,23 +1,25 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { View, Text, ScrollView, TouchableOpacity, Image } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Header, Footer, GradientButton } from 'components';
 import styles from './styles';
 import Plus from '@images/icon/Plus.svg';
 import { useFetchData, CreatorItems } from 'hooks/useFetchData';
+import { ThemeContext } from '../../../hooks/context';
 
 export const DiscoverCreator = () => {
+  const { theme } = useContext(ThemeContext);
   const { creatorData } = useFetchData();
   return (
     <SafeAreaView>
       <Header />
       <ScrollView>
-        <View style={styles().discover}>
-          <Text style={styles().title}>Discover creator</Text>
-          <Text style={styles().description}>
+        <View style={styles(theme).discover}>
+          <Text style={styles(theme).title}>Discover creator</Text>
+          <Text style={styles(theme).description}>
             Follow at least five creators to build your feed…
           </Text>
-          <View style={styles().buttonView}>
+          <View style={styles(theme).buttonView}>
             <GradientButton
               value={[{ name: 'Feature Creatior' }, { name: 'All Creator' }]}
             />
@@ -25,37 +27,41 @@ export const DiscoverCreator = () => {
           {creatorData.map((item: CreatorItems) => {
             return (
               <View key={item.id}>
-                <View style={styles().itemMargin}>
-                  <View style={styles().item}>
+                <View style={styles(theme).itemMargin}>
+                  <View style={styles(theme).item}>
                     <Image
-                      style={styles().itemCover}
+                      style={styles(theme).itemCover}
                       source={{ uri: item.coverImage }}
                     />
-                    <Text style={styles().itemName}>{item.name}</Text>
-                    <Text style={styles().itemDescription}>
+                    <Text style={styles(theme).itemName}>{item.name}</Text>
+                    <Text style={styles(theme).itemDescription}>
                       {item.description}
                     </Text>
-                    <View style={styles().secondRowView}>
-                      <Text style={styles().secondRowFollower}>
+                    <View style={styles(theme).secondRowView}>
+                      <Text style={styles(theme).secondRowFollower}>
                         {item.followers}{' '}
-                        <Text style={styles().secondRowText}>Followers</Text>
+                        <Text style={styles(theme).secondRowText}>
+                          Followers
+                        </Text>
                       </Text>
-                      <TouchableOpacity style={styles().secondRowButton}>
-                        <Text style={styles().secondRowButtonText}>Follow</Text>
+                      <TouchableOpacity style={styles(theme).secondRowButton}>
+                        <Text style={styles(theme).secondRowButtonText}>
+                          Follow
+                        </Text>
                       </TouchableOpacity>
                     </View>
                   </View>
                   <Image
-                    style={styles().itemAvatar}
+                    style={styles(theme).itemAvatar}
                     source={{ uri: item.avatar }}
                   />
                 </View>
               </View>
             );
           })}
-          <TouchableOpacity style={styles().loadMoreButton}>
-            <Plus style={styles().plusIcon} />
-            <Text style={styles().loadMoreButtonText}>Load more</Text>
+          <TouchableOpacity style={styles(theme).loadMoreButton}>
+            <Plus style={styles(theme).plusIcon} />
+            <Text style={styles(theme).loadMoreButtonText}>Load more</Text>
           </TouchableOpacity>
         </View>
 

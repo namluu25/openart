@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useState } from 'react';
 import {
   Modal,
   Text,
@@ -6,6 +6,8 @@ import {
   TouchableOpacity,
   View,
   TouchableWithoutFeedback,
+  StyleProp,
+  ViewStyle,
 } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { Switch } from 'react-native-paper';
@@ -22,7 +24,7 @@ import People from '@images/icon/People.svg';
 import Picture from '@images/icon/Picture.svg';
 import Wallet from '@images/icon/Wallet.svg';
 import { useFetchData } from 'hooks/useFetchData';
-import { ThemeContext } from '../../../../App';
+import { ThemeContext } from '../../../hooks/context';
 
 interface Props {
   visbile?: boolean;
@@ -30,7 +32,7 @@ interface Props {
 }
 
 export const Account = (props: Props) => {
-  const { theme, setTsheme } = useContext(ThemeContext);
+  const { theme, setTheme } = useContext(ThemeContext);
   const { userData } = useFetchData();
   const navigation = useNavigation();
   const [isSwitchOn, setIsSwitchOn] = useState(true);
@@ -52,79 +54,87 @@ export const Account = (props: Props) => {
         visible={props.visbile}
         onRequestClose={props.handleClose}>
         <TouchableOpacity
-          style={styles().centeredView}
+          style={styles(theme).centeredView}
           onPress={props.handleClose}
           activeOpacity={1}>
-          <View style={[styles().triangle]} />
+          <View style={[styles(theme).triangle]} />
           <TouchableWithoutFeedback>
-            <View style={[styles().modalView]}>
-              <View style={styles().firstRow}>
+            <View style={[styles(theme).modalView]}>
+              <View style={styles(theme).firstRow}>
                 <Image
-                  style={styles().avatar}
+                  style={styles(theme).avatar}
                   source={
                     !userData.avatar
                       ? require('@images/avatar/blank.png')
                       : { uri: userData.avatar }
                   }
                 />
-                <View style={globalStyle().selfCenter}>
-                  <Text style={styles().username}>{userData.name}</Text>
-                  <View style={globalStyle().flexRow}>
-                    <Text style={styles().hash}>{userData.hash}</Text>
-                    <TouchableOpacity style={styles().copyIcon}>
+                <View style={globalStyle(theme).selfCenter}>
+                  <Text style={styles(theme).username}>{userData.name}</Text>
+                  <View style={globalStyle(theme).flexRow}>
+                    <Text style={styles(theme).hash}>{userData.hash}</Text>
+                    <TouchableOpacity style={styles(theme).copyIcon}>
                       <Copy />
                     </TouchableOpacity>
                   </View>
                 </View>
               </View>
 
-              <View style={styles().secondRow}>
-                <TouchableOpacity style={styles().walletBorder}>
-                  <Wallet style={styles().walletIcon} />
+              <View style={styles(theme).secondRow}>
+                <TouchableOpacity style={styles(theme).walletBorder}>
+                  <Wallet style={styles(theme).walletIcon} />
                 </TouchableOpacity>
-                <View style={globalStyle().flexColumn}>
-                  <Text style={styles().balanceText}>Balance</Text>
-                  <View style={styles().secondRowBalance}>
-                    <Text style={styles().balance}>5.000 ETH</Text>
+                <View style={globalStyle(theme).flexColumn}>
+                  <Text style={styles(theme).balanceText}>Balance</Text>
+                  <View style={styles(theme).secondRowBalance}>
+                    <Text style={styles(theme).balance}>5.000 ETH</Text>
                     <TouchableOpacity>
-                      <Hide style={styles().hideIcon} />
+                      <Hide style={styles(theme).hideIcon} />
                     </TouchableOpacity>
                   </View>
                 </View>
               </View>
-              <View style={styles().listItem}>
+              <View style={styles(theme).listItem}>
                 <TouchableOpacity
                   onPress={() => {
                     navigation.navigate('ProfileEmpty' as never);
                     props.handleClose();
                   }}
-                  style={styles().touchableLine}>
-                  <People />
-                  <Text style={styles().titleLine}>My account</Text>
+                  style={styles(theme).touchableLine}>
+                  <People
+                    style={styles(theme).headerIcon as StyleProp<ViewStyle>}
+                  />
+                  <Text style={styles(theme).titleLine}>My account</Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={styles().touchableLine}>
-                  <Picture />
-                  <Text style={styles().titleLine}>My items</Text>
+                <TouchableOpacity style={styles(theme).touchableLine}>
+                  <Picture
+                    style={styles(theme).headerIcon as StyleProp<ViewStyle>}
+                  />
+                  <Text style={styles(theme).titleLine}>My items</Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={styles().touchableLine}>
-                  <Invoice />
-                  <Text style={styles().titleLine}>My invoice</Text>
+                <TouchableOpacity style={styles(theme).touchableLine}>
+                  <Invoice
+                    style={styles(theme).headerIcon as StyleProp<ViewStyle>}
+                  />
+                  <Text style={styles(theme).titleLine}>My invoice</Text>
                 </TouchableOpacity>
                 <TouchableOpacity
-                  style={styles().touchableLine}
+                  style={styles(theme).touchableLine}
                   onPress={signingOut}>
-                  <ArrowBack />
-                  <Text style={styles().titleLine}>Sign out</Text>
+                  <ArrowBack
+                    style={styles(theme).headerIcon as StyleProp<ViewStyle>}
+                  />
+                  <Text style={styles(theme).titleLine}>Sign out</Text>
                 </TouchableOpacity>
               </View>
               <View
                 // separator line
-                style={styles().separatorLine}
+                style={styles(theme).separatorLine}
               />
-              <View style={styles().lastRow}>
-                <Text style={styles().lastRowText}>Dark mode</Text>
+              <View style={styles(theme).lastRow}>
+                <Text style={styles(theme).lastRowText}>Dark mode</Text>
                 <Switch
-                  style={styles().switch}
+                  style={styles(theme).switch}
                   color="#004BFB"
                   value={isSwitchOn}
                   onValueChange={onToggleSwitch}
