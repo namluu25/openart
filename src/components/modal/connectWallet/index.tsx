@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import {
   Modal,
   Text,
@@ -6,11 +6,14 @@ import {
   TouchableOpacity,
   View,
   TouchableWithoutFeedback,
+  StyleProp,
+  ViewProps,
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
-import { globalStyle } from 'theme/globalStyle';
+import globalStyle from 'theme/globalStyle';
 import styles from './styles';
 import Close from '@images/icon/Close.svg';
+import { ThemeContext } from '../../../hooks/context';
 
 interface Props {
   visbile?: boolean;
@@ -18,6 +21,7 @@ interface Props {
 }
 
 export const ConnectWallet = (props: Props) => {
+  const { theme } = useContext(ThemeContext);
   return (
     <>
       <Modal
@@ -26,39 +30,45 @@ export const ConnectWallet = (props: Props) => {
         visible={props.visbile}
         onRequestClose={props.handleClose}>
         <TouchableOpacity
-          style={styles.centeredView}
+          style={styles(theme).centeredView}
           onPress={props.handleClose}
           activeOpacity={1}>
           <TouchableWithoutFeedback>
-            <View style={styles.modalView}>
-              <View style={styles.firstRow}>
-                <Text style={styles.textFirstRow}>Connect wallet</Text>
+            <View style={styles(theme).modalView}>
+              <View style={styles(theme).firstRow}>
+                <Text style={styles(theme).textFirstRow}>Connect wallet</Text>
                 <TouchableOpacity onPress={props.handleClose}>
-                  <Close />
+                  <Close style={styles(theme).svg as StyleProp<ViewProps>} />
                 </TouchableOpacity>
               </View>
               <Image
-                style={globalStyle.selfCenter}
+                style={globalStyle(theme).selfCenter}
                 source={require('@images/icon/connect-wallet.png')}
               />
-              <Text style={styles.textSecondRow}>
+              <Text style={styles(theme).textSecondRow}>
                 By connecting your wallet, you agree to our{' '}
-                <Text style={styles.textSecondRowBold}>Terms of Service</Text>{' '}
+                <Text style={styles(theme).textSecondRowBold}>
+                  Terms of Service
+                </Text>{' '}
                 and our{' '}
-                <Text style={styles.textSecondRowBold}>Privacy Policy</Text>
+                <Text style={styles(theme).textSecondRowBold}>
+                  Privacy Policy
+                </Text>
               </Text>
 
-              <TouchableOpacity style={styles.connectButton}>
+              <TouchableOpacity style={styles(theme).connectButton}>
                 <LinearGradient
                   colors={['#0038F5', '#9F03FF']}
                   useAngle={true}
                   angle={114.44}
-                  style={globalStyle.buttonRadius}>
-                  <Text style={styles.buttonText}>Connect wallet</Text>
+                  style={globalStyle(theme).buttonRadius}>
+                  <Text style={styles(theme).buttonText}>Connect wallet</Text>
                 </LinearGradient>
               </TouchableOpacity>
               <TouchableOpacity>
-                <Text style={styles.lastRowText}>Learn more about wallets</Text>
+                <Text style={styles(theme).lastRowText}>
+                  Learn more about wallets
+                </Text>
               </TouchableOpacity>
             </View>
           </TouchableWithoutFeedback>

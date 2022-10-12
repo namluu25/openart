@@ -1,9 +1,8 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import {
   View,
   Text,
   TouchableOpacity,
-  Image,
   TextInput,
   KeyboardAvoidingView,
   TouchableWithoutFeedback,
@@ -13,7 +12,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { faGoogle } from '@fortawesome/free-brands-svg-icons';
 import styles from './styles';
-import { globalStyle } from 'theme/globalStyle';
+import globalStyle from 'theme/globalStyle';
 import { GoogleSignin } from '@react-native-google-signin/google-signin';
 import auth from '@react-native-firebase/auth';
 import { authentication } from 'firebase/config';
@@ -21,6 +20,8 @@ import { signInWithEmailAndPassword } from 'firebase/auth/';
 import Toast from 'react-native-toast-message';
 import { useNavigation } from '@react-navigation/native';
 import firestore from '@react-native-firebase/firestore';
+import { ThemeContext } from '../../../hooks/context';
+import Logo from '@images/icon/Logo.svg';
 
 GoogleSignin.configure({
   webClientId:
@@ -65,6 +66,7 @@ async function onGoogleButtonPress() {
 }
 
 export const Login = () => {
+  const { theme } = useContext(ThemeContext);
   const navigation = useNavigation();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -92,24 +94,33 @@ export const Login = () => {
   };
 
   return (
-    <SafeAreaView style={[globalStyle.flex, globalStyle.justifyCenter]}>
+    <SafeAreaView
+      style={[globalStyle(theme).flex, globalStyle(theme).justifyCenter]}>
       <KeyboardAvoidingView behavior="padding">
         <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
           <View>
-            <Image
-              source={require('@images/icon/logo-header.png')}
-              style={styles.logoImage}
-            />
-            <View style={styles.inputView}>
+            <TouchableOpacity
+              style={[
+                globalStyle().flexRow,
+                globalStyle().justifyStart,
+                styles().logoImage,
+              ]}
+              onPress={() => {
+                navigation.navigate('Home' as never);
+              }}>
+              <Text style={globalStyle(theme).logoTextCap}>open</Text>
+              <Logo height={45} />
+            </TouchableOpacity>
+            <View style={styles(theme).inputView}>
               <TextInput
-                style={styles.inputBox}
+                style={styles(theme).inputBox}
                 placeholderTextColor="#FCFCFC"
                 placeholder="Email address or phone number"
                 value={email}
                 onChangeText={text => setEmail(text)}
               />
               <TextInput
-                style={styles.inputBox}
+                style={styles(theme).inputBox}
                 placeholderTextColor="#FCFCFC"
                 placeholder="Password"
                 value={password}
@@ -118,37 +129,45 @@ export const Login = () => {
               />
             </View>
 
-            <View style={styles.buttonView}>
+            <View style={styles(theme).buttonView}>
               <TouchableOpacity
                 onPress={signinUser}
-                style={[globalStyle.buttonRadius, styles.buttonColor]}>
-                <Text style={styles.buttonText}>Login</Text>
+                style={[
+                  globalStyle(theme).buttonRadius,
+                  styles(theme).buttonColor,
+                ]}>
+                <Text style={styles(theme).buttonText}>Login</Text>
               </TouchableOpacity>
 
               <TouchableOpacity
-                style={styles.googleButton}
+                style={styles(theme).googleButton}
                 onPress={() => onGoogleButtonPress()}>
                 <FontAwesomeIcon
                   icon={faGoogle}
-                  style={styles.googleButtonLogo}
+                  style={styles(theme).googleButtonLogo}
                 />
-                <Text style={styles.googleButtonText}>Sign in with Google</Text>
+                <Text style={styles(theme).googleButtonText}>
+                  Sign in with Google
+                </Text>
               </TouchableOpacity>
               <View
                 style={[
-                  globalStyle.itemCenter,
-                  styles.registerButton,
-                  globalStyle.flexRow,
-                  globalStyle.selfCenter,
+                  globalStyle(theme).itemCenter,
+                  styles(theme).registerButton,
+                  globalStyle(theme).flexRow,
+                  globalStyle(theme).selfCenter,
                 ]}>
-                <Text style={styles.registerButtonSmallText}>
+                <Text style={styles(theme).registerButtonSmallText}>
                   Don't have an account?
                 </Text>
                 <TouchableOpacity
                   onPress={() => {
                     navigation.navigate('Register' as never);
                   }}>
-                  <Text style={[styles.registerButtonText]}> Register</Text>
+                  <Text style={[styles(theme).registerButtonText]}>
+                    {' '}
+                    Register
+                  </Text>
                 </TouchableOpacity>
               </View>
             </View>

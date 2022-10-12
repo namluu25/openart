@@ -8,3 +8,8 @@ export const color = {
   grayBG: '#F8F8F8',
   grayOffWhite: '#FCFCFC',
 };
+
+// theme === 'light' ? color.grayBody : color.grayInputBG,
+// theme === 'dark' ? color.grayTitle : color.grayLine,
+// theme === 'light' ? color.grayLabel : color.grayBG,
+// theme === 'light' ? color.grayPlaceholder : color.grayOffWhite,

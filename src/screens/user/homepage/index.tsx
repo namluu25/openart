@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import LinearGradient from 'react-native-linear-gradient';
 import { ScrollView, View, Text, TouchableOpacity, Image } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -11,10 +11,12 @@ import { HotCollection } from './hotCollection';
 import { HotBid } from './hotBid';
 import { Header, ItemContainer, Footer } from 'components';
 import { PlaceBid } from '@modal/placeBid';
-import { globalStyle } from 'theme/globalStyle';
+import globalStyle from 'theme/globalStyle';
 import { useFetchData, HomeItems } from 'hooks/useFetchData';
+import { ThemeContext } from '../../../hooks/context';
 
 export const Home = () => {
+  const { theme } = useContext(ThemeContext);
   const { homeData } = useFetchData();
   const [visible, setVisible] = useState(false);
   const navigation = useNavigation();
@@ -23,31 +25,33 @@ export const Home = () => {
       <Header />
 
       <ScrollView>
-        <View style={styles.home}>
+        <View style={styles(theme).home}>
           <View>
-            <Text style={styles.titleText}>
+            <Text style={styles(theme).titleText}>
               {'Discover, collect, and sell'}
               {'\n'}
             </Text>
-            <Text style={styles.boldTitleText}>{'Your Digital Art'}</Text>
+            <Text style={styles(theme).boldTitleText}>
+              {'Your Digital Art'}
+            </Text>
             <TouchableOpacity
-              style={styles.searchBar}
+              style={styles(theme).searchBar}
               onPressIn={() => {
                 navigation.navigate('SearchPopup' as never);
               }}>
               <TouchableOpacity>
                 <FontAwesomeIcon
                   icon={faMagnifyingGlass}
-                  style={styles.searchBarIcon}
+                  style={styles(theme).searchBarIcon}
                 />
               </TouchableOpacity>
-              <Text style={styles.searchBarText}>
+              <Text style={styles(theme).searchBarText}>
                 Search items, collections, and accounts
               </Text>
               <TouchableOpacity>
                 <FontAwesomeIcon
                   icon={faMicrophone}
-                  style={styles.searchBarIcon}
+                  style={styles(theme).searchBarIcon}
                 />
               </TouchableOpacity>
             </TouchableOpacity>
@@ -61,43 +65,43 @@ export const Home = () => {
             navi={'DetailsAuction'}
           />
 
-          <View style={styles.priceView}>
-            <Text style={styles.priceViewFirst}>Reserve Price</Text>
-            <Text style={styles.priceViewSecond}>1.50 ETH</Text>
-            <Text style={styles.priceViewThird}>$2,683.73</Text>
+          <View style={styles(theme).priceView}>
+            <Text style={styles(theme).priceViewFirst}>Reserve Price</Text>
+            <Text style={styles(theme).priceViewSecond}>1.50 ETH</Text>
+            <Text style={styles(theme).priceViewThird}>$2,683.73</Text>
           </View>
 
           <View>
             <TouchableOpacity
               onPress={() => setVisible(true)}
-              style={styles.touchGradientButton}>
+              style={styles(theme).touchGradientButton}>
               <LinearGradient
                 colors={['#0038F5', '#9F03FF']}
                 useAngle={true}
                 angle={114.44}
-                style={styles.gradientButton}>
-                <Text style={styles.buttonText}>Place a bid</Text>
+                style={styles(theme).gradientButton}>
+                <Text style={styles(theme).buttonText}>Place a bid</Text>
               </LinearGradient>
             </TouchableOpacity>
             <TouchableOpacity
-              style={styles.normalButton}
+              style={styles(theme).normalButton}
               onPress={() => {
                 navigation.navigate('DetailsAuction' as never);
               }}>
-              <Text style={styles.buttonText}>View Artwork</Text>
+              <Text style={styles(theme).buttonText}>View Artwork</Text>
             </TouchableOpacity>
             <PlaceBid visbile={visible} handleClose={() => setVisible(false)} />
           </View>
 
           {/* live auction */}
           <View>
-            <View style={styles.liveAuctionView}>
-              <View style={styles.liveAuctionTextView}>
+            <View style={styles(theme).liveAuctionView}>
+              <View style={styles(theme).liveAuctionTextView}>
                 <Image source={require('@images/icon/live.png')} />
-                <Text style={styles.liveAuctionText}>Live auctions</Text>
+                <Text style={styles(theme).liveAuctionText}>Live auctions</Text>
               </View>
-              <TouchableOpacity style={globalStyle.containerPriceButton}>
-                <Text style={globalStyle.containerPriceButtonText}>
+              <TouchableOpacity style={globalStyle(theme).containerPriceButton}>
+                <Text style={globalStyle(theme).containerPriceButtonText}>
                   View all
                 </Text>
               </TouchableOpacity>
@@ -113,45 +117,50 @@ export const Home = () => {
                     navi={item.sold_state ? 'DetailsSold' : 'DetailsCurrentBid'}
                   />
                   {item.sold_state ? (
-                    <TouchableOpacity style={styles.button}>
-                      <Text style={styles.buttonText}>
+                    <TouchableOpacity style={styles(theme).button}>
+                      <Text style={styles(theme).buttonText}>
                         Sold For
-                        <Text style={styles.buttonTextBold}> 2.00 ETH</Text>
+                        <Text style={styles(theme).buttonTextBold}>
+                          {' '}
+                          2.00 ETH
+                        </Text>
                       </Text>
                     </TouchableOpacity>
                   ) : (
                     <TouchableOpacity
-                      style={styles.buttonBid}
+                      style={styles(theme).buttonBid}
                       onPress={() => setVisible(true)}>
                       <View
                         style={[
-                          globalStyle.flexRow,
-                          globalStyle.justifyAround,
+                          globalStyle(theme).flexRow,
+                          globalStyle(theme).justifyAround,
                         ]}>
                         <View
                           style={[
-                            globalStyle.flexRow,
-                            globalStyle.itemBaseline,
+                            globalStyle(theme).flexRow,
+                            globalStyle(theme).itemBaseline,
                           ]}>
                           <Image
                             resizeMode="contain"
-                            style={styles.buttonBidActiveIcon}
+                            style={styles(theme).buttonBidActiveIcon}
                             source={require('@images/icon/active.png')}
                           />
-                          <View style={globalStyle.itemStart}>
-                            <Text style={styles.buttonBidTextLight}>
+                          <View style={globalStyle(theme).itemStart}>
+                            <Text style={styles(theme).buttonBidTextLight}>
                               Current bid
                             </Text>
-                            <Text style={styles.buttonBidTextBold}>
+                            <Text style={styles(theme).buttonBidTextBold}>
                               2.00 ETH
                             </Text>
                           </View>
                         </View>
-                        <View style={globalStyle.itemStart}>
-                          <Text style={styles.buttonBidTextLight}>
+                        <View style={globalStyle(theme).itemStart}>
+                          <Text style={styles(theme).buttonBidTextLight}>
                             Ending in
                           </Text>
-                          <Text style={styles.buttonBidTextBold}>27m 30s</Text>
+                          <Text style={styles(theme).buttonBidTextBold}>
+                            27m 30s
+                          </Text>
                         </View>
                       </View>
                     </TouchableOpacity>
@@ -165,14 +174,16 @@ export const Home = () => {
 
           <HotCollection />
 
-          <TouchableOpacity style={styles.viewMoreButton}>
-            <Text style={styles.viewMoreButtonText}>View more collection</Text>
+          <TouchableOpacity style={styles(theme).viewMoreButton}>
+            <Text style={styles(theme).viewMoreButtonText}>
+              View more collection
+            </Text>
           </TouchableOpacity>
         </View>
 
         <View
           // separator line
-          style={styles.separatorLine}
+          style={styles(theme).separatorLine}
         />
 
         <Footer />

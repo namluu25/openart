@@ -1,15 +1,18 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import {
   Modal,
   Text,
   TouchableOpacity,
   View,
   TouchableWithoutFeedback,
+  StyleProp,
+  ViewProps,
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
-import { globalStyle } from 'theme/globalStyle';
+import globalStyle from 'theme/globalStyle';
 import styles from './styles';
 import Close from '@images/icon/Close.svg';
+import { ThemeContext } from '../../../hooks/context';
 
 interface Props {
   visbile?: boolean;
@@ -17,6 +20,7 @@ interface Props {
 }
 
 export const PlaceBid = (props: Props) => {
+  const { theme } = useContext(ThemeContext);
   return (
     <>
       <Modal
@@ -25,53 +29,58 @@ export const PlaceBid = (props: Props) => {
         visible={props.visbile}
         onRequestClose={props.handleClose}>
         <TouchableOpacity
-          style={styles.centeredView}
+          style={styles(theme).centeredView}
           onPress={props.handleClose}
           activeOpacity={1}>
           <TouchableWithoutFeedback>
-            <View style={styles.modalView}>
-              <View style={styles.firstRow}>
-                <Text style={styles.textFirstRow}>Place a bid</Text>
+            <View style={styles(theme).modalView}>
+              <View style={styles(theme).firstRow}>
+                <Text style={styles(theme).textFirstRow}>Place a bid</Text>
                 <TouchableOpacity onPress={props.handleClose}>
-                  <Close />
+                  <Close style={styles(theme).svg as StyleProp<ViewProps>} />
                 </TouchableOpacity>
               </View>
-              <Text style={styles.textSecondRow}>
+              <Text style={styles(theme).textSecondRow}>
                 You must bid at least 0.825 ETH
               </Text>
-              <Text style={styles.textThirdRow}>Your bid</Text>
+              <Text style={styles(theme).textThirdRow}>Your bid</Text>
               <View
                 style={[
-                  globalStyle.flexRow,
-                  globalStyle.justifyBetween,
-                  styles.column,
+                  globalStyle(theme).flexRow,
+                  globalStyle(theme).justifyBetween,
+                  styles(theme).column,
                 ]}>
                 <View>
-                  <Text style={styles.textFirstColumn}>Enter bid</Text>
-                  <Text style={styles.textFirstColumn}>Your balance</Text>
-                  <Text style={styles.textFirstColumn}>Service fee</Text>
-                  <Text style={styles.textFirstColumn}>Total</Text>
+                  <Text style={styles(theme).textFirstColumn}>Enter bid</Text>
+                  <Text style={styles(theme).textFirstColumn}>
+                    Your balance
+                  </Text>
+                  <Text style={styles(theme).textFirstColumn}>Service fee</Text>
+                  <Text style={styles(theme).textFirstColumn}>Total</Text>
                 </View>
-                <View style={globalStyle.itemEnd}>
-                  <Text style={styles.textSecondColumn}>ETH</Text>
-                  <Text style={styles.textSecondColumn}>4.568 ETH</Text>
-                  <Text style={styles.textSecondColumn}>0.001 ETH</Text>
-                  <Text style={styles.textSecondColumn}>0.001 ETH</Text>
+                <View style={globalStyle(theme).itemEnd}>
+                  <Text style={styles(theme).textSecondColumn}>ETH</Text>
+                  <Text style={styles(theme).textSecondColumn}>4.568 ETH</Text>
+                  <Text style={styles(theme).textSecondColumn}>0.001 ETH</Text>
+                  <Text style={styles(theme).textSecondColumn}>0.001 ETH</Text>
                 </View>
               </View>
-              <TouchableOpacity style={styles.gradientButton}>
+              <TouchableOpacity style={styles(theme).gradientButton}>
                 <LinearGradient
                   colors={['#0038F5', '#9F03FF']}
                   useAngle={true}
                   angle={114.44}
-                  style={globalStyle.buttonRadius}>
-                  <Text style={styles.textButton}>Place a bid</Text>
+                  style={globalStyle(theme).buttonRadius}>
+                  <Text style={styles(theme).textButton}>Place a bid</Text>
                 </LinearGradient>
               </TouchableOpacity>
               <TouchableOpacity
-                style={[styles.normalButton, globalStyle.buttonRadius]}
+                style={[
+                  styles(theme).normalButton,
+                  globalStyle(theme).buttonRadius,
+                ]}
                 onPress={props.handleClose}>
-                <Text style={styles.textButton}>Cancel</Text>
+                <Text style={styles(theme).textButton}>Cancel</Text>
               </TouchableOpacity>
             </View>
           </TouchableWithoutFeedback>

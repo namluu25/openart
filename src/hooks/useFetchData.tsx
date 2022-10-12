@@ -50,13 +50,6 @@ interface DocumentData {
 
 export const useFetchData = () => {
   const userID = authentication.currentUser?.uid || auth().currentUser?.uid;
-  const [userData, setUserData] = useState<DocumentData>({});
-  const [creatorData, setCreatorData] = useState<Array<CreatorItems>>([]);
-  const [homeData, setHomeData] = useState<Array<HomeItems>>([]);
-  const [profileData, setProfileData] = useState<Array<ProfileItems>>([]);
-  const [profileArtData, setProfileArtData] = useState<
-    Array<ProfileCreatedArt>
-  >([]);
   useEffect(() => {
     axios
       .get('https://62fa6791ffd7197707ebe3f2.mockapi.io/homepage')
@@ -85,5 +78,12 @@ export const useFetchData = () => {
       });
     return () => subscriber();
   }, [userID]);
+  const [userData, setUserData] = useState<DocumentData>({});
+  const [creatorData, setCreatorData] = useState<Array<CreatorItems>>([]);
+  const [homeData, setHomeData] = useState<Array<HomeItems>>([]);
+  const [profileData, setProfileData] = useState<Array<ProfileItems>>([]);
+  const [profileArtData, setProfileArtData] = useState<
+    Array<ProfileCreatedArt>
+  >([]);
   return { homeData, profileArtData, profileData, creatorData, userData };
 };

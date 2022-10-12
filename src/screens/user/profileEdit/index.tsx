@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import {
   View,
   Text,
@@ -7,11 +7,13 @@ import {
   Image,
   TextInput,
   Platform,
+  StyleProp,
+  ViewProps,
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import { Header, ShareButton, Footer } from 'components';
 import styles from './styles';
-import { globalStyle } from 'theme/globalStyle';
+import globalStyle from 'theme/globalStyle';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { authentication } from 'firebase/config';
 import auth from '@react-native-firebase/auth';
@@ -31,8 +33,10 @@ import Picture from '@images/icon/Picture.svg';
 import Tiktok from '@images/icon/Tiktok.svg';
 import Youtube from '@images/icon/Youtube.svg';
 import { useFetchData } from 'hooks/useFetchData';
+import { ThemeContext } from '../../../hooks/context';
 
 export const ProfileEdit = () => {
+  const { theme } = useContext(ThemeContext);
   const userID = authentication.currentUser?.uid || auth().currentUser?.uid;
   const { profileData, userData } = useFetchData();
   const navigation = useNavigation();
@@ -110,136 +114,141 @@ export const ProfileEdit = () => {
       <ScrollView>
         <View>
           <Image
-            style={styles.coverImage}
+            style={styles(theme).coverImage}
             source={{ uri: profileData[0]?.coverImage }}
           />
-          <View style={styles.coverButtonView}>
+          <View style={styles(theme).coverButtonView}>
             {/* button */}
-            <TouchableOpacity style={styles.coverButtonMenu}>
-              <More style={styles.coverButtonIcon} />
+            <TouchableOpacity style={styles(theme).coverButtonMenu}>
+              <More style={styles(theme).coverButtonIcon} />
             </TouchableOpacity>
-            <ShareButton style={styles.coverButtonShare} />
+            <ShareButton style={styles(theme).coverButtonShare} />
           </View>
           <Image
-            style={styles.avatar}
+            style={styles(theme).avatar}
             source={
               !userData.avatar
                 ? require('@images/avatar/blank.png')
                 : { uri: userData.avatar }
             }
           />
-          <Text style={styles.userName}>{userData.name}</Text>
-          <View style={[globalStyle.flexRow, globalStyle.selfCenter]}>
-            <Text style={styles.userHash}>{userData.hash}</Text>
-            <TouchableOpacity style={styles.copyIcon}>
-              <Copy />
+          <Text style={styles(theme).userName}>{userData.name}</Text>
+          <View
+            style={[globalStyle(theme).flexRow, globalStyle(theme).selfCenter]}>
+            <Text style={styles(theme).userHash}>{userData.hash}</Text>
+            <TouchableOpacity style={styles(theme).copyIcon}>
+              <Copy style={styles(theme).svg as StyleProp<ViewProps>} />
             </TouchableOpacity>
           </View>
         </View>
 
-        <View style={styles.inputView}>
-          <View style={styles.inputCategory}>
-            <Text style={styles.inputTitle}>Enter your details</Text>
+        <View style={styles(theme).inputView}>
+          <View style={styles(theme).inputCategory}>
+            <Text style={styles(theme).inputTitle}>Enter your details</Text>
             <TextInput
-              style={styles.firstCategoryInputBox}
+              style={styles(theme).firstCategoryInputBox}
               placeholderTextColor="#FCFCFC"
               placeholder="Name"
               onChangeText={text => setName(text)}
             />
             <TextInput
-              style={styles.inputBox}
+              style={styles(theme).inputBox}
               placeholderTextColor="#FCFCFC"
               placeholder="User Name"
               onChangeText={text => setUsername(text)}
             />
           </View>
 
-          <View style={styles.inputCategory}>
-            <Text style={styles.inputTitle}>Enter your details</Text>
+          <View style={styles(theme).inputCategory}>
+            <Text style={styles(theme).inputTitle}>Enter your details</Text>
             <TextInput
-              style={[styles.inputBox]}
+              style={[styles(theme).inputBox]}
               placeholderTextColor="#FCFCFC"
               placeholder="Email"
               onChangeText={text => setEmail(text)}
             />
-            <Text style={styles.secondCategoryText}>
+            <Text style={styles(theme).secondCategoryText}>
               Add your email address to receive notifications about your
               activity on Foundation. This will not be shown on your profile.
             </Text>
           </View>
 
-          <View style={styles.inputCategory}>
-            <Text style={styles.inputTitle}>Enter your bio</Text>
+          <View style={styles(theme).inputCategory}>
+            <Text style={styles(theme).inputTitle}>Enter your bio</Text>
             <View>
               <TextInput
-                style={styles.thirdCategoryInputBox}
+                style={styles(theme).thirdCategoryInputBox}
                 placeholderTextColor="#FCFCFC"
                 placeholder="Enter your bio here"
               />
               <Image
-                style={styles.thirdCategoryIcon}
+                style={styles(theme).thirdCategoryIcon}
                 source={require('@images/icon/form.png')}
               />
             </View>
           </View>
 
-          <View style={styles.inputCategory}>
-            <Text style={styles.inputTitle}>Upload a profile image</Text>
+          <View style={styles(theme).inputCategory}>
+            <Text style={styles(theme).inputTitle}>Upload a profile image</Text>
             <TouchableOpacity
-              style={styles.forthCategoryButton}
+              style={styles(theme).forthCategoryButton}
               onPress={avatarUpload}>
               <Picture />
-              <Text style={styles.forthButtonTextLarge}>
+              <Text style={styles(theme).forthButtonTextLarge}>
                 Drag and drop or browse a file
               </Text>
-              <Text style={styles.forthButtonTextSmall}>
+              <Text style={styles(theme).forthButtonTextSmall}>
                 Recommended size: JPG, PNG, GIF (1500x1500px, Max 10mb)
               </Text>
             </TouchableOpacity>
           </View>
 
-          <View style={styles.inputCategory}>
-            <Text style={styles.inputTitle}>Verify your profile</Text>
-            <Text style={styles.fifthDescription}>
+          <View style={styles(theme).inputCategory}>
+            <Text style={styles(theme).inputTitle}>Verify your profile</Text>
+            <Text style={styles(theme).fifthDescription}>
               Show the Foundation community that your profile is authentic.
             </Text>
-            <TouchableOpacity style={styles.fifthButtonTwitter}>
+            <TouchableOpacity style={styles(theme).fifthButtonTwitter}>
               <Image source={require('@images/icon/twitter-gradient.png')} />
-              <Text style={styles.fifthButtonText}>Verify via Twitter</Text>
+              <Text style={styles(theme).fifthButtonText}>
+                Verify via Twitter
+              </Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.fifthButtonInstagram}>
+            <TouchableOpacity style={styles(theme).fifthButtonInstagram}>
               <Image source={require('@images/icon/instagram-gradient.png')} />
-              <Text style={styles.fifthButtonText}>Verify via Instagram</Text>
+              <Text style={styles(theme).fifthButtonText}>
+                Verify via Instagram
+              </Text>
             </TouchableOpacity>
           </View>
 
-          <View style={styles.inputCategory}>
-            <Text style={styles.inputTitle}>
+          <View style={styles(theme).inputCategory}>
+            <Text style={styles(theme).inputTitle}>
               Add links to your social media profiles.
             </Text>
-            <TouchableOpacity style={styles.sixthButton}>
-              <Link style={styles.sixthButtonIcon} />
-              <Text style={styles.sixthButtonText}>Website</Text>
+            <TouchableOpacity style={styles(theme).sixthButton}>
+              <Link style={styles(theme).sixthButtonIcon} />
+              <Text style={styles(theme).sixthButtonText}>Website</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.sixthButton}>
-              <Discord style={styles.sixthButtonIcon} />
-              <Text style={styles.sixthButtonText}>Discord</Text>
+            <TouchableOpacity style={styles(theme).sixthButton}>
+              <Discord style={styles(theme).sixthButtonIcon} />
+              <Text style={styles(theme).sixthButtonText}>Discord</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.sixthButton}>
-              <Instagram style={styles.sixthButtonIcon} />
-              <Text style={styles.sixthButtonText}>Instagram</Text>
+            <TouchableOpacity style={styles(theme).sixthButton}>
+              <Instagram style={styles(theme).sixthButtonIcon} />
+              <Text style={styles(theme).sixthButtonText}>Instagram</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.sixthButton}>
-              <Youtube style={styles.youtubeIcon} />
-              <Text style={styles.sixthButtonText}>Youtube channel</Text>
+            <TouchableOpacity style={styles(theme).sixthButton}>
+              <Youtube style={styles(theme).youtubeIcon} />
+              <Text style={styles(theme).sixthButtonText}>Youtube channel</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.sixthButton}>
-              <Facebook style={styles.sixthButtonIcon} />
-              <Text style={styles.sixthButtonText}>Facebook</Text>
+            <TouchableOpacity style={styles(theme).sixthButton}>
+              <Facebook style={styles(theme).sixthButtonIcon} />
+              <Text style={styles(theme).sixthButtonText}>Facebook</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.sixthButtonTiktok}>
-              <Tiktok style={styles.sixthButtonIcon} />
-              <Text style={styles.sixthButtonText}>Tiktok</Text>
+            <TouchableOpacity style={styles(theme).sixthButtonTiktok}>
+              <Tiktok style={styles(theme).sixthButtonIcon} />
+              <Text style={styles(theme).sixthButtonText}>Tiktok</Text>
             </TouchableOpacity>
           </View>
 
@@ -248,15 +257,15 @@ export const ProfileEdit = () => {
               colors={['#0038F5', '#9F03FF']}
               useAngle={true}
               angle={114.44}
-              style={globalStyle.buttonRadius}>
-              <Text style={styles.saveButtonText}>Save</Text>
+              style={globalStyle(theme).buttonRadius}>
+              <Text style={styles(theme).saveButtonText}>Save</Text>
             </LinearGradient>
           </TouchableOpacity>
         </View>
 
         <View
           // separator line
-          style={styles.separatorLine}
+          style={styles(theme).separatorLine}
         />
 
         <Footer />
