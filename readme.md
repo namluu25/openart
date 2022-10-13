@@ -30,7 +30,7 @@
 
 - [x] Login with Google
 - [x] Get data from API
-- [] Responsive
-- [] Dark mode/ Light mode switch
+- [x] Responsive
+- [x] Dark mode/ Light mode switch
 - [x] Seperate style files
 - [x] Icon, splash screen
