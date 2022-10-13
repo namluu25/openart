@@ -9,16 +9,14 @@ export default (theme?: string) => {
     },
     title: {
       fontSize: 20,
-
-      color: theme === 'light' ? color.grayLabel : color.grayBG,
+      color: theme === 'light' ? color.grayTitle : color.grayBG,
       fontFamily: 'Epilogue-Bold',
       lineHeight: 28,
       alignSelf: 'center',
     },
     description: {
       fontSize: 16,
-
-      color: theme === 'light' ? color.grayLabel : color.grayBG,
+      color: theme === 'light' ? '#777E91' : color.grayBG,
       fontFamily: 'Epilogue-Regular',
       lineHeight: 24,
       textAlign: 'center',
@@ -32,7 +30,7 @@ export default (theme?: string) => {
       lineHeight: 22,
     },
     button: {
-      backgroundColor: theme === 'dark' ? color.grayBody : color.grayInputBG,
+      backgroundColor: theme === 'dark' ? color.grayInputBG : color.grayInputBG,
       marginHorizontal: 17,
       borderRadius: 8,
       flexDirection: 'row',
@@ -46,7 +44,7 @@ export default (theme?: string) => {
     },
     buttonText: {
       fontSize: 16,
-      color: theme === 'light' ? color.grayLabel : color.grayBG,
+      color: theme === 'light' ? color.grayBody : color.grayBG,
       fontFamily: 'Epilogue-Regular',
       lineHeight: 22,
     },

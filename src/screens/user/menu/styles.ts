@@ -11,7 +11,7 @@ export default (theme?: string) => {
       fontSize: 32,
       fontFamily: 'Epilogue-Bold',
       lineHeight: 36,
-      color: theme === 'light' ? color.grayPlaceholder : color.grayOffWhite,
+      color: theme === 'light' ? color.grayTitle : color.grayOffWhite,
     },
     textMargin: {
       marginBottom: 24,
@@ -30,7 +30,7 @@ export default (theme?: string) => {
 
       textAlign: 'center',
       padding: 15,
-      color: theme === 'light' ? color.grayPlaceholder : color.grayOffWhite,
+      color: color.grayOffWhite,
       fontFamily: 'Epilogue-Bold',
     },
   });

@@ -8,7 +8,7 @@ export default (theme?: string) => {
   return StyleSheet.create({
     titleText: {
       fontSize: 20,
-      color: theme === 'light' ? color.grayLabel : color.grayBG,
+      color: theme === 'light' ? color.grayTitle : color.grayBG,
       fontFamily: 'Epilogue-Bold',
       lineHeight: 28,
       alignSelf: 'center',
@@ -16,7 +16,7 @@ export default (theme?: string) => {
     },
     firstParagraph: {
       fontSize: 16,
-      color: theme === 'light' ? color.grayLabel : color.grayBG,
+      color: theme === 'light' ? color.grayBody : color.grayBG,
       fontFamily: 'Epilogue-Regular',
       lineHeight: 22,
       textAlign: 'center',
@@ -26,7 +26,7 @@ export default (theme?: string) => {
     },
     secondParagraph: {
       fontSize: 16,
-      color: theme === 'light' ? color.grayLabel : color.grayBG,
+      color: theme === 'light' ? color.grayBody : color.grayBG,
       fontFamily: 'Epilogue-Regular',
       lineHeight: 22,
       marginHorizontal: 31,
@@ -38,7 +38,7 @@ export default (theme?: string) => {
     },
     secondTitle: {
       fontSize: 20,
-      color: theme === 'light' ? color.grayLabel : color.grayBG,
+      color: theme === 'light' ? color.grayTitle : color.grayBG,
       fontFamily: 'Epilogue-Bold',
       lineHeight: 28,
       marginBottom: 40,
@@ -60,20 +60,20 @@ export default (theme?: string) => {
     },
     boxText: {
       fontSize: 16,
-      color: theme === 'light' ? color.grayPlaceholder : color.grayOffWhite,
+      color: theme === 'light' ? color.grayTitle : color.grayOffWhite,
       fontFamily: 'Epilogue-Bold',
       lineHeight: 24,
     },
     thirdView: { marginHorizontal: 31 },
     thirdTitleText: {
       fontSize: 16,
-      color: theme === 'light' ? color.grayLabel : color.grayBG,
+      color: theme === 'light' ? color.grayBody : color.grayBG,
       fontFamily: 'Epilogue-Bold',
       lineHeight: 24,
     },
     thirdParagraph: {
       fontSize: 16,
-      color: theme === 'light' ? color.grayLabel : color.grayBG,
+      color: theme === 'light' ? color.grayBody : color.grayBG,
       fontFamily: 'Epilogue-Regular',
       lineHeight: 22,
       marginBottom: 38,

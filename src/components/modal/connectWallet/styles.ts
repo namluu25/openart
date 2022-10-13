@@ -22,18 +22,19 @@ export default (theme?: string) => {
       flexDirection: 'row',
       justifyContent: 'space-between',
       marginBottom: 12,
+      alignItems: 'center',
     },
     textFirstRow: {
       fontSize: 24,
       fontFamily: 'Epilogue-Bold',
       lineHeight: 32,
-      color: theme === 'light' ? color.grayLabel : color.grayBG,
+      color: theme === 'light' ? color.grayBody : color.grayBG,
     },
     textSecondRow: {
       fontSize: 16,
       fontFamily: 'Epilogue-Regular',
       lineHeight: 22,
-      color: theme === 'light' ? color.grayLabel : color.grayBG,
+      color: theme === 'light' ? color.grayBody : color.grayBG,
       marginBottom: 20,
     },
     textSecondRowBold: {
@@ -48,14 +49,14 @@ export default (theme?: string) => {
 
       textAlign: 'center',
       paddingVertical: 15,
-      color: theme === 'light' ? color.grayPlaceholder : color.grayOffWhite,
+      color: color.grayOffWhite,
       fontFamily: 'Epilogue-Bold',
     },
     lastRowText: {
       fontSize: 16,
       fontFamily: 'Epilogue-Regular',
       lineHeight: 22,
-      color: theme === 'light' ? color.grayLabel : color.grayBG,
+      color: theme === 'light' ? color.grayBody : color.grayBG,
       textAlign: 'center',
     },
     svg: {

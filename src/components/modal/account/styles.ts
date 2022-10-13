@@ -17,7 +17,7 @@ export default (theme?: string) => {
       backgroundColor: 'rgba(0,0,0,0.5)',
     },
     modalView: {
-      backgroundColor: theme === 'dark' ? color.grayBody : color.grayInputBG,
+      backgroundColor: theme === 'dark' ? color.grayBody : color.grayOffWhite,
       borderRadius: 24,
       width: '100%',
       paddingBottom: 22,
@@ -53,7 +53,7 @@ export default (theme?: string) => {
       fontFamily: 'Epilogue-Bold',
       fontSize: 18,
       lineHeight: 28,
-      color: theme === 'light' ? color.grayPlaceholder : color.grayOffWhite,
+      color: theme === 'light' ? color.grayTitle : color.grayOffWhite,
     },
     hash: {
       fontFamily: 'Epilogue-Medium',
@@ -63,7 +63,7 @@ export default (theme?: string) => {
       marginRight: 5,
     },
     secondRow: {
-      backgroundColor: theme === 'dark' ? color.grayTitle : color.grayLine,
+      backgroundColor: theme === 'dark' ? color.grayTitle : color.grayInputBG,
       borderRadius: 32,
       flexDirection: 'row',
       alignItems: 'center',
@@ -74,7 +74,7 @@ export default (theme?: string) => {
     },
     walletBorder: {
       borderRadius: 40,
-      backgroundColor: theme === 'dark' ? color.grayBody : color.grayInputBG,
+      backgroundColor: theme === 'dark' ? color.grayBody : color.grayBG,
       marginRight: 17,
     },
     walletIcon: {
@@ -90,12 +90,15 @@ export default (theme?: string) => {
     secondRowBalance: {
       flexDirection: 'row',
     },
-    hideIcon: { marginTop: 8 },
+    hideIcon: {
+      marginTop: 8,
+      color: theme === 'light' ? color.grayTitle : color.grayOffWhite,
+    },
     balance: {
       fontFamily: 'Epilogue-Bold',
       fontSize: 24,
       lineHeight: 32,
-      color: theme === 'light' ? color.grayPlaceholder : color.grayOffWhite,
+      color: theme === 'light' ? color.grayTitle : color.grayOffWhite,
       marginRight: 23,
     },
     listItem: {

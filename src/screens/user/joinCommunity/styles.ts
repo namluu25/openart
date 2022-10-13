@@ -10,8 +10,7 @@ export default (theme?: string) => {
     },
     title: {
       fontSize: 20,
-
-      color: theme === 'light' ? color.grayLabel : color.grayBG,
+      color: theme === 'light' ? color.grayTitle : color.grayBG,
       fontFamily: 'Epilogue-Bold',
       lineHeight: 28,
       textAlign: 'center',
@@ -19,8 +18,7 @@ export default (theme?: string) => {
     },
     description: {
       fontSize: 16,
-
-      color: theme === 'light' ? color.grayLabel : color.grayBG,
+      color: theme === 'light' ? color.grayBody : color.grayBG,
       fontFamily: 'Epilogue-Regular',
       lineHeight: 22,
       textAlign: 'center',
@@ -36,18 +34,16 @@ export default (theme?: string) => {
     },
     buttonText: {
       fontSize: 20,
-
       textAlign: 'center',
       lineHeight: 28,
       paddingHorizontal: 50,
       paddingVertical: 15,
-      color: theme === 'light' ? color.grayPlaceholder : color.grayOffWhite,
+      color: color.grayOffWhite,
       fontFamily: 'Epilogue-Bold',
     },
     lastRowText: {
       fontSize: 16,
-
-      color: theme === 'light' ? color.grayPlaceholder : color.grayOffWhite,
+      color: theme === 'light' ? color.grayBody : color.grayOffWhite,
       fontFamily: 'Epilogue-Regular',
       lineHeight: 22,
       textAlign: 'center',
@@ -56,8 +52,7 @@ export default (theme?: string) => {
     },
     lastRowNumber: {
       fontSize: 24,
-
-      color: theme === 'light' ? color.grayPlaceholder : color.grayOffWhite,
+      color: theme === 'light' ? color.grayTitle : color.grayOffWhite,
       fontFamily: 'Epilogue-Bold',
       lineHeight: 32,
       textAlign: 'center',

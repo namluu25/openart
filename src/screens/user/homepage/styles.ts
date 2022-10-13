@@ -8,13 +8,13 @@ export default (theme?: string) => {
       fontSize: 18,
       fontFamily: 'Epilogue-Bold',
       textAlign: 'center',
-      color: theme === 'light' ? color.grayPlaceholder : color.grayOffWhite,
+      color: theme === 'light' ? color.grayLabel : color.grayOffWhite,
     },
     boldTitleText: {
       fontSize: 32,
       fontFamily: 'Epilogue-Bold',
       textAlign: 'center',
-      color: theme === 'light' ? color.grayPlaceholder : color.grayOffWhite,
+      color: theme === 'light' ? color.grayTitle : color.grayOffWhite,
     },
     searchBar: {
       marginHorizontal: 8,
@@ -44,14 +44,14 @@ export default (theme?: string) => {
       fontSize: 16,
       fontFamily: 'Epilogue-Regular',
       lineHeight: 22,
-      color: theme === 'light' ? color.grayPlaceholder : color.grayOffWhite,
+      color: theme === 'light' ? color.grayTitle : color.grayOffWhite,
       marginRight: 5.98,
     },
     priceViewSecond: {
       fontSize: 32,
       fontFamily: 'Epilogue-Bold',
       lineHeight: 36,
-      color: theme === 'light' ? color.grayPlaceholder : color.grayOffWhite,
+      color: theme === 'light' ? color.grayTitle : color.grayOffWhite,
       marginRight: 7.51,
     },
     priceViewThird: {
@@ -73,11 +73,16 @@ export default (theme?: string) => {
     },
     buttonText: {
       fontSize: 20,
-
       textAlign: 'center',
       padding: 15,
-      color: theme === 'light' ? color.grayPlaceholder : color.grayOffWhite,
+      color: theme === 'light' ? color.grayLabel : color.grayOffWhite,
       fontFamily: 'Epilogue-Bold',
+    },
+    buttonTextWhite: {
+      color: color.grayOffWhite,
+    },
+    buttonTextBlack: {
+      color: theme === 'light' ? color.grayTitle : color.grayOffWhite,
     },
     viewMoreButton: {
       borderRadius: 8,
@@ -91,7 +96,7 @@ export default (theme?: string) => {
 
       textAlign: 'center',
       padding: 15,
-      color: theme === 'light' ? color.grayPlaceholder : color.grayOffWhite,
+      color: theme === 'light' ? color.grayTitle : color.grayOffWhite,
       fontFamily: 'Epilogue-Bold',
     },
     separatorLine: {
@@ -104,14 +109,14 @@ export default (theme?: string) => {
     button: {
       borderRadius: 51,
       marginTop: 12,
-      backgroundColor: theme === 'dark' ? color.grayBody : color.grayInputBG,
+      backgroundColor: theme === 'dark' ? color.grayBody : color.grayOffWhite,
       marginBottom: 40,
     },
     buttonTextBold: {
       fontSize: 24,
 
       textAlign: 'center',
-      color: theme === 'light' ? color.grayPlaceholder : color.grayOffWhite,
+      color: theme === 'light' ? color.grayLabel : color.grayOffWhite,
       fontFamily: 'Epilogue-Bold',
     },
     buttonBid: {
@@ -128,14 +133,14 @@ export default (theme?: string) => {
     buttonBidTextLight: {
       fontSize: 16,
 
-      color: theme === 'light' ? color.grayPlaceholder : color.grayOffWhite,
+      color: theme === 'light' ? color.grayLabel : color.grayOffWhite,
       fontFamily: 'Epilogue-Regular',
     },
     buttonBidTextBold: {
       fontSize: 20,
 
       textAlign: 'center',
-      color: theme === 'light' ? color.grayPlaceholder : color.grayOffWhite,
+      color: theme === 'light' ? color.grayTitle : color.grayOffWhite,
       fontFamily: 'Epilogue-Bold',
     },
     liveAuctionView: {
@@ -155,7 +160,7 @@ export default (theme?: string) => {
     liveAuctionText: {
       fontSize: 24,
 
-      color: theme === 'light' ? color.grayLabel : color.grayBG,
+      color: theme === 'light' ? color.grayTitle : color.grayBG,
       fontFamily: 'Epilogue-Bold',
       marginLeft: 7,
     },

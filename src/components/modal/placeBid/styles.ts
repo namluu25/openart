@@ -27,7 +27,7 @@ export default (theme?: string) => {
       fontSize: 24,
       fontFamily: 'Epilogue-Bold',
       lineHeight: 32,
-      color: theme === 'light' ? color.grayPlaceholder : color.grayOffWhite,
+      color: theme === 'light' ? color.grayBody : color.grayOffWhite,
     },
     textSecondRow: {
       fontSize: 16,
@@ -40,7 +40,7 @@ export default (theme?: string) => {
       fontSize: 16,
       fontFamily: 'Epilogue-Bold',
       lineHeight: 24,
-      color: theme === 'light' ? color.grayPlaceholder : color.grayOffWhite,
+      color: theme === 'light' ? color.grayTitle : color.grayOffWhite,
       marginBottom: 8,
     },
     column: {
@@ -50,14 +50,14 @@ export default (theme?: string) => {
       fontSize: 16,
       fontFamily: 'Epilogue-Regular',
       lineHeight: 22,
-      color: theme === 'light' ? color.grayPlaceholder : color.grayOffWhite,
+      color: theme === 'light' ? color.grayBody : color.grayOffWhite,
       marginBottom: 6,
     },
     textSecondColumn: {
       fontSize: 16,
       fontFamily: 'Epilogue-Bold',
       lineHeight: 22,
-      color: theme === 'light' ? color.grayPlaceholder : color.grayOffWhite,
+      color: theme === 'light' ? color.grayTitle : color.grayOffWhite,
       marginBottom: 6,
     },
     gradientButton: {
@@ -73,8 +73,11 @@ export default (theme?: string) => {
 
       textAlign: 'center',
       padding: 15,
-      color: theme === 'light' ? color.grayPlaceholder : color.grayOffWhite,
+      color: color.grayOffWhite,
       fontFamily: 'Epilogue-Bold',
+    },
+    textButtonDark: {
+      color: color.grayTitle,
     },
     svg: {
       color: theme === 'light' ? color.grayTitle : color.grayOffWhite,

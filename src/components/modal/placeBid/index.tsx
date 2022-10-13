@@ -80,7 +80,13 @@ export const PlaceBid = (props: Props) => {
                   globalStyle(theme).buttonRadius,
                 ]}
                 onPress={props.handleClose}>
-                <Text style={styles(theme).textButton}>Cancel</Text>
+                <Text
+                  style={[
+                    styles(theme).textButton,
+                    styles(theme).textButtonDark,
+                  ]}>
+                  Cancel
+                </Text>
               </TouchableOpacity>
             </View>
           </TouchableWithoutFeedback>

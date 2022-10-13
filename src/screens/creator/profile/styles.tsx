@@ -38,7 +38,7 @@ export default (theme?: string) => {
       fontSize: 18,
       lineHeight: 28,
       marginTop: 75,
-      color: theme === 'light' ? color.grayPlaceholder : color.grayOffWhite,
+      color: theme === 'light' ? color.grayTitle : color.grayOffWhite,
     },
     userHash: {
       textAlign: 'center',
@@ -68,7 +68,7 @@ export default (theme?: string) => {
     boxText: {
       fontFamily: 'RedHatDisplay-Regular',
       fontSize: 13,
-      color: theme === 'light' ? color.grayLabel : color.grayBG,
+      color: theme === 'light' ? color.grayBody : color.grayBG,
       lineHeight: 20,
       marginLeft: 13,
     },
@@ -87,7 +87,7 @@ export default (theme?: string) => {
     followButtonText: {
       fontSize: 16,
       textAlign: 'center',
-      color: theme === 'light' ? color.grayLabel : color.grayBG,
+      color: theme === 'light' ? color.grayBody : color.grayBG,
       fontFamily: 'Epilogue-Regular',
       alignSelf: 'center',
       marginLeft: 9,
@@ -111,14 +111,12 @@ export default (theme?: string) => {
     },
     coverButtonMenu: {
       borderRadius: 40,
-      borderColor:
-        theme === 'light' ? color.grayPlaceholder : color.grayOffWhite,
+      borderColor: theme === 'light' ? color.grayBody : color.grayOffWhite,
       borderWidth: 1,
     },
     coverButtonShare: {
       borderRadius: 40,
-      borderColor:
-        theme === 'light' ? color.grayPlaceholder : color.grayOffWhite,
+      borderColor: theme === 'light' ? color.grayBody : color.grayOffWhite,
       marginHorizontal: 13,
       borderWidth: 1,
     },
@@ -201,7 +199,7 @@ export default (theme?: string) => {
     },
     title: {
       marginBottom: 25,
-      color: theme === 'light' ? color.grayPlaceholder : color.grayOffWhite,
+      color: theme === 'light' ? color.grayTitle : color.grayOffWhite,
       fontFamily: 'Epilogue-Bold',
       fontSize: 24,
       lineHeight: 32,

@@ -35,7 +35,7 @@ export default (theme?: string) => {
       fontFamily: 'Epilogue-Bold',
       fontSize: 16,
       lineHeight: 24,
-      color: theme === 'light' ? color.grayPlaceholder : color.grayOffWhite,
+      color: theme === 'light' ? color.grayTitle : color.grayOffWhite,
     },
     secondRowView: {
       marginTop: 20,
@@ -44,7 +44,7 @@ export default (theme?: string) => {
       fontFamily: 'Epilogue-Regular',
       fontSize: 20,
       lineHeight: 28,
-      color: theme === 'light' ? color.grayLabel : color.grayBG,
+      color: theme === 'light' ? color.grayPlaceholder : color.grayBG,
       marginBottom: 12,
     },
     item: {
@@ -56,7 +56,7 @@ export default (theme?: string) => {
       fontFamily: 'Epilogue-Bold',
       fontSize: 20,
       lineHeight: 28,
-      color: theme === 'light' ? color.grayPlaceholder : color.grayOffWhite,
+      color: theme === 'light' ? color.grayTitle : color.grayOffWhite,
     },
     itemTextSmall: {
       fontFamily: 'Epilogue-Regular',

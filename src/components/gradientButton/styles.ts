@@ -21,14 +21,16 @@ export default (theme?: string) => {
     },
     secondItemButtonText: {
       fontSize: 16,
-
       textAlign: 'center',
       lineHeight: 22,
       fontFamily: 'Epilogue-Regular',
-      color: theme === 'light' ? color.grayLabel : color.grayBG,
+      color: theme === 'light' ? color.grayBody : color.grayOffWhite,
       marginHorizontal: 20,
       paddingTop: 12,
       paddingBottom: 8,
+    },
+    secondItemButtonTextHighlight: {
+      color: color.grayOffWhite,
     },
   });
 };

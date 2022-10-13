@@ -125,7 +125,11 @@ export const HotCollection = () => {
 
         <TouchableOpacity style={styles(theme).followButton}>
           {/* button 30 items */}
-          <FontAwesomeIcon icon={faHeart} size={24} color={'white'} />
+          <FontAwesomeIcon
+            icon={faHeart}
+            size={24}
+            color={theme === 'light' ? 'black' : 'white'}
+          />
           <Text style={styles(theme).followButtonText}>Follow</Text>
         </TouchableOpacity>
       </View>

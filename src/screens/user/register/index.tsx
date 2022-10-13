@@ -101,14 +101,14 @@ export const Register = () => {
             <View style={styles(theme).inputView}>
               <TextInput
                 style={styles(theme).inputBox}
-                placeholderTextColor="#FCFCFC"
+                placeholderTextColor={theme === 'dark' ? '#FCFCFC' : '#333333'}
                 placeholder="Email Address"
                 value={email}
                 onChangeText={text => setEmail(text)}
               />
               <TextInput
                 style={styles(theme).inputBox}
-                placeholderTextColor="#FCFCFC"
+                placeholderTextColor={theme === 'dark' ? '#FCFCFC' : '#333333'}
                 placeholder="Password"
                 value={password}
                 onChangeText={text => setPassword(text)}

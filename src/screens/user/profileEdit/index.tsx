@@ -147,13 +147,13 @@ export const ProfileEdit = () => {
             <Text style={styles(theme).inputTitle}>Enter your details</Text>
             <TextInput
               style={styles(theme).firstCategoryInputBox}
-              placeholderTextColor="#FCFCFC"
+              placeholderTextColor={theme === 'dark' ? '#FCFCFC' : '#555555'}
               placeholder="Name"
               onChangeText={text => setName(text)}
             />
             <TextInput
               style={styles(theme).inputBox}
-              placeholderTextColor="#FCFCFC"
+              placeholderTextColor={theme === 'dark' ? '#FCFCFC' : '#555555'}
               placeholder="User Name"
               onChangeText={text => setUsername(text)}
             />
@@ -163,7 +163,7 @@ export const ProfileEdit = () => {
             <Text style={styles(theme).inputTitle}>Enter your details</Text>
             <TextInput
               style={[styles(theme).inputBox]}
-              placeholderTextColor="#FCFCFC"
+              placeholderTextColor={theme === 'dark' ? '#FCFCFC' : '#555555'}
               placeholder="Email"
               onChangeText={text => setEmail(text)}
             />
@@ -178,7 +178,7 @@ export const ProfileEdit = () => {
             <View>
               <TextInput
                 style={styles(theme).thirdCategoryInputBox}
-                placeholderTextColor="#FCFCFC"
+                placeholderTextColor={theme === 'dark' ? '#FCFCFC' : '#555555'}
                 placeholder="Enter your bio here"
               />
               <Image
@@ -193,7 +193,7 @@ export const ProfileEdit = () => {
             <TouchableOpacity
               style={styles(theme).forthCategoryButton}
               onPress={avatarUpload}>
-              <Picture />
+              <Picture style={styles(theme).svg as StyleProp<ViewProps>} />
               <Text style={styles(theme).forthButtonTextLarge}>
                 Drag and drop or browse a file
               </Text>

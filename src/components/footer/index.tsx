@@ -52,7 +52,10 @@ export const Footer = () => {
           onPress={() => {
             navigation.navigate('DiscoverCreator' as never);
           }}>
-          <Text style={styles(theme).buttonText}>Discover more</Text>
+          <Text
+            style={[styles(theme).buttonText, styles(theme).buttonTextBlack]}>
+            Discover more
+          </Text>
         </TouchableOpacity>
       </View>
       <View style={styles(theme).footerBottom}>

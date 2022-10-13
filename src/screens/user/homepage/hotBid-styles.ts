@@ -17,7 +17,7 @@ export const styles = (theme?: string) => {
       fontSize: 24,
 
       fontFamily: 'Epilogue-Bold',
-      color: theme === 'light' ? color.grayPlaceholder : color.grayOffWhite,
+      color: theme === 'light' ? color.grayTitle : color.grayOffWhite,
     },
     leftArrow: {
       marginRight: 30,
@@ -59,7 +59,7 @@ export const styles = (theme?: string) => {
     itemInfoTitle: {
       fontSize: 16,
       fontFamily: 'Epilogue-Bold',
-      color: theme === 'light' ? color.grayPlaceholder : color.grayOffWhite,
+      color: theme === 'light' ? color.grayTitle : color.grayOffWhite,
       marginRight: 8,
     },
     itemPriceButton: {
@@ -73,19 +73,19 @@ export const styles = (theme?: string) => {
 
       paddingHorizontal: 10,
       paddingVertical: 2,
-      color: theme === 'light' ? color.grayLabel : color.grayBG,
+      color: theme === 'light' ? color.grayTitle : color.grayBG,
       fontFamily: 'Epilogue-Bold',
     },
     itemHighBid: {
       fontSize: 13,
       fontFamily: 'Epilogue-Medium',
-      color: theme === 'light' ? color.grayPlaceholder : color.grayOffWhite,
+      color: theme === 'light' ? color.grayLabel : color.grayOffWhite,
       marginTop: 4,
     },
     itemHighBidPrice: {
       fontSize: 14,
       fontFamily: 'Epilogue-Bold',
-      color: theme === 'light' ? color.grayPlaceholder : color.grayOffWhite,
+      color: theme === 'light' ? color.grayBody : color.grayOffWhite,
     },
     icon: {
       color: theme === 'light' ? color.grayTitle : color.grayOffWhite,

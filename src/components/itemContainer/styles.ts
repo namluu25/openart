@@ -23,7 +23,7 @@ export default (theme?: string) => {
       marginBottom: 13,
     },
     container: {
-      backgroundColor: theme === 'dark' ? color.grayBody : color.grayInputBG,
+      backgroundColor: theme === 'dark' ? color.grayBody : '#FFFFFF',
       alignItems: 'center',
       borderRadius: 32,
     },
@@ -36,17 +36,17 @@ export default (theme?: string) => {
     containerTitle: {
       fontSize: 24,
       fontFamily: 'Epilogue-Bold',
-      color: theme === 'light' ? color.grayPlaceholder : color.grayOffWhite,
+      color: theme === 'light' ? color.grayTitle : color.grayOffWhite,
     },
     containerCreatorName: {
       fontSize: 18,
       fontFamily: 'Epilogue-Bold',
-      color: theme === 'light' ? color.grayPlaceholder : color.grayOffWhite,
+      color: theme === 'light' ? color.grayBody : color.grayOffWhite,
     },
     containerCreatorInfo: {
       fontSize: 14,
       fontFamily: 'Epilogue-Medium',
-      color: theme === 'light' ? color.grayPlaceholder : color.grayOffWhite,
+      color: theme === 'light' ? color.grayLabel : color.grayOffWhite,
     },
     containerCreatorInfoView: {
       flexDirection: 'row',

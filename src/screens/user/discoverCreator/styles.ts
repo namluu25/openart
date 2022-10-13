@@ -14,7 +14,7 @@ export default (theme?: string) => {
       textAlign: 'center',
       lineHeight: 28,
       fontFamily: 'Epilogue-Bold',
-      color: theme === 'light' ? color.grayPlaceholder : color.grayOffWhite,
+      color: theme === 'light' ? color.grayTitle : color.grayOffWhite,
     },
     description: {
       fontSize: 16,
@@ -22,7 +22,7 @@ export default (theme?: string) => {
       textAlign: 'center',
       lineHeight: 22,
       fontFamily: 'Epilogue-Regular',
-      color: theme === 'light' ? color.grayLabel : color.grayBG,
+      color: theme === 'light' ? color.grayBody : color.grayBG,
       marginHorizontal: 56,
       marginTop: 16,
     },
@@ -35,7 +35,7 @@ export default (theme?: string) => {
     },
     item: {
       borderRadius: 24,
-      backgroundColor: theme === 'dark' ? color.grayBody : color.grayInputBG,
+      backgroundColor: theme === 'dark' ? color.grayBody : color.grayOffWhite,
     },
     itemCover: {
       marginBottom: 65,
@@ -46,14 +46,14 @@ export default (theme?: string) => {
       fontFamily: 'Epilogue-Bold',
       fontSize: 24,
       lineHeight: 32,
-      color: theme === 'light' ? color.grayPlaceholder : color.grayOffWhite,
+      color: theme === 'light' ? color.grayTitle : color.grayOffWhite,
       textAlign: 'center',
     },
     itemDescription: {
       fontFamily: 'Epilogue-Regular',
       fontSize: 16,
       lineHeight: 22,
-      color: theme === 'light' ? color.grayLabel : color.grayBG,
+      color: theme === 'light' ? color.grayBody : color.grayBG,
       textAlign: 'center',
       marginHorizontal: 15,
       marginTop: 8,
@@ -67,7 +67,7 @@ export default (theme?: string) => {
     secondRowFollower: {
       fontFamily: 'Epilogue-Bold',
       fontSize: 32,
-      color: theme === 'light' ? color.grayPlaceholder : color.grayOffWhite,
+      color: theme === 'light' ? color.grayTitle : color.grayOffWhite,
       marginLeft: 20,
     },
     secondRowText: {
@@ -76,7 +76,7 @@ export default (theme?: string) => {
       color: theme === 'light' ? color.grayLabel : color.grayBG,
     },
     secondRowButton: {
-      backgroundColor: color.grayTitle,
+      backgroundColor: theme === 'light' ? color.grayInputBG : color.grayTitle,
       borderRadius: 8,
       marginRight: 17,
     },
@@ -84,7 +84,7 @@ export default (theme?: string) => {
       fontFamily: 'Epilogue-Bold',
       fontSize: 16,
       lineHeight: 24,
-      color: theme === 'light' ? color.grayPlaceholder : color.grayOffWhite,
+      color: theme === 'light' ? color.grayBody : color.grayOffWhite,
       paddingHorizontal: 30,
       paddingTop: 9,
       paddingBottom: 7,
@@ -113,7 +113,7 @@ export default (theme?: string) => {
 
       textAlign: 'center',
       paddingVertical: 15,
-      color: theme === 'light' ? color.grayPlaceholder : color.grayOffWhite,
+      color: theme === 'light' ? color.grayTitle : color.grayOffWhite,
       fontFamily: 'Epilogue-Bold',
     },
     plusIcon: {

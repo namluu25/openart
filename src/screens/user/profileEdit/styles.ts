@@ -24,6 +24,7 @@ export default (theme?: string) => {
       marginLeft: 8,
     },
     coverButtonIcon: {
+      color: theme === 'light' ? color.grayTitle : color.grayOffWhite,
       margin: 11,
     },
     avatar: {
@@ -41,7 +42,7 @@ export default (theme?: string) => {
       fontSize: 18,
       lineHeight: 28,
       marginTop: 74,
-      color: theme === 'light' ? color.grayPlaceholder : color.grayOffWhite,
+      color: theme === 'light' ? color.grayTitle : color.grayOffWhite,
     },
     userHash: {
       textAlign: 'center',
@@ -61,14 +62,14 @@ export default (theme?: string) => {
       fontFamily: 'Epilogue-Regular',
       fontSize: 20,
       lineHeight: 28,
-      color: theme === 'light' ? color.grayLabel : color.grayBG,
+      color: theme === 'light' ? color.grayBody : color.grayBG,
       marginBottom: 16,
     },
     inputBox: {
       paddingVertical: 16,
       paddingLeft: 24,
       borderRadius: 8,
-      backgroundColor: theme === 'dark' ? color.grayBody : color.grayInputBG,
+      backgroundColor: theme === 'dark' ? color.grayInputBG : color.grayInputBG,
       color: theme === 'light' ? color.grayLabel : color.grayBG,
     },
     inputCategory: { marginBottom: 40 },
@@ -121,7 +122,7 @@ export default (theme?: string) => {
     forthButtonTextSmall: {
       fontSize: 13,
 
-      color: theme === 'light' ? color.grayBody : color.grayInputBG,
+      color: theme === 'light' ? color.grayPlaceholder : color.grayInputBG,
       fontFamily: 'Epilogue-Medium',
       lineHeight: 20,
       textAlign: 'center',
@@ -130,7 +131,7 @@ export default (theme?: string) => {
       fontFamily: 'Epilogue-Regular',
       fontSize: 16,
       lineHeight: 22,
-      color: theme === 'light' ? color.grayBody : color.grayInputBG,
+      color: theme === 'light' ? color.grayLabel : color.grayInputBG,
       marginBottom: 17,
     },
     fifthButtonTwitter: {
@@ -155,7 +156,7 @@ export default (theme?: string) => {
 
       textAlign: 'center',
       padding: 15,
-      color: theme === 'light' ? color.grayPlaceholder : color.grayOffWhite,
+      color: theme === 'light' ? color.grayLabel : color.grayOffWhite,
       fontFamily: 'Epilogue-Bold',
     },
     sixthButton: {
@@ -179,7 +180,7 @@ export default (theme?: string) => {
     sixthButtonText: {
       fontSize: 16,
 
-      color: theme === 'light' ? color.grayPlaceholder : color.grayOffWhite,
+      color: theme === 'light' ? color.grayLabel : color.grayOffWhite,
       fontFamily: 'Epilogue-Medium',
       lineHeight: 24,
     },
@@ -188,7 +189,7 @@ export default (theme?: string) => {
 
       textAlign: 'center',
       padding: 15,
-      color: theme === 'light' ? color.grayPlaceholder : color.grayOffWhite,
+      color: color.grayOffWhite,
       fontFamily: 'Epilogue-Bold',
     },
     sixthButtonTiktok: {

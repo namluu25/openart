@@ -41,7 +41,7 @@ export default (theme?: string) => {
 
       lineHeight: 28,
       fontFamily: 'Epilogue-Regular',
-      color: theme === 'light' ? color.grayPlaceholder : color.grayOffWhite,
+      color: theme === 'light' ? color.grayBody : color.grayOffWhite,
       marginBottom: 16,
     },
     secondView: {
@@ -89,7 +89,7 @@ export default (theme?: string) => {
     sixthRowDropdownText: {
       fontSize: 16,
 
-      color: theme === 'light' ? color.grayLabel : color.grayBG,
+      color: theme === 'light' ? color.grayBody : color.grayBG,
       fontFamily: 'Epilogue-Regular',
       lineHeight: 22,
     },
@@ -125,7 +125,7 @@ export default (theme?: string) => {
     productButton: {
       borderRadius: 51,
       marginTop: 12,
-      backgroundColor: theme === 'dark' ? color.grayBody : color.grayInputBG,
+      backgroundColor: theme === 'dark' ? color.grayBody : color.grayOffWhite,
       paddingVertical: 18,
       marginBottom: 40,
     },
@@ -133,14 +133,14 @@ export default (theme?: string) => {
       fontSize: 20,
 
       textAlign: 'center',
-      color: theme === 'light' ? color.grayPlaceholder : color.grayOffWhite,
+      color: theme === 'light' ? color.grayLabel : color.grayOffWhite,
       fontFamily: 'Epilogue-Regular',
     },
     productButtonTextLarge: {
       fontSize: 24,
 
       textAlign: 'center',
-      color: theme === 'light' ? color.grayPlaceholder : color.grayOffWhite,
+      color: theme === 'light' ? color.grayLabel : color.grayOffWhite,
       fontFamily: 'Epilogue-Bold',
     },
     loadMoreButton: {
@@ -159,7 +159,7 @@ export default (theme?: string) => {
 
       textAlign: 'center',
       paddingVertical: 15,
-      color: theme === 'light' ? color.grayPlaceholder : color.grayOffWhite,
+      color: theme === 'light' ? color.grayTitle : color.grayOffWhite,
       fontFamily: 'Epilogue-Bold',
     },
     plusIcon: {
