@@ -42,7 +42,7 @@ export default (theme?: string) => {
       fontSize: 18,
       lineHeight: 28,
       marginTop: 75,
-      color: theme === 'light' ? color.grayPlaceholder : color.grayOffWhite,
+      color: theme === 'light' ? color.grayTitle : color.grayOffWhite,
     },
     userHash: {
       textAlign: 'center',
@@ -67,7 +67,7 @@ export default (theme?: string) => {
       fontFamily: 'Epilogue-Bold',
       fontSize: 32,
       lineHeight: 36,
-      color: theme === 'light' ? color.grayPlaceholder : color.grayOffWhite,
+      color: theme === 'light' ? color.grayTitle : color.grayOffWhite,
     },
     followText: {
       fontFamily: 'Epilogue-Bold',
@@ -92,7 +92,7 @@ export default (theme?: string) => {
       fontFamily: 'Epilogue-Regular',
       fontSize: 20,
       lineHeight: 28,
-      color: theme === 'light' ? color.grayLabel : color.grayBG,
+      color: theme === 'light' ? color.grayBody : color.grayBG,
       marginBottom: 10,
     },
     listFollow1: {
@@ -139,7 +139,7 @@ export default (theme?: string) => {
       fontFamily: 'Epilogue-Medium',
       fontSize: 13,
       lineHeight: 20,
-      color: theme === 'light' ? color.grayLabel : color.grayBG,
+      color: theme === 'light' ? color.grayTitle : color.grayBG,
       marginVertical: 16,
     },
     socialButton: {
@@ -168,7 +168,7 @@ export default (theme?: string) => {
       fontFamily: 'Epilogue-Bold',
       fontSize: 16,
       lineHeight: 24,
-      color: theme === 'light' ? color.grayLabel : color.grayBG,
+      color: theme === 'light' ? color.grayBody : color.grayBG,
       marginLeft: 4,
       marginRight: 14,
     },
@@ -176,13 +176,13 @@ export default (theme?: string) => {
       fontFamily: 'Epilogue-Bold',
       fontSize: 24,
       lineHeight: 32,
-      color: theme === 'light' ? color.grayPlaceholder : color.grayOffWhite,
+      color: theme === 'light' ? color.grayTitle : color.grayOffWhite,
     },
     productTitleNormal: {
       fontFamily: 'Epilogue-Bold',
       fontSize: 24,
       lineHeight: 32,
-      color: color.grayLabel,
+      color: theme === 'dark' ? color.grayLabel : color.grayPlaceholder,
     },
     collectedTextMargin: {
       marginLeft: 35,
@@ -195,7 +195,7 @@ export default (theme?: string) => {
     productButton: {
       borderRadius: 51,
       marginTop: 12,
-      backgroundColor: theme === 'dark' ? color.grayBody : color.grayInputBG,
+      backgroundColor: theme === 'dark' ? color.grayBody : color.grayOffWhite,
       paddingVertical: 18,
       marginBottom: 40,
     },
@@ -203,14 +203,14 @@ export default (theme?: string) => {
       fontSize: 20,
 
       textAlign: 'center',
-      color: theme === 'light' ? color.grayPlaceholder : color.grayOffWhite,
+      color: theme === 'light' ? color.grayLabel : color.grayOffWhite,
       fontFamily: 'Epilogue-Regular',
     },
     productButtonTextLarge: {
       fontSize: 24,
 
       textAlign: 'center',
-      color: theme === 'light' ? color.grayPlaceholder : color.grayOffWhite,
+      color: theme === 'light' ? color.grayLabel : color.grayOffWhite,
       fontFamily: 'Epilogue-Bold',
     },
     loadMoreButton: {
@@ -227,7 +227,7 @@ export default (theme?: string) => {
 
       textAlign: 'center',
       paddingVertical: 15,
-      color: theme === 'light' ? color.grayPlaceholder : color.grayOffWhite,
+      color: theme === 'light' ? color.grayTitle : color.grayOffWhite,
       fontFamily: 'Epilogue-Bold',
     },
     copyIcon: {

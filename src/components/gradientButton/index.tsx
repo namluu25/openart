@@ -28,7 +28,11 @@ export const GradientButton = (props: Props) => {
               useAngle={true}
               angle={114.44}
               style={styles(theme).secondGradientItemButton}>
-              <Text style={styles(theme).secondItemButtonText}>
+              <Text
+                style={[
+                  styles(theme).secondItemButtonText,
+                  styles(theme).secondItemButtonTextHighlight,
+                ]}>
                 {item.name}
               </Text>
             </LinearGradient>

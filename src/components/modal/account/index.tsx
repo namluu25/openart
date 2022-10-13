@@ -74,7 +74,7 @@ export const Account = (props: Props) => {
                   <View style={globalStyle(theme).flexRow}>
                     <Text style={styles(theme).hash}>{userData.hash}</Text>
                     <TouchableOpacity style={styles(theme).copyIcon}>
-                      <Copy />
+                      <Copy style={styles(theme).headerIcon} />
                     </TouchableOpacity>
                   </View>
                 </View>

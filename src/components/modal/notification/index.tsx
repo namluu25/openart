@@ -117,7 +117,13 @@ export const Notification = (props: Props) => {
                     styles(theme).normalButton,
                     globalStyle(theme).buttonRadius,
                   ]}>
-                  <Text style={styles(theme).textButton}>Mark as all read</Text>
+                  <Text
+                    style={[
+                      styles(theme).textButton,
+                      styles(theme).textButtonDark,
+                    ]}>
+                    Mark as all read
+                  </Text>
                 </TouchableOpacity>
               </View>
             </View>

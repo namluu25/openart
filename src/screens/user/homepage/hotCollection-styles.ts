@@ -13,7 +13,7 @@ export const styles = (theme?: string) => {
     },
     titleText: {
       fontSize: 24,
-      color: theme === 'light' ? color.grayPlaceholder : color.grayOffWhite,
+      color: theme === 'light' ? color.grayTitle : color.grayOffWhite,
       fontFamily: 'Epilogue-Bold',
     },
     avatar: {
@@ -27,14 +27,14 @@ export const styles = (theme?: string) => {
     nftText: {
       fontSize: 13,
       fontFamily: 'Epilogue-Bold',
-      color: theme === 'light' ? color.grayPlaceholder : color.grayOffWhite,
+      color: theme === 'light' ? color.grayBody : color.grayOffWhite,
 
       paddingLeft: 12,
     },
     titleImage: {
       fontSize: 20,
       fontFamily: 'Epilogue-Bold',
-      color: theme === 'light' ? color.grayPlaceholder : color.grayOffWhite,
+      color: theme === 'light' ? color.grayTitle : color.grayOffWhite,
     },
     imageView: {
       height: 412,
@@ -62,7 +62,7 @@ export const styles = (theme?: string) => {
       textAlign: 'center',
       paddingHorizontal: 12,
       paddingVertical: 4,
-      color: theme === 'light' ? color.grayLabel : color.grayBG,
+      color: theme === 'light' ? color.grayTitle : color.grayBG,
       fontFamily: 'Epilogue-Bold',
     },
     authorView: {

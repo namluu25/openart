@@ -11,12 +11,12 @@ export default (theme?: string) => {
       marginTop: 3,
     },
     buttonBefore: {
-      backgroundColor: color.grayLabel,
+      backgroundColor: theme === 'dark' ? color.grayLabel : color.grayLine,
       marginRight: 31,
       borderRadius: 50,
     },
     buttonAfter: {
-      backgroundColor: theme === 'dark' ? color.grayTitle : color.grayInputBG,
+      backgroundColor: theme === 'dark' ? color.grayTitle : color.grayOffWhite,
       marginRight: 31,
       borderRadius: 50,
     },

@@ -42,7 +42,7 @@ export default (theme?: string) => {
       fontSize: 18,
       lineHeight: 28,
       marginTop: 74,
-      color: theme === 'light' ? color.grayPlaceholder : color.grayOffWhite,
+      color: theme === 'light' ? color.grayTitle : color.grayOffWhite,
     },
     userHash: {
       textAlign: 'center',
@@ -66,7 +66,7 @@ export default (theme?: string) => {
       fontFamily: 'Epilogue-Bold',
       fontSize: 32,
       lineHeight: 36,
-      color: theme === 'light' ? color.grayPlaceholder : color.grayOffWhite,
+      color: theme === 'light' ? color.grayTitle : color.grayOffWhite,
     },
     followRowText: {
       fontFamily: 'Epilogue-Bold',
@@ -90,7 +90,7 @@ export default (theme?: string) => {
       fontFamily: 'Epilogue-Regular',
       fontSize: 16,
       lineHeight: 22,
-      color: theme === 'light' ? color.grayPlaceholder : color.grayOffWhite,
+      color: theme === 'light' ? color.grayTitle : color.grayOffWhite,
       marginBottom: 71,
       textAlign: 'center',
     },
@@ -98,7 +98,7 @@ export default (theme?: string) => {
       fontFamily: 'Epilogue-Bold',
       fontSize: 20,
       lineHeight: 28,
-      color: theme === 'light' ? color.grayPlaceholder : color.grayOffWhite,
+      color: theme === 'light' ? color.grayTitle : color.grayOffWhite,
       marginBottom: 4,
       textAlign: 'center',
     },
@@ -123,7 +123,7 @@ export default (theme?: string) => {
 
       textAlign: 'center',
       paddingVertical: 15,
-      color: theme === 'light' ? color.grayPlaceholder : color.grayOffWhite,
+      color: theme === 'light' ? color.grayBody : color.grayOffWhite,
       fontFamily: 'Epilogue-Bold',
     },
     copyIcon: {

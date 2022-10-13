@@ -28,7 +28,7 @@ export default (theme?: string) => {
     containerTitle: {
       fontSize: 24,
       fontFamily: 'Epilogue-Bold',
-      color: theme === 'light' ? color.grayPlaceholder : color.grayOffWhite,
+      color: theme === 'light' ? color.grayTitle : color.grayOffWhite,
     },
     displayRegularLarge: {
       fontSize: 40,

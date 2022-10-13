@@ -32,12 +32,7 @@ export default (theme?: string) => {
     userName: {
       fontSize: 16,
       fontFamily: 'Epilogue-Bold',
-      color:
-        theme === 'light'
-          ? color.grayLabel
-          : theme === 'light'
-          ? color.grayLabel
-          : color.grayBG,
+      color: theme === 'light' ? color.grayBody : color.grayBG,
       alignSelf: 'center',
       paddingRight: 16,
       paddingVertical: 8,
@@ -52,7 +47,7 @@ export default (theme?: string) => {
     },
     hashtagButton: {
       borderRadius: 27,
-      borderColor: color.grayPlaceholder,
+      borderColor: theme === 'dark' ? color.grayPlaceholder : color.grayLine,
       borderWidth: 1,
       alignSelf: 'center',
       marginRight: 2,
@@ -76,7 +71,7 @@ export default (theme?: string) => {
     shareButtonText: {
       fontSize: 16,
 
-      color: theme === 'light' ? color.grayPlaceholder : color.grayOffWhite,
+      color: theme === 'light' ? color.grayTitle : color.grayOffWhite,
       fontFamily: 'Epilogue-Bold',
       lineHeight: 24,
       alignItems: 'flex-start',
@@ -104,7 +99,7 @@ export default (theme?: string) => {
       fontSize: 20,
       fontFamily: 'Epilogue-Regular',
       lineHeight: 28,
-      color: theme === 'light' ? color.grayPlaceholder : color.grayOffWhite,
+      color: theme === 'light' ? color.grayBody : color.grayOffWhite,
       marginTop: 19,
     },
     placeBidPriceView: {
@@ -117,20 +112,20 @@ export default (theme?: string) => {
       fontSize: 24,
       fontFamily: 'Epilogue-Bold',
       lineHeight: 32,
-      color: theme === 'light' ? color.grayPlaceholder : color.grayOffWhite,
+      color: theme === 'light' ? color.grayTitle : color.grayOffWhite,
       marginRight: 14,
     },
     placeBidPriceLight: {
       fontSize: 16,
       fontFamily: 'Epilogue-Bold',
       lineHeight: 24,
-      color: theme === 'light' ? color.grayLabel : color.grayBG,
+      color: theme === 'light' ? color.grayPlaceholder : color.grayBG,
     },
     placeBidSecondTitle: {
       fontSize: 20,
       fontFamily: 'Epilogue-Regular',
       lineHeight: 28,
-      color: theme === 'light' ? color.grayLabel : color.grayBG,
+      color: theme === 'light' ? color.grayBody : color.grayBG,
       marginTop: 19,
       marginBottom: 3,
     },
@@ -141,7 +136,7 @@ export default (theme?: string) => {
       fontSize: 24,
       fontFamily: 'Epilogue-Bold',
       lineHeight: 32,
-      color: theme === 'light' ? color.grayPlaceholder : color.grayOffWhite,
+      color: theme === 'light' ? color.grayTitle : color.grayOffWhite,
     },
     secondItemText: {
       fontSize: 13,
@@ -162,13 +157,13 @@ export default (theme?: string) => {
       textAlign: 'center',
       paddingHorizontal: 15,
       paddingVertical: 9,
-      color: theme === 'light' ? color.grayPlaceholder : color.grayOffWhite,
+      color: color.grayOffWhite,
       fontFamily: 'Epilogue-Bold',
     },
     activityTitle: {
       fontSize: 20,
 
-      color: theme === 'light' ? color.grayLabel : color.grayBG,
+      color: theme === 'light' ? color.grayBody : color.grayBG,
       fontFamily: 'Epilogue-Regular',
       lineHeight: 28,
       paddingTop: 26,
@@ -176,7 +171,7 @@ export default (theme?: string) => {
     activityButton: {
       borderRadius: 24,
       marginTop: 12,
-      backgroundColor: theme === 'dark' ? color.grayBody : color.grayInputBG,
+      backgroundColor: theme === 'dark' ? color.grayBody : color.grayOffWhite,
       paddingVertical: 15,
       paddingHorizontal: 14,
       flexDirection: 'row',
@@ -189,14 +184,14 @@ export default (theme?: string) => {
     activityButtonTitle: {
       fontSize: 14,
 
-      color: theme === 'light' ? color.grayPlaceholder : color.grayOffWhite,
+      color: theme === 'light' ? color.grayTitle : color.grayOffWhite,
       fontFamily: 'Epilogue-Bold',
       lineHeight: 20,
     },
     activityButtonDate: {
       fontSize: 13,
 
-      color: theme === 'light' ? color.grayTitle : color.grayLine,
+      color: theme === 'light' ? color.grayLabel : color.grayLine,
       fontFamily: 'Epilogue-Medium',
       lineHeight: 20,
     },
@@ -218,7 +213,7 @@ export default (theme?: string) => {
     buttonPriceLight: {
       fontSize: 13,
 
-      color: theme === 'light' ? color.grayBody : color.grayInputBG,
+      color: theme === 'light' ? color.grayPlaceholder : color.grayInputBG,
       fontFamily: 'Epilogue-Medium',
       lineHeight: 20,
       alignSelf: 'center',

@@ -41,7 +41,7 @@ export default (theme?: string) => {
       fontFamily: 'Epilogue-Bold',
       fontSize: 24,
       lineHeight: 32,
-      color: theme === 'light' ? color.grayPlaceholder : color.grayOffWhite,
+      color: theme === 'light' ? color.grayBody : color.grayOffWhite,
       marginTop: 36,
       marginBottom: 27,
       marginHorizontal: 26,
@@ -57,7 +57,7 @@ export default (theme?: string) => {
       fontFamily: 'Epilogue-Bold',
       fontSize: 16,
       lineHeight: 24,
-      color: theme === 'light' ? color.grayPlaceholder : color.grayOffWhite,
+      color: theme === 'light' ? color.grayTitle : color.grayOffWhite,
     },
     itemPrice: {
       fontFamily: 'Epilogue-Regular',
@@ -69,11 +69,11 @@ export default (theme?: string) => {
       fontFamily: 'Epilogue-Medium',
       fontSize: 13,
       lineHeight: 20,
-      color: theme === 'light' ? color.grayLabel : color.grayBG,
+      color: theme === 'light' ? color.grayPlaceholder : color.grayBG,
       marginTop: 3,
     },
     separatorLine: {
-      borderBottomColor: theme === 'dark' ? 'white' : 'black',
+      borderBottomColor: theme === 'dark' ? 'white' : color.grayLine,
       borderBottomWidth: 1,
       width: '100%',
       alignSelf: 'center',
@@ -90,8 +90,11 @@ export default (theme?: string) => {
 
       textAlign: 'center',
       padding: 15,
-      color: theme === 'light' ? color.grayPlaceholder : color.grayOffWhite,
+      color: color.grayOffWhite,
       fontFamily: 'Epilogue-Bold',
+    },
+    textButtonDark: {
+      color: theme === 'light' ? color.grayTitle : color.grayOffWhite,
     },
     normalButton: {
       borderColor: '#0038F5',

@@ -5,7 +5,7 @@ export default (theme?: string) => {
   return StyleSheet.create({
     aboutText: {
       fontSize: 16,
-      color: theme === 'light' ? color.grayPlaceholder : color.grayOffWhite,
+      color: theme === 'light' ? color.grayBG : color.grayOffWhite,
       fontFamily: 'Epilogue-Regular',
       lineHeight: 30,
     },
@@ -19,7 +19,7 @@ export default (theme?: string) => {
       fontSize: 26,
       fontFamily: 'Epilogue-Light',
       lineHeight: 34,
-      color: theme === 'light' ? color.grayPlaceholder : color.grayOffWhite,
+      color: theme === 'light' ? color.grayTitle : color.grayOffWhite,
       alignSelf: 'center',
       marginTop: 4,
     },
@@ -43,15 +43,18 @@ export default (theme?: string) => {
       fontSize: 20,
       textAlign: 'center',
       padding: 15,
-      color: theme === 'light' ? color.grayPlaceholder : color.grayOffWhite,
+      color: color.grayOffWhite,
       fontFamily: 'Epilogue-Bold',
+    },
+    buttonTextBlack: {
+      color: theme === 'light' ? color.grayLabel : color.grayOffWhite,
     },
     buttonDiscover: {
       borderColor: '#0038F5',
       borderWidth: 1,
     },
     footerBottom: {
-      backgroundColor: theme === 'dark' ? color.grayBody : color.grayInputBG,
+      backgroundColor: theme === 'light' ? color.grayTitle : color.grayBody,
       marginTop: 88,
     },
     footerContact: {
@@ -62,7 +65,7 @@ export default (theme?: string) => {
       paddingLeft: 18,
     },
     separatorLine: {
-      borderBottomColor: theme === 'dark' ? 'white' : 'black',
+      borderBottomColor: 'white',
       borderBottomWidth: 1,
       width: 368,
       alignSelf: 'center',
@@ -74,7 +77,7 @@ export default (theme?: string) => {
     openartText: {
       fontSize: 13,
 
-      color: theme === 'light' ? color.grayPlaceholder : color.grayOffWhite,
+      color: theme === 'light' ? color.grayInputBG : color.grayOffWhite,
       fontFamily: 'Epilogue-Medium',
       paddingTop: 28,
       paddingBottom: 80,

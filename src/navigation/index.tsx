@@ -42,7 +42,7 @@ export const AppNavigation = () => {
       <StatusBar
         barStyle={theme === 'light' ? 'dark-content' : 'light-content'}
         translucent={true}
-        backgroundColor="transparent"
+        backgroundColor={theme === 'light' ? '#F8F8F8' : '#222222'}
       />
       {isSignedin === true ? <AppStack /> : <AuthStack />}
     </NavigationContainer>

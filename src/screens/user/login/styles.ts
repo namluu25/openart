@@ -12,7 +12,7 @@ export default (theme?: string) => {
       backgroundColor: theme === 'dark' ? color.grayBody : color.grayInputBG,
       marginBottom: 20,
       paddingLeft: 15,
-      color: theme === 'light' ? color.grayPlaceholder : color.grayOffWhite,
+      color: theme === 'light' ? color.grayBody : color.grayOffWhite,
       height: 48,
       borderWidth: 1,
       borderColor: color.grayPlaceholder,
@@ -50,7 +50,7 @@ export default (theme?: string) => {
 
       textAlign: 'center',
       padding: 10,
-      color: color.grayTitle,
+      color: theme === 'dark' ? color.grayTitle : color.grayOffWhite,
       fontFamily: 'Epilogue-Bold',
     },
     googleButton: {

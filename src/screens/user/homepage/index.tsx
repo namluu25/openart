@@ -80,7 +80,10 @@ export const Home = () => {
                 useAngle={true}
                 angle={114.44}
                 style={styles(theme).gradientButton}>
-                <Text style={styles(theme).buttonText}>Place a bid</Text>
+                <Text
+                  style={[styles(theme).buttonText, styles().buttonTextWhite]}>
+                  Place a bid
+                </Text>
               </LinearGradient>
             </TouchableOpacity>
             <TouchableOpacity
@@ -88,7 +91,13 @@ export const Home = () => {
               onPress={() => {
                 navigation.navigate('DetailsAuction' as never);
               }}>
-              <Text style={styles(theme).buttonText}>View Artwork</Text>
+              <Text
+                style={[
+                  styles(theme).buttonText,
+                  styles(theme).buttonTextBlack,
+                ]}>
+                View Artwork
+              </Text>
             </TouchableOpacity>
             <PlaceBid visbile={visible} handleClose={() => setVisible(false)} />
           </View>
