@@ -8,6 +8,17 @@ import { AuthStack } from './AuthStack';
 import auth from '@react-native-firebase/auth';
 import { ThemeContext } from '../hooks/context';
 
+const linking = {
+  prefixes: ['https://example.com', 'openart://'],
+  config: {
+    screens: {
+      Home: 'home',
+      ProfileEmpty: 'profileempty',
+      JoinCommunity: 'joinus',
+    },
+  },
+};
+
 export const AppNavigation = () => {
   const { theme } = useContext(ThemeContext);
   const MyTheme = {
@@ -37,6 +48,7 @@ export const AppNavigation = () => {
   }, []);
   return (
     <NavigationContainer
+      linking={linking}
       theme={MyTheme}
       onReady={() => RNBootSplash.hide({ fade: true })}>
       <StatusBar

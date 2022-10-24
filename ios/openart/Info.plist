@@ -31,48 +31,54 @@
 </string>
 			</array>
 		</dict>
-	</array>
-	<key>CFBundleVersion</key>
-	<string>1</string>
-	<key>LSRequiresIPhoneOS</key>
-	<true/>
-	<key>NSAppTransportSecurity</key>
-	<dict>
-		<key>NSExceptionDomains</key>
 		<dict>
-			<key>localhost</key>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>openart</string>
+			</array>
+		</dict>
+		</array>
+		<key>CFBundleVersion</key>
+		<string>1</string>
+		<key>LSRequiresIPhoneOS</key>
+		<true/>
+		<key>NSAppTransportSecurity</key>
+		<dict>
+			<key>NSExceptionDomains</key>
 			<dict>
-				<key>NSExceptionAllowsInsecureHTTPLoads</key>
-				<true/>
+				<key>localhost</key>
+				<dict>
+					<key>NSExceptionAllowsInsecureHTTPLoads</key>
+					<true/>
+				</dict>
 			</dict>
 		</dict>
+		<key>NSLocationWhenInUseUsageDescription</key>
+		<string/>
+		<key>NSPhotoLibraryUsageDescription</key>
+		<string/>
+		<key>NSCameraUsageDescription</key>
+		<string/>
+		<key>UIAppFonts</key>
+		<array>
+			<string>RedHatDisplay-Regular.ttf</string>
+			<string>Epilogue-Bold.ttf</string>
+			<string>Epilogue-Light.ttf</string>
+			<string>Epilogue-Medium.ttf</string>
+			<string>Epilogue-Regular.ttf</string>
+			<string>Epilogue-SemiBold.ttf</string>
+		</array>
+		<key>UILaunchStoryboardName</key>
+		<string>BootSplash</string>
+		<key>UIRequiredDeviceCapabilities</key>
+		<array>
+			<string>armv7</string>
+		</array>
+		<key>UISupportedInterfaceOrientations</key>
+		<array>
+			<string>UIInterfaceOrientationPortrait</string>
+		</array>
+		<key>UIViewControllerBasedStatusBarAppearance</key>
+		<false/>
 	</dict>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string/>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string/>
-	<key>NSCameraUsageDescription</key>
-	<string/>
-	<key>UIAppFonts</key>
-	<array>
-		<string>RedHatDisplay-Regular.ttf</string>
-		<string>Epilogue-Bold.ttf</string>
-		<string>Epilogue-Light.ttf</string>
-		<string>Epilogue-Medium.ttf</string>
-		<string>Epilogue-Regular.ttf</string>
-		<string>Epilogue-SemiBold.ttf</string>
-	</array>
-	<key>UILaunchStoryboardName</key>
-	<string>BootSplash</string>
-	<key>UIRequiredDeviceCapabilities</key>
-	<array>
-		<string>armv7</string>
-	</array>
-	<key>UISupportedInterfaceOrientations</key>
-	<array>
-		<string>UIInterfaceOrientationPortrait</string>
-	</array>
-	<key>UIViewControllerBasedStatusBarAppearance</key>
-	<false/>
-</dict>
 </plist>

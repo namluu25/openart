@@ -44,8 +44,8 @@ export const AppStack = () => {
   }, []);
   return route !== null ? (
     <Stack.Navigator
-      initialRouteName={'Profile'}
-      // {route as 'ProfileEdit' | 'Home'}
+      initialRouteName={route as 'ProfileEdit' | 'Home'}
+      // {'Profile'}
       screenOptions={{ headerShown: false }}>
       <Stack.Screen name="Home" component={Home} />
       <Stack.Screen name="Menu" component={Menu} />
