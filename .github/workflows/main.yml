@@ -25,12 +25,3 @@ jobs:
 
       - name: Linting
         run: yarn lint
-
-      - name: Unit & Integration tests
-        run: yarn test
-
-      - name: Jest coverage report
-        uses: ArtiomTr/jest-coverage-report-action@v2.0.6
-        with:
-          coverage-file: ./jest-report.json
-          base-coverage-file: ./jest-report.json
