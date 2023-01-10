@@ -25,3 +25,11 @@ jobs:
 
       - name: Linting
         run: yarn lint
+        
+    # Second Job
+  build-android:
+    needs: install-and-test
+    uses: ./.github/workflows/android-build.yml
+    with:
+      environment: release
+    secrets: inherit
