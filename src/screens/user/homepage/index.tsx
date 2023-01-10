@@ -32,7 +32,7 @@ export const Home = () => {
               {'\n'}
             </Text>
             <Text style={styles(theme).boldTitleText}>
-              {'Your Digital Art'}
+              {'Your Digital Art Test'}
             </Text>
             <TouchableOpacity
               style={styles(theme).searchBar}
