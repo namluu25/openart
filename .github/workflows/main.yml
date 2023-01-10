@@ -21,7 +21,7 @@ jobs:
           cache: "yarn"
 
       - name: Install Node modules
-        run: yarn ci
+        run: yarn
 
       - name: Linting
         run: yarn lint
