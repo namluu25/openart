@@ -13,9 +13,12 @@ on:
 
 jobs:
   build-android:
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, macOS, ARM64]
     steps:
       - uses: actions/checkout@v2
+      
+      - name: Fastlane
+        run: cd android && fastlane beta
 
       - name: Use Node.js 14
         uses: actions/setup-node@v3
